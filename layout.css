@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--color-neutral-97);
+}
+
+body {
+  margin: var(--spacing-none);
+  background: var(--color-neutral-97);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-gap-vertical-large);
+  padding: var(--spacing-padding-vertical-large) var(--spacing-padding-horizontal-large);
+}

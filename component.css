@@ -1,0 +1,19 @@
+section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-gap-vertical-medium);
+}
+
+h2 {
+  margin: var(--spacing-none);
+  color: var(--color-label-strong);
+  font-size: var(--font-size-heading-1);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-normal);
+}
+
+section > div {
+  padding: var(--spacing-padding-vertical-large) var(--spacing-padding-horizontal-large);
+  border-radius: var(--radius-large);
+  background: var(--color-common-100);
+}
