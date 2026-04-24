@@ -1,0 +1,62 @@
+:root {
+  /* spacing: base */
+  --spacing-0: 0;
+
+  /* spacing: padding / horizontal */
+  --spacing-padding-horizontal-4: 4px;
+  --spacing-padding-horizontal-12: 12px;
+  --spacing-padding-horizontal-16: 16px;
+  --spacing-padding-horizontal-24: 24px;
+  --spacing-padding-horizontal-32: 32px;
+  --spacing-padding-horizontal-40: 40px;
+  --spacing-padding-horizontal-60: 60px;
+
+  /* spacing: padding / vertical */
+  --spacing-padding-vertical-4: 4px;
+  --spacing-padding-vertical-8: 8px;
+  --spacing-padding-vertical-12: 12px;
+  --spacing-padding-vertical-16: 16px;
+  --spacing-padding-vertical-24: 24px;
+  --spacing-padding-vertical-32: 32px;
+  --spacing-padding-vertical-40: 40px;
+  --spacing-padding-vertical-60: 60px;
+
+  /* spacing: margin / horizontal */
+  --spacing-margin-horizontal-4: 4px;
+  --spacing-margin-horizontal-12: 12px;
+  --spacing-margin-horizontal-16: 16px;
+  --spacing-margin-horizontal-24: 24px;
+  --spacing-margin-horizontal-32: 32px;
+  --spacing-margin-horizontal-40: 40px;
+  --spacing-margin-horizontal-60: 60px;
+
+  /* spacing: margin / vertical */
+  --spacing-margin-vertical-4: 4px;
+  --spacing-margin-vertical-8: 8px;
+  --spacing-margin-vertical-12: 12px;
+  --spacing-margin-vertical-16: 16px;
+  --spacing-margin-vertical-24: 24px;
+  --spacing-margin-vertical-32: 32px;
+  --spacing-margin-vertical-40: 40px;
+  --spacing-margin-vertical-60: 60px;
+
+  /* spacing: gap / horizontal */
+  --spacing-gap-horizontal-4: 4px;
+  --spacing-gap-horizontal-8: 8px;
+  --spacing-gap-horizontal-16: 16px;
+  --spacing-gap-horizontal-20: 20px;
+  --spacing-gap-horizontal-24: 24px;
+  --spacing-gap-horizontal-32: 32px;
+  --spacing-gap-horizontal-40: 40px;
+  --spacing-gap-horizontal-60: 60px;
+
+  /* spacing: gap / vertical */
+  --spacing-gap-vertical-4: 4px;
+  --spacing-gap-vertical-8: 8px;
+  --spacing-gap-vertical-16: 16px;
+  --spacing-gap-vertical-20: 20px;
+  --spacing-gap-vertical-24: 24px;
+  --spacing-gap-vertical-32: 32px;
+  --spacing-gap-vertical-40: 40px;
+  --spacing-gap-vertical-60: 60px;
+}

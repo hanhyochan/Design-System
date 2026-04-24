@@ -1,141 +1,140 @@
-/* typography system */
-.type-panel {
-  overflow-x: auto;
+:root {
+  /* typography: font size */
+  --font-size-10: 10px;
+  --font-size-11: 11px;
+  --font-size-12: 12px;
+  --font-size-13: 13px;
+  --font-size-14: 14px;
+  --font-size-15: 15px;
+  --font-size-16: 16px;
+  --font-size-18: 18px;
+  --font-size-20: 20px;
+  --font-size-22: 22px;
+  --font-size-24: 24px;
+  --font-size-28: 28px;
+  --font-size-32: 32px;
+  --font-size-36: 36px;
+  --font-size-40: 40px;
+  --font-size-45: 45px;
+  --font-size-57: 57px;
+  --font-size-115: 115px;
+
+  /* typography: font weight */
+  --font-weight-300: 300;
+  --font-weight-400: 400;
+  --font-weight-500: 500;
+  --font-weight-600: 600;
+  --font-weight-700: 700;
+
+  /* typography: line height */
+  --line-height-120: 1.2;
+  --line-height-130: 1.3;
+  --line-height-140: 1.4;
+  --line-height-150: 1.5;
+  --line-height-160: 1.6;
+  --line-height-170: 1.7;
+  --line-height-16: 16px;
+  --line-height-20: 20px;
+  --line-height-24: 24px;
+  --line-height-28: 28px;
+  --line-height-32: 32px;
+  --line-height-36: 36px;
+  --line-height-40: 40px;
+  --line-height-44: 44px;
+  --line-height-52: 52px;
+  --line-height-64: 64px;
 }
 
-.type-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.type-table th,
-.type-table td {
-  padding: var(--spacing-padding-vertical-16) var(--spacing-padding-horizontal-16);
-  border-bottom: var(--border-1) solid var(--color-line-solid-neutral);
-  color: var(--color-label-strong);
-  font-size: var(--font-size-14);
-  font-weight: var(--font-weight-400);
-  line-height: var(--line-height-140);
-  text-align: left;
-  vertical-align: top;
-}
-
-.type-table thead th {
-  color: var(--color-label-alternative);
-  font-weight: var(--font-weight-500);
-  white-space: nowrap;
-}
-
-.type-table tbody th {
-  font-weight: var(--font-weight-700);
-  white-space: nowrap;
-}
-
-.type-table td:last-child {
-  min-width: var(--size-320);
-}
-
-/* typography example classes */
+/* typography: display */
 .type-display-large {
-  margin: var(--spacing-0);
   font-size: var(--font-size-57);
   font-weight: var(--font-weight-400);
   line-height: var(--line-height-64);
 }
 
 .type-display-medium {
-  margin: var(--spacing-0);
   font-size: var(--font-size-45);
   font-weight: var(--font-weight-400);
   line-height: var(--line-height-52);
 }
 
 .type-display-small {
-  margin: var(--spacing-0);
   font-size: var(--font-size-36);
   font-weight: var(--font-weight-400);
   line-height: var(--line-height-44);
 }
 
+/* typography: headline */
 .type-headline-large {
-  margin: var(--spacing-0);
   font-size: var(--font-size-32);
   font-weight: var(--font-weight-400);
   line-height: var(--line-height-40);
 }
 
 .type-headline-medium {
-  margin: var(--spacing-0);
   font-size: var(--font-size-28);
   font-weight: var(--font-weight-400);
   line-height: var(--line-height-36);
 }
 
 .type-headline-small {
-  margin: var(--spacing-0);
   font-size: var(--font-size-24);
   font-weight: var(--font-weight-400);
   line-height: var(--line-height-32);
 }
 
+/* typography: title */
 .type-title-large {
-  margin: var(--spacing-0);
   font-size: var(--font-size-22);
   font-weight: var(--font-weight-500);
   line-height: var(--line-height-28);
 }
 
 .type-title-medium {
-  margin: var(--spacing-0);
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-500);
   line-height: var(--line-height-24);
 }
 
 .type-title-small {
-  margin: var(--spacing-0);
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-500);
   line-height: var(--line-height-20);
 }
 
+/* typography: body */
 .type-body-large {
-  margin: var(--spacing-0);
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-400);
   line-height: var(--line-height-24);
 }
 
 .type-body-medium {
-  margin: var(--spacing-0);
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-400);
   line-height: var(--line-height-20);
 }
 
 .type-body-small {
-  margin: var(--spacing-0);
   font-size: var(--font-size-12);
   font-weight: var(--font-weight-400);
   line-height: var(--line-height-16);
 }
 
+/* typography: label */
 .type-label-large {
-  margin: var(--spacing-0);
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-500);
   line-height: var(--line-height-20);
 }
 
 .type-label-medium {
-  margin: var(--spacing-0);
   font-size: var(--font-size-12);
   font-weight: var(--font-weight-500);
   line-height: var(--line-height-16);
 }
 
 .type-label-small {
-  margin: var(--spacing-0);
   font-size: var(--font-size-11);
   font-weight: var(--font-weight-500);
   line-height: var(--line-height-16);

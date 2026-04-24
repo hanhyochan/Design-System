@@ -1,0 +1,849 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Design System</title>
+  <link rel="stylesheet" href="./system/token.css" />
+  <link rel="stylesheet" href="./system/custom.css" />
+  <link rel="stylesheet" href="./layout.css" />
+  <link rel="stylesheet" href="./system/typography.css" />
+  <link rel="stylesheet" href="./system/component.css" />
+</head>
+
+<body>
+  <main>
+    <header class="ds-header">
+      <div class="ds-title-wrap">
+        <strong class="ds-title">Hyo_DesignSystem</strong>
+        <span class="ds-author">author hanhyochan</span>
+      </div>
+      <div class="ds-tabs" role="tablist" aria-label="Design system categories">
+        <button class="ds-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="tab-foundation" id="tab-button-foundation" data-tab-target="foundation">Foundation</button>
+        <button class="ds-tab" type="button" role="tab" aria-selected="false" aria-controls="tab-component" id="tab-button-component" data-tab-target="component">Component</button>
+        <button class="ds-tab" type="button" role="tab" aria-selected="false" aria-controls="tab-module" id="tab-button-module" data-tab-target="module">Module</button>
+      </div>
+    </header>
+
+    <div class="ds-tabpanel" id="tab-foundation" role="tabpanel" aria-labelledby="tab-button-foundation" data-tab-panel="foundation">
+      <section>
+      <h2>Color Atomic</h2>
+      <div class="color-panel">
+        <article class="color-group">
+          <h3>Common</h3>
+          <ul class="color-list">
+            <li style="--swatch-color: var(--color-common-100);">100</li>
+            <li style="--swatch-color: var(--color-common-0);">0</li>
+          </ul>
+        </article>
+        <article class="color-group">
+          <h3>Neutral</h3>
+          <ul class="color-list">
+            <li style="--swatch-color: var(--color-neutral-99);">99</li>
+            <li style="--swatch-color: var(--color-neutral-97);">97</li>
+            <li style="--swatch-color: var(--color-neutral-95);">95</li>
+            <li style="--swatch-color: var(--color-neutral-90);">90</li>
+            <li style="--swatch-color: var(--color-neutral-80);">80</li>
+            <li style="--swatch-color: var(--color-neutral-70);">70</li>
+            <li style="--swatch-color: var(--color-neutral-60);">60</li>
+            <li style="--swatch-color: var(--color-neutral-50);">50</li>
+            <li style="--swatch-color: var(--color-neutral-40);">40</li>
+            <li style="--swatch-color: var(--color-neutral-30);">30</li>
+            <li style="--swatch-color: var(--color-neutral-22);">22</li>
+            <li style="--swatch-color: var(--color-neutral-20);">20</li>
+            <li style="--swatch-color: var(--color-neutral-15);">15</li>
+            <li style="--swatch-color: var(--color-neutral-10);">10</li>
+            <li style="--swatch-color: var(--color-neutral-5);">5</li>
+          </ul>
+        </article>
+        <article class="color-group">
+          <h3>Cool Neutral</h3>
+          <ul class="color-list">
+            <li style="--swatch-color: var(--color-cool-neutral-99);">99</li>
+            <li style="--swatch-color: var(--color-cool-neutral-98);">98</li>
+            <li style="--swatch-color: var(--color-cool-neutral-97);">97</li>
+            <li style="--swatch-color: var(--color-cool-neutral-96);">96</li>
+            <li style="--swatch-color: var(--color-cool-neutral-95);">95</li>
+            <li style="--swatch-color: var(--color-cool-neutral-90);">90</li>
+            <li style="--swatch-color: var(--color-cool-neutral-80);">80</li>
+            <li style="--swatch-color: var(--color-cool-neutral-70);">70</li>
+            <li style="--swatch-color: var(--color-cool-neutral-60);">60</li>
+            <li style="--swatch-color: var(--color-cool-neutral-50);">50</li>
+            <li style="--swatch-color: var(--color-cool-neutral-40);">40</li>
+            <li style="--swatch-color: var(--color-cool-neutral-30);">30</li>
+            <li style="--swatch-color: var(--color-cool-neutral-25);">25</li>
+            <li style="--swatch-color: var(--color-cool-neutral-23);">23</li>
+            <li style="--swatch-color: var(--color-cool-neutral-22);">22</li>
+            <li style="--swatch-color: var(--color-cool-neutral-20);">20</li>
+            <li style="--swatch-color: var(--color-cool-neutral-17);">17</li>
+            <li style="--swatch-color: var(--color-cool-neutral-15);">15</li>
+            <li style="--swatch-color: var(--color-cool-neutral-10);">10</li>
+            <li style="--swatch-color: var(--color-cool-neutral-7);">7</li>
+            <li style="--swatch-color: var(--color-cool-neutral-5);">5</li>
+          </ul>
+        </article>
+        <article class="color-group">
+          <h3>Blue</h3>
+          <ul class="color-list">
+            <li style="--swatch-color: var(--color-blue-99);">99</li>
+            <li style="--swatch-color: var(--color-blue-95);">95</li>
+            <li style="--swatch-color: var(--color-blue-90);">90</li>
+            <li style="--swatch-color: var(--color-blue-80);">80</li>
+            <li style="--swatch-color: var(--color-blue-70);">70</li>
+            <li style="--swatch-color: var(--color-blue-65);">65</li>
+            <li style="--swatch-color: var(--color-blue-60);">60</li>
+            <li style="--swatch-color: var(--color-blue-55);">55</li>
+            <li style="--swatch-color: var(--color-blue-50);">50</li>
+            <li style="--swatch-color: var(--color-blue-45);">45</li>
+            <li style="--swatch-color: var(--color-blue-40);">40</li>
+            <li style="--swatch-color: var(--color-blue-30);">30</li>
+            <li style="--swatch-color: var(--color-blue-20);">20</li>
+            <li style="--swatch-color: var(--color-blue-10);">10</li>
+          </ul>
+        </article>
+        <article class="color-group">
+          <h3>Red</h3>
+          <ul class="color-list">
+            <li style="--swatch-color: var(--color-red-99);">99</li>
+            <li style="--swatch-color: var(--color-red-95);">95</li>
+            <li style="--swatch-color: var(--color-red-90);">90</li>
+            <li style="--swatch-color: var(--color-red-80);">80</li>
+            <li style="--swatch-color: var(--color-red-70);">70</li>
+            <li style="--swatch-color: var(--color-red-60);">60</li>
+            <li style="--swatch-color: var(--color-red-50);">50</li>
+            <li style="--swatch-color: var(--color-red-40);">40</li>
+            <li style="--swatch-color: var(--color-red-30);">30</li>
+            <li style="--swatch-color: var(--color-red-20);">20</li>
+            <li style="--swatch-color: var(--color-red-10);">10</li>
+          </ul>
+        </article>
+        <article class="color-group">
+          <h3>Red Orange</h3>
+          <ul class="color-list">
+            <li style="--swatch-color: var(--color-red-orange-99);">99</li>
+            <li style="--swatch-color: var(--color-red-orange-95);">95</li>
+            <li style="--swatch-color: var(--color-red-orange-90);">90</li>
+            <li style="--swatch-color: var(--color-red-orange-80);">80</li>
+            <li style="--swatch-color: var(--color-red-orange-70);">70</li>
+            <li style="--swatch-color: var(--color-red-orange-60);">60</li>
+            <li style="--swatch-color: var(--color-red-orange-50);">50</li>
+            <li style="--swatch-color: var(--color-red-orange-48);">48</li>
+            <li style="--swatch-color: var(--color-red-orange-40);">40</li>
+            <li style="--swatch-color: var(--color-red-orange-30);">30</li>
+            <li style="--swatch-color: var(--color-red-orange-20);">20</li>
+            <li style="--swatch-color: var(--color-red-orange-10);">10</li>
+          </ul>
+        </article>
+        <article class="color-group">
+          <h3>Orange</h3>
+          <ul class="color-list">
+            <li style="--swatch-color: var(--color-orange-99);">99</li>
+            <li style="--swatch-color: var(--color-orange-95);">95</li>
+            <li style="--swatch-color: var(--color-orange-90);">90</li>
+            <li style="--swatch-color: var(--color-orange-80);">80</li>
+            <li style="--swatch-color: var(--color-orange-70);">70</li>
+            <li style="--swatch-color: var(--color-orange-60);">60</li>
+            <li style="--swatch-color: var(--color-orange-50);">50</li>
+            <li style="--swatch-color: var(--color-orange-40);">40</li>
+            <li style="--swatch-color: var(--color-orange-39);">39</li>
+            <li style="--swatch-color: var(--color-orange-30);">30</li>
+            <li style="--swatch-color: var(--color-orange-20);">20</li>
+            <li style="--swatch-color: var(--color-orange-10);">10</li>
+          </ul>
+        </article>
+        <article class="color-group">
+          <h3>Yellow</h3>
+          <ul class="color-list">
+            <li style="--swatch-color: var(--color-yellow-90);">90</li>
+            <li style="--swatch-color: var(--color-yellow-80);">80</li>
+            <li style="--swatch-color: var(--color-yellow-70);">70</li>
+            <li style="--swatch-color: var(--color-yellow-60);">60</li>
+            <li style="--swatch-color: var(--color-yellow-50);">50</li>
+            <li style="--swatch-color: var(--color-yellow-40);">40</li>
+            <li style="--swatch-color: var(--color-yellow-30);">30</li>
+            <li style="--swatch-color: var(--color-yellow-20);">20</li>
+            <li style="--swatch-color: var(--color-yellow-10);">10</li>
+          </ul>
+        </article>
+        <article class="color-group">
+          <h3>Green</h3>
+          <ul class="color-list">
+            <li style="--swatch-color: var(--color-green-99);">99</li>
+            <li style="--swatch-color: var(--color-green-95);">95</li>
+            <li style="--swatch-color: var(--color-green-90);">90</li>
+            <li style="--swatch-color: var(--color-green-80);">80</li>
+            <li style="--swatch-color: var(--color-green-70);">70</li>
+            <li style="--swatch-color: var(--color-green-60);">60</li>
+            <li style="--swatch-color: var(--color-green-50);">50</li>
+            <li style="--swatch-color: var(--color-green-40);">40</li>
+            <li style="--swatch-color: var(--color-green-30);">30</li>
+            <li style="--swatch-color: var(--color-green-20);">20</li>
+            <li style="--swatch-color: var(--color-green-10);">10</li>
+          </ul>
+        </article>
+        <article class="color-group">
+          <h3>Lime</h3>
+          <ul class="color-list">
+            <li style="--swatch-color: var(--color-lime-99);">99</li>
+            <li style="--swatch-color: var(--color-lime-95);">95</li>
+            <li style="--swatch-color: var(--color-lime-90);">90</li>
+            <li style="--swatch-color: var(--color-lime-80);">80</li>
+            <li style="--swatch-color: var(--color-lime-70);">70</li>
+            <li style="--swatch-color: var(--color-lime-60);">60</li>
+            <li style="--swatch-color: var(--color-lime-50);">50</li>
+            <li style="--swatch-color: var(--color-lime-40);">40</li>
+            <li style="--swatch-color: var(--color-lime-37);">37</li>
+            <li style="--swatch-color: var(--color-lime-30);">30</li>
+            <li style="--swatch-color: var(--color-lime-20);">20</li>
+            <li style="--swatch-color: var(--color-lime-10);">10</li>
+          </ul>
+        </article>
+        <article class="color-group">
+          <h3>Cyan</h3>
+          <ul class="color-list">
+            <li style="--swatch-color: var(--color-cyan-99);">99</li>
+            <li style="--swatch-color: var(--color-cyan-95);">95</li>
+            <li style="--swatch-color: var(--color-cyan-90);">90</li>
+            <li style="--swatch-color: var(--color-cyan-80);">80</li>
+            <li style="--swatch-color: var(--color-cyan-70);">70</li>
+            <li style="--swatch-color: var(--color-cyan-60);">60</li>
+            <li style="--swatch-color: var(--color-cyan-50);">50</li>
+            <li style="--swatch-color: var(--color-cyan-40);">40</li>
+            <li style="--swatch-color: var(--color-cyan-30);">30</li>
+            <li style="--swatch-color: var(--color-cyan-20);">20</li>
+            <li style="--swatch-color: var(--color-cyan-10);">10</li>
+          </ul>
+        </article>
+        <article class="color-group">
+          <h3>Light Blue</h3>
+          <ul class="color-list">
+            <li style="--swatch-color: var(--color-light-blue-99);">99</li>
+            <li style="--swatch-color: var(--color-light-blue-95);">95</li>
+            <li style="--swatch-color: var(--color-light-blue-90);">90</li>
+            <li style="--swatch-color: var(--color-light-blue-80);">80</li>
+            <li style="--swatch-color: var(--color-light-blue-70);">70</li>
+            <li style="--swatch-color: var(--color-light-blue-60);">60</li>
+            <li style="--swatch-color: var(--color-light-blue-50);">50</li>
+            <li style="--swatch-color: var(--color-light-blue-40);">40</li>
+            <li style="--swatch-color: var(--color-light-blue-30);">30</li>
+            <li style="--swatch-color: var(--color-light-blue-20);">20</li>
+            <li style="--swatch-color: var(--color-light-blue-10);">10</li>
+          </ul>
+        </article>
+        <article class="color-group">
+          <h3>Violet</h3>
+          <ul class="color-list">
+            <li style="--swatch-color: var(--color-violet-99);">99</li>
+            <li style="--swatch-color: var(--color-violet-95);">95</li>
+            <li style="--swatch-color: var(--color-violet-90);">90</li>
+            <li style="--swatch-color: var(--color-violet-80);">80</li>
+            <li style="--swatch-color: var(--color-violet-70);">70</li>
+            <li style="--swatch-color: var(--color-violet-60);">60</li>
+            <li style="--swatch-color: var(--color-violet-50);">50</li>
+            <li style="--swatch-color: var(--color-violet-45);">45</li>
+            <li style="--swatch-color: var(--color-violet-40);">40</li>
+            <li style="--swatch-color: var(--color-violet-30);">30</li>
+            <li style="--swatch-color: var(--color-violet-20);">20</li>
+            <li style="--swatch-color: var(--color-violet-10);">10</li>
+          </ul>
+        </article>
+        <article class="color-group">
+          <h3>Purple</h3>
+          <ul class="color-list">
+            <li style="--swatch-color: var(--color-purple-99);">99</li>
+            <li style="--swatch-color: var(--color-purple-95);">95</li>
+            <li style="--swatch-color: var(--color-purple-90);">90</li>
+            <li style="--swatch-color: var(--color-purple-80);">80</li>
+            <li style="--swatch-color: var(--color-purple-70);">70</li>
+            <li style="--swatch-color: var(--color-purple-60);">60</li>
+            <li style="--swatch-color: var(--color-purple-50);">50</li>
+            <li style="--swatch-color: var(--color-purple-40);">40</li>
+            <li style="--swatch-color: var(--color-purple-30);">30</li>
+            <li style="--swatch-color: var(--color-purple-20);">20</li>
+            <li style="--swatch-color: var(--color-purple-10);">10</li>
+          </ul>
+        </article>
+        <article class="color-group">
+          <h3>Pink</h3>
+          <ul class="color-list">
+            <li style="--swatch-color: var(--color-pink-99);">99</li>
+            <li style="--swatch-color: var(--color-pink-95);">95</li>
+            <li style="--swatch-color: var(--color-pink-90);">90</li>
+            <li style="--swatch-color: var(--color-pink-80);">80</li>
+            <li style="--swatch-color: var(--color-pink-70);">70</li>
+            <li style="--swatch-color: var(--color-pink-60);">60</li>
+            <li style="--swatch-color: var(--color-pink-50);">50</li>
+            <li style="--swatch-color: var(--color-pink-46);">46</li>
+            <li style="--swatch-color: var(--color-pink-40);">40</li>
+            <li style="--swatch-color: var(--color-pink-30);">30</li>
+            <li style="--swatch-color: var(--color-pink-20);">20</li>
+            <li style="--swatch-color: var(--color-pink-10);">10</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+    <section>
+      <h2>Color Sementic</h2>
+      <div class="semantic-panel">
+        <article class="semantic-group">
+          <h3>Status</h3>
+          <ul class="semantic-list">
+            <li style="--semantic-color: var(--color-status-positive);">Positive</li>
+            <li style="--semantic-color: var(--color-status-cautionary);">Cautionary</li>
+            <li style="--semantic-color: var(--color-status-negative);">Negative</li>
+          </ul>
+        </article>
+        <article class="semantic-group">
+          <h3>Accent</h3>
+          <div class="semantic-subgroup">
+            <h4>Background</h4>
+            <ul class="semantic-list">
+              <li style="--semantic-color: var(--color-accent-background-red-orange);">Red Orange</li>
+              <li style="--semantic-color: var(--color-accent-background-lime);">Lime</li>
+              <li style="--semantic-color: var(--color-accent-background-cyan);">Cyan</li>
+              <li style="--semantic-color: var(--color-accent-background-light-blue);">Light Blue</li>
+              <li style="--semantic-color: var(--color-accent-background-violet);">Violet</li>
+              <li style="--semantic-color: var(--color-accent-background-purple);">Purple</li>
+              <li style="--semantic-color: var(--color-accent-background-pink);">Pink</li>
+            </ul>
+          </div>
+          <div class="semantic-subgroup">
+            <h4>Foreground</h4>
+            <ul class="semantic-list">
+              <li style="--semantic-color: var(--color-accent-foreground-red);">Red</li>
+              <li style="--semantic-color: var(--color-accent-foreground-red-orange);">Red Orange</li>
+              <li style="--semantic-color: var(--color-accent-foreground-orange);">Orange</li>
+              <li style="--semantic-color: var(--color-accent-foreground-green);">Green</li>
+              <li style="--semantic-color: var(--color-accent-foreground-lime);">Lime</li>
+              <li style="--semantic-color: var(--color-accent-foreground-cyan);">Cyan</li>
+              <li style="--semantic-color: var(--color-accent-foreground-light-blue);">Light Blue</li>
+              <li style="--semantic-color: var(--color-accent-foreground-blue);">Blue</li>
+              <li style="--semantic-color: var(--color-accent-foreground-violet);">Violet</li>
+              <li style="--semantic-color: var(--color-accent-foreground-purple);">Purple</li>
+              <li style="--semantic-color: var(--color-accent-foreground-pink);">Pink</li>
+            </ul>
+          </div>
+        </article>
+        <article class="semantic-group">
+          <h3>Background</h3>
+          <ul class="semantic-list">
+            <li style="--semantic-color: var(--color-background-normal-normal);">Normal</li>
+            <li style="--semantic-color: var(--color-background-normal-alternative);">Normal Alternative</li>
+            <li style="--semantic-color: var(--color-background-elevated-normal);">Elevated Normal</li>
+            <li style="--semantic-color: var(--color-background-elevated-alternative);">Elevated Alternative</li>
+            <li style="--semantic-color: var(--color-background-transparent-normal);">Transparent Normal</li>
+            <li style="--semantic-color: var(--color-background-transparent-alternative);">Transparent Alternative</li>
+          </ul>
+        </article>
+        <article class="semantic-group">
+          <h3>Label</h3>
+          <ul class="semantic-list">
+            <li style="--semantic-color: var(--color-label-normal);">Normal</li>
+            <li style="--semantic-color: var(--color-label-strong);">Strong</li>
+            <li style="--semantic-color: var(--color-label-neutral);">Neutral</li>
+            <li style="--semantic-color: var(--color-label-alternative);">Alternative</li>
+            <li style="--semantic-color: var(--color-label-assistive);">Assistive</li>
+            <li style="--semantic-color: var(--color-label-disable);">Disable</li>
+          </ul>
+        </article>
+        <article class="semantic-group">
+          <h3>Line</h3>
+          <div class="semantic-subgroup">
+            <h4>Normal</h4>
+            <ul class="semantic-list">
+              <li style="--semantic-color: var(--color-line-normal-normal);">Normal</li>
+              <li style="--semantic-color: var(--color-line-normal-neutral);">Neutral</li>
+              <li style="--semantic-color: var(--color-line-normal-alternative);">Alternative</li>
+              <li style="--semantic-color: var(--color-line-normal-strong);">Strong</li>
+            </ul>
+          </div>
+          <div class="semantic-subgroup">
+            <h4>Solid</h4>
+            <ul class="semantic-list">
+              <li style="--semantic-color: var(--color-line-solid-normal);">Normal</li>
+              <li style="--semantic-color: var(--color-line-solid-neutral);">Neutral</li>
+              <li style="--semantic-color: var(--color-line-solid-alternative);">Alternative</li>
+              <li style="--semantic-color: var(--color-line-solid-strong);">Strong</li>
+              <li style="--semantic-color: var(--color-line-solid-20);">20</li>
+              <li style="--semantic-color: var(--color-line-solid-10);">10</li>
+              <li style="--semantic-color: var(--color-line-solid-0);">0</li>
+            </ul>
+          </div>
+        </article>
+        <article class="semantic-group">
+          <h3>Fill</h3>
+          <ul class="semantic-list">
+            <li style="--semantic-color: var(--color-fill-normal);">Normal</li>
+            <li style="--semantic-color: var(--color-fill-strong);">Strong</li>
+            <li style="--semantic-color: var(--color-fill-alternative);">Alternative</li>
+          </ul>
+        </article>
+        <article class="semantic-group">
+          <h3>Interaction</h3>
+          <ul class="semantic-list">
+            <li style="--semantic-color: var(--color-interaction-inactive);">Inactive</li>
+            <li style="--semantic-color: var(--color-interaction-disable);">Disable</li>
+          </ul>
+        </article>
+        <article class="semantic-group">
+          <h3>Static</h3>
+          <ul class="semantic-list">
+            <li style="--semantic-color: var(--color-static-white);">White</li>
+            <li style="--semantic-color: var(--color-static-black);">Black</li>
+          </ul>
+        </article>
+        <article class="semantic-group">
+          <h3>Inverse</h3>
+          <ul class="semantic-list">
+            <li style="--semantic-color: var(--color-inverse-primary);">Primary</li>
+            <li style="--semantic-color: var(--color-inverse-background);">Background</li>
+            <li style="--semantic-color: var(--color-inverse-label);">Label</li>
+          </ul>
+        </article>
+        <article class="semantic-group">
+          <h3>Material</h3>
+          <ul class="semantic-list">
+            <li style="--semantic-color: var(--color-material-dimmer);">Dimmer</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+    <section>
+      <h2>Typography</h2>
+      <div class="type-panel">
+        <table class="type-table">
+          <thead>
+            <tr>
+              <th scope="col">紐낆묶</th>
+              <th scope="col">?ш린</th>
+              <th scope="col">?됯컙</th>
+              <th scope="col">?덉떆 ?띿뒪??/th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Display Large</th>
+              <td>57px</td>
+              <td>64px (1.123)</td>
+              <td><p class="type-display-large">??떆 lorem<br />留덉갔媛吏 ipsum</p></td>
+            </tr>
+            <tr>
+              <th scope="row">Display Medium</th>
+              <td>45px</td>
+              <td>52px (1.156)</td>
+              <td><p class="type-display-medium">??떆 lorem<br />留덉갔媛吏 ipsum</p></td>
+            </tr>
+            <tr>
+              <th scope="row">Display Small</th>
+              <td>36px</td>
+              <td>44px (1.222)</td>
+              <td><p class="type-display-small">??떆 lorem<br />留덉갔媛吏 ipsum</p></td>
+            </tr>
+            <tr>
+              <th scope="row">Headline Large</th>
+              <td>32px</td>
+              <td>40px (1.25)</td>
+              <td><p class="type-headline-large">??떆 lorem<br />留덉갔媛吏 ipsum</p></td>
+            </tr>
+            <tr>
+              <th scope="row">Headline Medium</th>
+              <td>28px</td>
+              <td>36px (1.286)</td>
+              <td><p class="type-headline-medium">??떆 lorem<br />留덉갔媛吏 ipsum</p></td>
+            </tr>
+            <tr>
+              <th scope="row">Headline Small</th>
+              <td>24px</td>
+              <td>32px (1.333)</td>
+              <td><p class="type-headline-small">??떆 lorem<br />留덉갔媛吏 ipsum</p></td>
+            </tr>
+            <tr>
+              <th scope="row">Title Large</th>
+              <td>22px</td>
+              <td>28px (1.273)</td>
+              <td><p class="type-title-large">??떆 lorem<br />留덉갔媛吏 ipsum</p></td>
+            </tr>
+            <tr>
+              <th scope="row">Title Medium</th>
+              <td>16px</td>
+              <td>24px (1.5)</td>
+              <td><p class="type-title-medium">??떆 lorem<br />留덉갔媛吏 ipsum</p></td>
+            </tr>
+            <tr>
+              <th scope="row">Title Small</th>
+              <td>14px</td>
+              <td>20px (1.429)</td>
+              <td><p class="type-title-small">??떆 lorem<br />留덉갔媛吏 ipsum</p></td>
+            </tr>
+            <tr>
+              <th scope="row">Body Large</th>
+              <td>16px</td>
+              <td>24px (1.5)</td>
+              <td><p class="type-body-large">??떆 lorem<br />留덉갔媛吏 ipsum</p></td>
+            </tr>
+            <tr>
+              <th scope="row">Body Medium</th>
+              <td>14px</td>
+              <td>20px (1.429)</td>
+              <td><p class="type-body-medium">??떆 lorem<br />留덉갔媛吏 ipsum</p></td>
+            </tr>
+            <tr>
+              <th scope="row">Body Small</th>
+              <td>12px</td>
+              <td>16px (1.333)</td>
+              <td><p class="type-body-small">??떆 lorem<br />留덉갔媛吏 ipsum</p></td>
+            </tr>
+            <tr>
+              <th scope="row">Label Large</th>
+              <td>14px</td>
+              <td>20px (1.429)</td>
+              <td><p class="type-label-large">??떆 lorem<br />留덉갔媛吏 ipsum</p></td>
+            </tr>
+            <tr>
+              <th scope="row">Label Medium</th>
+              <td>12px</td>
+              <td>16px (1.333)</td>
+              <td><p class="type-label-medium">??떆 lorem<br />留덉갔媛吏 ipsum</p></td>
+            </tr>
+            <tr>
+              <th scope="row">Label Small</th>
+              <td>11px</td>
+              <td>16px (1.455)</td>
+              <td><p class="type-label-small">??떆 lorem<br />留덉갔媛吏 ipsum</p></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Padding</h2>
+      <div class="unit-panel">
+        <article class="unit-group">
+          <h3>Horizontal</h3>
+          <ul class="unit-token-list">
+            <li class="unit-token-card" style="--unit-padding-x: var(--spacing-padding-horizontal-4); --unit-padding-y: var(--spacing-padding-vertical-16);">
+              <span class="unit-token-head"><span class="unit-token-name">padding-horizontal-4</span><span class="unit-token-value">4</span></span>
+              <span class="unit-padding-preview" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-padding-x: var(--spacing-padding-horizontal-12); --unit-padding-y: var(--spacing-padding-vertical-16);">
+              <span class="unit-token-head"><span class="unit-token-name">padding-horizontal-12</span><span class="unit-token-value">12</span></span>
+              <span class="unit-padding-preview" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-padding-x: var(--spacing-padding-horizontal-16); --unit-padding-y: var(--spacing-padding-vertical-16);">
+              <span class="unit-token-head"><span class="unit-token-name">padding-horizontal-16</span><span class="unit-token-value">16</span></span>
+              <span class="unit-padding-preview" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-padding-x: var(--spacing-padding-horizontal-24); --unit-padding-y: var(--spacing-padding-vertical-16);">
+              <span class="unit-token-head"><span class="unit-token-name">padding-horizontal-24</span><span class="unit-token-value">24</span></span>
+              <span class="unit-padding-preview" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-padding-x: var(--spacing-padding-horizontal-32); --unit-padding-y: var(--spacing-padding-vertical-16);">
+              <span class="unit-token-head"><span class="unit-token-name">padding-horizontal-32</span><span class="unit-token-value">32</span></span>
+              <span class="unit-padding-preview" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-padding-x: var(--spacing-padding-horizontal-40); --unit-padding-y: var(--spacing-padding-vertical-16);">
+              <span class="unit-token-head"><span class="unit-token-name">padding-horizontal-40</span><span class="unit-token-value">40</span></span>
+              <span class="unit-padding-preview" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-padding-x: var(--spacing-padding-horizontal-60); --unit-padding-y: var(--spacing-padding-vertical-16);">
+              <span class="unit-token-head"><span class="unit-token-name">padding-horizontal-60</span><span class="unit-token-value">60</span></span>
+              <span class="unit-padding-preview" aria-hidden="true"></span>
+            </li>
+          </ul>
+        </article>
+
+        <article class="unit-group">
+          <h3>Vertical</h3>
+          <ul class="unit-token-list">
+            <li class="unit-token-card" style="--unit-padding-x: var(--spacing-padding-horizontal-16); --unit-padding-y: var(--spacing-padding-vertical-4);">
+              <span class="unit-token-head"><span class="unit-token-name">padding-vertical-4</span><span class="unit-token-value">4</span></span>
+              <span class="unit-padding-preview" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-padding-x: var(--spacing-padding-horizontal-16); --unit-padding-y: var(--spacing-padding-vertical-8);">
+              <span class="unit-token-head"><span class="unit-token-name">padding-vertical-8</span><span class="unit-token-value">8</span></span>
+              <span class="unit-padding-preview" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-padding-x: var(--spacing-padding-horizontal-16); --unit-padding-y: var(--spacing-padding-vertical-12);">
+              <span class="unit-token-head"><span class="unit-token-name">padding-vertical-12</span><span class="unit-token-value">12</span></span>
+              <span class="unit-padding-preview" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-padding-x: var(--spacing-padding-horizontal-16); --unit-padding-y: var(--spacing-padding-vertical-16);">
+              <span class="unit-token-head"><span class="unit-token-name">padding-vertical-16</span><span class="unit-token-value">16</span></span>
+              <span class="unit-padding-preview" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-padding-x: var(--spacing-padding-horizontal-16); --unit-padding-y: var(--spacing-padding-vertical-24);">
+              <span class="unit-token-head"><span class="unit-token-name">padding-vertical-24</span><span class="unit-token-value">24</span></span>
+              <span class="unit-padding-preview" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-padding-x: var(--spacing-padding-horizontal-16); --unit-padding-y: var(--spacing-padding-vertical-32);">
+              <span class="unit-token-head"><span class="unit-token-name">padding-vertical-32</span><span class="unit-token-value">32</span></span>
+              <span class="unit-padding-preview" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-padding-x: var(--spacing-padding-horizontal-16); --unit-padding-y: var(--spacing-padding-vertical-40);">
+              <span class="unit-token-head"><span class="unit-token-name">padding-vertical-40</span><span class="unit-token-value">40</span></span>
+              <span class="unit-padding-preview" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-padding-x: var(--spacing-padding-horizontal-16); --unit-padding-y: var(--spacing-padding-vertical-60);">
+              <span class="unit-token-head"><span class="unit-token-name">padding-vertical-60</span><span class="unit-token-value">60</span></span>
+              <span class="unit-padding-preview" aria-hidden="true"></span>
+            </li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Margin</h2>
+      <div class="unit-panel">
+        <article class="unit-group">
+          <h3>Horizontal</h3>
+          <ul class="unit-token-list">
+            <li class="unit-token-card" style="--unit-margin-x: var(--spacing-margin-horizontal-4); --unit-margin-y: var(--spacing-margin-vertical-16);">
+              <span class="unit-token-head"><span class="unit-token-name">margin-horizontal-4</span><span class="unit-token-value">4</span></span>
+              <span class="unit-margin-preview" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-margin-x: var(--spacing-margin-horizontal-12); --unit-margin-y: var(--spacing-margin-vertical-16);">
+              <span class="unit-token-head"><span class="unit-token-name">margin-horizontal-12</span><span class="unit-token-value">12</span></span>
+              <span class="unit-margin-preview" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-margin-x: var(--spacing-margin-horizontal-16); --unit-margin-y: var(--spacing-margin-vertical-16);">
+              <span class="unit-token-head"><span class="unit-token-name">margin-horizontal-16</span><span class="unit-token-value">16</span></span>
+              <span class="unit-margin-preview" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-margin-x: var(--spacing-margin-horizontal-24); --unit-margin-y: var(--spacing-margin-vertical-16);">
+              <span class="unit-token-head"><span class="unit-token-name">margin-horizontal-24</span><span class="unit-token-value">24</span></span>
+              <span class="unit-margin-preview" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-margin-x: var(--spacing-margin-horizontal-32); --unit-margin-y: var(--spacing-margin-vertical-16);">
+              <span class="unit-token-head"><span class="unit-token-name">margin-horizontal-32</span><span class="unit-token-value">32</span></span>
+              <span class="unit-margin-preview" aria-hidden="true"></span>
+            </li>
+          </ul>
+        </article>
+
+        <article class="unit-group">
+          <h3>Vertical</h3>
+          <ul class="unit-token-list">
+            <li class="unit-token-card" style="--unit-margin-x: var(--spacing-margin-horizontal-16); --unit-margin-y: var(--spacing-margin-vertical-4);">
+              <span class="unit-token-head"><span class="unit-token-name">margin-vertical-4</span><span class="unit-token-value">4</span></span>
+              <span class="unit-margin-preview" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-margin-x: var(--spacing-margin-horizontal-16); --unit-margin-y: var(--spacing-margin-vertical-8);">
+              <span class="unit-token-head"><span class="unit-token-name">margin-vertical-8</span><span class="unit-token-value">8</span></span>
+              <span class="unit-margin-preview" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-margin-x: var(--spacing-margin-horizontal-16); --unit-margin-y: var(--spacing-margin-vertical-12);">
+              <span class="unit-token-head"><span class="unit-token-name">margin-vertical-12</span><span class="unit-token-value">12</span></span>
+              <span class="unit-margin-preview" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-margin-x: var(--spacing-margin-horizontal-16); --unit-margin-y: var(--spacing-margin-vertical-16);">
+              <span class="unit-token-head"><span class="unit-token-name">margin-vertical-16</span><span class="unit-token-value">16</span></span>
+              <span class="unit-margin-preview" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-margin-x: var(--spacing-margin-horizontal-16); --unit-margin-y: var(--spacing-margin-vertical-24);">
+              <span class="unit-token-head"><span class="unit-token-name">margin-vertical-24</span><span class="unit-token-value">24</span></span>
+              <span class="unit-margin-preview" aria-hidden="true"></span>
+            </li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Border Radius</h2>
+      <div class="unit-panel">
+        <ul class="unit-token-list">
+          <li class="unit-token-card" style="--unit-radius: var(--radius-8);">
+            <span class="unit-token-head"><span class="unit-token-name">radius-8</span><span class="unit-token-value">8</span></span>
+            <span class="unit-radius-preview" aria-hidden="true"></span>
+          </li>
+          <li class="unit-token-card" style="--unit-radius: var(--radius-16);">
+            <span class="unit-token-head"><span class="unit-token-name">radius-16</span><span class="unit-token-value">16</span></span>
+            <span class="unit-radius-preview" aria-hidden="true"></span>
+          </li>
+          <li class="unit-token-card" style="--unit-radius: var(--radius-20);">
+            <span class="unit-token-head"><span class="unit-token-name">radius-20</span><span class="unit-token-value">20</span></span>
+            <span class="unit-radius-preview" aria-hidden="true"></span>
+          </li>
+          <li class="unit-token-card" style="--unit-radius: var(--radius-40);">
+            <span class="unit-token-head"><span class="unit-token-name">radius-40</span><span class="unit-token-value">40</span></span>
+            <span class="unit-radius-preview" aria-hidden="true"></span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Border Width</h2>
+      <div class="unit-panel">
+        <ul class="unit-token-list">
+          <li class="unit-token-card" style="--unit-border: var(--border-0-5);">
+            <span class="unit-token-head"><span class="unit-token-name">border-0-5</span><span class="unit-token-value">0.5</span></span>
+            <span class="unit-border-preview" aria-hidden="true"></span>
+          </li>
+          <li class="unit-token-card" style="--unit-border: var(--border-1);">
+            <span class="unit-token-head"><span class="unit-token-name">border-1</span><span class="unit-token-value">1</span></span>
+            <span class="unit-border-preview" aria-hidden="true"></span>
+          </li>
+          <li class="unit-token-card" style="--unit-border: var(--border-2);">
+            <span class="unit-token-head"><span class="unit-token-name">border-2</span><span class="unit-token-value">2</span></span>
+            <span class="unit-border-preview" aria-hidden="true"></span>
+          </li>
+          <li class="unit-token-card" style="--unit-border: var(--border-3);">
+            <span class="unit-token-head"><span class="unit-token-name">border-3</span><span class="unit-token-value">3</span></span>
+            <span class="unit-border-preview" aria-hidden="true"></span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Shadow</h2>
+      <div class="unit-panel">
+        <ul class="unit-token-list">
+          <li class="unit-token-card" style="--unit-shadow: var(--shadow-1);">
+            <span class="unit-token-head"><span class="unit-token-name">shadow-1</span><span class="unit-token-value">1</span></span>
+            <span class="unit-shadow-preview" aria-hidden="true"></span>
+          </li>
+          <li class="unit-token-card" style="--unit-shadow: var(--shadow-2);">
+            <span class="unit-token-head"><span class="unit-token-name">shadow-2</span><span class="unit-token-value">2</span></span>
+            <span class="unit-shadow-preview" aria-hidden="true"></span>
+          </li>
+          <li class="unit-token-card" style="--unit-shadow: var(--shadow-3);">
+            <span class="unit-token-head"><span class="unit-token-name">shadow-3</span><span class="unit-token-value">3</span></span>
+            <span class="unit-shadow-preview" aria-hidden="true"></span>
+          </li>
+          <li class="unit-token-card" style="--unit-shadow: var(--shadow-4);">
+            <span class="unit-token-head"><span class="unit-token-name">shadow-4</span><span class="unit-token-value">4</span></span>
+            <span class="unit-shadow-preview" aria-hidden="true"></span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Gap</h2>
+      <div class="unit-panel">
+        <article class="unit-group">
+          <h3>Horizontal</h3>
+          <ul class="unit-token-list">
+            <li class="unit-token-card" style="--unit-gap: var(--spacing-gap-horizontal-4);">
+              <span class="unit-token-head"><span class="unit-token-name">gap-horizontal-4</span><span class="unit-token-value">4</span></span>
+              <span class="unit-gap-preview" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-gap: var(--spacing-gap-horizontal-8);">
+              <span class="unit-token-head"><span class="unit-token-name">gap-horizontal-8</span><span class="unit-token-value">8</span></span>
+              <span class="unit-gap-preview" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-gap: var(--spacing-gap-horizontal-16);">
+              <span class="unit-token-head"><span class="unit-token-name">gap-horizontal-16</span><span class="unit-token-value">16</span></span>
+              <span class="unit-gap-preview" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-gap: var(--spacing-gap-horizontal-20);">
+              <span class="unit-token-head"><span class="unit-token-name">gap-horizontal-20</span><span class="unit-token-value">20</span></span>
+              <span class="unit-gap-preview" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-gap: var(--spacing-gap-horizontal-24);">
+              <span class="unit-token-head"><span class="unit-token-name">gap-horizontal-24</span><span class="unit-token-value">24</span></span>
+              <span class="unit-gap-preview" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-gap: var(--spacing-gap-horizontal-32);">
+              <span class="unit-token-head"><span class="unit-token-name">gap-horizontal-32</span><span class="unit-token-value">32</span></span>
+              <span class="unit-gap-preview" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-gap: var(--spacing-gap-horizontal-40);">
+              <span class="unit-token-head"><span class="unit-token-name">gap-horizontal-40</span><span class="unit-token-value">40</span></span>
+              <span class="unit-gap-preview" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-gap: var(--spacing-gap-horizontal-60);">
+              <span class="unit-token-head"><span class="unit-token-name">gap-horizontal-60</span><span class="unit-token-value">60</span></span>
+              <span class="unit-gap-preview" aria-hidden="true"></span>
+            </li>
+          </ul>
+        </article>
+
+        <article class="unit-group">
+          <h3>Vertical</h3>
+          <ul class="unit-token-list">
+            <li class="unit-token-card" style="--unit-gap: var(--spacing-gap-vertical-4);">
+              <span class="unit-token-head"><span class="unit-token-name">gap-vertical-4</span><span class="unit-token-value">4</span></span>
+              <span class="unit-gap-preview is-vertical" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-gap: var(--spacing-gap-vertical-8);">
+              <span class="unit-token-head"><span class="unit-token-name">gap-vertical-8</span><span class="unit-token-value">8</span></span>
+              <span class="unit-gap-preview is-vertical" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-gap: var(--spacing-gap-vertical-16);">
+              <span class="unit-token-head"><span class="unit-token-name">gap-vertical-16</span><span class="unit-token-value">16</span></span>
+              <span class="unit-gap-preview is-vertical" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-gap: var(--spacing-gap-vertical-20);">
+              <span class="unit-token-head"><span class="unit-token-name">gap-vertical-20</span><span class="unit-token-value">20</span></span>
+              <span class="unit-gap-preview is-vertical" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-gap: var(--spacing-gap-vertical-24);">
+              <span class="unit-token-head"><span class="unit-token-name">gap-vertical-24</span><span class="unit-token-value">24</span></span>
+              <span class="unit-gap-preview is-vertical" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-gap: var(--spacing-gap-vertical-32);">
+              <span class="unit-token-head"><span class="unit-token-name">gap-vertical-32</span><span class="unit-token-value">32</span></span>
+              <span class="unit-gap-preview is-vertical" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-gap: var(--spacing-gap-vertical-40);">
+              <span class="unit-token-head"><span class="unit-token-name">gap-vertical-40</span><span class="unit-token-value">40</span></span>
+              <span class="unit-gap-preview is-vertical" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-gap: var(--spacing-gap-vertical-60);">
+              <span class="unit-token-head"><span class="unit-token-name">gap-vertical-60</span><span class="unit-token-value">60</span></span>
+              <span class="unit-gap-preview is-vertical" aria-hidden="true"></span>
+            </li>
+          </ul>
+        </article>
+      </div>
+      </section>
+    </div>
+
+    <div class="ds-tabpanel" id="tab-component" role="tabpanel" aria-labelledby="tab-button-component" data-tab-panel="component" hidden>
+      <section>
+        <h2>Component</h2>
+        <div class="ds-placeholder">
+          <h3>Component Library</h3>
+          <p>Buttons, inputs, cards, and other UI components can be organized in this tab.</p>
+        </div>
+      </section>
+    </div>
+    <div class="ds-tabpanel" id="tab-module" role="tabpanel" aria-labelledby="tab-button-module" data-tab-panel="module" hidden>
+      <section>
+        <h2>Module</h2>
+        <div class="ds-placeholder">
+          <h3>Module Library</h3>
+          <p>Composed modules built from multiple components can be structured in this tab.</p>
+        </div>
+      </section>
+    </div>
+
+  <script>
+    const tabs = document.querySelectorAll(".ds-tab");
+    const panels = document.querySelectorAll("[data-tab-panel]");
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const target = tab.dataset.tabTarget;
+
+        tabs.forEach((button) => {
+          const isActive = button === tab;
+          button.classList.toggle("is-active", isActive);
+          button.setAttribute("aria-selected", String(isActive));
+        });
+
+        panels.forEach((panel) => {
+          panel.hidden = panel.dataset.tabPanel !== target;
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
