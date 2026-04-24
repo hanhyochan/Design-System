@@ -317,12 +317,10 @@ section > div {
     table-layout: fixed;
 }
 
-.button-table-category-col {
+.button-table th:first-child,
+.button-table th:not(:first-child),
+.button-table td {
     width: 10%;
-}
-
-.button-table-size-col {
-    width: 30%;
 }
 
 .button-table th:not(:first-child),

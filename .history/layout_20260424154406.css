@@ -21,7 +21,6 @@ main {
 /* page header */
 .ds-header,
 .ds-title-wrap,
-.ds-meta,
 .ds-tabpanel,
 .ds-placeholder {
     display: flex;
@@ -39,11 +38,6 @@ main {
     gap: var(--spacing-gap-horizontal-24);
 }
 
-.ds-meta {
-    align-items: flex-end;
-    gap: var(--spacing-gap-vertical-4);
-}
-
 .ds-title {
     margin: var(--spacing-0);
     color: var(--color-label-strong);
@@ -56,14 +50,6 @@ main {
     color: var(--color-label-alternative);
     font-size: var(--font-size-12);
     font-weight: var(--font-weight-500);
-    line-height: var(--line-height-16);
-    white-space: nowrap;
-}
-
-.ds-reference {
-    color: var(--color-label-assistive);
-    font-size: var(--font-size-11);
-    font-weight: var(--font-weight-400);
     line-height: var(--line-height-16);
     white-space: nowrap;
 }
@@ -290,60 +276,6 @@ section > div {
 
 .type-table p {
     margin: var(--spacing-0);
-}
-
-/* component button preview */
-.button-panel,
-.button-category,
-.button-type-group,
-.button-table-example {
-    display: flex;
-    flex-direction: column;
-}
-
-.button-panel {
-    gap: var(--spacing-gap-vertical-40);
-}
-
-.button-category {
-    gap: var(--spacing-gap-vertical-24);
-}
-
-.button-type-group {
-    gap: var(--spacing-gap-vertical-20);
-}
-
-.button-table {
-    table-layout: fixed;
-}
-
-.button-table-category-col {
-    width: 10%;
-}
-
-.button-table-size-col {
-    width: 30%;
-}
-
-.button-table th:not(:first-child),
-.button-table td {
-    text-align: center;
-}
-
-.button-table td:last-child {
-    min-width: 0;
-}
-
-.button-table-example {
-    align-items: center;
-    gap: var(--spacing-gap-vertical-8);
-}
-
-.button-table-example span {
-    color: var(--color-label-alternative);
-    font-size: var(--font-size-12);
-    font-weight: var(--font-weight-500);
-    line-height: var(--line-height-16);
 }
 
 /* foundation unit preview */
@@ -718,10 +650,6 @@ section > div {
 @media (max-width: 640px) {
     .ds-title-wrap {
         flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .ds-meta {
         align-items: flex-start;
     }
 

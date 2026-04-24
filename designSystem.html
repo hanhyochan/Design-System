@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="./system/foundation/decorate.css" />
   <link rel="stylesheet" href="./system/foundation/typography.css" />
   <link rel="stylesheet" href="./layout.css" />
+  <link rel="stylesheet" href="./system/component/button.css" />
 </head>
 
 <body>
@@ -17,7 +18,10 @@
     <header class="ds-header">
       <div class="ds-title-wrap">
         <strong class="ds-title">Hyo_DesignSystem</strong>
-        <span class="ds-author">Author. Hanhyochan</span>
+        <div class="ds-meta">
+          <span class="ds-author">Author. Hanhyochan</span>
+          <span class="ds-reference">Reference design systems: Wanted, Toss, Gmarket</span>
+        </div>
       </div>
       <div class="ds-tabs" role="tablist" aria-label="Design system categories">
         <button class="ds-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="tab-foundation"
@@ -932,10 +936,53 @@
     <div class="ds-tabpanel" id="tab-component" role="tabpanel" aria-labelledby="tab-button-component"
       data-tab-panel="component" hidden>
       <section>
-        <h2>Component</h2>
-        <div class="ds-placeholder">
-          <h3>Component Library</h3>
-          <p>Buttons, inputs, cards, and other UI components can be organized in this tab.</p>
+        <h2>Buttons</h2>
+        <div class="button-panel">
+          <article class="button-category" aria-labelledby="action-button-title">
+            <h3 id="action-button-title">Action Button</h3>
+            <div class="button-type-group">
+              <h4>Filled</h4>
+              <table class="type-table button-table">
+                <colgroup>
+                  <col class="button-table-category-col" />
+                  <col class="button-table-size-col" />
+                  <col class="button-table-size-col" />
+                  <col class="button-table-size-col" />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col">&#48516;&#47448;</th>
+                    <th scope="col">Small</th>
+                    <th scope="col">Medium (Default)</th>
+                    <th scope="col">Large</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Filled Button</th>
+                    <td>
+                      <div class="button-table-example">
+                        <button class="button-filled-primary-small" type="button">Button</button>
+                        <span>Filled Primary Small</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="button-table-example">
+                        <button class="button-filled-primary-medium" type="button">Button</button>
+                        <span>Filled Primary Medium</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="button-table-example">
+                        <button class="button-filled-primary-large" type="button">Button</button>
+                        <span>Filled Primary Large</span>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
         </div>
       </section>
     </div>
