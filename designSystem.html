@@ -922,9 +922,7 @@
         <div class="icon-panel">
           <article class="icon-intro">
             <p class="icon-description">&#49884;&#49828;&#53596;&#32;&#50500;&#51060;&#53080;&#51008;&#32;&#50;&#52;&#112;&#120;&#47484;&#32;&#44592;&#51456;&#32;&#49324;&#51060;&#51592;&#47196;&#32;&#51221;&#51032;&#54616;&#47728;&#44;&#32;&#51452;&#50836;&#32;&#53356;&#44592;&#47196;&#32;&#49;&#50;&#112;&#120;&#44;&#32;&#49;&#54;&#112;&#120;&#44;&#32;&#50;&#48;&#112;&#120;&#44;&#32;&#50;&#52;&#112;&#120;&#44;&#32;&#51;&#50;&#112;&#120;&#44;&#32;&#52;&#48;&#112;&#120;&#47484;&#32;&#49324;&#50857;&#54620;&#45796;&#46;</p>
-            <div class="icon-size-board">
-              <ul class="icon-size-list" id="foundation-icon-sizes" aria-label="Icon size scale"></ul>
-            </div>
+            <ul class="icon-size-list" id="foundation-icon-sizes" aria-label="Icon size scale"></ul>
           </article>
           <div class="icon-catalog" id="foundation-icon-groups" aria-live="polite"></div>
         </div>
@@ -1193,19 +1191,18 @@
 
           iconFiles.forEach((iconFile) => {
             const iconName = getIconBaseName(iconFile);
-            const card = document.createElement("li");
-            card.className = "icon-card";
+            const item = document.createElement("li");
+            item.className = "icon-item";
 
-            const media = document.createElement("span");
-            media.className = "icon-card-media";
-            media.append(createIconImage(iconFile, iconName));
+            const image = createIconImage(iconFile, iconName);
+            image.className = "icon-item-image";
 
             const name = document.createElement("span");
-            name.className = "icon-card-name";
+            name.className = "icon-item-name";
             name.textContent = iconName;
 
-            card.append(media, name);
-            grid.append(card);
+            item.append(image, name);
+            grid.append(item);
           });
 
           head.append(title, count);
