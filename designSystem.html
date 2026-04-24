@@ -916,6 +916,19 @@
           </article>
         </div>
       </section>
+
+      <section>
+        <h2>Icons</h2>
+        <div class="icon-panel">
+          <article class="icon-intro">
+            <p class="icon-description">&#49884;&#49828;&#53596;&#32;&#50500;&#51060;&#53080;&#51008;&#32;&#50;&#52;&#112;&#120;&#47484;&#32;&#44592;&#51456;&#32;&#49324;&#51060;&#51592;&#47196;&#32;&#51221;&#51032;&#54616;&#47728;&#44;&#32;&#51452;&#50836;&#32;&#53356;&#44592;&#47196;&#32;&#49;&#50;&#112;&#120;&#44;&#32;&#49;&#54;&#112;&#120;&#44;&#32;&#50;&#48;&#112;&#120;&#44;&#32;&#50;&#52;&#112;&#120;&#44;&#32;&#51;&#50;&#112;&#120;&#44;&#32;&#52;&#48;&#112;&#120;&#47484;&#32;&#49324;&#50857;&#54620;&#45796;&#46;</p>
+            <div class="icon-size-board">
+              <ul class="icon-size-list" id="foundation-icon-sizes" aria-label="Icon size scale"></ul>
+            </div>
+          </article>
+          <div class="icon-catalog" id="foundation-icon-groups" aria-live="polite"></div>
+        </div>
+      </section>
     </div>
 
     <div class="ds-tabpanel" id="tab-component" role="tabpanel" aria-labelledby="tab-button-component"
@@ -939,9 +952,102 @@
       </section>
     </div>
 
+    <script src="./system/foundation/icons.js"></script>
     <script>
       const tabs = document.querySelectorAll(".ds-tab");
       const panels = document.querySelectorAll("[data-tab-panel]");
+      const foundationIconSizes = document.getElementById("foundation-icon-sizes");
+      const foundationIconGroups = document.getElementById("foundation-icon-groups");
+      const foundationIconNames = Array.isArray(window.foundationIconNames) ? [...window.foundationIconNames] : [];
+      const foundationIconSourceBase = "./system/foundation/icons/";
+      const foundationIconPreviewSizes = [12, 16, 20, 24, 32, 40];
+      const foundationIconBrandExactNames = new Set(["ar"]);
+      const foundationIconCategoryOrder = [
+        "navigation",
+        "feedback_status",
+        "communication",
+        "finance",
+        "data_document",
+        "user_profile",
+        "media_device",
+        "place_travel",
+        "lifestyle_food",
+        "health_care",
+        "nature_weather",
+        "layout_shape",
+        "object_tool",
+        "brand_symbol",
+      ];
+      const foundationIconCategoryRules = [
+        {
+          key: "brand_symbol",
+          prefixes: ["apple", "instargram", "spot_c_circle_blue"],
+        },
+        {
+          key: "communication",
+          prefixes: ["chat_", "open_chat", "call", "phone", "mail", "envelope", "fax", "paper_plane", "share", "link", "subtitle", "loudspeaker", "mic", "headphone", "letter"],
+        },
+        {
+          key: "finance",
+          prefixes: ["account_", "bank", "card_", "coin", "money", "loan", "dollar", "won", "percent", "point", "transfer", "cashback", "dutchpay", "donation", "piggybank", "credit_grade", "graph_", "chart_", "calculator", "investment", "tossbank", "tmoney", "receipt", "feed_money", "tab_transfer_active"],
+        },
+        {
+          key: "data_document",
+          prefixes: ["barcode", "qr_", "qr_code", "scan", "document_", "folder", "file_import", "excel", "code", "copy", "cloud_download", "printer", "memo", "table_", "filter", "text", "textline", "terminal", "quotation"],
+        },
+        {
+          key: "navigation",
+          prefixes: ["arrow_", "chevron_", "keyboard_arrow", "wide_arrow", "up_left_arrow", "enter", "exit", "open", "out", "order", "navigation", "refresh", "repeat", "sync", "shuffle", "search", "zoom"],
+        },
+        {
+          key: "feedback_status",
+          prefixes: ["alarm", "bell", "check", "question", "info", "warning", "exclamation", "x", "eye", "shield", "security", "lock", "unlock", "siren", "prohibition", "on_off", "flash", "lightning", "service_bell", "step_check_off", "progress"],
+        },
+        {
+          key: "user_profile",
+          prefixes: ["user_", "man", "baby", "heart", "home"],
+        },
+        {
+          key: "media_device",
+          prefixes: ["camera", "video", "picture", "photo", "play", "pause", "stop", "sound", "movie", "broadcast", "computer"],
+        },
+        {
+          key: "place_travel",
+          prefixes: ["map", "pin", "earth", "europe", "compass", "road", "carrier", "car", "bike", "motorcycle", "scooter", "taxi", "plane", "ship", "yacht", "subway", "train", "antenna", "building", "church", "government", "national_assembly"],
+        },
+        {
+          key: "lifestyle_food",
+          prefixes: ["shopping", "cart", "store", "clothes", "cosmetics", "furniture", "shoes", "gift", "ticket", "food", "beer", "bread", "carrot", "coffee", "chicken", "tissue", "spoon_chopsticks", "folk_knife", "sports", "game", "basketball", "golf", "box"],
+        },
+        {
+          key: "health_care",
+          prefixes: ["hospital", "pharmacy", "pill", "mask", "stethoscope", "syringe", "virus", "tooth", "lung", "heart_disease", "heart_real"],
+        },
+        {
+          key: "nature_weather",
+          prefixes: ["sun", "sunrise", "moon", "rainbow", "tree", "waterdrop", "waterworks", "snow", "fog", "umbrella", "palmtree", "space", "gas", "oil"],
+        },
+        {
+          key: "layout_shape",
+          prefixes: ["circle", "square", "rectangle", "triangle", "dots", "line", "shapes", "flat_group", "four_square", "horizontal_line", "vertically", "hashtag", "at", "equal", "plus", "minus", "union", "underline", "italic", "q_rounded", "tab_"],
+        },
+      ];
+      const foundationIconCategoryLabels = {
+        brand_symbol: "Brand & Symbol",
+        communication: "Communication",
+        finance: "Finance",
+        data_document: "Data & Document",
+        navigation: "Navigation",
+        feedback_status: "Feedback & Status",
+        user_profile: "User & Profile",
+        media_device: "Media & Device",
+        place_travel: "Place & Travel",
+        lifestyle_food: "Lifestyle & Food",
+        health_care: "Health & Care",
+        nature_weather: "Nature & Weather",
+        layout_shape: "Layout & Shape",
+        object_tool: "Object & Tool",
+      };
 
       tabs.forEach((tab) => {
         tab.addEventListener("click", () => {
@@ -958,6 +1064,160 @@
           });
         });
       });
+
+      const getIconBaseName = (iconFile) => iconFile.replace(/\.svg$/i, "");
+
+      const getIconCategoryKey = (iconFile) => {
+        const baseName = getIconBaseName(iconFile).replace(/^icon_/, "");
+
+        if (/^u\d+/i.test(baseName)) {
+          return "brand_symbol";
+        }
+
+        if (foundationIconBrandExactNames.has(baseName)) {
+          return "brand_symbol";
+        }
+
+        const category = foundationIconCategoryRules.find(({ prefixes }) =>
+          prefixes.some((prefix) => baseName.startsWith(prefix)),
+        );
+
+        if (category) {
+          return category.key;
+        }
+
+        return "object_tool";
+      };
+
+      const getIconCategoryLabel = (categoryKey) => foundationIconCategoryLabels[categoryKey] ?? "Object & Tool";
+
+      const createIconImage = (iconFile, altText) => {
+        const image = document.createElement("img");
+        image.src = foundationIconSourceBase + iconFile;
+        image.width = 24;
+        image.height = 24;
+        image.loading = "lazy";
+        image.decoding = "async";
+        image.alt = altText;
+        return image;
+      };
+
+      const renderIconSizePreview = () => {
+        if (!foundationIconSizes) {
+          return;
+        }
+
+        const fragment = document.createDocumentFragment();
+
+        foundationIconPreviewSizes.forEach((size) => {
+          const item = document.createElement("li");
+          item.className = "icon-size-item";
+          item.style.setProperty("--icon-size", `${size}px`);
+
+          const label = document.createElement("span");
+          label.className = "icon-size-label";
+          label.textContent = `${size}px`;
+
+          const frame = document.createElement("span");
+          frame.className = "icon-size-frame";
+
+          const box = document.createElement("span");
+          box.className = "icon-size-box";
+          box.append(createIconImage("icon_search.svg", `icon_search ${size}px preview`));
+
+          frame.append(box);
+          item.append(label, frame);
+          fragment.append(item);
+        });
+
+        foundationIconSizes.replaceChildren(fragment);
+      };
+
+      const renderIconCatalog = () => {
+        if (!foundationIconGroups) {
+          return;
+        }
+
+        if (!foundationIconNames.length) {
+          const emptyState = document.createElement("p");
+          emptyState.className = "icon-description";
+          emptyState.textContent = "\uC544\uC774\uCF58 \uB370\uC774\uD130\uB97C \uBD88\uB7EC\uC624\uC9C0 \uBABB\uD588\uC2B5\uB2C8\uB2E4.";
+          foundationIconGroups.replaceChildren(emptyState);
+          return;
+        }
+
+        const groupedIcons = foundationIconNames
+          .slice()
+          .sort((left, right) => left.localeCompare(right))
+          .reduce((groups, iconFile) => {
+            const groupKey = getIconCategoryKey(iconFile);
+
+            if (!groups.has(groupKey)) {
+              groups.set(groupKey, []);
+            }
+
+            groups.get(groupKey).push(iconFile);
+            return groups;
+          }, new Map());
+
+        const groupEntries = Array.from(groupedIcons.entries()).sort(([leftKey], [rightKey]) => {
+          const leftIndex = foundationIconCategoryOrder.indexOf(leftKey);
+          const rightIndex = foundationIconCategoryOrder.indexOf(rightKey);
+
+          if (leftIndex !== rightIndex) {
+            return leftIndex - rightIndex;
+          }
+
+          return getIconCategoryLabel(leftKey).localeCompare(getIconCategoryLabel(rightKey));
+        });
+
+        const fragment = document.createDocumentFragment();
+
+        groupEntries.forEach(([groupKey, iconFiles]) => {
+          const group = document.createElement("article");
+          group.className = "icon-group";
+
+          const head = document.createElement("div");
+          head.className = "icon-group-head";
+
+          const title = document.createElement("h3");
+          title.className = "icon-group-title";
+          title.textContent = getIconCategoryLabel(groupKey);
+
+          const count = document.createElement("span");
+          count.className = "icon-group-count";
+          count.textContent = `${iconFiles.length} icons`;
+
+          const grid = document.createElement("ul");
+          grid.className = "icon-grid";
+
+          iconFiles.forEach((iconFile) => {
+            const iconName = getIconBaseName(iconFile);
+            const card = document.createElement("li");
+            card.className = "icon-card";
+
+            const media = document.createElement("span");
+            media.className = "icon-card-media";
+            media.append(createIconImage(iconFile, iconName));
+
+            const name = document.createElement("span");
+            name.className = "icon-card-name";
+            name.textContent = iconName;
+
+            card.append(media, name);
+            grid.append(card);
+          });
+
+          head.append(title, count);
+          group.append(head, grid);
+          fragment.append(group);
+        });
+
+        foundationIconGroups.replaceChildren(fragment);
+      };
+
+      renderIconSizePreview();
+      renderIconCatalog();
     </script>
 </body>
 
