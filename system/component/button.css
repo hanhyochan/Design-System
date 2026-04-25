@@ -1,61 +1,62 @@
-/* filled primary button */
-.button-filled-primary-small,
-.button-filled-primary-medium,
-.button-filled-primary-large {
-  border: 0;
-  border-radius: 9999px;
-  background: #0066ff;
-  color: #ffffff;
+/* reusable button base */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: 0;
+  margin: 0;
+  font-family: inherit;
   font-weight: 500;
   text-align: center;
   white-space: nowrap;
+  vertical-align: top;
+  appearance: none;
   cursor: pointer;
 }
 
-.button-filled-primary-small {
+/* button size */
+.btn_small,
+.btn_primary_filled_small {
   min-height: 32px;
   padding: 0 16px;
   font-size: 12px;
   line-height: 16px;
 }
 
-.button-filled-primary-medium {
+.btn_medium,
+.btn_primary_filled_medium {
   min-height: 40px;
   padding: 0 24px;
   font-size: 14px;
   line-height: 20px;
 }
 
-.button-filled-primary-large {
+.btn_large,
+.btn_primary_filled_large {
   min-height: 48px;
   padding: 0 24px;
   font-size: 14px;
   line-height: 20px;
 }
 
-.button-filled-primary-small:hover,
-.button-filled-primary-medium:hover,
-.button-filled-primary-large:hover {
-  background: #005eeb;
+/* button style */
+.btn_filled_primary,
+.btn_primary_filled_small,
+.btn_primary_filled_medium,
+.btn_primary_filled_large {
+  border: 0;
+  border-radius: 0;
+  background: var(--color-blue-50);
+  color: var(--color-common-100);
 }
 
-.button-filled-primary-small:active,
-.button-filled-primary-medium:active,
-.button-filled-primary-large:active {
-  background: #003e9c;
+/* button state preview */
+.is_hover_preview {
+  background: var(--color-blue-40);
 }
 
-.button-filled-primary-small:focus-visible,
-.button-filled-primary-medium:focus-visible,
-.button-filled-primary-large:focus-visible {
-  outline: 4px solid rgb(0 102 255 / 18%);
-}
-
-.button-filled-primary-small:disabled,
-.button-filled-primary-medium:disabled,
-.button-filled-primary-large:disabled {
-  background: #e5e7eb;
-  color: #9ca3af;
-  cursor: not-allowed;
-  pointer-events: none;
+.is_disabled_preview {
+  background: var(--color-interaction-disable);
+  color: var(--color-label-disable);
 }
