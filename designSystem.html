@@ -941,94 +941,89 @@
         <h2>Buttons</h2>
         <div class="button-panel">
           <article class="button-category" aria-labelledby="action-button-title">
-            <h3 id="action-button-title">Action Button</h3>
-            <div class="button-type-group">
+            <div class="button-category-head">
+              <h3 id="action-button-title">Action Button</h3>
               <h4>Primary Button</h4>
-              <h5 class="button-variant-title">Filled</h5>
-              <table class="type-table button-table">
-                <colgroup>
-                  <col class="button-table-category-col" />
-                  <col class="button-table-size-col" />
-                  <col class="button-table-size-col" />
-                  <col class="button-table-size-col" />
-                </colgroup>
-                <thead>
-                  <tr>
-                    <th scope="col">&#48516;&#47448;</th>
-                    <th scope="col">Small</th>
-                    <th scope="col">Medium (Default)</th>
-                    <th scope="col">Large</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">Default</th>
-                    <td>
-                      <div class="button-table-example">
-                        <button class="btn btn_filled_primary btn_small btn_primary_filled_small"
-                          type="button">Button</button>
-                        <span>btn_primary_filled_small</span>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="button-table-example">
-                        <button class="btn btn_filled_primary btn_medium btn_primary_filled_medium"
-                          type="button">Button</button>
-                        <span>btn_primary_filled_medium</span>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="button-table-example">
-                        <button class="btn btn_filled_primary btn_large btn_primary_filled_large"
-                          type="button">Button</button>
-                        <span>btn_primary_filled_large</span>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">hover</th>
-                    <td>
-                      <div class="button-table-example">
-                        <button class="btn btn_filled_primary btn_small btn_primary_filled_small is_hover_preview"
-                          type="button">Button</button>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="button-table-example">
-                        <button class="btn btn_filled_primary btn_medium btn_primary_filled_medium is_hover_preview"
-                          type="button">Button</button>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="button-table-example">
-                        <button class="btn btn_filled_primary btn_large btn_primary_filled_large is_hover_preview"
-                          type="button">Button</button>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">disabled</th>
-                    <td>
-                      <div class="button-table-example">
-                        <button class="btn btn_filled_primary btn_small btn_primary_filled_small is_disabled_preview"
-                          type="button">Button</button>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="button-table-example">
-                        <button class="btn btn_filled_primary btn_medium btn_primary_filled_medium is_disabled_preview"
-                          type="button">Button</button>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="button-table-example">
-                        <button class="btn btn_filled_primary btn_large btn_primary_filled_large is_disabled_preview"
-                          type="button">Button</button>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+            </div>
+            <div class="button-variant-stack">
+              <div class="button-variant-group">
+                <h5 class="button-variant-title">Filled</h5>
+                <table class="type-table button-table">
+                  <colgroup>
+                    <col class="button-table-category-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">&#48516;&#47448;</th>
+                      <th scope="col">Small</th>
+                      <th scope="col">Medium (Default)</th>
+                      <th scope="col">Large</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Default</th>
+                      <td><button class="btn btn_primary_filled_small" type="button">Button</button></td>
+                      <td><button class="btn btn_primary_filled_medium" type="button">Button</button></td>
+                      <td><button class="btn btn_primary_filled_large" type="button">Button</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">hover</th>
+                      <td><button class="btn btn_primary_filled_small is_hover_preview" type="button">Button</button></td>
+                      <td><button class="btn btn_primary_filled_medium is_hover_preview" type="button">Button</button></td>
+                      <td><button class="btn btn_primary_filled_large is_hover_preview" type="button">Button</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">disabled</th>
+                      <td><button class="btn btn_primary_filled_small is_disabled_preview" type="button">Button</button></td>
+                      <td><button class="btn btn_primary_filled_medium is_disabled_preview" type="button">Button</button></td>
+                      <td><button class="btn btn_primary_filled_large is_disabled_preview" type="button">Button</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="button-variant-group">
+                <h5 class="button-variant-title">Filled+icon</h5>
+                <table class="type-table button-table">
+                  <colgroup>
+                    <col class="button-table-category-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">&#48516;&#47448;</th>
+                      <th scope="col">Small</th>
+                      <th scope="col">Medium (Default)</th>
+                      <th scope="col">Large</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Default</th>
+                      <td><button class="btn btn_primary_filled_icon_small" type="button">Button</button></td>
+                      <td><button class="btn btn_primary_filled_icon_medium" type="button">Button</button></td>
+                      <td><button class="btn btn_primary_filled_icon_large" type="button">Button</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">hover</th>
+                      <td><button class="btn btn_primary_filled_icon_small is_hover_preview" type="button">Button</button></td>
+                      <td><button class="btn btn_primary_filled_icon_medium is_hover_preview" type="button">Button</button></td>
+                      <td><button class="btn btn_primary_filled_icon_large is_hover_preview" type="button">Button</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">disabled</th>
+                      <td><button class="btn btn_primary_filled_icon_small is_disabled_preview" type="button">Button</button></td>
+                      <td><button class="btn btn_primary_filled_icon_medium is_disabled_preview" type="button">Button</button></td>
+                      <td><button class="btn btn_primary_filled_icon_large is_disabled_preview" type="button">Button</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </article>
         </div>

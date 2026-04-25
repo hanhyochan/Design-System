@@ -1,61 +1,156 @@
-/* reusable button base */
+/* 공통 */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  min-width: 0;
-  margin: 0;
   font-family: inherit;
   font-weight: 500;
-  text-align: center;
   white-space: nowrap;
-  vertical-align: top;
   appearance: none;
   cursor: pointer;
 }
 
-/* button size */
-.btn_small,
+/* filled */
+/* btn_primary_filled_small */
 .btn_primary_filled_small {
   min-height: 32px;
   padding: 0 16px;
   font-size: 12px;
   line-height: 16px;
-}
-
-.btn_medium,
-.btn_primary_filled_medium {
-  min-height: 40px;
-  padding: 0 24px;
-  font-size: 14px;
-  line-height: 20px;
-}
-
-.btn_large,
-.btn_primary_filled_large {
-  min-height: 48px;
-  padding: 0 24px;
-  font-size: 14px;
-  line-height: 20px;
-}
-
-/* button style */
-.btn_filled_primary,
-.btn_primary_filled_small,
-.btn_primary_filled_medium,
-.btn_primary_filled_large {
   border: 0;
   border-radius: 0;
   background: var(--color-blue-50);
   color: var(--color-common-100);
 }
 
-/* button state preview */
+/* btn_primary_filled_medium */
+.btn_primary_filled_medium {
+  min-height: 40px;
+  padding: 0 24px;
+  font-size: 14px;
+  line-height: 20px;
+  border: 0;
+  border-radius: 0;
+  background: var(--color-blue-50);
+  color: var(--color-common-100);
+}
+
+/* btn_primary_filled_large */
+.btn_primary_filled_large {
+  min-height: 48px;
+  padding: 0 24px;
+  font-size: 16px;
+  line-height: 20px;
+  border: 0;
+  border-radius: 0;
+  background: var(--color-blue-50);
+  color: var(--color-common-100);
+}
+
+/* filled+icon */
+/* btn_primary_filled_icon_small */
+.btn_primary_filled_icon_small {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  padding: 0 16px;
+  font-size: 12px;
+  line-height: 16px;
+  gap: 8px;
+  border: 0;
+  border-radius: 0;
+  background: var(--color-blue-50);
+  color: var(--color-common-100);
+}
+
+.btn_primary_filled_icon_small::before {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+  content: "";
+  background: currentColor;
+  mask-image: url("../foundation/icons/icon_alarm.svg");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  -webkit-mask-image: url("../foundation/icons/icon_alarm.svg");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+}
+
+/* btn_primary_filled_icon_medium */
+.btn_primary_filled_icon_medium {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 24px;
+  font-size: 14px;
+  line-height: 20px;
+  gap: 8px;
+  border: 0;
+  border-radius: 0;
+  background: var(--color-blue-50);
+  color: var(--color-common-100);
+}
+
+.btn_primary_filled_icon_medium::before {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  content: "";
+  background: currentColor;
+  mask-image: url("../foundation/icons/icon_alarm.svg");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  -webkit-mask-image: url("../foundation/icons/icon_alarm.svg");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+}
+
+/* btn_primary_filled_icon_large */
+.btn_primary_filled_icon_large {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 24px;
+  font-size: 16px;
+  line-height: 20px;
+  gap: 8px;
+  border: 0;
+  border-radius: 0;
+  background: var(--color-blue-50);
+  color: var(--color-common-100);
+}
+
+.btn_primary_filled_icon_large::before {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  content: "";
+  background: currentColor;
+  mask-image: url("../foundation/icons/icon_alarm.svg");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  -webkit-mask-image: url("../foundation/icons/icon_alarm.svg");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+}
+
+/* btn_primary_filled_hover */
 .is_hover_preview {
   background: var(--color-blue-40);
 }
 
+/* btn_primary_filled_disabled */
 .is_disabled_preview {
   background: var(--color-interaction-disable);
   color: var(--color-label-disable);
