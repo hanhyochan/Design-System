@@ -150,6 +150,19 @@
   background: var(--color-blue-40);
 }
 
+/* btn_primary_filled_shadow */
+.is_shadow_2_preview {
+  box-shadow: var(--shadow-2);
+}
+
+.is_shadow_3_preview {
+  box-shadow: var(--shadow-3);
+}
+
+.is_shadow_4_preview {
+  box-shadow: var(--shadow-4);
+}
+
 /* btn_primary_filled_disabled */
 .is_disabled_preview {
   background: var(--color-interaction-disable);
