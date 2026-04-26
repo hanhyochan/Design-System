@@ -1,8 +1,11 @@
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M3.85938 4.05469H20.1414" stroke="#B1B8C1" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-<path d="M3.85938 19.9443H20.1414" stroke="#B1B8C1" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-<path d="M7.71875 14.6475H20.1418" stroke="#B1B8C1" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-<path d="M3.85938 9.35156H16.2824" stroke="#B1B8C1" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-<path d="M18.2412 11.2266C19.2767 11.2266 20.1162 10.3871 20.1162 9.35156C20.1162 8.31603 19.2767 7.47656 18.2412 7.47656C17.2057 7.47656 16.3662 8.31603 16.3662 9.35156C16.3662 10.3871 17.2057 11.2266 18.2412 11.2266Z" stroke="#B1B8C1" stroke-width="1.9"/>
-<path d="M5.75 16.5225C6.78553 16.5225 7.625 15.683 7.625 14.6475C7.625 13.6119 6.78553 12.7725 5.75 12.7725C4.71447 12.7725 3.875 13.6119 3.875 14.6475C3.875 15.683 4.71447 16.5225 5.75 16.5225Z" stroke="#B1B8C1" stroke-width="1.9"/>
+﻿<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M3.85938 4.05469H20.1414" stroke="#000000" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+<path d="M3.85938 19.9443H20.1414" stroke="#000000" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+<path d="M7.71875 14.6475H20.1418" stroke="#000000" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+<path d="M3.85938 9.35156H16.2824" stroke="#000000" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+<path d="M18.2412 11.2266C19.2767 11.2266 20.1162 10.3871 20.1162 9.35156C20.1162 8.31603 19.2767 7.47656 18.2412 7.47656C17.2057 7.47656 16.3662 8.31603 16.3662 9.35156C16.3662 10.3871 17.2057 11.2266 18.2412 11.2266Z" stroke="#000000" stroke-width="1.9"/>
+<path d="M5.75 16.5225C6.78553 16.5225 7.625 15.683 7.625 14.6475C7.625 13.6119 6.78553 12.7725 5.75 12.7725C4.71447 12.7725 3.875 13.6119 3.875 14.6475C3.875 15.683 4.71447 16.5225 5.75 16.5225Z" stroke="#000000" stroke-width="1.9"/>
 </svg>
+
+
+
