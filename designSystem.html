@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="ko">
 
 <head>
@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="./layout.css" />
   <link rel="stylesheet" href="./system/component/button.css" />
   <link rel="stylesheet" href="./system/component/tab.css" />
+  <link rel="stylesheet" href="./system/component/text_input.css" />
 </head>
 
 <body>
@@ -2083,6 +2084,234 @@
           </article>
         </div>
       </section>
+      <section>
+        <h2>Text Input</h2>
+        <div class="button-panel">
+          <article class="button-category" aria-labelledby="text-input-title">
+            <div class="button-category-head">
+              <h3 id="text-input-title">Text Input</h3>
+            </div>
+            <div class="button-variant-stack">
+              <div class="button-variant-group">
+                <h5 class="button-variant-title">Normal</h5>
+                <table class="type-table button-table">
+                  <colgroup>
+                    <col class="button-table-category-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">&#48516;&#47448;</th>
+                      <th scope="col">Small</th>
+                      <th scope="col">Medium (Default)</th>
+                      <th scope="col">Large</th>
+                      <th scope="col">XLarge</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Default</th>
+                      <td><label class="text_input text_input_default_small"><input type="text" aria-label="Normal Small Default text input" placeholder="Placeholder" /></label></td>
+                      <td><label class="text_input text_input_default_medium"><input type="text" aria-label="Normal Medium Default text input" placeholder="Placeholder" /></label></td>
+                      <td><label class="text_input text_input_default_large"><input type="text" aria-label="Normal Large Default text input" placeholder="Placeholder" /></label></td>
+                      <td><label class="text_input text_input_default_xlarge"><input type="text" aria-label="Normal XLarge Default text input" placeholder="Placeholder" /></label></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Focus</th>
+                      <td><label class="text_input text_input_focus_small"><input type="text" aria-label="Normal Small Focus text input" value="Focused" /></label></td>
+                      <td><label class="text_input text_input_focus_medium"><input type="text" aria-label="Normal Medium Focus text input" value="Focused" /></label></td>
+                      <td><label class="text_input text_input_focus_large"><input type="text" aria-label="Normal Large Focus text input" value="Focused" /></label></td>
+                      <td><label class="text_input text_input_focus_xlarge"><input type="text" aria-label="Normal XLarge Focus text input" value="Focused" /></label></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Complete</th>
+                      <td><label class="text_input text_input_complete_small"><input type="text" aria-label="Normal Small Complete text input" value="Completed" /></label></td>
+                      <td><label class="text_input text_input_complete_medium"><input type="text" aria-label="Normal Medium Complete text input" value="Completed" /></label></td>
+                      <td><label class="text_input text_input_complete_large"><input type="text" aria-label="Normal Large Complete text input" value="Completed" /></label></td>
+                      <td><label class="text_input text_input_complete_xlarge"><input type="text" aria-label="Normal XLarge Complete text input" value="Completed" /></label></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Error</th>
+                      <td><label class="text_input text_input_error_small"><input type="text" aria-label="Normal Small Error text input" value="Error" /></label></td>
+                      <td><label class="text_input text_input_error_medium"><input type="text" aria-label="Normal Medium Error text input" value="Error" /></label></td>
+                      <td><label class="text_input text_input_error_large"><input type="text" aria-label="Normal Large Error text input" value="Error" /></label></td>
+                      <td><label class="text_input text_input_error_xlarge"><input type="text" aria-label="Normal XLarge Error text input" value="Error" /></label></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Disabled</th>
+                      <td><label class="text_input text_input_disabled_small"><input type="text" aria-label="Normal Small Disabled text input" value="Disabled" disabled /></label></td>
+                      <td><label class="text_input text_input_disabled_medium"><input type="text" aria-label="Normal Medium Disabled text input" value="Disabled" disabled /></label></td>
+                      <td><label class="text_input text_input_disabled_large"><input type="text" aria-label="Normal Large Disabled text input" value="Disabled" disabled /></label></td>
+                      <td><label class="text_input text_input_disabled_xlarge"><input type="text" aria-label="Normal XLarge Disabled text input" value="Disabled" disabled /></label></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">View</th>
+                      <td><label class="text_input text_input_view_small"><input type="text" aria-label="Normal Small View text input" value="Read only" readonly /></label></td>
+                      <td><label class="text_input text_input_view_medium"><input type="text" aria-label="Normal Medium View text input" value="Read only" readonly /></label></td>
+                      <td><label class="text_input text_input_view_large"><input type="text" aria-label="Normal Large View text input" value="Read only" readonly /></label></td>
+                      <td><label class="text_input text_input_view_xlarge"><input type="text" aria-label="Normal XLarge View text input" value="Read only" readonly /></label></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Password</th>
+                      <td><label class="text_input text_input_password_small"><input type="password" aria-label="Normal Small Password text input" value="password" /></label></td>
+                      <td><label class="text_input text_input_password_medium"><input type="password" aria-label="Normal Medium Password text input" value="password" /></label></td>
+                      <td><label class="text_input text_input_password_large"><input type="password" aria-label="Normal Large Password text input" value="password" /></label></td>
+                      <td><label class="text_input text_input_password_xlarge"><input type="password" aria-label="Normal XLarge Password text input" value="password" /></label></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="button-variant-group">
+                <h5 class="button-variant-title">Rounded</h5>
+                <table class="type-table button-table">
+                  <colgroup>
+                    <col class="button-table-category-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">&#48516;&#47448;</th>
+                      <th scope="col">Small</th>
+                      <th scope="col">Medium (Default)</th>
+                      <th scope="col">Large</th>
+                      <th scope="col">XLarge</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Default</th>
+                      <td><label class="text_input text_input_rounded_default_small"><input type="text" aria-label="Rounded Small Default text input" placeholder="Placeholder" /></label></td>
+                      <td><label class="text_input text_input_rounded_default_medium"><input type="text" aria-label="Rounded Medium Default text input" placeholder="Placeholder" /></label></td>
+                      <td><label class="text_input text_input_rounded_default_large"><input type="text" aria-label="Rounded Large Default text input" placeholder="Placeholder" /></label></td>
+                      <td><label class="text_input text_input_rounded_default_xlarge"><input type="text" aria-label="Rounded XLarge Default text input" placeholder="Placeholder" /></label></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Focus</th>
+                      <td><label class="text_input text_input_rounded_focus_small"><input type="text" aria-label="Rounded Small Focus text input" value="Focused" /></label></td>
+                      <td><label class="text_input text_input_rounded_focus_medium"><input type="text" aria-label="Rounded Medium Focus text input" value="Focused" /></label></td>
+                      <td><label class="text_input text_input_rounded_focus_large"><input type="text" aria-label="Rounded Large Focus text input" value="Focused" /></label></td>
+                      <td><label class="text_input text_input_rounded_focus_xlarge"><input type="text" aria-label="Rounded XLarge Focus text input" value="Focused" /></label></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Complete</th>
+                      <td><label class="text_input text_input_rounded_complete_small"><input type="text" aria-label="Rounded Small Complete text input" value="Completed" /></label></td>
+                      <td><label class="text_input text_input_rounded_complete_medium"><input type="text" aria-label="Rounded Medium Complete text input" value="Completed" /></label></td>
+                      <td><label class="text_input text_input_rounded_complete_large"><input type="text" aria-label="Rounded Large Complete text input" value="Completed" /></label></td>
+                      <td><label class="text_input text_input_rounded_complete_xlarge"><input type="text" aria-label="Rounded XLarge Complete text input" value="Completed" /></label></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Error</th>
+                      <td><label class="text_input text_input_rounded_error_small"><input type="text" aria-label="Rounded Small Error text input" value="Error" /></label></td>
+                      <td><label class="text_input text_input_rounded_error_medium"><input type="text" aria-label="Rounded Medium Error text input" value="Error" /></label></td>
+                      <td><label class="text_input text_input_rounded_error_large"><input type="text" aria-label="Rounded Large Error text input" value="Error" /></label></td>
+                      <td><label class="text_input text_input_rounded_error_xlarge"><input type="text" aria-label="Rounded XLarge Error text input" value="Error" /></label></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Disabled</th>
+                      <td><label class="text_input text_input_rounded_disabled_small"><input type="text" aria-label="Rounded Small Disabled text input" value="Disabled" disabled /></label></td>
+                      <td><label class="text_input text_input_rounded_disabled_medium"><input type="text" aria-label="Rounded Medium Disabled text input" value="Disabled" disabled /></label></td>
+                      <td><label class="text_input text_input_rounded_disabled_large"><input type="text" aria-label="Rounded Large Disabled text input" value="Disabled" disabled /></label></td>
+                      <td><label class="text_input text_input_rounded_disabled_xlarge"><input type="text" aria-label="Rounded XLarge Disabled text input" value="Disabled" disabled /></label></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">View</th>
+                      <td><label class="text_input text_input_rounded_view_small"><input type="text" aria-label="Rounded Small View text input" value="Read only" readonly /></label></td>
+                      <td><label class="text_input text_input_rounded_view_medium"><input type="text" aria-label="Rounded Medium View text input" value="Read only" readonly /></label></td>
+                      <td><label class="text_input text_input_rounded_view_large"><input type="text" aria-label="Rounded Large View text input" value="Read only" readonly /></label></td>
+                      <td><label class="text_input text_input_rounded_view_xlarge"><input type="text" aria-label="Rounded XLarge View text input" value="Read only" readonly /></label></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Password</th>
+                      <td><label class="text_input text_input_rounded_password_small"><input type="password" aria-label="Rounded Small Password text input" value="password" /></label></td>
+                      <td><label class="text_input text_input_rounded_password_medium"><input type="password" aria-label="Rounded Medium Password text input" value="password" /></label></td>
+                      <td><label class="text_input text_input_rounded_password_large"><input type="password" aria-label="Rounded Large Password text input" value="password" /></label></td>
+                      <td><label class="text_input text_input_rounded_password_xlarge"><input type="password" aria-label="Rounded XLarge Password text input" value="password" /></label></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="button-variant-group">
+                <h5 class="button-variant-title">Full Rounded</h5>
+                <table class="type-table button-table">
+                  <colgroup>
+                    <col class="button-table-category-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">&#48516;&#47448;</th>
+                      <th scope="col">Small</th>
+                      <th scope="col">Medium (Default)</th>
+                      <th scope="col">Large</th>
+                      <th scope="col">XLarge</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Default</th>
+                      <td><label class="text_input text_input_full_rounded_default_small"><input type="text" aria-label="Full Rounded Small Default text input" placeholder="Placeholder" /></label></td>
+                      <td><label class="text_input text_input_full_rounded_default_medium"><input type="text" aria-label="Full Rounded Medium Default text input" placeholder="Placeholder" /></label></td>
+                      <td><label class="text_input text_input_full_rounded_default_large"><input type="text" aria-label="Full Rounded Large Default text input" placeholder="Placeholder" /></label></td>
+                      <td><label class="text_input text_input_full_rounded_default_xlarge"><input type="text" aria-label="Full Rounded XLarge Default text input" placeholder="Placeholder" /></label></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Focus</th>
+                      <td><label class="text_input text_input_full_rounded_focus_small"><input type="text" aria-label="Full Rounded Small Focus text input" value="Focused" /></label></td>
+                      <td><label class="text_input text_input_full_rounded_focus_medium"><input type="text" aria-label="Full Rounded Medium Focus text input" value="Focused" /></label></td>
+                      <td><label class="text_input text_input_full_rounded_focus_large"><input type="text" aria-label="Full Rounded Large Focus text input" value="Focused" /></label></td>
+                      <td><label class="text_input text_input_full_rounded_focus_xlarge"><input type="text" aria-label="Full Rounded XLarge Focus text input" value="Focused" /></label></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Complete</th>
+                      <td><label class="text_input text_input_full_rounded_complete_small"><input type="text" aria-label="Full Rounded Small Complete text input" value="Completed" /></label></td>
+                      <td><label class="text_input text_input_full_rounded_complete_medium"><input type="text" aria-label="Full Rounded Medium Complete text input" value="Completed" /></label></td>
+                      <td><label class="text_input text_input_full_rounded_complete_large"><input type="text" aria-label="Full Rounded Large Complete text input" value="Completed" /></label></td>
+                      <td><label class="text_input text_input_full_rounded_complete_xlarge"><input type="text" aria-label="Full Rounded XLarge Complete text input" value="Completed" /></label></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Error</th>
+                      <td><label class="text_input text_input_full_rounded_error_small"><input type="text" aria-label="Full Rounded Small Error text input" value="Error" /></label></td>
+                      <td><label class="text_input text_input_full_rounded_error_medium"><input type="text" aria-label="Full Rounded Medium Error text input" value="Error" /></label></td>
+                      <td><label class="text_input text_input_full_rounded_error_large"><input type="text" aria-label="Full Rounded Large Error text input" value="Error" /></label></td>
+                      <td><label class="text_input text_input_full_rounded_error_xlarge"><input type="text" aria-label="Full Rounded XLarge Error text input" value="Error" /></label></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Disabled</th>
+                      <td><label class="text_input text_input_full_rounded_disabled_small"><input type="text" aria-label="Full Rounded Small Disabled text input" value="Disabled" disabled /></label></td>
+                      <td><label class="text_input text_input_full_rounded_disabled_medium"><input type="text" aria-label="Full Rounded Medium Disabled text input" value="Disabled" disabled /></label></td>
+                      <td><label class="text_input text_input_full_rounded_disabled_large"><input type="text" aria-label="Full Rounded Large Disabled text input" value="Disabled" disabled /></label></td>
+                      <td><label class="text_input text_input_full_rounded_disabled_xlarge"><input type="text" aria-label="Full Rounded XLarge Disabled text input" value="Disabled" disabled /></label></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">View</th>
+                      <td><label class="text_input text_input_full_rounded_view_small"><input type="text" aria-label="Full Rounded Small View text input" value="Read only" readonly /></label></td>
+                      <td><label class="text_input text_input_full_rounded_view_medium"><input type="text" aria-label="Full Rounded Medium View text input" value="Read only" readonly /></label></td>
+                      <td><label class="text_input text_input_full_rounded_view_large"><input type="text" aria-label="Full Rounded Large View text input" value="Read only" readonly /></label></td>
+                      <td><label class="text_input text_input_full_rounded_view_xlarge"><input type="text" aria-label="Full Rounded XLarge View text input" value="Read only" readonly /></label></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Password</th>
+                      <td><label class="text_input text_input_full_rounded_password_small"><input type="password" aria-label="Full Rounded Small Password text input" value="password" /></label></td>
+                      <td><label class="text_input text_input_full_rounded_password_medium"><input type="password" aria-label="Full Rounded Medium Password text input" value="password" /></label></td>
+                      <td><label class="text_input text_input_full_rounded_password_large"><input type="password" aria-label="Full Rounded Large Password text input" value="password" /></label></td>
+                      <td><label class="text_input text_input_full_rounded_password_xlarge"><input type="password" aria-label="Full Rounded XLarge Password text input" value="password" /></label></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
     </div>
     <div class="ds-tabpanel" id="tab-module" role="tabpanel" aria-labelledby="tab-button-module" data-tab-panel="module"
       hidden>
@@ -2364,6 +2593,7 @@
 </body>
 
 </html>
+
 
 
 
