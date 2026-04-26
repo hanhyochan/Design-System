@@ -1,0 +1,89 @@
+/* common */
+.select {
+  width: 100%;
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-position: calc(100% - 18px) 50%, calc(100% - 12px) 50%;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
+
+/* select */
+/* select_small */
+.select_small {
+  min-height: 40px;
+  padding: 0 12px;
+  border: 1px solid var(--color-line-solid-0);
+  border-radius: var(--radius-8);
+  background-color: var(--color-common-100);
+  color: var(--color-label-normal);
+  font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
+  cursor: pointer;
+}
+
+/* select_medium */
+.select_medium {
+  min-height: 48px;
+  padding: 0 16px;
+  border: 1px solid var(--color-line-solid-0);
+  border-radius: var(--radius-8);
+  background-color: var(--color-common-100);
+  color: var(--color-label-normal);
+  font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
+  cursor: pointer;
+}
+
+/* select_large */
+.select_large {
+  min-height: 52px;
+  padding: 0 24px;
+  border: 1px solid var(--color-line-solid-0);
+  border-radius: var(--radius-8);
+  background-color: var(--color-common-100);
+  color: var(--color-label-normal);
+  font-size: var(--font-size-16);
+  line-height: var(--line-height-24);
+  cursor: pointer;
+}
+
+/* select_disabled_small */
+.select_disabled_small {
+  min-height: 40px;
+  padding: 0 12px;
+  border: 1px solid var(--color-line-solid-normal);
+  border-radius: var(--radius-8);
+  background-color: var(--color-interaction-disable);
+  color: var(--color-label-disable);
+  font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
+  cursor: default;
+}
+
+/* select_disabled_medium */
+.select_disabled_medium {
+  min-height: 48px;
+  padding: 0 16px;
+  border: 1px solid var(--color-line-solid-normal);
+  border-radius: var(--radius-8);
+  background-color: var(--color-interaction-disable);
+  color: var(--color-label-disable);
+  font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
+  cursor: default;
+}
+
+/* select_disabled_large */
+.select_disabled_large {
+  min-height: 52px;
+  padding: 0 24px;
+  border: 1px solid var(--color-line-solid-normal);
+  border-radius: var(--radius-8);
+  background-color: var(--color-interaction-disable);
+  color: var(--color-label-disable);
+  font-size: var(--font-size-16);
+  line-height: var(--line-height-24);
+  cursor: default;
+}
+

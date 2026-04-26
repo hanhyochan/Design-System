@@ -1,0 +1,252 @@
+/* common */
+.textarea {
+  display: block;
+  width: 100%;
+  resize: vertical;
+  outline: 0;
+}
+
+/* textarea */
+/* textarea_small */
+.textarea_small {
+  min-height: 96px;
+  padding: 12px 12px;
+  border: 1px solid var(--color-line-solid-0);
+  border-radius: var(--radius-8);
+  background: var(--color-common-100);
+  color: var(--color-label-normal);
+  font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
+}
+
+.textarea_small::placeholder {
+  color: var(--color-label-assistive);
+}
+
+/* textarea_medium */
+.textarea_medium {
+  min-height: 112px;
+  padding: 12px 16px;
+  border: 1px solid var(--color-line-solid-0);
+  border-radius: var(--radius-8);
+  background: var(--color-common-100);
+  color: var(--color-label-normal);
+  font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
+}
+
+.textarea_medium::placeholder {
+  color: var(--color-label-assistive);
+}
+
+/* textarea_large */
+.textarea_large {
+  min-height: 128px;
+  padding: 12px 16px;
+  border: 1px solid var(--color-line-solid-0);
+  border-radius: var(--radius-8);
+  background: var(--color-common-100);
+  color: var(--color-label-normal);
+  font-size: var(--font-size-16);
+  line-height: var(--line-height-24);
+}
+
+.textarea_large::placeholder {
+  color: var(--color-label-assistive);
+}
+
+/* textarea_focus_small */
+.textarea_focus_small {
+  min-height: 96px;
+  padding: 12px 12px;
+  border: 2px solid var(--color-blue-50);
+  border-radius: var(--radius-8);
+  background: var(--color-common-100);
+  color: var(--color-label-normal);
+  font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
+}
+
+.textarea_focus_small::placeholder {
+  color: var(--color-label-assistive);
+}
+
+/* textarea_focus_medium */
+.textarea_focus_medium {
+  min-height: 112px;
+  padding: 12px 16px;
+  border: 2px solid var(--color-blue-50);
+  border-radius: var(--radius-8);
+  background: var(--color-common-100);
+  color: var(--color-label-normal);
+  font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
+}
+
+.textarea_focus_medium::placeholder {
+  color: var(--color-label-assistive);
+}
+
+/* textarea_focus_large */
+.textarea_focus_large {
+  min-height: 128px;
+  padding: 12px 16px;
+  border: 2px solid var(--color-blue-50);
+  border-radius: var(--radius-8);
+  background: var(--color-common-100);
+  color: var(--color-label-normal);
+  font-size: var(--font-size-16);
+  line-height: var(--line-height-24);
+}
+
+.textarea_focus_large::placeholder {
+  color: var(--color-label-assistive);
+}
+
+/* textarea_error_small */
+.textarea_error_small {
+  min-height: 96px;
+  padding: 12px 12px;
+  border: 2px solid var(--color-status-negative);
+  border-radius: var(--radius-8);
+  background: var(--color-common-100);
+  color: var(--color-label-normal);
+  font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
+}
+
+.textarea_error_small::placeholder {
+  color: var(--color-label-assistive);
+}
+
+/* textarea_error_medium */
+.textarea_error_medium {
+  min-height: 112px;
+  padding: 12px 16px;
+  border: 2px solid var(--color-status-negative);
+  border-radius: var(--radius-8);
+  background: var(--color-common-100);
+  color: var(--color-label-normal);
+  font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
+}
+
+.textarea_error_medium::placeholder {
+  color: var(--color-label-assistive);
+}
+
+/* textarea_error_large */
+.textarea_error_large {
+  min-height: 128px;
+  padding: 12px 16px;
+  border: 2px solid var(--color-status-negative);
+  border-radius: var(--radius-8);
+  background: var(--color-common-100);
+  color: var(--color-label-normal);
+  font-size: var(--font-size-16);
+  line-height: var(--line-height-24);
+}
+
+.textarea_error_large::placeholder {
+  color: var(--color-label-assistive);
+}
+
+/* textarea_disabled_small */
+.textarea_disabled_small {
+  min-height: 96px;
+  padding: 12px 12px;
+  border: 1px solid var(--color-line-solid-normal);
+  border-radius: var(--radius-8);
+  background: var(--color-interaction-disable);
+  color: var(--color-label-disable);
+  font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
+  cursor: default;
+}
+
+.textarea_disabled_small::placeholder {
+  color: var(--color-label-assistive);
+}
+
+/* textarea_disabled_medium */
+.textarea_disabled_medium {
+  min-height: 112px;
+  padding: 12px 16px;
+  border: 1px solid var(--color-line-solid-normal);
+  border-radius: var(--radius-8);
+  background: var(--color-interaction-disable);
+  color: var(--color-label-disable);
+  font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
+  cursor: default;
+}
+
+.textarea_disabled_medium::placeholder {
+  color: var(--color-label-assistive);
+}
+
+/* textarea_disabled_large */
+.textarea_disabled_large {
+  min-height: 128px;
+  padding: 12px 16px;
+  border: 1px solid var(--color-line-solid-normal);
+  border-radius: var(--radius-8);
+  background: var(--color-interaction-disable);
+  color: var(--color-label-disable);
+  font-size: var(--font-size-16);
+  line-height: var(--line-height-24);
+  cursor: default;
+}
+
+.textarea_disabled_large::placeholder {
+  color: var(--color-label-assistive);
+}
+
+/* textarea_view_small */
+.textarea_view_small {
+  min-height: 96px;
+  padding: 12px 12px;
+  border: 1px solid var(--color-line-solid-normal);
+  border-radius: var(--radius-8);
+  background: var(--color-background-normal-alternative);
+  color: var(--color-label-neutral);
+  font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
+}
+
+.textarea_view_small::placeholder {
+  color: var(--color-label-assistive);
+}
+
+/* textarea_view_medium */
+.textarea_view_medium {
+  min-height: 112px;
+  padding: 12px 16px;
+  border: 1px solid var(--color-line-solid-normal);
+  border-radius: var(--radius-8);
+  background: var(--color-background-normal-alternative);
+  color: var(--color-label-neutral);
+  font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
+}
+
+.textarea_view_medium::placeholder {
+  color: var(--color-label-assistive);
+}
+
+/* textarea_view_large */
+.textarea_view_large {
+  min-height: 128px;
+  padding: 12px 16px;
+  border: 1px solid var(--color-line-solid-normal);
+  border-radius: var(--radius-8);
+  background: var(--color-background-normal-alternative);
+  color: var(--color-label-neutral);
+  font-size: var(--font-size-16);
+  line-height: var(--line-height-24);
+}
+
+.textarea_view_large::placeholder {
+  color: var(--color-label-assistive);
+}
+

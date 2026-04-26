@@ -1,0 +1,79 @@
+/* common */
+.radio {
+  position: relative;
+  appearance: none;
+}
+
+/* radio */
+/* radio_small */
+.radio_small {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--color-line-solid-strong);
+  border-radius: var(--radius-full);
+  background: var(--color-common-100);
+  cursor: pointer;
+}
+
+.radio_small:checked {
+  border-color: var(--color-blue-50);
+}
+
+.radio_small:checked::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+  background: var(--color-blue-50);
+  transform: translate(-50%, -50%);
+  content: "";
+}
+
+/* radio_disabled_small */
+.radio_disabled_small {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--color-line-solid-normal);
+  border-radius: var(--radius-full);
+  background: var(--color-interaction-disable);
+  cursor: default;
+}
+
+/* radio_medium */
+.radio_medium {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--color-line-solid-strong);
+  border-radius: var(--radius-full);
+  background: var(--color-common-100);
+  cursor: pointer;
+}
+
+.radio_medium:checked {
+  border-color: var(--color-blue-50);
+}
+
+.radio_medium:checked::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: var(--radius-full);
+  background: var(--color-blue-50);
+  transform: translate(-50%, -50%);
+  content: "";
+}
+
+/* radio_disabled_medium */
+.radio_disabled_medium {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--color-line-solid-normal);
+  border-radius: var(--radius-full);
+  background: var(--color-interaction-disable);
+  cursor: default;
+}
+
