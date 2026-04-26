@@ -1,13 +1,8 @@
-* {
-    box-sizing: border-box;
-}
-
 html {
     background: var(--color-neutral-97);
 }
 
 body {
-    margin: var(--spacing-0);
     background: var(--color-neutral-97);
 }
 
@@ -86,7 +81,6 @@ main {
     border-radius: var(--radius-16);
     background: transparent;
     color: var(--color-label-alternative);
-    font: inherit;
     font-size: var(--font-size-16);
     font-weight: var(--font-weight-600);
     line-height: var(--line-height-140);

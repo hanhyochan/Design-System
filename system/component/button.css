@@ -3,8 +3,6 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  box-sizing: border-box;
-  font-family: inherit;
   font-weight: 500;
   white-space: nowrap;
   appearance: none;

@@ -3,11 +3,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  box-sizing: border-box;
-  border-radius: 0;
-  font-family: inherit;
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-20);
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -20,9 +16,11 @@
   min-height: 32px;
   padding: 0 12px;
   border: 1px solid var(--color-common-0);
+  border-radius: 0;
   background: var(--color-common-100);
   color: var(--color-common-0);
   font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
 }
 
 /* Tab_normal_active_small */
@@ -30,9 +28,11 @@
   min-height: 32px;
   padding: 0 12px;
   border: 1px solid var(--color-common-0);
+  border-radius: 0;
   background: var(--color-common-0);
   color: var(--color-common-100);
   font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
 }
 
 /* Tab_normal_disabled_small */
@@ -40,10 +40,12 @@
   min-height: 32px;
   padding: 0 12px;
   border: 1px solid var(--color-line-solid-normal);
+  border-radius: 0;
   background: var(--color-interaction-disable);
   color: var(--color-label-disable);
   box-shadow: none;
   font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
   text-decoration: none;
   cursor: default;
 }
@@ -53,9 +55,11 @@
   min-height: 40px;
   padding: 0 16px;
   border: 1px solid var(--color-common-0);
+  border-radius: 0;
   background: var(--color-common-100);
   color: var(--color-common-0);
   font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
 }
 
 /* Tab_normal_active_medium */
@@ -63,9 +67,11 @@
   min-height: 40px;
   padding: 0 16px;
   border: 1px solid var(--color-common-0);
+  border-radius: 0;
   background: var(--color-common-0);
   color: var(--color-common-100);
   font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
 }
 
 /* Tab_normal_disabled_medium */
@@ -73,10 +79,12 @@
   min-height: 40px;
   padding: 0 16px;
   border: 1px solid var(--color-line-solid-normal);
+  border-radius: 0;
   background: var(--color-interaction-disable);
   color: var(--color-label-disable);
   box-shadow: none;
   font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
   text-decoration: none;
   cursor: default;
 }
@@ -86,9 +94,11 @@
   min-height: 48px;
   padding: 0 24px;
   border: 1px solid var(--color-common-0);
+  border-radius: 0;
   background: var(--color-common-100);
   color: var(--color-common-0);
   font-size: var(--font-size-16);
+  line-height: var(--line-height-20);
 }
 
 /* Tab_normal_active_large */
@@ -96,9 +106,11 @@
   min-height: 48px;
   padding: 0 24px;
   border: 1px solid var(--color-common-0);
+  border-radius: 0;
   background: var(--color-common-0);
   color: var(--color-common-100);
   font-size: var(--font-size-16);
+  line-height: var(--line-height-20);
 }
 
 /* Tab_normal_disabled_large */
@@ -106,10 +118,12 @@
   min-height: 48px;
   padding: 0 24px;
   border: 1px solid var(--color-line-solid-normal);
+  border-radius: 0;
   background: var(--color-interaction-disable);
   color: var(--color-label-disable);
   box-shadow: none;
   font-size: var(--font-size-16);
+  line-height: var(--line-height-20);
   text-decoration: none;
   cursor: default;
 }
@@ -122,9 +136,11 @@
   padding: 0 12px;
   gap: 8px;
   border: 1px solid var(--color-common-0);
+  border-radius: 0;
   background: var(--color-common-100);
   color: var(--color-common-0);
   font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
 }
 
 .Tab_normal_icon_small::before {
@@ -149,9 +165,11 @@
   padding: 0 12px;
   gap: 8px;
   border: 1px solid var(--color-common-0);
+  border-radius: 0;
   background: var(--color-common-0);
   color: var(--color-common-100);
   font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
 }
 
 .Tab_normal_icon_active_small::before {
@@ -176,10 +194,12 @@
   padding: 0 12px;
   gap: 8px;
   border: 1px solid var(--color-line-solid-normal);
+  border-radius: 0;
   background: var(--color-interaction-disable);
   color: var(--color-label-disable);
   box-shadow: none;
   font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
   text-decoration: none;
   cursor: default;
 }
@@ -206,9 +226,11 @@
   padding: 0 16px;
   gap: 8px;
   border: 1px solid var(--color-common-0);
+  border-radius: 0;
   background: var(--color-common-100);
   color: var(--color-common-0);
   font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
 }
 
 .Tab_normal_icon_medium::before {
@@ -233,9 +255,11 @@
   padding: 0 16px;
   gap: 8px;
   border: 1px solid var(--color-common-0);
+  border-radius: 0;
   background: var(--color-common-0);
   color: var(--color-common-100);
   font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
 }
 
 .Tab_normal_icon_active_medium::before {
@@ -260,10 +284,12 @@
   padding: 0 16px;
   gap: 8px;
   border: 1px solid var(--color-line-solid-normal);
+  border-radius: 0;
   background: var(--color-interaction-disable);
   color: var(--color-label-disable);
   box-shadow: none;
   font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
   text-decoration: none;
   cursor: default;
 }
@@ -290,9 +316,11 @@
   padding: 0 24px;
   gap: 8px;
   border: 1px solid var(--color-common-0);
+  border-radius: 0;
   background: var(--color-common-100);
   color: var(--color-common-0);
   font-size: var(--font-size-16);
+  line-height: var(--line-height-20);
 }
 
 .Tab_normal_icon_large::before {
@@ -317,9 +345,11 @@
   padding: 0 24px;
   gap: 8px;
   border: 1px solid var(--color-common-0);
+  border-radius: 0;
   background: var(--color-common-0);
   color: var(--color-common-100);
   font-size: var(--font-size-16);
+  line-height: var(--line-height-20);
 }
 
 .Tab_normal_icon_active_large::before {
@@ -344,10 +374,12 @@
   padding: 0 24px;
   gap: 8px;
   border: 1px solid var(--color-line-solid-normal);
+  border-radius: 0;
   background: var(--color-interaction-disable);
   color: var(--color-label-disable);
   box-shadow: none;
   font-size: var(--font-size-16);
+  line-height: var(--line-height-20);
   text-decoration: none;
   cursor: default;
 }
@@ -379,6 +411,7 @@
   background: var(--color-common-100);
   color: var(--color-common-0);
   font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
 }
 
 /* Tab_normal_rounded_active_small */
@@ -390,6 +423,7 @@
   background: var(--color-common-0);
   color: var(--color-common-100);
   font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
 }
 
 /* Tab_normal_rounded_disabled_small */
@@ -402,6 +436,7 @@
   color: var(--color-label-disable);
   box-shadow: none;
   font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
   text-decoration: none;
   cursor: default;
 }
@@ -415,6 +450,7 @@
   background: var(--color-common-100);
   color: var(--color-common-0);
   font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
 }
 
 /* Tab_normal_rounded_active_medium */
@@ -426,6 +462,7 @@
   background: var(--color-common-0);
   color: var(--color-common-100);
   font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
 }
 
 /* Tab_normal_rounded_disabled_medium */
@@ -438,6 +475,7 @@
   color: var(--color-label-disable);
   box-shadow: none;
   font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
   text-decoration: none;
   cursor: default;
 }
@@ -451,6 +489,7 @@
   background: var(--color-common-100);
   color: var(--color-common-0);
   font-size: var(--font-size-16);
+  line-height: var(--line-height-20);
 }
 
 /* Tab_normal_rounded_active_large */
@@ -462,6 +501,7 @@
   background: var(--color-common-0);
   color: var(--color-common-100);
   font-size: var(--font-size-16);
+  line-height: var(--line-height-20);
 }
 
 /* Tab_normal_rounded_disabled_large */
@@ -474,6 +514,7 @@
   color: var(--color-label-disable);
   box-shadow: none;
   font-size: var(--font-size-16);
+  line-height: var(--line-height-20);
   text-decoration: none;
   cursor: default;
 }
@@ -490,6 +531,7 @@
   background: var(--color-common-100);
   color: var(--color-common-0);
   font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
 }
 
 .Tab_normal_rounded_icon_small::before {
@@ -518,6 +560,7 @@
   background: var(--color-common-0);
   color: var(--color-common-100);
   font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
 }
 
 .Tab_normal_rounded_icon_active_small::before {
@@ -547,6 +590,7 @@
   color: var(--color-label-disable);
   box-shadow: none;
   font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
   text-decoration: none;
   cursor: default;
 }
@@ -577,6 +621,7 @@
   background: var(--color-common-100);
   color: var(--color-common-0);
   font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
 }
 
 .Tab_normal_rounded_icon_medium::before {
@@ -605,6 +650,7 @@
   background: var(--color-common-0);
   color: var(--color-common-100);
   font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
 }
 
 .Tab_normal_rounded_icon_active_medium::before {
@@ -634,6 +680,7 @@
   color: var(--color-label-disable);
   box-shadow: none;
   font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
   text-decoration: none;
   cursor: default;
 }
@@ -664,6 +711,7 @@
   background: var(--color-common-100);
   color: var(--color-common-0);
   font-size: var(--font-size-16);
+  line-height: var(--line-height-20);
 }
 
 .Tab_normal_rounded_icon_large::before {
@@ -692,6 +740,7 @@
   background: var(--color-common-0);
   color: var(--color-common-100);
   font-size: var(--font-size-16);
+  line-height: var(--line-height-20);
 }
 
 .Tab_normal_rounded_icon_active_large::before {
@@ -721,6 +770,7 @@
   color: var(--color-label-disable);
   box-shadow: none;
   font-size: var(--font-size-16);
+  line-height: var(--line-height-20);
   text-decoration: none;
   cursor: default;
 }
@@ -752,6 +802,7 @@
   background: var(--color-common-100);
   color: var(--color-common-0);
   font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
 }
 
 /* Tab_normal_full_rounded_active_small */
@@ -763,6 +814,7 @@
   background: var(--color-common-0);
   color: var(--color-common-100);
   font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
 }
 
 /* Tab_normal_full_rounded_disabled_small */
@@ -775,6 +827,7 @@
   color: var(--color-label-disable);
   box-shadow: none;
   font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
   text-decoration: none;
   cursor: default;
 }
@@ -788,6 +841,7 @@
   background: var(--color-common-100);
   color: var(--color-common-0);
   font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
 }
 
 /* Tab_normal_full_rounded_active_medium */
@@ -799,6 +853,7 @@
   background: var(--color-common-0);
   color: var(--color-common-100);
   font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
 }
 
 /* Tab_normal_full_rounded_disabled_medium */
@@ -811,6 +866,7 @@
   color: var(--color-label-disable);
   box-shadow: none;
   font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
   text-decoration: none;
   cursor: default;
 }
@@ -824,6 +880,7 @@
   background: var(--color-common-100);
   color: var(--color-common-0);
   font-size: var(--font-size-16);
+  line-height: var(--line-height-20);
 }
 
 /* Tab_normal_full_rounded_active_large */
@@ -835,6 +892,7 @@
   background: var(--color-common-0);
   color: var(--color-common-100);
   font-size: var(--font-size-16);
+  line-height: var(--line-height-20);
 }
 
 /* Tab_normal_full_rounded_disabled_large */
@@ -847,6 +905,7 @@
   color: var(--color-label-disable);
   box-shadow: none;
   font-size: var(--font-size-16);
+  line-height: var(--line-height-20);
   text-decoration: none;
   cursor: default;
 }
@@ -863,6 +922,7 @@
   background: var(--color-common-100);
   color: var(--color-common-0);
   font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
 }
 
 .Tab_normal_full_rounded_icon_small::before {
@@ -891,6 +951,7 @@
   background: var(--color-common-0);
   color: var(--color-common-100);
   font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
 }
 
 .Tab_normal_full_rounded_icon_active_small::before {
@@ -920,6 +981,7 @@
   color: var(--color-label-disable);
   box-shadow: none;
   font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
   text-decoration: none;
   cursor: default;
 }
@@ -950,6 +1012,7 @@
   background: var(--color-common-100);
   color: var(--color-common-0);
   font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
 }
 
 .Tab_normal_full_rounded_icon_medium::before {
@@ -978,6 +1041,7 @@
   background: var(--color-common-0);
   color: var(--color-common-100);
   font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
 }
 
 .Tab_normal_full_rounded_icon_active_medium::before {
@@ -1007,6 +1071,7 @@
   color: var(--color-label-disable);
   box-shadow: none;
   font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
   text-decoration: none;
   cursor: default;
 }
@@ -1037,6 +1102,7 @@
   background: var(--color-common-100);
   color: var(--color-common-0);
   font-size: var(--font-size-16);
+  line-height: var(--line-height-20);
 }
 
 .Tab_normal_full_rounded_icon_large::before {
@@ -1065,6 +1131,7 @@
   background: var(--color-common-0);
   color: var(--color-common-100);
   font-size: var(--font-size-16);
+  line-height: var(--line-height-20);
 }
 
 .Tab_normal_full_rounded_icon_active_large::before {
@@ -1094,6 +1161,7 @@
   color: var(--color-label-disable);
   box-shadow: none;
   font-size: var(--font-size-16);
+  line-height: var(--line-height-20);
   text-decoration: none;
   cursor: default;
 }
@@ -1121,27 +1189,33 @@
   min-height: 32px;
   padding: 0 12px;
   border: 1px solid var(--color-line-normal-normal);
+  border-radius: 0;
   background: var(--color-common-100);
   color: var(--color-common-0);
   font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
 }
 /* Tab_grayLine_normal_active_small */
 .Tab_grayLine_normal_active_small {
   min-height: 32px;
   padding: 0 12px;
   border: 1px solid var(--color-common-0);
+  border-radius: 0;
   background: var(--color-common-0);
   color: var(--color-common-100);
   font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
 }
 /* Tab_grayLine_normal_disabled_small */
 .Tab_grayLine_normal_disabled_small {
   min-height: 32px;
   padding: 0 12px;
   border: 1px solid var(--color-line-solid-normal);
+  border-radius: 0;
   background: var(--color-interaction-disable);
   color: var(--color-label-disable);
   font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
   box-shadow: none;
   text-decoration: none;
   cursor: default;
@@ -1151,27 +1225,33 @@
   min-height: 40px;
   padding: 0 16px;
   border: 1px solid var(--color-line-normal-normal);
+  border-radius: 0;
   background: var(--color-common-100);
   color: var(--color-common-0);
   font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
 }
 /* Tab_grayLine_normal_active_medium */
 .Tab_grayLine_normal_active_medium {
   min-height: 40px;
   padding: 0 16px;
   border: 1px solid var(--color-common-0);
+  border-radius: 0;
   background: var(--color-common-0);
   color: var(--color-common-100);
   font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
 }
 /* Tab_grayLine_normal_disabled_medium */
 .Tab_grayLine_normal_disabled_medium {
   min-height: 40px;
   padding: 0 16px;
   border: 1px solid var(--color-line-solid-normal);
+  border-radius: 0;
   background: var(--color-interaction-disable);
   color: var(--color-label-disable);
   font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
   box-shadow: none;
   text-decoration: none;
   cursor: default;
@@ -1181,27 +1261,33 @@
   min-height: 48px;
   padding: 0 24px;
   border: 1px solid var(--color-line-normal-normal);
+  border-radius: 0;
   background: var(--color-common-100);
   color: var(--color-common-0);
   font-size: var(--font-size-16);
+  line-height: var(--line-height-20);
 }
 /* Tab_grayLine_normal_active_large */
 .Tab_grayLine_normal_active_large {
   min-height: 48px;
   padding: 0 24px;
   border: 1px solid var(--color-common-0);
+  border-radius: 0;
   background: var(--color-common-0);
   color: var(--color-common-100);
   font-size: var(--font-size-16);
+  line-height: var(--line-height-20);
 }
 /* Tab_grayLine_normal_disabled_large */
 .Tab_grayLine_normal_disabled_large {
   min-height: 48px;
   padding: 0 24px;
   border: 1px solid var(--color-line-solid-normal);
+  border-radius: 0;
   background: var(--color-interaction-disable);
   color: var(--color-label-disable);
   font-size: var(--font-size-16);
+  line-height: var(--line-height-20);
   box-shadow: none;
   text-decoration: none;
   cursor: default;
@@ -1214,9 +1300,11 @@
   padding: 0 12px;
   gap: 8px;
   border: 1px solid var(--color-line-normal-normal);
+  border-radius: 0;
   background: var(--color-common-100);
   color: var(--color-common-0);
   font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
 }
 .Tab_grayLine_normal_icon_small::before {
   width: 12px;
@@ -1239,9 +1327,11 @@
   padding: 0 12px;
   gap: 8px;
   border: 1px solid var(--color-common-0);
+  border-radius: 0;
   background: var(--color-common-0);
   color: var(--color-common-100);
   font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
 }
 .Tab_grayLine_normal_icon_active_small::before {
   width: 12px;
@@ -1264,9 +1354,11 @@
   padding: 0 12px;
   gap: 8px;
   border: 1px solid var(--color-line-solid-normal);
+  border-radius: 0;
   background: var(--color-interaction-disable);
   color: var(--color-label-disable);
   font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
   box-shadow: none;
   text-decoration: none;
   cursor: default;
@@ -1292,9 +1384,11 @@
   padding: 0 16px;
   gap: 8px;
   border: 1px solid var(--color-line-normal-normal);
+  border-radius: 0;
   background: var(--color-common-100);
   color: var(--color-common-0);
   font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
 }
 .Tab_grayLine_normal_icon_medium::before {
   width: 16px;
@@ -1317,9 +1411,11 @@
   padding: 0 16px;
   gap: 8px;
   border: 1px solid var(--color-common-0);
+  border-radius: 0;
   background: var(--color-common-0);
   color: var(--color-common-100);
   font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
 }
 .Tab_grayLine_normal_icon_active_medium::before {
   width: 16px;
@@ -1342,9 +1438,11 @@
   padding: 0 16px;
   gap: 8px;
   border: 1px solid var(--color-line-solid-normal);
+  border-radius: 0;
   background: var(--color-interaction-disable);
   color: var(--color-label-disable);
   font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
   box-shadow: none;
   text-decoration: none;
   cursor: default;
@@ -1370,9 +1468,11 @@
   padding: 0 24px;
   gap: 8px;
   border: 1px solid var(--color-line-normal-normal);
+  border-radius: 0;
   background: var(--color-common-100);
   color: var(--color-common-0);
   font-size: var(--font-size-16);
+  line-height: var(--line-height-20);
 }
 .Tab_grayLine_normal_icon_large::before {
   width: 16px;
@@ -1395,9 +1495,11 @@
   padding: 0 24px;
   gap: 8px;
   border: 1px solid var(--color-common-0);
+  border-radius: 0;
   background: var(--color-common-0);
   color: var(--color-common-100);
   font-size: var(--font-size-16);
+  line-height: var(--line-height-20);
 }
 .Tab_grayLine_normal_icon_active_large::before {
   width: 16px;
@@ -1420,9 +1522,11 @@
   padding: 0 24px;
   gap: 8px;
   border: 1px solid var(--color-line-solid-normal);
+  border-radius: 0;
   background: var(--color-interaction-disable);
   color: var(--color-label-disable);
   font-size: var(--font-size-16);
+  line-height: var(--line-height-20);
   box-shadow: none;
   text-decoration: none;
   cursor: default;
@@ -1453,6 +1557,7 @@
   background: var(--color-common-100);
   color: var(--color-common-0);
   font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
 }
 /* Tab_grayLine_normal_rounded_active_small */
 .Tab_grayLine_normal_rounded_active_small {
@@ -1463,6 +1568,7 @@
   background: var(--color-common-0);
   color: var(--color-common-100);
   font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
 }
 /* Tab_grayLine_normal_rounded_disabled_small */
 .Tab_grayLine_normal_rounded_disabled_small {
@@ -1473,6 +1579,7 @@
   background: var(--color-interaction-disable);
   color: var(--color-label-disable);
   font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
   box-shadow: none;
   text-decoration: none;
   cursor: default;
@@ -1486,6 +1593,7 @@
   background: var(--color-common-100);
   color: var(--color-common-0);
   font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
 }
 /* Tab_grayLine_normal_rounded_active_medium */
 .Tab_grayLine_normal_rounded_active_medium {
@@ -1496,6 +1604,7 @@
   background: var(--color-common-0);
   color: var(--color-common-100);
   font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
 }
 /* Tab_grayLine_normal_rounded_disabled_medium */
 .Tab_grayLine_normal_rounded_disabled_medium {
@@ -1506,6 +1615,7 @@
   background: var(--color-interaction-disable);
   color: var(--color-label-disable);
   font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
   box-shadow: none;
   text-decoration: none;
   cursor: default;
@@ -1519,6 +1629,7 @@
   background: var(--color-common-100);
   color: var(--color-common-0);
   font-size: var(--font-size-16);
+  line-height: var(--line-height-20);
 }
 /* Tab_grayLine_normal_rounded_active_large */
 .Tab_grayLine_normal_rounded_active_large {
@@ -1529,6 +1640,7 @@
   background: var(--color-common-0);
   color: var(--color-common-100);
   font-size: var(--font-size-16);
+  line-height: var(--line-height-20);
 }
 /* Tab_grayLine_normal_rounded_disabled_large */
 .Tab_grayLine_normal_rounded_disabled_large {
@@ -1539,6 +1651,7 @@
   background: var(--color-interaction-disable);
   color: var(--color-label-disable);
   font-size: var(--font-size-16);
+  line-height: var(--line-height-20);
   box-shadow: none;
   text-decoration: none;
   cursor: default;
@@ -1555,6 +1668,7 @@
   background: var(--color-common-100);
   color: var(--color-common-0);
   font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
 }
 .Tab_grayLine_normal_rounded_icon_small::before {
   width: 12px;
@@ -1581,6 +1695,7 @@
   background: var(--color-common-0);
   color: var(--color-common-100);
   font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
 }
 .Tab_grayLine_normal_rounded_icon_active_small::before {
   width: 12px;
@@ -1607,6 +1722,7 @@
   background: var(--color-interaction-disable);
   color: var(--color-label-disable);
   font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
   box-shadow: none;
   text-decoration: none;
   cursor: default;
@@ -1636,6 +1752,7 @@
   background: var(--color-common-100);
   color: var(--color-common-0);
   font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
 }
 .Tab_grayLine_normal_rounded_icon_medium::before {
   width: 16px;
@@ -1662,6 +1779,7 @@
   background: var(--color-common-0);
   color: var(--color-common-100);
   font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
 }
 .Tab_grayLine_normal_rounded_icon_active_medium::before {
   width: 16px;
@@ -1688,6 +1806,7 @@
   background: var(--color-interaction-disable);
   color: var(--color-label-disable);
   font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
   box-shadow: none;
   text-decoration: none;
   cursor: default;
@@ -1717,6 +1836,7 @@
   background: var(--color-common-100);
   color: var(--color-common-0);
   font-size: var(--font-size-16);
+  line-height: var(--line-height-20);
 }
 .Tab_grayLine_normal_rounded_icon_large::before {
   width: 16px;
@@ -1743,6 +1863,7 @@
   background: var(--color-common-0);
   color: var(--color-common-100);
   font-size: var(--font-size-16);
+  line-height: var(--line-height-20);
 }
 .Tab_grayLine_normal_rounded_icon_active_large::before {
   width: 16px;
@@ -1769,6 +1890,7 @@
   background: var(--color-interaction-disable);
   color: var(--color-label-disable);
   font-size: var(--font-size-16);
+  line-height: var(--line-height-20);
   box-shadow: none;
   text-decoration: none;
   cursor: default;
@@ -1799,6 +1921,7 @@
   background: var(--color-common-100);
   color: var(--color-common-0);
   font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
 }
 /* Tab_grayLine_normal_full_rounded_active_small */
 .Tab_grayLine_normal_full_rounded_active_small {
@@ -1809,6 +1932,7 @@
   background: var(--color-common-0);
   color: var(--color-common-100);
   font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
 }
 /* Tab_grayLine_normal_full_rounded_disabled_small */
 .Tab_grayLine_normal_full_rounded_disabled_small {
@@ -1819,6 +1943,7 @@
   background: var(--color-interaction-disable);
   color: var(--color-label-disable);
   font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
   box-shadow: none;
   text-decoration: none;
   cursor: default;
@@ -1832,6 +1957,7 @@
   background: var(--color-common-100);
   color: var(--color-common-0);
   font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
 }
 /* Tab_grayLine_normal_full_rounded_active_medium */
 .Tab_grayLine_normal_full_rounded_active_medium {
@@ -1842,6 +1968,7 @@
   background: var(--color-common-0);
   color: var(--color-common-100);
   font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
 }
 /* Tab_grayLine_normal_full_rounded_disabled_medium */
 .Tab_grayLine_normal_full_rounded_disabled_medium {
@@ -1852,6 +1979,7 @@
   background: var(--color-interaction-disable);
   color: var(--color-label-disable);
   font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
   box-shadow: none;
   text-decoration: none;
   cursor: default;
@@ -1865,6 +1993,7 @@
   background: var(--color-common-100);
   color: var(--color-common-0);
   font-size: var(--font-size-16);
+  line-height: var(--line-height-20);
 }
 /* Tab_grayLine_normal_full_rounded_active_large */
 .Tab_grayLine_normal_full_rounded_active_large {
@@ -1875,6 +2004,7 @@
   background: var(--color-common-0);
   color: var(--color-common-100);
   font-size: var(--font-size-16);
+  line-height: var(--line-height-20);
 }
 /* Tab_grayLine_normal_full_rounded_disabled_large */
 .Tab_grayLine_normal_full_rounded_disabled_large {
@@ -1885,6 +2015,7 @@
   background: var(--color-interaction-disable);
   color: var(--color-label-disable);
   font-size: var(--font-size-16);
+  line-height: var(--line-height-20);
   box-shadow: none;
   text-decoration: none;
   cursor: default;
@@ -1901,6 +2032,7 @@
   background: var(--color-common-100);
   color: var(--color-common-0);
   font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
 }
 .Tab_grayLine_normal_full_rounded_icon_small::before {
   width: 12px;
@@ -1927,6 +2059,7 @@
   background: var(--color-common-0);
   color: var(--color-common-100);
   font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
 }
 .Tab_grayLine_normal_full_rounded_icon_active_small::before {
   width: 12px;
@@ -1953,6 +2086,7 @@
   background: var(--color-interaction-disable);
   color: var(--color-label-disable);
   font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
   box-shadow: none;
   text-decoration: none;
   cursor: default;
@@ -1982,6 +2116,7 @@
   background: var(--color-common-100);
   color: var(--color-common-0);
   font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
 }
 .Tab_grayLine_normal_full_rounded_icon_medium::before {
   width: 16px;
@@ -2008,6 +2143,7 @@
   background: var(--color-common-0);
   color: var(--color-common-100);
   font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
 }
 .Tab_grayLine_normal_full_rounded_icon_active_medium::before {
   width: 16px;
@@ -2034,6 +2170,7 @@
   background: var(--color-interaction-disable);
   color: var(--color-label-disable);
   font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
   box-shadow: none;
   text-decoration: none;
   cursor: default;
@@ -2063,6 +2200,7 @@
   background: var(--color-common-100);
   color: var(--color-common-0);
   font-size: var(--font-size-16);
+  line-height: var(--line-height-20);
 }
 .Tab_grayLine_normal_full_rounded_icon_large::before {
   width: 16px;
@@ -2089,6 +2227,7 @@
   background: var(--color-common-0);
   color: var(--color-common-100);
   font-size: var(--font-size-16);
+  line-height: var(--line-height-20);
 }
 .Tab_grayLine_normal_full_rounded_icon_active_large::before {
   width: 16px;
@@ -2115,6 +2254,7 @@
   background: var(--color-interaction-disable);
   color: var(--color-label-disable);
   font-size: var(--font-size-16);
+  line-height: var(--line-height-20);
   box-shadow: none;
   text-decoration: none;
   cursor: default;
@@ -2134,5 +2274,6 @@
   -webkit-mask-position: center;
   -webkit-mask-size: contain;
 }
+
 
 
