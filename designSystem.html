@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="./system/foundation/typography.css" />
   <link rel="stylesheet" href="./layout.css" />
   <link rel="stylesheet" href="./system/component/button.css" />
+  <link rel="stylesheet" href="./system/component/tab.css" />
 </head>
 
 <body>
@@ -1477,6 +1478,486 @@
           </article>
         </div>
       </section>
+      <section>
+        <h2>Tab</h2>
+        <div class="button-panel">
+          <article class="button-category" aria-labelledby="tabs-title">
+            <div class="button-category-head">
+              <h3 id="tabs-title">Tab</h3>
+            </div>
+            <div class="button-variant-stack">
+              <div class="button-variant-group">
+                <h5 class="button-variant-title">Normal</h5>
+                <table class="type-table button-table">
+                  <colgroup>
+                    <col class="button-table-category-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">&#48516;&#47448;</th>
+                      <th scope="col">Small</th>
+                      <th scope="col">Medium (Default)</th>
+                      <th scope="col">Large</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Default</th>
+                      <td><button class="tab Tab_normal_small" type="button">Tab</button></td>
+                      <td><button class="tab Tab_normal_medium" type="button">Tab</button></td>
+                      <td><button class="tab Tab_normal_large" type="button">Tab</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Active</th>
+                      <td><button class="tab Tab_normal_active_small" type="button" aria-selected="true">Tab</button></td>
+                      <td><button class="tab Tab_normal_active_medium" type="button" aria-selected="true">Tab</button></td>
+                      <td><button class="tab Tab_normal_active_large" type="button" aria-selected="true">Tab</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">disabled</th>
+                      <td><button class="tab Tab_normal_disabled_small" type="button" disabled>Tab</button></td>
+                      <td><button class="tab Tab_normal_disabled_medium" type="button" disabled>Tab</button></td>
+                      <td><button class="tab Tab_normal_disabled_large" type="button" disabled>Tab</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="button-variant-group">
+                <h5 class="button-variant-title">Normal+icon</h5>
+                <table class="type-table button-table">
+                  <colgroup>
+                    <col class="button-table-category-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">&#48516;&#47448;</th>
+                      <th scope="col">Small</th>
+                      <th scope="col">Medium (Default)</th>
+                      <th scope="col">Large</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Default</th>
+                      <td><button class="tab Tab_normal_icon_small" type="button">Tab</button></td>
+                      <td><button class="tab Tab_normal_icon_medium" type="button">Tab</button></td>
+                      <td><button class="tab Tab_normal_icon_large" type="button">Tab</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Active</th>
+                      <td><button class="tab Tab_normal_icon_active_small" type="button" aria-selected="true">Tab</button></td>
+                      <td><button class="tab Tab_normal_icon_active_medium" type="button" aria-selected="true">Tab</button></td>
+                      <td><button class="tab Tab_normal_icon_active_large" type="button" aria-selected="true">Tab</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">disabled</th>
+                      <td><button class="tab Tab_normal_icon_disabled_small" type="button" disabled>Tab</button></td>
+                      <td><button class="tab Tab_normal_icon_disabled_medium" type="button" disabled>Tab</button></td>
+                      <td><button class="tab Tab_normal_icon_disabled_large" type="button" disabled>Tab</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="button-variant-group">
+                <h5 class="button-variant-title">Normal Rounded</h5>
+                <table class="type-table button-table">
+                  <colgroup>
+                    <col class="button-table-category-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">&#48516;&#47448;</th>
+                      <th scope="col">Small</th>
+                      <th scope="col">Medium (Default)</th>
+                      <th scope="col">Large</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Default</th>
+                      <td><button class="tab Tab_normal_rounded_small" type="button">Tab</button></td>
+                      <td><button class="tab Tab_normal_rounded_medium" type="button">Tab</button></td>
+                      <td><button class="tab Tab_normal_rounded_large" type="button">Tab</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Active</th>
+                      <td><button class="tab Tab_normal_rounded_active_small" type="button" aria-selected="true">Tab</button></td>
+                      <td><button class="tab Tab_normal_rounded_active_medium" type="button" aria-selected="true">Tab</button></td>
+                      <td><button class="tab Tab_normal_rounded_active_large" type="button" aria-selected="true">Tab</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">disabled</th>
+                      <td><button class="tab Tab_normal_rounded_disabled_small" type="button" disabled>Tab</button></td>
+                      <td><button class="tab Tab_normal_rounded_disabled_medium" type="button" disabled>Tab</button></td>
+                      <td><button class="tab Tab_normal_rounded_disabled_large" type="button" disabled>Tab</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="button-variant-group">
+                <h5 class="button-variant-title">Normal Rounded+icon</h5>
+                <table class="type-table button-table">
+                  <colgroup>
+                    <col class="button-table-category-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">&#48516;&#47448;</th>
+                      <th scope="col">Small</th>
+                      <th scope="col">Medium (Default)</th>
+                      <th scope="col">Large</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Default</th>
+                      <td><button class="tab Tab_normal_rounded_icon_small" type="button">Tab</button></td>
+                      <td><button class="tab Tab_normal_rounded_icon_medium" type="button">Tab</button></td>
+                      <td><button class="tab Tab_normal_rounded_icon_large" type="button">Tab</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Active</th>
+                      <td><button class="tab Tab_normal_rounded_icon_active_small" type="button" aria-selected="true">Tab</button></td>
+                      <td><button class="tab Tab_normal_rounded_icon_active_medium" type="button" aria-selected="true">Tab</button></td>
+                      <td><button class="tab Tab_normal_rounded_icon_active_large" type="button" aria-selected="true">Tab</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">disabled</th>
+                      <td><button class="tab Tab_normal_rounded_icon_disabled_small" type="button" disabled>Tab</button></td>
+                      <td><button class="tab Tab_normal_rounded_icon_disabled_medium" type="button" disabled>Tab</button></td>
+                      <td><button class="tab Tab_normal_rounded_icon_disabled_large" type="button" disabled>Tab</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="button-variant-group">
+                <h5 class="button-variant-title">Normal Full Rounded</h5>
+                <table class="type-table button-table">
+                  <colgroup>
+                    <col class="button-table-category-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">&#48516;&#47448;</th>
+                      <th scope="col">Small</th>
+                      <th scope="col">Medium (Default)</th>
+                      <th scope="col">Large</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Default</th>
+                      <td><button class="tab Tab_normal_full_rounded_small" type="button">Tab</button></td>
+                      <td><button class="tab Tab_normal_full_rounded_medium" type="button">Tab</button></td>
+                      <td><button class="tab Tab_normal_full_rounded_large" type="button">Tab</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Active</th>
+                      <td><button class="tab Tab_normal_full_rounded_active_small" type="button" aria-selected="true">Tab</button></td>
+                      <td><button class="tab Tab_normal_full_rounded_active_medium" type="button" aria-selected="true">Tab</button></td>
+                      <td><button class="tab Tab_normal_full_rounded_active_large" type="button" aria-selected="true">Tab</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">disabled</th>
+                      <td><button class="tab Tab_normal_full_rounded_disabled_small" type="button" disabled>Tab</button></td>
+                      <td><button class="tab Tab_normal_full_rounded_disabled_medium" type="button" disabled>Tab</button></td>
+                      <td><button class="tab Tab_normal_full_rounded_disabled_large" type="button" disabled>Tab</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="button-variant-group">
+                <h5 class="button-variant-title">Normal Full Rounded+icon</h5>
+                <table class="type-table button-table">
+                  <colgroup>
+                    <col class="button-table-category-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">&#48516;&#47448;</th>
+                      <th scope="col">Small</th>
+                      <th scope="col">Medium (Default)</th>
+                      <th scope="col">Large</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Default</th>
+                      <td><button class="tab Tab_normal_full_rounded_icon_small" type="button">Tab</button></td>
+                      <td><button class="tab Tab_normal_full_rounded_icon_medium" type="button">Tab</button></td>
+                      <td><button class="tab Tab_normal_full_rounded_icon_large" type="button">Tab</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Active</th>
+                      <td><button class="tab Tab_normal_full_rounded_icon_active_small" type="button" aria-selected="true">Tab</button></td>
+                      <td><button class="tab Tab_normal_full_rounded_icon_active_medium" type="button" aria-selected="true">Tab</button></td>
+                      <td><button class="tab Tab_normal_full_rounded_icon_active_large" type="button" aria-selected="true">Tab</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">disabled</th>
+                      <td><button class="tab Tab_normal_full_rounded_icon_disabled_small" type="button" disabled>Tab</button></td>
+                      <td><button class="tab Tab_normal_full_rounded_icon_disabled_medium" type="button" disabled>Tab</button></td>
+                      <td><button class="tab Tab_normal_full_rounded_icon_disabled_large" type="button" disabled>Tab</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="button-variant-group">
+                <h5 class="button-variant-title">Gray Line Normal</h5>
+                <table class="type-table button-table">
+                  <colgroup>
+                    <col class="button-table-category-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">&#48516;&#47448;</th>
+                      <th scope="col">Small</th>
+                      <th scope="col">Medium (Default)</th>
+                      <th scope="col">Large</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Default</th>
+                      <td><button class="tab Tab_grayLine_normal_small" type="button">Tab</button></td>
+                      <td><button class="tab Tab_grayLine_normal_medium" type="button">Tab</button></td>
+                      <td><button class="tab Tab_grayLine_normal_large" type="button">Tab</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Active</th>
+                      <td><button class="tab Tab_grayLine_normal_active_small" type="button" aria-selected="true">Tab</button></td>
+                      <td><button class="tab Tab_grayLine_normal_active_medium" type="button" aria-selected="true">Tab</button></td>
+                      <td><button class="tab Tab_grayLine_normal_active_large" type="button" aria-selected="true">Tab</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">disabled</th>
+                      <td><button class="tab Tab_grayLine_normal_disabled_small" type="button" disabled>Tab</button></td>
+                      <td><button class="tab Tab_grayLine_normal_disabled_medium" type="button" disabled>Tab</button></td>
+                      <td><button class="tab Tab_grayLine_normal_disabled_large" type="button" disabled>Tab</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="button-variant-group">
+                <h5 class="button-variant-title">Gray Line Normal+icon</h5>
+                <table class="type-table button-table">
+                  <colgroup>
+                    <col class="button-table-category-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">&#48516;&#47448;</th>
+                      <th scope="col">Small</th>
+                      <th scope="col">Medium (Default)</th>
+                      <th scope="col">Large</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Default</th>
+                      <td><button class="tab Tab_grayLine_normal_icon_small" type="button">Tab</button></td>
+                      <td><button class="tab Tab_grayLine_normal_icon_medium" type="button">Tab</button></td>
+                      <td><button class="tab Tab_grayLine_normal_icon_large" type="button">Tab</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Active</th>
+                      <td><button class="tab Tab_grayLine_normal_icon_active_small" type="button" aria-selected="true">Tab</button></td>
+                      <td><button class="tab Tab_grayLine_normal_icon_active_medium" type="button" aria-selected="true">Tab</button></td>
+                      <td><button class="tab Tab_grayLine_normal_icon_active_large" type="button" aria-selected="true">Tab</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">disabled</th>
+                      <td><button class="tab Tab_grayLine_normal_icon_disabled_small" type="button" disabled>Tab</button></td>
+                      <td><button class="tab Tab_grayLine_normal_icon_disabled_medium" type="button" disabled>Tab</button></td>
+                      <td><button class="tab Tab_grayLine_normal_icon_disabled_large" type="button" disabled>Tab</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="button-variant-group">
+                <h5 class="button-variant-title">Gray Line Normal Rounded</h5>
+                <table class="type-table button-table">
+                  <colgroup>
+                    <col class="button-table-category-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">&#48516;&#47448;</th>
+                      <th scope="col">Small</th>
+                      <th scope="col">Medium (Default)</th>
+                      <th scope="col">Large</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Default</th>
+                      <td><button class="tab Tab_grayLine_normal_rounded_small" type="button">Tab</button></td>
+                      <td><button class="tab Tab_grayLine_normal_rounded_medium" type="button">Tab</button></td>
+                      <td><button class="tab Tab_grayLine_normal_rounded_large" type="button">Tab</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Active</th>
+                      <td><button class="tab Tab_grayLine_normal_rounded_active_small" type="button" aria-selected="true">Tab</button></td>
+                      <td><button class="tab Tab_grayLine_normal_rounded_active_medium" type="button" aria-selected="true">Tab</button></td>
+                      <td><button class="tab Tab_grayLine_normal_rounded_active_large" type="button" aria-selected="true">Tab</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">disabled</th>
+                      <td><button class="tab Tab_grayLine_normal_rounded_disabled_small" type="button" disabled>Tab</button></td>
+                      <td><button class="tab Tab_grayLine_normal_rounded_disabled_medium" type="button" disabled>Tab</button></td>
+                      <td><button class="tab Tab_grayLine_normal_rounded_disabled_large" type="button" disabled>Tab</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="button-variant-group">
+                <h5 class="button-variant-title">Gray Line Normal Rounded+icon</h5>
+                <table class="type-table button-table">
+                  <colgroup>
+                    <col class="button-table-category-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">&#48516;&#47448;</th>
+                      <th scope="col">Small</th>
+                      <th scope="col">Medium (Default)</th>
+                      <th scope="col">Large</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Default</th>
+                      <td><button class="tab Tab_grayLine_normal_rounded_icon_small" type="button">Tab</button></td>
+                      <td><button class="tab Tab_grayLine_normal_rounded_icon_medium" type="button">Tab</button></td>
+                      <td><button class="tab Tab_grayLine_normal_rounded_icon_large" type="button">Tab</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Active</th>
+                      <td><button class="tab Tab_grayLine_normal_rounded_icon_active_small" type="button" aria-selected="true">Tab</button></td>
+                      <td><button class="tab Tab_grayLine_normal_rounded_icon_active_medium" type="button" aria-selected="true">Tab</button></td>
+                      <td><button class="tab Tab_grayLine_normal_rounded_icon_active_large" type="button" aria-selected="true">Tab</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">disabled</th>
+                      <td><button class="tab Tab_grayLine_normal_rounded_icon_disabled_small" type="button" disabled>Tab</button></td>
+                      <td><button class="tab Tab_grayLine_normal_rounded_icon_disabled_medium" type="button" disabled>Tab</button></td>
+                      <td><button class="tab Tab_grayLine_normal_rounded_icon_disabled_large" type="button" disabled>Tab</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="button-variant-group">
+                <h5 class="button-variant-title">Gray Line Normal Full Rounded</h5>
+                <table class="type-table button-table">
+                  <colgroup>
+                    <col class="button-table-category-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">&#48516;&#47448;</th>
+                      <th scope="col">Small</th>
+                      <th scope="col">Medium (Default)</th>
+                      <th scope="col">Large</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Default</th>
+                      <td><button class="tab Tab_grayLine_normal_full_rounded_small" type="button">Tab</button></td>
+                      <td><button class="tab Tab_grayLine_normal_full_rounded_medium" type="button">Tab</button></td>
+                      <td><button class="tab Tab_grayLine_normal_full_rounded_large" type="button">Tab</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Active</th>
+                      <td><button class="tab Tab_grayLine_normal_full_rounded_active_small" type="button" aria-selected="true">Tab</button></td>
+                      <td><button class="tab Tab_grayLine_normal_full_rounded_active_medium" type="button" aria-selected="true">Tab</button></td>
+                      <td><button class="tab Tab_grayLine_normal_full_rounded_active_large" type="button" aria-selected="true">Tab</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">disabled</th>
+                      <td><button class="tab Tab_grayLine_normal_full_rounded_disabled_small" type="button" disabled>Tab</button></td>
+                      <td><button class="tab Tab_grayLine_normal_full_rounded_disabled_medium" type="button" disabled>Tab</button></td>
+                      <td><button class="tab Tab_grayLine_normal_full_rounded_disabled_large" type="button" disabled>Tab</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="button-variant-group">
+                <h5 class="button-variant-title">Gray Line Normal Full Rounded+icon</h5>
+                <table class="type-table button-table">
+                  <colgroup>
+                    <col class="button-table-category-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">&#48516;&#47448;</th>
+                      <th scope="col">Small</th>
+                      <th scope="col">Medium (Default)</th>
+                      <th scope="col">Large</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Default</th>
+                      <td><button class="tab Tab_grayLine_normal_full_rounded_icon_small" type="button">Tab</button></td>
+                      <td><button class="tab Tab_grayLine_normal_full_rounded_icon_medium" type="button">Tab</button></td>
+                      <td><button class="tab Tab_grayLine_normal_full_rounded_icon_large" type="button">Tab</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Active</th>
+                      <td><button class="tab Tab_grayLine_normal_full_rounded_icon_active_small" type="button" aria-selected="true">Tab</button></td>
+                      <td><button class="tab Tab_grayLine_normal_full_rounded_icon_active_medium" type="button" aria-selected="true">Tab</button></td>
+                      <td><button class="tab Tab_grayLine_normal_full_rounded_icon_active_large" type="button" aria-selected="true">Tab</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">disabled</th>
+                      <td><button class="tab Tab_grayLine_normal_full_rounded_icon_disabled_small" type="button" disabled>Tab</button></td>
+                      <td><button class="tab Tab_grayLine_normal_full_rounded_icon_disabled_medium" type="button" disabled>Tab</button></td>
+                      <td><button class="tab Tab_grayLine_normal_full_rounded_icon_disabled_large" type="button" disabled>Tab</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
     </div>
     <div class="ds-tabpanel" id="tab-module" role="tabpanel" aria-labelledby="tab-button-module" data-tab-panel="module"
       hidden>
@@ -1758,5 +2239,7 @@
 </body>
 
 </html>
+
+
 
 
