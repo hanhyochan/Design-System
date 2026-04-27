@@ -1,4 +1,65 @@
 /* textarea */
+/* textarea filled */
+textarea[class^="textarea_filled"] {
+  display: block;
+  width: 100%;
+  resize: vertical;
+  outline: 0;
+  border: 0;
+  border-radius: var(--radius-0);
+  background-color: var(--color-fill-normal);
+  color: var(--color-label-normal);
+  cursor: text;
+}
+
+textarea[class^="textarea_filled"]::placeholder {
+  color: var(--color-label-assistive);
+}
+
+textarea[class^="textarea_filled"][class*="_small"] {
+  min-height: 96px;
+  padding: 12px 12px;
+  font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
+}
+
+textarea[class^="textarea_filled"][class*="_medium"] {
+  min-height: 112px;
+  padding: 12px 16px;
+  font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
+}
+
+textarea[class^="textarea_filled"][class*="_large"] {
+  min-height: 128px;
+  padding: 12px 16px;
+  font-size: var(--font-size-16);
+  line-height: var(--line-height-24);
+}
+
+textarea[class^="textarea_filled"][class*="_rounded"] {
+  border-radius: var(--radius-8);
+}
+
+textarea[class^="textarea_filled"][class*="_focus_"] {
+  background-color: var(--color-fill-strong);
+}
+
+textarea[class^="textarea_filled"][class*="_error_"] {
+  background-color: var(--color-red-95);
+}
+
+textarea[class^="textarea_filled"][class*="_disabled_"] {
+  background-color: var(--color-interaction-disable);
+  color: var(--color-label-disable);
+  cursor: default;
+}
+
+textarea[class^="textarea_filled"][class*="_view_"] {
+  background-color: var(--color-background-normal-alternative);
+  color: var(--color-label-neutral);
+}
+
 /* textarea_outline_small */
 .textarea_outline_small {
   display: block;
@@ -302,3 +363,66 @@
   color: var(--color-label-assistive);
 }
 
+
+/* textarea outline variants */
+textarea[class^="textarea_outline"] {
+  display: block;
+  width: 100%;
+  resize: vertical;
+  outline: 0;
+  border: 1px solid var(--color-line-solid-0);
+  border-radius: var(--radius-0);
+  background: var(--color-common-100);
+  color: var(--color-label-normal);
+}
+
+textarea[class^="textarea_outline"]::placeholder {
+  color: var(--color-label-assistive);
+}
+
+textarea[class^="textarea_outline"][class*="_small"] {
+  min-height: 96px;
+  padding: 12px 12px;
+  font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
+}
+
+textarea[class^="textarea_outline"][class*="_medium"] {
+  min-height: 112px;
+  padding: 12px 16px;
+  font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
+}
+
+textarea[class^="textarea_outline"][class*="_large"] {
+  min-height: 128px;
+  padding: 12px 16px;
+  font-size: var(--font-size-16);
+  line-height: var(--line-height-24);
+}
+
+textarea[class^="textarea_outline_rounded"] {
+  border-radius: var(--radius-8);
+}
+
+
+textarea[class^="textarea_outline"][class*="_focus_"] {
+  border: 2px solid var(--color-blue-50);
+}
+
+textarea[class^="textarea_outline"][class*="_error_"] {
+  border: 2px solid var(--color-status-negative);
+}
+
+textarea[class^="textarea_outline"][class*="_disabled_"] {
+  border-color: var(--color-line-solid-normal);
+  background: var(--color-interaction-disable);
+  color: var(--color-label-disable);
+  cursor: default;
+}
+
+textarea[class^="textarea_outline"][class*="_view_"] {
+  border-color: var(--color-line-solid-normal);
+  background: var(--color-background-normal-alternative);
+  color: var(--color-label-neutral);
+}

@@ -1,0 +1,70 @@
+/* badge */
+/* filled */
+/* badge_filled_small */
+.badge_filled_small {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--color-blue-50);
+  color: var(--color-common-100);
+  font-size: var(--font-size-12);
+  line-height: var(--line-height-16);
+  font-weight: var(--font-weight-500);
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+/* badge_filled_medium */
+.badge_filled_medium {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--color-blue-50);
+  color: var(--color-common-100);
+  font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
+  font-weight: var(--font-weight-500);
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+/* outline */
+/* badge_outline_small */
+.badge_outline_small {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+  border: 1px solid var(--color-common-0);
+  border-radius: var(--radius-full);
+  background: var(--color-common-100);
+  color: var(--color-common-0);
+  font-size: var(--font-size-12);
+  line-height: var(--line-height-16);
+  font-weight: var(--font-weight-500);
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+/* badge_outline_medium */
+.badge_outline_medium {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  border: 1px solid var(--color-common-0);
+  border-radius: var(--radius-full);
+  background: var(--color-common-100);
+  color: var(--color-common-0);
+  font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
+  font-weight: var(--font-weight-500);
+  white-space: nowrap;
+  vertical-align: middle;
+}

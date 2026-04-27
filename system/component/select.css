@@ -775,3 +775,76 @@
   line-height: var(--line-height-24);
   cursor: default;
 }
+
+/* select outline variants */
+select[class^="select_outline"] {
+  width: 100%;
+  appearance: none;
+  border: 1px solid var(--color-line-solid-0);
+  border-radius: var(--radius-0);
+  background-color: var(--color-common-100);
+  color: var(--color-label-normal);
+  cursor: pointer;
+  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-repeat: no-repeat;
+  background-size: 6px 6px, 6px 6px;
+}
+
+select[class^="select_outline"][class*="_icon"] {
+  background-image: url("../foundation/icons/icon_alarm.svg"), linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-size: 16px 16px, 6px 6px, 6px 6px;
+}
+
+select[class^="select_outline"][class*="_small"] {
+  min-height: 40px;
+  padding: 0 12px;
+  background-position: calc(100% - 18px) 50%, calc(100% - 12px) 50%;
+  font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
+}
+
+select[class^="select_outline"][class*="_medium"] {
+  min-height: 48px;
+  padding: 0 16px;
+  background-position: calc(100% - 18px) 50%, calc(100% - 12px) 50%;
+  font-size: var(--font-size-15);
+  line-height: var(--line-height-20);
+}
+
+select[class^="select_outline"][class*="_large"] {
+  min-height: 52px;
+  padding: 0 24px;
+  background-position: calc(100% - 18px) 50%, calc(100% - 12px) 50%;
+  font-size: var(--font-size-16);
+  line-height: var(--line-height-24);
+}
+
+select[class^="select_outline"][class*="_icon"][class*="_small"] {
+  padding-left: 40px;
+  background-position: 12px 50%, calc(100% - 18px) 50%, calc(100% - 12px) 50%;
+}
+
+select[class^="select_outline"][class*="_icon"][class*="_medium"] {
+  padding-left: 44px;
+  background-position: 16px 50%, calc(100% - 18px) 50%, calc(100% - 12px) 50%;
+}
+
+select[class^="select_outline"][class*="_icon"][class*="_large"] {
+  padding-left: 52px;
+  background-position: 24px 50%, calc(100% - 18px) 50%, calc(100% - 12px) 50%;
+}
+
+select[class^="select_outline"][class*="_rounded"] {
+  border-radius: var(--radius-8);
+}
+
+select[class^="select_outline"][class*="_full_rounded"] {
+  border-radius: var(--radius-full);
+}
+
+select[class^="select_outline"][class*="_disabled"] {
+  border-color: var(--color-line-solid-normal);
+  background-color: var(--color-interaction-disable);
+  color: var(--color-label-disable);
+  cursor: default;
+}
