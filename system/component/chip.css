@@ -253,9 +253,9 @@
   cursor: default;
 }
 
-/* gray line */
-/* chip_grayLine_small */
-.chip_grayLine_small {
+/* gray line outline */
+/* chip_gray_line_outline_small */
+.chip_gray_line_outline_small {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -272,14 +272,14 @@
   cursor: pointer;
 }
 
-.chip_grayLine_small:active {
+.chip_gray_line_outline_small:active {
   border: 1px solid var(--color-common-0);
   background: var(--color-common-0);
   color: var(--color-common-100);
 }
 
-/* chip_grayLine_medium */
-.chip_grayLine_medium {
+/* chip_gray_line_outline_medium */
+.chip_gray_line_outline_medium {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -296,14 +296,14 @@
   cursor: pointer;
 }
 
-.chip_grayLine_medium:active {
+.chip_gray_line_outline_medium:active {
   border: 1px solid var(--color-common-0);
   background: var(--color-common-0);
   color: var(--color-common-100);
 }
 
-/* chip_grayLine_large */
-.chip_grayLine_large {
+/* chip_gray_line_outline_large */
+.chip_gray_line_outline_large {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -320,14 +320,14 @@
   cursor: pointer;
 }
 
-.chip_grayLine_large:active {
+.chip_gray_line_outline_large:active {
   border: 1px solid var(--color-common-0);
   background: var(--color-common-0);
   color: var(--color-common-100);
 }
 
-/* chip_grayLine_disabled_small */
-.chip_grayLine_disabled_small {
+/* chip_gray_line_outline_disabled_small */
+.chip_gray_line_outline_disabled_small {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -344,8 +344,8 @@
   cursor: default;
 }
 
-/* chip_grayLine_disabled_medium */
-.chip_grayLine_disabled_medium {
+/* chip_gray_line_outline_disabled_medium */
+.chip_gray_line_outline_disabled_medium {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -362,8 +362,8 @@
   cursor: default;
 }
 
-/* chip_grayLine_disabled_large */
-.chip_grayLine_disabled_large {
+/* chip_gray_line_outline_disabled_large */
+.chip_gray_line_outline_disabled_large {
   display: inline-flex;
   align-items: center;
   justify-content: center;

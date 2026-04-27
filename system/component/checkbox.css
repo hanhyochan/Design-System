@@ -1,14 +1,10 @@
-/* common */
-.checkbox {
-  position: relative;
-  appearance: none;
-}
-
 /* checkbox */
 /* checkbox_small */
 .checkbox_small {
-  width: 20px;
-  height: 20px;
+  position: relative;
+  appearance: none;
+  width: 16px;
+  height: 16px;
   border: 2px solid var(--color-line-solid-strong);
   border-radius: var(--radius-2);
   background: var(--color-common-100);
@@ -31,8 +27,10 @@
 
 /* checkbox_disabled_small */
 .checkbox_disabled_small {
-  width: 20px;
-  height: 20px;
+  position: relative;
+  appearance: none;
+  width: 16px;
+  height: 16px;
   border: 2px solid var(--color-line-solid-normal);
   border-radius: var(--radius-2);
   background: var(--color-interaction-disable);
@@ -41,8 +39,10 @@
 
 /* checkbox_medium */
 .checkbox_medium {
-  width: 24px;
-  height: 24px;
+  position: relative;
+  appearance: none;
+  width: 20px;
+  height: 20px;
   border: 2px solid var(--color-line-solid-strong);
   border-radius: var(--radius-2);
   background: var(--color-common-100);
@@ -65,8 +65,10 @@
 
 /* checkbox_disabled_medium */
 .checkbox_disabled_medium {
-  width: 24px;
-  height: 24px;
+  position: relative;
+  appearance: none;
+  width: 20px;
+  height: 20px;
   border: 2px solid var(--color-line-solid-normal);
   border-radius: var(--radius-2);
   background: var(--color-interaction-disable);

@@ -1,14 +1,10 @@
-/* common */
-.radio {
-  position: relative;
-  appearance: none;
-}
-
 /* radio */
 /* radio_small */
 .radio_small {
-  width: 20px;
-  height: 20px;
+  position: relative;
+  appearance: none;
+  width: 16px;
+  height: 16px;
   border: 2px solid var(--color-line-solid-strong);
   border-radius: var(--radius-full);
   background: var(--color-common-100);
@@ -23,8 +19,8 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border-radius: var(--radius-full);
   background: var(--color-blue-50);
   transform: translate(-50%, -50%);
@@ -33,8 +29,10 @@
 
 /* radio_disabled_small */
 .radio_disabled_small {
-  width: 20px;
-  height: 20px;
+  position: relative;
+  appearance: none;
+  width: 16px;
+  height: 16px;
   border: 2px solid var(--color-line-solid-normal);
   border-radius: var(--radius-full);
   background: var(--color-interaction-disable);
@@ -43,8 +41,10 @@
 
 /* radio_medium */
 .radio_medium {
-  width: 24px;
-  height: 24px;
+  position: relative;
+  appearance: none;
+  width: 20px;
+  height: 20px;
   border: 2px solid var(--color-line-solid-strong);
   border-radius: var(--radius-full);
   background: var(--color-common-100);
@@ -59,8 +59,8 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   border-radius: var(--radius-full);
   background: var(--color-blue-50);
   transform: translate(-50%, -50%);
@@ -69,8 +69,10 @@
 
 /* radio_disabled_medium */
 .radio_disabled_medium {
-  width: 24px;
-  height: 24px;
+  position: relative;
+  appearance: none;
+  width: 20px;
+  height: 20px;
   border: 2px solid var(--color-line-solid-normal);
   border-radius: var(--radius-full);
   background: var(--color-interaction-disable);

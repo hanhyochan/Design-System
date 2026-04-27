@@ -10,7 +10,7 @@
 }
 
 /* btn_primary_filled_disabled */
-.btn.is_disabled_preview:disabled {
+.btn_primary_filled_disabled:disabled {
   background: var(--color-interaction-disable);
   color: var(--color-label-disable);
   box-shadow: none;
@@ -3042,7 +3042,7 @@
 }
 
 /* btn_primary_outline_disabled */
-.btn.is_outline_disabled_preview:disabled {
+.btn_primary_outline_disabled:disabled {
   border-color: var(--color-line-solid-normal);
   background: var(--color-common-100);
   color: var(--color-label-disable);
