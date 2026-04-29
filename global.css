@@ -15,7 +15,7 @@ body {
   color: var(--color-label-strong);
   font-family:
     "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
-  line-height: var(--line-height-140);
+  line-height: var(--line-height-32);
 }
 
 button,

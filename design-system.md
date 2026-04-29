@@ -1,4 +1,4 @@
-# Design System Guide
+﻿# Design System Guide
 
 This file is the single source of truth to give to an AI when creating a new project from this design system.
 
@@ -29,6 +29,9 @@ Do not invent new raw CSS values.
 Use only the tokens defined in this file.
 Component colors may be changed within the token set, except gray-line borders must remain neutral/line based.
 Component layout specs are mandatory: height, min-height, padding, gap, font-size, font-weight, line-height, radius, border width, icon size, and state structure must follow this document.
+If the project uses Tailwind CSS, put foundation tokens and reset/base rules inside @layer base, reusable component classes inside @layer components, and leave utility overrides to @layer utilities. Do not emit unlayered reset CSS.
+If the project uses CSS Modules, scoped styles, CSS-in-JS, Shadow DOM, portals, or a UI framework, keep foundation tokens and reset/base rules global and load them before component styles.
+When generating CSS classes, follow the component class naming policy in this document. The class name must describe the visual component spec, not the HTML tag.
 Build reusable components instead of copying every one-off class from the original design system.
 ```
 
@@ -89,11 +92,80 @@ If a project uses one global stylesheet, generate it in this order:
 3. Layout utilities.
 4. Reusable component styles.
 
+### 2.1 Tailwind CSS / Cascade Layer Policy
+
+If the project uses Tailwind CSS, especially Tailwind v4, do not paste the reset as unlayered CSS.
+
+CSS cascade layers change priority. Unlayered CSS can override layered Tailwind utilities even when the selector looks weaker. This can break utility-driven colors such as button text color when reset rules like `a { color: inherit; }` or form-control inheritance are outside Tailwind layers.
+
+Tailwind projects must place design-system CSS in explicit layers:
+
+`````css
+@layer base {
+  /* foundation tokens and reset/base styles */
+}
+
+@layer components {
+  /* reusable component classes, if generated as CSS classes */
+}
+
+@layer utilities {
+  /* project utilities and Tailwind utilities */
+}
+```
+
+Layer rules:
+
+- Put `:root` foundation tokens in `@layer base`.
+- Put the reset block in `@layer base`.
+- Put reusable component classes in `@layer components`.
+- Let Tailwind utilities remain in `@layer utilities`.
+- Do not place reset/base rules as unlayered CSS in a Tailwind project.
+- Do not use `!important` to fight cascade layer issues. Fix the layer placement instead.
+- If a framework has its own CSS layer convention, map foundation/reset to the lowest/base layer, components to the component layer, and one-off utilities to the utility layer.
+
+### 2.2 Framework Integration Policy
+
+The design system must survive different project stacks. Do not assume plain static CSS unless the project actually uses it.
+
+Framework rules:
+
+- Plain CSS: import foundation tokens first, then reset/base, layout utilities, then component styles.
+- Tailwind CSS v4: place foundation tokens and reset/base rules inside `@layer base`; place reusable component classes inside `@layer components`; leave one-off utilities in `@layer utilities`.
+- CSS Modules: do not put `:root`, `html`, `body`, reset selectors, or element selectors in a module file. Put them in a real global stylesheet such as `global.css` or `globals.css`.
+- Vue scoped styles and Svelte scoped styles: do not put foundation tokens or reset/base rules inside scoped blocks. Use a global style block or project global CSS entry.
+- CSS-in-JS, styled-components, emotion, or stitches: create one global style injection for tokens and reset/base rules, mount it at the app root, and ensure it loads before component styles.
+- Next.js, Nuxt, Remix, Vite, and similar bundlers: import the global design-system stylesheet only from the framework's global entry point. Do not import global reset CSS from leaf components.
+- Bootstrap, MUI, Ant Design, Radix, shadcn/ui, or any external UI kit: wrap or restyle components so their sizing, spacing, typography, radius, border width, focus, disabled, and state structure match this document. Do not let the external library's default theme replace these specs.
+- SSR/hydration projects: keep token and reset injection deterministic so server-rendered and client-rendered CSS order match.
+
+### 2.3 Scope, Portal, And Shadow DOM Policy
+
+Global styles do not always reach every rendered node.
+
+- `:root` tokens and reset/base rules must exist in the main document before components render.
+- Portaled UI such as modals, dropdowns, popovers, tooltips, toasts, and date pickers must still inherit the same tokens and reset/base rules. If a portal mounts outside the main app root, verify its container inherits the global CSS.
+- Shadow DOM and Web Components do not automatically receive document reset rules. For Shadow DOM components, expose the design-system tokens through `:host` and include the required base/reset behavior inside the shadow root when needed.
+- Iframes are separate documents. If UI is rendered inside an iframe, inject the same foundation tokens and reset/base CSS into the iframe document.
+- Do not assume component styles attached to one root node will affect portals, shadow roots, iframes, or external widget containers.
+
+### 2.4 Token Implementation Policy
+
+The numeric values in the spec tables are design targets. Implementation should use existing tokens whenever a matching token exists.
+
+- Use CSS variables from this document for colors, spacing, radius, border width, shadow, font size, line height, and font weight.
+- Do not write raw hex/rgb/hsl colors.
+- Do not invent new spacing, typography, radius, border, or shadow values.
+- Component-only dimensions such as button min-height, toggle track size, or icon control size may use the exact documented px value when no matching token exists.
+- If a documented value exists as a token, use the token instead of repeating the raw number.
+- Font loading is part of implementation. If using `"Noto Sans KR"`, load it through the project font system or accept the documented fallback stack.
+
 ## 3. Global Reset
 
-Copy this reset into the global stylesheet after the foundation tokens.
+Copy this reset into the global stylesheet after the foundation tokens. In Tailwind projects, do not paste this as unlayered CSS; wrap it in `@layer base` with the foundation tokens.
 
-```css*,
+`````css
+*,
 *::before,
 *::after {
   box-sizing: border-box;
@@ -110,7 +182,7 @@ body {
   color: var(--color-label-strong);
   font-family:
     "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
-  line-height: var(--line-height-140);
+  line-height: var(--line-height-32);
 }
 
 button,
@@ -178,6 +250,7 @@ Reset rules:
 - Media elements are block-level and cannot exceed container width.
 - Tables collapse borders and remove spacing.
 - Fieldset and legend defaults are removed.
+- `svg { display: block; }` is the default media reset. Inline text icons must be handled by the icon/button component with `display: inline-block` or flex alignment when inline behavior is needed.
 
 ## 4. Foundation Tokens
 
@@ -185,7 +258,8 @@ The following CSS blocks are the complete foundation token set. A generated proj
 
 ### 4.1 Color Tokens
 
-```css:root {
+`````css
+:root {
     /* color: atomic / common */
     --color-common-0: #000000;
     --color-common-100: #ffffff;
@@ -592,7 +666,8 @@ Color token rules:
 
 ### 4.2 Spacing Tokens
 
-```css:root {
+```css
+:root {
   /* spacing: base */
   --spacing-0: 0;
 
@@ -667,7 +742,8 @@ Spacing rules:
 
 ### 4.3 Decoration Tokens
 
-```css:root {
+```css
+:root {
   /* size */
   --size-44: 44px;
   --size-52: 52px;
@@ -722,7 +798,8 @@ Decoration rules:
 
 ### 4.4 Typography Tokens
 
-```css:root {
+```css
+:root {
   /* typography: font size */
   --font-size-10: 10px;
   --font-size-11: 11px;
@@ -748,115 +825,106 @@ Decoration rules:
   --font-weight-700: 700;
 
   /* typography: line height */
-  --line-height-120: 1.2;
-  --line-height-130: 1.3;
-  --line-height-140: 1.4;
-  --line-height-150: 1.5;
-  --line-height-160: 1.6;
-  --line-height-170: 1.7;
-  --line-height-14: 14px;
   --line-height-16: 16px;
   --line-height-20: 20px;
-  --line-height-22: 22px;
   --line-height-24: 24px;
-  --line-height-26: 26px;
-  --line-height-28: 28px;
   --line-height-32: 32px;
-  --line-height-36: 36px;
   --line-height-40: 40px;
   --line-height-44: 44px;
-  --line-height-52: 52px;
-  --line-height-64: 64px;
+  --line-height-48: 48px;
+  --line-height-60: 60px;
+  --line-height-72: 72px;
+  --line-height-90: 90px;
 }
 
 /* typography: display */
 .type-display_1 {
   font-size: var(--font-size-60);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-64);
+  line-height: var(--line-height-90);
 }
 
 .type-display_2 {
   font-size: var(--font-size-48);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-52);
+  line-height: var(--line-height-72);
 }
 
 .type-display_3 {
   font-size: var(--font-size-40);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-44);
+  line-height: var(--line-height-60);
 }
 
 /* typography: headline */
 .type-headline_1 {
   font-size: var(--font-size-32);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-40);
+  line-height: var(--line-height-48);
 }
 
 .type-headline_2 {
   font-size: var(--font-size-28);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-36);
+  line-height: var(--line-height-44);
 }
 
 .type-headline_3 {
   font-size: var(--font-size-24);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-32);
+  line-height: var(--line-height-40);
 }
 
 /* typography: title */
 .type-title_1 {
   font-size: var(--font-size-20);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-28);
+  line-height: var(--line-height-40);
 }
 
 .type-title_2 {
   font-size: var(--font-size-18);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-26);
+  line-height: var(--line-height-32);
 }
 
 /* typography: body */
 .type-body_1 {
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-24);
+  line-height: var(--line-height-32);
 }
 
 .type-body_2 {
   font-size: var(--font-size-15);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-22);
+  line-height: var(--line-height-24);
 }
 
 /* typography: label */
 .type-label_1 {
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-20);
+  line-height: var(--line-height-24);
 }
 
 /* typography: caption */
 .type-caption_1 {
   font-size: var(--font-size-12);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-16);
+  line-height: var(--line-height-20);
 }
 
 .type-caption_2 {
   font-size: var(--font-size-11);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-16);
+  line-height: var(--line-height-20);
 }
 
 .type-caption_3 {
   font-size: var(--font-size-10);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-14);
+  line-height: var(--line-height-16);
 }
 ```
 
@@ -864,28 +932,57 @@ Typography scale:
 
 | Role | Class | Size | Line height | Weight | Usage |
 | --- | --- | ---: | ---: | ---: | --- |
-| Display 1 | `.type-display_1` | 60px | 64px | 400 | Large hero or metric |
-| Display 2 | `.type-display_2` | 48px | 52px | 400 | Large title |
-| Display 3 | `.type-display_3` | 40px | 44px | 400 | Large section title |
-| Headline 1 | `.type-headline_1` | 32px | 40px | 400 | Page title |
-| Headline 2 | `.type-headline_2` | 28px | 36px | 400 | Major section title |
-| Headline 3 | `.type-headline_3` | 24px | 32px | 400 | Subsection title |
-| Title 1 | `.type-title_1` | 20px | 28px | 500 | Card/modal title |
-| Title 2 | `.type-title_2` | 18px | 26px | 500 | List/form group title |
-| Body 1 | `.type-body_1` | 16px | 24px | 400 | Default body |
-| Body 2 | `.type-body_2` | 15px | 22px | 400 | Dense body |
-| Label 1 | `.type-label_1` | 14px | 20px | 500 | Label, button, tab |
-| Caption 1 | `.type-caption_1` | 12px | 16px | 500 | Supporting info |
-| Caption 2 | `.type-caption_2` | 11px | 16px | 500 | Small supporting info |
-| Caption 3 | `.type-caption_3` | 10px | 14px | 500 | Minimum metadata |
+| Display 1 | `type-display_1` | 60px | 90px | 400 | Main display title |
+| Display 2 | `type-display_2` | 48px | 72px | 400 | Secondary display title |
+| Display 3 | `type-display_3` | 40px | 60px | 400 | Small display title |
+| Headline 1 | `type-headline_1` | 32px | 48px | 400 | Page headline |
+| Headline 2 | `type-headline_2` | 28px | 44px | 400 | Section headline |
+| Headline 3 | `type-headline_3` | 24px | 40px | 400 | Subsection headline |
+| Title 1 | `type-title_1` | 20px | 40px | 500 | Large title |
+| Title 2 | `type-title_2` | 18px | 32px | 500 | Medium title |
+| Body 1 | `type-body_1` | 16px | 32px | 400 | Primary body text |
+| Body 2 | `type-body_2` | 15px | 24px | 400 | Secondary body text |
+| Label 1 | `type-label_1` | 14px | 24px | 500 | Label and control text |
+| Caption 1 | `type-caption_1` | 12px | 20px | 500 | Caption text |
+| Caption 2 | `type-caption_2` | 11px | 20px | 500 | Small caption text |
+| Caption 3 | `type-caption_3` | 10px | 16px | 500 | Tiny caption text |
 
 Typography rules:
 
-- Do not create a 13px font token.
-- Do not create a 115px font token.
-- Do not create `Display_4`, `Title_3`, `Body_3`, or `Label_2`.
-- Font size, line height, and weight are mandatory component specs.
-- Font color is flexible, but must use color tokens.
+- Use typography classes as complete type styles. Do not independently combine font-size and line-height tokens for these named styles.
+- Typography classes include size, weight, and line-height together.
+- Font-family utility tokens such as `--font-sans` and `--font-mono` are not part of this foundation token set.
+- Line-height tokens are px tokens only: `--line-height-16`, `--line-height-20`, `--line-height-24`, `--line-height-32`, `--line-height-40`, `--line-height-44`, `--line-height-48`, `--line-height-60`, `--line-height-72`, and `--line-height-90`.
+- `--line-height-44` and `--line-height-90` are intentional tuned values in the current scale.
+- Do not recreate percentage, ratio, or unapproved line-height tokens.
+- Do not recreate 13px or 115px font tokens.
+- Storybook must list Typography Styles first, then Typography Variables.
+- Typography style previews should render one full-width row per style, show the style name with the small chip component, display the applied font-size and line-height, and include a two-line sample.
+
+### 4.5 Foundation Storybook Organization
+
+Foundation stories are split by token family:
+
+- Colors
+- Spacing
+- Radius
+- Border
+- Shadow
+- Typography
+
+Foundation Storybook rules:
+
+- Do not keep a combined Tokens story after the foundation pages are split.
+- Do not create Size or Opacity foundation pages.
+- Colors must be grouped in this order: Color Tokens, Brand Color Tokens, Semantic Color Tokens.
+- Color Tokens contain atomic palettes such as common, neutral, cool-neutral, blue, red, red-orange, orange, yellow, green, lime, cyan, light-blue, violet, purple, and pink.
+- Brand Color Tokens contain brand palettes such as artskorealab-yellow, artskorealab-cyan, artskorealab-purple, and virtualdream-red. Brand palettes are placed at the bottom of the color-token area.
+- Semantic Color Tokens are grouped below token and brand palettes.
+- Radius previews must show only documented radius tokens: `--radius-0`, `--radius-2`, `--radius-8`, `--radius-16`, `--radius-20`, `--radius-24`, `--radius-32`, `--radius-40`, and `--radius-full`.
+- Do not document or preview Tailwind internal radius aliases.
+- Radius preview boxes must be wide enough that only `--radius-full` appears fully rounded.
+- Border previews must draw an actual line using the border-width token.
+- Shadow previews must list `--shadow-1` through `--shadow-4` in order. Do not expose shadow blur helper tokens as display items.
 
 ## 5. Component Implementation Model
 
@@ -896,6 +993,7 @@ Recommended API style:
 ```tsx
 <Button variant="filled" size="medium" shape="square">Save</Button>
 <Button variant="outline" size="small" icon="alarm">Notify</Button>
+<Button as="a" href="/settings" variant="filled" size="medium">Go to settings</Button>
 <TextInput variant="outline" size="medium" state="error" />
 <Tab variant="grayLineOutline" size="medium" active />
 ```
@@ -906,6 +1004,90 @@ Component rules:
 - Component layout specs are not configurable unless a new official variant is created.
 - Required fixed specs: height/min-height, padding, gap, font-size, font-weight, line-height, radius, border width, icon size, state structure.
 - Color specs are examples only, except gray-line border colors.
+- Component visual specs are independent from the final HTML tag. A component may render as `button`, `a`, or another semantic element when appropriate, as long as the layout specs and accessibility rules are preserved.
+
+### 5.1 Component Class Naming Policy
+
+Generated component CSS must use stable design-system class names. The class name describes the component's visual spec and may be applied to different semantic tags.
+
+Class naming rules:
+
+- Use `snake_case`.
+- Do not use camelCase, PascalCase, BEM, utility-only naming, or tag-based names for design-system component classes.
+- Class names must not depend on the HTML tag. A button-like visual rendered as `button`, `a`, router `Link`, or another valid semantic element uses the same `btn_...` class.
+- Use this order: component prefix, optional role, variant, shape, feature, state/effect, size.
+- Omit segments that do not apply.
+- `primary`, `text`, and `icon` in button class names describe the component role/type, not a fixed color. Colors remain flexible within the token set.
+- The reusable component API may expose props such as `variant`, `size`, `shape`, `state`, `icon`, `disabled`, `as`, or `href`, but the emitted CSS class must still follow this naming policy when classes are generated.
+
+Component prefixes:
+
+| Component | Prefix | Example |
+| --- | --- | --- |
+| Button | `btn` | `.btn_primary_filled_small` |
+| Icon button | `btn_icon` | `.btn_icon_outline_rounded_medium` |
+| Text button | `btn_text` | `.btn_text_medium` |
+| Tab | `tab` | `.tab_filled_active_medium` |
+| Text input | `text_input` | `.text_input_outline_error_medium` |
+| Textarea | `textarea` | `.textarea_outline_focus_large` |
+| Select | `select` | `.select_filled_rounded_icon_medium` |
+| Chip | `chip` | `.chip_gray_line_outline_disabled_small` |
+| Badge | `badge` | `.badge_outline_small` |
+| Toggle | `toggle` | `.toggle_disabled_medium` |
+| Checkbox | `checkbox` | `.checkbox_disabled_small` |
+| Radio | `radio` | `.radio_disabled_medium` |
+| Card pattern | `card` | `.card` |
+| Form pattern | `form`, `field` | `.form_stack`, `.field_label` |
+| Table pattern | `table` | `.table_wrap`, `.data_table` |
+
+Class examples:
+
+```html
+<button type="button" class="btn_primary_filled_small">Save</button>
+<a href="/settings" class="btn_primary_filled_small">Settings</a>
+<button type="button" class="btn_primary_outline_rounded_icon_medium">Notify</button>
+<button type="button" class="btn_icon_outline_full_rounded_large" aria-label="Open menu"></button>
+<button type="button" class="tab_gray_line_outline_active_medium" role="tab" aria-selected="true">Tab</button>
+<label class="text_input_outline_error_medium"><input type="text" /></label>
+<select class="select_filled_rounded_icon_medium"></select>
+<span class="badge_filled_small">New</span>
+```
+
+Class segment examples:
+
+- Variant: `filled`, `outline`, `gray_line_outline`.
+- Shape: `rounded`, `full_rounded`; omit for square/default.
+- Feature: `icon`, `password`.
+- State/effect: `active`, `focus`, `complete`, `error`, `disabled`, `view`, `shadow`.
+- Size: `small`, `medium`, `large`, `xlarge` when the component supports it.
+
+### 5.2 Semantic Element Policy
+
+Use the semantic element that matches the behavior.
+
+- Use `button` for in-page actions: submit, save, open modal, toggle, delete, filter, apply, cancel, and any JavaScript action that does not navigate.
+- Use `a` for navigation: moving to another URL, route, file, section, mail link, phone link, or external page. Anchor-style buttons must have a valid `href`.
+- A visual button may be implemented as `button` or `a`. The visual component API should support this with an `as`, `href`, or equivalent prop.
+- Do not use `div` or `span` for interactive button/link behavior unless there is no native semantic alternative. If unavoidable, add keyboard support, focus handling, and ARIA role explicitly.
+- Disabled `button` elements must use the actual `disabled` attribute.
+- Disabled `a` elements cannot use `disabled`. Use `aria-disabled="true"`, remove or guard navigation/click behavior, keep it focus-safe according to product needs, and apply the disabled visual state.
+- Link-style buttons and button-style links must keep the same height, padding, font-size, font-weight, line-height, radius, border width, icon size, and alignment specs as the corresponding button variant.
+
+### 5.3 DOM And Accessibility Policy
+
+The visual component is not the same thing as the DOM node. Preserve semantic HTML, accessibility, and valid nesting.
+
+- Do not nest interactive elements. Avoid structures such as `a > button`, `button > a`, `button > input`, or a clickable card link containing other buttons or links.
+- Router links such as Next.js `Link`, React Router `Link`, NuxtLink, and similar components should receive the visual button/link class directly or through an `as`/`asChild`/`component` API. Do not wrap them in another `a` or `button`.
+- Button components rendered as `button` must default to `type="button"` unless the intended behavior is form submission. Use `type="submit"` only for submit actions.
+- Icon-only buttons and icon-only links must have an accessible name such as `aria-label`.
+- Decorative icons inside text buttons, tabs, chips, inputs, and badges must use `aria-hidden="true"` or an equivalent hidden-from-assistive-tech setting.
+- Every interactive component must have a visible `:focus-visible` state using design-system tokens.
+- Disabled visuals must match real behavior. Use `disabled` for native controls, `readonly` for read-only text entry, and `aria-disabled` plus event/navigation guards for disabled links or custom controls.
+- Custom controls that replace native elements must implement keyboard behavior, focus management, and ARIA roles matching the native pattern.
+- Visually hidden native inputs must remain focusable and operable. Do not hide checkbox, radio, or toggle inputs with `display: none` when they are the real control.
+- Dynamic state changes such as validation errors, loading, selected tab, expanded menu, or async completion must update ARIA attributes and visible state together.
+- Color choices must preserve text/icon contrast. Tokens are mandatory, but token usage alone is not enough if the chosen foreground/background pair has poor contrast.
 
 ## 6. Component Specs
 
@@ -935,7 +1117,7 @@ Variant layout:
 | --- | --- | --- |
 | filled | border 0 | Choose background/text/hover colors from color tokens. |
 | outline | `--border-1` solid | Choose background/text/border/hover colors from color tokens. |
-| disabled | same size, cursor default | Choose disabled colors from color tokens and use actual `disabled`. |
+| disabled | same size, cursor default | Choose disabled colors from color tokens. Use `disabled` for `button`; use `aria-disabled` and guarded navigation for `a`. |
 
 Shape:
 
@@ -971,8 +1153,15 @@ Button rules:
 
 - Use one primary filled action per action group.
 - Secondary actions should use outline or text button structure.
-- Do not build buttons with `div`.
-- Disabled buttons must use the actual `disabled` attribute.
+- The same visual button spec may render as `button` or `a`.
+- Use `button` for actions and `a` for navigation.
+- `button` elements must default to `type="button"` unless the button submits a form.
+- Anchor buttons must include `href` unless intentionally disabled.
+- Do not build button/link interactions with `div` or `span` when a native `button` or `a` can be used.
+- Disabled `button` elements must use the actual `disabled` attribute.
+- Disabled anchor buttons must use `aria-disabled="true"` and must not navigate or trigger the disabled action.
+- Icon-only buttons must have an accessible name such as `aria-label`.
+- Buttons with decorative icons must hide the icon from assistive technology.
 
 ### 6.2 Tab
 
@@ -1006,6 +1195,8 @@ Tab rules:
 
 - Active tab must use `aria-selected="true"`.
 - Use `role="tablist"` and `role="tab"` where applicable.
+- Connect tabs and panels with `aria-controls`, `aria-labelledby`, and matching IDs.
+- Support keyboard navigation for tab groups: arrow keys move between tabs, and Home/End move to first/last tab when appropriate.
 - Do not mix size or shape inside one tab group.
 
 ### 6.3 Text Input
@@ -1033,7 +1224,7 @@ Size:
 | small | 40px | 12px | 14px | 20px |
 | medium | 48px | 16px | 15px | 20px |
 | large | 52px | 24px | 16px | 24px |
-| xlarge | component preset | 24px | 16px | 24px |
+| xlarge | 56px | 16px | 16px | 24px |
 
 Variant layout:
 
@@ -1105,6 +1296,7 @@ Variant/state layout:
 - Rounded: `--radius-8`.
 - Full rounded: `--radius-full`.
 - Disabled: disabled visual and actual `disabled`.
+- Prefer native `select` when possible. If a custom select is required, implement combobox/listbox semantics, keyboard navigation, focus management, and outside-click behavior.
 
 ### 6.6 Chip
 
@@ -1178,6 +1370,7 @@ Rules:
 - Use toggle for immediately applied settings.
 - Use checkbox for multiple selections.
 - Disabled state must use the actual `disabled` attribute.
+- Keep the native input accessible. Do not hide the real input with `display: none` if it is the operable control.
 - Colors are flexible within tokens.
 
 ### 6.9 Checkbox
@@ -1198,6 +1391,7 @@ Rules:
 - Use checkbox for multiple selection or independent boolean input.
 - Use gap tokens when paired with text labels.
 - Disabled state must use the actual `disabled` attribute.
+- Keep the native input accessible and associated with a label.
 - Colors are flexible within tokens.
 
 ### 6.10 Radio
@@ -1219,6 +1413,7 @@ Rules:
 - Do not mix sizes inside one radio group.
 - Use the `name` attribute to bind the group.
 - Disabled state must use the actual `disabled` attribute.
+- Keep the native input accessible and associated with a label.
 - Colors are flexible within tokens.
 
 ## 7. Common Patterns
@@ -1227,7 +1422,7 @@ Rules:
 
 There is no dedicated card component CSS in the original system. Use this reusable pattern.
 
-```css
+`````css
 .card {
   padding: var(--spacing-padding-vertical-24) var(--spacing-padding-horizontal-24);
   border: var(--border-1) solid var(--color-line-normal-neutral);
@@ -1244,11 +1439,13 @@ Card rules:
 - Internal padding should be 16px, 24px, or 32px.
 - Do not nest cards inside cards.
 - Clickable cards need a visible focus state.
+- If the whole card is clickable, render the card as one `a` or `button` only when it does not contain other interactive elements.
+- If a card contains internal buttons, links, menus, checkboxes, or form controls, do not make the whole card one large interactive element. Use a separate link/action area instead.
 
 ### 7.2 Form
 
-```css
-.form-stack {
+`````css
+.form_stack {
   display: grid;
   gap: var(--spacing-gap-vertical-16);
 }
@@ -1258,7 +1455,7 @@ Card rules:
   gap: var(--spacing-gap-vertical-8);
 }
 
-.field-label {
+.field_label {
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-500);
   line-height: var(--line-height-20);
@@ -1275,21 +1472,21 @@ Form rules:
 
 ### 7.3 Table
 
-```css
-.table-wrap {
+`````css
+.table_wrap {
   overflow-x: auto;
   border: var(--border-1) solid var(--color-line-normal-neutral);
   border-radius: var(--radius-8);
   background: var(--color-background-elevated-normal);
 }
 
-.data-table {
+.data_table {
   width: 100%;
   min-width: 640px;
 }
 
-.data-table th,
-.data-table td {
+.data_table th,
+.data_table td {
   padding: var(--spacing-padding-vertical-12) var(--spacing-padding-horizontal-16);
   border-bottom: var(--border-1) solid var(--color-line-normal-alternative);
   font-size: var(--font-size-14);
@@ -1298,7 +1495,7 @@ Form rules:
   vertical-align: middle;
 }
 
-.data-table th {
+.data_table th {
   font-weight: var(--font-weight-500);
 }
 ```
@@ -1309,6 +1506,10 @@ Table rules:
 - Use text button or icon button for row actions.
 - Use horizontal scroll wrapper on narrow screens.
 - Do not nest cards inside tables.
+- Use real table semantics for data tables: `table`, `thead`, `tbody`, `tr`, `th`, and `td`.
+- Use `scope="col"` or `scope="row"` on header cells when applicable.
+- Use `caption` or an accessible label when the table needs a name.
+- Sortable headers must expose sort state with `aria-sort` and use a button inside the header cell for the sort action.
 - Colors may change within tokens.
 
 ## 8. Prohibited
@@ -1320,19 +1521,49 @@ Table rules:
 - Do not create `Label_2`, `Display_4`, `Title_3`, or `Body_3`.
 - Do not override component height, padding, font-size, font-weight, line-height, radius, border width, or icon size in page CSS.
 - Component colors may change, but only within color tokens.
+- Do not create design-system component class names outside the documented `snake_case` naming policy.
+- Do not make component class names depend on the rendered HTML tag.
 - Do not make disabled-looking UI without actual disabled/readonly/aria handling.
-- Do not build buttons with `div`.
+- Do not force every visual button to be a `button` tag. Use `button` for actions and `a` for navigation.
+- Do not build button/link interactions with `div` or `span` when a native `button` or `a` can be used.
+- Do not nest interactive elements such as `a > button`, `button > a`, or a clickable card that contains other links/buttons.
 - Do not attach click behavior to badges.
 - Do not use multiple primary filled actions in one action group.
 - Do not use `!important`.
+- In Tailwind projects, do not leave foundation/reset CSS unlayered. Put it in `@layer base`.
+- Do not solve Tailwind cascade layer conflicts with `!important`; move CSS to the correct layer.
+- Do not put global tokens or reset/base rules inside CSS Modules or scoped component styles.
+- Do not rely on token names alone for accessibility; foreground/background color pairs must still have acceptable contrast.
+- Do not hide the real checkbox, radio, or toggle input with `display: none` when it is the operable control.
 
 ## 9. Generation Checklist
 
 - Does global CSS include all color, spacing, decorate, and typography tokens?
 - Does global CSS include the reset block from this document?
+- If using Tailwind, are foundation tokens and reset rules inside `@layer base`?
+- If using Tailwind, are reusable component styles inside `@layer components` and utility overrides left to `@layer utilities`?
+- If using Tailwind, is there no unlayered reset such as unlayered `a { color: inherit; }` competing with utilities?
 - Are all colors chosen from the token set?
 - Are component layout specs preserved?
+- Do generated component CSS classes follow the documented `snake_case` naming policy?
+- Do `button`, `a`, and router-link versions of the same visual button use the same `btn_...` class?
 - Are component sizes, padding, font sizes, weights, line heights, radius, border widths, and icon sizes identical to this document?
 - Are gray-line borders using neutral/line tokens?
+- Are visual buttons rendered with the correct semantic element: `button` for actions and `a` for navigation?
+- Do rendered `button` elements default to `type="button"` unless they intentionally submit a form?
+- Do anchor buttons include `href`, unless intentionally disabled?
+- Do disabled anchors use `aria-disabled` and guarded navigation instead of a fake `disabled` attribute?
+- Are router links styled directly without invalid nested `a` or `button` elements?
+- Do icon-only buttons and links have accessible names?
+- Are decorative icons hidden from assistive technology?
+- Does every interactive component have a visible `:focus-visible` state?
+- Are portaled, shadow-root, or iframe-rendered nodes receiving the same tokens and reset/base behavior?
 - Are form labels, disabled, readonly, and aria states wired correctly?
+- Are checkbox, radio, and toggle inputs still accessible and label-associated?
+- Are tab groups connected to panels and keyboard operable?
+- Are data tables using real table semantics, header scopes, and accessible sorting where needed?
 - Is there no 13px font token, 115px token, hardcoded hex, arbitrary px value, or `!important`?
+
+
+
+
