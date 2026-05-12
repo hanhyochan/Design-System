@@ -4,7 +4,8 @@ This file is the single source of truth to give to an AI when creating a new pro
 
 The AI must be able to generate:
 
-- A global stylesheet containing the reset CSS and every foundation token from this document.
+- A global stylesheet containing every foundation token from this document.
+- Reset/base CSS only when the project does not already have an existing reset or global base style.
 - Reusable component styles that consume those global foundation token variables.
 - Component CSS whose computed style matches the current design system for the requested component, variant, state, shape, and size.
 
@@ -26,16 +27,19 @@ Use this instruction when sending this file to an AI:
 ```text
 Follow design-system.md strictly.
 Create the project using the boilerplate structure.
-First generate global CSS with the reset code and all foundation tokens from this file.
+First generate global CSS with all foundation tokens from this file.
+Add the reset/base code from this file only if the project does not already have an existing reset or global base style. If the project already has reset/global base styles, keep the existing project reset and merge only non-conflicting requirements as needed.
 Then generate component styles that use those global token variables.
-For the default design-system reproduction, component classes must match the exact source component CSS specs in this document.
+For the default design-system reproduction, component computed styles must match the exact source component CSS specs in this document.
 Do not invent new raw CSS values.
 Use only the tokens defined in this file.
 Do not change component color tokens, typography tokens, radius tokens, border tokens, shadow tokens, or state tokens unless the user explicitly asks for a project-specific token swap.
 Component specs are mandatory: background, color, border, height, min-height, padding, gap, font-size, font-weight, line-height, radius, border width, shadow, icon size, and state structure must follow this document.
-If the project uses Tailwind CSS, put foundation tokens and reset/base rules inside @layer base, reusable component classes inside @layer components, and leave utility overrides to @layer utilities. Do not emit unlayered reset CSS.
-If the project uses CSS Modules, scoped styles, CSS-in-JS, Shadow DOM, portals, or a UI framework, keep foundation tokens and reset/base rules global and load them before component styles.
-When generating CSS classes, follow the component class naming policy in this document. The class name must describe the visual component spec, not the HTML tag.
+If the project uses Tailwind CSS, put foundation tokens and any design-system reset/base rules inside @layer base, reusable component classes inside @layer components, and leave utility overrides to @layer utilities. Do not emit unlayered reset CSS.
+If the project uses CSS Modules, scoped styles, CSS-in-JS, Shadow DOM, portals, or a UI framework, keep foundation tokens and any required reset/base rules global and load them before component styles.
+Code structure is flexible. Use the structure that best fits the project: composed classes, component props, CSS Modules, CSS-in-JS, Tailwind utilities, or one complete class are all allowed.
+Class names shown in this document are reference/copy-paste names from the design system. Do not force the project to use those exact full class names unless the user asks for copy-paste CSS classes or the project exports design-system class names.
+If generating exportable design-system CSS classes, follow the component class naming policy in this document. The class name must describe the visual component spec, not the HTML tag.
 Build reusable components instead of copying every one-off class from the original design system.
 ```
 
@@ -46,16 +50,18 @@ When this markdown file is used to create or update a project, follow this order
 1. Create the project structure.
 2. Create `global.css` or the framework's global stylesheet.
 3. Put every foundation token from section 4 into the global stylesheet before component styles.
-4. Put the reset/base CSS from section 3 into the same global stylesheet after the tokens.
-5. Generate reusable component CSS or component-level styles from section 6.
-6. Make every component style reference the global foundation variables when the source spec uses variables.
-7. Use exact px values only where the source component CSS uses exact px values or where the spec says fixed dimensions are intentional.
+4. If the project has no reset/global base style, put the reset/base CSS from section 3 into the same global stylesheet after the tokens.
+5. If the project already has reset/global base styles, do not paste this design-system reset wholesale. Keep the existing reset, compare it with section 3, and add only the non-conflicting requirements that are needed for this design system.
+6. Generate reusable component CSS or component-level styles from section 6.
+7. Make every component style reference the global foundation variables when the source spec uses variables.
+8. Use exact px values only where the source component CSS uses exact px values or where the spec says fixed dimensions are intentional.
 
 Required result:
 
-- If a user asks for `badge filled medium`, generate `badge_filled_medium` with the exact CSS properties in section 6.11, using `var(--font-size-14)`, `var(--line-height-20)`, `var(--font-weight-500)`, `var(--radius-full)`, `var(--color-blue-50)`, and `var(--color-common-100)`.
-- If a user asks for `filled rounded small button`, generate `btn_primary_filled_rounded_small` with the exact CSS properties in section 6.11.
-- The generated components may be implemented as React/Vue/Svelte/etc. components, but the rendered class or computed CSS must still match the documented design-system spec.
+- If a user asks for `badge filled medium`, the resulting component style must use the exact CSS properties in section 6.11, including `var(--font-size-14)`, `var(--line-height-20)`, `var(--font-weight-500)`, `var(--radius-full)`, `var(--color-blue-50)`, and `var(--color-common-100)`.
+- If a user asks for `filled rounded small button`, the resulting component style must match the exact CSS properties in section 6.11.
+- The generated components may be implemented as React/Vue/Svelte/etc. components, composed utility classes, component props, CSS Modules, CSS-in-JS, or full CSS classes. The implementation structure is not important; the rendered computed CSS is.
+- Complete classes such as `badge_filled_medium` and `btn_primary_filled_rounded_small` are copy-paste/reference examples for humans. They are not mandatory project architecture.
 - Do not generate a component first and then invent local values. The component must be derived from the already-defined global foundation tokens.
 
 ## 2. Boilerplate Structure
@@ -111,7 +117,7 @@ If CSS files are imported separately, keep this order:
 If a project uses one global stylesheet, generate it in this order:
 
 1. Foundation tokens: color, spacing, decorate, typography.
-2. Reset and base styles.
+2. Reset and base styles, only when the project does not already provide them.
 3. Layout utilities.
 4. Reusable component styles.
 
@@ -142,7 +148,7 @@ Tailwind projects must place design-system CSS in explicit layers:
 Layer rules:
 
 - Put `:root` foundation tokens in `@layer base`.
-- Put the reset block in `@layer base`.
+- Put the reset block in `@layer base` only if the design-system reset is being used.
 - Put reusable component classes in `@layer components`.
 - Let Tailwind utilities remain in `@layer utilities`.
 - Do not place reset/base rules as unlayered CSS in a Tailwind project.
@@ -155,8 +161,8 @@ The design system must survive different project stacks. Do not assume plain sta
 
 Framework rules:
 
-- Plain CSS: import foundation tokens first, then reset/base, layout utilities, then component styles.
-- Tailwind CSS v4: place foundation tokens and reset/base rules inside `@layer base`; place reusable component classes inside `@layer components`; leave one-off utilities in `@layer utilities`.
+- Plain CSS: import foundation tokens first, then existing or design-system reset/base, layout utilities, then component styles.
+- Tailwind CSS v4: place foundation tokens and any design-system reset/base rules inside `@layer base`; place reusable component classes inside `@layer components`; leave one-off utilities in `@layer utilities`.
 - CSS Modules: do not put `:root`, `html`, `body`, reset selectors, or element selectors in a module file. Put them in a real global stylesheet such as `global.css` or `globals.css`.
 - Vue scoped styles and Svelte scoped styles: do not put foundation tokens or reset/base rules inside scoped blocks. Use a global style block or project global CSS entry.
 - CSS-in-JS, styled-components, emotion, or stitches: create one global style injection for tokens and reset/base rules, mount it at the app root, and ensure it loads before component styles.
@@ -168,7 +174,7 @@ Framework rules:
 
 Global styles do not always reach every rendered node.
 
-- `:root` tokens and reset/base rules must exist in the main document before components render.
+- `:root` tokens must exist in the main document before components render. Reset/base rules must exist only when this design-system reset is used or when equivalent project reset/base rules are required.
 - Portaled UI such as modals, dropdowns, popovers, tooltips, toasts, and date pickers must still inherit the same tokens and reset/base rules. If a portal mounts outside the main app root, verify its container inherits the global CSS.
 - Shadow DOM and Web Components do not automatically receive document reset rules. For Shadow DOM components, expose the design-system tokens through `:host` and include the required base/reset behavior inside the shadow root when needed.
 - Iframes are separate documents. If UI is rendered inside an iframe, inject the same foundation tokens and reset/base CSS into the iframe document.
@@ -185,11 +191,15 @@ The numeric values in the spec tables are design targets. Implementation should 
 - If a documented value exists as a token, use the token instead of repeating the raw number.
 - If a source component spec already uses a token variable, generated component CSS must use that same token variable and rely on the global stylesheet to define it.
 - Do not define component-private token aliases such as `--button-height-small` unless the project separately maps them to the exact documented global tokens and fixed values.
+- Do not convert documented px values to `rem` by default. Use the same unit notation as the source component spec so the computed style matches this design system.
+- `rem` may be used only when the target project already has a deliberate rem-based policy and the final computed pixel value still matches the documented component spec.
 - Font loading is part of implementation. If using `"Noto Sans KR"`, load it through the project font system or accept the documented fallback stack.
 
 ## 3. Global Reset
 
-Copy this reset into the global stylesheet after the foundation tokens. In Tailwind projects, do not paste this as unlayered CSS; wrap it in `@layer base` with the foundation tokens.
+Use this reset only for new projects or projects that do not already have a reset/global base style. If an existing project already has reset/global base styles, do not paste this block wholesale. Keep the existing project reset, compare it with this section, and add only the non-conflicting rules that are actually needed.
+
+When this reset is used, copy it into the global stylesheet after the foundation tokens. In Tailwind projects, do not paste it as unlayered CSS; wrap it in `@layer base` with the foundation tokens.
 
 `````css
 *,
@@ -1015,6 +1025,10 @@ Foundation Storybook rules:
 
 The original design-system CSS has many one-off classes for copy/paste inspection. New projects should implement reusable components instead.
 
+The one-off class names in this document are reference names for humans who need to inspect or copy a complete style block. They are not mandatory architecture for generated projects.
+
+The requirement is exact visual/style reproduction, not exact class reproduction. A project may split styles into shared base classes, variant classes, component props, CSS Modules, CSS-in-JS, Tailwind utilities, or any other structure that fits the project, as long as the final rendered computed CSS matches this design system.
+
 Recommended API style:
 
 ```tsx
@@ -1035,17 +1049,21 @@ Component rules:
 
 ### 5.1 Component Class Naming Policy
 
-Generated component CSS must use stable design-system class names. The class name describes the component's visual spec and may be applied to different semantic tags.
+This policy applies only when the project exports design-system CSS classes, when the user asks for copy-paste CSS, or when the user explicitly asks for classes matching this design system.
+
+If the project uses component props, scoped modules, composed utility classes, or CSS-in-JS instead, these exact class names are not required. The implementation must still produce the same computed visual style.
+
+When exportable design-system classes are generated, use stable class names. The class name describes the component's visual spec and may be applied to different semantic tags.
 
 Class naming rules:
 
-- Use `snake_case`.
-- Do not use camelCase, PascalCase, BEM, utility-only naming, or tag-based names for design-system component classes.
+- Use `snake_case` for exportable design-system classes.
+- Do not use camelCase, PascalCase, BEM, utility-only naming, or tag-based names for exportable design-system component classes.
 - Class names must not depend on the HTML tag. A button-like visual rendered as `button`, `a`, router `Link`, or another valid semantic element uses the same `btn_...` class.
 - Use this order: component prefix, optional role, variant, shape, feature, state/effect, size.
 - Omit segments that do not apply.
 - `primary`, `text`, and `icon` in button class names describe the component role/type. In default reproduction mode they still use the exact documented button color tokens.
-- The reusable component API may expose props such as `variant`, `size`, `shape`, `state`, `icon`, `disabled`, `as`, or `href`, but the emitted CSS class must still follow this naming policy when classes are generated.
+- The reusable component API may expose props such as `variant`, `size`, `shape`, `state`, `icon`, `disabled`, `as`, or `href`. The emitted CSS class must follow this naming policy only when exportable classes are generated.
 
 Component prefixes:
 
@@ -1068,6 +1086,8 @@ Component prefixes:
 | Table pattern | `table` | `.table_wrap`, `.data_table` |
 
 Class examples:
+
+These examples are reference/copy-paste class names. They show how the design system names complete visual specs; they do not force every project to use the same class architecture.
 
 ```html
 <button type="button" class="btn_primary_filled_small">Save</button>
@@ -1127,7 +1147,9 @@ Implementation format is flexible:
 
 - You may use one full class per variant, composed classes, CSS modules, CSS-in-JS, Tailwind utilities, or component props.
 - The rendered computed style must match the component specs below.
-- If exporting design-system CSS classes, use snake_case class names that describe the visual spec.
+- Full one-off classes in this document exist for copy/paste inspection and exact style reference. They are not mandatory project architecture.
+- If exporting design-system CSS classes or if the user asks for copy-paste CSS, use snake_case class names that describe the visual spec.
+- If the project uses another styling architecture, keep that architecture and reproduce the same computed style.
 - The semantic element is flexible only where HTML behavior allows it. For example, a visual button may render as `button`, `a`, or a router link, but the visual CSS must stay identical.
 
 Class naming order:
@@ -1158,7 +1180,8 @@ Token and unit rules:
 - All color, radius, shadow, typography, border, and spacing decisions must come from the foundation tokens in this document.
 - Fixed component dimensions such as `min-height`, `width`, `height`, icon size, background-position, and transform distances may be written as exact px values when the source component CSS uses exact px values.
 - Match the source component CSS notation. If the source uses `var(--font-size-14)`, output `var(--font-size-14)`, not `14px`. If the source uses raw `12px`, output raw `12px`.
-- When the user asks for a concrete component class, expand the matching base, size, variant, shape, feature, and state rows into a complete CSS selector that can be copied directly.
+- When the user asks for a copy-paste CSS class, expand the matching base, size, variant, shape, feature, and state rows into a complete CSS selector that can be copied directly.
+- When the user asks for a component in a real project, choose the code structure that fits that project and make the final computed CSS match the same rows.
 - Do not invent new sizes, states, radii, shadows, border widths, typography levels, or component variants.
 - Default reproduction mode must use the exact tokens listed in the component matrices below.
 - If a product intentionally changes brand colors, it may only swap to existing color tokens. Layout, spacing, typography, border width, radius, shadow, state behavior, and icon sizing still follow this system exactly.
@@ -1190,7 +1213,7 @@ Primary button support:
 - `small`, `medium`, `large`, and `xlarge` are available for the main `Buttons` tables.
 - `xlarge` exists for filled, outline, rounded, full rounded, icon, shadow, and disabled primary button variants.
 - `xlarge` keeps the same typography and horizontal padding as `large`; only `min-height` changes from `48px` to `60px`.
-- Primary button classes use the same visual class on `button`, `a`, and router-link components. Do not create tag-specific class names.
+- When exportable or copy-paste button classes are generated, `button`, `a`, and router-link components use the same visual class. Do not create tag-specific class names.
 
 Primary button with text icon:
 
@@ -2172,8 +2195,8 @@ Table rules:
 - Do not create `Label_2`, `Display_4`, `Title_3`, or `Body_3`.
 - Do not override component height, padding, font-size, font-weight, line-height, radius, border width, or icon size in page CSS.
 - Do not change documented component color tokens unless the user explicitly requests project-specific color customization.
-- Do not create design-system component class names outside the documented `snake_case` naming policy.
-- Do not make component class names depend on the rendered HTML tag.
+- When exporting design-system classes or copy-paste CSS, do not create component class names outside the documented `snake_case` naming policy.
+- When exporting design-system classes or copy-paste CSS, do not make component class names depend on the rendered HTML tag.
 - Do not make disabled-looking UI without actual disabled/readonly/aria handling.
 - Do not force every visual button to be a `button` tag. Use `button` for actions and `a` for navigation.
 - Do not build button/link interactions with `div` or `span` when a native `button` or `a` can be used.
@@ -2183,14 +2206,15 @@ Table rules:
 - Do not use `!important`.
 - In Tailwind projects, do not leave foundation/reset CSS unlayered. Put it in `@layer base`.
 - Do not solve Tailwind cascade layer conflicts with `!important`; move CSS to the correct layer.
-- Do not put global tokens or reset/base rules inside CSS Modules or scoped component styles.
+- Do not put global tokens or design-system reset/base rules inside CSS Modules or scoped component styles.
 - Do not rely on token names alone for accessibility; foreground/background color pairs must still have acceptable contrast.
 - Do not hide the real checkbox, radio, or toggle input with `display: none` when it is the operable control.
 
 ## 9. Generation Checklist
 
 - Does global CSS include all color, spacing, decorate, and typography tokens?
-- Does global CSS include the reset block from this document?
+- If the project has no existing reset/global base style, does global CSS include the reset block from this document?
+- If the project already has reset/global base styles, was the design-system reset not pasted wholesale, and were conflicts checked before adding any needed rules?
 - Is global CSS generated before component styles and loaded before components render?
 - Do component styles consume the global foundation variables instead of redefining local token aliases?
 - If using Tailwind, are foundation tokens and reset rules inside `@layer base`?
@@ -2199,10 +2223,11 @@ Table rules:
 - Are all colors chosen from the token set?
 - In default reproduction mode, do component background/color/border/shadow tokens match the exact section 6.11 specs?
 - Are component layout specs preserved?
-- Do generated component CSS classes follow the documented `snake_case` naming policy?
-- Do `button`, `a`, and router-link versions of the same visual button use the same `btn_...` class?
+- If exportable design-system classes or copy-paste CSS are generated, do class names follow the documented `snake_case` naming policy?
+- If exportable button classes are generated, do `button`, `a`, and router-link versions of the same visual button use the same `btn_...` class?
 - Are component sizes, padding, font sizes, weights, line heights, radius, border widths, and icon sizes identical to this document?
 - Where the source component uses token notation such as `var(--font-size-14)`, does generated CSS keep the same token notation instead of raw px?
+- Are documented px values kept as px unless the project has an explicit rem policy that preserves the same computed pixel value?
 - Are primary button `xlarge` variants generated with `min-height: 60px`, `padding-x: 24px`, `font-size: 16px`, and `line-height: 20px`?
 - Are text button `xlarge` variants generated with `min-height: 60px`, `padding-x: 0`, `font-size: 15px`, and `line-height: 20px`?
 - Is icon-only Button+icon support kept to the documented size range, without inventing outline `xlarge` variants?
@@ -2215,7 +2240,7 @@ Table rules:
 - Do icon-only buttons and links have accessible names?
 - Are decorative icons hidden from assistive technology?
 - Does every interactive component have a visible `:focus-visible` state?
-- Are portaled, shadow-root, or iframe-rendered nodes receiving the same tokens and reset/base behavior?
+- Are portaled, shadow-root, or iframe-rendered nodes receiving the same tokens and any required reset/base behavior?
 - Are form labels, disabled, readonly, and aria states wired correctly?
 - Are checkbox, radio, and toggle inputs still accessible and label-associated?
 - Are tab groups connected to panels and keyboard operable?
