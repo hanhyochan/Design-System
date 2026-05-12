@@ -4,18 +4,20 @@ This file is the single source of truth to give to an AI when creating a new pro
 
 The AI must be able to generate:
 
-- Global reset CSS.
-- All foundation tokens.
-- Reusable component styles that match the current design system layout and sizing specs.
+- A global stylesheet containing the reset CSS and every foundation token from this document.
+- Reusable component styles that consume those global foundation token variables.
+- Component CSS whose computed style matches the current design system for the requested component, variant, state, shape, and size.
 
 Important distinction:
 
 - Mandatory: use only the tokens in this document.
-- Mandatory: follow component layout, sizing, spacing, typography, radius, border-width, and state-structure rules.
-- Flexible: visual color choices such as button background, button text color, badge color, chip color, active color, hover color, and general text color may change per project.
+- Mandatory: generate global CSS first, then build component styles on top of those global tokens.
+- Mandatory: follow component color tokens, layout, sizing, spacing, typography, radius, border-width, shadow, icon, and state-structure rules for the default design-system reproduction.
+- Mandatory: when the source component CSS uses a token variable, the generated component CSS must use the same token variable.
+- Flexible only when explicitly requested: project-specific brand colors may change, but only by swapping to other color tokens from this document.
 - Exception: variants named `gray line` must keep their gray/neutral line behavior by using neutral/line tokens.
 
-Do not hardcode new values. If a color changes, choose another color token from this document. If a component is rebuilt as React/Vue/etc., keep the same specs.
+Do not hardcode new values. If a component is rebuilt as React/Vue/etc., keep the same CSS specs and consume the foundation variables from the global stylesheet.
 
 ## 1. AI Instruction
 
@@ -24,16 +26,37 @@ Use this instruction when sending this file to an AI:
 ```text
 Follow design-system.md strictly.
 Create the project using the boilerplate structure.
-Generate global CSS with the reset code and all foundation tokens from this file.
+First generate global CSS with the reset code and all foundation tokens from this file.
+Then generate component styles that use those global token variables.
+For the default design-system reproduction, component classes must match the exact source component CSS specs in this document.
 Do not invent new raw CSS values.
 Use only the tokens defined in this file.
-Component colors may be changed within the token set, except gray-line borders must remain neutral/line based.
-Component layout specs are mandatory: height, min-height, padding, gap, font-size, font-weight, line-height, radius, border width, icon size, and state structure must follow this document.
+Do not change component color tokens, typography tokens, radius tokens, border tokens, shadow tokens, or state tokens unless the user explicitly asks for a project-specific token swap.
+Component specs are mandatory: background, color, border, height, min-height, padding, gap, font-size, font-weight, line-height, radius, border width, shadow, icon size, and state structure must follow this document.
 If the project uses Tailwind CSS, put foundation tokens and reset/base rules inside @layer base, reusable component classes inside @layer components, and leave utility overrides to @layer utilities. Do not emit unlayered reset CSS.
 If the project uses CSS Modules, scoped styles, CSS-in-JS, Shadow DOM, portals, or a UI framework, keep foundation tokens and reset/base rules global and load them before component styles.
 When generating CSS classes, follow the component class naming policy in this document. The class name must describe the visual component spec, not the HTML tag.
 Build reusable components instead of copying every one-off class from the original design system.
 ```
+
+### 1.1 Required Generation Flow
+
+When this markdown file is used to create or update a project, follow this order:
+
+1. Create the project structure.
+2. Create `global.css` or the framework's global stylesheet.
+3. Put every foundation token from section 4 into the global stylesheet before component styles.
+4. Put the reset/base CSS from section 3 into the same global stylesheet after the tokens.
+5. Generate reusable component CSS or component-level styles from section 6.
+6. Make every component style reference the global foundation variables when the source spec uses variables.
+7. Use exact px values only where the source component CSS uses exact px values or where the spec says fixed dimensions are intentional.
+
+Required result:
+
+- If a user asks for `badge filled medium`, generate `badge_filled_medium` with the exact CSS properties in section 6.11, using `var(--font-size-14)`, `var(--line-height-20)`, `var(--font-weight-500)`, `var(--radius-full)`, `var(--color-blue-50)`, and `var(--color-common-100)`.
+- If a user asks for `filled rounded small button`, generate `btn_primary_filled_rounded_small` with the exact CSS properties in section 6.11.
+- The generated components may be implemented as React/Vue/Svelte/etc. components, but the rendered class or computed CSS must still match the documented design-system spec.
+- Do not generate a component first and then invent local values. The component must be derived from the already-defined global foundation tokens.
 
 ## 2. Boilerplate Structure
 
@@ -91,6 +114,8 @@ If a project uses one global stylesheet, generate it in this order:
 2. Reset and base styles.
 3. Layout utilities.
 4. Reusable component styles.
+
+`global.css` must be the source of the foundation variables. Component CSS must consume these variables with `var(--...)`; it must not redefine token variables locally or replace documented token variables with ad hoc raw values.
 
 ### 2.1 Tailwind CSS / Cascade Layer Policy
 
@@ -158,6 +183,8 @@ The numeric values in the spec tables are design targets. Implementation should 
 - Do not invent new spacing, typography, radius, border, or shadow values.
 - Component-only dimensions such as button min-height, toggle track size, or icon control size may use the exact documented px value when no matching token exists.
 - If a documented value exists as a token, use the token instead of repeating the raw number.
+- If a source component spec already uses a token variable, generated component CSS must use that same token variable and rely on the global stylesheet to define it.
+- Do not define component-private token aliases such as `--button-height-small` unless the project separately maps them to the exact documented global tokens and fixed values.
 - Font loading is part of implementation. If using `"Noto Sans KR"`, load it through the project font system or accept the documented fallback stack.
 
 ## 3. Global Reset
@@ -660,8 +687,8 @@ Color token rules:
 - Use color tokens only. Never add raw hex/rgb/hsl values in product CSS.
 - Semantic tokens are preferred for common UI surfaces, text, lines, fills, and states.
 - Atomic palette tokens may be used when a semantic token does not express the needed role.
-- Component color design is flexible inside the token set.
-- Button, badge, chip, tab active, hover, and text colors are not fixed to blue, black, or white.
+- Default component reproduction must use the exact component color tokens documented in section 6.11.
+- Button, badge, chip, tab active, hover, and text colors may be swapped only when the user explicitly requests project-specific color customization, and only to other tokens in this document.
 - `gray line` variants must keep gray/neutral line colors by using neutral/line tokens.
 
 ### 4.2 Spacing Tokens
@@ -1000,10 +1027,10 @@ Recommended API style:
 
 Component rules:
 
-- Component colors are configurable within the color token set.
+- Default component colors must match the exact component color tokens documented in section 6.11.
 - Component layout specs are not configurable unless a new official variant is created.
-- Required fixed specs: height/min-height, padding, gap, font-size, font-weight, line-height, radius, border width, icon size, state structure.
-- Color specs are examples only, except gray-line border colors.
+- Required fixed specs: background token, text/icon color token, border token, height/min-height, padding, gap, font-size, font-weight, line-height, radius, border width, shadow, icon size, and state structure.
+- Color specs are not examples in default reproduction mode. They may be swapped only when the user explicitly asks for project-specific color customization, and swaps must stay inside the documented token set.
 - Component visual specs are independent from the final HTML tag. A component may render as `button`, `a`, or another semantic element when appropriate, as long as the layout specs and accessibility rules are preserved.
 
 ### 5.1 Component Class Naming Policy
@@ -1017,7 +1044,7 @@ Class naming rules:
 - Class names must not depend on the HTML tag. A button-like visual rendered as `button`, `a`, router `Link`, or another valid semantic element uses the same `btn_...` class.
 - Use this order: component prefix, optional role, variant, shape, feature, state/effect, size.
 - Omit segments that do not apply.
-- `primary`, `text`, and `icon` in button class names describe the component role/type, not a fixed color. Colors remain flexible within the token set.
+- `primary`, `text`, and `icon` in button class names describe the component role/type. In default reproduction mode they still use the exact documented button color tokens.
 - The reusable component API may expose props such as `variant`, `size`, `shape`, `state`, `icon`, `disabled`, `as`, or `href`, but the emitted CSS class must still follow this naming policy when classes are generated.
 
 Component prefixes:
@@ -1044,9 +1071,10 @@ Class examples:
 
 ```html
 <button type="button" class="btn_primary_filled_small">Save</button>
-<a href="/settings" class="btn_primary_filled_small">Settings</a>
+<a href="/settings" class="btn_primary_filled_xlarge">Settings</a>
 <button type="button" class="btn_primary_outline_rounded_icon_medium">Notify</button>
 <button type="button" class="btn_icon_outline_full_rounded_large" aria-label="Open menu"></button>
+<a href="/help" class="btn_text_xlarge">Help</a>
 <button type="button" class="tab_gray_line_outline_active_medium" role="tab" aria-selected="true">Tab</button>
 <label class="text_input_outline_error_medium"><input type="text" /></label>
 <select class="select_filled_rounded_icon_medium"></select>
@@ -1091,6 +1119,51 @@ The visual component is not the same thing as the DOM node. Preserve semantic HT
 
 ## 6. Component Specs
 
+### 6.0 Exact Reconstruction Contract
+
+This section is normative. A project generated from this document must be able to reproduce the same computed CSS as the source design system for every supported component/variant/size.
+
+Implementation format is flexible:
+
+- You may use one full class per variant, composed classes, CSS modules, CSS-in-JS, Tailwind utilities, or component props.
+- The rendered computed style must match the component specs below.
+- If exporting design-system CSS classes, use snake_case class names that describe the visual spec.
+- The semantic element is flexible only where HTML behavior allows it. For example, a visual button may render as `button`, `a`, or a router link, but the visual CSS must stay identical.
+
+Class naming order:
+
+```text
+{component}_{variant}_{shape}_{feature}_{state}_{size}
+```
+
+Omit parts that do not apply. Keep the remaining order stable.
+
+Examples:
+
+- `btn_primary_filled_small`
+- `btn_primary_filled_rounded_small`
+- `btn_primary_filled_rounded_shadow_small`
+- `btn_primary_filled_rounded_icon_disabled_small`
+- `btn_text_icon_xlarge`
+- `btn_icon_outline_full_rounded_large`
+- `chip_filled_small`
+- `tab_gray_line_outline_active_medium`
+- `text_input_outline_rounded_error_large`
+- `select_filled_icon_disabled_medium`
+- `toggle_on_large`
+- `checkbox_disabled_medium`
+
+Token and unit rules:
+
+- All color, radius, shadow, typography, border, and spacing decisions must come from the foundation tokens in this document.
+- Fixed component dimensions such as `min-height`, `width`, `height`, icon size, background-position, and transform distances may be written as exact px values when the source component CSS uses exact px values.
+- Match the source component CSS notation. If the source uses `var(--font-size-14)`, output `var(--font-size-14)`, not `14px`. If the source uses raw `12px`, output raw `12px`.
+- When the user asks for a concrete component class, expand the matching base, size, variant, shape, feature, and state rows into a complete CSS selector that can be copied directly.
+- Do not invent new sizes, states, radii, shadows, border widths, typography levels, or component variants.
+- Default reproduction mode must use the exact tokens listed in the component matrices below.
+- If a product intentionally changes brand colors, it may only swap to existing color tokens. Layout, spacing, typography, border width, radius, shadow, state behavior, and icon sizing still follow this system exactly.
+- In Tailwind v4 or any cascade-layer setup, put reset code in `@layer base`; put component classes in `@layer components` or a later layer. Never leave reset as unlayered CSS above generated component utilities, because unlayered CSS can override layered utilities.
+
 ### 6.1 Button
 
 Base:
@@ -1110,14 +1183,31 @@ Primary button size:
 | small | 32px | 16px | 12px | 16px |
 | medium | 40px | 24px | 14px | 20px |
 | large | 48px | 24px | 16px | 20px |
+| xlarge | 60px | 24px | 16px | 20px |
+
+Primary button support:
+
+- `small`, `medium`, `large`, and `xlarge` are available for the main `Buttons` tables.
+- `xlarge` exists for filled, outline, rounded, full rounded, icon, shadow, and disabled primary button variants.
+- `xlarge` keeps the same typography and horizontal padding as `large`; only `min-height` changes from `48px` to `60px`.
+- Primary button classes use the same visual class on `button`, `a`, and router-link components. Do not create tag-specific class names.
+
+Primary button with text icon:
+
+| Size | Icon size | Gap |
+| --- | ---: | ---: |
+| small | 12px | 8px |
+| medium | 16px | 8px |
+| large | 16px | 8px |
+| xlarge | 16px | 8px |
 
 Variant layout:
 
 | Variant | Required layout | Color rule |
 | --- | --- | --- |
-| filled | border 0 | Choose background/text/hover colors from color tokens. |
-| outline | `--border-1` solid | Choose background/text/border/hover colors from color tokens. |
-| disabled | same size, cursor default | Choose disabled colors from color tokens. Use `disabled` for `button`; use `aria-disabled` and guarded navigation for `a`. |
+| filled | border 0 | Default exact tokens are in 6.11. Product-specific color swaps must use color tokens only. |
+| outline | `--border-1` solid | Default exact tokens are in 6.11. Product-specific color swaps must use color tokens only. |
+| disabled | same size, cursor default | Default exact tokens are in 6.11. Use `disabled` for `button`; use `aria-disabled` and guarded navigation for `a`. |
 
 Shape:
 
@@ -1130,29 +1220,44 @@ Shape:
 Shadow:
 
 - Small shadow variant uses `--shadow-2`.
-- Medium and large shadow variants use the existing shadow preset behavior.
+- Medium shadow variant uses `--shadow-3`.
+- Large and xlarge shadow variants use `--shadow-4`.
 - Hover may remove shadow following the original pattern.
 
-Icon button size:
+Icon-only Button+icon size:
 
-| Size | Control size | Icon size |
-| --- | ---: | ---: |
-| small | 32px | 16px |
-| medium | 40px | 20px |
-| large | 48px | 24px |
-| xlarge | 52px | 24px |
+| Variant group | Size | Control size | Icon size |
+| --- | --- | ---: | ---: |
+| filled | small | auto | 12px |
+| filled | medium | auto | 16px |
+| filled | large | auto | 20px |
+| filled | xlarge | auto | 22px |
+| outline / outline rounded / outline full rounded | small | 32px | 12px |
+| outline / outline rounded / outline full rounded | medium | 40px | 16px |
+| outline / outline rounded / outline full rounded | large | 48px | 16px |
 
 Text button size:
 
-| Size | Font size | Line height | Weight |
-| --- | ---: | ---: | ---: |
-| small | 12px | 16px | 500 |
-| medium | 14px | 20px | 500 |
+| Size | Min height | Padding X | Font size | Line height | Weight |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| small | 32px | 0 | 14px | 20px | 500 |
+| medium | 40px | 0 | 15px | 20px | 500 |
+| xlarge | 60px | 0 | 15px | 20px | 500 |
+
+Text button with icon:
+
+- Uses the same size table as text button.
+- Uses `gap: 16px`.
+- Uses a 20px trailing icon for `small`, `medium`, and `xlarge`.
+- Text button supports `small`, `medium`, and `xlarge`; it does not currently define `large`.
 
 Button rules:
 
 - Use one primary filled action per action group.
 - Secondary actions should use outline or text button structure.
+- Use `xlarge` for high-emphasis primary or text actions that need a 60px touch/click target.
+- Do not invent a `large` text button unless the source design system adds it.
+- Do not add icon-only outline `xlarge` unless the source design system adds it; current icon-only outline variants stop at `large`.
 - The same visual button spec may render as `button` or `a`.
 - Use `button` for actions and `a` for navigation.
 - `button` elements must default to `type="button"` unless the button submits a form.
@@ -1184,8 +1289,8 @@ Size:
 
 Variant layout:
 
-- Filled: no border; colors are flexible within tokens.
-- Outline: border layout; colors are flexible within tokens.
+- Filled: no border; default exact tokens are in 6.11.
+- Outline: border layout; default exact tokens are in 6.11.
 - Gray line outline: neutral/line gray border token is mandatory.
 - Icon: keeps text/icon alignment and spacing from the original pattern.
 - Rounded: `--radius-8`.
@@ -1223,15 +1328,15 @@ Size:
 | --- | ---: | ---: | ---: | ---: |
 | small | 40px | 12px | 14px | 20px |
 | medium | 48px | 16px | 15px | 20px |
-| large | 52px | 24px | 16px | 24px |
+| large | 52px | 16px | 16px | 24px |
 | xlarge | 56px | 16px | 16px | 24px |
 
 Variant layout:
 
 | Variant | Required layout | Color rule |
 | --- | --- | --- |
-| filled | border 0, default radius `--radius-0` | Background/text/placeholder colors are flexible within tokens. |
-| outline | `--border-1` solid | Background/text/border/placeholder colors are flexible within tokens. |
+| filled | border 0, default radius `--radius-0` | Default exact background/text/placeholder tokens are in 6.11. |
+| outline | `--border-1` solid | Default exact background/text/border/placeholder tokens are in 6.11. |
 | rounded | `--radius-8` | Colors follow selected variant. |
 | full rounded | `--radius-full` | Colors follow selected variant. |
 
@@ -1266,10 +1371,10 @@ Size:
 
 Variant/state layout:
 
-- Filled: border 0, radius `--radius-0`; colors are flexible within tokens.
+- Filled: border 0, radius `--radius-0`; default exact tokens are in 6.11.
 - Filled rounded: radius `--radius-8`.
-- Outline: `--border-1` solid, radius `--radius-8`; colors are flexible within tokens.
-- Focus/error/disabled/view states must exist when the product needs them; colors are flexible within tokens.
+- Outline: `--border-1` solid, radius `--radius-8`; default exact tokens are in 6.11.
+- Focus/error/disabled/view states must exist when the product needs them; default exact tokens are in 6.11.
 
 ### 6.5 Select
 
@@ -1290,8 +1395,8 @@ Size:
 
 Variant/state layout:
 
-- Filled: border 0; colors are flexible within tokens.
-- Outline: line border layout; colors are flexible within tokens.
+- Filled: border 0; default exact tokens are in 6.11.
+- Outline: line border layout; default exact tokens are in 6.11.
 - Icon: left icon plus arrow.
 - Rounded: `--radius-8`.
 - Full rounded: `--radius-full`.
@@ -1306,21 +1411,21 @@ Base:
 - `align-items: center`
 - `justify-content: center`
 - `border-radius: --radius-full`
-- `font-weight: 500`
+- `font-weight: var(--font-weight-500)`
 
 Size:
 
 | Size | Min height | Padding X | Font size | Line height |
-| --- | ---: | ---: | ---: | ---: |
-| small | 32px | 12px | 14px | 20px |
-| medium | 40px | 16px | 15px | 20px |
-| large | 48px | 24px | 16px | 24px |
+| --- | ---: | ---: | --- | --- |
+| small | 32px | 12px | `var(--font-size-14)` | `var(--line-height-20)` |
+| medium | 40px | 16px | `var(--font-size-15)` | `var(--line-height-20)` |
+| large | 48px | 24px | `var(--font-size-16)` | `var(--line-height-24)` |
 
 Variant/state layout:
 
-- Filled: border 0; colors are flexible within tokens.
-- Outline: border layout; colors are flexible within tokens.
-- Gray line outline: neutral/line gray border token is mandatory; other colors are flexible within tokens.
+- Filled: border 0; default exact tokens are in 6.11.
+- Outline: border layout; default exact tokens are in 6.11.
+- Gray line outline: neutral/line gray border token is mandatory; default exact tokens are in 6.11.
 - Disabled: disabled visual and actual `disabled` when interactive.
 
 ### 6.7 Badge
@@ -1336,14 +1441,14 @@ Base:
 Size:
 
 | Size | Padding | Font size | Line height |
-| --- | --- | ---: | ---: |
-| small | 4px 8px | 12px | 16px |
-| medium | 4px 10px | 14px | 20px |
+| --- | --- | --- | --- |
+| small | 4px 8px | `var(--font-size-12)` | `var(--line-height-16)` |
+| medium | 4px 10px | `var(--font-size-14)` | `var(--line-height-20)` |
 
 Variant layout:
 
-- Filled: border 0; colors are flexible within tokens.
-- Outline: `--border-1` solid; colors are flexible within tokens.
+- Filled: border 0; default exact tokens are in 6.11.
+- Outline: `--border-1` solid; default exact tokens are in 6.11.
 
 Badge rules:
 
@@ -1371,7 +1476,7 @@ Rules:
 - Use checkbox for multiple selections.
 - Disabled state must use the actual `disabled` attribute.
 - Keep the native input accessible. Do not hide the real input with `display: none` if it is the operable control.
-- Colors are flexible within tokens.
+- Default exact tokens are in 6.11. Product-specific color swaps must use color tokens only.
 
 ### 6.9 Checkbox
 
@@ -1392,7 +1497,7 @@ Rules:
 - Use gap tokens when paired with text labels.
 - Disabled state must use the actual `disabled` attribute.
 - Keep the native input accessible and associated with a label.
-- Colors are flexible within tokens.
+- Default exact tokens are in 6.11. Product-specific color swaps must use color tokens only.
 
 ### 6.10 Radio
 
@@ -1414,7 +1519,553 @@ Rules:
 - Use the `name` attribute to bind the group.
 - Disabled state must use the actual `disabled` attribute.
 - Keep the native input accessible and associated with a label.
-- Colors are flexible within tokens.
+- Default exact tokens are in 6.11. Product-specific color swaps must use color tokens only.
+
+### 6.11 Exact CSS Reconstruction Matrix
+
+Use this matrix when an AI or developer needs to generate actual component CSS. Combine the relevant base, size, variant, shape, feature, and state rows. The implementation may split these rules across reusable classes or component props, but the final computed style must match.
+
+#### 6.11.1 Button Exact Recipe
+
+Primary button class pattern:
+
+```text
+btn_primary_{filled|outline}_{rounded|full_rounded?}_{icon?}_{shadow|disabled?}_{small|medium|large|xlarge}
+```
+
+Primary button base:
+
+```css
+display: inline-flex;
+align-items: center;
+justify-content: center;
+font-weight: 500;
+white-space: nowrap;
+appearance: none;
+cursor: pointer;
+```
+
+Primary button size rules:
+
+| Size | Min height | Padding | Font size | Line height |
+| --- | ---: | --- | ---: | ---: |
+| small | 32px | 0 16px | 12px | 16px |
+| medium | 40px | 0 24px | 14px | 20px |
+| large | 48px | 0 24px | 16px | 20px |
+| xlarge | 60px | 0 24px | 16px | 20px |
+
+Primary button shape rules:
+
+| Shape name | Class segment | CSS |
+| --- | --- | --- |
+| default/square | omitted | `border-radius: var(--radius-0);` |
+| rounded | `rounded` | `border-radius: var(--radius-8);` |
+| full rounded | `full_rounded` | `border-radius: var(--radius-full);` |
+
+Primary button variant/state rules:
+
+| Variant/state | Border | Background | Color | Extra |
+| --- | --- | --- | --- | --- |
+| filled | `border: 0;` | `var(--color-blue-50)` | `var(--color-common-100)` | hover background `var(--color-blue-40)` |
+| filled shadow | `border: 0;` | `var(--color-blue-50)` | `var(--color-common-100)` | shadow by size; hover background `var(--color-blue-40)` and `box-shadow: none;` |
+| filled disabled | `border: 0;` | `var(--color-interaction-disable)` | `var(--color-label-disable)` | `box-shadow: none; text-decoration: none; cursor: default;` |
+| outline | `1px solid var(--color-blue-50)` | `var(--color-common-100)` | `var(--color-blue-50)` | hover border/background `var(--color-blue-50)`, hover color `var(--color-common-100)` |
+| outline shadow | `1px solid var(--color-blue-50)` | `var(--color-common-100)` | `var(--color-blue-50)` | shadow by size; hover same as outline and `box-shadow: none;` |
+| outline disabled | `1px solid var(--color-line-solid-normal)` | `var(--color-common-100)` | `var(--color-label-disable)` | `box-shadow: none; text-decoration: none; cursor: default;` |
+
+Primary button shadow by size:
+
+| Size | Box shadow |
+| --- | --- |
+| small | `var(--shadow-2)` |
+| medium | `var(--shadow-3)` |
+| large | `var(--shadow-4)` |
+| xlarge | `var(--shadow-4)` |
+
+Primary button text+icon feature:
+
+```css
+gap: 8px;
+```
+
+The icon pseudo-element must use `display: block`, `flex-shrink: 0`, `content: ""`, `background: currentColor`, `mask-repeat: no-repeat`, `mask-position: center`, and `mask-size: contain`.
+
+| Size | Icon width/height |
+| --- | ---: |
+| small | 12px |
+| medium | 16px |
+| large | 16px |
+| xlarge | 16px |
+
+Exact example: filled rounded small button.
+
+```html
+<button class="btn_primary_filled_rounded_small" type="button">Button</button>
+<a class="btn_primary_filled_rounded_small" href="/path">Button</a>
+```
+
+```css
+.btn_primary_filled_rounded_small {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  white-space: nowrap;
+  appearance: none;
+  cursor: pointer;
+  min-height: 32px;
+  padding: 0 16px;
+  font-size: 12px;
+  line-height: 16px;
+  border: 0;
+  border-radius: var(--radius-8);
+  background: var(--color-blue-50);
+  color: var(--color-common-100);
+}
+```
+
+Text button class pattern:
+
+```text
+btn_text_{icon?}_{small|medium|xlarge}
+```
+
+Text button base:
+
+```css
+display: inline-flex;
+align-items: center;
+justify-content: center;
+font-weight: 500;
+white-space: nowrap;
+appearance: none;
+cursor: pointer;
+padding: 0;
+border: 0;
+border-radius: var(--radius-0);
+background: none;
+color: var(--color-label-neutral);
+text-decoration: none;
+```
+
+| Size | Min height | Font size | Line height |
+| --- | ---: | ---: | ---: |
+| small | 32px | 14px | 20px |
+| medium | 40px | 15px | 20px |
+| xlarge | 60px | 15px | 20px |
+
+Text button hover uses `text-decoration: underline; text-underline-offset: 0.12em;`. Text+icon uses `gap: 16px` and a 20px trailing icon.
+
+Icon-only button class pattern:
+
+```text
+btn_icon_{filled|outline}_{rounded|full_rounded?}_{shadow|disabled?}_{small|medium|large|xlarge?}
+```
+
+| Variant group | Size | Control width/height/min-height | Icon width/height | Radius |
+| --- | --- | ---: | ---: | --- |
+| filled icon | small | auto | 12px | `var(--radius-0)` |
+| filled icon | medium | auto | 16px | `var(--radius-0)` |
+| filled icon | large | auto | 20px | `var(--radius-0)` |
+| filled icon | xlarge | auto | 22px | `var(--radius-0)` |
+| outline icon | small | 32px | 12px | by shape |
+| outline icon | medium | 40px | 16px | by shape |
+| outline icon | large | 48px | 16px | by shape |
+
+Filled icon-only buttons support `small`, `medium`, `large`, and `xlarge`; filled disabled supports the same sizes. Filled icon-only buttons use `padding: 0`, `border: 0`, `border-radius: var(--radius-0)`, `background: transparent`, `color: var(--color-blue-50)`, and `box-shadow: none`.
+
+Outline icon-only buttons support `small`, `medium`, and `large` only. They use fixed `width`, `min-width`, `height`, and `min-height`; `padding: 0`; `border: 1px solid var(--color-blue-50)`; `background: transparent`; and `color: var(--color-blue-50)`. Outline shadow uses `background: var(--color-common-100)`, the shadow size table, and removes shadow on hover. Outline disabled uses `border-color: var(--color-line-solid-normal)`, `background: var(--color-interaction-disable)`, `color: var(--color-label-disable)`, `box-shadow: none`, `text-decoration: none`, and `cursor: default`.
+
+#### 6.11.2 Tab Exact Recipe
+
+Tab class pattern:
+
+```text
+tab_{filled|outline|gray_line_outline}_{rounded|full_rounded?}_{icon?}_{active|disabled?}_{small|medium|large}
+```
+
+Tab base:
+
+```css
+display: inline-flex;
+align-items: center;
+justify-content: center;
+font-weight: var(--font-weight-500);
+white-space: nowrap;
+appearance: none;
+cursor: pointer;
+```
+
+| Size | Min height | Padding | Font size | Line height | Icon size |
+| --- | ---: | --- | ---: | ---: | ---: |
+| small | 32px | 0 12px | `var(--font-size-14)` | `var(--line-height-20)` | 12px |
+| medium | 40px | 0 16px | `var(--font-size-15)` | `var(--line-height-20)` | 16px |
+| large | 48px | 0 24px | `var(--font-size-16)` | `var(--line-height-20)` | 16px |
+
+| Variant/state | Border | Background | Color |
+| --- | --- | --- | --- |
+| filled | `border: 0;` | `var(--color-fill-normal)` | `var(--color-label-normal)` |
+| filled active | `border: 0;` | `var(--color-blue-50)` | `var(--color-common-100)` |
+| filled disabled | `border: 0;` | `var(--color-interaction-disable)` | `var(--color-label-disable)` |
+| outline | `1px solid var(--color-common-0)` | `var(--color-common-100)` | `var(--color-common-0)` |
+| outline active | `1px solid var(--color-common-0)` | `var(--color-common-0)` | `var(--color-common-100)` |
+| outline disabled | `1px solid var(--color-line-solid-normal)` | `var(--color-interaction-disable)` | `var(--color-label-disable)` |
+| gray line outline | `1px solid var(--color-line-normal-normal)` | `var(--color-common-100)` | `var(--color-common-0)` |
+| gray line outline active | `1px solid var(--color-common-0)` | `var(--color-common-0)` | `var(--color-common-100)` |
+| gray line outline disabled | `1px solid var(--color-line-solid-normal)` | `var(--color-interaction-disable)` | `var(--color-label-disable)` |
+
+Shape radius is `var(--radius-0)`, `var(--radius-8)`, or `var(--radius-full)`. Icon tabs use `gap: 8px` and the icon size from the size table. Disabled tabs use `cursor: default`.
+
+#### 6.11.3 Text Input Exact Recipe
+
+Text input class pattern:
+
+```text
+text_input_{filled|outline}_{rounded|full_rounded?}_{complete|focus|error|disabled|view|password?}_{small|medium|large|xlarge}
+```
+
+Wrapper base:
+
+```css
+display: inline-flex;
+align-items: center;
+width: 100%;
+min-width: 0;
+cursor: text;
+```
+
+Inner `input` base:
+
+```css
+width: 100%;
+min-width: 0;
+border: 0;
+outline: 0;
+background: transparent;
+```
+
+Placeholder color is `var(--color-label-assistive)`.
+
+| Size | Min height | Padding | Font size | Line height | State icon size |
+| --- | ---: | --- | ---: | ---: | ---: |
+| small | 40px | 0 12px | `var(--font-size-14)` | `var(--line-height-20)` | 16px |
+| medium | 48px | 0 16px | `var(--font-size-15)` | `var(--line-height-20)` | 18px |
+| large | 52px | 0 16px | `var(--font-size-16)` | `var(--line-height-24)` | 20px |
+| xlarge | 56px | 0 16px | `var(--font-size-16)` | `var(--line-height-24)` | 20px |
+
+| Variant/state | Border | Radius | Background | Color | Extra |
+| --- | --- | --- | --- | --- | --- |
+| filled | `border: 0;` | by shape | `var(--color-fill-normal)` | `var(--color-label-normal)` | - |
+| filled focus | `border: 0;` | by shape | `var(--color-fill-strong)` | `var(--color-label-normal)` | - |
+| filled complete | `border: 0;` | by shape | `var(--color-fill-normal)` | `var(--color-label-normal)` | `column-gap: 8px`; success icon `var(--color-status-positive)` |
+| filled error | `border: 0;` | by shape | `var(--color-red-95)` | `var(--color-label-normal)` | - |
+| filled disabled | `border: 0;` | by shape | `var(--color-interaction-disable)` | `var(--color-label-disable)` | wrapper and input `cursor: default` |
+| filled view | `border: 0;` | by shape | `var(--color-background-normal-alternative)` | `var(--color-label-neutral)` | use `readonly` when applicable |
+| filled password | `border: 0;` | by shape | `var(--color-fill-normal)` | `var(--color-label-normal)` | `column-gap: 8px`; eye icon `var(--color-label-neutral)` |
+| outline | `1px solid var(--color-line-solid-0)` | by shape | `var(--color-common-100)` | `var(--color-label-normal)` | - |
+| outline focus | `2px solid var(--color-blue-50)` | by shape | `var(--color-common-100)` | `var(--color-label-normal)` | - |
+| outline error | `2px solid var(--color-status-negative)` | by shape | `var(--color-common-100)` | `var(--color-label-normal)` | - |
+| outline disabled | `1px solid var(--color-line-solid-normal)` | by shape | `var(--color-interaction-disable)` | `var(--color-label-disable)` | wrapper and input `cursor: default` |
+| outline view | `1px solid var(--color-line-solid-normal)` | by shape | `var(--color-background-normal-alternative)` | `var(--color-label-neutral)` | use `readonly` when applicable |
+
+Text input shape radius is `var(--radius-0)`, `var(--radius-8)`, or `var(--radius-full)`. Complete/password pseudo-icons use `flex: 0 0 {icon-size}` and mask icons with `center / contain no-repeat`.
+
+#### 6.11.4 Textarea Exact Recipe
+
+Textarea class pattern:
+
+```text
+textarea_{filled|outline}_{rounded?}_{focus|error|disabled|view?}_{small|medium|large}
+```
+
+Textarea base:
+
+```css
+display: block;
+width: 100%;
+resize: vertical;
+outline: 0;
+cursor: text;
+```
+
+| Size | Min height | Padding | Font size | Line height |
+| --- | ---: | --- | ---: | ---: |
+| small | 96px | 12px 12px | `var(--font-size-14)` | `var(--line-height-20)` |
+| medium | 112px | 12px 16px | `var(--font-size-15)` | `var(--line-height-20)` |
+| large | 128px | 12px 16px | `var(--font-size-16)` | `var(--line-height-24)` |
+
+| Variant/state | Border | Radius | Background | Color |
+| --- | --- | --- | --- | --- |
+| filled | `border: 0;` | `var(--radius-0)` or `var(--radius-8)` | `var(--color-fill-normal)` | `var(--color-label-normal)` |
+| filled focus | `border: 0;` | by shape | `var(--color-fill-strong)` | `var(--color-label-normal)` |
+| filled error | `border: 0;` | by shape | `var(--color-red-95)` | `var(--color-label-normal)` |
+| filled disabled | `border: 0;` | by shape | `var(--color-interaction-disable)` | `var(--color-label-disable)` |
+| filled view | `border: 0;` | by shape | `var(--color-background-normal-alternative)` | `var(--color-label-neutral)` |
+| outline | `1px solid var(--color-line-solid-0)` | `var(--radius-8)` | `var(--color-common-100)` | `var(--color-label-normal)` |
+| outline focus | `2px solid var(--color-blue-50)` | `var(--radius-8)` | `var(--color-common-100)` | `var(--color-label-normal)` |
+| outline error | `2px solid var(--color-status-negative)` | `var(--radius-8)` | `var(--color-common-100)` | `var(--color-label-normal)` |
+| outline disabled | `1px solid var(--color-line-solid-normal)` | `var(--radius-8)` | `var(--color-interaction-disable)` | `var(--color-label-disable)` |
+| outline view | `1px solid var(--color-line-solid-normal)` | `var(--radius-8)` | `var(--color-background-normal-alternative)` | `var(--color-label-neutral)` |
+
+Placeholder color is `var(--color-label-assistive)`. Disabled textarea uses `cursor: default`.
+
+#### 6.11.5 Select Exact Recipe
+
+Select class pattern:
+
+```text
+select_{filled|outline}_{rounded|full_rounded?}_{icon?}_{disabled?}_{small|medium|large}
+```
+
+Select base:
+
+```css
+width: 100%;
+appearance: none;
+cursor: pointer;
+background-repeat: no-repeat;
+```
+
+Default arrow:
+
+```css
+background-image:
+  linear-gradient(45deg, transparent 50%, currentColor 50%),
+  linear-gradient(135deg, currentColor 50%, transparent 50%);
+background-position: calc(100% - 18px) 50%, calc(100% - 12px) 50%;
+background-size: 6px 6px, 6px 6px;
+```
+
+| Size | Min height | Padding without icon | Padding with icon | Font size | Line height | Icon size/position |
+| --- | ---: | --- | --- | ---: | ---: | --- |
+| small | 40px | 0 12px 0 12px | 0 12px 0 40px | `var(--font-size-14)` | `var(--line-height-20)` | 16px at 12px 50% |
+| medium | 48px | 0 16px 0 16px | 0 16px 0 46px | `var(--font-size-15)` | `var(--line-height-20)` | 18px at 16px 50% |
+| large | 52px | 0 24px 0 24px | 0 24px 0 56px | `var(--font-size-16)` | `var(--line-height-24)` | 20px at 24px 50% |
+
+| Variant/state | Border | Radius | Background | Color |
+| --- | --- | --- | --- | --- |
+| filled | `border: 0;` | by shape | `var(--color-fill-normal)` | `var(--color-label-normal)` |
+| filled disabled | `border: 0;` | by shape | `var(--color-interaction-disable)` | `var(--color-label-disable)` |
+| outline | `1px solid var(--color-line-solid-0)` | by shape | `var(--color-common-100)` | `var(--color-label-normal)` |
+| outline disabled | `1px solid var(--color-line-solid-normal)` | by shape | `var(--color-interaction-disable)` | `var(--color-label-disable)` |
+
+Select shape radius is `var(--radius-0)`, `var(--radius-8)`, or `var(--radius-full)`. Disabled select uses the actual `disabled` attribute and `cursor: default`.
+
+Exact example: filled rounded large select.
+
+```html
+<select class="select_filled_rounded_large">
+  <option>Select</option>
+</select>
+```
+
+```css
+.select_filled_rounded_large {
+  width: 100%;
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-position: calc(100% - 18px) 50%, calc(100% - 12px) 50%;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  min-height: 52px;
+  padding: 0 24px 0 24px;
+  border: 0;
+  border-radius: var(--radius-8);
+  background-color: var(--color-fill-normal);
+  color: var(--color-label-normal);
+  font-size: var(--font-size-16);
+  line-height: var(--line-height-24);
+  cursor: pointer;
+}
+```
+
+#### 6.11.6 Chip Exact Recipe
+
+Chip class pattern:
+
+```text
+chip_{filled|outline|gray_line_outline}_{active|disabled?}_{small|medium|large}
+```
+
+Chip base:
+
+```css
+display: inline-flex;
+align-items: center;
+justify-content: center;
+border-radius: var(--radius-full);
+font-weight: var(--font-weight-500);
+white-space: nowrap;
+cursor: pointer;
+```
+
+| Size | Min height | Padding | Font size | Line height |
+| --- | ---: | --- | ---: | ---: |
+| small | 32px | 0 12px | `var(--font-size-14)` | `var(--line-height-20)` |
+| medium | 40px | 0 16px | `var(--font-size-15)` | `var(--line-height-20)` |
+| large | 48px | 0 24px | `var(--font-size-16)` | `var(--line-height-24)` |
+
+| Variant/state | Border | Background | Color | Cursor |
+| --- | --- | --- | --- | --- |
+| filled | `border: 0;` | `var(--color-blue-50)` | `var(--color-common-100)` | pointer |
+| filled active | `border: 0;` | `var(--color-blue-40)` | `var(--color-common-100)` | pointer |
+| filled disabled | `border: 0;` | `var(--color-interaction-disable)` | `var(--color-label-disable)` | default |
+| outline | `1px solid var(--color-common-0)` | `var(--color-common-100)` | `var(--color-common-0)` | pointer |
+| outline active | `1px solid var(--color-common-0)` | `var(--color-common-0)` | `var(--color-common-100)` | pointer |
+| outline disabled | `1px solid var(--color-line-solid-normal)` | `var(--color-interaction-disable)` | `var(--color-label-disable)` | default |
+| gray line outline | `1px solid var(--color-line-normal-normal)` | `var(--color-common-100)` | `var(--color-common-0)` | pointer |
+| gray line outline active | `1px solid var(--color-common-0)` | `var(--color-common-0)` | `var(--color-common-100)` | pointer |
+| gray line outline disabled | `1px solid var(--color-line-solid-normal)` | `var(--color-interaction-disable)` | `var(--color-label-disable)` | default |
+
+#### 6.11.7 Badge Exact Recipe
+
+Badge class pattern:
+
+```text
+badge_{filled|outline}_{small|medium}
+```
+
+Badge base:
+
+```css
+display: inline-flex;
+align-items: center;
+justify-content: center;
+border-radius: var(--radius-full);
+font-weight: var(--font-weight-500);
+white-space: nowrap;
+vertical-align: middle;
+```
+
+| Size | Padding | Font size | Line height |
+| --- | --- | ---: | ---: |
+| small | 4px 8px | `var(--font-size-12)` | `var(--line-height-16)` |
+| medium | 4px 10px | `var(--font-size-14)` | `var(--line-height-20)` |
+
+| Variant | Border | Background | Color |
+| --- | --- | --- | --- |
+| filled | `border: 0;` | `var(--color-blue-50)` | `var(--color-common-100)` |
+| outline | `1px solid var(--color-common-0)` | `var(--color-common-100)` | `var(--color-common-0)` |
+
+Exact example: filled medium badge.
+
+```html
+<span class="badge_filled_medium">Badge</span>
+```
+
+```css
+.badge_filled_medium {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--color-blue-50);
+  color: var(--color-common-100);
+  font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
+  font-weight: var(--font-weight-500);
+  white-space: nowrap;
+  vertical-align: middle;
+}
+```
+
+#### 6.11.8 Toggle Exact Recipe
+
+Toggle class pattern:
+
+```text
+toggle_{off|on|disabled}_{small|medium|large}
+```
+
+Toggle track base:
+
+```css
+position: relative;
+display: inline-flex;
+align-items: center;
+padding: 2px;
+border: 0;
+cursor: pointer;
+```
+
+Toggle input base:
+
+```css
+position: absolute;
+inset: 0;
+opacity: 0;
+cursor: pointer;
+```
+
+| Size | Track width | Track height | Track radius | Thumb size | On transform |
+| --- | ---: | ---: | --- | ---: | ---: |
+| small | 36px | 20px | `var(--radius-20)` | 16px | translateX(16px) |
+| medium | 44px | 24px | `var(--radius-24)` | 20px | translateX(20px) |
+| large | 52px | 32px | `var(--radius-32)` | 24px | translateX(24px) |
+
+| State | Track background | Thumb background | Thumb transform | Cursor |
+| --- | --- | --- | --- | --- |
+| off | `var(--color-line-solid-strong)` | `var(--color-common-100)` | translateX(0px) | pointer |
+| on | `var(--color-blue-50)` | `var(--color-common-100)` | by size table | pointer |
+| disabled | `var(--color-interaction-disable)` | `var(--color-label-disable)` | translateX(0px) | default |
+
+Thumb pseudo-element uses `border-radius: var(--radius-full); content: "";`. Disabled toggle input also uses `cursor: default`.
+
+#### 6.11.9 Checkbox Exact Recipe
+
+Checkbox class pattern:
+
+```text
+checkbox_{disabled?}_{small|medium}
+```
+
+| Size | Width | Height | Border | Radius |
+| --- | ---: | ---: | --- | --- |
+| small | 16px | 16px | `2px solid var(--color-line-solid-strong)` | `var(--radius-2)` |
+| medium | 20px | 20px | `2px solid var(--color-line-solid-strong)` | `var(--radius-2)` |
+
+Checkbox base uses `position: relative`, `appearance: none`, `background: var(--color-common-100)`, and `cursor: pointer`.
+
+Checked state:
+
+```css
+border-color: var(--color-blue-50);
+background: var(--color-blue-50);
+```
+
+Checked icon pseudo-element:
+
+```css
+position: absolute;
+inset: 1px;
+background: var(--color-common-100);
+content: "";
+mask: {check-icon} center / contain no-repeat;
+-webkit-mask: {check-icon} center / contain no-repeat;
+```
+
+Disabled checkbox uses `border: 2px solid var(--color-line-solid-normal)`, `background: var(--color-interaction-disable)`, and `cursor: default`.
+
+#### 6.11.10 Radio Exact Recipe
+
+Radio class pattern:
+
+```text
+radio_{disabled?}_{small|medium}
+```
+
+| Size | Width | Height | Border | Outer radius | Checked dot size |
+| --- | ---: | ---: | --- | --- | ---: |
+| small | 16px | 16px | `2px solid var(--color-line-solid-strong)` | `var(--radius-full)` | 8px |
+| medium | 20px | 20px | `2px solid var(--color-line-solid-strong)` | `var(--radius-full)` | 10px |
+
+Radio base uses `position: relative`, `appearance: none`, `background: var(--color-common-100)`, and `cursor: pointer`.
+
+Checked state uses `border-color: var(--color-blue-50)`. The checked dot pseudo-element uses `position: absolute`, `top: 50%`, `left: 50%`, `border-radius: var(--radius-full)`, `background: var(--color-blue-50)`, `transform: translate(-50%, -50%)`, and `content: ""`.
+
+Disabled radio uses `border: 2px solid var(--color-line-solid-normal)`, `background: var(--color-interaction-disable)`, and `cursor: default`.
 
 ## 7. Common Patterns
 
@@ -1435,7 +2086,7 @@ There is no dedicated card component CSS in the original system. Use this reusab
 Card rules:
 
 - The layout specs above are the default pattern.
-- Colors may change within tokens.
+- Default table colors must use the listed tokens. Project-specific color changes are allowed only when explicitly requested and must stay inside the token set.
 - Internal padding should be 16px, 24px, or 32px.
 - Do not nest cards inside cards.
 - Clickable cards need a visible focus state.
@@ -1520,7 +2171,7 @@ Table rules:
 - Do not recreate 13px or 115px font tokens.
 - Do not create `Label_2`, `Display_4`, `Title_3`, or `Body_3`.
 - Do not override component height, padding, font-size, font-weight, line-height, radius, border width, or icon size in page CSS.
-- Component colors may change, but only within color tokens.
+- Do not change documented component color tokens unless the user explicitly requests project-specific color customization.
 - Do not create design-system component class names outside the documented `snake_case` naming policy.
 - Do not make component class names depend on the rendered HTML tag.
 - Do not make disabled-looking UI without actual disabled/readonly/aria handling.
@@ -1540,14 +2191,21 @@ Table rules:
 
 - Does global CSS include all color, spacing, decorate, and typography tokens?
 - Does global CSS include the reset block from this document?
+- Is global CSS generated before component styles and loaded before components render?
+- Do component styles consume the global foundation variables instead of redefining local token aliases?
 - If using Tailwind, are foundation tokens and reset rules inside `@layer base`?
 - If using Tailwind, are reusable component styles inside `@layer components` and utility overrides left to `@layer utilities`?
 - If using Tailwind, is there no unlayered reset such as unlayered `a { color: inherit; }` competing with utilities?
 - Are all colors chosen from the token set?
+- In default reproduction mode, do component background/color/border/shadow tokens match the exact section 6.11 specs?
 - Are component layout specs preserved?
 - Do generated component CSS classes follow the documented `snake_case` naming policy?
 - Do `button`, `a`, and router-link versions of the same visual button use the same `btn_...` class?
 - Are component sizes, padding, font sizes, weights, line heights, radius, border widths, and icon sizes identical to this document?
+- Where the source component uses token notation such as `var(--font-size-14)`, does generated CSS keep the same token notation instead of raw px?
+- Are primary button `xlarge` variants generated with `min-height: 60px`, `padding-x: 24px`, `font-size: 16px`, and `line-height: 20px`?
+- Are text button `xlarge` variants generated with `min-height: 60px`, `padding-x: 0`, `font-size: 15px`, and `line-height: 20px`?
+- Is icon-only Button+icon support kept to the documented size range, without inventing outline `xlarge` variants?
 - Are gray-line borders using neutral/line tokens?
 - Are visual buttons rendered with the correct semantic element: `button` for actions and `a` for navigation?
 - Do rendered `button` elements default to `type="button"` unless they intentionally submit a form?
