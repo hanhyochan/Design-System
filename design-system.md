@@ -1309,6 +1309,7 @@ Size:
 | small | 32px | 12px | 14px | 20px |
 | medium | 40px | 16px | 15px | 20px |
 | large | 48px | 24px | 16px | 20px |
+| xlarge | 60px | 24px | 16px | 20px |
 
 Variant layout:
 
@@ -1322,6 +1323,7 @@ Variant layout:
 Tab rules:
 
 - Active tab must use `aria-selected="true"`.
+- `xlarge` keeps the same typography and horizontal padding as `large`; only `min-height` changes from `48px` to `60px`.
 - Use `role="tablist"` and `role="tab"` where applicable.
 - Connect tabs and panels with `aria-controls`, `aria-labelledby`, and matching IDs.
 - Support keyboard navigation for tab groups: arrow keys move between tabs, and Home/End move to first/last tab when appropriate.
@@ -1704,7 +1706,7 @@ Outline icon-only buttons support `small`, `medium`, and `large` only. They use 
 Tab class pattern:
 
 ```text
-tab_{filled|outline|gray_line_outline}_{rounded|full_rounded?}_{icon?}_{active|disabled?}_{small|medium|large}
+tab_{filled|outline|gray_line_outline}_{rounded|full_rounded?}_{icon?}_{active|disabled?}_{small|medium|large|xlarge}
 ```
 
 Tab base:
@@ -1724,6 +1726,7 @@ cursor: pointer;
 | small | 32px | 0 12px | `var(--font-size-14)` | `var(--line-height-20)` | 12px |
 | medium | 40px | 0 16px | `var(--font-size-15)` | `var(--line-height-20)` | 16px |
 | large | 48px | 0 24px | `var(--font-size-16)` | `var(--line-height-20)` | 16px |
+| xlarge | 60px | 0 24px | `var(--font-size-16)` | `var(--line-height-20)` | 16px |
 
 | Variant/state | Border | Background | Color |
 | --- | --- | --- | --- |
@@ -2231,6 +2234,7 @@ Table rules:
 - Are primary button `xlarge` variants generated with `min-height: 60px`, `padding-x: 24px`, `font-size: 16px`, and `line-height: 20px`?
 - Are text button `xlarge` variants generated with `min-height: 60px`, `padding-x: 0`, `font-size: 15px`, and `line-height: 20px`?
 - Is icon-only Button+icon support kept to the documented size range, without inventing outline `xlarge` variants?
+- Are tab `xlarge` variants generated with `min-height: 60px`, `padding-x: 24px`, `font-size: 16px`, and `line-height: 20px`?
 - Are gray-line borders using neutral/line tokens?
 - Are visual buttons rendered with the correct semantic element: `button` for actions and `a` for navigation?
 - Do rendered `button` elements default to `type="button"` unless they intentionally submit a form?
