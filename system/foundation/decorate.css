@@ -1,7 +1,16 @@
 :root {
   /* size */
+  --size-20: 20px;
+  --size-24: 24px;
+  --size-32: 32px;
+  --size-36: 36px;
+  --size-40: 40px;
   --size-44: 44px;
+  --size-48: 48px;
   --size-52: 52px;
+  --size-56: 56px;
+  --size-60: 60px;
+  --size-64: 64px;
   --size-72: 72px;
   --size-112: 112px;
   --size-320: 320px;
@@ -9,6 +18,7 @@
   /* radius */
   --radius-0: 0;
   --radius-2: 2px;
+  --radius-4: 4px;
   --radius-8: 8px;
   --radius-16: 16px;
   --radius-20: 20px;
@@ -22,6 +32,10 @@
   --border-1: 1px;
   --border-2: 2px;
   --border-3: 3px;
+  --newsroll-divider-color: var(--color-cool-neutral-96);
+  --newsroll-divider-thickness: var(--newsroll-main-border-width, var(--border-1));
+  --newsroll-chevron-size: 8px;
+  --newsroll-chevron-transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1);
 
   /* shadow: position */
   --shadow-y-3: 8px;
@@ -39,4 +53,5 @@
   --shadow-4: 0 0 2px 0 var(--color-alpha-shadow2, rgba(0, 0, 0, 0.08)),
     0 var(--shadow-y-4, 16px) var(--shadow-blur-4, 24px) 0
       var(--color-alpha-shadow3, rgba(0, 0, 0, 0.12));
+  --newsroll-shadow-card: 3px 3px 4px var(--color-alpha-shadow3);
 }

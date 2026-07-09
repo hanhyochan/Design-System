@@ -13,8 +13,8 @@ body {
   min-height: 100vh;
   margin: 0;
   color: var(--color-label-strong);
-  font-family:
-    "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  font-family: var(--font-sans);
+  font-synthesis: none;
   line-height: var(--line-height-32);
 }
 

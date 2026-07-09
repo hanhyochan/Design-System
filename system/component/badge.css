@@ -1,70 +1,338 @@
-/* badge */
-/* filled */
-/* badge_filled_small */
-.badge_filled_small {
+/* NewsTurnt badge components. */
+
+.badge_newsroll_filled_small {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 4px 8px;
+  gap: var(--spacing-gap-horizontal-8);
+  width: auto;
+  min-height: 28px;
+  padding: 0 10px;
   border: 0;
   border-radius: var(--radius-full);
-  background: var(--color-blue-50);
-  color: var(--color-common-100);
+  color: var(--color-cool-neutral-15);
+  background: var(--color-newsroll-purple-50);
+  box-shadow: none;
   font-size: var(--font-size-12);
-  line-height: var(--line-height-16);
   font-weight: var(--font-weight-500);
+  line-height: var(--line-height-16);
   white-space: nowrap;
-  vertical-align: middle;
+  appearance: none;
+  cursor: default;
+  text-decoration: none;
 }
-
-/* badge_filled_medium */
-.badge_filled_medium {
+.badge_newsroll_neutral_small {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 4px 10px;
+  gap: var(--spacing-gap-horizontal-8);
+  width: auto;
+  min-height: 28px;
+  padding: 0 10px;
   border: 0;
   border-radius: var(--radius-full);
-  background: var(--color-blue-50);
-  color: var(--color-common-100);
-  font-size: var(--font-size-14);
-  line-height: var(--line-height-20);
-  font-weight: var(--font-weight-500);
-  white-space: nowrap;
-  vertical-align: middle;
-}
-
-/* outline */
-/* badge_outline_small */
-.badge_outline_small {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4px 8px;
-  border: 1px solid var(--color-common-0);
-  border-radius: var(--radius-full);
-  background: var(--color-common-100);
-  color: var(--color-common-0);
+  color: var(--color-cool-neutral-15);
+  background: var(--color-cool-neutral-96);
+  box-shadow: none;
   font-size: var(--font-size-12);
-  line-height: var(--line-height-16);
   font-weight: var(--font-weight-500);
+  line-height: var(--line-height-16);
   white-space: nowrap;
-  vertical-align: middle;
+  appearance: none;
+  cursor: default;
+  text-decoration: none;
 }
-
-/* badge_outline_medium */
-.badge_outline_medium {
+.badge_newsroll_status_small {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 4px 10px;
-  border: 1px solid var(--color-common-0);
+  gap: var(--spacing-gap-horizontal-8);
+  width: auto;
+  min-height: 28px;
+  padding: 0 10px;
+  border: 0;
   border-radius: var(--radius-full);
-  background: var(--color-common-100);
-  color: var(--color-common-0);
-  font-size: var(--font-size-14);
-  line-height: var(--line-height-20);
+  color: var(--color-common-100);
+  background: var(--color-orange-50);
+  box-shadow: none;
+  font-size: var(--font-size-12);
   font-weight: var(--font-weight-500);
+  line-height: var(--line-height-16);
   white-space: nowrap;
-  vertical-align: middle;
+  appearance: none;
+  cursor: default;
+  text-decoration: none;
+}
+.badge_newsroll_outline_small {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-gap-horizontal-8);
+  width: auto;
+  min-height: 28px;
+  padding: 0 10px;
+  border: var(--border-1) solid var(--color-newsroll-purple-50);
+  border-radius: var(--radius-full);
+  color: var(--color-newsroll-purple-50);
+  background: transparent;
+  box-shadow: none;
+  font-size: var(--font-size-12);
+  font-weight: var(--font-weight-500);
+  line-height: var(--line-height-16);
+  white-space: nowrap;
+  appearance: none;
+  cursor: default;
+  text-decoration: none;
+}
+.badge_newsroll_filled_medium {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-gap-horizontal-8);
+  width: auto;
+  min-height: 32px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: var(--radius-full);
+  color: var(--color-cool-neutral-15);
+  background: var(--color-newsroll-purple-50);
+  box-shadow: none;
+  font-size: var(--font-size-14);
+  font-weight: var(--font-weight-500);
+  line-height: var(--line-height-20);
+  white-space: nowrap;
+  appearance: none;
+  cursor: default;
+  text-decoration: none;
+}
+.badge_newsroll_neutral_medium {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-gap-horizontal-8);
+  width: auto;
+  min-height: 32px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: var(--radius-full);
+  color: var(--color-cool-neutral-15);
+  background: var(--color-cool-neutral-96);
+  box-shadow: none;
+  font-size: var(--font-size-14);
+  font-weight: var(--font-weight-500);
+  line-height: var(--line-height-20);
+  white-space: nowrap;
+  appearance: none;
+  cursor: default;
+  text-decoration: none;
+}
+.badge_newsroll_status_medium {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-gap-horizontal-8);
+  width: auto;
+  min-height: 32px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: var(--radius-full);
+  color: var(--color-common-100);
+  background: var(--color-orange-50);
+  box-shadow: none;
+  font-size: var(--font-size-14);
+  font-weight: var(--font-weight-500);
+  line-height: var(--line-height-20);
+  white-space: nowrap;
+  appearance: none;
+  cursor: default;
+  text-decoration: none;
+}
+.badge_newsroll_outline_medium {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-gap-horizontal-8);
+  width: auto;
+  min-height: 32px;
+  padding: 0 12px;
+  border: var(--border-1) solid var(--color-newsroll-purple-50);
+  border-radius: var(--radius-full);
+  color: var(--color-newsroll-purple-50);
+  background: transparent;
+  box-shadow: none;
+  font-size: var(--font-size-14);
+  font-weight: var(--font-weight-500);
+  line-height: var(--line-height-20);
+  white-space: nowrap;
+  appearance: none;
+  cursor: default;
+  text-decoration: none;
+}
+.badge_newsroll_filled_large {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-gap-horizontal-8);
+  width: auto;
+  min-height: 40px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: var(--radius-full);
+  color: var(--color-cool-neutral-15);
+  background: var(--color-newsroll-purple-50);
+  box-shadow: none;
+  font-size: var(--font-size-15);
+  font-weight: var(--font-weight-500);
+  line-height: var(--line-height-20);
+  white-space: nowrap;
+  appearance: none;
+  cursor: default;
+  text-decoration: none;
+}
+.badge_newsroll_neutral_large {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-gap-horizontal-8);
+  width: auto;
+  min-height: 40px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: var(--radius-full);
+  color: var(--color-cool-neutral-15);
+  background: var(--color-cool-neutral-96);
+  box-shadow: none;
+  font-size: var(--font-size-15);
+  font-weight: var(--font-weight-500);
+  line-height: var(--line-height-20);
+  white-space: nowrap;
+  appearance: none;
+  cursor: default;
+  text-decoration: none;
+}
+.badge_newsroll_status_large {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-gap-horizontal-8);
+  width: auto;
+  min-height: 40px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: var(--radius-full);
+  color: var(--color-common-100);
+  background: var(--color-orange-50);
+  box-shadow: none;
+  font-size: var(--font-size-15);
+  font-weight: var(--font-weight-500);
+  line-height: var(--line-height-20);
+  white-space: nowrap;
+  appearance: none;
+  cursor: default;
+  text-decoration: none;
+}
+.badge_newsroll_outline_large {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-gap-horizontal-8);
+  width: auto;
+  min-height: 40px;
+  padding: 0 16px;
+  border: var(--border-1) solid var(--color-newsroll-purple-50);
+  border-radius: var(--radius-full);
+  color: var(--color-newsroll-purple-50);
+  background: transparent;
+  box-shadow: none;
+  font-size: var(--font-size-15);
+  font-weight: var(--font-weight-500);
+  line-height: var(--line-height-20);
+  white-space: nowrap;
+  appearance: none;
+  cursor: default;
+  text-decoration: none;
+}
+.badge_newsroll_filled_xlarge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-gap-horizontal-8);
+  width: auto;
+  min-height: 48px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: var(--radius-full);
+  color: var(--color-cool-neutral-15);
+  background: var(--color-newsroll-purple-50);
+  box-shadow: none;
+  font-size: var(--font-size-16);
+  font-weight: var(--font-weight-500);
+  line-height: var(--line-height-24);
+  white-space: nowrap;
+  appearance: none;
+  cursor: default;
+  text-decoration: none;
+}
+.badge_newsroll_neutral_xlarge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-gap-horizontal-8);
+  width: auto;
+  min-height: 48px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: var(--radius-full);
+  color: var(--color-cool-neutral-15);
+  background: var(--color-cool-neutral-96);
+  box-shadow: none;
+  font-size: var(--font-size-16);
+  font-weight: var(--font-weight-500);
+  line-height: var(--line-height-24);
+  white-space: nowrap;
+  appearance: none;
+  cursor: default;
+  text-decoration: none;
+}
+.badge_newsroll_status_xlarge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-gap-horizontal-8);
+  width: auto;
+  min-height: 48px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: var(--radius-full);
+  color: var(--color-common-100);
+  background: var(--color-orange-50);
+  box-shadow: none;
+  font-size: var(--font-size-16);
+  font-weight: var(--font-weight-500);
+  line-height: var(--line-height-24);
+  white-space: nowrap;
+  appearance: none;
+  cursor: default;
+  text-decoration: none;
+}
+.badge_newsroll_outline_xlarge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-gap-horizontal-8);
+  width: auto;
+  min-height: 48px;
+  padding: 0 20px;
+  border: var(--border-1) solid var(--color-newsroll-purple-50);
+  border-radius: var(--radius-full);
+  color: var(--color-newsroll-purple-50);
+  background: transparent;
+  box-shadow: none;
+  font-size: var(--font-size-16);
+  font-weight: var(--font-weight-500);
+  line-height: var(--line-height-24);
+  white-space: nowrap;
+  appearance: none;
+  cursor: default;
+  text-decoration: none;
 }

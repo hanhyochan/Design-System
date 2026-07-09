@@ -1,0 +1,2158 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NewsTurnt Design System</title>
+  <link rel="stylesheet" href="./system/foundation/color.css" />
+  <link rel="stylesheet" href="./system/foundation/spacing.css" />
+  <link rel="stylesheet" href="./system/foundation/decorate.css" />
+  <link rel="stylesheet" href="./system/foundation/typography.css" />
+  <link rel="stylesheet" href="./global.css" />
+  <link rel="stylesheet" href="./layout.css" />
+  <link rel="stylesheet" href="./system/component/button.css" />
+  <link rel="stylesheet" href="./system/component/tab.css" />
+  <link rel="stylesheet" href="./system/component/text_input.css" />
+  <link rel="stylesheet" href="./system/component/textarea.css" />
+  <link rel="stylesheet" href="./system/component/chip.css" />
+  <link rel="stylesheet" href="./system/component/badge.css" />
+  <link rel="stylesheet" href="./system/component/toggle.css" />
+  <link rel="stylesheet" href="./system/component/select.css" />
+  <link rel="stylesheet" href="./system/component/checkbox.css" />
+  <link rel="stylesheet" href="./system/component/radio.css" />
+</head>
+
+<body>
+  <main>
+    <header class="ds-header">
+      <div class="ds-title-wrap">
+        <strong class="ds-title">NewsTurnt_DesignSystem</strong>
+        <div class="ds-meta">
+          <span class="ds-author">Author. Hanhyochan</span>
+          <span class="ds-reference">Source project: C:\projects\뉴스롤\퍼블</span>
+        </div>
+      </div>
+      <div class="ds-tabs" role="tablist" aria-label="Design system categories">
+        <button class="ds-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="tab-foundation"
+          id="tab-button-foundation" data-tab-target="foundation">Foundation</button>
+        <button class="ds-tab" type="button" role="tab" aria-selected="false" aria-controls="tab-component"
+          id="tab-button-component" data-tab-target="component">Component</button>
+        <button class="ds-tab" type="button" role="tab" aria-selected="false" aria-controls="tab-module"
+          id="tab-button-module" data-tab-target="module">Module</button>
+      </div>
+    </header>
+
+    <div class="ds-tabpanel" id="tab-foundation" role="tabpanel" aria-labelledby="tab-button-foundation"
+      data-tab-panel="foundation">
+      <section>
+        <h2>Color Atomic</h2>
+        <div class="color-panel">
+          <article class="color-group">
+            <h3>Common</h3>
+            <ul class="color-list">
+              <li style="--swatch-color: var(--color-common-100);">100</li>
+              <li style="--swatch-color: var(--color-common-0);">0</li>
+            </ul>
+          </article>
+          <article class="color-group">
+            <h3>Neutral</h3>
+            <ul class="color-list">
+              <li style="--swatch-color: var(--color-neutral-99);">99</li>
+              <li style="--swatch-color: var(--color-neutral-97);">97</li>
+              <li style="--swatch-color: var(--color-neutral-95);">95</li>
+              <li style="--swatch-color: var(--color-neutral-90);">90</li>
+              <li style="--swatch-color: var(--color-neutral-80);">80</li>
+              <li style="--swatch-color: var(--color-neutral-70);">70</li>
+              <li style="--swatch-color: var(--color-neutral-60);">60</li>
+              <li style="--swatch-color: var(--color-neutral-50);">50</li>
+              <li style="--swatch-color: var(--color-neutral-40);">40</li>
+              <li style="--swatch-color: var(--color-neutral-30);">30</li>
+              <li style="--swatch-color: var(--color-neutral-22);">22</li>
+              <li style="--swatch-color: var(--color-neutral-20);">20</li>
+              <li style="--swatch-color: var(--color-neutral-15);">15</li>
+              <li style="--swatch-color: var(--color-neutral-10);">10</li>
+              <li style="--swatch-color: var(--color-neutral-5);">5</li>
+            </ul>
+          </article>
+          <article class="color-group">
+            <h3>Cool Neutral</h3>
+            <ul class="color-list">
+              <li style="--swatch-color: var(--color-cool-neutral-99);">99</li>
+              <li style="--swatch-color: var(--color-cool-neutral-98);">98</li>
+              <li style="--swatch-color: var(--color-cool-neutral-97);">97</li>
+              <li style="--swatch-color: var(--color-cool-neutral-96);">96</li>
+              <li style="--swatch-color: var(--color-cool-neutral-95);">95</li>
+              <li style="--swatch-color: var(--color-cool-neutral-90);">90</li>
+              <li style="--swatch-color: var(--color-cool-neutral-80);">80</li>
+              <li style="--swatch-color: var(--color-cool-neutral-70);">70</li>
+              <li style="--swatch-color: var(--color-cool-neutral-60);">60</li>
+              <li style="--swatch-color: var(--color-cool-neutral-50);">50</li>
+              <li style="--swatch-color: var(--color-cool-neutral-40);">40</li>
+              <li style="--swatch-color: var(--color-cool-neutral-30);">30</li>
+              <li style="--swatch-color: var(--color-cool-neutral-25);">25</li>
+              <li style="--swatch-color: var(--color-cool-neutral-23);">23</li>
+              <li style="--swatch-color: var(--color-cool-neutral-22);">22</li>
+              <li style="--swatch-color: var(--color-cool-neutral-20);">20</li>
+              <li style="--swatch-color: var(--color-cool-neutral-17);">17</li>
+              <li style="--swatch-color: var(--color-cool-neutral-15);">15</li>
+              <li style="--swatch-color: var(--color-cool-neutral-10);">10</li>
+              <li style="--swatch-color: var(--color-cool-neutral-7);">7</li>
+              <li style="--swatch-color: var(--color-cool-neutral-5);">5</li>
+            </ul>
+          </article>
+          <article class="color-group">
+            <h3>Blue</h3>
+            <ul class="color-list">
+              <li style="--swatch-color: var(--color-blue-99);">99</li>
+              <li style="--swatch-color: var(--color-blue-95);">95</li>
+              <li style="--swatch-color: var(--color-blue-90);">90</li>
+              <li style="--swatch-color: var(--color-blue-80);">80</li>
+              <li style="--swatch-color: var(--color-blue-70);">70</li>
+              <li style="--swatch-color: var(--color-blue-65);">65</li>
+              <li style="--swatch-color: var(--color-blue-60);">60</li>
+              <li style="--swatch-color: var(--color-blue-55);">55</li>
+              <li style="--swatch-color: var(--color-blue-50);">50</li>
+              <li style="--swatch-color: var(--color-blue-45);">45</li>
+              <li style="--swatch-color: var(--color-blue-40);">40</li>
+              <li style="--swatch-color: var(--color-blue-30);">30</li>
+              <li style="--swatch-color: var(--color-blue-20);">20</li>
+              <li style="--swatch-color: var(--color-blue-10);">10</li>
+            </ul>
+          </article>
+          <article class="color-group">
+            <h3>Red</h3>
+            <ul class="color-list">
+              <li style="--swatch-color: var(--color-red-99);">99</li>
+              <li style="--swatch-color: var(--color-red-95);">95</li>
+              <li style="--swatch-color: var(--color-red-90);">90</li>
+              <li style="--swatch-color: var(--color-red-80);">80</li>
+              <li style="--swatch-color: var(--color-red-70);">70</li>
+              <li style="--swatch-color: var(--color-red-60);">60</li>
+              <li style="--swatch-color: var(--color-red-50);">50</li>
+              <li style="--swatch-color: var(--color-red-40);">40</li>
+              <li style="--swatch-color: var(--color-red-30);">30</li>
+              <li style="--swatch-color: var(--color-red-20);">20</li>
+              <li style="--swatch-color: var(--color-red-10);">10</li>
+            </ul>
+          </article>
+          <article class="color-group">
+            <h3>Red Orange</h3>
+            <ul class="color-list">
+              <li style="--swatch-color: var(--color-red-orange-99);">99</li>
+              <li style="--swatch-color: var(--color-red-orange-95);">95</li>
+              <li style="--swatch-color: var(--color-red-orange-90);">90</li>
+              <li style="--swatch-color: var(--color-red-orange-80);">80</li>
+              <li style="--swatch-color: var(--color-red-orange-70);">70</li>
+              <li style="--swatch-color: var(--color-red-orange-60);">60</li>
+              <li style="--swatch-color: var(--color-red-orange-50);">50</li>
+              <li style="--swatch-color: var(--color-red-orange-48);">48</li>
+              <li style="--swatch-color: var(--color-red-orange-40);">40</li>
+              <li style="--swatch-color: var(--color-red-orange-30);">30</li>
+              <li style="--swatch-color: var(--color-red-orange-20);">20</li>
+              <li style="--swatch-color: var(--color-red-orange-10);">10</li>
+            </ul>
+          </article>
+          <article class="color-group">
+            <h3>Orange</h3>
+            <ul class="color-list">
+              <li style="--swatch-color: var(--color-orange-99);">99</li>
+              <li style="--swatch-color: var(--color-orange-95);">95</li>
+              <li style="--swatch-color: var(--color-orange-90);">90</li>
+              <li style="--swatch-color: var(--color-orange-80);">80</li>
+              <li style="--swatch-color: var(--color-orange-70);">70</li>
+              <li style="--swatch-color: var(--color-orange-60);">60</li>
+              <li style="--swatch-color: var(--color-orange-50);">50</li>
+              <li style="--swatch-color: var(--color-orange-40);">40</li>
+              <li style="--swatch-color: var(--color-orange-39);">39</li>
+              <li style="--swatch-color: var(--color-orange-30);">30</li>
+              <li style="--swatch-color: var(--color-orange-20);">20</li>
+              <li style="--swatch-color: var(--color-orange-10);">10</li>
+            </ul>
+          </article>
+          <article class="color-group">
+            <h3>Yellow</h3>
+            <ul class="color-list">
+              <li style="--swatch-color: var(--color-yellow-90);">90</li>
+              <li style="--swatch-color: var(--color-yellow-80);">80</li>
+              <li style="--swatch-color: var(--color-yellow-70);">70</li>
+              <li style="--swatch-color: var(--color-yellow-60);">60</li>
+              <li style="--swatch-color: var(--color-yellow-50);">50</li>
+              <li style="--swatch-color: var(--color-yellow-40);">40</li>
+              <li style="--swatch-color: var(--color-yellow-30);">30</li>
+              <li style="--swatch-color: var(--color-yellow-20);">20</li>
+              <li style="--swatch-color: var(--color-yellow-10);">10</li>
+            </ul>
+          </article>
+          <article class="color-group">
+            <h3>Green</h3>
+            <ul class="color-list">
+              <li style="--swatch-color: var(--color-green-99);">99</li>
+              <li style="--swatch-color: var(--color-green-95);">95</li>
+              <li style="--swatch-color: var(--color-green-90);">90</li>
+              <li style="--swatch-color: var(--color-green-80);">80</li>
+              <li style="--swatch-color: var(--color-green-70);">70</li>
+              <li style="--swatch-color: var(--color-green-60);">60</li>
+              <li style="--swatch-color: var(--color-green-50);">50</li>
+              <li style="--swatch-color: var(--color-green-40);">40</li>
+              <li style="--swatch-color: var(--color-green-30);">30</li>
+              <li style="--swatch-color: var(--color-green-20);">20</li>
+              <li style="--swatch-color: var(--color-green-10);">10</li>
+            </ul>
+          </article>
+          <article class="color-group">
+            <h3>Lime</h3>
+            <ul class="color-list">
+              <li style="--swatch-color: var(--color-lime-99);">99</li>
+              <li style="--swatch-color: var(--color-lime-95);">95</li>
+              <li style="--swatch-color: var(--color-lime-90);">90</li>
+              <li style="--swatch-color: var(--color-lime-80);">80</li>
+              <li style="--swatch-color: var(--color-lime-70);">70</li>
+              <li style="--swatch-color: var(--color-lime-60);">60</li>
+              <li style="--swatch-color: var(--color-lime-50);">50</li>
+              <li style="--swatch-color: var(--color-lime-40);">40</li>
+              <li style="--swatch-color: var(--color-lime-37);">37</li>
+              <li style="--swatch-color: var(--color-lime-30);">30</li>
+              <li style="--swatch-color: var(--color-lime-20);">20</li>
+              <li style="--swatch-color: var(--color-lime-10);">10</li>
+            </ul>
+          </article>
+          <article class="color-group">
+            <h3>Cyan</h3>
+            <ul class="color-list">
+              <li style="--swatch-color: var(--color-cyan-99);">99</li>
+              <li style="--swatch-color: var(--color-cyan-95);">95</li>
+              <li style="--swatch-color: var(--color-cyan-90);">90</li>
+              <li style="--swatch-color: var(--color-cyan-80);">80</li>
+              <li style="--swatch-color: var(--color-cyan-70);">70</li>
+              <li style="--swatch-color: var(--color-cyan-60);">60</li>
+              <li style="--swatch-color: var(--color-cyan-50);">50</li>
+              <li style="--swatch-color: var(--color-cyan-40);">40</li>
+              <li style="--swatch-color: var(--color-cyan-30);">30</li>
+              <li style="--swatch-color: var(--color-cyan-20);">20</li>
+              <li style="--swatch-color: var(--color-cyan-10);">10</li>
+            </ul>
+          </article>
+          <article class="color-group">
+            <h3>Light Blue</h3>
+            <ul class="color-list">
+              <li style="--swatch-color: var(--color-light-blue-99);">99</li>
+              <li style="--swatch-color: var(--color-light-blue-95);">95</li>
+              <li style="--swatch-color: var(--color-light-blue-90);">90</li>
+              <li style="--swatch-color: var(--color-light-blue-80);">80</li>
+              <li style="--swatch-color: var(--color-light-blue-70);">70</li>
+              <li style="--swatch-color: var(--color-light-blue-60);">60</li>
+              <li style="--swatch-color: var(--color-light-blue-50);">50</li>
+              <li style="--swatch-color: var(--color-light-blue-40);">40</li>
+              <li style="--swatch-color: var(--color-light-blue-30);">30</li>
+              <li style="--swatch-color: var(--color-light-blue-20);">20</li>
+              <li style="--swatch-color: var(--color-light-blue-10);">10</li>
+            </ul>
+          </article>
+          <article class="color-group">
+            <h3>Violet</h3>
+            <ul class="color-list">
+              <li style="--swatch-color: var(--color-violet-99);">99</li>
+              <li style="--swatch-color: var(--color-violet-95);">95</li>
+              <li style="--swatch-color: var(--color-violet-90);">90</li>
+              <li style="--swatch-color: var(--color-violet-80);">80</li>
+              <li style="--swatch-color: var(--color-violet-70);">70</li>
+              <li style="--swatch-color: var(--color-violet-60);">60</li>
+              <li style="--swatch-color: var(--color-violet-50);">50</li>
+              <li style="--swatch-color: var(--color-violet-45);">45</li>
+              <li style="--swatch-color: var(--color-violet-40);">40</li>
+              <li style="--swatch-color: var(--color-violet-30);">30</li>
+              <li style="--swatch-color: var(--color-violet-20);">20</li>
+              <li style="--swatch-color: var(--color-violet-10);">10</li>
+            </ul>
+          </article>
+          <article class="color-group">
+            <h3>Purple</h3>
+            <ul class="color-list">
+              <li style="--swatch-color: var(--color-purple-99);">99</li>
+              <li style="--swatch-color: var(--color-purple-95);">95</li>
+              <li style="--swatch-color: var(--color-purple-90);">90</li>
+              <li style="--swatch-color: var(--color-purple-80);">80</li>
+              <li style="--swatch-color: var(--color-purple-70);">70</li>
+              <li style="--swatch-color: var(--color-purple-60);">60</li>
+              <li style="--swatch-color: var(--color-purple-50);">50</li>
+              <li style="--swatch-color: var(--color-purple-40);">40</li>
+              <li style="--swatch-color: var(--color-purple-30);">30</li>
+              <li style="--swatch-color: var(--color-purple-20);">20</li>
+              <li style="--swatch-color: var(--color-purple-10);">10</li>
+            </ul>
+          </article>
+          <article class="color-group">
+            <h3>Newsroll Purple</h3>
+            <ul class="color-list">
+              <li style="--swatch-color: var(--color-newsroll-purple-99);">99</li>
+              <li style="--swatch-color: var(--color-newsroll-purple-95);">95</li>
+              <li style="--swatch-color: var(--color-newsroll-purple-90);">90</li>
+              <li style="--swatch-color: var(--color-newsroll-purple-80);">80</li>
+              <li style="--swatch-color: var(--color-newsroll-purple-70);">70</li>
+              <li style="--swatch-color: var(--color-newsroll-purple-60);">60</li>
+              <li style="--swatch-color: var(--color-newsroll-purple-50);">50</li>
+              <li style="--swatch-color: var(--color-newsroll-purple-40);">40</li>
+              <li style="--swatch-color: var(--color-newsroll-purple-30);">30</li>
+              <li style="--swatch-color: var(--color-newsroll-purple-20);">20</li>
+              <li style="--swatch-color: var(--color-newsroll-purple-10);">10</li>
+            </ul>
+          </article>
+          <article class="color-group">
+            <h3>Pink</h3>
+            <ul class="color-list">
+              <li style="--swatch-color: var(--color-pink-99);">99</li>
+              <li style="--swatch-color: var(--color-pink-95);">95</li>
+              <li style="--swatch-color: var(--color-pink-90);">90</li>
+              <li style="--swatch-color: var(--color-pink-80);">80</li>
+              <li style="--swatch-color: var(--color-pink-70);">70</li>
+              <li style="--swatch-color: var(--color-pink-60);">60</li>
+              <li style="--swatch-color: var(--color-pink-50);">50</li>
+              <li style="--swatch-color: var(--color-pink-46);">46</li>
+              <li style="--swatch-color: var(--color-pink-40);">40</li>
+              <li style="--swatch-color: var(--color-pink-30);">30</li>
+              <li style="--swatch-color: var(--color-pink-20);">20</li>
+              <li style="--swatch-color: var(--color-pink-10);">10</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+      <section>
+        <h2>Color Sementic</h2>
+        <div class="semantic-panel">
+          <article class="semantic-group">
+            <h3>Status</h3>
+            <ul class="semantic-list">
+              <li style="--semantic-color: var(--color-status-positive);">Positive</li>
+              <li style="--semantic-color: var(--color-status-cautionary);">Cautionary</li>
+              <li style="--semantic-color: var(--color-status-negative);">Negative</li>
+            </ul>
+          </article>
+          <article class="semantic-group">
+            <h3>Accent</h3>
+            <div class="semantic-subgroup">
+              <h4>Background</h4>
+              <ul class="semantic-list">
+                <li style="--semantic-color: var(--color-accent-background-red-orange);">Red Orange</li>
+                <li style="--semantic-color: var(--color-accent-background-lime);">Lime</li>
+                <li style="--semantic-color: var(--color-accent-background-cyan);">Cyan</li>
+                <li style="--semantic-color: var(--color-accent-background-light-blue);">Light Blue</li>
+                <li style="--semantic-color: var(--color-accent-background-violet);">Violet</li>
+                <li style="--semantic-color: var(--color-accent-background-purple);">Purple</li>
+                <li style="--semantic-color: var(--color-accent-background-pink);">Pink</li>
+              </ul>
+            </div>
+            <div class="semantic-subgroup">
+              <h4>Foreground</h4>
+              <ul class="semantic-list">
+                <li style="--semantic-color: var(--color-accent-foreground-red);">Red</li>
+                <li style="--semantic-color: var(--color-accent-foreground-red-orange);">Red Orange</li>
+                <li style="--semantic-color: var(--color-accent-foreground-orange);">Orange</li>
+                <li style="--semantic-color: var(--color-accent-foreground-green);">Green</li>
+                <li style="--semantic-color: var(--color-accent-foreground-lime);">Lime</li>
+                <li style="--semantic-color: var(--color-accent-foreground-cyan);">Cyan</li>
+                <li style="--semantic-color: var(--color-accent-foreground-light-blue);">Light Blue</li>
+                <li style="--semantic-color: var(--color-accent-foreground-blue);">Blue</li>
+                <li style="--semantic-color: var(--color-accent-foreground-violet);">Violet</li>
+                <li style="--semantic-color: var(--color-accent-foreground-purple);">Purple</li>
+                <li style="--semantic-color: var(--color-accent-foreground-pink);">Pink</li>
+              </ul>
+            </div>
+          </article>
+          <article class="semantic-group">
+            <h3>Background</h3>
+            <ul class="semantic-list">
+              <li style="--semantic-color: var(--color-background-normal-normal);">Normal</li>
+              <li style="--semantic-color: var(--color-background-normal-alternative);">Normal Alternative</li>
+              <li style="--semantic-color: var(--color-background-elevated-normal);">Elevated Normal</li>
+              <li style="--semantic-color: var(--color-background-elevated-alternative);">Elevated Alternative</li>
+              <li style="--semantic-color: var(--color-background-transparent-normal);">Transparent Normal</li>
+              <li style="--semantic-color: var(--color-background-transparent-alternative);">Transparent Alternative
+              </li>
+            </ul>
+          </article>
+          <article class="semantic-group">
+            <h3>Label</h3>
+            <ul class="semantic-list">
+              <li style="--semantic-color: var(--color-label-normal);">Normal</li>
+              <li style="--semantic-color: var(--color-label-strong);">Strong</li>
+              <li style="--semantic-color: var(--color-label-neutral);">Neutral</li>
+              <li style="--semantic-color: var(--color-label-alternative);">Alternative</li>
+              <li style="--semantic-color: var(--color-label-assistive);">Assistive</li>
+              <li style="--semantic-color: var(--color-label-disable);">Disable</li>
+            </ul>
+          </article>
+          <article class="semantic-group">
+            <h3>Line</h3>
+            <div class="semantic-subgroup">
+              <h4>Normal</h4>
+              <ul class="semantic-list">
+                <li style="--semantic-color: var(--color-line-normal-normal);">Normal</li>
+                <li style="--semantic-color: var(--color-line-normal-neutral);">Neutral</li>
+                <li style="--semantic-color: var(--color-line-normal-alternative);">Alternative</li>
+                <li style="--semantic-color: var(--color-line-normal-strong);">Strong</li>
+              </ul>
+            </div>
+            <div class="semantic-subgroup">
+              <h4>Solid</h4>
+              <ul class="semantic-list">
+                <li style="--semantic-color: var(--color-line-solid-normal);">Normal</li>
+                <li style="--semantic-color: var(--color-line-solid-neutral);">Neutral</li>
+                <li style="--semantic-color: var(--color-line-solid-alternative);">Alternative</li>
+                <li style="--semantic-color: var(--color-line-solid-strong);">Strong</li>
+                <li style="--semantic-color: var(--color-line-solid-20);">20</li>
+                <li style="--semantic-color: var(--color-line-solid-10);">10</li>
+                <li style="--semantic-color: var(--color-line-solid-0);">0</li>
+              </ul>
+            </div>
+          </article>
+          <article class="semantic-group">
+            <h3>Fill</h3>
+            <ul class="semantic-list">
+              <li style="--semantic-color: var(--color-fill-normal);">Normal</li>
+              <li style="--semantic-color: var(--color-fill-strong);">Strong</li>
+              <li style="--semantic-color: var(--color-fill-alternative);">Alternative</li>
+            </ul>
+          </article>
+          <article class="semantic-group">
+            <h3>Interaction</h3>
+            <ul class="semantic-list">
+              <li style="--semantic-color: var(--color-interaction-inactive);">Inactive</li>
+              <li style="--semantic-color: var(--color-interaction-disable);">Disable</li>
+            </ul>
+          </article>
+          <article class="semantic-group">
+            <h3>Static</h3>
+            <ul class="semantic-list">
+              <li style="--semantic-color: var(--color-static-white);">White</li>
+              <li style="--semantic-color: var(--color-static-black);">Black</li>
+            </ul>
+          </article>
+          <article class="semantic-group">
+            <h3>Inverse</h3>
+            <ul class="semantic-list">
+              <li style="--semantic-color: var(--color-inverse-primary);">Primary</li>
+              <li style="--semantic-color: var(--color-inverse-background);">Background</li>
+              <li style="--semantic-color: var(--color-inverse-label);">Label</li>
+            </ul>
+          </article>
+          <article class="semantic-group">
+            <h3>Material</h3>
+            <ul class="semantic-list">
+              <li style="--semantic-color: var(--color-material-dimmer);">Dimmer</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+      <section>
+        <h2>Typography</h2>
+        <div class="type-panel">
+          <table class="type-table">
+            <thead>
+              <tr>
+                <th scope="col">&#51060;&#47492;</th>
+                <th scope="col">&#53356;&#44592;</th>
+                <th scope="col">&#54665;&#44036;</th>
+                <th scope="col">&#50696;&#49884; &#53581;&#49828;&#53944;</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Display_1</th>
+                <td>60px</td>
+                <td>90px (1.5)</td>
+                <td>
+                  <p class="type-display_1">NewsTurnt headline<br />Pretendard typography</p>
+                </td>
+              </tr>              <tr>
+                <th scope="row">Display_2</th>
+                <td>48px</td>
+                <td>60px (1.25)</td>
+                <td>
+                  <p class="type-display_2">NewsTurnt headline<br />Pretendard typography</p>
+                </td>
+              </tr>              <tr>
+                <th scope="row">Display_3</th>
+                <td>40px</td>
+                <td>60px (1.5)</td>
+                <td>
+                  <p class="type-display_3">NewsTurnt headline<br />Pretendard typography</p>
+                </td>
+              </tr>              <tr>
+                <th scope="row">Headline_1</th>
+                <td>32px</td>
+                <td>48px (1.5)</td>
+                <td>
+                  <p class="type-headline_1">NewsTurnt headline<br />Pretendard typography</p>
+                </td>
+              </tr>              <tr>
+                <th scope="row">Headline_2</th>
+                <td>28px</td>
+                <td>40px (1.429)</td>
+                <td>
+                  <p class="type-headline_2">NewsTurnt headline<br />Pretendard typography</p>
+                </td>
+              </tr>              <tr>
+                <th scope="row">Headline_3</th>
+                <td>24px</td>
+                <td>40px (1.667)</td>
+                <td>
+                  <p class="type-headline_3">NewsTurnt headline<br />Pretendard typography</p>
+                </td>
+              </tr>              <tr>
+                <th scope="row">Title_1</th>
+                <td>20px</td>
+                <td>40px (2)</td>
+                <td>
+                  <p class="type-title_1">NewsTurnt headline<br />Pretendard typography</p>
+                </td>
+              </tr>              <tr>
+                <th scope="row">Title_2</th>
+                <td>18px</td>
+                <td>26px (1.444)</td>
+                <td>
+                  <p class="type-title_2">NewsTurnt headline<br />Pretendard typography</p>
+                </td>
+              </tr>              <tr>
+                <th scope="row">Body_1</th>
+                <td>16px</td>
+                <td>24px (1.5)</td>
+                <td>
+                  <p class="type-body_1">NewsTurnt headline<br />Pretendard typography</p>
+                </td>
+              </tr>              <tr>
+                <th scope="row">Body_2</th>
+                <td>15px</td>
+                <td>20px (1.333)</td>
+                <td>
+                  <p class="type-body_2">NewsTurnt headline<br />Pretendard typography</p>
+                </td>
+              </tr>              <tr>
+                <th scope="row">Label_1</th>
+                <td>14px</td>
+                <td>20px (1.429)</td>
+                <td>
+                  <p class="type-label_1">NewsTurnt headline<br />Pretendard typography</p>
+                </td>
+              </tr>              <tr>
+                <th scope="row">Meta_1</th>
+                <td>13px</td>
+                <td>13px (1)</td>
+                <td>
+                  <p class="type-meta_1">NewsTurnt headline<br />Pretendard typography</p>
+                </td>
+              </tr>              <tr>
+                <th scope="row">Caption_1</th>
+                <td>12px</td>
+                <td>20px (1.667)</td>
+                <td>
+                  <p class="type-caption_1">NewsTurnt headline<br />Pretendard typography</p>
+                </td>
+              </tr>              <tr>
+                <th scope="row">Caption_2</th>
+                <td>11px</td>
+                <td>20px (1.818)</td>
+                <td>
+                  <p class="type-caption_2">NewsTurnt headline<br />Pretendard typography</p>
+                </td>
+              </tr>              <tr>
+                <th scope="row">Caption_3</th>
+                <td>10px</td>
+                <td>16px (1.6)</td>
+                <td>
+                  <p class="type-caption_3">NewsTurnt headline<br />Pretendard typography</p>
+                </td>
+              </tr>            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h2>Padding</h2>
+        <div class="unit-panel">
+          <article class="unit-group">
+            <h3>Horizontal</h3>
+            <ul class="unit-token-list">
+              <li class="unit-token-card"
+                style="--unit-padding-x: var(--spacing-padding-horizontal-4); --unit-padding-y: var(--spacing-padding-vertical-16);">
+                <span class="unit-token-head"><span class="unit-token-name">padding-horizontal-4</span><span
+                    class="unit-token-value">4</span></span>
+                <span class="unit-padding-preview" aria-hidden="true"></span>
+              </li>
+              <li class="unit-token-card"
+                style="--unit-padding-x: var(--spacing-padding-horizontal-12); --unit-padding-y: var(--spacing-padding-vertical-16);">
+                <span class="unit-token-head"><span class="unit-token-name">padding-horizontal-12</span><span
+                    class="unit-token-value">12</span></span>
+                <span class="unit-padding-preview" aria-hidden="true"></span>
+              </li>
+              <li class="unit-token-card"
+                style="--unit-padding-x: var(--spacing-padding-horizontal-16); --unit-padding-y: var(--spacing-padding-vertical-16);">
+                <span class="unit-token-head"><span class="unit-token-name">padding-horizontal-16</span><span
+                    class="unit-token-value">16</span></span>
+                <span class="unit-padding-preview" aria-hidden="true"></span>
+              </li>
+              <li class="unit-token-card"
+                style="--unit-padding-x: var(--spacing-padding-horizontal-24); --unit-padding-y: var(--spacing-padding-vertical-16);">
+                <span class="unit-token-head"><span class="unit-token-name">padding-horizontal-24</span><span
+                    class="unit-token-value">24</span></span>
+                <span class="unit-padding-preview" aria-hidden="true"></span>
+              </li>
+              <li class="unit-token-card"
+                style="--unit-padding-x: var(--spacing-padding-horizontal-32); --unit-padding-y: var(--spacing-padding-vertical-16);">
+                <span class="unit-token-head"><span class="unit-token-name">padding-horizontal-32</span><span
+                    class="unit-token-value">32</span></span>
+                <span class="unit-padding-preview" aria-hidden="true"></span>
+              </li>
+              <li class="unit-token-card"
+                style="--unit-padding-x: var(--spacing-padding-horizontal-40); --unit-padding-y: var(--spacing-padding-vertical-16);">
+                <span class="unit-token-head"><span class="unit-token-name">padding-horizontal-40</span><span
+                    class="unit-token-value">40</span></span>
+                <span class="unit-padding-preview" aria-hidden="true"></span>
+              </li>
+              <li class="unit-token-card"
+                style="--unit-padding-x: var(--spacing-padding-horizontal-60); --unit-padding-y: var(--spacing-padding-vertical-16);">
+                <span class="unit-token-head"><span class="unit-token-name">padding-horizontal-60</span><span
+                    class="unit-token-value">60</span></span>
+                <span class="unit-padding-preview" aria-hidden="true"></span>
+              </li>
+            </ul>
+          </article>
+
+          <article class="unit-group">
+            <h3>Vertical</h3>
+            <ul class="unit-token-list">
+              <li class="unit-token-card"
+                style="--unit-padding-x: var(--spacing-padding-horizontal-16); --unit-padding-y: var(--spacing-padding-vertical-4);">
+                <span class="unit-token-head"><span class="unit-token-name">padding-vertical-4</span><span
+                    class="unit-token-value">4</span></span>
+                <span class="unit-padding-preview" aria-hidden="true"></span>
+              </li>
+              <li class="unit-token-card"
+                style="--unit-padding-x: var(--spacing-padding-horizontal-16); --unit-padding-y: var(--spacing-padding-vertical-8);">
+                <span class="unit-token-head"><span class="unit-token-name">padding-vertical-8</span><span
+                    class="unit-token-value">8</span></span>
+                <span class="unit-padding-preview" aria-hidden="true"></span>
+              </li>
+              <li class="unit-token-card"
+                style="--unit-padding-x: var(--spacing-padding-horizontal-16); --unit-padding-y: var(--spacing-padding-vertical-12);">
+                <span class="unit-token-head"><span class="unit-token-name">padding-vertical-12</span><span
+                    class="unit-token-value">12</span></span>
+                <span class="unit-padding-preview" aria-hidden="true"></span>
+              </li>
+              <li class="unit-token-card"
+                style="--unit-padding-x: var(--spacing-padding-horizontal-16); --unit-padding-y: var(--spacing-padding-vertical-16);">
+                <span class="unit-token-head"><span class="unit-token-name">padding-vertical-16</span><span
+                    class="unit-token-value">16</span></span>
+                <span class="unit-padding-preview" aria-hidden="true"></span>
+              </li>
+              <li class="unit-token-card"
+                style="--unit-padding-x: var(--spacing-padding-horizontal-16); --unit-padding-y: var(--spacing-padding-vertical-24);">
+                <span class="unit-token-head"><span class="unit-token-name">padding-vertical-24</span><span
+                    class="unit-token-value">24</span></span>
+                <span class="unit-padding-preview" aria-hidden="true"></span>
+              </li>
+              <li class="unit-token-card"
+                style="--unit-padding-x: var(--spacing-padding-horizontal-16); --unit-padding-y: var(--spacing-padding-vertical-32);">
+                <span class="unit-token-head"><span class="unit-token-name">padding-vertical-32</span><span
+                    class="unit-token-value">32</span></span>
+                <span class="unit-padding-preview" aria-hidden="true"></span>
+              </li>
+              <li class="unit-token-card"
+                style="--unit-padding-x: var(--spacing-padding-horizontal-16); --unit-padding-y: var(--spacing-padding-vertical-40);">
+                <span class="unit-token-head"><span class="unit-token-name">padding-vertical-40</span><span
+                    class="unit-token-value">40</span></span>
+                <span class="unit-padding-preview" aria-hidden="true"></span>
+              </li>
+              <li class="unit-token-card"
+                style="--unit-padding-x: var(--spacing-padding-horizontal-16); --unit-padding-y: var(--spacing-padding-vertical-60);">
+                <span class="unit-token-head"><span class="unit-token-name">padding-vertical-60</span><span
+                    class="unit-token-value">60</span></span>
+                <span class="unit-padding-preview" aria-hidden="true"></span>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2>Margin</h2>
+        <div class="unit-panel">
+          <article class="unit-group">
+            <h3>Horizontal</h3>
+            <ul class="unit-token-list">
+              <li class="unit-token-card"
+                style="--unit-margin-x: var(--spacing-margin-horizontal-4); --unit-margin-y: var(--spacing-margin-vertical-16);">
+                <span class="unit-token-head"><span class="unit-token-name">margin-horizontal-4</span><span
+                    class="unit-token-value">4</span></span>
+                <span class="unit-margin-preview" aria-hidden="true"></span>
+              </li>
+              <li class="unit-token-card"
+                style="--unit-margin-x: var(--spacing-margin-horizontal-12); --unit-margin-y: var(--spacing-margin-vertical-16);">
+                <span class="unit-token-head"><span class="unit-token-name">margin-horizontal-12</span><span
+                    class="unit-token-value">12</span></span>
+                <span class="unit-margin-preview" aria-hidden="true"></span>
+              </li>
+              <li class="unit-token-card"
+                style="--unit-margin-x: var(--spacing-margin-horizontal-16); --unit-margin-y: var(--spacing-margin-vertical-16);">
+                <span class="unit-token-head"><span class="unit-token-name">margin-horizontal-16</span><span
+                    class="unit-token-value">16</span></span>
+                <span class="unit-margin-preview" aria-hidden="true"></span>
+              </li>
+              <li class="unit-token-card"
+                style="--unit-margin-x: var(--spacing-margin-horizontal-24); --unit-margin-y: var(--spacing-margin-vertical-16);">
+                <span class="unit-token-head"><span class="unit-token-name">margin-horizontal-24</span><span
+                    class="unit-token-value">24</span></span>
+                <span class="unit-margin-preview" aria-hidden="true"></span>
+              </li>
+              <li class="unit-token-card"
+                style="--unit-margin-x: var(--spacing-margin-horizontal-32); --unit-margin-y: var(--spacing-margin-vertical-16);">
+                <span class="unit-token-head"><span class="unit-token-name">margin-horizontal-32</span><span
+                    class="unit-token-value">32</span></span>
+                <span class="unit-margin-preview" aria-hidden="true"></span>
+              </li>
+            </ul>
+          </article>
+
+          <article class="unit-group">
+            <h3>Vertical</h3>
+            <ul class="unit-token-list">
+              <li class="unit-token-card"
+                style="--unit-margin-x: var(--spacing-margin-horizontal-16); --unit-margin-y: var(--spacing-margin-vertical-4);">
+                <span class="unit-token-head"><span class="unit-token-name">margin-vertical-4</span><span
+                    class="unit-token-value">4</span></span>
+                <span class="unit-margin-preview" aria-hidden="true"></span>
+              </li>
+              <li class="unit-token-card"
+                style="--unit-margin-x: var(--spacing-margin-horizontal-16); --unit-margin-y: var(--spacing-margin-vertical-8);">
+                <span class="unit-token-head"><span class="unit-token-name">margin-vertical-8</span><span
+                    class="unit-token-value">8</span></span>
+                <span class="unit-margin-preview" aria-hidden="true"></span>
+              </li>
+              <li class="unit-token-card"
+                style="--unit-margin-x: var(--spacing-margin-horizontal-16); --unit-margin-y: var(--spacing-margin-vertical-12);">
+                <span class="unit-token-head"><span class="unit-token-name">margin-vertical-12</span><span
+                    class="unit-token-value">12</span></span>
+                <span class="unit-margin-preview" aria-hidden="true"></span>
+              </li>
+              <li class="unit-token-card"
+                style="--unit-margin-x: var(--spacing-margin-horizontal-16); --unit-margin-y: var(--spacing-margin-vertical-16);">
+                <span class="unit-token-head"><span class="unit-token-name">margin-vertical-16</span><span
+                    class="unit-token-value">16</span></span>
+                <span class="unit-margin-preview" aria-hidden="true"></span>
+              </li>
+              <li class="unit-token-card"
+                style="--unit-margin-x: var(--spacing-margin-horizontal-16); --unit-margin-y: var(--spacing-margin-vertical-24);">
+                <span class="unit-token-head"><span class="unit-token-name">margin-vertical-24</span><span
+                    class="unit-token-value">24</span></span>
+                <span class="unit-margin-preview" aria-hidden="true"></span>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2>Border Radius</h2>
+        <div class="unit-panel">
+          <ul class="unit-token-list">
+            <li class="unit-token-card" style="--unit-radius: var(--radius-0);">
+              <span class="unit-token-head"><span class="unit-token-name">radius-0</span><span
+                  class="unit-token-value">0</span></span>
+              <span class="unit-radius-preview" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-radius: var(--radius-2);">
+              <span class="unit-token-head"><span class="unit-token-name">radius-2</span><span
+                  class="unit-token-value">2</span></span>
+              <span class="unit-radius-preview" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-radius: var(--radius-8);">
+              <span class="unit-token-head"><span class="unit-token-name">radius-8</span><span
+                  class="unit-token-value">8</span></span>
+              <span class="unit-radius-preview" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-radius: var(--radius-16);">
+              <span class="unit-token-head"><span class="unit-token-name">radius-16</span><span
+                  class="unit-token-value">16</span></span>
+              <span class="unit-radius-preview" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-radius: var(--radius-20);">
+              <span class="unit-token-head"><span class="unit-token-name">radius-20</span><span
+                  class="unit-token-value">20</span></span>
+              <span class="unit-radius-preview" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-radius: var(--radius-24);">
+              <span class="unit-token-head"><span class="unit-token-name">radius-24</span><span
+                  class="unit-token-value">24</span></span>
+              <span class="unit-radius-preview" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-radius: var(--radius-32);">
+              <span class="unit-token-head"><span class="unit-token-name">radius-32</span><span
+                  class="unit-token-value">32</span></span>
+              <span class="unit-radius-preview" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-radius: var(--radius-40);">
+              <span class="unit-token-head"><span class="unit-token-name">radius-40</span><span
+                  class="unit-token-value">40</span></span>
+              <span class="unit-radius-preview" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-radius: var(--radius-full);">
+              <span class="unit-token-head"><span class="unit-token-name">radius-full</span><span
+                  class="unit-token-value">9999</span></span>
+              <span class="unit-radius-preview" aria-hidden="true"></span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Border Width</h2>
+        <div class="unit-panel">
+          <ul class="unit-token-list">
+            <li class="unit-token-card" style="--unit-border: var(--border-0-5);">
+              <span class="unit-token-head"><span class="unit-token-name">border-0-5</span><span
+                  class="unit-token-value">0.5</span></span>
+              <span class="unit-border-preview" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-border: var(--border-1);">
+              <span class="unit-token-head"><span class="unit-token-name">border-1</span><span
+                  class="unit-token-value">1</span></span>
+              <span class="unit-border-preview" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-border: var(--border-2);">
+              <span class="unit-token-head"><span class="unit-token-name">border-2</span><span
+                  class="unit-token-value">2</span></span>
+              <span class="unit-border-preview" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-border: var(--border-3);">
+              <span class="unit-token-head"><span class="unit-token-name">border-3</span><span
+                  class="unit-token-value">3</span></span>
+              <span class="unit-border-preview" aria-hidden="true"></span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Shadow</h2>
+        <div class="unit-panel">
+          <ul class="unit-token-list">
+            <li class="unit-token-card" style="--unit-shadow: var(--shadow-1);">
+              <span class="unit-token-head"><span class="unit-token-name">shadow-1</span><span
+                  class="unit-token-value">1</span></span>
+              <span class="unit-shadow-preview" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-shadow: var(--shadow-2);">
+              <span class="unit-token-head"><span class="unit-token-name">shadow-2</span><span
+                  class="unit-token-value">2</span></span>
+              <span class="unit-shadow-preview" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-shadow: var(--shadow-3);">
+              <span class="unit-token-head"><span class="unit-token-name">shadow-3</span><span
+                  class="unit-token-value">3</span></span>
+              <span class="unit-shadow-preview" aria-hidden="true"></span>
+            </li>
+            <li class="unit-token-card" style="--unit-shadow: var(--shadow-4);">
+              <span class="unit-token-head"><span class="unit-token-name">shadow-4</span><span
+                  class="unit-token-value">4</span></span>
+              <span class="unit-shadow-preview" aria-hidden="true"></span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Gap</h2>
+        <div class="unit-panel">
+          <article class="unit-group">
+            <h3>Horizontal</h3>
+            <ul class="unit-token-list">
+              <li class="unit-token-card" style="--unit-gap: var(--spacing-gap-horizontal-4);">
+                <span class="unit-token-head"><span class="unit-token-name">gap-horizontal-4</span><span
+                    class="unit-token-value">4</span></span>
+                <span class="unit-gap-preview" aria-hidden="true"></span>
+              </li>
+              <li class="unit-token-card" style="--unit-gap: var(--spacing-gap-horizontal-8);">
+                <span class="unit-token-head"><span class="unit-token-name">gap-horizontal-8</span><span
+                    class="unit-token-value">8</span></span>
+                <span class="unit-gap-preview" aria-hidden="true"></span>
+              </li>
+              <li class="unit-token-card" style="--unit-gap: var(--spacing-gap-horizontal-16);">
+                <span class="unit-token-head"><span class="unit-token-name">gap-horizontal-16</span><span
+                    class="unit-token-value">16</span></span>
+                <span class="unit-gap-preview" aria-hidden="true"></span>
+              </li>
+              <li class="unit-token-card" style="--unit-gap: var(--spacing-gap-horizontal-20);">
+                <span class="unit-token-head"><span class="unit-token-name">gap-horizontal-20</span><span
+                    class="unit-token-value">20</span></span>
+                <span class="unit-gap-preview" aria-hidden="true"></span>
+              </li>
+              <li class="unit-token-card" style="--unit-gap: var(--spacing-gap-horizontal-24);">
+                <span class="unit-token-head"><span class="unit-token-name">gap-horizontal-24</span><span
+                    class="unit-token-value">24</span></span>
+                <span class="unit-gap-preview" aria-hidden="true"></span>
+              </li>
+              <li class="unit-token-card" style="--unit-gap: var(--spacing-gap-horizontal-32);">
+                <span class="unit-token-head"><span class="unit-token-name">gap-horizontal-32</span><span
+                    class="unit-token-value">32</span></span>
+                <span class="unit-gap-preview" aria-hidden="true"></span>
+              </li>
+              <li class="unit-token-card" style="--unit-gap: var(--spacing-gap-horizontal-40);">
+                <span class="unit-token-head"><span class="unit-token-name">gap-horizontal-40</span><span
+                    class="unit-token-value">40</span></span>
+                <span class="unit-gap-preview" aria-hidden="true"></span>
+              </li>
+              <li class="unit-token-card" style="--unit-gap: var(--spacing-gap-horizontal-60);">
+                <span class="unit-token-head"><span class="unit-token-name">gap-horizontal-60</span><span
+                    class="unit-token-value">60</span></span>
+                <span class="unit-gap-preview" aria-hidden="true"></span>
+              </li>
+            </ul>
+          </article>
+
+          <article class="unit-group">
+            <h3>Vertical</h3>
+            <ul class="unit-token-list">
+              <li class="unit-token-card" style="--unit-gap: var(--spacing-gap-vertical-4);">
+                <span class="unit-token-head"><span class="unit-token-name">gap-vertical-4</span><span
+                    class="unit-token-value">4</span></span>
+                <span class="unit-gap-preview is-vertical" aria-hidden="true"></span>
+              </li>
+              <li class="unit-token-card" style="--unit-gap: var(--spacing-gap-vertical-8);">
+                <span class="unit-token-head"><span class="unit-token-name">gap-vertical-8</span><span
+                    class="unit-token-value">8</span></span>
+                <span class="unit-gap-preview is-vertical" aria-hidden="true"></span>
+              </li>
+              <li class="unit-token-card" style="--unit-gap: var(--spacing-gap-vertical-16);">
+                <span class="unit-token-head"><span class="unit-token-name">gap-vertical-16</span><span
+                    class="unit-token-value">16</span></span>
+                <span class="unit-gap-preview is-vertical" aria-hidden="true"></span>
+              </li>
+              <li class="unit-token-card" style="--unit-gap: var(--spacing-gap-vertical-20);">
+                <span class="unit-token-head"><span class="unit-token-name">gap-vertical-20</span><span
+                    class="unit-token-value">20</span></span>
+                <span class="unit-gap-preview is-vertical" aria-hidden="true"></span>
+              </li>
+              <li class="unit-token-card" style="--unit-gap: var(--spacing-gap-vertical-24);">
+                <span class="unit-token-head"><span class="unit-token-name">gap-vertical-24</span><span
+                    class="unit-token-value">24</span></span>
+                <span class="unit-gap-preview is-vertical" aria-hidden="true"></span>
+              </li>
+              <li class="unit-token-card" style="--unit-gap: var(--spacing-gap-vertical-32);">
+                <span class="unit-token-head"><span class="unit-token-name">gap-vertical-32</span><span
+                    class="unit-token-value">32</span></span>
+                <span class="unit-gap-preview is-vertical" aria-hidden="true"></span>
+              </li>
+              <li class="unit-token-card" style="--unit-gap: var(--spacing-gap-vertical-40);">
+                <span class="unit-token-head"><span class="unit-token-name">gap-vertical-40</span><span
+                    class="unit-token-value">40</span></span>
+                <span class="unit-gap-preview is-vertical" aria-hidden="true"></span>
+              </li>
+              <li class="unit-token-card" style="--unit-gap: var(--spacing-gap-vertical-60);">
+                <span class="unit-token-head"><span class="unit-token-name">gap-vertical-60</span><span
+                    class="unit-token-value">60</span></span>
+                <span class="unit-gap-preview is-vertical" aria-hidden="true"></span>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2>Icons</h2>
+        <div class="icon-panel">
+          <article class="icon-intro">
+            <p class="icon-description">
+              &#49884;&#49828;&#53596;&#32;&#50500;&#51060;&#53080;&#51008;&#32;&#50;&#52;&#112;&#120;&#47484;&#32;&#44592;&#51456;&#32;&#49324;&#51060;&#51592;&#47196;&#32;&#51221;&#51032;&#54616;&#47728;&#44;&#32;&#51452;&#50836;&#32;&#53356;&#44592;&#47196;&#32;&#49;&#50;&#112;&#120;&#44;&#32;&#49;&#54;&#112;&#120;&#44;&#32;&#50;&#48;&#112;&#120;&#44;&#32;&#50;&#52;&#112;&#120;&#44;&#32;&#51;&#50;&#112;&#120;&#44;&#32;&#52;&#48;&#112;&#120;&#47484;&#32;&#49324;&#50857;&#54620;&#45796;&#46;
+            </p>
+            <ul class="icon-size-list" id="foundation-icon-sizes" aria-label="Icon size scale"></ul>
+          </article>
+          <div class="icon-catalog" id="foundation-icon-groups" aria-live="polite"></div>
+        </div>
+      </section>
+    </div>
+
+        <div class="ds-tabpanel" id="tab-component" role="tabpanel" aria-labelledby="tab-button-component"
+      data-tab-panel="component" hidden>
+      <section>
+        <h2>Buttons</h2>
+        <div class="button-panel">
+          <article class="button-category" aria-labelledby="buttons-title">
+            <div class="button-category-head">
+              <h3 id="buttons-title">Buttons</h3>
+            </div>
+            <div class="button-variant-stack">
+              <div class="button-variant-group">
+                <h5 class="button-variant-title">PrimaryButton</h5>
+                <table class="type-table button-table">
+                  <colgroup>
+                    <col class="button-table-category-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">&#48516;&#47448;</th>
+                      <th scope="col">Small</th>
+                      <th scope="col">Medium (Default)</th>
+                      <th scope="col">Large</th>
+                      <th scope="col">Xlarge</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Default</th>
+                      <td><button class="btn_primary_default_small" type="button">Confirm</button></td>
+                      <td><button class="btn_primary_default_medium" type="button">Confirm</button></td>
+                      <td><button class="btn_primary_default_large" type="button">Confirm</button></td>
+                      <td><button class="btn_primary_default_xlarge" type="button">Confirm</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Neutral</th>
+                      <td><button class="btn_primary_neutral_small" type="button">Cancel</button></td>
+                      <td><button class="btn_primary_neutral_medium" type="button">Cancel</button></td>
+                      <td><button class="btn_primary_neutral_large" type="button">Cancel</button></td>
+                      <td><button class="btn_primary_neutral_xlarge" type="button">Cancel</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Danger</th>
+                      <td><button class="btn_primary_danger_small" type="button">Delete</button></td>
+                      <td><button class="btn_primary_danger_medium" type="button">Delete</button></td>
+                      <td><button class="btn_primary_danger_large" type="button">Delete</button></td>
+                      <td><button class="btn_primary_danger_xlarge" type="button">Delete</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Disabled</th>
+                      <td><button class="btn_primary_disabled_small" type="button">Disabled</button></td>
+                      <td><button class="btn_primary_disabled_medium" type="button">Disabled</button></td>
+                      <td><button class="btn_primary_disabled_large" type="button">Disabled</button></td>
+                      <td><button class="btn_primary_disabled_xlarge" type="button">Disabled</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>              <div class="button-variant-group">
+                <h5 class="button-variant-title">FieldActionButton</h5>
+                <table class="type-table button-table">
+                  <colgroup>
+                    <col class="button-table-category-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">&#48516;&#47448;</th>
+                      <th scope="col">Small</th>
+                      <th scope="col">Medium (Default)</th>
+                      <th scope="col">Large</th>
+                      <th scope="col">Xlarge</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Purple</th>
+                      <td><button class="btn_field_action_purple_small" type="button">Verify</button></td>
+                      <td><button class="btn_field_action_purple_medium" type="button">Verify</button></td>
+                      <td><button class="btn_field_action_purple_large" type="button">Verify</button></td>
+                      <td><button class="btn_field_action_purple_xlarge" type="button">Verify</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">White Outline</th>
+                      <td><button class="btn_field_action_white_small" type="button">Resend</button></td>
+                      <td><button class="btn_field_action_white_medium" type="button">Resend</button></td>
+                      <td><button class="btn_field_action_white_large" type="button">Resend</button></td>
+                      <td><button class="btn_field_action_white_xlarge" type="button">Resend</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Disabled</th>
+                      <td><button class="btn_field_action_disabled_small" type="button">Verify</button></td>
+                      <td><button class="btn_field_action_disabled_medium" type="button">Verify</button></td>
+                      <td><button class="btn_field_action_disabled_large" type="button">Verify</button></td>
+                      <td><button class="btn_field_action_disabled_xlarge" type="button">Verify</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>              <div class="button-variant-group">
+                <h5 class="button-variant-title">IconButton</h5>
+                <table class="type-table button-table">
+                  <colgroup>
+                    <col class="button-table-category-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">&#48516;&#47448;</th>
+                      <th scope="col">Small</th>
+                      <th scope="col">Medium (Default)</th>
+                      <th scope="col">Large</th>
+                      <th scope="col">Xlarge</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Primary</th>
+                      <td><button class="btn_icon_primary_small" type="button"></button></td>
+                      <td><button class="btn_icon_primary_medium" type="button"></button></td>
+                      <td><button class="btn_icon_primary_large" type="button"></button></td>
+                      <td><button class="btn_icon_primary_xlarge" type="button"></button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Neutral</th>
+                      <td><button class="btn_icon_neutral_small" type="button"></button></td>
+                      <td><button class="btn_icon_neutral_medium" type="button"></button></td>
+                      <td><button class="btn_icon_neutral_large" type="button"></button></td>
+                      <td><button class="btn_icon_neutral_xlarge" type="button"></button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Danger</th>
+                      <td><button class="btn_icon_danger_small" type="button"></button></td>
+                      <td><button class="btn_icon_danger_medium" type="button"></button></td>
+                      <td><button class="btn_icon_danger_large" type="button"></button></td>
+                      <td><button class="btn_icon_danger_xlarge" type="button"></button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Translucent</th>
+                      <td><button class="btn_icon_translucent_small" type="button"></button></td>
+                      <td><button class="btn_icon_translucent_medium" type="button"></button></td>
+                      <td><button class="btn_icon_translucent_large" type="button"></button></td>
+                      <td><button class="btn_icon_translucent_xlarge" type="button"></button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>              <div class="button-variant-group">
+                <h5 class="button-variant-title">IconTextButton</h5>
+                <table class="type-table button-table">
+                  <colgroup>
+                    <col class="button-table-category-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">&#48516;&#47448;</th>
+                      <th scope="col">Small</th>
+                      <th scope="col">Medium (Default)</th>
+                      <th scope="col">Large</th>
+                      <th scope="col">Xlarge</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Like</th>
+                      <td><button class="btn_icon_text_like_small" type="button">Like</button></td>
+                      <td><button class="btn_icon_text_like_medium" type="button">Like</button></td>
+                      <td><button class="btn_icon_text_like_large" type="button">Like</button></td>
+                      <td><button class="btn_icon_text_like_xlarge" type="button">Like</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Dislike</th>
+                      <td><button class="btn_icon_text_dislike_small" type="button">Dislike</button></td>
+                      <td><button class="btn_icon_text_dislike_medium" type="button">Dislike</button></td>
+                      <td><button class="btn_icon_text_dislike_large" type="button">Dislike</button></td>
+                      <td><button class="btn_icon_text_dislike_xlarge" type="button">Dislike</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Neutral</th>
+                      <td><button class="btn_icon_text_neutral_small" type="button">Comment</button></td>
+                      <td><button class="btn_icon_text_neutral_medium" type="button">Comment</button></td>
+                      <td><button class="btn_icon_text_neutral_large" type="button">Comment</button></td>
+                      <td><button class="btn_icon_text_neutral_xlarge" type="button">Comment</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Vote</th>
+                      <td><button class="btn_icon_text_vote_small" type="button">Vote</button></td>
+                      <td><button class="btn_icon_text_vote_medium" type="button">Vote</button></td>
+                      <td><button class="btn_icon_text_vote_large" type="button">Vote</button></td>
+                      <td><button class="btn_icon_text_vote_xlarge" type="button">Vote</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>              <div class="button-variant-group">
+                <h5 class="button-variant-title">Content / Vote / Social</h5>
+                <table class="type-table button-table">
+                  <colgroup>
+                    <col class="button-table-category-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">&#48516;&#47448;</th>
+                      <th scope="col">Small</th>
+                      <th scope="col">Medium (Default)</th>
+                      <th scope="col">Large</th>
+                      <th scope="col">Xlarge</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Content Action</th>
+                      <td><button class="btn_content_action_small" type="button">More</button></td>
+                      <td><button class="btn_content_action_medium" type="button">More</button></td>
+                      <td><button class="btn_content_action_large" type="button">More</button></td>
+                      <td><button class="btn_content_action_xlarge" type="button">More</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Notice Card</th>
+                      <td><button class="btn_notice_card_small" type="button">Breaking news</button></td>
+                      <td><button class="btn_notice_card_medium" type="button">Breaking news</button></td>
+                      <td><button class="btn_notice_card_large" type="button">Breaking news</button></td>
+                      <td><button class="btn_notice_card_xlarge" type="button">Breaking news</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Vote Yes</th>
+                      <td><button class="btn_article_vote_yes_small" type="button">Yes</button></td>
+                      <td><button class="btn_article_vote_yes_medium" type="button">Yes</button></td>
+                      <td><button class="btn_article_vote_yes_large" type="button">Yes</button></td>
+                      <td><button class="btn_article_vote_yes_xlarge" type="button">Yes</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Vote No</th>
+                      <td><button class="btn_article_vote_no_small" type="button">No</button></td>
+                      <td><button class="btn_article_vote_no_medium" type="button">No</button></td>
+                      <td><button class="btn_article_vote_no_large" type="button">No</button></td>
+                      <td><button class="btn_article_vote_no_xlarge" type="button">No</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Social Login</th>
+                      <td><button class="btn_social_login_small" type="button"></button></td>
+                      <td><button class="btn_social_login_medium" type="button"></button></td>
+                      <td><button class="btn_social_login_large" type="button"></button></td>
+                      <td><button class="btn_social_login_xlarge" type="button"></button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section>
+        <h2>Tab</h2>
+        <div class="button-panel">
+          <article class="button-category" aria-labelledby="tabs-title">
+            <div class="button-category-head">
+              <h3 id="tabs-title">Tab</h3>
+            </div>
+            <div class="button-variant-stack">
+              <div class="button-variant-group">
+                <h5 class="button-variant-title">TabButton</h5>
+                <table class="type-table button-table">
+                  <colgroup>
+                    <col class="button-table-category-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">&#48516;&#47448;</th>
+                      <th scope="col">Small</th>
+                      <th scope="col">Medium (Default)</th>
+                      <th scope="col">Large</th>
+                      <th scope="col">Xlarge</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Default</th>
+                      <td><button class="tab_newsroll_pill_default_small" type="button">News</button></td>
+                      <td><button class="tab_newsroll_pill_default_medium" type="button">News</button></td>
+                      <td><button class="tab_newsroll_pill_default_large" type="button">News</button></td>
+                      <td><button class="tab_newsroll_pill_default_xlarge" type="button">News</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Active</th>
+                      <td><button class="tab_newsroll_pill_active_small" type="button">News</button></td>
+                      <td><button class="tab_newsroll_pill_active_medium" type="button">News</button></td>
+                      <td><button class="tab_newsroll_pill_active_large" type="button">News</button></td>
+                      <td><button class="tab_newsroll_pill_active_xlarge" type="button">News</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Disabled</th>
+                      <td><button class="tab_newsroll_pill_disabled_small" type="button">News</button></td>
+                      <td><button class="tab_newsroll_pill_disabled_medium" type="button">News</button></td>
+                      <td><button class="tab_newsroll_pill_disabled_large" type="button">News</button></td>
+                      <td><button class="tab_newsroll_pill_disabled_xlarge" type="button">News</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>              <div class="button-variant-group">
+                <h5 class="button-variant-title">Outline / Auth Tab</h5>
+                <table class="type-table button-table">
+                  <colgroup>
+                    <col class="button-table-category-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">&#48516;&#47448;</th>
+                      <th scope="col">Small</th>
+                      <th scope="col">Medium (Default)</th>
+                      <th scope="col">Large</th>
+                      <th scope="col">Xlarge</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Default</th>
+                      <td><button class="tab_newsroll_outline_default_small" type="button">Policy</button></td>
+                      <td><button class="tab_newsroll_outline_default_medium" type="button">Policy</button></td>
+                      <td><button class="tab_newsroll_outline_default_large" type="button">Policy</button></td>
+                      <td><button class="tab_newsroll_outline_default_xlarge" type="button">Policy</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Active</th>
+                      <td><button class="tab_newsroll_outline_active_small" type="button">Policy</button></td>
+                      <td><button class="tab_newsroll_outline_active_medium" type="button">Policy</button></td>
+                      <td><button class="tab_newsroll_outline_active_large" type="button">Policy</button></td>
+                      <td><button class="tab_newsroll_outline_active_xlarge" type="button">Policy</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>              <div class="button-variant-group">
+                <h5 class="button-variant-title">NewsViewToggle</h5>
+                <table class="type-table button-table">
+                  <colgroup>
+                    <col class="button-table-category-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">&#48516;&#47448;</th>
+                      <th scope="col">Small</th>
+                      <th scope="col">Medium (Default)</th>
+                      <th scope="col">Large</th>
+                      <th scope="col">Xlarge</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">List</th>
+                      <td><button class="tab_view_toggle_default_small" type="button"></button></td>
+                      <td><button class="tab_view_toggle_default_medium" type="button"></button></td>
+                      <td><button class="tab_view_toggle_default_large" type="button"></button></td>
+                      <td><button class="tab_view_toggle_default_xlarge" type="button"></button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Grid Active</th>
+                      <td><button class="tab_view_toggle_active_small" type="button"></button></td>
+                      <td><button class="tab_view_toggle_active_medium" type="button"></button></td>
+                      <td><button class="tab_view_toggle_active_large" type="button"></button></td>
+                      <td><button class="tab_view_toggle_active_xlarge" type="button"></button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section>
+        <h2>Text Input</h2>
+        <div class="button-panel">
+          <article class="button-category" aria-labelledby="text-input-title">
+            <div class="button-category-head">
+              <h3 id="text-input-title">Text Input</h3>
+            </div>
+            <div class="button-variant-stack">
+              <div class="button-variant-group">
+                <h5 class="button-variant-title">TextInput</h5>
+                <table class="type-table button-table">
+                  <colgroup>
+                    <col class="button-table-category-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">&#48516;&#47448;</th>
+                      <th scope="col">Small</th>
+                      <th scope="col">Medium (Default)</th>
+                      <th scope="col">Large</th>
+                      <th scope="col">Xlarge</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Default</th>
+                      <td><label class="text_input_newsroll_default_small"><input type="text" aria-label="text_input_newsroll_default small" placeholder="Placeholder"  /></label></td>
+                      <td><label class="text_input_newsroll_default_medium"><input type="text" aria-label="text_input_newsroll_default medium" placeholder="Placeholder"  /></label></td>
+                      <td><label class="text_input_newsroll_default_large"><input type="text" aria-label="text_input_newsroll_default large" placeholder="Placeholder"  /></label></td>
+                      <td><label class="text_input_newsroll_default_xlarge"><input type="text" aria-label="text_input_newsroll_default xlarge" placeholder="Placeholder"  /></label></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Focus</th>
+                      <td><label class="text_input_newsroll_focus_small"><input type="text" aria-label="text_input_newsroll_focus small" value="Focused" placeholder="Placeholder"  /></label></td>
+                      <td><label class="text_input_newsroll_focus_medium"><input type="text" aria-label="text_input_newsroll_focus medium" value="Focused" placeholder="Placeholder"  /></label></td>
+                      <td><label class="text_input_newsroll_focus_large"><input type="text" aria-label="text_input_newsroll_focus large" value="Focused" placeholder="Placeholder"  /></label></td>
+                      <td><label class="text_input_newsroll_focus_xlarge"><input type="text" aria-label="text_input_newsroll_focus xlarge" value="Focused" placeholder="Placeholder"  /></label></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Complete</th>
+                      <td><label class="text_input_newsroll_complete_small"><input type="text" aria-label="text_input_newsroll_complete small" value="Completed" placeholder="Placeholder"  /></label></td>
+                      <td><label class="text_input_newsroll_complete_medium"><input type="text" aria-label="text_input_newsroll_complete medium" value="Completed" placeholder="Placeholder"  /></label></td>
+                      <td><label class="text_input_newsroll_complete_large"><input type="text" aria-label="text_input_newsroll_complete large" value="Completed" placeholder="Placeholder"  /></label></td>
+                      <td><label class="text_input_newsroll_complete_xlarge"><input type="text" aria-label="text_input_newsroll_complete xlarge" value="Completed" placeholder="Placeholder"  /></label></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Error</th>
+                      <td><label class="text_input_newsroll_error_small"><input type="text" aria-label="text_input_newsroll_error small" value="Error" placeholder="Placeholder"  /></label></td>
+                      <td><label class="text_input_newsroll_error_medium"><input type="text" aria-label="text_input_newsroll_error medium" value="Error" placeholder="Placeholder"  /></label></td>
+                      <td><label class="text_input_newsroll_error_large"><input type="text" aria-label="text_input_newsroll_error large" value="Error" placeholder="Placeholder"  /></label></td>
+                      <td><label class="text_input_newsroll_error_xlarge"><input type="text" aria-label="text_input_newsroll_error xlarge" value="Error" placeholder="Placeholder"  /></label></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Disabled</th>
+                      <td><label class="text_input_newsroll_disabled_small"><input type="text" aria-label="text_input_newsroll_disabled small" value="Disabled" placeholder="Placeholder" disabled /></label></td>
+                      <td><label class="text_input_newsroll_disabled_medium"><input type="text" aria-label="text_input_newsroll_disabled medium" value="Disabled" placeholder="Placeholder" disabled /></label></td>
+                      <td><label class="text_input_newsroll_disabled_large"><input type="text" aria-label="text_input_newsroll_disabled large" value="Disabled" placeholder="Placeholder" disabled /></label></td>
+                      <td><label class="text_input_newsroll_disabled_xlarge"><input type="text" aria-label="text_input_newsroll_disabled xlarge" value="Disabled" placeholder="Placeholder" disabled /></label></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">View</th>
+                      <td><label class="text_input_newsroll_view_small"><input type="text" aria-label="text_input_newsroll_view small" value="Read only" placeholder="Placeholder" readonly /></label></td>
+                      <td><label class="text_input_newsroll_view_medium"><input type="text" aria-label="text_input_newsroll_view medium" value="Read only" placeholder="Placeholder" readonly /></label></td>
+                      <td><label class="text_input_newsroll_view_large"><input type="text" aria-label="text_input_newsroll_view large" value="Read only" placeholder="Placeholder" readonly /></label></td>
+                      <td><label class="text_input_newsroll_view_xlarge"><input type="text" aria-label="text_input_newsroll_view xlarge" value="Read only" placeholder="Placeholder" readonly /></label></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Dark</th>
+                      <td><label class="text_input_newsroll_dark_small"><input type="text" aria-label="text_input_newsroll_dark small" placeholder="Placeholder"  /></label></td>
+                      <td><label class="text_input_newsroll_dark_medium"><input type="text" aria-label="text_input_newsroll_dark medium" placeholder="Placeholder"  /></label></td>
+                      <td><label class="text_input_newsroll_dark_large"><input type="text" aria-label="text_input_newsroll_dark large" placeholder="Placeholder"  /></label></td>
+                      <td><label class="text_input_newsroll_dark_xlarge"><input type="text" aria-label="text_input_newsroll_dark xlarge" placeholder="Placeholder"  /></label></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section>
+        <h2>Text Area</h2>
+        <div class="button-panel">
+          <article class="button-category" aria-labelledby="textarea-title">
+            <div class="button-category-head">
+              <h3 id="textarea-title">Text Area</h3>
+            </div>
+            <div class="button-variant-stack">
+              <div class="button-variant-group">
+                <h5 class="button-variant-title">Textarea</h5>
+                <table class="type-table button-table">
+                  <colgroup>
+                    <col class="button-table-category-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">&#48516;&#47448;</th>
+                      <th scope="col">Small</th>
+                      <th scope="col">Medium (Default)</th>
+                      <th scope="col">Large</th>
+                      <th scope="col">Xlarge</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Default</th>
+                      <td><textarea class="textarea_newsroll_default_small" aria-label="textarea_newsroll_default small" placeholder="Placeholder" ></textarea></td>
+                      <td><textarea class="textarea_newsroll_default_medium" aria-label="textarea_newsroll_default medium" placeholder="Placeholder" ></textarea></td>
+                      <td><textarea class="textarea_newsroll_default_large" aria-label="textarea_newsroll_default large" placeholder="Placeholder" ></textarea></td>
+                      <td><textarea class="textarea_newsroll_default_xlarge" aria-label="textarea_newsroll_default xlarge" placeholder="Placeholder" ></textarea></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Focus</th>
+                      <td><textarea class="textarea_newsroll_focus_small" aria-label="textarea_newsroll_focus small" placeholder="Placeholder" >Focused text</textarea></td>
+                      <td><textarea class="textarea_newsroll_focus_medium" aria-label="textarea_newsroll_focus medium" placeholder="Placeholder" >Focused text</textarea></td>
+                      <td><textarea class="textarea_newsroll_focus_large" aria-label="textarea_newsroll_focus large" placeholder="Placeholder" >Focused text</textarea></td>
+                      <td><textarea class="textarea_newsroll_focus_xlarge" aria-label="textarea_newsroll_focus xlarge" placeholder="Placeholder" >Focused text</textarea></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Error</th>
+                      <td><textarea class="textarea_newsroll_error_small" aria-label="textarea_newsroll_error small" placeholder="Placeholder" >Error text</textarea></td>
+                      <td><textarea class="textarea_newsroll_error_medium" aria-label="textarea_newsroll_error medium" placeholder="Placeholder" >Error text</textarea></td>
+                      <td><textarea class="textarea_newsroll_error_large" aria-label="textarea_newsroll_error large" placeholder="Placeholder" >Error text</textarea></td>
+                      <td><textarea class="textarea_newsroll_error_xlarge" aria-label="textarea_newsroll_error xlarge" placeholder="Placeholder" >Error text</textarea></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Disabled</th>
+                      <td><textarea class="textarea_newsroll_disabled_small" aria-label="textarea_newsroll_disabled small" placeholder="Placeholder" disabled></textarea></td>
+                      <td><textarea class="textarea_newsroll_disabled_medium" aria-label="textarea_newsroll_disabled medium" placeholder="Placeholder" disabled></textarea></td>
+                      <td><textarea class="textarea_newsroll_disabled_large" aria-label="textarea_newsroll_disabled large" placeholder="Placeholder" disabled></textarea></td>
+                      <td><textarea class="textarea_newsroll_disabled_xlarge" aria-label="textarea_newsroll_disabled xlarge" placeholder="Placeholder" disabled></textarea></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">View</th>
+                      <td><textarea class="textarea_newsroll_view_small" aria-label="textarea_newsroll_view small" placeholder="Placeholder" readonly>Read only text</textarea></td>
+                      <td><textarea class="textarea_newsroll_view_medium" aria-label="textarea_newsroll_view medium" placeholder="Placeholder" readonly>Read only text</textarea></td>
+                      <td><textarea class="textarea_newsroll_view_large" aria-label="textarea_newsroll_view large" placeholder="Placeholder" readonly>Read only text</textarea></td>
+                      <td><textarea class="textarea_newsroll_view_xlarge" aria-label="textarea_newsroll_view xlarge" placeholder="Placeholder" readonly>Read only text</textarea></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Inquiry</th>
+                      <td><textarea class="textarea_newsroll_inquiry_small" aria-label="textarea_newsroll_inquiry small" placeholder="Placeholder" ></textarea></td>
+                      <td><textarea class="textarea_newsroll_inquiry_medium" aria-label="textarea_newsroll_inquiry medium" placeholder="Placeholder" ></textarea></td>
+                      <td><textarea class="textarea_newsroll_inquiry_large" aria-label="textarea_newsroll_inquiry large" placeholder="Placeholder" ></textarea></td>
+                      <td><textarea class="textarea_newsroll_inquiry_xlarge" aria-label="textarea_newsroll_inquiry xlarge" placeholder="Placeholder" ></textarea></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section>
+        <h2>Select</h2>
+        <div class="button-panel">
+          <article class="button-category" aria-labelledby="select-title">
+            <div class="button-category-head">
+              <h3 id="select-title">Select</h3>
+            </div>
+            <div class="button-variant-stack">
+              <div class="button-variant-group">
+                <h5 class="button-variant-title">SelectButton</h5>
+                <table class="type-table button-table">
+                  <colgroup>
+                    <col class="button-table-category-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">&#48516;&#47448;</th>
+                      <th scope="col">Small</th>
+                      <th scope="col">Medium (Default)</th>
+                      <th scope="col">Large</th>
+                      <th scope="col">Xlarge</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Default</th>
+                      <td><button class="select_button_newsroll_default_small" type="button">Latest</button></td>
+                      <td><button class="select_button_newsroll_default_medium" type="button">Latest</button></td>
+                      <td><button class="select_button_newsroll_default_large" type="button">Latest</button></td>
+                      <td><button class="select_button_newsroll_default_xlarge" type="button">Latest</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Open</th>
+                      <td><button class="select_button_newsroll_open_small" type="button">Popular</button></td>
+                      <td><button class="select_button_newsroll_open_medium" type="button">Popular</button></td>
+                      <td><button class="select_button_newsroll_open_large" type="button">Popular</button></td>
+                      <td><button class="select_button_newsroll_open_xlarge" type="button">Popular</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Disabled</th>
+                      <td><button class="select_button_newsroll_disabled_small" type="button">Disabled</button></td>
+                      <td><button class="select_button_newsroll_disabled_medium" type="button">Disabled</button></td>
+                      <td><button class="select_button_newsroll_disabled_large" type="button">Disabled</button></td>
+                      <td><button class="select_button_newsroll_disabled_xlarge" type="button">Disabled</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section>
+        <h2>Chip</h2>
+        <div class="button-panel">
+          <article class="button-category" aria-labelledby="chip-title">
+            <div class="button-category-head">
+              <h3 id="chip-title">Chip</h3>
+            </div>
+            <div class="button-variant-stack">
+              <div class="button-variant-group">
+                <h5 class="button-variant-title">ChipLabel</h5>
+                <table class="type-table button-table">
+                  <colgroup>
+                    <col class="button-table-category-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">&#48516;&#47448;</th>
+                      <th scope="col">Small</th>
+                      <th scope="col">Medium (Default)</th>
+                      <th scope="col">Large</th>
+                      <th scope="col">Xlarge</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Filled</th>
+                      <td><span class="chip_newsroll_filled_small">Politics</span></td>
+                      <td><span class="chip_newsroll_filled_medium">Politics</span></td>
+                      <td><span class="chip_newsroll_filled_large">Politics</span></td>
+                      <td><span class="chip_newsroll_filled_xlarge">Politics</span></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Selected</th>
+                      <td><button class="chip_newsroll_selected_small" type="button">Selected</button></td>
+                      <td><button class="chip_newsroll_selected_medium" type="button">Selected</button></td>
+                      <td><button class="chip_newsroll_selected_large" type="button">Selected</button></td>
+                      <td><button class="chip_newsroll_selected_xlarge" type="button">Selected</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Outline</th>
+                      <td><button class="chip_newsroll_outline_small" type="button">Topic</button></td>
+                      <td><button class="chip_newsroll_outline_medium" type="button">Topic</button></td>
+                      <td><button class="chip_newsroll_outline_large" type="button">Topic</button></td>
+                      <td><button class="chip_newsroll_outline_xlarge" type="button">Topic</button></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Disabled</th>
+                      <td><span class="chip_newsroll_disabled_small">Disabled</span></td>
+                      <td><span class="chip_newsroll_disabled_medium">Disabled</span></td>
+                      <td><span class="chip_newsroll_disabled_large">Disabled</span></td>
+                      <td><span class="chip_newsroll_disabled_xlarge">Disabled</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section>
+        <h2>Badge</h2>
+        <div class="button-panel">
+          <article class="button-category" aria-labelledby="badge-title">
+            <div class="button-category-head">
+              <h3 id="badge-title">Badge</h3>
+            </div>
+            <div class="button-variant-stack">
+              <div class="button-variant-group">
+                <h5 class="button-variant-title">Badge / Notification</h5>
+                <table class="type-table button-table">
+                  <colgroup>
+                    <col class="button-table-category-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">&#48516;&#47448;</th>
+                      <th scope="col">Small</th>
+                      <th scope="col">Medium (Default)</th>
+                      <th scope="col">Large</th>
+                      <th scope="col">Xlarge</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Filled</th>
+                      <td><span class="badge_newsroll_filled_small">Live</span></td>
+                      <td><span class="badge_newsroll_filled_medium">Live</span></td>
+                      <td><span class="badge_newsroll_filled_large">Live</span></td>
+                      <td><span class="badge_newsroll_filled_xlarge">Live</span></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Neutral</th>
+                      <td><span class="badge_newsroll_neutral_small">New</span></td>
+                      <td><span class="badge_newsroll_neutral_medium">New</span></td>
+                      <td><span class="badge_newsroll_neutral_large">New</span></td>
+                      <td><span class="badge_newsroll_neutral_xlarge">New</span></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Status</th>
+                      <td><span class="badge_newsroll_status_small">Unread</span></td>
+                      <td><span class="badge_newsroll_status_medium">Unread</span></td>
+                      <td><span class="badge_newsroll_status_large">Unread</span></td>
+                      <td><span class="badge_newsroll_status_xlarge">Unread</span></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Outline</th>
+                      <td><span class="badge_newsroll_outline_small">Policy</span></td>
+                      <td><span class="badge_newsroll_outline_medium">Policy</span></td>
+                      <td><span class="badge_newsroll_outline_large">Policy</span></td>
+                      <td><span class="badge_newsroll_outline_xlarge">Policy</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section>
+        <h2>Toggle</h2>
+        <div class="button-panel">
+          <article class="button-category" aria-labelledby="toggle-title">
+            <div class="button-category-head">
+              <h3 id="toggle-title">Toggle</h3>
+            </div>
+            <div class="button-variant-stack">
+              <div class="button-variant-group">
+                <h5 class="button-variant-title">OnoffToggleButton</h5>
+                <table class="type-table button-table">
+                  <colgroup>
+                    <col class="button-table-category-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">&#48516;&#47448;</th>
+                      <th scope="col">Small</th>
+                      <th scope="col">Medium (Default)</th>
+                      <th scope="col">Large</th>
+                      <th scope="col">Xlarge</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">On</th>
+                      <td><span class="toggle_newsroll_on_small" aria-hidden="true"></span></td>
+                      <td><span class="toggle_newsroll_on_medium" aria-hidden="true"></span></td>
+                      <td><span class="toggle_newsroll_on_large" aria-hidden="true"></span></td>
+                      <td><span class="toggle_newsroll_on_xlarge" aria-hidden="true"></span></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Off</th>
+                      <td><span class="toggle_newsroll_off_small" aria-hidden="true"></span></td>
+                      <td><span class="toggle_newsroll_off_medium" aria-hidden="true"></span></td>
+                      <td><span class="toggle_newsroll_off_large" aria-hidden="true"></span></td>
+                      <td><span class="toggle_newsroll_off_xlarge" aria-hidden="true"></span></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Disabled</th>
+                      <td><span class="toggle_newsroll_disabled_small" aria-hidden="true"></span></td>
+                      <td><span class="toggle_newsroll_disabled_medium" aria-hidden="true"></span></td>
+                      <td><span class="toggle_newsroll_disabled_large" aria-hidden="true"></span></td>
+                      <td><span class="toggle_newsroll_disabled_xlarge" aria-hidden="true"></span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section>
+        <h2>Checkbox</h2>
+        <div class="button-panel">
+          <article class="button-category" aria-labelledby="checkbox-title">
+            <div class="button-category-head">
+              <h3 id="checkbox-title">Checkbox</h3>
+            </div>
+            <div class="button-variant-stack">
+              <div class="button-variant-group">
+                <h5 class="button-variant-title">CheckInput</h5>
+                <table class="type-table button-table">
+                  <colgroup>
+                    <col class="button-table-category-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">&#48516;&#47448;</th>
+                      <th scope="col">Small</th>
+                      <th scope="col">Medium (Default)</th>
+                      <th scope="col">Large</th>
+                      <th scope="col">Xlarge</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Default</th>
+                      <td><span class="checkbox_newsroll_default_small" aria-hidden="true"></span></td>
+                      <td><span class="checkbox_newsroll_default_medium" aria-hidden="true"></span></td>
+                      <td><span class="checkbox_newsroll_default_large" aria-hidden="true"></span></td>
+                      <td><span class="checkbox_newsroll_default_xlarge" aria-hidden="true"></span></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Checked</th>
+                      <td><span class="checkbox_newsroll_checked_small" aria-hidden="true"></span></td>
+                      <td><span class="checkbox_newsroll_checked_medium" aria-hidden="true"></span></td>
+                      <td><span class="checkbox_newsroll_checked_large" aria-hidden="true"></span></td>
+                      <td><span class="checkbox_newsroll_checked_xlarge" aria-hidden="true"></span></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Disabled</th>
+                      <td><span class="checkbox_newsroll_disabled_small" aria-hidden="true"></span></td>
+                      <td><span class="checkbox_newsroll_disabled_medium" aria-hidden="true"></span></td>
+                      <td><span class="checkbox_newsroll_disabled_large" aria-hidden="true"></span></td>
+                      <td><span class="checkbox_newsroll_disabled_xlarge" aria-hidden="true"></span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section>
+        <h2>Radio Button</h2>
+        <div class="button-panel">
+          <article class="button-category" aria-labelledby="radio-title">
+            <div class="button-category-head">
+              <h3 id="radio-title">Radio Button</h3>
+            </div>
+            <div class="button-variant-stack">
+              <div class="button-variant-group">
+                <h5 class="button-variant-title">Radio Selection</h5>
+                <table class="type-table button-table">
+                  <colgroup>
+                    <col class="button-table-category-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                    <col class="button-table-size-col" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">&#48516;&#47448;</th>
+                      <th scope="col">Small</th>
+                      <th scope="col">Medium (Default)</th>
+                      <th scope="col">Large</th>
+                      <th scope="col">Xlarge</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Default</th>
+                      <td><span class="radio_newsroll_default_small" aria-hidden="true"></span></td>
+                      <td><span class="radio_newsroll_default_medium" aria-hidden="true"></span></td>
+                      <td><span class="radio_newsroll_default_large" aria-hidden="true"></span></td>
+                      <td><span class="radio_newsroll_default_xlarge" aria-hidden="true"></span></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Checked</th>
+                      <td><span class="radio_newsroll_checked_small" aria-hidden="true"></span></td>
+                      <td><span class="radio_newsroll_checked_medium" aria-hidden="true"></span></td>
+                      <td><span class="radio_newsroll_checked_large" aria-hidden="true"></span></td>
+                      <td><span class="radio_newsroll_checked_xlarge" aria-hidden="true"></span></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Disabled</th>
+                      <td><span class="radio_newsroll_disabled_small" aria-hidden="true"></span></td>
+                      <td><span class="radio_newsroll_disabled_medium" aria-hidden="true"></span></td>
+                      <td><span class="radio_newsroll_disabled_large" aria-hidden="true"></span></td>
+                      <td><span class="radio_newsroll_disabled_xlarge" aria-hidden="true"></span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+    </div><div class="ds-tabpanel" id="tab-module" role="tabpanel" aria-labelledby="tab-button-module" data-tab-panel="module"
+      hidden>
+      <section>
+        <h2>Module</h2>
+        <div class="ds-placeholder">
+          <h3>Module Library</h3>
+          <p>Composed modules built from multiple components can be structured in this tab.</p>
+        </div>
+      </section>
+    </div>
+
+    <script src="./system/foundation/icons.js"></script>
+    <script>
+      const tabs = document.querySelectorAll(".ds-tab");
+      const panels = document.querySelectorAll("[data-tab-panel]");
+      const foundationIconSizes = document.getElementById("foundation-icon-sizes");
+      const foundationIconGroups = document.getElementById("foundation-icon-groups");
+      const foundationIconNames = Array.isArray(window.foundationIconNames) ? [...window.foundationIconNames] : [];
+      const foundationIconSourceBase = "./system/foundation/icons/";
+      const foundationIconPreviewSizes = [12, 16, 20, 24, 32, 40];
+      const foundationIconBrandExactNames = new Set(["ar", "google_login", "kakao_login", "naver_login"]);
+      const foundationIconCategoryOrder = [
+        "navigation",
+        "feedback_status",
+        "communication",
+        "finance",
+        "data_document",
+        "user_profile",
+        "media_device",
+        "place_travel",
+        "lifestyle_food",
+        "health_care",
+        "nature_weather",
+        "layout_shape",
+        "object_tool",
+        "brand_symbol",
+      ];
+      const foundationIconCategoryRules = [
+        {
+          key: "brand_symbol",
+          prefixes: ["apple", "instargram", "spot_c_circle_blue"],
+        },
+        {
+          key: "communication",
+          prefixes: ["chat", "open_chat", "call", "phone", "mail", "envelope", "fax", "paper_plane", "share", "link", "subtitle", "loudspeaker", "mic", "headphone", "letter", "language_"],
+        },
+        {
+          key: "finance",
+          prefixes: ["account_", "bank", "card_", "coin", "money", "loan", "dollar", "won", "percent", "point", "transfer", "cashback", "dutchpay", "donation", "piggybank", "credit_grade", "graph_", "chart_", "calculator", "investment", "tossbank", "tmoney", "receipt", "feed_money", "tab_transfer_active"],
+        },
+        {
+          key: "data_document",
+          prefixes: ["all_news", "policy", "barcode", "qr_", "qr_code", "scan", "document_", "folder", "file_import", "excel", "code", "copy", "cloud_download", "printer", "memo", "table_", "filter", "text", "textline", "terminal", "quotation", "bookmark", "list_", "tray_"],
+        },
+        {
+          key: "navigation",
+          prefixes: ["arrow_", "chevron_", "keyboard_arrow", "wide_arrow", "up_left_arrow", "enter", "exit", "open", "out", "order", "navigation", "refresh", "repeat", "sync", "shuffle", "search", "zoom"],
+        },
+        {
+          key: "feedback_status",
+          prefixes: ["alarm", "bell", "bad", "good", "notgood", "yes", "no", "vote", "check", "question", "info", "information", "warning", "exclamation", "x", "eye", "shield", "security", "lock", "unlock", "siren", "prohibition", "on_off", "flash", "lightning", "service_bell", "step_check_off", "progress", "emoji_"],
+        },
+        {
+          key: "user_profile",
+          prefixes: ["user_", "my_page", "man", "baby", "heart", "home"],
+        },
+        {
+          key: "media_device",
+          prefixes: ["camera", "video", "picture", "photo", "play", "pause", "stop", "sound", "movie", "broadcast", "computer"],
+        },
+        {
+          key: "place_travel",
+          prefixes: ["map", "pin", "earth", "europe", "compass", "road", "carrier", "car", "bike", "motorcycle", "scooter", "taxi", "plane", "ship", "yacht", "subway", "train", "antenna", "building", "church", "government", "national_assembly"],
+        },
+        {
+          key: "lifestyle_food",
+          prefixes: ["shopping", "cart", "store", "clothes", "cosmetics", "furniture", "shoes", "gift", "ticket", "food", "beer", "bread", "carrot", "coffee", "chicken", "tissue", "spoon_chopsticks", "folk_knife", "sports", "game", "basketball", "golf", "box"],
+        },
+        {
+          key: "health_care",
+          prefixes: ["hospital", "pharmacy", "pill", "mask", "stethoscope", "syringe", "virus", "tooth", "lung", "heart_disease", "heart_real"],
+        },
+        {
+          key: "nature_weather",
+          prefixes: ["sun", "sunrise", "moon", "rainbow", "tree", "waterdrop", "waterworks", "snow", "fog", "umbrella", "palmtree", "space", "gas", "oil"],
+        },
+        {
+          key: "layout_shape",
+          prefixes: ["circle", "square", "rectangle", "triangle", "dots", "line", "shapes", "flat_group", "four_square", "horizontal_line", "vertically", "hashtag", "at", "equal", "plus", "minus", "union", "underline", "italic", "q_rounded", "tab_"],
+        },
+      ];
+      const foundationIconCategoryLabels = {
+        brand_symbol: "Brand & Symbol",
+        communication: "Communication",
+        finance: "Finance",
+        data_document: "Data & Document",
+        navigation: "Navigation",
+        feedback_status: "Feedback & Status",
+        user_profile: "User & Profile",
+        media_device: "Media & Device",
+        place_travel: "Place & Travel",
+        lifestyle_food: "Lifestyle & Food",
+        health_care: "Health & Care",
+        nature_weather: "Nature & Weather",
+        layout_shape: "Layout & Shape",
+        object_tool: "Object & Tool",
+      };
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          const target = tab.dataset.tabTarget;
+
+          tabs.forEach((button) => {
+            const isActive = button === tab;
+            button.classList.toggle("is-active", isActive);
+            button.setAttribute("aria-selected", String(isActive));
+          });
+
+          panels.forEach((panel) => {
+            panel.hidden = panel.dataset.tabPanel !== target;
+          });
+        });
+      });
+
+      const getIconBaseName = (iconFile) => iconFile.replace(/\.svg$/i, "");
+
+      const getIconCategoryKey = (iconFile) => {
+        const baseName = getIconBaseName(iconFile).replace(/^icon_/, "").replace(/^newsroll_/, "");
+
+        if (/^u\d+/i.test(baseName)) {
+          return "brand_symbol";
+        }
+
+        if (foundationIconBrandExactNames.has(baseName)) {
+          return "brand_symbol";
+        }
+
+        const category = foundationIconCategoryRules.find(({ prefixes }) =>
+          prefixes.some((prefix) => baseName.startsWith(prefix)),
+        );
+
+        if (category) {
+          return category.key;
+        }
+
+        return "object_tool";
+      };
+
+      const getIconCategoryLabel = (categoryKey) => foundationIconCategoryLabels[categoryKey] ?? "Object & Tool";
+
+      const createIconImage = (iconFile, altText) => {
+        const image = document.createElement("img");
+        image.src = foundationIconSourceBase + iconFile;
+        image.width = 24;
+        image.height = 24;
+        image.loading = "lazy";
+        image.decoding = "async";
+        image.alt = altText;
+        return image;
+      };
+
+      const renderIconSizePreview = () => {
+        if (!foundationIconSizes) {
+          return;
+        }
+
+        const fragment = document.createDocumentFragment();
+
+        foundationIconPreviewSizes.forEach((size) => {
+          const item = document.createElement("li");
+          item.className = "icon-size-item";
+          item.style.setProperty("--icon-size", `${size}px`);
+
+          const label = document.createElement("span");
+          label.className = "icon-size-label";
+          label.textContent = `${size}px`;
+
+          const frame = document.createElement("span");
+          frame.className = "icon-size-frame";
+
+          const box = document.createElement("span");
+          box.className = "icon-size-box";
+          box.append(createIconImage("icon_search.svg", `icon_search ${size}px preview`));
+
+          frame.append(box);
+          item.append(label, frame);
+          fragment.append(item);
+        });
+
+        foundationIconSizes.replaceChildren(fragment);
+      };
+
+      const renderIconCatalog = () => {
+        if (!foundationIconGroups) {
+          return;
+        }
+
+        if (!foundationIconNames.length) {
+          const emptyState = document.createElement("p");
+          emptyState.className = "icon-description";
+          emptyState.textContent = "\uC544\uC774\uCF58 \uB370\uC774\uD130\uB97C \uBD88\uB7EC\uC624\uC9C0 \uBABB\uD588\uC2B5\uB2C8\uB2E4.";
+          foundationIconGroups.replaceChildren(emptyState);
+          return;
+        }
+
+        const groupedIcons = foundationIconNames
+          .slice()
+          .sort((left, right) => left.localeCompare(right))
+          .reduce((groups, iconFile) => {
+            const groupKey = getIconCategoryKey(iconFile);
+
+            if (!groups.has(groupKey)) {
+              groups.set(groupKey, []);
+            }
+
+            groups.get(groupKey).push(iconFile);
+            return groups;
+          }, new Map());
+
+        const groupEntries = Array.from(groupedIcons.entries()).sort(([leftKey], [rightKey]) => {
+          const leftIndex = foundationIconCategoryOrder.indexOf(leftKey);
+          const rightIndex = foundationIconCategoryOrder.indexOf(rightKey);
+
+          if (leftIndex !== rightIndex) {
+            return leftIndex - rightIndex;
+          }
+
+          return getIconCategoryLabel(leftKey).localeCompare(getIconCategoryLabel(rightKey));
+        });
+
+        const fragment = document.createDocumentFragment();
+
+        groupEntries.forEach(([groupKey, iconFiles]) => {
+          const group = document.createElement("article");
+          group.className = "icon-group";
+
+          const head = document.createElement("div");
+          head.className = "icon-group-head";
+
+          const title = document.createElement("h3");
+          title.className = "icon-group-title";
+          title.textContent = getIconCategoryLabel(groupKey);
+
+          const count = document.createElement("span");
+          count.className = "icon-group-count";
+          count.textContent = `${iconFiles.length} icons`;
+
+          const grid = document.createElement("ul");
+          grid.className = "icon-grid";
+
+          iconFiles.forEach((iconFile) => {
+            const iconName = getIconBaseName(iconFile);
+            const item = document.createElement("li");
+            item.className = "icon-item";
+
+            const image = createIconImage(iconFile, iconName);
+            image.className = "icon-item-image";
+
+            const name = document.createElement("span");
+            name.className = "icon-item-name";
+            name.textContent = iconName;
+
+            item.append(image, name);
+            grid.append(item);
+          });
+
+          head.append(title, count);
+          group.append(head, grid);
+          fragment.append(group);
+        });
+
+        foundationIconGroups.replaceChildren(fragment);
+      };
+
+      renderIconSizePreview();
+      renderIconCatalog();
+    </script>
+</body>
+
+</html>

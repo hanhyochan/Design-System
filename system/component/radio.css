@@ -1,81 +1,186 @@
-/* radio */
-/* radio_small */
-.radio_small {
+/* NewsTurnt radio components, adapted from the same selection control scale. */
+
+.radio_newsroll_default_small {
   position: relative;
-  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 16px;
   height: 16px;
-  border: 2px solid var(--color-line-solid-strong);
+  border: var(--border-1) solid var(--color-line-normal-normal);
   border-radius: var(--radius-full);
-  background: var(--color-common-100);
+  background: transparent;
+  appearance: none;
   cursor: pointer;
 }
-
-.radio_small:checked {
-  border-color: var(--color-blue-50);
+.radio_newsroll_checked_small {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border: var(--border-2) solid var(--color-newsroll-purple-50);
+  border-radius: var(--radius-full);
+  background: transparent;
+  appearance: none;
+  cursor: pointer;
 }
-
-.radio_small:checked::after {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+.radio_newsroll_checked_small::after {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: var(--color-newsroll-purple-50);
+  content: "";
+}
+.radio_newsroll_disabled_small {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border: var(--border-1) solid var(--color-line-normal-normal);
+  border-radius: var(--radius-full);
+  background: var(--color-interaction-disable);
+  appearance: none;
+  cursor: default;
+}
+.radio_newsroll_default_medium {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: var(--border-1) solid var(--color-line-normal-normal);
+  border-radius: var(--radius-full);
+  background: transparent;
+  appearance: none;
+  cursor: pointer;
+}
+.radio_newsroll_checked_medium {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: var(--border-2) solid var(--color-newsroll-purple-50);
+  border-radius: var(--radius-full);
+  background: transparent;
+  appearance: none;
+  cursor: pointer;
+}
+.radio_newsroll_checked_medium::after {
   width: 8px;
   height: 8px;
   border-radius: var(--radius-full);
-  background: var(--color-blue-50);
-  transform: translate(-50%, -50%);
+  background: var(--color-newsroll-purple-50);
   content: "";
 }
-
-/* radio_disabled_small */
-.radio_disabled_small {
+.radio_newsroll_disabled_medium {
   position: relative;
-  appearance: none;
-  width: 16px;
-  height: 16px;
-  border: 2px solid var(--color-line-solid-normal);
-  border-radius: var(--radius-full);
-  background: var(--color-interaction-disable);
-  cursor: default;
-}
-
-/* radio_medium */
-.radio_medium {
-  position: relative;
-  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 20px;
   height: 20px;
-  border: 2px solid var(--color-line-solid-strong);
+  border: var(--border-1) solid var(--color-line-normal-normal);
   border-radius: var(--radius-full);
-  background: var(--color-common-100);
+  background: var(--color-interaction-disable);
+  appearance: none;
+  cursor: default;
+}
+.radio_newsroll_default_large {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: var(--border-1) solid var(--color-line-normal-normal);
+  border-radius: var(--radius-full);
+  background: transparent;
+  appearance: none;
   cursor: pointer;
 }
-
-.radio_medium:checked {
-  border-color: var(--color-blue-50);
+.radio_newsroll_checked_large {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: var(--border-2) solid var(--color-newsroll-purple-50);
+  border-radius: var(--radius-full);
+  background: transparent;
+  appearance: none;
+  cursor: pointer;
 }
-
-.radio_medium:checked::after {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+.radio_newsroll_checked_large::after {
   width: 10px;
   height: 10px;
   border-radius: var(--radius-full);
-  background: var(--color-blue-50);
-  transform: translate(-50%, -50%);
+  background: var(--color-newsroll-purple-50);
   content: "";
 }
-
-/* radio_disabled_medium */
-.radio_disabled_medium {
+.radio_newsroll_disabled_large {
   position: relative;
-  appearance: none;
-  width: 20px;
-  height: 20px;
-  border: 2px solid var(--color-line-solid-normal);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: var(--border-1) solid var(--color-line-normal-normal);
   border-radius: var(--radius-full);
   background: var(--color-interaction-disable);
+  appearance: none;
   cursor: default;
 }
-
+.radio_newsroll_default_xlarge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: var(--border-1) solid var(--color-line-normal-normal);
+  border-radius: var(--radius-full);
+  background: transparent;
+  appearance: none;
+  cursor: pointer;
+}
+.radio_newsroll_checked_xlarge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: var(--border-2) solid var(--color-newsroll-purple-50);
+  border-radius: var(--radius-full);
+  background: transparent;
+  appearance: none;
+  cursor: pointer;
+}
+.radio_newsroll_checked_xlarge::after {
+  width: 12px;
+  height: 12px;
+  border-radius: var(--radius-full);
+  background: var(--color-newsroll-purple-50);
+  content: "";
+}
+.radio_newsroll_disabled_xlarge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: var(--border-1) solid var(--color-line-normal-normal);
+  border-radius: var(--radius-full);
+  background: var(--color-interaction-disable);
+  appearance: none;
+  cursor: default;
+}
