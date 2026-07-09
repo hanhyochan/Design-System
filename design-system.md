@@ -34,13 +34,15 @@ For the default design-system reproduction, component computed styles must match
 Do not invent new raw CSS values.
 Use only the tokens defined in this file.
 Do not change component color tokens, typography tokens, radius tokens, border tokens, shadow tokens, or state tokens unless the user explicitly asks for a project-specific token swap.
-Component specs are mandatory: background, color, border, height, min-height, padding, gap, font-size, font-weight, line-height, radius, border width, shadow, icon size, and state structure must follow this document.
+Component specs are mandatory: background, color, border, width, min-width, height, min-height, padding, gap, font-size, font-weight, line-height, radius, border width, shadow, icon size, cursor, white-space, appearance, text-decoration, and state structure must follow this document.
 If the project uses Tailwind CSS, put foundation tokens and any design-system reset/base rules inside @layer base, reusable component classes inside @layer components, and leave utility overrides to @layer utilities. Do not emit unlayered reset CSS.
 If the project uses CSS Modules, scoped styles, CSS-in-JS, Shadow DOM, portals, or a UI framework, keep foundation tokens and any required reset/base rules global and load them before component styles.
-Code structure is flexible. Use the structure that best fits the project: composed classes, component props, CSS Modules, CSS-in-JS, Tailwind utilities, or one complete class are all allowed.
-Class names shown in this document are reference/copy-paste names from the design system. Do not force the project to use those exact full class names unless the user asks for copy-paste CSS classes or the project exports design-system class names.
-If generating exportable design-system CSS classes, follow the component class naming policy in this document. The class name must describe the visual component spec, not the HTML tag.
-Build reusable components instead of copying every one-off class from the original design system.
+Component CSS must not be assembled from public base/size/variant utility classes such as .btn_base, .component_base, .size_large, .variant_filled, .rounded_full, or .min_width_button.
+When generating CSS classes, generate one complete single class per visual component spec, such as .btn_primary_filled_xlarge.
+One class must be enough to complete the component. Put all required properties directly inside that class, even if properties repeat.
+If a component can shrink too much because width is not fixed, declare the required min-width directly inside that component class. Do not create a shared min-width utility.
+If a responsive variant is needed, repeat the full required properties inside the same class's media query.
+Project framework components may wrap these classes, but the exported CSS spec must remain single-class and complete.
 ```
 
 ### 1.1 Required Generation Flow
@@ -58,10 +60,10 @@ When this markdown file is used to create or update a project, follow this order
 
 Required result:
 
-- If a user asks for `badge filled medium`, the resulting component style must use the exact CSS properties in section 6.11, including `var(--font-size-14)`, `var(--line-height-20)`, `var(--font-weight-500)`, `var(--radius-full)`, `var(--color-blue-50)`, and `var(--color-common-100)`.
+- If a user asks for `badge filled medium`, the resulting component style must use the exact CSS properties in section 6.11, including `var(--font-size-14)`, `var(--line-height-100)`, `var(--font-weight-500)`, `var(--radius-full)`, `var(--color-blue-50)`, and `var(--color-common-100)`.
 - If a user asks for `filled rounded small button`, the resulting component style must match the exact CSS properties in section 6.11.
-- The generated components may be implemented as React/Vue/Svelte/etc. components, composed utility classes, component props, CSS Modules, CSS-in-JS, or full CSS classes. The implementation structure is not important; the rendered computed CSS is.
-- Complete classes such as `badge_filled_medium` and `btn_primary_filled_rounded_small` are copy-paste/reference examples for humans. They are not mandatory project architecture.
+- The generated components may be wrapped by React/Vue/Svelte/etc. components, but the exported CSS for each visual spec must be a complete single class.
+- Complete classes such as `badge_filled_medium` and `btn_primary_filled_rounded_small` are the required CSS output model for exportable design-system CSS.
 - Do not generate a component first and then invent local values. The component must be derived from the already-defined global foundation tokens.
 
 ## 2. Boilerplate Structure
@@ -219,7 +221,7 @@ body {
   color: var(--color-label-strong);
   font-family:
     "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
-  line-height: var(--line-height-32);
+  line-height: var(--line-height-150);
 }
 
 button,
@@ -841,6 +843,7 @@ Decoration rules:
   --font-size-10: 10px;
   --font-size-11: 11px;
   --font-size-12: 12px;
+  --font-size-13: 13px;
   --font-size-14: 14px;
   --font-size-15: 15px;
   --font-size-16: 16px;
@@ -853,6 +856,7 @@ Decoration rules:
   --font-size-48: 48px;
   --font-size-52: 52px;
   --font-size-60: 60px;
+  --font-size-115: 115px;
 
   /* typography: font weight */
   --font-weight-300: 300;
@@ -861,107 +865,98 @@ Decoration rules:
   --font-weight-600: 600;
   --font-weight-700: 700;
 
-  /* typography: line height */
-  --line-height-16: 16px;
-  --line-height-20: 20px;
-  --line-height-24: 24px;
-  --line-height-32: 32px;
-  --line-height-40: 40px;
-  --line-height-44: 44px;
-  --line-height-48: 48px;
-  --line-height-60: 60px;
-  --line-height-72: 72px;
-  --line-height-90: 90px;
+  /* typography: line height / ratio */
+  --line-height-0: 0;
+  --line-height-100: 1;
+  --line-height-120: 1.2;
+  --line-height-125: 1.25;
+  --line-height-130: 1.3;
+  --line-height-140: 1.4;
+  --line-height-145: 1.45;
+  --line-height-150: 1.5;
+  --line-height-160: 1.6;
+  --line-height-165: 1.65;
+  --line-height-170: 1.7;
+  --line-height-175: 1.75;
+  --line-height-200: 2;
 }
 
 /* typography: display */
 .type-display_1 {
-  font-size: var(--font-size-60);
+  font-size: var(--font-size-115);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-90);
+  line-height: var(--line-height-100);
 }
 
 .type-display_2 {
-  font-size: var(--font-size-48);
-  font-weight: var(--font-weight-400);
-  line-height: var(--line-height-72);
-}
-
-.type-display_3 {
   font-size: var(--font-size-40);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-60);
+  line-height: var(--line-height-100);
 }
 
-/* typography: headline */
-.type-headline_1 {
-  font-size: var(--font-size-32);
+/* typography: heading */
+.type-heading_1 {
+  font-size: var(--font-size-20);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-48);
+  line-height: var(--line-height-125);
 }
 
-.type-headline_2 {
-  font-size: var(--font-size-28);
+.type-heading_2 {
+  font-size: var(--font-size-18);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-44);
-}
-
-.type-headline_3 {
-  font-size: var(--font-size-24);
-  font-weight: var(--font-weight-400);
-  line-height: var(--line-height-40);
+  line-height: var(--line-height-130);
 }
 
 /* typography: title */
-.type-title_1 {
-  font-size: var(--font-size-20);
-  font-weight: var(--font-weight-500);
-  line-height: var(--line-height-40);
-}
-
 .type-title_2 {
-  font-size: var(--font-size-18);
+  font-size: var(--font-size-24);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-32);
+  line-height: var(--line-height-130);
 }
 
 /* typography: body */
 .type-body_1 {
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-32);
+  line-height: var(--line-height-150);
 }
 
 .type-body_2 {
   font-size: var(--font-size-15);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-24);
+  line-height: var(--line-height-145);
 }
 
 /* typography: label */
 .type-label_1 {
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-24);
+  line-height: var(--line-height-140);
+}
+
+.type-label_2 {
+  font-size: var(--font-size-13);
+  font-weight: var(--font-weight-500);
+  line-height: var(--line-height-100);
 }
 
 /* typography: caption */
 .type-caption_1 {
   font-size: var(--font-size-12);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-20);
+  line-height: var(--line-height-100);
 }
 
 .type-caption_2 {
   font-size: var(--font-size-11);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-20);
+  line-height: var(--line-height-100);
 }
 
 .type-caption_3 {
   font-size: var(--font-size-10);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-16);
+  line-height: var(--line-height-100);
 }
 ```
 
@@ -969,30 +964,27 @@ Typography scale:
 
 | Role | Class | Size | Line height | Weight | Usage |
 | --- | --- | ---: | ---: | ---: | --- |
-| Display 1 | `type-display_1` | 60px | 90px | 400 | Main display title |
-| Display 2 | `type-display_2` | 48px | 72px | 400 | Secondary display title |
-| Display 3 | `type-display_3` | 40px | 60px | 400 | Small display title |
-| Headline 1 | `type-headline_1` | 32px | 48px | 400 | Page headline |
-| Headline 2 | `type-headline_2` | 28px | 44px | 400 | Section headline |
-| Headline 3 | `type-headline_3` | 24px | 40px | 400 | Subsection headline |
-| Title 1 | `type-title_1` | 20px | 40px | 500 | Large title |
-| Title 2 | `type-title_2` | 18px | 32px | 500 | Medium title |
-| Body 1 | `type-body_1` | 16px | 32px | 400 | Primary body text |
-| Body 2 | `type-body_2` | 15px | 24px | 400 | Secondary body text |
-| Label 1 | `type-label_1` | 14px | 24px | 500 | Label and control text |
-| Caption 1 | `type-caption_1` | 12px | 20px | 500 | Caption text |
-| Caption 2 | `type-caption_2` | 11px | 20px | 500 | Small caption text |
-| Caption 3 | `type-caption_3` | 10px | 16px | 500 | Tiny caption text |
+| Display 1 | `type-display_1` | 115px | 1 | 400 | Main display title |
+| Display 2 | `type-display_2` | 40px | 1 | 400 | Secondary display title |
+| Heading 1 | `type-heading_1` | 20px | 1.25 | 400 | Page heading |
+| Heading 2 | `type-heading_2` | 18px | 1.3 | 400 | Section heading |
+| Title 2 | `type-title_2` | 24px | 1.3 | 500 | Emphasis title |
+| Body 1 | `type-body_1` | 16px | 1.5 | 400 | Primary body text |
+| Body 2 | `type-body_2` | 15px | 1.45 | 400 | Secondary body text |
+| Label 1 | `type-label_1` | 14px | 1.4 | 500 | Label and control text |
+| Label 2 | `type-label_2` | 13px | 1 | 500 | Dense label/status text |
+| Caption 1 | `type-caption_1` | 12px | 1 | 500 | Caption text |
+| Caption 2 | `type-caption_2` | 11px | 1 | 500 | Small caption text |
+| Caption 3 | `type-caption_3` | 10px | 1 | 500 | Tiny caption text |
 
 Typography rules:
 
 - Use typography classes as complete type styles. Do not independently combine font-size and line-height tokens for these named styles.
 - Typography classes include size, weight, and line-height together.
 - Font-family utility tokens such as `--font-sans` and `--font-mono` are not part of this foundation token set.
-- Line-height tokens are px tokens only: `--line-height-16`, `--line-height-20`, `--line-height-24`, `--line-height-32`, `--line-height-40`, `--line-height-44`, `--line-height-48`, `--line-height-60`, `--line-height-72`, and `--line-height-90`.
-- `--line-height-44` and `--line-height-90` are intentional tuned values in the current scale.
-- Do not recreate percentage, ratio, or unapproved line-height tokens.
-- Do not recreate 13px or 115px font tokens.
+- Line-height tokens are ratio tokens: `--line-height-0`, `--line-height-100`, `--line-height-120`, `--line-height-125`, `--line-height-130`, `--line-height-140`, `--line-height-145`, `--line-height-150`, `--line-height-160`, `--line-height-165`, `--line-height-170`, `--line-height-175`, and `--line-height-200`.
+- Do not use old px line-height tokens as the core system.
+- `13px`, `52px`, and `115px` are intentional tokens because the first external project required them.
 - Storybook must list Typography Styles first, then Typography Variables.
 - Typography style previews should render one full-width row per style, show the style name with the small chip component, display the applied font-size and line-height, and include a two-line sample.
 
@@ -1023,11 +1015,11 @@ Foundation Storybook rules:
 
 ## 5. Component Implementation Model
 
-The original design-system CSS has many one-off classes for copy/paste inspection. New projects should implement reusable components instead.
+The design-system CSS uses complete single classes for each visual component spec. New projects may wrap these classes in framework components, but the exported CSS itself must stay single-class and complete.
 
-The one-off class names in this document are reference names for humans who need to inspect or copy a complete style block. They are not mandatory architecture for generated projects.
+The class names in this document are not merely examples. When design-system CSS classes are generated, they are the required output shape.
 
-The requirement is exact visual/style reproduction, not exact class reproduction. A project may split styles into shared base classes, variant classes, component props, CSS Modules, CSS-in-JS, Tailwind utilities, or any other structure that fits the project, as long as the final rendered computed CSS matches this design system.
+The requirement is exact visual/style reproduction and complete single-class CSS reproduction. Do not split the public CSS into shared base classes, size classes, variant classes, rounded classes, min-width utilities, or Tailwind-only utility compositions.
 
 Recommended API style:
 
@@ -1043,15 +1035,15 @@ Component rules:
 
 - Default component colors must match the exact component color tokens documented in section 6.11.
 - Component layout specs are not configurable unless a new official variant is created.
-- Required fixed specs: background token, text/icon color token, border token, height/min-height, padding, gap, font-size, font-weight, line-height, radius, border width, shadow, icon size, and state structure.
+- Required fixed specs: background token, text/icon color token, border token, width, min-width, height/min-height, padding, gap, font-size, font-weight, line-height, radius, border width, shadow, icon size, and state structure.
 - Color specs are not examples in default reproduction mode. They may be swapped only when the user explicitly asks for project-specific color customization, and swaps must stay inside the documented token set.
 - Component visual specs are independent from the final HTML tag. A component may render as `button`, `a`, or another semantic element when appropriate, as long as the layout specs and accessibility rules are preserved.
 
 ### 5.1 Component Class Naming Policy
 
-This policy applies only when the project exports design-system CSS classes, when the user asks for copy-paste CSS, or when the user explicitly asks for classes matching this design system.
+This policy applies whenever design-system CSS is generated.
 
-If the project uses component props, scoped modules, composed utility classes, or CSS-in-JS instead, these exact class names are not required. The implementation must still produce the same computed visual style.
+If the project uses component props, scoped modules, or CSS-in-JS, the underlying emitted CSS for each design-system visual spec must still be a complete single class or a complete component-scoped rule. It must not depend on public composition classes.
 
 When exportable design-system classes are generated, use stable class names. The class name describes the component's visual spec and may be applied to different semantic tags.
 
@@ -1063,7 +1055,7 @@ Class naming rules:
 - Use this order: component prefix, optional role, variant, shape, feature, state/effect, size.
 - Omit segments that do not apply.
 - `primary`, `text`, and `icon` in button class names describe the component role/type. In default reproduction mode they still use the exact documented button color tokens.
-- The reusable component API may expose props such as `variant`, `size`, `shape`, `state`, `icon`, `disabled`, `as`, or `href`. The emitted CSS class must follow this naming policy only when exportable classes are generated.
+- The reusable component API may expose props such as `variant`, `size`, `shape`, `state`, `icon`, `disabled`, `as`, or `href`. The emitted CSS class must follow this naming policy.
 
 Component prefixes:
 
@@ -1087,7 +1079,7 @@ Component prefixes:
 
 Class examples:
 
-These examples are reference/copy-paste class names. They show how the design system names complete visual specs; they do not force every project to use the same class architecture.
+These examples show the required naming model for complete visual specs.
 
 ```html
 <button type="button" class="btn_primary_filled_small">Save</button>
@@ -1143,13 +1135,13 @@ The visual component is not the same thing as the DOM node. Preserve semantic HT
 
 This section is normative. A project generated from this document must be able to reproduce the same computed CSS as the source design system for every supported component/variant/size.
 
-Implementation format is flexible:
+CSS output format:
 
-- You may use one full class per variant, composed classes, CSS modules, CSS-in-JS, Tailwind utilities, or component props.
+- Use one full class per visual spec when generating CSS classes.
 - The rendered computed style must match the component specs below.
-- Full one-off classes in this document exist for copy/paste inspection and exact style reference. They are not mandatory project architecture.
+- Full classes in this document exist for copy/paste inspection, exact style reference, and exportable CSS output.
 - If exporting design-system CSS classes or if the user asks for copy-paste CSS, use snake_case class names that describe the visual spec.
-- If the project uses another styling architecture, keep that architecture and reproduce the same computed style.
+- If the project uses another styling architecture, keep that architecture at the component wrapper level, but do not split the exported visual CSS into public base/size/variant utility classes.
 - The semantic element is flexible only where HTML behavior allows it. For example, a visual button may render as `button`, `a`, or a router link, but the visual CSS must stay identical.
 
 Class naming order:
@@ -1203,10 +1195,10 @@ Primary button size:
 
 | Size | Min height | Padding X | Font size | Line height |
 | --- | ---: | ---: | ---: | ---: |
-| small | 32px | 16px | 12px | 16px |
-| medium | 40px | 24px | 14px | 20px |
-| large | 48px | 24px | 16px | 20px |
-| xlarge | 60px | 24px | 16px | 20px |
+| small | 32px | 16px | 12px | 1 |
+| medium | 40px | 24px | 14px | 1 |
+| large | 48px | 24px | 16px | 1 |
+| xlarge | 60px | 24px | 16px | 1 |
 
 Primary button support:
 
@@ -1263,9 +1255,9 @@ Text button size:
 
 | Size | Min height | Padding X | Font size | Line height | Weight |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| small | 32px | 0 | 14px | 20px | 500 |
-| medium | 40px | 0 | 15px | 20px | 500 |
-| xlarge | 60px | 0 | 15px | 20px | 500 |
+| small | 32px | 0 | 14px | 1 | 500 |
+| medium | 40px | 0 | 15px | 1 | 500 |
+| xlarge | 60px | 0 | 15px | 1 | 500 |
 
 Text button with icon:
 
@@ -1306,10 +1298,10 @@ Size:
 
 | Size | Min height | Padding X | Font size | Line height |
 | --- | ---: | ---: | ---: | ---: |
-| small | 32px | 12px | 14px | 20px |
-| medium | 40px | 16px | 15px | 20px |
-| large | 48px | 24px | 16px | 20px |
-| xlarge | 60px | 24px | 16px | 20px |
+| small | 32px | 12px | 14px | 1 |
+| medium | 40px | 16px | 15px | 1 |
+| large | 48px | 24px | 16px | 1 |
+| xlarge | 60px | 24px | 16px | 1 |
 
 Variant layout:
 
@@ -1351,10 +1343,10 @@ Size:
 
 | Size | Min height | Padding X | Font size | Line height |
 | --- | ---: | ---: | ---: | ---: |
-| small | 40px | 12px | 14px | 20px |
-| medium | 48px | 16px | 15px | 20px |
-| large | 52px | 16px | 16px | 24px |
-| xlarge | 56px | 16px | 16px | 24px |
+| small | 40px | 12px | 14px | 1.45 |
+| medium | 48px | 16px | 15px | 1.45 |
+| large | 52px | 16px | 16px | 1.45 |
+| xlarge | 56px | 16px | 16px | 1.45 |
 
 Variant layout:
 
@@ -1390,9 +1382,9 @@ Size:
 
 | Size | Min height | Padding | Font size | Line height |
 | --- | ---: | --- | ---: | ---: |
-| small | 96px | 12px 12px | 14px | 20px |
-| medium | 112px | 12px 16px | 15px | 20px |
-| large | 128px | 12px 16px | 16px | 24px |
+| small | 96px | 12px 12px | 14px | 1.45 |
+| medium | 112px | 12px 16px | 15px | 1.45 |
+| large | 128px | 12px 16px | 16px | 1.45 |
 
 Variant/state layout:
 
@@ -1414,9 +1406,9 @@ Size:
 
 | Size | Min height | Padding X | Font size | Line height |
 | --- | ---: | ---: | ---: | ---: |
-| small | 40px | 12px | 14px | 20px |
-| medium | 48px | 16px | 15px | 20px |
-| large | 52px | 24px | 16px | 24px |
+| small | 40px | 12px | 14px | 1.45 |
+| medium | 48px | 16px | 15px | 1.45 |
+| large | 52px | 24px | 16px | 1.45 |
 
 Variant/state layout:
 
@@ -1442,9 +1434,9 @@ Size:
 
 | Size | Min height | Padding X | Font size | Line height |
 | --- | ---: | ---: | --- | --- |
-| small | 32px | 12px | `var(--font-size-14)` | `var(--line-height-20)` |
-| medium | 40px | 16px | `var(--font-size-15)` | `var(--line-height-20)` |
-| large | 48px | 24px | `var(--font-size-16)` | `var(--line-height-24)` |
+| small | 32px | 12px | `var(--font-size-14)` | `var(--line-height-100)` |
+| medium | 40px | 16px | `var(--font-size-15)` | `var(--line-height-100)` |
+| large | 48px | 24px | `var(--font-size-16)` | `var(--line-height-100)` |
 
 Variant/state layout:
 
@@ -1467,8 +1459,8 @@ Size:
 
 | Size | Padding | Font size | Line height |
 | --- | --- | --- | --- |
-| small | 4px 8px | `var(--font-size-12)` | `var(--line-height-16)` |
-| medium | 4px 10px | `var(--font-size-14)` | `var(--line-height-20)` |
+| small | 4px 8px | `var(--font-size-12)` | `var(--line-height-100)` |
+| medium | 4px 10px | `var(--font-size-14)` | `var(--line-height-100)` |
 
 Variant layout:
 
@@ -1548,7 +1540,7 @@ Rules:
 
 ### 6.11 Exact CSS Reconstruction Matrix
 
-Use this matrix when an AI or developer needs to generate actual component CSS. Combine the relevant base, size, variant, shape, feature, and state rows. The implementation may split these rules across reusable classes or component props, but the final computed style must match.
+Use this matrix when an AI or developer needs to generate actual component CSS. Expand the relevant base, size, variant, shape, feature, and state rows into a complete single selector. Do not split these rules across public reusable classes; the final computed style must match and the class must be usable alone.
 
 #### 6.11.1 Button Exact Recipe
 
@@ -1574,10 +1566,10 @@ Primary button size rules:
 
 | Size | Min height | Padding | Font size | Line height |
 | --- | ---: | --- | ---: | ---: |
-| small | 32px | 0 16px | 12px | 16px |
-| medium | 40px | 0 24px | 14px | 20px |
-| large | 48px | 0 24px | 16px | 20px |
-| xlarge | 60px | 0 24px | 16px | 20px |
+| small | 32px | 0 16px | 12px | `var(--line-height-100)` |
+| medium | 40px | 0 24px | 14px | `var(--line-height-100)` |
+| large | 48px | 0 24px | 16px | `var(--line-height-100)` |
+| xlarge | 60px | 0 24px | 16px | `var(--line-height-100)` |
 
 Primary button shape rules:
 
@@ -1641,7 +1633,7 @@ Exact example: filled rounded small button.
   min-height: 32px;
   padding: 0 16px;
   font-size: 12px;
-  line-height: 16px;
+  line-height: var(--line-height-100);
   border: 0;
   border-radius: var(--radius-8);
   background: var(--color-blue-50);
@@ -1675,9 +1667,9 @@ text-decoration: none;
 
 | Size | Min height | Font size | Line height |
 | --- | ---: | ---: | ---: |
-| small | 32px | 14px | 20px |
-| medium | 40px | 15px | 20px |
-| xlarge | 60px | 15px | 20px |
+| small | 32px | 14px | `var(--line-height-100)` |
+| medium | 40px | 15px | `var(--line-height-100)` |
+| xlarge | 60px | 15px | `var(--line-height-100)` |
 
 Text button hover uses `text-decoration: underline; text-underline-offset: 0.12em;`. Text+icon uses `gap: 16px` and a 20px trailing icon.
 
@@ -1723,10 +1715,10 @@ cursor: pointer;
 
 | Size | Min height | Padding | Font size | Line height | Icon size |
 | --- | ---: | --- | ---: | ---: | ---: |
-| small | 32px | 0 12px | `var(--font-size-14)` | `var(--line-height-20)` | 12px |
-| medium | 40px | 0 16px | `var(--font-size-15)` | `var(--line-height-20)` | 16px |
-| large | 48px | 0 24px | `var(--font-size-16)` | `var(--line-height-20)` | 16px |
-| xlarge | 60px | 0 24px | `var(--font-size-16)` | `var(--line-height-20)` | 16px |
+| small | 32px | 0 12px | `var(--font-size-14)` | `var(--line-height-100)` | 12px |
+| medium | 40px | 0 16px | `var(--font-size-15)` | `var(--line-height-100)` | 16px |
+| large | 48px | 0 24px | `var(--font-size-16)` | `var(--line-height-100)` | 16px |
+| xlarge | 60px | 0 24px | `var(--font-size-16)` | `var(--line-height-100)` | 16px |
 
 | Variant/state | Border | Background | Color |
 | --- | --- | --- | --- |
@@ -1774,10 +1766,10 @@ Placeholder color is `var(--color-label-assistive)`.
 
 | Size | Min height | Padding | Font size | Line height | State icon size |
 | --- | ---: | --- | ---: | ---: | ---: |
-| small | 40px | 0 12px | `var(--font-size-14)` | `var(--line-height-20)` | 16px |
-| medium | 48px | 0 16px | `var(--font-size-15)` | `var(--line-height-20)` | 18px |
-| large | 52px | 0 16px | `var(--font-size-16)` | `var(--line-height-24)` | 20px |
-| xlarge | 56px | 0 16px | `var(--font-size-16)` | `var(--line-height-24)` | 20px |
+| small | 40px | 0 12px | `var(--font-size-14)` | `var(--line-height-145)` | 16px |
+| medium | 48px | 0 16px | `var(--font-size-15)` | `var(--line-height-145)` | 18px |
+| large | 52px | 0 16px | `var(--font-size-16)` | `var(--line-height-145)` | 20px |
+| xlarge | 56px | 0 16px | `var(--font-size-16)` | `var(--line-height-145)` | 20px |
 
 | Variant/state | Border | Radius | Background | Color | Extra |
 | --- | --- | --- | --- | --- | --- |
@@ -1816,9 +1808,9 @@ cursor: text;
 
 | Size | Min height | Padding | Font size | Line height |
 | --- | ---: | --- | ---: | ---: |
-| small | 96px | 12px 12px | `var(--font-size-14)` | `var(--line-height-20)` |
-| medium | 112px | 12px 16px | `var(--font-size-15)` | `var(--line-height-20)` |
-| large | 128px | 12px 16px | `var(--font-size-16)` | `var(--line-height-24)` |
+| small | 96px | 12px 12px | `var(--font-size-14)` | `var(--line-height-145)` |
+| medium | 112px | 12px 16px | `var(--font-size-15)` | `var(--line-height-145)` |
+| large | 128px | 12px 16px | `var(--font-size-16)` | `var(--line-height-145)` |
 
 | Variant/state | Border | Radius | Background | Color |
 | --- | --- | --- | --- | --- |
@@ -1864,9 +1856,9 @@ background-size: 6px 6px, 6px 6px;
 
 | Size | Min height | Padding without icon | Padding with icon | Font size | Line height | Icon size/position |
 | --- | ---: | --- | --- | ---: | ---: | --- |
-| small | 40px | 0 12px 0 12px | 0 12px 0 40px | `var(--font-size-14)` | `var(--line-height-20)` | 16px at 12px 50% |
-| medium | 48px | 0 16px 0 16px | 0 16px 0 46px | `var(--font-size-15)` | `var(--line-height-20)` | 18px at 16px 50% |
-| large | 52px | 0 24px 0 24px | 0 24px 0 56px | `var(--font-size-16)` | `var(--line-height-24)` | 20px at 24px 50% |
+| small | 40px | 0 12px 0 12px | 0 12px 0 40px | `var(--font-size-14)` | `var(--line-height-145)` | 16px at 12px 50% |
+| medium | 48px | 0 16px 0 16px | 0 16px 0 46px | `var(--font-size-15)` | `var(--line-height-145)` | 18px at 16px 50% |
+| large | 52px | 0 24px 0 24px | 0 24px 0 56px | `var(--font-size-16)` | `var(--line-height-145)` | 20px at 24px 50% |
 
 | Variant/state | Border | Radius | Background | Color |
 | --- | --- | --- | --- | --- |
@@ -1900,7 +1892,7 @@ Exact example: filled rounded large select.
   background-color: var(--color-fill-normal);
   color: var(--color-label-normal);
   font-size: var(--font-size-16);
-  line-height: var(--line-height-24);
+  line-height: var(--line-height-145);
   cursor: pointer;
 }
 ```
@@ -1927,9 +1919,9 @@ cursor: pointer;
 
 | Size | Min height | Padding | Font size | Line height |
 | --- | ---: | --- | ---: | ---: |
-| small | 32px | 0 12px | `var(--font-size-14)` | `var(--line-height-20)` |
-| medium | 40px | 0 16px | `var(--font-size-15)` | `var(--line-height-20)` |
-| large | 48px | 0 24px | `var(--font-size-16)` | `var(--line-height-24)` |
+| small | 32px | 0 12px | `var(--font-size-14)` | `var(--line-height-100)` |
+| medium | 40px | 0 16px | `var(--font-size-15)` | `var(--line-height-100)` |
+| large | 48px | 0 24px | `var(--font-size-16)` | `var(--line-height-100)` |
 
 | Variant/state | Border | Background | Color | Cursor |
 | --- | --- | --- | --- | --- |
@@ -1965,8 +1957,8 @@ vertical-align: middle;
 
 | Size | Padding | Font size | Line height |
 | --- | --- | ---: | ---: |
-| small | 4px 8px | `var(--font-size-12)` | `var(--line-height-16)` |
-| medium | 4px 10px | `var(--font-size-14)` | `var(--line-height-20)` |
+| small | 4px 8px | `var(--font-size-12)` | `var(--line-height-100)` |
+| medium | 4px 10px | `var(--font-size-14)` | `var(--line-height-100)` |
 
 | Variant | Border | Background | Color |
 | --- | --- | --- | --- |
@@ -1990,7 +1982,7 @@ Exact example: filled medium badge.
   background: var(--color-blue-50);
   color: var(--color-common-100);
   font-size: var(--font-size-14);
-  line-height: var(--line-height-20);
+  line-height: var(--line-height-100);
   font-weight: var(--font-weight-500);
   white-space: nowrap;
   vertical-align: middle;
@@ -2135,7 +2127,7 @@ Card rules:
 .field_label {
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-20);
+  line-height: var(--line-height-145);
 }
 ```
 
@@ -2167,7 +2159,7 @@ Form rules:
   padding: var(--spacing-padding-vertical-12) var(--spacing-padding-horizontal-16);
   border-bottom: var(--border-1) solid var(--color-line-normal-alternative);
   font-size: var(--font-size-14);
-  line-height: var(--line-height-20);
+  line-height: var(--line-height-145);
   text-align: left;
   vertical-align: middle;
 }
@@ -2189,15 +2181,118 @@ Table rules:
 - Sortable headers must expose sort state with `aria-sort` and use a button inside the header cell for the sort action.
 - Colors may change within tokens.
 
-## 8. Prohibited
+## 8. Site-Specific Components
+
+This section absorbs the first external project application feedback from Art Korea Lab FO renewal. These specs are official design-system additions. Do not force them into the base Button, Tab, Form, Badge, Card, or Table sections when the real production shape differs materially.
+
+Site-specific rules:
+
+- Generate each site-specific component as a complete single class.
+- Do not create public base/size/variant composition classes.
+- Put required `width`, `min-width`, and responsive changes directly in the component class.
+- Do not create shared min-width utilities.
+- Do not add new margin properties to publishing CSS unless the page layout already owns that spacing.
+- When mobile values differ, repeat the full required properties inside the same class's media query.
+- Default responsive breakpoint for absorbed site specs is `@media (max-width: 992px)`.
+
+### 8.1 Button-Like Site Components
+
+| Component | Class | Desktop spec | Mobile spec |
+| --- | --- | --- | --- |
+| Site primary button | `.btn_primary_filled_full_rounded_site` | `width: 100%`, `max-width: 400px`, `min-width: 120px`, `height: 56px`, `padding: 0 24px`, `font-size: var(--font-size-16)`, `line-height: var(--line-height-100)` | height `56px`, font-size may use `var(--font-size-15)` |
+| Field/action button | `.btn_field_action` | `min-width: 48px`, `height: 40px`, `padding: 0 24px`, `font-size: var(--font-size-15)`, `line-height: var(--line-height-100)` | same |
+| Content list button | `.btn_content_list` | same as field/action button | same |
+| Download medium | `.btn_download_medium` | `height: 40px`, `padding: 0 16px`, `border-radius: 10px`, `gap: 4px`, `font-size: var(--font-size-14)`, `line-height: var(--line-height-100)`, icon `12px` | same |
+| Download large | `.btn_download_large` | `width: 100%`, `max-width: 260px`, `height: 56px`, `border-radius: 10px`, `font-size: var(--font-size-16)`, `line-height: var(--line-height-100)` | same unless content width requires full width |
+| Main CTA | `.btn_cta` | `width: 260px`, `height: 100px`, `padding: 24px 32px`, `font-size: var(--font-size-20)` | `width: 226px`, `height: 86px`, `padding: 20px 24px`, inner text `var(--font-size-18)` |
+| Quick link icon button | `.btn_quickLink` | `width: 40px`, `height: 40px`, icon `16px`, full radius | same |
+| Swiper sub function button | `.btn_subFunc_pc` | `width: 40px`, `height: 40px`, `border-radius: 10px`; prev/next icon `13px`; stop icon `9px x 13px`; start icon `10px x 11px`; plus text/icon `24px` | project may define separate mobile carousel control |
+| Search icon button | `.btn_content_search` | `width: 24px`, `height: 24px`, search icon `18px`, right offset `6px` when positioned in a field | same |
+| Scroll floating button | `.btn_scroll` | `width: 50px`, `height: 50px`, fixed right/bottom `24px` | bottom `90px`; back button top `100px`, left `20px` |
+| Close icon button | `.btn_join_completion_close` | `width: 24px`, `height: 24px`, `flex-basis: 24px` | same |
+| Password toggle button | `.btn_join_password_toggle` | `width: 24px`, `height: 24px`, right `16px`, bottom `10px` | same |
+
+Example:
+
+```css
+.btn_primary_filled_full_rounded_site {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 400px;
+  min-width: 120px;
+  height: 56px;
+  padding: 0 24px;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--color-artskorealab-cyan-50);
+  color: var(--color-common-0);
+  font-size: var(--font-size-16);
+  font-weight: 500;
+  line-height: var(--line-height-100);
+  white-space: nowrap;
+  appearance: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+```
+
+### 8.2 Site Tabs And Navigation
+
+| Component | Class | Desktop spec | Mobile spec |
+| --- | --- | --- | --- |
+| Content tab button | `.btn_content_tab` | `width: 100px`, `min-width: 100px`, `height: 40px`, `padding: 0`, `font-size: var(--font-size-16)`, `line-height: var(--line-height-100)`, full radius | `height: 36px`, `font-size: var(--font-size-15)` |
+| Header menu pill container | `.header_menu_pill` | `height: 58px`, `padding: 6px 8px` | follow header responsive layout |
+| Header menu pill button | `.btn_header_menu_pill` | `height: 100%`, `padding: 0 32px`, `font-size: var(--font-size-18)` | follow header responsive layout |
+| Header submenu button | `.btn_header_submenu` | `height: 58px`, `min-height: 58px`, `padding: 0 24px`, `font-size: var(--font-size-18)` | follow header responsive layout |
+| KRDS pagination item | `.pagination_krds_item` | item `height: 32px`; page link `width/min-width: 32px`; prev `padding: 0 12px 0 8px`; next `padding: 0 8px 0 12px`; arrow `12px` | item `height: 28px`; page link `width/min-width: 28px`; prev/next padding `0 6px` |
+| Calendar month button | `.btn_calendar_month` | `width: 32px`, `height: 32px`, icon `12px` | same |
+
+### 8.3 Site Form Controls
+
+| Component | Class | Desktop spec | Mobile spec |
+| --- | --- | --- | --- |
+| Responsive input | `.input_form_responsive` | `width: 100%`, `min-width: 0`, `height: 44px`, `padding: 0 8px`, bottom border `1px solid var(--color-line-solid-strong)`, `font-size: var(--font-size-16)`, `line-height: var(--line-height-145)` | `height: 40px`, `font-size: var(--font-size-15)` |
+| Middle input | `.input_form_middle` | `width: 100%`, `max-width: 340px`, `height: 44px`, `padding: 0 8px`, `font-size: var(--font-size-16)`, `line-height: var(--line-height-145)` | `height: 40px`, `font-size: var(--font-size-15)` |
+| Placeholder | input placeholder | desktop `font-size: var(--font-size-15)` | mobile `font-size: var(--font-size-14)` |
+| Responsive textarea | `.textarea_form_responsive` | `min-height: 44px`, auto height, `line-height: var(--line-height-145)` | `min-height: 64px` |
+| Fixed textarea | `.textarea_form_fixed` | `height: 12rem` | same unless documented |
+| Responsive select | `.select_form_responsive` | `height: 44px`, `padding: 0 40px 0 16px`, `font-size: var(--font-size-16)`, `line-height: var(--line-height-145)` | `height: 40px`, `font-size: var(--font-size-15)` |
+| Middle select | `.select_form_middle` | same as responsive select plus `max-width: 340px` | `height: 40px`, `font-size: var(--font-size-15)` |
+| Checkbox/radio text label | label next to control | `font-size: var(--font-size-15)`, `line-height: var(--line-height-145)` | `font-size: var(--font-size-14)` |
+| Single check label | single consent/check label | `font-size: var(--font-size-14)`, `line-height: var(--line-height-160)` | same |
+| Radio input | native/custom radio input | `width: 16px`, `height: 16px`, `flex-basis: 16px` | same |
+| File upload box | `.box_form_file_upload` | `min-height: 64px`, `padding: 0 16px`, `font-size: var(--font-size-15)` | `min-height: 56px`, `font-size: var(--font-size-14)` |
+
+### 8.4 Badge, Content List, Box, Table, Media
+
+| Component | Class | Desktop spec | Mobile spec |
+| --- | --- | --- | --- |
+| Content status badge | `.badge_content_status` | `min-width: 44px`, `height: 32px`, `padding: 0 16px`, `font-size: var(--font-size-13)`, `line-height: var(--line-height-100)`, full radius | `padding: 0 12px` |
+| Content post link | `.link_content_post` | `min-height: 60px`, `padding: 0 24px`, full radius, `line-height: var(--line-height-145)` | follow board/card layout |
+| Content post title | `.title_content_post` | two-line clamp, `line-height: var(--line-height-150)` | same unless list density changes |
+| Content post date | `.date_content_post` | `flex-basis: 132px`, `line-height: var(--line-height-100)` | board context `flex-basis: 96px` |
+| Content info box | `.box_content_info` | `padding: 40px 32px`, `border-radius: 40px`, `font-size: var(--font-size-16)`, `line-height: var(--line-height-145)` | `padding: 24px 20px`, `border-radius: 20px`, `font-size: var(--font-size-15)` |
+| Benefit content info box | `.container_content_benefit > .box_content_info` | `height: 230px` | `height: auto` |
+| Content accordion item | `.item_content_accordion` | `border-radius: 40px` | `border-radius: 20px` |
+| Content accordion button | `.btn_content_accordion` | `padding: 32px 40px`, `line-height: var(--line-height-140)`, arrow button `32px x 32px`, arrow icon `12px` | `padding: 24px 20px`, `font-size: var(--font-size-15)` |
+| Content accordion panel | `.panel_content_accordion` | `padding: 0 48px 48px`, divider side offset `48px` | `padding: 0 24px 24px`, divider side offset `24px` |
+| Content info table | `.table_content_info` | `font-size: var(--font-size-15)`, cell padding `14px 20px`, first/second-space columns `120px` | `min-width: 760px`, `font-size: var(--font-size-14)`, cell padding `12px 14px` |
+| Header logo image | `.logo_header_img` | `width: 72px` | `width: 140px` |
+| Partner logo button | `.wrapper_main4_partner_logo` | `width: 204px`, `height: 100px`, `padding: 10px 32px` | `width: 142px`, `height: 70px` |
+
+## 9. Prohibited
 
 - Do not create raw hex/rgb/hsl colors.
 - Do not create arbitrary spacing values.
 - Do not use font sizes outside the token scale.
-- Do not recreate 13px or 115px font tokens.
-- Do not create `Label_2`, `Display_4`, `Title_3`, or `Body_3`.
+- Do not remove or block `--font-size-13` and `--font-size-115`; they are site-proven tokens.
+- Do not remove `Label_2`, `Display_1`, `Display_2`, `Title_2`, or the site-proven typography sizes without replacing them with an explicitly approved project scale.
 - Do not override component height, padding, font-size, font-weight, line-height, radius, border width, or icon size in page CSS.
 - Do not change documented component color tokens unless the user explicitly requests project-specific color customization.
+- Do not create public composition classes such as `.btn_base`, `.component_base`, `.size_large`, `.variant_filled`, `.rounded_full`, or `.min_width_button`.
+- Do not split complete visual specs into public base/size/variant utility classes.
 - When exporting design-system classes or copy-paste CSS, do not create component class names outside the documented `snake_case` naming policy.
 - When exporting design-system classes or copy-paste CSS, do not make component class names depend on the rendered HTML tag.
 - Do not make disabled-looking UI without actual disabled/readonly/aria handling.
@@ -2213,7 +2308,7 @@ Table rules:
 - Do not rely on token names alone for accessibility; foreground/background color pairs must still have acceptable contrast.
 - Do not hide the real checkbox, radio, or toggle input with `display: none` when it is the operable control.
 
-## 9. Generation Checklist
+## 10. Generation Checklist
 
 - Does global CSS include all color, spacing, decorate, and typography tokens?
 - If the project has no existing reset/global base style, does global CSS include the reset block from this document?
@@ -2231,10 +2326,14 @@ Table rules:
 - Are component sizes, padding, font sizes, weights, line heights, radius, border widths, and icon sizes identical to this document?
 - Where the source component uses token notation such as `var(--font-size-14)`, does generated CSS keep the same token notation instead of raw px?
 - Are documented px values kept as px unless the project has an explicit rem policy that preserves the same computed pixel value?
-- Are primary button `xlarge` variants generated with `min-height: 60px`, `padding-x: 24px`, `font-size: 16px`, and `line-height: 20px`?
-- Are text button `xlarge` variants generated with `min-height: 60px`, `padding-x: 0`, `font-size: 15px`, and `line-height: 20px`?
+- Are line-height values using the ratio token system rather than old px line-height tokens?
+- Are primary button `xlarge` variants generated with `min-height: 60px`, `padding-x: 24px`, `font-size: 16px`, and `line-height: var(--line-height-100)`?
+- Are text button `xlarge` variants generated with `min-height: 60px`, `padding-x: 0`, `font-size: 15px`, and `line-height: var(--line-height-100)`?
 - Is icon-only Button+icon support kept to the documented size range, without inventing outline `xlarge` variants?
-- Are tab `xlarge` variants generated with `min-height: 60px`, `padding-x: 24px`, `font-size: 16px`, and `line-height: 20px`?
+- Are tab `xlarge` variants generated with `min-height: 60px`, `padding-x: 24px`, `font-size: 16px`, and `line-height: var(--line-height-100)`?
+- Are site-specific components such as `.btn_content_tab`, `.input_form_responsive`, `.badge_content_status`, `.box_content_info`, `.btn_cta`, and `.table_content_info` included when the target project needs production-proven Art Korea Lab patterns?
+- Are desktop/mobile specs documented inside the same complete class media query when a mobile delta exists?
+- Is every width/min-width correction declared directly in the relevant complete class rather than in a shared utility?
 - Are gray-line borders using neutral/line tokens?
 - Are visual buttons rendered with the correct semantic element: `button` for actions and `a` for navigation?
 - Do rendered `button` elements default to `type="button"` unless they intentionally submit a form?
@@ -2249,7 +2348,8 @@ Table rules:
 - Are checkbox, radio, and toggle inputs still accessible and label-associated?
 - Are tab groups connected to panels and keyboard operable?
 - Are data tables using real table semantics, header scopes, and accessible sorting where needed?
-- Is there no 13px font token, 115px token, hardcoded hex, arbitrary px value, or `!important`?
+- Are `--font-size-13`, `--font-size-52`, and `--font-size-115` preserved because the first external project required them?
+- Is there no hardcoded hex, arbitrary px value, shared composition utility class, or `!important`?
 
 
 
