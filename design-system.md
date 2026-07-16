@@ -1,12 +1,12 @@
 # 디자인 시스템 보일러플레이트
 
-이 문서는 특정 폴더 구조나 프레임워크를 강제하지 않는다. 프로젝트를 시작하거나 기존 프로젝트의 CSS를 정리할 때, 이 문서 하나로 전역 Foundation, Reset, 유틸리티, 클래스명, 컴포넌트 작성 원칙을 동일하게 적용하는 것이 목적이다.
+이 문서는 디렉터리 위치나 프레임워크는 강제하지 않지만 전역 CSS는 `foundation.css`, `reset.css`, `utilities.css`, `main.css`, `sub.css`의 5개 책임 파일로 분리한다. 프로젝트를 시작하거나 기존 프로젝트의 CSS를 정리할 때, 이 문서 하나로 전역 Foundation, Reset, 유틸리티, 클래스명, 컴포넌트 작성 원칙을 동일하게 적용하는 것이 목적이다.
 
 ## 1. 적용 원칙
 
 1. 먼저 프로젝트의 기존 Reset, 전역 CSS, 토큰, 컴포넌트, 유틸리티, JavaScript 셀렉터를 조사한다.
 2. 기존 전역 규칙이 있으면 이 문서를 통째로 덮어쓰지 않고 충돌 항목을 비교한 후 필요한 항목만 병합한다.
-3. 신규 프로젝트라면 Foundation 토큰을 먼저 선언하고 Reset, 컴포넌트, 레이아웃, 유틸리티 순으로 적용한다.
+3. 신규 프로젝트라면 2.1장의 5개 CSS 파일을 먼저 만들고 Foundation, Reset, Utilities, 해당 페이지 스타일 순으로 적용한다.
 4. 모든 색상, 타이포그래피, 간격, 크기, 반경, 보더, 그림자, 모션 값은 Foundation 토큰에서 가져온다.
 5. 토큰에 없는 값을 임의로 만들지 않는다. 새로운 값이 반드시 필요하면 먼저 Foundation 토큰으로 등록하고 대응 유틸리티를 만든다. 단, font-size 토큰은 타이포그래피 조합 클래스, breakpoint 토큰은 media query 기준으로 사용한다.
 6. 신규 퍼블리싱 스타일에서는 `margin`을 사용하지 않는다. 이 문서의 Reset에 포함된 `margin: 0`만 예외다.
@@ -27,9 +27,29 @@
 - 클래스 변경은 CSS와 마크업, JavaScript, 테스트를 한 단위로 처리한다.
 - 서버 배포본이나 별도 빌드 산출물이 있으면 소스와 같은 상태인지 확인한다.
 
+## 2.1 필수 CSS 파일 구조
+
+신규 프로젝트는 작업을 시작할 때 아래 5개 CSS 파일을 먼저 만든다. 파일이 위치할 디렉터리는 프로젝트 구조에 맞게 선택하지만 파일의 책임은 바꾸거나 합치지 않는다.
+
+| 파일 | 허용되는 내용 | 금지되는 내용 |
+| --- | --- | --- |
+| `foundation.css` | `:root`에 한 번 선언하는 모든 Foundation 토큰 | Reset, 유틸리티 클래스, 컴포넌트, 페이지 선택자 |
+| `reset.css` | 3장의 전역 Reset 코드와 브라우저 기본값 정규화 | 토큰 선언, 컴포넌트 외형, Checkbox/Radio/Toggle 외형, 페이지 스타일 |
+| `utilities.css` | 4.4장의 타이포그래피 조합 클래스, 5장의 토큰 대응 유틸리티, 6장의 공통 레이아웃 유틸리티 | 전역 토큰 재정의, Reset, 특정 화면·섹션·컴포넌트 전용 스타일 |
+| `main.css` | 메인 화면에서만 사용하는 레이아웃, 섹션과 메인 전용 컴포넌트 스타일 | 세부 페이지 스타일, Foundation 토큰, Reset, 범용 유틸리티 |
+| `sub.css` | 세부 페이지에서만 사용하는 레이아웃, 섹션과 세부 페이지 전용 컴포넌트 스타일 | 메인 화면 스타일, Foundation 토큰, Reset, 범용 유틸리티 |
+
+- 초기 세팅 단계에서 페이지 스타일이 아직 없어도 `main.css`와 `sub.css`를 빈 파일로 생성해 책임 경계를 먼저 만든다.
+- 전역 로드 순서는 `foundation.css → reset.css → utilities.css → 해당 페이지 CSS`다. 메인 화면은 마지막에 `main.css`, 세부 페이지는 마지막에 `sub.css`를 로드한다.
+- `reset.css`가 Foundation 변수를 사용하므로 반드시 `foundation.css` 뒤에 로드한다.
+- 메인 화면에서 `sub.css`, 세부 페이지에서 `main.css`를 불필요하게 로드하지 않는다. 하나의 번들로 합쳐야 하는 환경에서는 페이지 루트 범위나 라우트 단위 import로 소유 범위를 유지한다.
+- 메인과 세부 페이지가 함께 사용하는 실제 공통 컴포넌트는 프로젝트의 컴포넌트 전용 CSS, CSS Modules, scoped style 또는 CSS-in-JS에 둔다. 이를 `utilities.css`에 범용 유틸리티인 것처럼 넣지 않는다.
+- 글꼴 파일 로딩은 프로젝트의 HTML, 프레임워크 폰트 로더 또는 전역 진입점이 담당한다. 토큰이 아닌 `@font-face`를 `foundation.css`에 섞지 않는다.
+- 기존 프로젝트에 다른 파일명이 이미 있으면 즉시 중복 파일을 만들지 않는다. 기존 파일의 책임을 조사한 뒤 위 5개 역할로 이동·이름 변경할 계획을 세우고 CSS import, 템플릿과 빌드 진입점을 함께 수정한다.
+
 ## 3. 전역 Reset
 
-아래 Reset은 신규 프로젝트의 기본값이다. 기존 Reset이 있는 프로젝트에서는 전체를 복사하지 말고 선택적으로 병합한다. Checkbox, Radio, Toggle의 appearance, 크기, 보더, 배경, 아이콘과 상태 스타일은 Reset에 포함하지 않는다.
+아래 Reset은 신규 프로젝트의 `reset.css`에 그대로 넣는 기본값이다. `reset.css`에는 아래 코드 외의 토큰·유틸리티·컴포넌트·페이지 스타일을 넣지 않는다. 기존 Reset이 있는 프로젝트에서는 전체를 복사하지 말고 선택적으로 병합한다. Checkbox, Radio, Toggle의 appearance, 크기, 보더, 배경, 아이콘과 상태 스타일은 Reset에 포함하지 않는다.
 
 ```css
 *,
@@ -118,11 +138,11 @@ h6 {
 | Breakpoint | 반응형 전환 기준 |
 | Z-index | 레이어 순서 |
 
-브랜드를 적용할 때 Atomic 팔레트를 직접 컴포넌트에 사용하지 말고 `--color-brand-primary`, `--color-brand-secondary`, `--color-brand-accent`, `--color-brand-on-primary`를 프로젝트 색상에 맞게 다시 매핑한다.
+브랜드를 적용할 때 고정 유채색 Atomic 팔레트를 사용하지 말고 `--color-brand-primary`, `--color-brand-secondary`, `--color-brand-on-primary`, `--color-brand-on-secondary`를 사용자 입력 색상에 맞게 생성한다. `--color-brand-primary`는 사용자가 입력하는 필수 메인 색상, `--color-brand-secondary`는 선택 서브 색상의 단일 진입점으로 사용한다.
 
 ### 4.2 컬러 토큰 범위
 
-- 기준 디자인 시스템의 Atomic Color와 Semantic Color 값을 빠짐없이 Foundation에 선언한다.
+- 프로젝트 초기 Foundation에는 아래 `초기 Foundation 필수 컬러 세트`를 반드시 선언한다. Blue, Red, Orange, Yellow, Green, Cyan, Violet, Purple, Pink 등 미리 정해진 유채색 Atomic 팔레트는 선언하지 않고 사용자 메인·서브 색상으로 생성한 팔레트만 추가한다.
 - 변수명에 특정 프로젝트명, 서비스명 또는 브랜드 접미사가 포함된 컬러 토큰은 공통 Foundation에서 제외한다.
 - `--color-brand-primary`처럼 특정 브랜드명이 없는 역할 기반 별칭은 유지하며, 프로젝트 시작 시 Atomic Color에 다시 매핑한다.
 - 컬러 토큰은 아래 전체 토큰 CSS의 `컬러 토큰` 블록에 실제 값으로 선언한다. 컴포넌트는 가능한 한 Semantic Color 또는 역할 기반 별칭을 사용한다.
@@ -130,9 +150,91 @@ h6 {
 - 컬러 토큰 적용 후 미정의 참조, 중복 선언, 미사용 여부를 검사한다. 전체 팔레트를 제공하기 위한 미사용 Atomic Color는 허용하되, 용도가 없는 Semantic Color와 프로젝트 전용 별칭은 제거하거나 사용 근거를 기록한다.
 - 불투명도는 `--opacity-*` 숫자 토큰으로 관리한다. 투명한 배경·보더·그림자는 `rgb(... / alpha)` 값이 실제로 포함된 Semantic Color를 별도로 사용하며, 불투명한 색상을 이름만 다르게 복제한 `--color-opacity-*` 토큰은 만들지 않는다.
 
-현재 컬러 블록은 기준 디자인 시스템에서 값이 유효한 비브랜드 컬러 토큰 265개와 공통 역할 별칭 6개를 포함한다.
+현재 컬러 블록은 고정 비브랜드 컬러 토큰 105개와 사용자 색상용 공통 역할 토큰 17개를 포함한다.
+
+#### 초기 Foundation 필수 컬러 세트
+
+- 이 문서를 적용해 새 프로젝트의 Foundation을 세팅할 때 아래 고정 토큰 97개를 사용 여부와 관계없이 전역 컬러 토큰에 먼저 생성한다.
+- 필수 세트는 `designSystem-v2.html`의 Color Atomic 중 Common 2개와 Neutral/Cool Neutral 40개, Color Sementic에 실제 문서화된 비브랜드 Semantic Color 55개로 구성한다.
+- Common은 Semantic Color의 `var(...)` 참조를 해결하기 위한 필수 의존성이다. `--color-common-0`, `--color-common-100`을 함께 선언한다.
+- `_artkorealab`, `_newstant`처럼 프로젝트·서비스·브랜드 식별자가 붙은 토큰과 `--color-newsroll-*` 같은 전용 팔레트는 초기 공통 세트에 포함하지 않는다.
+- Neutral과 Cool Neutral은 사용자 브랜드 색상으로부터 보간하지 않는다. 아래 전체 토큰 CSS에 기록된 `designSystem-v2.html` 원본 값을 그대로 복사해 생성한다.
+- 필수 컬러 토큰마다 `.color_*`, `.bg_*`, `.border_color_*` 세 유틸리티를 개별 CSS 클래스로 함께 생성한다. 필수 세트 97개 기준 총 291개의 색상 유틸리티 연결이 존재해야 한다.
+- 기존 프로젝트에 같은 역할의 컬러 토큰이 있으면 값과 사용처를 비교해 기존 체계를 우선 매핑한다. 같은 값을 다른 이름으로 중복 선언하지 않되 아래 필수 역할이 누락되지 않게 한다.
+
+| Atomic 그룹 | 필수 단계 |
+| --- | --- |
+| Common | `0`, `100` |
+| Neutral | `0`, `5`, `10`, `15`, `20`, `22`, `30`, `40`, `50`, `60`, `70`, `80`, `90`, `95`, `97`, `99`, `100` |
+| Cool Neutral | `0`, `5`, `7`, `10`, `15`, `17`, `20`, `22`, `23`, `25`, `30`, `40`, `50`, `60`, `70`, `80`, `90`, `95`, `96`, `97`, `98`, `99`, `100` |
+
+Neutral과 Cool Neutral의 `95`, `97`, `99` 단계는 생략할 수 없다. Cool Neutral은 원본 체계에 있는 `96`, `98`도 함께 생성한다.
+
+| Semantic 그룹 | 필수 토큰 |
+| --- | --- |
+| Status | `--color-status-positive`, `--color-status-cautionary`, `--color-status-negative` |
+| Accent Background | `--color-accent-background-red-orange`, `--color-accent-background-lime`, `--color-accent-background-cyan`, `--color-accent-background-light-blue`, `--color-accent-background-violet`, `--color-accent-background-purple`, `--color-accent-background-pink` |
+| Accent Foreground | `--color-accent-foreground-red`, `--color-accent-foreground-red-orange`, `--color-accent-foreground-orange`, `--color-accent-foreground-green`, `--color-accent-foreground-lime`, `--color-accent-foreground-cyan`, `--color-accent-foreground-light-blue`, `--color-accent-foreground-blue`, `--color-accent-foreground-violet`, `--color-accent-foreground-purple`, `--color-accent-foreground-pink` |
+| Background | `--color-background-normal-normal`, `--color-background-normal-alternative`, `--color-background-elevated-normal`, `--color-background-elevated-alternative`, `--color-background-transparent-normal`, `--color-background-transparent-alternative` |
+| Label | `--color-label-normal`, `--color-label-strong`, `--color-label-neutral`, `--color-label-alternative`, `--color-label-assistive`, `--color-label-disable` |
+| Line Normal | `--color-line-normal-normal`, `--color-line-normal-neutral`, `--color-line-normal-alternative`, `--color-line-normal-strong` |
+| Line Solid | `--color-line-solid-normal`, `--color-line-solid-neutral`, `--color-line-solid-alternative`, `--color-line-solid-strong`, `--color-line-solid-20`, `--color-line-solid-10`, `--color-line-solid-0` |
+| Fill | `--color-fill-normal`, `--color-fill-strong`, `--color-fill-alternative` |
+| Interaction | `--color-interaction-inactive`, `--color-interaction-disable` |
+| Static | `--color-static-white`, `--color-static-black` |
+| Inverse | `--color-inverse-primary`, `--color-inverse-background`, `--color-inverse-label` |
+| Material | `--color-material-dimmer` |
+
+위 Semantic 토큰의 실제 값은 아래 `전체 토큰 CSS`의 동일 변수 선언을 단일 원본으로 사용한다. 프로젝트 초기화 과정에서 임의의 다른 색으로 대체하거나 브랜드 색상 단계 생성 규칙을 적용하지 않는다.
+
+#### 메인·서브 색상 입력과 자동 연결
+
+- 이 문서를 프로젝트에 적용할 때 색상이 요구사항에 이미 명시되어 있지 않다면 구현 전에 `메인 색상(필수)`과 `서브 색상(선택, 없으면 없음)`을 사용자에게 먼저 묻는다. 메인 색상 답변 없이 임의의 브랜드 색상으로 구현을 확정하지 않는다.
+- 사용자가 프로젝트의 메인 색상을 HEX 또는 RGB 코드로 입력하면 해당 값을 `--color-brand-primary-50`에 그대로 설정하고 `--color-brand-primary`는 해당 50 단계를 참조한다.
+- 사용자가 서브 색상을 제공하지 않으면 `--color-brand-secondary`만 `--color-brand-primary`를 참조한다. 이때 `--color-brand-secondary-0~100` 단계 토큰과 단계별 secondary 유틸리티는 만들지 않는다.
+- 사용자가 서브 색상으로 Neutral 또는 Cool Neutral을 지정하거나 입력값이 각각의 50 단계인 `#737373`, `#70737c`와 정확히 일치하면 새 secondary 팔레트를 만들지 않는다. `--color-brand-secondary`만 각각 `--color-neutral-50` 또는 `--color-cool-neutral-50`을 참조하고, 단계 표현에는 기존 Neutral 또는 Cool Neutral 토큰과 `.color_*`, `.bg_*`, `.border_color_*` 유틸리티를 그대로 사용한다.
+- 사용자가 제공한 서브 색상이 Neutral·Cool Neutral이 아닌 새로운 색상일 때만 입력값을 `--color-brand-secondary-50`에 그대로 설정하고 표준 13단계 secondary 팔레트와 단계별 유틸리티를 생성한다. 이때 `--color-brand-secondary`는 `--color-brand-secondary-50`을 참조한다.
+- 허용 입력 예시는 `#0066ff`, `#06f`, `rgb(0, 102, 255)`, `rgb(0 102 255)`이다. 유효한 CSS 색상인지 확인한 뒤 사용하며 임의로 다른 색상으로 보정하지 않는다.
+- 메인 또는 서브 색상의 50 단계가 기존 Atomic Color와 정확히 같고 해당 색상군의 전체 단계가 이미 있으면 새 값을 중복 선언하지 않고 기존 Atomic Color 단계들을 `var(...)`로 연결한다. 특히 서브 색상이 Neutral 또는 Cool Neutral이면 번호가 붙은 secondary 별칭도 만들지 않고 기존 색상군 이름을 그대로 사용한다. 일치하는 색상군이 없으면 아래 생성 규칙으로 실제 값을 만든다.
+- 메인 색상 입력 시 기존 `.color_brand_primary`, `.bg_brand_primary`, `.border_color_brand_primary`를 그대로 유지한다. 세 유틸리티가 모두 `--color-brand-primary`를 참조하므로 변수 값 한 곳만 변경하면 `color`, `background-color`, `border-color`에 같은 색상이 자동 반영된다.
+- 서브 색상 입력 시 기존 `.color_brand_secondary`, `.bg_brand_secondary`, `.border_color_brand_secondary`를 그대로 유지한다. 세 유틸리티가 모두 `--color-brand-secondary`를 참조하므로 메인 색상과 동일한 방식으로 자동 반영된다.
+- 프로젝트 초기 세팅 시 primary의 글자색·배경색·보더색 유틸리티는 복사 가능한 개별 CSS 클래스로 반드시 생성한다. 단계 없는 secondary 유틸리티 3종은 항상 유지하고, 번호가 붙은 secondary 유틸리티는 새로운 비중립 서브 팔레트를 생성할 때만 추가한다. Neutral 또는 Cool Neutral 서브 색상은 기존 단계별 유틸리티를 재사용한다.
+- 여기서 자동 연결은 CSS custom property 전파를 뜻한다. 런타임에 CSS 클래스 문자열을 동적으로 생성하거나 SCSS 반복문에 의존하지 않는다.
+- 메인 색상을 배경으로 사용하는 컴포넌트는 `--color-brand-on-primary`, 서브 색상을 배경으로 사용하는 컴포넌트는 `--color-brand-on-secondary`를 전경색으로 사용한다. 기존 흰색과 검정 계열 토큰 중 각각 WCAG 대비를 충족하는 값을 선택하고 실제 화면에서 검수한다.
+- primary는 항상 전체 색상 단계를 생성한다. secondary는 사용자가 새로운 비중립 색상을 제공한 경우에만 같은 방식으로 생성한다. 미입력 시에는 단계 없는 역할 토큰만 primary를 참조하고, Neutral 또는 Cool Neutral 선택 시에는 단계 없는 역할 토큰만 기존 50 단계를 참조한다. Accent와 추가 색상군은 사용자가 별도로 제공하거나 요청하지 않으면 생성하지 않는다.
+- 정적 프로젝트 생성 단계에서는 CSS 변수 값을 문서에 직접 반영한다. 실행 중 사용자가 색상을 바꾸는 런타임 테마 기능은 명시적으로 요청된 경우에만 입력값 검증과 함께 구현한다.
+
+#### 메인·서브 Atomic Color 단계 생성 규칙
+
+- 생성 단계는 `0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 95, 99, 100`으로 고정한다.
+- 사용자가 입력한 원본 색상은 색상 보정 없이 반드시 `50` 단계가 된다.
+- `0`은 `#000000`, `100`은 `#ffffff`로 고정한다.
+- `10`~`40`은 원본 색상을 검정 방향으로, `60`~`99`는 원본 색상을 흰색 방향으로 OKLCH 색 공간에서 보간한다.
+- 보간 결과는 sRGB 영역으로 변환하고 영역을 벗어난 채널은 유효 범위로 보정한 뒤 정적 HEX 또는 RGB 값으로 토큰에 기록한다. 브라우저에서 계산되는 `color-mix()`를 최종 토큰값으로 남기지 않는다.
+
+| 단계 | 생성 기준 |
+| --- | --- |
+| `0` | 검정 100% |
+| `10` | 원본 20% + 검정 80% |
+| `20` | 원본 40% + 검정 60% |
+| `30` | 원본 60% + 검정 40% |
+| `40` | 원본 80% + 검정 20% |
+| `50` | 사용자가 입력한 원본 100% |
+| `60` | 원본 80% + 흰색 20% |
+| `70` | 원본 60% + 흰색 40% |
+| `80` | 원본 40% + 흰색 60% |
+| `90` | 원본 20% + 흰색 80% |
+| `95` | 원본 10% + 흰색 90% |
+| `99` | 원본 2% + 흰색 98% |
+| `100` | 흰색 100% |
+
+- Primary 토큰은 `--color-brand-primary-[단계]` 형식을 사용한다. Secondary 토큰은 사용자가 Neutral·Cool Neutral이 아닌 새로운 서브 색상을 제공한 경우에만 `--color-brand-secondary-[단계]` 형식으로 생성한다.
+- Primary의 각 단계마다 `.color_brand_primary_[단계]`, `.bg_brand_primary_[단계]`, `.border_color_brand_primary_[단계]`를 생성한다. 새로운 비중립 Secondary 팔레트를 만든 경우에만 같은 형식의 단계별 유틸리티를 생성한다. Neutral과 Cool Neutral은 이미 존재하는 단계 토큰 및 유틸리티를 재사용한다.
+- 단계별 토큰과 유틸리티는 SCSS 반복문이나 런타임 생성에만 의존하지 않고 최종 전역 CSS에 개별 선언으로 존재해야 한다.
 
 ### 4.3 전체 토큰 CSS
+
+아래 `:root` 토큰 선언은 `foundation.css`에 넣는다. `foundation.css`에는 클래스 선택자, Reset과 페이지 스타일을 추가하지 않는다.
 
 ```css
 :root {
@@ -195,26 +297,23 @@ h6 {
   --color-background-transparent-normal: rgb(255 255 255 / 8%);
   --color-background-transparent-strong: rgb(255 255 255 / 16%);
   --color-black: var(--color-cool-neutral-17);
-  --color-blue-0: #000000;
-  --color-blue-10: #001536;
-  --color-blue-100: #ffffff;
-  --color-blue-20: #002966;
-  --color-blue-30: #003e9c;
-  --color-blue-40: #0054d1;
-  --color-blue-45: #005eeb;
-  --color-blue-50: #0066ff;
-  --color-blue-55: #1a75ff;
-  --color-blue-60: #3385ff;
-  --color-blue-65: #4f95ff;
-  --color-blue-70: #69a5ff;
-  --color-blue-80: #9ec5ff;
-  --color-blue-90: #c9defe;
-  --color-blue-95: #eaf2fe;
-  --color-blue-99: #f7fbff;
-  --color-brand-accent: var(--color-purple-50);
   --color-brand-on-primary: var(--color-common-100);
-  --color-brand-primary: var(--color-blue-50);
-  --color-brand-secondary: var(--color-cyan-50);
+  --color-brand-on-secondary: var(--color-common-100);
+  --color-brand-primary-0: var(--color-neutral-0);
+  --color-brand-primary-10: var(--color-neutral-10);
+  --color-brand-primary-20: var(--color-neutral-20);
+  --color-brand-primary-30: var(--color-neutral-30);
+  --color-brand-primary-40: var(--color-neutral-40);
+  --color-brand-primary-50: var(--color-neutral-50); /* 사용자 메인 색상 입력 전 임시 연결값 */
+  --color-brand-primary-60: var(--color-neutral-60);
+  --color-brand-primary-70: var(--color-neutral-70);
+  --color-brand-primary-80: var(--color-neutral-80);
+  --color-brand-primary-90: var(--color-neutral-90);
+  --color-brand-primary-95: var(--color-neutral-95);
+  --color-brand-primary-99: var(--color-neutral-99);
+  --color-brand-primary-100: var(--color-neutral-100);
+  --color-brand-primary: var(--color-brand-primary-50);
+  --color-brand-secondary: var(--color-brand-primary); /* 서브 미입력 기본값. Neutral/Cool Neutral 선택 시 해당 50 단계로 교체 */
   --color-common-0: var(--color-cool-neutral-15);
   --color-common-100: #ffffff;
   --color-cool-neutral-0: #000000;
@@ -240,35 +339,9 @@ h6 {
   --color-cool-neutral-97: #eaebec;
   --color-cool-neutral-98: #f4f4f5;
   --color-cool-neutral-99: #f7f7f8;
-  --color-cyan-0: #000000;
-  --color-cyan-10: #00252b;
-  --color-cyan-100: #ffffff;
-  --color-cyan-20: #004854;
-  --color-cyan-30: #006f82;
-  --color-cyan-40: #0098b2;
-  --color-cyan-50: #00bdde;
-  --color-cyan-60: #28d0ed;
-  --color-cyan-70: #57dff7;
-  --color-cyan-80: #8aedff;
-  --color-cyan-90: #b5f4ff;
-  --color-cyan-95: #defaff;
-  --color-cyan-99: #f7feff;
   --color-fill-alternative: rgb(112 115 124 / 5%);
   --color-fill-normal: rgb(112 115 124 / 8%);
   --color-fill-strong: rgb(112 115 124 / 16%);
-  --color-green-0: #000000;
-  --color-green-10: #00240c;
-  --color-green-100: #ffffff;
-  --color-green-20: #004517;
-  --color-green-30: #006e25;
-  --color-green-40: #009632;
-  --color-green-50: #00bf40;
-  --color-green-60: #1ed45a;
-  --color-green-70: #49e57d;
-  --color-green-80: #7df5a5;
-  --color-green-90: #acfcc7;
-  --color-green-95: #d9ffe6;
-  --color-green-99: #f2fff6;
   --color-interaction-disable: #f4f4f5;
   --color-interaction-inactive: #989ba2;
   --color-inverse-background: #1b1c1e;
@@ -280,33 +353,6 @@ h6 {
   --color-label-neutral: rgb(46 47 51 / 88%);
   --color-label-normal: #171719;
   --color-label-strong: var(--color-common-0);
-  --color-light-blue-0: #000000;
-  --color-light-blue-10: #002130;
-  --color-light-blue-100: #ffffff;
-  --color-light-blue-20: #004261;
-  --color-light-blue-30: #006796;
-  --color-light-blue-40: #008dcf;
-  --color-light-blue-50: #00aeff;
-  --color-light-blue-60: #3dc2ff;
-  --color-light-blue-70: #70d2ff;
-  --color-light-blue-80: #a1e1ff;
-  --color-light-blue-90: #c4ecfe;
-  --color-light-blue-95: #e5f6fe;
-  --color-light-blue-99: #f7fdff;
-  --color-lime-0: #000000;
-  --color-lime-10: #112900;
-  --color-lime-100: #ffffff;
-  --color-lime-20: #225200;
-  --color-lime-30: #347d00;
-  --color-lime-37: #429e00;
-  --color-lime-40: #48ad00;
-  --color-lime-50: #58cf04;
-  --color-lime-60: #6be016;
-  --color-lime-70: #88f03e;
-  --color-lime-80: #aef779;
-  --color-lime-90: #ccfca9;
-  --color-lime-95: #e6ffd4;
-  --color-lime-99: #f8fff2;
   --color-line-normal-alternative: rgb(112 115 124 / 8%);
   --color-line-normal-neutral: rgb(112 115 124 / 16%);
   --color-line-normal-normal: rgb(112 115 124 / 22%);
@@ -336,105 +382,12 @@ h6 {
   --color-neutral-95: #dcdcdc;
   --color-neutral-97: #f0f0f0;
   --color-neutral-99: #f7f7f7;
-  --color-orange-0: #000000;
-  --color-orange-10: #361e00;
-  --color-orange-100: #ffffff;
-  --color-orange-20: #663a00;
-  --color-orange-30: #9c5800;
-  --color-orange-39: #d17600;
-  --color-orange-40: #d47800;
-  --color-orange-50: #ff9200;
-  --color-orange-60: #ffa938;
-  --color-orange-70: #ffc06e;
-  --color-orange-80: #ffd49c;
-  --color-orange-90: #fee6c6;
-  --color-orange-95: #fef4e6;
-  --color-orange-99: #fffcf7;
-  --color-pink-0: #000000;
-  --color-pink-10: #3d0133;
-  --color-pink-100: #ffffff;
-  --color-pink-20: #730560;
-  --color-pink-30: #a81690;
-  --color-pink-40: #d331b8;
-  --color-pink-46: #e846cd;
-  --color-pink-50: #f553da;
-  --color-pink-60: #fa73e3;
-  --color-pink-70: #ff94ed;
-  --color-pink-80: #ffb8f3;
-  --color-pink-90: #fed3f7;
-  --color-pink-95: #feecfb;
-  --color-pink-99: #fffafe;
-  --color-purple-0: #000000;
-  --color-purple-10: #290247;
-  --color-purple-100: #ffffff;
-  --color-purple-20: #580a7d;
-  --color-purple-30: #861cb8;
-  --color-purple-40: #ad36e3;
-  --color-purple-50: #cb59ff;
-  --color-purple-60: #d478ff;
-  --color-purple-70: #de96ff;
-  --color-purple-80: #e9baff;
-  --color-purple-90: #f2d6ff;
-  --color-purple-95: #f9edff;
-  --color-purple-99: #fefbff;
-  --color-red-0: #000000;
-  --color-red-10: #3b0101;
-  --color-red-100: #ffffff;
-  --color-red-20: #730303;
-  --color-red-30: #b00c0c;
-  --color-red-40: #e52222;
-  --color-red-50: #ff4242;
-  --color-red-60: #ff6363;
-  --color-red-70: #ff8c8c;
-  --color-red-80: #ffb5b5;
-  --color-red-90: #fed5d5;
-  --color-red-95: #feecec;
-  --color-red-99: #fffafa;
-  --color-red-orange-0: #000000;
-  --color-red-orange-10: #290f00;
-  --color-red-orange-100: #ffffff;
-  --color-red-orange-20: #592100;
-  --color-red-orange-30: #913500;
-  --color-red-orange-40: #c94a00;
-  --color-red-orange-48: #f55a00;
-  --color-red-orange-50: #ff5e00;
-  --color-red-orange-60: #ff7b2e;
-  --color-red-orange-70: #ff9b61;
-  --color-red-orange-80: #ffbd96;
-  --color-red-orange-90: #fed9c4;
-  --color-red-orange-95: #feeee5;
-  --color-red-orange-99: #fffaf7;
   --color-static-black: #000000;
   --color-static-white: #ffffff;
   --color-status-cautionary: #ff9200;
   --color-status-negative: #ff4242;
   --color-status-positive: #00bf40;
-  --color-violet-0: #000000;
-  --color-violet-10: #11024d;
-  --color-violet-100: #ffffff;
-  --color-violet-20: #23098f;
-  --color-violet-30: #3a16c9;
-  --color-violet-40: #4f29e5;
-  --color-violet-45: #5b37ed;
-  --color-violet-50: #6541f2;
-  --color-violet-60: #7d5ef7;
-  --color-violet-70: #9e86fc;
-  --color-violet-80: #c0b0ff;
-  --color-violet-90: #dbd3fe;
-  --color-violet-95: #f0ecfe;
-  --color-violet-99: #fbfaff;
   --color-white: var(--color-common-100);
-  --color-yellow-0: #000000;
-  --color-yellow-10: #666600;
-  --color-yellow-100: #ffffff;
-  --color-yellow-20: #999900;
-  --color-yellow-30: #cccc00;
-  --color-yellow-40: #e6e600;
-  --color-yellow-50: #ffff00;
-  --color-yellow-60: #ffff33;
-  --color-yellow-70: #ffff66;
-  --color-yellow-80: #ffff99;
-  --color-yellow-90: #ffffcc;
   --ds-atomic-neutral-40: var(--color-neutral-40);
   --ds-atomic-neutral-90: var(--color-neutral-90);
 
@@ -521,6 +474,8 @@ h6 {
   --spacing-padding-vertical-8: 8px;
 
   /* 크기 */
+  --size-8: 8px;
+  --size-12: 12px;
   --size-16: 16px;
   --size-20: 20px;
   --size-24: 24px;
@@ -598,7 +553,7 @@ h6 {
   --container-xlarge: 1240px;
 
   /* 포커스 */
-  --focus-ring-color: var(--color-blue-50);
+  --focus-ring-color: var(--color-brand-primary);
 
   /* 모션 */
   --motion-duration-fast: 160ms;
@@ -631,7 +586,7 @@ h6 {
 
 ### 4.4 타이포그래피 조합 클래스
 
-폰트 크기 토큰은 작은 값부터 큰 값까지 모두 제공하되, 문서에 표시할 때는 큰 크기부터 정렬한다. 같은 크기라도 font-family, font-weight, line-height 조합이 다르면 별도 조합 클래스로 둘 수 있다. 13px 계층은 만들지 않으며 12px 이하는 Caption으로 분류한다.
+아래 조합 클래스는 토큰이 아니라 재사용 유틸리티이므로 `utilities.css`에 넣는다. 폰트 크기 토큰은 작은 값부터 큰 값까지 모두 제공하되, 문서에 표시할 때는 큰 크기부터 정렬한다. 같은 크기라도 font-family, font-weight, line-height 조합이 다르면 별도 조합 클래스로 둘 수 있다. 13px 계층은 만들지 않으며 12px 이하는 Caption으로 분류한다.
 
 ```css
 /* typography: display */
@@ -737,7 +692,10 @@ h6 {
 
 ### 4.6 아이콘과 이미지
 
-- 아이콘 크기는 `--size-*` 토큰과 `.size_*`, `.w_*`, `.h_*` 유틸리티를 사용한다.
+- 일반 UI 아이콘의 표준 크기는 `8px`부터 `64px`까지 4px 간격으로 정의한다.
+- 아이콘 크기 클래스는 `.icon_[size]` 형식을 사용한다. 예: `.icon_8`, `.icon_12`, `.icon_16`, `.icon_20`, `.icon_24`.
+- `.icon_8`~`.icon_64`는 반드시 대응하는 `--size-*` 토큰을 참조해 `width`, `height`, `flex-basis`를 함께 고정한다.
+- `64px`보다 큰 일러스트형 아이콘, 로고와 이미지는 아이콘 유틸리티를 무리하게 확장하지 않고 `.size_*`, `.w_*`, `.h_*` 또는 해당 컴포넌트 스펙을 사용한다.
 - 단색 아이콘은 `currentColor`를 사용해 텍스트 색상 토큰을 상속할 수 있게 한다.
 - 장식 아이콘은 `aria-hidden="true"`, 의미가 있는 아이콘은 대체 텍스트나 접근 가능한 이름을 제공한다.
 - 외부 SVG의 내부 색상이 필요한 경우 `img`, 색상 상속이 필요하면 inline SVG 또는 mask 방식을 선택한다.
@@ -745,7 +703,20 @@ h6 {
 
 ## 5. 토큰 대응 유틸리티
 
-Foundation의 공개 토큰에는 실제 CSS 속성에 연결되는 유틸리티가 있어야 한다. 색상 토큰은 글자색, 배경색, 보더색 유틸을 제공하고, 간격 토큰은 padding과 gap, 타이포그래피 토큰은 font-weight·line-height, 장식 토큰은 radius·border·shadow 유틸을 제공한다.
+이 장의 모든 클래스는 `utilities.css`에 넣는다. Foundation의 공개 토큰에는 실제 CSS 속성에 연결되는 유틸리티가 있어야 한다. 색상 토큰은 글자색, 배경색, 보더색 유틸을 제공하고, 간격 토큰은 padding과 gap, 타이포그래피 토큰은 font-weight·line-height, 장식 토큰은 radius·border·shadow 유틸을 제공한다.
+
+메인·서브 색상은 기존 역할 토큰과 유틸리티를 다음과 같이 연결한다. 같은 값을 가리키는 별도 유틸리티를 다른 이름으로 중복 생성하지 않는다.
+
+| 입력 또는 역할 | 토큰 | 글자색 유틸리티 | 배경색 유틸리티 | 보더색 유틸리티 |
+| --- | --- | --- | --- | --- |
+| 사용자가 입력한 메인 색상의 50 단계 | `--color-brand-primary-50` → `--color-brand-primary` | `.color_brand_primary` | `.bg_brand_primary` | `.border_color_brand_primary` |
+| 메인 색상 위 전경색 | `--color-brand-on-primary` | `.color_brand_on_primary` | `.bg_brand_on_primary` | `.border_color_brand_on_primary` |
+| 새 비중립 서브 색상의 50 단계 | `--color-brand-secondary-50` → `--color-brand-secondary` | `.color_brand_secondary` | `.bg_brand_secondary` | `.border_color_brand_secondary` |
+| Neutral 서브 색상 | `--color-neutral-50` → `--color-brand-secondary` | `.color_neutral_0~100` | `.bg_neutral_0~100` | `.border_color_neutral_0~100` |
+| Cool Neutral 서브 색상 | `--color-cool-neutral-50` → `--color-brand-secondary` | `.color_cool_neutral_0~100` | `.bg_cool_neutral_0~100` | `.border_color_cool_neutral_0~100` |
+| 서브 색상 위 전경색 | `--color-brand-on-secondary` | `.color_brand_on_secondary` | `.bg_brand_on_secondary` | `.border_color_brand_on_secondary` |
+
+예를 들어 사용자가 메인 색상 `#ff3b30`, 새로운 비중립 서브 색상 `rgb(0, 102, 255)`를 입력하면 각각 `--color-brand-primary-50: #ff3b30;`, `--color-brand-secondary-50: rgb(0, 102, 255);`로 설정하고 나머지 단계를 생성한다. 서브 색상이 Neutral이면 `--color-brand-secondary: var(--color-neutral-50);`만 설정하고 단계에는 `.color_neutral_*`, `.bg_neutral_*`, `.border_color_neutral_*`를 사용한다. Cool Neutral도 같은 방식으로 기존 Cool Neutral 계열을 사용한다.
 
 Breakpoint는 media query 조건으로 사용하므로 단일 속성 유틸리티를 만들지 않는다.
 
@@ -798,25 +769,22 @@ Breakpoint는 media query 조건으로 사용하므로 단일 속성 유틸리�
 .bg_background_transparent_normal { background-color: var(--color-background-transparent-normal); }
 .bg_background_transparent_strong { background-color: var(--color-background-transparent-strong); }
 .bg_black { background-color: var(--color-black); }
-.bg_blue_0 { background-color: var(--color-blue-0); }
-.bg_blue_10 { background-color: var(--color-blue-10); }
-.bg_blue_100 { background-color: var(--color-blue-100); }
-.bg_blue_20 { background-color: var(--color-blue-20); }
-.bg_blue_30 { background-color: var(--color-blue-30); }
-.bg_blue_40 { background-color: var(--color-blue-40); }
-.bg_blue_45 { background-color: var(--color-blue-45); }
-.bg_blue_50 { background-color: var(--color-blue-50); }
-.bg_blue_55 { background-color: var(--color-blue-55); }
-.bg_blue_60 { background-color: var(--color-blue-60); }
-.bg_blue_65 { background-color: var(--color-blue-65); }
-.bg_blue_70 { background-color: var(--color-blue-70); }
-.bg_blue_80 { background-color: var(--color-blue-80); }
-.bg_blue_90 { background-color: var(--color-blue-90); }
-.bg_blue_95 { background-color: var(--color-blue-95); }
-.bg_blue_99 { background-color: var(--color-blue-99); }
-.bg_brand_accent { background-color: var(--color-brand-accent); }
 .bg_brand_on_primary { background-color: var(--color-brand-on-primary); }
+.bg_brand_on_secondary { background-color: var(--color-brand-on-secondary); }
 .bg_brand_primary { background-color: var(--color-brand-primary); }
+.bg_brand_primary_0 { background-color: var(--color-brand-primary-0); }
+.bg_brand_primary_10 { background-color: var(--color-brand-primary-10); }
+.bg_brand_primary_20 { background-color: var(--color-brand-primary-20); }
+.bg_brand_primary_30 { background-color: var(--color-brand-primary-30); }
+.bg_brand_primary_40 { background-color: var(--color-brand-primary-40); }
+.bg_brand_primary_50 { background-color: var(--color-brand-primary-50); }
+.bg_brand_primary_60 { background-color: var(--color-brand-primary-60); }
+.bg_brand_primary_70 { background-color: var(--color-brand-primary-70); }
+.bg_brand_primary_80 { background-color: var(--color-brand-primary-80); }
+.bg_brand_primary_90 { background-color: var(--color-brand-primary-90); }
+.bg_brand_primary_95 { background-color: var(--color-brand-primary-95); }
+.bg_brand_primary_99 { background-color: var(--color-brand-primary-99); }
+.bg_brand_primary_100 { background-color: var(--color-brand-primary-100); }
 .bg_brand_secondary { background-color: var(--color-brand-secondary); }
 .bg_common_0 { background-color: var(--color-common-0); }
 .bg_common_100 { background-color: var(--color-common-100); }
@@ -843,37 +811,11 @@ Breakpoint는 media query 조건으로 사용하므로 단일 속성 유틸리�
 .bg_cool_neutral_97 { background-color: var(--color-cool-neutral-97); }
 .bg_cool_neutral_98 { background-color: var(--color-cool-neutral-98); }
 .bg_cool_neutral_99 { background-color: var(--color-cool-neutral-99); }
-.bg_cyan_0 { background-color: var(--color-cyan-0); }
-.bg_cyan_10 { background-color: var(--color-cyan-10); }
-.bg_cyan_100 { background-color: var(--color-cyan-100); }
-.bg_cyan_20 { background-color: var(--color-cyan-20); }
-.bg_cyan_30 { background-color: var(--color-cyan-30); }
-.bg_cyan_40 { background-color: var(--color-cyan-40); }
-.bg_cyan_50 { background-color: var(--color-cyan-50); }
-.bg_cyan_60 { background-color: var(--color-cyan-60); }
-.bg_cyan_70 { background-color: var(--color-cyan-70); }
-.bg_cyan_80 { background-color: var(--color-cyan-80); }
-.bg_cyan_90 { background-color: var(--color-cyan-90); }
-.bg_cyan_95 { background-color: var(--color-cyan-95); }
-.bg_cyan_99 { background-color: var(--color-cyan-99); }
 .bg_ds_atomic_neutral_40 { background-color: var(--ds-atomic-neutral-40); }
 .bg_ds_atomic_neutral_90 { background-color: var(--ds-atomic-neutral-90); }
 .bg_fill_alternative { background-color: var(--color-fill-alternative); }
 .bg_fill_normal { background-color: var(--color-fill-normal); }
 .bg_fill_strong { background-color: var(--color-fill-strong); }
-.bg_green_0 { background-color: var(--color-green-0); }
-.bg_green_10 { background-color: var(--color-green-10); }
-.bg_green_100 { background-color: var(--color-green-100); }
-.bg_green_20 { background-color: var(--color-green-20); }
-.bg_green_30 { background-color: var(--color-green-30); }
-.bg_green_40 { background-color: var(--color-green-40); }
-.bg_green_50 { background-color: var(--color-green-50); }
-.bg_green_60 { background-color: var(--color-green-60); }
-.bg_green_70 { background-color: var(--color-green-70); }
-.bg_green_80 { background-color: var(--color-green-80); }
-.bg_green_90 { background-color: var(--color-green-90); }
-.bg_green_95 { background-color: var(--color-green-95); }
-.bg_green_99 { background-color: var(--color-green-99); }
 .bg_interaction_disable { background-color: var(--color-interaction-disable); }
 .bg_interaction_inactive { background-color: var(--color-interaction-inactive); }
 .bg_inverse_background { background-color: var(--color-inverse-background); }
@@ -885,33 +827,6 @@ Breakpoint는 media query 조건으로 사용하므로 단일 속성 유틸리�
 .bg_label_neutral { background-color: var(--color-label-neutral); }
 .bg_label_normal { background-color: var(--color-label-normal); }
 .bg_label_strong { background-color: var(--color-label-strong); }
-.bg_light_blue_0 { background-color: var(--color-light-blue-0); }
-.bg_light_blue_10 { background-color: var(--color-light-blue-10); }
-.bg_light_blue_100 { background-color: var(--color-light-blue-100); }
-.bg_light_blue_20 { background-color: var(--color-light-blue-20); }
-.bg_light_blue_30 { background-color: var(--color-light-blue-30); }
-.bg_light_blue_40 { background-color: var(--color-light-blue-40); }
-.bg_light_blue_50 { background-color: var(--color-light-blue-50); }
-.bg_light_blue_60 { background-color: var(--color-light-blue-60); }
-.bg_light_blue_70 { background-color: var(--color-light-blue-70); }
-.bg_light_blue_80 { background-color: var(--color-light-blue-80); }
-.bg_light_blue_90 { background-color: var(--color-light-blue-90); }
-.bg_light_blue_95 { background-color: var(--color-light-blue-95); }
-.bg_light_blue_99 { background-color: var(--color-light-blue-99); }
-.bg_lime_0 { background-color: var(--color-lime-0); }
-.bg_lime_10 { background-color: var(--color-lime-10); }
-.bg_lime_100 { background-color: var(--color-lime-100); }
-.bg_lime_20 { background-color: var(--color-lime-20); }
-.bg_lime_30 { background-color: var(--color-lime-30); }
-.bg_lime_37 { background-color: var(--color-lime-37); }
-.bg_lime_40 { background-color: var(--color-lime-40); }
-.bg_lime_50 { background-color: var(--color-lime-50); }
-.bg_lime_60 { background-color: var(--color-lime-60); }
-.bg_lime_70 { background-color: var(--color-lime-70); }
-.bg_lime_80 { background-color: var(--color-lime-80); }
-.bg_lime_90 { background-color: var(--color-lime-90); }
-.bg_lime_95 { background-color: var(--color-lime-95); }
-.bg_lime_99 { background-color: var(--color-lime-99); }
 .bg_line_normal_alternative { background-color: var(--color-line-normal-alternative); }
 .bg_line_normal_neutral { background-color: var(--color-line-normal-neutral); }
 .bg_line_normal_normal { background-color: var(--color-line-normal-normal); }
@@ -941,105 +856,12 @@ Breakpoint는 media query 조건으로 사용하므로 단일 속성 유틸리�
 .bg_neutral_95 { background-color: var(--color-neutral-95); }
 .bg_neutral_97 { background-color: var(--color-neutral-97); }
 .bg_neutral_99 { background-color: var(--color-neutral-99); }
-.bg_orange_0 { background-color: var(--color-orange-0); }
-.bg_orange_10 { background-color: var(--color-orange-10); }
-.bg_orange_100 { background-color: var(--color-orange-100); }
-.bg_orange_20 { background-color: var(--color-orange-20); }
-.bg_orange_30 { background-color: var(--color-orange-30); }
-.bg_orange_39 { background-color: var(--color-orange-39); }
-.bg_orange_40 { background-color: var(--color-orange-40); }
-.bg_orange_50 { background-color: var(--color-orange-50); }
-.bg_orange_60 { background-color: var(--color-orange-60); }
-.bg_orange_70 { background-color: var(--color-orange-70); }
-.bg_orange_80 { background-color: var(--color-orange-80); }
-.bg_orange_90 { background-color: var(--color-orange-90); }
-.bg_orange_95 { background-color: var(--color-orange-95); }
-.bg_orange_99 { background-color: var(--color-orange-99); }
-.bg_pink_0 { background-color: var(--color-pink-0); }
-.bg_pink_10 { background-color: var(--color-pink-10); }
-.bg_pink_100 { background-color: var(--color-pink-100); }
-.bg_pink_20 { background-color: var(--color-pink-20); }
-.bg_pink_30 { background-color: var(--color-pink-30); }
-.bg_pink_40 { background-color: var(--color-pink-40); }
-.bg_pink_46 { background-color: var(--color-pink-46); }
-.bg_pink_50 { background-color: var(--color-pink-50); }
-.bg_pink_60 { background-color: var(--color-pink-60); }
-.bg_pink_70 { background-color: var(--color-pink-70); }
-.bg_pink_80 { background-color: var(--color-pink-80); }
-.bg_pink_90 { background-color: var(--color-pink-90); }
-.bg_pink_95 { background-color: var(--color-pink-95); }
-.bg_pink_99 { background-color: var(--color-pink-99); }
-.bg_purple_0 { background-color: var(--color-purple-0); }
-.bg_purple_10 { background-color: var(--color-purple-10); }
-.bg_purple_100 { background-color: var(--color-purple-100); }
-.bg_purple_20 { background-color: var(--color-purple-20); }
-.bg_purple_30 { background-color: var(--color-purple-30); }
-.bg_purple_40 { background-color: var(--color-purple-40); }
-.bg_purple_50 { background-color: var(--color-purple-50); }
-.bg_purple_60 { background-color: var(--color-purple-60); }
-.bg_purple_70 { background-color: var(--color-purple-70); }
-.bg_purple_80 { background-color: var(--color-purple-80); }
-.bg_purple_90 { background-color: var(--color-purple-90); }
-.bg_purple_95 { background-color: var(--color-purple-95); }
-.bg_purple_99 { background-color: var(--color-purple-99); }
-.bg_red_0 { background-color: var(--color-red-0); }
-.bg_red_10 { background-color: var(--color-red-10); }
-.bg_red_100 { background-color: var(--color-red-100); }
-.bg_red_20 { background-color: var(--color-red-20); }
-.bg_red_30 { background-color: var(--color-red-30); }
-.bg_red_40 { background-color: var(--color-red-40); }
-.bg_red_50 { background-color: var(--color-red-50); }
-.bg_red_60 { background-color: var(--color-red-60); }
-.bg_red_70 { background-color: var(--color-red-70); }
-.bg_red_80 { background-color: var(--color-red-80); }
-.bg_red_90 { background-color: var(--color-red-90); }
-.bg_red_95 { background-color: var(--color-red-95); }
-.bg_red_99 { background-color: var(--color-red-99); }
-.bg_red_orange_0 { background-color: var(--color-red-orange-0); }
-.bg_red_orange_10 { background-color: var(--color-red-orange-10); }
-.bg_red_orange_100 { background-color: var(--color-red-orange-100); }
-.bg_red_orange_20 { background-color: var(--color-red-orange-20); }
-.bg_red_orange_30 { background-color: var(--color-red-orange-30); }
-.bg_red_orange_40 { background-color: var(--color-red-orange-40); }
-.bg_red_orange_48 { background-color: var(--color-red-orange-48); }
-.bg_red_orange_50 { background-color: var(--color-red-orange-50); }
-.bg_red_orange_60 { background-color: var(--color-red-orange-60); }
-.bg_red_orange_70 { background-color: var(--color-red-orange-70); }
-.bg_red_orange_80 { background-color: var(--color-red-orange-80); }
-.bg_red_orange_90 { background-color: var(--color-red-orange-90); }
-.bg_red_orange_95 { background-color: var(--color-red-orange-95); }
-.bg_red_orange_99 { background-color: var(--color-red-orange-99); }
 .bg_static_black { background-color: var(--color-static-black); }
 .bg_static_white { background-color: var(--color-static-white); }
 .bg_status_cautionary { background-color: var(--color-status-cautionary); }
 .bg_status_negative { background-color: var(--color-status-negative); }
 .bg_status_positive { background-color: var(--color-status-positive); }
-.bg_violet_0 { background-color: var(--color-violet-0); }
-.bg_violet_10 { background-color: var(--color-violet-10); }
-.bg_violet_100 { background-color: var(--color-violet-100); }
-.bg_violet_20 { background-color: var(--color-violet-20); }
-.bg_violet_30 { background-color: var(--color-violet-30); }
-.bg_violet_40 { background-color: var(--color-violet-40); }
-.bg_violet_45 { background-color: var(--color-violet-45); }
-.bg_violet_50 { background-color: var(--color-violet-50); }
-.bg_violet_60 { background-color: var(--color-violet-60); }
-.bg_violet_70 { background-color: var(--color-violet-70); }
-.bg_violet_80 { background-color: var(--color-violet-80); }
-.bg_violet_90 { background-color: var(--color-violet-90); }
-.bg_violet_95 { background-color: var(--color-violet-95); }
-.bg_violet_99 { background-color: var(--color-violet-99); }
 .bg_white { background-color: var(--color-white); }
-.bg_yellow_0 { background-color: var(--color-yellow-0); }
-.bg_yellow_10 { background-color: var(--color-yellow-10); }
-.bg_yellow_100 { background-color: var(--color-yellow-100); }
-.bg_yellow_20 { background-color: var(--color-yellow-20); }
-.bg_yellow_30 { background-color: var(--color-yellow-30); }
-.bg_yellow_40 { background-color: var(--color-yellow-40); }
-.bg_yellow_50 { background-color: var(--color-yellow-50); }
-.bg_yellow_60 { background-color: var(--color-yellow-60); }
-.bg_yellow_70 { background-color: var(--color-yellow-70); }
-.bg_yellow_80 { background-color: var(--color-yellow-80); }
-.bg_yellow_90 { background-color: var(--color-yellow-90); }
 .border_color_accent_background_cyan { border-color: var(--color-accent-background-cyan); }
 .border_color_accent_background_light_blue { border-color: var(--color-accent-background-light-blue); }
 .border_color_accent_background_lime { border-color: var(--color-accent-background-lime); }
@@ -1080,25 +902,22 @@ Breakpoint는 media query 조건으로 사용하므로 단일 속성 유틸리�
 .border_color_background_transparent_normal { border-color: var(--color-background-transparent-normal); }
 .border_color_background_transparent_strong { border-color: var(--color-background-transparent-strong); }
 .border_color_black { border-color: var(--color-black); }
-.border_color_blue_0 { border-color: var(--color-blue-0); }
-.border_color_blue_10 { border-color: var(--color-blue-10); }
-.border_color_blue_100 { border-color: var(--color-blue-100); }
-.border_color_blue_20 { border-color: var(--color-blue-20); }
-.border_color_blue_30 { border-color: var(--color-blue-30); }
-.border_color_blue_40 { border-color: var(--color-blue-40); }
-.border_color_blue_45 { border-color: var(--color-blue-45); }
-.border_color_blue_50 { border-color: var(--color-blue-50); }
-.border_color_blue_55 { border-color: var(--color-blue-55); }
-.border_color_blue_60 { border-color: var(--color-blue-60); }
-.border_color_blue_65 { border-color: var(--color-blue-65); }
-.border_color_blue_70 { border-color: var(--color-blue-70); }
-.border_color_blue_80 { border-color: var(--color-blue-80); }
-.border_color_blue_90 { border-color: var(--color-blue-90); }
-.border_color_blue_95 { border-color: var(--color-blue-95); }
-.border_color_blue_99 { border-color: var(--color-blue-99); }
-.border_color_brand_accent { border-color: var(--color-brand-accent); }
 .border_color_brand_on_primary { border-color: var(--color-brand-on-primary); }
+.border_color_brand_on_secondary { border-color: var(--color-brand-on-secondary); }
 .border_color_brand_primary { border-color: var(--color-brand-primary); }
+.border_color_brand_primary_0 { border-color: var(--color-brand-primary-0); }
+.border_color_brand_primary_10 { border-color: var(--color-brand-primary-10); }
+.border_color_brand_primary_20 { border-color: var(--color-brand-primary-20); }
+.border_color_brand_primary_30 { border-color: var(--color-brand-primary-30); }
+.border_color_brand_primary_40 { border-color: var(--color-brand-primary-40); }
+.border_color_brand_primary_50 { border-color: var(--color-brand-primary-50); }
+.border_color_brand_primary_60 { border-color: var(--color-brand-primary-60); }
+.border_color_brand_primary_70 { border-color: var(--color-brand-primary-70); }
+.border_color_brand_primary_80 { border-color: var(--color-brand-primary-80); }
+.border_color_brand_primary_90 { border-color: var(--color-brand-primary-90); }
+.border_color_brand_primary_95 { border-color: var(--color-brand-primary-95); }
+.border_color_brand_primary_99 { border-color: var(--color-brand-primary-99); }
+.border_color_brand_primary_100 { border-color: var(--color-brand-primary-100); }
 .border_color_brand_secondary { border-color: var(--color-brand-secondary); }
 .border_color_common_0 { border-color: var(--color-common-0); }
 .border_color_common_100 { border-color: var(--color-common-100); }
@@ -1125,37 +944,11 @@ Breakpoint는 media query 조건으로 사용하므로 단일 속성 유틸리�
 .border_color_cool_neutral_97 { border-color: var(--color-cool-neutral-97); }
 .border_color_cool_neutral_98 { border-color: var(--color-cool-neutral-98); }
 .border_color_cool_neutral_99 { border-color: var(--color-cool-neutral-99); }
-.border_color_cyan_0 { border-color: var(--color-cyan-0); }
-.border_color_cyan_10 { border-color: var(--color-cyan-10); }
-.border_color_cyan_100 { border-color: var(--color-cyan-100); }
-.border_color_cyan_20 { border-color: var(--color-cyan-20); }
-.border_color_cyan_30 { border-color: var(--color-cyan-30); }
-.border_color_cyan_40 { border-color: var(--color-cyan-40); }
-.border_color_cyan_50 { border-color: var(--color-cyan-50); }
-.border_color_cyan_60 { border-color: var(--color-cyan-60); }
-.border_color_cyan_70 { border-color: var(--color-cyan-70); }
-.border_color_cyan_80 { border-color: var(--color-cyan-80); }
-.border_color_cyan_90 { border-color: var(--color-cyan-90); }
-.border_color_cyan_95 { border-color: var(--color-cyan-95); }
-.border_color_cyan_99 { border-color: var(--color-cyan-99); }
 .border_color_ds_atomic_neutral_40 { border-color: var(--ds-atomic-neutral-40); }
 .border_color_ds_atomic_neutral_90 { border-color: var(--ds-atomic-neutral-90); }
 .border_color_fill_alternative { border-color: var(--color-fill-alternative); }
 .border_color_fill_normal { border-color: var(--color-fill-normal); }
 .border_color_fill_strong { border-color: var(--color-fill-strong); }
-.border_color_green_0 { border-color: var(--color-green-0); }
-.border_color_green_10 { border-color: var(--color-green-10); }
-.border_color_green_100 { border-color: var(--color-green-100); }
-.border_color_green_20 { border-color: var(--color-green-20); }
-.border_color_green_30 { border-color: var(--color-green-30); }
-.border_color_green_40 { border-color: var(--color-green-40); }
-.border_color_green_50 { border-color: var(--color-green-50); }
-.border_color_green_60 { border-color: var(--color-green-60); }
-.border_color_green_70 { border-color: var(--color-green-70); }
-.border_color_green_80 { border-color: var(--color-green-80); }
-.border_color_green_90 { border-color: var(--color-green-90); }
-.border_color_green_95 { border-color: var(--color-green-95); }
-.border_color_green_99 { border-color: var(--color-green-99); }
 .border_color_interaction_disable { border-color: var(--color-interaction-disable); }
 .border_color_interaction_inactive { border-color: var(--color-interaction-inactive); }
 .border_color_inverse_background { border-color: var(--color-inverse-background); }
@@ -1167,33 +960,6 @@ Breakpoint는 media query 조건으로 사용하므로 단일 속성 유틸리�
 .border_color_label_neutral { border-color: var(--color-label-neutral); }
 .border_color_label_normal { border-color: var(--color-label-normal); }
 .border_color_label_strong { border-color: var(--color-label-strong); }
-.border_color_light_blue_0 { border-color: var(--color-light-blue-0); }
-.border_color_light_blue_10 { border-color: var(--color-light-blue-10); }
-.border_color_light_blue_100 { border-color: var(--color-light-blue-100); }
-.border_color_light_blue_20 { border-color: var(--color-light-blue-20); }
-.border_color_light_blue_30 { border-color: var(--color-light-blue-30); }
-.border_color_light_blue_40 { border-color: var(--color-light-blue-40); }
-.border_color_light_blue_50 { border-color: var(--color-light-blue-50); }
-.border_color_light_blue_60 { border-color: var(--color-light-blue-60); }
-.border_color_light_blue_70 { border-color: var(--color-light-blue-70); }
-.border_color_light_blue_80 { border-color: var(--color-light-blue-80); }
-.border_color_light_blue_90 { border-color: var(--color-light-blue-90); }
-.border_color_light_blue_95 { border-color: var(--color-light-blue-95); }
-.border_color_light_blue_99 { border-color: var(--color-light-blue-99); }
-.border_color_lime_0 { border-color: var(--color-lime-0); }
-.border_color_lime_10 { border-color: var(--color-lime-10); }
-.border_color_lime_100 { border-color: var(--color-lime-100); }
-.border_color_lime_20 { border-color: var(--color-lime-20); }
-.border_color_lime_30 { border-color: var(--color-lime-30); }
-.border_color_lime_37 { border-color: var(--color-lime-37); }
-.border_color_lime_40 { border-color: var(--color-lime-40); }
-.border_color_lime_50 { border-color: var(--color-lime-50); }
-.border_color_lime_60 { border-color: var(--color-lime-60); }
-.border_color_lime_70 { border-color: var(--color-lime-70); }
-.border_color_lime_80 { border-color: var(--color-lime-80); }
-.border_color_lime_90 { border-color: var(--color-lime-90); }
-.border_color_lime_95 { border-color: var(--color-lime-95); }
-.border_color_lime_99 { border-color: var(--color-lime-99); }
 .border_color_line_normal_alternative { border-color: var(--color-line-normal-alternative); }
 .border_color_line_normal_neutral { border-color: var(--color-line-normal-neutral); }
 .border_color_line_normal_normal { border-color: var(--color-line-normal-normal); }
@@ -1223,105 +989,12 @@ Breakpoint는 media query 조건으로 사용하므로 단일 속성 유틸리�
 .border_color_neutral_95 { border-color: var(--color-neutral-95); }
 .border_color_neutral_97 { border-color: var(--color-neutral-97); }
 .border_color_neutral_99 { border-color: var(--color-neutral-99); }
-.border_color_orange_0 { border-color: var(--color-orange-0); }
-.border_color_orange_10 { border-color: var(--color-orange-10); }
-.border_color_orange_100 { border-color: var(--color-orange-100); }
-.border_color_orange_20 { border-color: var(--color-orange-20); }
-.border_color_orange_30 { border-color: var(--color-orange-30); }
-.border_color_orange_39 { border-color: var(--color-orange-39); }
-.border_color_orange_40 { border-color: var(--color-orange-40); }
-.border_color_orange_50 { border-color: var(--color-orange-50); }
-.border_color_orange_60 { border-color: var(--color-orange-60); }
-.border_color_orange_70 { border-color: var(--color-orange-70); }
-.border_color_orange_80 { border-color: var(--color-orange-80); }
-.border_color_orange_90 { border-color: var(--color-orange-90); }
-.border_color_orange_95 { border-color: var(--color-orange-95); }
-.border_color_orange_99 { border-color: var(--color-orange-99); }
-.border_color_pink_0 { border-color: var(--color-pink-0); }
-.border_color_pink_10 { border-color: var(--color-pink-10); }
-.border_color_pink_100 { border-color: var(--color-pink-100); }
-.border_color_pink_20 { border-color: var(--color-pink-20); }
-.border_color_pink_30 { border-color: var(--color-pink-30); }
-.border_color_pink_40 { border-color: var(--color-pink-40); }
-.border_color_pink_46 { border-color: var(--color-pink-46); }
-.border_color_pink_50 { border-color: var(--color-pink-50); }
-.border_color_pink_60 { border-color: var(--color-pink-60); }
-.border_color_pink_70 { border-color: var(--color-pink-70); }
-.border_color_pink_80 { border-color: var(--color-pink-80); }
-.border_color_pink_90 { border-color: var(--color-pink-90); }
-.border_color_pink_95 { border-color: var(--color-pink-95); }
-.border_color_pink_99 { border-color: var(--color-pink-99); }
-.border_color_purple_0 { border-color: var(--color-purple-0); }
-.border_color_purple_10 { border-color: var(--color-purple-10); }
-.border_color_purple_100 { border-color: var(--color-purple-100); }
-.border_color_purple_20 { border-color: var(--color-purple-20); }
-.border_color_purple_30 { border-color: var(--color-purple-30); }
-.border_color_purple_40 { border-color: var(--color-purple-40); }
-.border_color_purple_50 { border-color: var(--color-purple-50); }
-.border_color_purple_60 { border-color: var(--color-purple-60); }
-.border_color_purple_70 { border-color: var(--color-purple-70); }
-.border_color_purple_80 { border-color: var(--color-purple-80); }
-.border_color_purple_90 { border-color: var(--color-purple-90); }
-.border_color_purple_95 { border-color: var(--color-purple-95); }
-.border_color_purple_99 { border-color: var(--color-purple-99); }
-.border_color_red_0 { border-color: var(--color-red-0); }
-.border_color_red_10 { border-color: var(--color-red-10); }
-.border_color_red_100 { border-color: var(--color-red-100); }
-.border_color_red_20 { border-color: var(--color-red-20); }
-.border_color_red_30 { border-color: var(--color-red-30); }
-.border_color_red_40 { border-color: var(--color-red-40); }
-.border_color_red_50 { border-color: var(--color-red-50); }
-.border_color_red_60 { border-color: var(--color-red-60); }
-.border_color_red_70 { border-color: var(--color-red-70); }
-.border_color_red_80 { border-color: var(--color-red-80); }
-.border_color_red_90 { border-color: var(--color-red-90); }
-.border_color_red_95 { border-color: var(--color-red-95); }
-.border_color_red_99 { border-color: var(--color-red-99); }
-.border_color_red_orange_0 { border-color: var(--color-red-orange-0); }
-.border_color_red_orange_10 { border-color: var(--color-red-orange-10); }
-.border_color_red_orange_100 { border-color: var(--color-red-orange-100); }
-.border_color_red_orange_20 { border-color: var(--color-red-orange-20); }
-.border_color_red_orange_30 { border-color: var(--color-red-orange-30); }
-.border_color_red_orange_40 { border-color: var(--color-red-orange-40); }
-.border_color_red_orange_48 { border-color: var(--color-red-orange-48); }
-.border_color_red_orange_50 { border-color: var(--color-red-orange-50); }
-.border_color_red_orange_60 { border-color: var(--color-red-orange-60); }
-.border_color_red_orange_70 { border-color: var(--color-red-orange-70); }
-.border_color_red_orange_80 { border-color: var(--color-red-orange-80); }
-.border_color_red_orange_90 { border-color: var(--color-red-orange-90); }
-.border_color_red_orange_95 { border-color: var(--color-red-orange-95); }
-.border_color_red_orange_99 { border-color: var(--color-red-orange-99); }
 .border_color_static_black { border-color: var(--color-static-black); }
 .border_color_static_white { border-color: var(--color-static-white); }
 .border_color_status_cautionary { border-color: var(--color-status-cautionary); }
 .border_color_status_negative { border-color: var(--color-status-negative); }
 .border_color_status_positive { border-color: var(--color-status-positive); }
-.border_color_violet_0 { border-color: var(--color-violet-0); }
-.border_color_violet_10 { border-color: var(--color-violet-10); }
-.border_color_violet_100 { border-color: var(--color-violet-100); }
-.border_color_violet_20 { border-color: var(--color-violet-20); }
-.border_color_violet_30 { border-color: var(--color-violet-30); }
-.border_color_violet_40 { border-color: var(--color-violet-40); }
-.border_color_violet_45 { border-color: var(--color-violet-45); }
-.border_color_violet_50 { border-color: var(--color-violet-50); }
-.border_color_violet_60 { border-color: var(--color-violet-60); }
-.border_color_violet_70 { border-color: var(--color-violet-70); }
-.border_color_violet_80 { border-color: var(--color-violet-80); }
-.border_color_violet_90 { border-color: var(--color-violet-90); }
-.border_color_violet_95 { border-color: var(--color-violet-95); }
-.border_color_violet_99 { border-color: var(--color-violet-99); }
 .border_color_white { border-color: var(--color-white); }
-.border_color_yellow_0 { border-color: var(--color-yellow-0); }
-.border_color_yellow_10 { border-color: var(--color-yellow-10); }
-.border_color_yellow_100 { border-color: var(--color-yellow-100); }
-.border_color_yellow_20 { border-color: var(--color-yellow-20); }
-.border_color_yellow_30 { border-color: var(--color-yellow-30); }
-.border_color_yellow_40 { border-color: var(--color-yellow-40); }
-.border_color_yellow_50 { border-color: var(--color-yellow-50); }
-.border_color_yellow_60 { border-color: var(--color-yellow-60); }
-.border_color_yellow_70 { border-color: var(--color-yellow-70); }
-.border_color_yellow_80 { border-color: var(--color-yellow-80); }
-.border_color_yellow_90 { border-color: var(--color-yellow-90); }
 .border_width_0_5 { border-width: var(--border-0-5); }
 .border_width_1 { border-width: var(--border-1); }
 .border_width_2 { border-width: var(--border-2); }
@@ -1366,25 +1039,22 @@ Breakpoint는 media query 조건으로 사용하므로 단일 속성 유틸리�
 .color_background_transparent_normal { color: var(--color-background-transparent-normal); }
 .color_background_transparent_strong { color: var(--color-background-transparent-strong); }
 .color_black { color: var(--color-black); }
-.color_blue_0 { color: var(--color-blue-0); }
-.color_blue_10 { color: var(--color-blue-10); }
-.color_blue_100 { color: var(--color-blue-100); }
-.color_blue_20 { color: var(--color-blue-20); }
-.color_blue_30 { color: var(--color-blue-30); }
-.color_blue_40 { color: var(--color-blue-40); }
-.color_blue_45 { color: var(--color-blue-45); }
-.color_blue_50 { color: var(--color-blue-50); }
-.color_blue_55 { color: var(--color-blue-55); }
-.color_blue_60 { color: var(--color-blue-60); }
-.color_blue_65 { color: var(--color-blue-65); }
-.color_blue_70 { color: var(--color-blue-70); }
-.color_blue_80 { color: var(--color-blue-80); }
-.color_blue_90 { color: var(--color-blue-90); }
-.color_blue_95 { color: var(--color-blue-95); }
-.color_blue_99 { color: var(--color-blue-99); }
-.color_brand_accent { color: var(--color-brand-accent); }
 .color_brand_on_primary { color: var(--color-brand-on-primary); }
+.color_brand_on_secondary { color: var(--color-brand-on-secondary); }
 .color_brand_primary { color: var(--color-brand-primary); }
+.color_brand_primary_0 { color: var(--color-brand-primary-0); }
+.color_brand_primary_10 { color: var(--color-brand-primary-10); }
+.color_brand_primary_20 { color: var(--color-brand-primary-20); }
+.color_brand_primary_30 { color: var(--color-brand-primary-30); }
+.color_brand_primary_40 { color: var(--color-brand-primary-40); }
+.color_brand_primary_50 { color: var(--color-brand-primary-50); }
+.color_brand_primary_60 { color: var(--color-brand-primary-60); }
+.color_brand_primary_70 { color: var(--color-brand-primary-70); }
+.color_brand_primary_80 { color: var(--color-brand-primary-80); }
+.color_brand_primary_90 { color: var(--color-brand-primary-90); }
+.color_brand_primary_95 { color: var(--color-brand-primary-95); }
+.color_brand_primary_99 { color: var(--color-brand-primary-99); }
+.color_brand_primary_100 { color: var(--color-brand-primary-100); }
 .color_brand_secondary { color: var(--color-brand-secondary); }
 .color_common_0 { color: var(--color-common-0); }
 .color_common_100 { color: var(--color-common-100); }
@@ -1411,37 +1081,11 @@ Breakpoint는 media query 조건으로 사용하므로 단일 속성 유틸리�
 .color_cool_neutral_97 { color: var(--color-cool-neutral-97); }
 .color_cool_neutral_98 { color: var(--color-cool-neutral-98); }
 .color_cool_neutral_99 { color: var(--color-cool-neutral-99); }
-.color_cyan_0 { color: var(--color-cyan-0); }
-.color_cyan_10 { color: var(--color-cyan-10); }
-.color_cyan_100 { color: var(--color-cyan-100); }
-.color_cyan_20 { color: var(--color-cyan-20); }
-.color_cyan_30 { color: var(--color-cyan-30); }
-.color_cyan_40 { color: var(--color-cyan-40); }
-.color_cyan_50 { color: var(--color-cyan-50); }
-.color_cyan_60 { color: var(--color-cyan-60); }
-.color_cyan_70 { color: var(--color-cyan-70); }
-.color_cyan_80 { color: var(--color-cyan-80); }
-.color_cyan_90 { color: var(--color-cyan-90); }
-.color_cyan_95 { color: var(--color-cyan-95); }
-.color_cyan_99 { color: var(--color-cyan-99); }
 .color_ds_atomic_neutral_40 { color: var(--ds-atomic-neutral-40); }
 .color_ds_atomic_neutral_90 { color: var(--ds-atomic-neutral-90); }
 .color_fill_alternative { color: var(--color-fill-alternative); }
 .color_fill_normal { color: var(--color-fill-normal); }
 .color_fill_strong { color: var(--color-fill-strong); }
-.color_green_0 { color: var(--color-green-0); }
-.color_green_10 { color: var(--color-green-10); }
-.color_green_100 { color: var(--color-green-100); }
-.color_green_20 { color: var(--color-green-20); }
-.color_green_30 { color: var(--color-green-30); }
-.color_green_40 { color: var(--color-green-40); }
-.color_green_50 { color: var(--color-green-50); }
-.color_green_60 { color: var(--color-green-60); }
-.color_green_70 { color: var(--color-green-70); }
-.color_green_80 { color: var(--color-green-80); }
-.color_green_90 { color: var(--color-green-90); }
-.color_green_95 { color: var(--color-green-95); }
-.color_green_99 { color: var(--color-green-99); }
 .color_interaction_disable { color: var(--color-interaction-disable); }
 .color_interaction_inactive { color: var(--color-interaction-inactive); }
 .color_inverse_background { color: var(--color-inverse-background); }
@@ -1453,33 +1097,6 @@ Breakpoint는 media query 조건으로 사용하므로 단일 속성 유틸리�
 .color_label_neutral { color: var(--color-label-neutral); }
 .color_label_normal { color: var(--color-label-normal); }
 .color_label_strong { color: var(--color-label-strong); }
-.color_light_blue_0 { color: var(--color-light-blue-0); }
-.color_light_blue_10 { color: var(--color-light-blue-10); }
-.color_light_blue_100 { color: var(--color-light-blue-100); }
-.color_light_blue_20 { color: var(--color-light-blue-20); }
-.color_light_blue_30 { color: var(--color-light-blue-30); }
-.color_light_blue_40 { color: var(--color-light-blue-40); }
-.color_light_blue_50 { color: var(--color-light-blue-50); }
-.color_light_blue_60 { color: var(--color-light-blue-60); }
-.color_light_blue_70 { color: var(--color-light-blue-70); }
-.color_light_blue_80 { color: var(--color-light-blue-80); }
-.color_light_blue_90 { color: var(--color-light-blue-90); }
-.color_light_blue_95 { color: var(--color-light-blue-95); }
-.color_light_blue_99 { color: var(--color-light-blue-99); }
-.color_lime_0 { color: var(--color-lime-0); }
-.color_lime_10 { color: var(--color-lime-10); }
-.color_lime_100 { color: var(--color-lime-100); }
-.color_lime_20 { color: var(--color-lime-20); }
-.color_lime_30 { color: var(--color-lime-30); }
-.color_lime_37 { color: var(--color-lime-37); }
-.color_lime_40 { color: var(--color-lime-40); }
-.color_lime_50 { color: var(--color-lime-50); }
-.color_lime_60 { color: var(--color-lime-60); }
-.color_lime_70 { color: var(--color-lime-70); }
-.color_lime_80 { color: var(--color-lime-80); }
-.color_lime_90 { color: var(--color-lime-90); }
-.color_lime_95 { color: var(--color-lime-95); }
-.color_lime_99 { color: var(--color-lime-99); }
 .color_line_normal_alternative { color: var(--color-line-normal-alternative); }
 .color_line_normal_neutral { color: var(--color-line-normal-neutral); }
 .color_line_normal_normal { color: var(--color-line-normal-normal); }
@@ -1509,105 +1126,12 @@ Breakpoint는 media query 조건으로 사용하므로 단일 속성 유틸리�
 .color_neutral_95 { color: var(--color-neutral-95); }
 .color_neutral_97 { color: var(--color-neutral-97); }
 .color_neutral_99 { color: var(--color-neutral-99); }
-.color_orange_0 { color: var(--color-orange-0); }
-.color_orange_10 { color: var(--color-orange-10); }
-.color_orange_100 { color: var(--color-orange-100); }
-.color_orange_20 { color: var(--color-orange-20); }
-.color_orange_30 { color: var(--color-orange-30); }
-.color_orange_39 { color: var(--color-orange-39); }
-.color_orange_40 { color: var(--color-orange-40); }
-.color_orange_50 { color: var(--color-orange-50); }
-.color_orange_60 { color: var(--color-orange-60); }
-.color_orange_70 { color: var(--color-orange-70); }
-.color_orange_80 { color: var(--color-orange-80); }
-.color_orange_90 { color: var(--color-orange-90); }
-.color_orange_95 { color: var(--color-orange-95); }
-.color_orange_99 { color: var(--color-orange-99); }
-.color_pink_0 { color: var(--color-pink-0); }
-.color_pink_10 { color: var(--color-pink-10); }
-.color_pink_100 { color: var(--color-pink-100); }
-.color_pink_20 { color: var(--color-pink-20); }
-.color_pink_30 { color: var(--color-pink-30); }
-.color_pink_40 { color: var(--color-pink-40); }
-.color_pink_46 { color: var(--color-pink-46); }
-.color_pink_50 { color: var(--color-pink-50); }
-.color_pink_60 { color: var(--color-pink-60); }
-.color_pink_70 { color: var(--color-pink-70); }
-.color_pink_80 { color: var(--color-pink-80); }
-.color_pink_90 { color: var(--color-pink-90); }
-.color_pink_95 { color: var(--color-pink-95); }
-.color_pink_99 { color: var(--color-pink-99); }
-.color_purple_0 { color: var(--color-purple-0); }
-.color_purple_10 { color: var(--color-purple-10); }
-.color_purple_100 { color: var(--color-purple-100); }
-.color_purple_20 { color: var(--color-purple-20); }
-.color_purple_30 { color: var(--color-purple-30); }
-.color_purple_40 { color: var(--color-purple-40); }
-.color_purple_50 { color: var(--color-purple-50); }
-.color_purple_60 { color: var(--color-purple-60); }
-.color_purple_70 { color: var(--color-purple-70); }
-.color_purple_80 { color: var(--color-purple-80); }
-.color_purple_90 { color: var(--color-purple-90); }
-.color_purple_95 { color: var(--color-purple-95); }
-.color_purple_99 { color: var(--color-purple-99); }
-.color_red_0 { color: var(--color-red-0); }
-.color_red_10 { color: var(--color-red-10); }
-.color_red_100 { color: var(--color-red-100); }
-.color_red_20 { color: var(--color-red-20); }
-.color_red_30 { color: var(--color-red-30); }
-.color_red_40 { color: var(--color-red-40); }
-.color_red_50 { color: var(--color-red-50); }
-.color_red_60 { color: var(--color-red-60); }
-.color_red_70 { color: var(--color-red-70); }
-.color_red_80 { color: var(--color-red-80); }
-.color_red_90 { color: var(--color-red-90); }
-.color_red_95 { color: var(--color-red-95); }
-.color_red_99 { color: var(--color-red-99); }
-.color_red_orange_0 { color: var(--color-red-orange-0); }
-.color_red_orange_10 { color: var(--color-red-orange-10); }
-.color_red_orange_100 { color: var(--color-red-orange-100); }
-.color_red_orange_20 { color: var(--color-red-orange-20); }
-.color_red_orange_30 { color: var(--color-red-orange-30); }
-.color_red_orange_40 { color: var(--color-red-orange-40); }
-.color_red_orange_48 { color: var(--color-red-orange-48); }
-.color_red_orange_50 { color: var(--color-red-orange-50); }
-.color_red_orange_60 { color: var(--color-red-orange-60); }
-.color_red_orange_70 { color: var(--color-red-orange-70); }
-.color_red_orange_80 { color: var(--color-red-orange-80); }
-.color_red_orange_90 { color: var(--color-red-orange-90); }
-.color_red_orange_95 { color: var(--color-red-orange-95); }
-.color_red_orange_99 { color: var(--color-red-orange-99); }
 .color_static_black { color: var(--color-static-black); }
 .color_static_white { color: var(--color-static-white); }
 .color_status_cautionary { color: var(--color-status-cautionary); }
 .color_status_negative { color: var(--color-status-negative); }
 .color_status_positive { color: var(--color-status-positive); }
-.color_violet_0 { color: var(--color-violet-0); }
-.color_violet_10 { color: var(--color-violet-10); }
-.color_violet_100 { color: var(--color-violet-100); }
-.color_violet_20 { color: var(--color-violet-20); }
-.color_violet_30 { color: var(--color-violet-30); }
-.color_violet_40 { color: var(--color-violet-40); }
-.color_violet_45 { color: var(--color-violet-45); }
-.color_violet_50 { color: var(--color-violet-50); }
-.color_violet_60 { color: var(--color-violet-60); }
-.color_violet_70 { color: var(--color-violet-70); }
-.color_violet_80 { color: var(--color-violet-80); }
-.color_violet_90 { color: var(--color-violet-90); }
-.color_violet_95 { color: var(--color-violet-95); }
-.color_violet_99 { color: var(--color-violet-99); }
 .color_white { color: var(--color-white); }
-.color_yellow_0 { color: var(--color-yellow-0); }
-.color_yellow_10 { color: var(--color-yellow-10); }
-.color_yellow_100 { color: var(--color-yellow-100); }
-.color_yellow_20 { color: var(--color-yellow-20); }
-.color_yellow_30 { color: var(--color-yellow-30); }
-.color_yellow_40 { color: var(--color-yellow-40); }
-.color_yellow_50 { color: var(--color-yellow-50); }
-.color_yellow_60 { color: var(--color-yellow-60); }
-.color_yellow_70 { color: var(--color-yellow-70); }
-.color_yellow_80 { color: var(--color-yellow-80); }
-.color_yellow_90 { color: var(--color-yellow-90); }
 .duration_fast { transition-duration: var(--motion-duration-fast); }
 .duration_normal { transition-duration: var(--motion-duration-normal); }
 .duration_slow { transition-duration: var(--motion-duration-slow); }
@@ -1667,6 +1191,8 @@ Breakpoint는 media query 조건으로 사용하므로 단일 속성 유틸리�
 .gap_y_8 { row-gap: var(--spacing-gap-vertical-8); }
 .h_100p { height: 100%; }
 .h_10p { height: 10%; }
+.h_8 { height: var(--size-8); }
+.h_12 { height: var(--size-12); }
 .h_16 { height: var(--size-16); }
 .h_112 { height: var(--size-112); }
 .h_128 { height: var(--size-128); }
@@ -1846,6 +1372,23 @@ Breakpoint는 media query 조건으로 사용하므로 단일 속성 유틸리�
 .shadow_2 { box-shadow: var(--shadow-2); }
 .shadow_3 { box-shadow: var(--shadow-3); }
 .shadow_4 { box-shadow: var(--shadow-4); }
+.icon_8 { width: var(--size-8); height: var(--size-8); flex: 0 0 var(--size-8); }
+.icon_12 { width: var(--size-12); height: var(--size-12); flex: 0 0 var(--size-12); }
+.icon_16 { width: var(--size-16); height: var(--size-16); flex: 0 0 var(--size-16); }
+.icon_20 { width: var(--size-20); height: var(--size-20); flex: 0 0 var(--size-20); }
+.icon_24 { width: var(--size-24); height: var(--size-24); flex: 0 0 var(--size-24); }
+.icon_28 { width: var(--size-28); height: var(--size-28); flex: 0 0 var(--size-28); }
+.icon_32 { width: var(--size-32); height: var(--size-32); flex: 0 0 var(--size-32); }
+.icon_36 { width: var(--size-36); height: var(--size-36); flex: 0 0 var(--size-36); }
+.icon_40 { width: var(--size-40); height: var(--size-40); flex: 0 0 var(--size-40); }
+.icon_44 { width: var(--size-44); height: var(--size-44); flex: 0 0 var(--size-44); }
+.icon_48 { width: var(--size-48); height: var(--size-48); flex: 0 0 var(--size-48); }
+.icon_52 { width: var(--size-52); height: var(--size-52); flex: 0 0 var(--size-52); }
+.icon_56 { width: var(--size-56); height: var(--size-56); flex: 0 0 var(--size-56); }
+.icon_60 { width: var(--size-60); height: var(--size-60); flex: 0 0 var(--size-60); }
+.icon_64 { width: var(--size-64); height: var(--size-64); flex: 0 0 var(--size-64); }
+.size_8 { width: var(--size-8); height: var(--size-8); }
+.size_12 { width: var(--size-12); height: var(--size-12); }
 .size_16 { width: var(--size-16); height: var(--size-16); }
 .size_20 { width: var(--size-20); height: var(--size-20); }
 .size_24 { width: var(--size-24); height: var(--size-24); }
@@ -1867,6 +1410,8 @@ Breakpoint는 media query 조건으로 사용하므로 단일 속성 유틸리�
 .size_320 { width: var(--size-320); height: var(--size-320); }
 .w_100p { width: 100%; }
 .w_10p { width: 10%; }
+.w_8 { width: var(--size-8); }
+.w_12 { width: var(--size-12); }
 .w_16 { width: var(--size-16); }
 .w_112 { width: var(--size-112); }
 .w_128 { width: var(--size-128); }
@@ -1915,7 +1460,7 @@ Breakpoint는 media query 조건으로 사용하므로 단일 속성 유틸리�
 
 ## 6. 공통 레이아웃 유틸리티
 
-아래 유틸리티는 토큰만으로 표현하기 어려운 display, flex, grid, 정렬, overflow, 텍스트 처리, 접근성 패턴을 제공한다. 클래스명은 소문자 `snake_case`를 사용한다.
+아래 유틸리티는 `utilities.css`에 넣는다. 토큰만으로 표현하기 어려운 display, flex, grid, 정렬, overflow, 텍스트 처리, 접근성 패턴을 제공하며 클래스명은 소문자 `snake_case`를 사용한다.
 
 ```css
 /* 표시 */
@@ -2080,7 +1625,7 @@ Breakpoint는 media query 조건으로 사용하므로 단일 속성 유틸리�
 ### 7.2 이름 규칙
 
 - 소문자 `snake_case`만 사용한다.
-- camelCase, PascalCase, BEM, 의미 없는 숫자 이름을 사용하지 않는다.
+- camelCase, PascalCase, BEM, 의미 없는 숫자 이름을 사용하지 않는다. 단, `.icon_16`, `.gap_16`처럼 토큰 값을 명확히 나타내는 유틸리티 숫자 접미사는 허용한다.
 - 색상이나 모양만으로 컴포넌트 이름을 만들지 않는다. `.btn_blue_round`보다 `.btn_content_submit`을 사용한다.
 - 컴포넌트 이름은 렌더링 태그에 종속되지 않는다. 동일한 버튼형 스펙은 `button`, `a`, Router Link에 같은 클래스를 적용할 수 있다.
 - `middle`은 사용하지 않는다. 고정 너비는 `fixed`, 가변 너비는 `responsive`를 사용한다.
@@ -2102,6 +1647,8 @@ Breakpoint는 media query 조건으로 사용하므로 단일 속성 유틸리�
 
 ## 8. 컴포넌트 작성 원칙
 
+메인 화면에서만 사용하는 전역 컴포넌트 스타일은 `main.css`, 세부 페이지에서만 사용하는 전역 컴포넌트 스타일은 `sub.css`에 넣는다. 양쪽에서 함께 사용하는 공통 컴포넌트는 프로젝트의 컴포넌트 전용 스타일 체계에 두며 `foundation.css`, `reset.css`, `utilities.css`에 섞지 않는다.
+
 컴포넌트의 시각 스펙에는 다음 속성을 검토한다.
 
 - display, flex/grid 정렬
@@ -2122,20 +1669,18 @@ Breakpoint는 media query 조건으로 사용하므로 단일 속성 유틸리�
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: var(--size-40);
-    padding: 0 var(--spacing-padding-horizontal-24);
-    gap: var(--spacing-gap-horizontal-8);
-    border: 0;
-    border-radius: var(--radius-8);
-    background: var(--color-brand-primary);
-    color: var(--color-brand-on-primary);
-    font-size: var(--font-size-16);
     font-weight: var(--font-weight-500);
-    line-height: var(--line-height-24);
     white-space: nowrap;
     appearance: none;
     cursor: pointer;
-    text-decoration: none;
+    min-height: var(--size-40);
+    padding: 0 var(--spacing-padding-horizontal-24);
+    font-size: var(--font-size-14);
+    line-height: var(--line-height-20);
+    border: 0;
+    border-radius: var(--radius-0);
+    background: var(--color-brand-primary);
+    color: var(--color-brand-on-primary);
 }
 ```
 
@@ -2162,12 +1707,38 @@ Breakpoint는 media query 조건으로 사용하므로 단일 속성 유틸리�
 ### 8.2 컴포넌트 기준 적용 방식
 
 - 아래 규격은 기준 디자인 시스템의 기본 컴포넌트와 실제 적용 프로젝트에서 확인된 컴포넌트 유형을 통합한 공통 기준이다.
-- 프로젝트 전용 클래스명, 브랜드명과 고유 색상은 공통 규격으로 승격하지 않는다. 색상은 Foundation 안에서 프로젝트 목적에 맞게 선택한다.
+- 프로젝트 전용 클래스명, 브랜드명과 고유 색상값은 공통 규격으로 승격하지 않는다. 컴포넌트 색상은 Foundation에서 확정된 `--color-brand-primary`, `--color-brand-secondary`, `--color-brand-on-primary`, `--color-brand-on-secondary` 역할 토큰으로 연결한다.
+- 공통 컴포넌트를 만들기 전에는 메인 색상이 반드시 확정되어 있어야 한다. 다만 `Filled`라는 이름만 보고 모든 컴포넌트에 메인 색상을 일괄 적용하지 않는다. Button·Chip·Badge의 Primary Filled처럼 원본 규격에서 Primary 색상을 사용하는 위치만 `--color-brand-primary`와 `--color-brand-on-primary`로 연결한다.
+- Tab의 기본 Filled, Text Input, Textarea, Select처럼 원본 규격에서 Surface·Fill·Label Semantic Color를 사용하는 컴포넌트는 해당 Semantic 토큰을 유지한다. 메인 색상은 active·selected·checked 등 원본에서 강조색을 사용하는 상태에만 적용한다.
+- 사용자가 Secondary 역할을 요청하고 해당 컴포넌트가 Primary 색상 위치를 갖는 경우에만 그 위치를 `--color-brand-secondary`와 `--color-brand-on-secondary`로 교체한다. 서브 색상이 없는 프로젝트에서는 임의의 보조 색상을 만들지 않고 Foundation 매핑을 따른다.
+- 색상 HEX/RGB 값은 프로젝트마다 달라질 수 있지만 컴포넌트 CSS에 값을 직접 고정하지 않는다. 메인·서브 색상이 변경되면 컴포넌트 코드를 다시 만들지 않고 역할 토큰 값의 변경만으로 전체 공통 컴포넌트에 반영되어야 한다.
 - 컴포넌트의 레이아웃, 크기, padding, 타이포그래피, radius, border, 상태 변화는 아래 표를 기준으로 재현한다.
 - CSS 클래스 하나에 모든 속성을 넣는 방식은 복사·붙여넣기 예시용이다. 실제 프로젝트는 CSS Modules, 공통 컴포넌트, variant props, SCSS mixin 등 적절한 구조를 사용할 수 있다.
 - 코드 구조가 달라도 최종 computed style은 아래 규격과 같아야 한다.
 - 기존 프로젝트에 이미 공통 컴포넌트가 있으면 태그나 클래스 구조를 강제로 교체하지 않고 기존 API에 아래 스펙을 매핑한다.
 - 아래 목록에 없는 프로젝트 특화 컴포넌트는 가장 가까운 공통 유형을 기반으로 추가하되 먼저 Foundation 토큰과 4px 배수 규칙을 확인한다.
+
+#### 컴포넌트 Variant 결정 규칙
+
+- 컴포넌트 생성 시 `컴포넌트 종류 → variant → radius modifier → size → state → 색상 역할` 순서로 스펙을 결정한다.
+- Size는 해당 컴포넌트 표의 높이·padding·font-size·line-height만 바꾼다. Size가 달라져도 variant의 border, radius, display, 정렬, 배경 방식은 바꾸지 않는다.
+- `Filled`는 기본형, `Filled Rounded`는 Rounded형, `Filled Full Rounded`는 Full Rounded형이다. `Filled` 요청에 Rounded 규칙을 섞지 않는다. Outline도 같은 원칙을 적용한다.
+- 다른 컴포넌트의 규칙을 가져오지 않는다. 예를 들어 Button Filled와 Tab Filled, Text Input Filled는 이름이 같아도 배경색·상태·cursor·width 규칙이 서로 다르다.
+- 아래 표에 없는 size나 variant는 임의로 보간해 만들지 않는다. 사용자가 추가를 요청하면 가장 가까운 실제 size를 기준으로 설계하되, 추가된 값과 근거를 먼저 명시한다.
+
+| Component | Filled/기본형 | Outline | Radius 규칙 | Primary 색상 적용 위치 |
+| --- | --- | --- | --- | --- |
+| Button | `border: 0` | `1px solid` 역할 색상, Surface 배경 | 기본 `radius-0`, Rounded `radius-8`, Full Rounded `radius-full` | Primary Filled 배경·전경, Primary Outline 보더·글자 |
+| Tab | `border: 0`, 기본 `fill-normal/label-normal` | 기본 `common-0`, Gray Line `line-normal-normal` | 기본 `radius-0`, Rounded `radius-8`, Full Rounded `radius-full` | active·selected 상태 |
+| Text Input | `border: 0`, `fill-normal/label-normal` | `line-solid-0`, `common-100/label-normal` | 기본 `radius-0`, Rounded `radius-8`, Full Rounded `radius-full` | 원본 상태에서 강조색을 쓰는 focus·complete 위치만 |
+| Textarea | `border: 0`, `fill-normal/label-normal` | `line-solid-0`, `common-100/label-normal` | 기본 `radius-0`, Rounded `radius-8` | 원본 상태에서 강조색을 쓰는 focus 위치만 |
+| Select | `border: 0`, `fill-normal/label-normal` | `line-solid-0`, `common-100/label-normal` | 기본 `radius-0`, Rounded `radius-8`, Full Rounded `radius-full` | 원본 상태에서 강조색을 쓰는 focus·open 위치만 |
+| Chip | `border: 0` | 기본 `common-0`, Gray Line `line-normal-normal` | 모든 variant `radius-full` | Primary Filled 배경·전경, selected·active 상태 |
+| Badge | `border: 0` | `1px solid common-0` | 모든 variant `radius-full` | Primary Filled 배경·전경 |
+| Content Tag | `1px solid neutral-90`, `common-100/neutral-40` | 별도 Filled/Outline 구분 없음 | `radius-full` | 적용하지 않음 |
+| Toggle | 상태별 track 배경 | 해당 없음 | Small `radius-20`, Medium `radius-24`, Large `radius-32` | on 상태 track |
+| Checkbox | `2px solid line-solid-strong`, `common-100` | 해당 없음 | `radius-2` | checked·indeterminate 상태 |
+| Radio | `2px solid line-solid-strong`, `common-100` | 해당 없음 | `radius-full` | checked 상태 |
 
 ### 8.3 공통 사이즈 기준
 
@@ -2189,14 +1760,22 @@ Breakpoint는 media query 조건으로 사용하므로 단일 속성 유틸리�
 | Large | `48px` | `0 24px` | `16px` | `20px` | `500` |
 | Xlarge | `60px` | `0 24px` | `16px` | `20px` | `500` |
 
-#### Text Input와 Select
+#### Text Input
 
-| Size | Min-height | Input Padding | Select Padding | Font-size | Line-height |
-| --- | ---: | ---: | ---: | ---: | ---: |
-| Small | `40px` | `0 12px` | `0 12px` | `14px` | `20px` |
-| Medium | `48px` | `0 16px` | `0 16px` | `15px` | `20px` |
-| Large | `52px` | `0 16px` | `0 24px` | `16px` | `24px` |
-| Xlarge | `56px` | `0 16px` | `0 24px` | `16px` | `24px` |
+| Size | Min-height | Padding | Font-size | Line-height |
+| --- | ---: | ---: | ---: | ---: |
+| Small | `40px` | `0 12px` | `14px` | `20px` |
+| Medium | `48px` | `0 16px` | `15px` | `20px` |
+| Large | `52px` | `0 16px` | `16px` | `24px` |
+| Xlarge | `56px` | `0 16px` | `16px` | `24px` |
+
+#### Select
+
+| Size | Min-height | Padding | Font-size | Line-height |
+| --- | ---: | ---: | ---: | ---: |
+| Small | `40px` | `0 12px` | `14px` | `20px` |
+| Medium | `48px` | `0 16px` | `15px` | `20px` |
+| Large | `52px` | `0 24px` | `16px` | `24px` |
 
 #### Textarea
 
@@ -2205,25 +1784,37 @@ Breakpoint는 media query 조건으로 사용하므로 단일 속성 유틸리�
 | Small | `96px` | `12px` | `14px` | `20px` |
 | Medium | `112px` | `12px 16px` | `15px` | `20px` |
 | Large | `128px` | `12px 16px` | `16px` | `24px` |
-| Xlarge | `144px` | `16px` | `16px` | `24px` |
 
-#### Chip, Badge와 Content Tag
+#### Chip
 
-| Size | Height | Padding | Font-size | Line-height |
+| Size | Min-height | Padding | Font-size | Line-height |
 | --- | ---: | ---: | ---: | ---: |
-| Small | `24px` | `0 12px` | `12px` | `16px` |
-| Medium | `32px` | `0 16px` | `14px` | `20px` |
-| Large | `40px` | `0 20px` | `14px` | `20px` |
-| Xlarge | `48px` | `0 24px` | `16px` | `24px` |
+| Small | `32px` | `0 12px` | `14px` | `20px` |
+| Medium | `40px` | `0 16px` | `15px` | `20px` |
+| Large | `48px` | `0 24px` | `16px` | `24px` |
+
+#### Badge
+
+| Size | Padding | Font-size | Line-height |
+| --- | ---: | ---: | ---: |
+| Small | `4px 8px` | `12px` | `16px` |
+| Medium | `4px 10px` | `14px` | `20px` |
+
+#### Content Tag
+
+| Size | Min-height | Padding | Font-size | Line-height |
+| --- | ---: | ---: | ---: | ---: |
+| Small | `24px` | `0 12px` | `12px` | `1` |
+| Medium | `32px` | `0 16px` | `14px` | `1` |
+| Large | `40px` | `0 20px` | `16px` | `1` |
 
 #### Checkbox, Radio와 Toggle
 
 | Size | Checkbox/Radio | Toggle Track | Toggle Padding |
 | --- | ---: | ---: | ---: |
-| Small | `16px × 16px` | `36px × 20px` | `4px` |
-| Medium | `20px × 20px` | `44px × 24px` | `4px` |
-| Large | `24px × 24px` | `52px × 28px` | `4px` |
-| Xlarge | `28px × 28px` | `60px × 32px` | `4px` |
+| Small | `16px × 16px` | `36px × 20px` | `2px` |
+| Medium | `20px × 20px` | `44px × 24px` | `2px` |
+| Large | 지원하지 않음 | `52px × 32px` | `2px` |
 
 사이즈 표의 수치는 Foundation 토큰으로 표현한다. 예를 들어 `32px`은 `var(--size-32)` 또는 동일 값의 컴포넌트 토큰, `16px` 간격은 `var(--spacing-16)`을 사용한다. 기존 의미가 확정된 18px·15px·14px 타이포그래피는 유지하지만 13px 계층은 만들지 않는다.
 
@@ -2251,14 +1842,37 @@ Breakpoint는 media query 조건으로 사용하므로 단일 속성 유틸리�
 #### Button
 
 - 기본 레이아웃은 `inline-flex`, 중앙 정렬, `white-space: nowrap`, `appearance: none`, `cursor: pointer`다.
-- Filled는 `border: 0`, 역할 색상 배경과 대비되는 텍스트 색상을 사용한다.
-- Outline은 `1px solid` 역할 색상 보더, 투명 또는 Surface 배경, 역할 색상 텍스트를 사용한다.
+- Primary Filled는 `border: 0`, `background: var(--color-brand-primary)`, `color: var(--color-brand-on-primary)`를 사용한다. 색상 역할이 생략된 일반 Filled 요청도 Primary로 처리한다.
+- Secondary Filled는 `border: 0`, `background: var(--color-brand-secondary)`, `color: var(--color-brand-on-secondary)`를 사용한다.
+- Primary Outline은 `1px solid var(--color-brand-primary)` 보더와 같은 역할의 텍스트 색상을 사용하고, Secondary Outline은 `--color-brand-secondary`를 같은 방식으로 사용한다. 배경은 투명 또는 해당 프로젝트의 Surface 토큰을 사용한다.
 - 기본 radius는 `var(--radius-0)`, Rounded는 `var(--radius-8)`, Full Rounded는 `var(--radius-full)`이다.
 - Icon 포함형은 텍스트와 아이콘 사이에 `8px` gap을 사용한다. Xlarge에서 더 넓은 간격이 필요하면 `12px`을 사용한다.
 - Icon 전용 버튼은 width와 height를 같은 값으로 만들고 padding을 `0`으로 한다.
 - Shadow 상태는 `var(--shadow-2)`를 사용한다.
 - Disabled는 `background: var(--color-interaction-disable)`, `color: var(--color-label-disable)`, `box-shadow: none`, `cursor: default`를 사용하고 실제 동작도 차단한다.
 - `button`, `a`, Router Link 등 태그가 달라도 같은 역할이면 동일 computed style을 적용한다.
+
+색상 역할이 별도로 지정되지 않은 `Primary Filled Xlarge Button`의 기준 computed style은 아래와 같다. 클래스명과 코드 구조는 프로젝트에 맞게 바꿀 수 있지만 속성 결과는 동일해야 한다.
+
+```css
+.btn_primary_filled_xlarge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: var(--font-weight-500);
+    white-space: nowrap;
+    appearance: none;
+    cursor: pointer;
+    min-height: var(--size-60);
+    padding: 0 var(--spacing-padding-horizontal-24);
+    font-size: var(--font-size-16);
+    line-height: var(--line-height-20);
+    border: 0;
+    border-radius: var(--radius-0);
+    background: var(--color-brand-primary);
+    color: var(--color-brand-on-primary);
+}
+```
 
 #### Tab
 
@@ -2348,11 +1962,11 @@ Breakpoint는 media query 조건으로 사용하므로 단일 속성 유틸리�
 
 ## 11. 프레임워크와 Cascade
 
-- Plain CSS는 Foundation/Reset이 컴포넌트보다 먼저 로드되도록 한다.
-- Tailwind CSS에서는 토큰과 Reset을 `@layer base`, 재사용 컴포넌트를 `@layer components`, 유틸리티를 `@layer utilities`에 둔다.
+- Plain CSS는 `foundation.css → reset.css → utilities.css → main.css 또는 sub.css` 순서로 로드한다.
+- Tailwind CSS에서도 5개 소스 파일의 책임을 유지한다. `foundation.css`의 토큰과 `reset.css`의 Reset은 `@layer base`, `utilities.css`는 `@layer utilities`, 페이지 스타일은 `main.css` 또는 `sub.css`의 `@layer components`에 둔다.
 - Tailwind 프로젝트에서 Reset을 unlayered CSS로 두지 않는다.
 - CSS Modules와 scoped style 안에 `:root`, `html`, `body`, 전역 Reset을 넣지 않는다.
-- CSS-in-JS는 앱 루트에 전역 토큰과 Reset을 한 번만 주입한다.
+- CSS Modules, scoped style과 CSS-in-JS를 사용하는 프로젝트도 5개 전역 CSS 파일을 앱 루트에서 한 번 로드하고 공통 컴포넌트의 지역 스타일만 해당 기술로 관리한다.
 - SSR에서는 서버와 클라이언트의 스타일 로드 순서를 동일하게 유지한다.
 - Portal, Shadow DOM, iframe 안에서도 필요한 토큰과 Reset이 전달되는지 확인한다.
 
@@ -2376,15 +1990,40 @@ Breakpoint는 media query 조건으로 사용하므로 단일 속성 유틸리�
 - 외부 라이브러리 클래스 임의 변경
 - 접근성을 제거하는 태그 변경
 - Reset에서 Checkbox, Radio, Toggle의 외형을 고정하는 규칙
+- 사용자 메인·서브 색상과 동일한 값을 `--color-main`, `--primary-color`, `--sub-color`처럼 다른 이름으로 중복 선언하는 방식
+- 사용자 입력 색상을 `50`이 아닌 다른 단계로 배치하거나 정의된 보간 비율을 임의로 바꾸는 방식
+- 표준 단계 외의 추가 단계, accent 또는 별도 색상군을 사용자 요청 없이 생성하는 방식
+- `foundation.css`에 토큰 이외의 Reset, 클래스 또는 페이지 스타일을 넣는 방식
+- `reset.css`에 3장의 Reset 외 토큰, 유틸리티, 컴포넌트 또는 페이지 스타일을 넣는 방식
+- `utilities.css`에 특정 화면·섹션·컴포넌트 전용 스타일을 넣거나 전역 토큰을 재정의하는 방식
+- `main.css`와 `sub.css`의 코드를 서로 섞거나 두 파일을 모든 페이지에 무조건 함께 로드하는 방식
 
 ## 13. 생성 및 검수 체크리스트
 
+- `foundation.css`, `reset.css`, `utilities.css`, `main.css`, `sub.css` 5개 파일이 생성됐는가
+- `foundation.css`에는 전역 토큰만, `reset.css`에는 3장의 Reset만, `utilities.css`에는 재사용 유틸리티만 있는가
+- `main.css`에는 메인 화면 코드만, `sub.css`에는 세부 페이지 코드만 있으며 서로의 선택자가 섞이지 않았는가
+- 로드 순서가 `foundation.css → reset.css → utilities.css → 해당 페이지 CSS`인가
 - 모든 Foundation 토큰이 전역에서 한 번 정의됐는가
 - 공개 토큰마다 대응 유틸리티가 있는가. 단, font-size 토큰은 타이포그래피 조합 클래스, breakpoint 토큰은 media query 기준에서 사용하는가
 - 유틸리티가 SCSS 반복문 없이 개별 CSS 클래스로 명시되어 있는가
 - `.gap_4`~`.gap_120`, `.px_4`~`.px_120`, `.py_4`~`.py_120`이 4px 단위로 각각 30개 존재하는가
+- `.icon_8`~`.icon_64`가 4px 단위로 존재하고 각각 동일 크기의 `--size-*` 토큰을 참조하는가
 - 0 간격 유틸리티와 `.fs_*` 유틸리티가 없는가
 - 컬러 토큰에 미정의 참조와 중복 선언이 없는가
+- 초기 Foundation에 Common 2개, Neutral/Cool Neutral 40개, 비브랜드 Semantic 55개로 구성된 고정 컬러 토큰 97개가 모두 있는가
+- Neutral과 Cool Neutral의 원본 단계가 전부 존재하며 `95`, `97`, `99`와 Cool Neutral의 `96`, `98`이 누락되지 않았는가
+- 고정 컬러 토큰 97개의 값이 `designSystem-v2.html` 원본과 일치하고 291개의 글자색·배경색·보더색 유틸리티가 연결됐는가
+- 초기 공통 세트에 `_artkorealab`, `_newstant`, `--color-newsroll-*` 등 프로젝트·브랜드 전용 토큰이 섞이지 않았는가
+- 구현 전에 사용자에게 메인 색상(필수)과 서브 색상(선택)을 확인했는가
+- 사용자 메인 색상이 보정 없이 `--color-brand-primary-50`에 설정되고 표준 13단계가 모두 생성됐는가
+- `.color_brand_primary`, `.bg_brand_primary`, `.border_color_brand_primary`가 50 단계 별칭을 사용하고, 각 단계별 3종 유틸리티가 해당 번호 토큰을 참조하는가
+- 새로운 비중립 서브 색상을 제공받았다면 보정 없이 `--color-brand-secondary-50`에 설정되고 표준 13단계와 단계별 3종 유틸리티가 모두 생성됐는가
+- 서브 색상이 Neutral 또는 Cool Neutral이면 `--color-brand-secondary`가 기존 50 단계를 참조하고, 중복되는 `--color-brand-secondary-0~100` 토큰 및 단계별 secondary 유틸리티를 만들지 않았는가
+- 서브 색상을 제공받지 않았다면 `--color-brand-secondary`만 `--color-brand-primary`를 참조하고 번호가 붙은 secondary 토큰이나 유틸리티를 만들지 않았는가
+- `0`과 `100`이 각각 검정과 흰색이며 나머지 단계가 정의된 OKLCH 보간 비율을 따르는가
+- `--color-brand-on-primary`가 메인 색상 위에서 충분한 텍스트·아이콘 대비를 제공하는가
+- `--color-brand-on-secondary`가 서브 색상 위에서 충분한 텍스트·아이콘 대비를 제공하는가
 - 미사용 컬러 토큰을 검사하고 Atomic 팔레트와 실제 불필요 토큰을 구분했는가
 - Reset이 중복 적용되지 않는가
 - 기존 Reset이 있다면 충돌 비교 후 병합했는가
@@ -2404,6 +2043,10 @@ Breakpoint는 media query 조건으로 사용하므로 단일 속성 유틸리�
 - 기존 반응형 체계가 없다면 `1260px`, `992px`, `576px` 참고 기준을 일관되게 적용했는가
 - `prefers-reduced-motion: reduce` 예외가 있는가
 - 컴포넌트의 핵심 스펙이 유틸리티에만 의존하지 않는가
+- 메인 색상이 확정된 뒤 공통 컴포넌트를 만들었으며 Button·Chip·Badge의 Primary Filled처럼 원본에서 Primary 색상을 쓰는 위치만 `--color-brand-primary`와 `--color-brand-on-primary`를 사용하는가
+- Tab 기본 Filled, Text Input, Textarea, Select의 Semantic Fill·Label 색상을 Primary 색상으로 임의 교체하지 않았는가
+- Secondary가 명시된 경우 원본의 Primary 색상 위치만 `--color-brand-secondary`와 `--color-brand-on-secondary`로 교체하고, 컴포넌트 CSS에 프로젝트 HEX/RGB 값을 직접 고정하지 않았는가
+- Filled·Rounded·Full Rounded·Outline의 border와 radius가 해당 컴포넌트의 Variant 표와 일치하며 다른 컴포넌트 규칙을 섞지 않았는가
 - Button, Tab, Text Input, Textarea, Select, Chip, Badge, Toggle, Checkbox, Radio와 Content Module의 필요한 variant·state·size가 8장의 기준과 일치하는가
 - JavaScript 셀렉터와 테스트가 클래스 변경을 반영했는가
 - focus, disabled, readonly, error 상태가 구현됐는가
@@ -2416,17 +2059,23 @@ Breakpoint는 media query 조건으로 사용하므로 단일 속성 유틸리�
 
 이 문서를 전달받은 AI는 다음 순서를 따른다.
 
+구현을 시작하기 전에 사용자가 이미 색상을 명시했는지 확인한다. 명시하지 않았다면 반드시 `메인 색상(필수, HEX 또는 RGB)`과 `서브 색상(선택, HEX 또는 RGB 또는 없음)`을 먼저 질문한다. 메인 색상은 반드시 답을 받은 뒤 브랜드 토큰을 확정하고, 서브 색상은 사용자가 제공한 경우에만 별도 값으로 설정한다.
+
 1. 기존 프로젝트의 스타일 구조와 프레임워크를 먼저 조사한다.
 2. 클래스, 토큰, Reset, 유틸, JavaScript 의존성 인벤토리를 만든다.
 3. 기존명에서 표준명으로 가는 변경표를 제시한다.
 4. 기존 전역 스타일이 있으면 Reset을 통째로 덮어쓰지 않는다.
 5. 신규 프로젝트는 Pretendard를 기본으로 사용하고 기존 프로젝트는 `--font-sans`를 기존 기본 글꼴에 맞게 재정의한다.
-6. Foundation 토큰을 먼저 준비하고 컴포넌트와 유틸리티가 이를 사용하게 한다.
-7. 전역 스크롤바를 숨기지 않고 Checkbox, Radio, Toggle의 외형을 Reset에서 만들지 않는다.
-8. 토큰에 없는 값을 임의로 만들지 않으며 13px 타이포그래피 계층과 가짜 `--color-opacity-*` 토큰을 만들지 않는다.
-9. 유틸리티는 SCSS 반복 생성이 아니라 복사 가능한 개별 CSS 클래스로 작성한다.
-10. font-size 단독 유틸리티와 0 간격 유틸리티를 만들지 않는다.
-11. 기존 breakpoint가 없으면 `1260px`, `992px`, `576px` 참고 기준과 reduced-motion 예외를 적용한다.
-12. 모든 컴포넌트는 8장의 variant·state·size·layout 기준을 사용한다.
-13. 실제 코드 구조는 프로젝트에 맞게 선택하되 최종 시각 스펙과 접근성은 이 문서를 따른다.
-14. 구현 후 토큰, 클래스, JavaScript 셀렉터, 반응형, 접근성을 검수한다.
+6. 프로젝트 구조에 맞는 위치에 `foundation.css`, `reset.css`, `utilities.css`, `main.css`, `sub.css`를 만들고 2.1장의 책임과 로드 순서를 적용한다.
+7. 초기 Foundation에 Common, Neutral, Cool Neutral과 비브랜드 Semantic으로 구성된 고정 컬러 토큰 97개 및 대응 유틸리티 291개를 원본 값 그대로 생성한다.
+8. 메인 색상은 `--color-brand-primary-50`에 원본 그대로 설정하고 표준 13단계와 단계별 글자색·배경색·보더색 유틸리티를 생성한다. 서브 색상이 새로운 비중립 색상일 때만 같은 방식의 secondary 단계 토큰과 유틸리티를 생성한다. Neutral 또는 Cool Neutral이면 기존 계열을 재사용하고, 서브 미입력 시에는 `--color-brand-secondary`만 primary를 참조하게 한다.
+9. 나머지 Foundation 토큰은 `foundation.css`, 모든 재사용 유틸리티는 `utilities.css`에 준비하고 컴포넌트가 이를 사용하게 한다.
+10. 3장의 Reset 코드를 `reset.css`에 그대로 넣고 전역 스크롤바를 숨기거나 Checkbox, Radio, Toggle의 외형을 추가하지 않는다.
+11. 메인 전용 스타일은 `main.css`, 세부 페이지 전용 스타일은 `sub.css`에만 작성한다.
+12. 토큰에 없는 값을 임의로 만들지 않으며 13px 타이포그래피 계층과 가짜 `--color-opacity-*` 토큰을 만들지 않는다.
+13. 유틸리티는 SCSS 반복 생성이 아니라 복사 가능한 개별 CSS 클래스로 작성한다.
+14. font-size 단독 유틸리티와 0 간격 유틸리티를 만들지 않는다.
+15. 기존 breakpoint가 없으면 `1260px`, `992px`, `576px` 참고 기준과 reduced-motion 예외를 적용한다.
+16. 모든 컴포넌트는 8장의 컴포넌트별 variant·state·size·layout 기준을 사용한다. Button·Chip·Badge의 Primary Filled처럼 원본이 Primary 색상을 쓰는 위치만 브랜드 역할 토큰으로 연결하며, Tab·폼 컴포넌트의 Semantic Fill·Label·Line 토큰은 유지한다. Filled 요청에 Rounded radius를 섞거나 다른 컴포넌트의 규칙을 재사용하지 않는다.
+17. 실제 코드 구조는 프로젝트에 맞게 선택하되 최종 시각 스펙과 접근성은 이 문서를 따른다.
+18. 구현 후 토큰, 파일 책임, 클래스, JavaScript 셀렉터, 반응형, 접근성을 검수한다.
