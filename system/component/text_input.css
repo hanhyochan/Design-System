@@ -9,12 +9,12 @@
   min-height: 40px;
   padding: 0 12px;
   border: var(--border-1) solid var(--app-input-border);
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--app-input-text);
   background: var(--app-input-surface);
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-20);
+  line-height: 1.428571;
   cursor: text;
 }
 
@@ -27,7 +27,7 @@
   color: inherit;
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-20);
+  line-height: 1.428571;
 }
 
 .text_input_newsroll_default_small input::placeholder {
@@ -43,12 +43,12 @@
   min-height: 40px;
   padding: 0 12px;
   border: var(--border-2) solid var(--color-accent-foreground-blue);
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--app-input-text);
   background: var(--app-input-surface);
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-20);
+  line-height: 1.428571;
   cursor: text;
 }
 
@@ -61,7 +61,7 @@
   color: inherit;
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-20);
+  line-height: 1.428571;
 }
 
 .text_input_newsroll_focus_small input::placeholder {
@@ -77,12 +77,12 @@
   min-height: 40px;
   padding: 0 12px;
   border: var(--border-1) solid var(--color-accent-foreground-green);
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--app-input-text);
   background: var(--app-input-surface);
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-20);
+  line-height: 1.428571;
   cursor: text;
 }
 
@@ -95,7 +95,7 @@
   color: inherit;
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-20);
+  line-height: 1.428571;
 }
 
 .text_input_newsroll_complete_small input::placeholder {
@@ -111,12 +111,12 @@
   min-height: 40px;
   padding: 0 12px;
   border: var(--border-1) solid var(--color-accent-foreground-red);
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--app-input-text);
   background: var(--app-input-surface);
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-20);
+  line-height: 1.428571;
   cursor: text;
 }
 
@@ -129,7 +129,7 @@
   color: inherit;
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-20);
+  line-height: 1.428571;
 }
 
 .text_input_newsroll_error_small input::placeholder {
@@ -145,12 +145,12 @@
   min-height: 40px;
   padding: 0 12px;
   border: var(--border-1) solid var(--app-input-border);
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-label-disable);
   background: var(--color-interaction-disable);
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-20);
+  line-height: 1.428571;
   cursor: default;
 }
 
@@ -163,7 +163,7 @@
   color: inherit;
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-20);
+  line-height: 1.428571;
 }
 
 .text_input_newsroll_disabled_small input::placeholder {
@@ -179,12 +179,12 @@
   min-height: 40px;
   padding: 0 12px;
   border: var(--border-1) solid var(--app-input-border);
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--app-input-text);
   background: var(--color-fill-alternative);
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-20);
+  line-height: 1.428571;
   cursor: default;
 }
 
@@ -197,7 +197,7 @@
   color: inherit;
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-20);
+  line-height: 1.428571;
 }
 
 .text_input_newsroll_view_small input::placeholder {
@@ -213,12 +213,12 @@
   min-height: 40px;
   padding: 0 12px;
   border: var(--border-1) solid var(--color-common-100);
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-common-100);
   background: transparent;
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-20);
+  line-height: 1.428571;
   cursor: text;
 }
 
@@ -231,7 +231,7 @@
   color: inherit;
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-20);
+  line-height: 1.428571;
 }
 
 .text_input_newsroll_dark_small input::placeholder {
@@ -247,12 +247,12 @@
   min-height: 52px;
   padding: 0 12px;
   border: var(--border-1) solid var(--app-input-border);
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--app-input-text);
   background: var(--app-input-surface);
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
   cursor: text;
 }
 
@@ -265,7 +265,7 @@
   color: inherit;
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
 }
 
 .text_input_newsroll_default_medium input::placeholder {
@@ -281,12 +281,12 @@
   min-height: 52px;
   padding: 0 12px;
   border: var(--border-2) solid var(--color-accent-foreground-blue);
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--app-input-text);
   background: var(--app-input-surface);
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
   cursor: text;
 }
 
@@ -299,7 +299,7 @@
   color: inherit;
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
 }
 
 .text_input_newsroll_focus_medium input::placeholder {
@@ -315,12 +315,12 @@
   min-height: 52px;
   padding: 0 12px;
   border: var(--border-1) solid var(--color-accent-foreground-green);
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--app-input-text);
   background: var(--app-input-surface);
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
   cursor: text;
 }
 
@@ -333,7 +333,7 @@
   color: inherit;
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
 }
 
 .text_input_newsroll_complete_medium input::placeholder {
@@ -349,12 +349,12 @@
   min-height: 52px;
   padding: 0 12px;
   border: var(--border-1) solid var(--color-accent-foreground-red);
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--app-input-text);
   background: var(--app-input-surface);
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
   cursor: text;
 }
 
@@ -367,7 +367,7 @@
   color: inherit;
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
 }
 
 .text_input_newsroll_error_medium input::placeholder {
@@ -383,12 +383,12 @@
   min-height: 52px;
   padding: 0 12px;
   border: var(--border-1) solid var(--app-input-border);
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-label-disable);
   background: var(--color-interaction-disable);
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
   cursor: default;
 }
 
@@ -401,7 +401,7 @@
   color: inherit;
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
 }
 
 .text_input_newsroll_disabled_medium input::placeholder {
@@ -417,12 +417,12 @@
   min-height: 52px;
   padding: 0 12px;
   border: var(--border-1) solid var(--app-input-border);
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--app-input-text);
   background: var(--color-fill-alternative);
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
   cursor: default;
 }
 
@@ -435,7 +435,7 @@
   color: inherit;
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
 }
 
 .text_input_newsroll_view_medium input::placeholder {
@@ -451,12 +451,12 @@
   min-height: 52px;
   padding: 0 12px;
   border: var(--border-1) solid var(--color-common-100);
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-common-100);
   background: transparent;
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
   cursor: text;
 }
 
@@ -469,7 +469,7 @@
   color: inherit;
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
 }
 
 .text_input_newsroll_dark_medium input::placeholder {
@@ -485,12 +485,12 @@
   min-height: 56px;
   padding: 0 16px;
   border: var(--border-1) solid var(--app-input-border);
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--app-input-text);
   background: var(--app-input-surface);
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
   cursor: text;
 }
 
@@ -503,7 +503,7 @@
   color: inherit;
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
 }
 
 .text_input_newsroll_default_large input::placeholder {
@@ -519,12 +519,12 @@
   min-height: 56px;
   padding: 0 16px;
   border: var(--border-2) solid var(--color-accent-foreground-blue);
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--app-input-text);
   background: var(--app-input-surface);
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
   cursor: text;
 }
 
@@ -537,7 +537,7 @@
   color: inherit;
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
 }
 
 .text_input_newsroll_focus_large input::placeholder {
@@ -553,12 +553,12 @@
   min-height: 56px;
   padding: 0 16px;
   border: var(--border-1) solid var(--color-accent-foreground-green);
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--app-input-text);
   background: var(--app-input-surface);
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
   cursor: text;
 }
 
@@ -571,7 +571,7 @@
   color: inherit;
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
 }
 
 .text_input_newsroll_complete_large input::placeholder {
@@ -587,12 +587,12 @@
   min-height: 56px;
   padding: 0 16px;
   border: var(--border-1) solid var(--color-accent-foreground-red);
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--app-input-text);
   background: var(--app-input-surface);
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
   cursor: text;
 }
 
@@ -605,7 +605,7 @@
   color: inherit;
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
 }
 
 .text_input_newsroll_error_large input::placeholder {
@@ -621,12 +621,12 @@
   min-height: 56px;
   padding: 0 16px;
   border: var(--border-1) solid var(--app-input-border);
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-label-disable);
   background: var(--color-interaction-disable);
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
   cursor: default;
 }
 
@@ -639,7 +639,7 @@
   color: inherit;
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
 }
 
 .text_input_newsroll_disabled_large input::placeholder {
@@ -655,12 +655,12 @@
   min-height: 56px;
   padding: 0 16px;
   border: var(--border-1) solid var(--app-input-border);
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--app-input-text);
   background: var(--color-fill-alternative);
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
   cursor: default;
 }
 
@@ -673,7 +673,7 @@
   color: inherit;
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
 }
 
 .text_input_newsroll_view_large input::placeholder {
@@ -689,12 +689,12 @@
   min-height: 56px;
   padding: 0 16px;
   border: var(--border-1) solid var(--color-common-100);
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-common-100);
   background: transparent;
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
   cursor: text;
 }
 
@@ -707,7 +707,7 @@
   color: inherit;
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
 }
 
 .text_input_newsroll_dark_large input::placeholder {
@@ -723,12 +723,12 @@
   min-height: 64px;
   padding: 0 20px;
   border: var(--border-1) solid var(--app-input-border);
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--app-input-text);
   background: var(--app-input-surface);
   font-size: var(--font-size-18);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-26);
+  line-height: 1.444444;
   cursor: text;
 }
 
@@ -741,7 +741,7 @@
   color: inherit;
   font-size: var(--font-size-18);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-26);
+  line-height: 1.444444;
 }
 
 .text_input_newsroll_default_xlarge input::placeholder {
@@ -757,12 +757,12 @@
   min-height: 64px;
   padding: 0 20px;
   border: var(--border-2) solid var(--color-accent-foreground-blue);
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--app-input-text);
   background: var(--app-input-surface);
   font-size: var(--font-size-18);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-26);
+  line-height: 1.444444;
   cursor: text;
 }
 
@@ -775,7 +775,7 @@
   color: inherit;
   font-size: var(--font-size-18);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-26);
+  line-height: 1.444444;
 }
 
 .text_input_newsroll_focus_xlarge input::placeholder {
@@ -791,12 +791,12 @@
   min-height: 64px;
   padding: 0 20px;
   border: var(--border-1) solid var(--color-accent-foreground-green);
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--app-input-text);
   background: var(--app-input-surface);
   font-size: var(--font-size-18);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-26);
+  line-height: 1.444444;
   cursor: text;
 }
 
@@ -809,7 +809,7 @@
   color: inherit;
   font-size: var(--font-size-18);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-26);
+  line-height: 1.444444;
 }
 
 .text_input_newsroll_complete_xlarge input::placeholder {
@@ -825,12 +825,12 @@
   min-height: 64px;
   padding: 0 20px;
   border: var(--border-1) solid var(--color-accent-foreground-red);
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--app-input-text);
   background: var(--app-input-surface);
   font-size: var(--font-size-18);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-26);
+  line-height: 1.444444;
   cursor: text;
 }
 
@@ -843,7 +843,7 @@
   color: inherit;
   font-size: var(--font-size-18);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-26);
+  line-height: 1.444444;
 }
 
 .text_input_newsroll_error_xlarge input::placeholder {
@@ -859,12 +859,12 @@
   min-height: 64px;
   padding: 0 20px;
   border: var(--border-1) solid var(--app-input-border);
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-label-disable);
   background: var(--color-interaction-disable);
   font-size: var(--font-size-18);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-26);
+  line-height: 1.444444;
   cursor: default;
 }
 
@@ -877,7 +877,7 @@
   color: inherit;
   font-size: var(--font-size-18);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-26);
+  line-height: 1.444444;
 }
 
 .text_input_newsroll_disabled_xlarge input::placeholder {
@@ -893,12 +893,12 @@
   min-height: 64px;
   padding: 0 20px;
   border: var(--border-1) solid var(--app-input-border);
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--app-input-text);
   background: var(--color-fill-alternative);
   font-size: var(--font-size-18);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-26);
+  line-height: 1.444444;
   cursor: default;
 }
 
@@ -911,7 +911,7 @@
   color: inherit;
   font-size: var(--font-size-18);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-26);
+  line-height: 1.444444;
 }
 
 .text_input_newsroll_view_xlarge input::placeholder {
@@ -927,12 +927,12 @@
   min-height: 64px;
   padding: 0 20px;
   border: var(--border-1) solid var(--color-common-100);
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-common-100);
   background: transparent;
   font-size: var(--font-size-18);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-26);
+  line-height: 1.444444;
   cursor: text;
 }
 
@@ -945,7 +945,7 @@
   color: inherit;
   font-size: var(--font-size-18);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-26);
+  line-height: 1.444444;
 }
 
 .text_input_newsroll_dark_xlarge input::placeholder {

@@ -9,13 +9,13 @@
   min-height: 28px;
   padding: 0 10px;
   border: 0;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-label-neutral);
   background: transparent;
   box-shadow: none;
   font-size: var(--font-size-12);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-16);
+  line-height: 1.333333;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -30,13 +30,13 @@
   min-height: 28px;
   padding: 0 10px;
   border: 0;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-common-100);
   background: var(--color-common-0);
   box-shadow: none;
   font-size: var(--font-size-12);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-16);
+  line-height: 1.333333;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -51,13 +51,13 @@
   min-height: 28px;
   padding: 0 10px;
   border: 0;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-label-disable);
   background: transparent;
   box-shadow: none;
   font-size: var(--font-size-12);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-16);
+  line-height: 1.333333;
   white-space: nowrap;
   appearance: none;
   cursor: default;
@@ -72,13 +72,13 @@
   min-height: 28px;
   padding: 0 10px;
   border: var(--border-1) solid var(--newsroll-divider-color);
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--app-text);
   background: transparent;
   box-shadow: none;
   font-size: var(--font-size-12);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-16);
+  line-height: 1.333333;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -93,13 +93,13 @@
   min-height: 28px;
   padding: 0 10px;
   border: var(--border-1) solid var(--color-common-0);
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-common-100);
   background: var(--color-common-0);
   box-shadow: none;
   font-size: var(--font-size-12);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-16);
+  line-height: 1.333333;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -115,7 +115,7 @@
   min-height: 28px;
   padding: 0;
   border: 0;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-common-100);
   background: var(--color-background-transparent-alternative);
   appearance: none;
@@ -127,8 +127,8 @@
   height: ;
   flex: 0 0 ;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_list_bulleted_outline.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_list_bulleted_outline.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_list_bulleted_5.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_list_bulleted_5.svg") center / contain no-repeat;
   content: "";
 }
 .tab_view_toggle_active_small {
@@ -141,7 +141,7 @@
   min-height: 28px;
   padding: 0;
   border: 0;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-newsroll-purple-20);
   background: var(--color-common-100);
   appearance: none;
@@ -153,8 +153,8 @@
   height: ;
   flex: 0 0 ;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_four_square_active.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_four_square_active.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_grid_2.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_grid_2.svg") center / contain no-repeat;
   content: "";
 }
 .tab_newsroll_pill_default_medium {
@@ -166,13 +166,13 @@
   min-height: 32px;
   padding: 0 12px;
   border: 0;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-label-neutral);
   background: transparent;
   box-shadow: none;
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-20);
+  line-height: 1.428571;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -187,13 +187,13 @@
   min-height: 32px;
   padding: 0 12px;
   border: 0;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-common-100);
   background: var(--color-common-0);
   box-shadow: none;
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-20);
+  line-height: 1.428571;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -208,13 +208,13 @@
   min-height: 32px;
   padding: 0 12px;
   border: 0;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-label-disable);
   background: transparent;
   box-shadow: none;
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-20);
+  line-height: 1.428571;
   white-space: nowrap;
   appearance: none;
   cursor: default;
@@ -229,13 +229,13 @@
   min-height: 32px;
   padding: 0 12px;
   border: var(--border-1) solid var(--newsroll-divider-color);
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--app-text);
   background: transparent;
   box-shadow: none;
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-20);
+  line-height: 1.428571;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -250,13 +250,13 @@
   min-height: 32px;
   padding: 0 12px;
   border: var(--border-1) solid var(--color-common-0);
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-common-100);
   background: var(--color-common-0);
   box-shadow: none;
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-20);
+  line-height: 1.428571;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -272,7 +272,7 @@
   min-height: 32px;
   padding: 0;
   border: 0;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-common-100);
   background: var(--color-background-transparent-alternative);
   appearance: none;
@@ -284,8 +284,8 @@
   height: ;
   flex: 0 0 ;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_list_bulleted_outline.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_list_bulleted_outline.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_list_bulleted_5.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_list_bulleted_5.svg") center / contain no-repeat;
   content: "";
 }
 .tab_view_toggle_active_medium {
@@ -298,7 +298,7 @@
   min-height: 32px;
   padding: 0;
   border: 0;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-newsroll-purple-20);
   background: var(--color-common-100);
   appearance: none;
@@ -310,8 +310,8 @@
   height: ;
   flex: 0 0 ;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_four_square_active.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_four_square_active.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_grid_2.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_grid_2.svg") center / contain no-repeat;
   content: "";
 }
 .tab_newsroll_pill_default_large {
@@ -323,13 +323,13 @@
   min-height: 40px;
   padding: 0 16px;
   border: 0;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-label-neutral);
   background: transparent;
   box-shadow: none;
   font-size: var(--font-size-15);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-20);
+  line-height: 1.333333;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -344,13 +344,13 @@
   min-height: 40px;
   padding: 0 16px;
   border: 0;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-common-100);
   background: var(--color-common-0);
   box-shadow: none;
   font-size: var(--font-size-15);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-20);
+  line-height: 1.333333;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -365,13 +365,13 @@
   min-height: 40px;
   padding: 0 16px;
   border: 0;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-label-disable);
   background: transparent;
   box-shadow: none;
   font-size: var(--font-size-15);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-20);
+  line-height: 1.333333;
   white-space: nowrap;
   appearance: none;
   cursor: default;
@@ -386,13 +386,13 @@
   min-height: 40px;
   padding: 0 16px;
   border: var(--border-1) solid var(--newsroll-divider-color);
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--app-text);
   background: transparent;
   box-shadow: none;
   font-size: var(--font-size-15);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-20);
+  line-height: 1.333333;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -407,13 +407,13 @@
   min-height: 40px;
   padding: 0 16px;
   border: var(--border-1) solid var(--color-common-0);
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-common-100);
   background: var(--color-common-0);
   box-shadow: none;
   font-size: var(--font-size-15);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-20);
+  line-height: 1.333333;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -429,7 +429,7 @@
   min-height: 40px;
   padding: 0;
   border: 0;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-common-100);
   background: var(--color-background-transparent-alternative);
   appearance: none;
@@ -441,8 +441,8 @@
   height: ;
   flex: 0 0 ;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_list_bulleted_outline.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_list_bulleted_outline.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_list_bulleted_5.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_list_bulleted_5.svg") center / contain no-repeat;
   content: "";
 }
 .tab_view_toggle_active_large {
@@ -455,7 +455,7 @@
   min-height: 40px;
   padding: 0;
   border: 0;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-newsroll-purple-20);
   background: var(--color-common-100);
   appearance: none;
@@ -467,8 +467,8 @@
   height: ;
   flex: 0 0 ;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_four_square_active.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_four_square_active.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_grid_2.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_grid_2.svg") center / contain no-repeat;
   content: "";
 }
 .tab_newsroll_pill_default_xlarge {
@@ -480,13 +480,13 @@
   min-height: 48px;
   padding: 0 20px;
   border: 0;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-label-neutral);
   background: transparent;
   box-shadow: none;
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -501,13 +501,13 @@
   min-height: 48px;
   padding: 0 20px;
   border: 0;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-common-100);
   background: var(--color-common-0);
   box-shadow: none;
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -522,13 +522,13 @@
   min-height: 48px;
   padding: 0 20px;
   border: 0;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-label-disable);
   background: transparent;
   box-shadow: none;
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
   white-space: nowrap;
   appearance: none;
   cursor: default;
@@ -543,13 +543,13 @@
   min-height: 48px;
   padding: 0 20px;
   border: var(--border-1) solid var(--newsroll-divider-color);
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--app-text);
   background: transparent;
   box-shadow: none;
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -564,13 +564,13 @@
   min-height: 48px;
   padding: 0 20px;
   border: var(--border-1) solid var(--color-common-0);
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-common-100);
   background: var(--color-common-0);
   box-shadow: none;
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -586,7 +586,7 @@
   min-height: 48px;
   padding: 0;
   border: 0;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-common-100);
   background: var(--color-background-transparent-alternative);
   appearance: none;
@@ -598,8 +598,8 @@
   height: ;
   flex: 0 0 ;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_list_bulleted_outline.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_list_bulleted_outline.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_list_bulleted_5.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_list_bulleted_5.svg") center / contain no-repeat;
   content: "";
 }
 .tab_view_toggle_active_xlarge {
@@ -612,7 +612,7 @@
   min-height: 48px;
   padding: 0;
   border: 0;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-newsroll-purple-20);
   background: var(--color-common-100);
   appearance: none;
@@ -624,7 +624,7 @@
   height: ;
   flex: 0 0 ;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_four_square_active.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_four_square_active.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_grid_2.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_grid_2.svg") center / contain no-repeat;
   content: "";
 }

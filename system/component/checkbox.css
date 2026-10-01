@@ -8,7 +8,7 @@
   width: 16px;
   height: 16px;
   border: var(--border-1) solid var(--color-line-normal-normal);
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-common-100);
   background: transparent;
   cursor: pointer;
@@ -21,7 +21,7 @@
   width: 16px;
   height: 16px;
   border: var(--border-1) solid var(--color-newsroll-purple-50);
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-common-100);
   background: var(--color-newsroll-purple-50);
   cursor: pointer;
@@ -42,7 +42,7 @@
   width: 16px;
   height: 16px;
   border: var(--border-1) solid var(--color-line-normal-normal);
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-common-100);
   background: var(--color-interaction-disable);
   cursor: default;
@@ -55,7 +55,7 @@
   width: 20px;
   height: 20px;
   border: var(--border-1) solid var(--color-line-normal-normal);
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-common-100);
   background: transparent;
   cursor: pointer;
@@ -68,7 +68,7 @@
   width: 20px;
   height: 20px;
   border: var(--border-1) solid var(--color-newsroll-purple-50);
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-common-100);
   background: var(--color-newsroll-purple-50);
   cursor: pointer;
@@ -89,7 +89,7 @@
   width: 20px;
   height: 20px;
   border: var(--border-1) solid var(--color-line-normal-normal);
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-common-100);
   background: var(--color-interaction-disable);
   cursor: default;
@@ -102,7 +102,7 @@
   width: 24px;
   height: 24px;
   border: var(--border-1) solid var(--color-line-normal-normal);
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-common-100);
   background: transparent;
   cursor: pointer;
@@ -115,7 +115,7 @@
   width: 24px;
   height: 24px;
   border: var(--border-1) solid var(--color-newsroll-purple-50);
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-common-100);
   background: var(--color-newsroll-purple-50);
   cursor: pointer;
@@ -136,7 +136,7 @@
   width: 24px;
   height: 24px;
   border: var(--border-1) solid var(--color-line-normal-normal);
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-common-100);
   background: var(--color-interaction-disable);
   cursor: default;
@@ -149,7 +149,7 @@
   width: 28px;
   height: 28px;
   border: var(--border-1) solid var(--color-line-normal-normal);
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-common-100);
   background: transparent;
   cursor: pointer;
@@ -162,7 +162,7 @@
   width: 28px;
   height: 28px;
   border: var(--border-1) solid var(--color-newsroll-purple-50);
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-common-100);
   background: var(--color-newsroll-purple-50);
   cursor: pointer;
@@ -183,7 +183,7 @@
   width: 28px;
   height: 28px;
   border: var(--border-1) solid var(--color-line-normal-normal);
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-common-100);
   background: var(--color-interaction-disable);
   cursor: default;

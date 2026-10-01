@@ -9,13 +9,13 @@
   min-height: 40px;
   padding: 0 16px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-common-0);
   background: var(--color-newsroll-purple-50);
   box-shadow: none;
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-20);
+  line-height: 1.428571;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -30,13 +30,13 @@
   min-height: 40px;
   padding: 0 16px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-common-0);
   background: var(--color-cool-neutral-95);
   box-shadow: none;
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-20);
+  line-height: 1.428571;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -51,13 +51,13 @@
   min-height: 40px;
   padding: 0 16px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-common-100);
   background: var(--color-red-50);
   box-shadow: none;
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-20);
+  line-height: 1.428571;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -72,13 +72,13 @@
   min-height: 40px;
   padding: 0 16px;
   border: var(--border-1) solid var(--color-line-normal-neutral);
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-label-disable);
   background: var(--color-interaction-disable);
   box-shadow: none;
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-20);
+  line-height: 1.428571;
   white-space: nowrap;
   appearance: none;
   cursor: default;
@@ -93,13 +93,13 @@
   min-height: 40px;
   padding: 0 16px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-common-0);
   background: var(--color-newsroll-purple-50);
   box-shadow: none;
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-20);
+  line-height: 1.428571;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -110,8 +110,8 @@
   height: 16px;
   flex: 0 0 16px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_submit.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_submit.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_send_2.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_send_2.svg") center / contain no-repeat;
   content: "";
 }
 .btn_field_action_purple_small {
@@ -123,13 +123,13 @@
   min-height: 40px;
   padding: 0 16px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-cool-neutral-15);
   background: var(--color-common-100);
   box-shadow: none;
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-20);
+  line-height: 1.428571;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -144,13 +144,13 @@
   min-height: 40px;
   padding: 0 16px;
   border: var(--border-1) solid var(--color-newsroll-purple-50);
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-newsroll-purple-50);
   background: var(--color-common-100);
   box-shadow: none;
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-20);
+  line-height: 1.428571;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -165,13 +165,13 @@
   min-height: 40px;
   padding: 0 16px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-newsroll-purple-40);
   background: var(--color-newsroll-purple-30);
   box-shadow: none;
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-20);
+  line-height: 1.428571;
   white-space: nowrap;
   appearance: none;
   cursor: default;
@@ -186,13 +186,13 @@
   min-height: 40px;
   padding: 0 16px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--app-text);
   background: transparent;
   box-shadow: none;
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-20);
+  line-height: 1.428571;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -207,13 +207,13 @@
   min-height: 40px;
   padding: 0 16px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-red-50);
   background: transparent;
   box-shadow: none;
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-20);
+  line-height: 1.428571;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -228,13 +228,13 @@
   min-height: 40px;
   padding: 0 16px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-red-50);
   background: transparent;
   box-shadow: none;
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-20);
+  line-height: 1.428571;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -245,8 +245,8 @@
   height: 16px;
   flex: 0 0 16px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_good.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_good.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_emoji_smile_3.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_emoji_smile_3.svg") center / contain no-repeat;
   content: "";
 }
 .btn_icon_text_dislike_small {
@@ -258,13 +258,13 @@
   min-height: 40px;
   padding: 0 16px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-blue-50);
   background: transparent;
   box-shadow: none;
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-20);
+  line-height: 1.428571;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -275,8 +275,8 @@
   height: 16px;
   flex: 0 0 16px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_notgood.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_notgood.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_emoji_neutral_2.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_emoji_neutral_2.svg") center / contain no-repeat;
   content: "";
 }
 .btn_icon_text_neutral_small {
@@ -288,13 +288,13 @@
   min-height: 40px;
   padding: 0 16px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-cool-neutral-50);
   background: transparent;
   box-shadow: none;
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-20);
+  line-height: 1.428571;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -305,8 +305,8 @@
   height: 16px;
   flex: 0 0 16px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_chat_bubble_3dots.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_chat_bubble_3dots.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_chat_bubble_3dots_1.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_chat_bubble_3dots_1.svg") center / contain no-repeat;
   content: "";
 }
 .btn_icon_text_vote_small {
@@ -318,13 +318,13 @@
   min-height: 40px;
   padding: 0 16px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-red-orange-50);
   background: transparent;
   box-shadow: none;
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-20);
+  line-height: 1.428571;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -335,8 +335,8 @@
   height: 16px;
   flex: 0 0 16px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_vote.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_vote.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_tray_edit_1.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_tray_edit_1.svg") center / contain no-repeat;
   content: "";
 }
 .btn_content_action_small {
@@ -348,13 +348,13 @@
   min-height: 40px;
   padding: 0 16px;
   border: var(--border-1) solid var(--app-border);
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--app-text-muted);
   background: var(--app-surface);
   box-shadow: none;
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-20);
+  line-height: 1.428571;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -369,13 +369,13 @@
   min-height: 40px;
   padding: 0 16px;
   border: 0;
-  border-radius: var(--radius-20);
+  border-radius: 20px;
   color: var(--color-cool-neutral-15);
   background: var(--color-newsroll-purple-50);
   box-shadow: none;
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-20);
+  line-height: 1.428571;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -390,13 +390,13 @@
   min-height: 40px;
   padding: 0 16px;
   border: var(--border-1) solid transparent;
-  border-radius: var(--radius-16);
+  border-radius: 16px;
   color: var(--color-blue-50);
   background: var(--color-background-elevated-normal);
   box-shadow: none;
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-20);
+  line-height: 1.428571;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -407,8 +407,8 @@
   height: 16px;
   flex: 0 0 16px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_yes.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_yes.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_circle_1.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_circle_1.svg") center / contain no-repeat;
   content: "";
 }
 .btn_article_vote_no_small {
@@ -420,13 +420,13 @@
   min-height: 40px;
   padding: 0 16px;
   border: var(--border-1) solid transparent;
-  border-radius: var(--radius-16);
+  border-radius: 16px;
   color: var(--color-red-50);
   background: var(--color-background-elevated-normal);
   box-shadow: none;
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-20);
+  line-height: 1.428571;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -437,8 +437,8 @@
   height: 16px;
   flex: 0 0 16px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_no.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_no.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_close_medium_1.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_close_medium_1.svg") center / contain no-repeat;
   content: "";
 }
 .btn_icon_primary_small {
@@ -451,7 +451,7 @@
   min-height: 40px;
   padding: 0;
   border: var(--border-1) solid var(--color-newsroll-purple-50);
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-common-0);
   background: var(--color-newsroll-purple-50);
   appearance: none;
@@ -463,8 +463,8 @@
   height: 16px;
   flex: 0 0 16px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_search_active.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_search_active.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_search_filled_1.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_search_filled_1.svg") center / contain no-repeat;
   content: "";
 }
 .btn_icon_neutral_small {
@@ -477,7 +477,7 @@
   min-height: 40px;
   padding: 0;
   border: var(--border-1) solid var(--app-border);
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--app-text);
   background: var(--app-surface);
   appearance: none;
@@ -489,8 +489,8 @@
   height: 16px;
   flex: 0 0 16px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_setting.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_setting.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_setting_3.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_setting_3.svg") center / contain no-repeat;
   content: "";
 }
 .btn_icon_danger_small {
@@ -503,7 +503,7 @@
   min-height: 40px;
   padding: 0;
   border: var(--border-1) solid var(--color-red-50);
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-red-50);
   background: var(--app-surface);
   appearance: none;
@@ -515,8 +515,8 @@
   height: 16px;
   flex: 0 0 16px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_close.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_close.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_close_medium_1.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_close_medium_1.svg") center / contain no-repeat;
   content: "";
 }
 .btn_icon_translucent_small {
@@ -529,7 +529,7 @@
   min-height: 40px;
   padding: 0;
   border: 0;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-common-100);
   background: var(--color-background-transparent-alternative);
   appearance: none;
@@ -541,8 +541,8 @@
   height: 16px;
   flex: 0 0 16px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_alarm_outline.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_alarm_outline.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_alarm_3.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_alarm_3.svg") center / contain no-repeat;
   content: "";
 }
 .btn_social_login_small {
@@ -555,7 +555,7 @@
   min-height: 40px;
   padding: 0;
   border: 0;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--app-text);
   background: transparent;
   appearance: none;
@@ -567,8 +567,8 @@
   height: 16px;
   flex: 0 0 16px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_kakao_login.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_kakao_login.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_kakao_1.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_kakao_1.svg") center / contain no-repeat;
   content: "";
 }
 .btn_primary_default_medium {
@@ -580,13 +580,13 @@
   min-height: 48px;
   padding: 0 24px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-common-0);
   background: var(--color-newsroll-purple-50);
   box-shadow: none;
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -601,13 +601,13 @@
   min-height: 48px;
   padding: 0 24px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-common-0);
   background: var(--color-cool-neutral-95);
   box-shadow: none;
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -622,13 +622,13 @@
   min-height: 48px;
   padding: 0 24px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-common-100);
   background: var(--color-red-50);
   box-shadow: none;
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -643,13 +643,13 @@
   min-height: 48px;
   padding: 0 24px;
   border: var(--border-1) solid var(--color-line-normal-neutral);
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-label-disable);
   background: var(--color-interaction-disable);
   box-shadow: none;
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
   white-space: nowrap;
   appearance: none;
   cursor: default;
@@ -664,13 +664,13 @@
   min-height: 48px;
   padding: 0 24px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-common-0);
   background: var(--color-newsroll-purple-50);
   box-shadow: none;
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -681,8 +681,8 @@
   height: 20px;
   flex: 0 0 20px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_submit.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_submit.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_send_2.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_send_2.svg") center / contain no-repeat;
   content: "";
 }
 .btn_field_action_purple_medium {
@@ -694,13 +694,13 @@
   min-height: 48px;
   padding: 0 24px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-cool-neutral-15);
   background: var(--color-common-100);
   box-shadow: none;
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -715,13 +715,13 @@
   min-height: 48px;
   padding: 0 24px;
   border: var(--border-1) solid var(--color-newsroll-purple-50);
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-newsroll-purple-50);
   background: var(--color-common-100);
   box-shadow: none;
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -736,13 +736,13 @@
   min-height: 48px;
   padding: 0 24px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-newsroll-purple-40);
   background: var(--color-newsroll-purple-30);
   box-shadow: none;
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
   white-space: nowrap;
   appearance: none;
   cursor: default;
@@ -757,13 +757,13 @@
   min-height: 48px;
   padding: 0 24px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--app-text);
   background: transparent;
   box-shadow: none;
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -778,13 +778,13 @@
   min-height: 48px;
   padding: 0 24px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-red-50);
   background: transparent;
   box-shadow: none;
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -799,13 +799,13 @@
   min-height: 48px;
   padding: 0 24px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-red-50);
   background: transparent;
   box-shadow: none;
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -816,8 +816,8 @@
   height: 20px;
   flex: 0 0 20px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_good.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_good.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_emoji_smile_3.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_emoji_smile_3.svg") center / contain no-repeat;
   content: "";
 }
 .btn_icon_text_dislike_medium {
@@ -829,13 +829,13 @@
   min-height: 48px;
   padding: 0 24px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-blue-50);
   background: transparent;
   box-shadow: none;
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -846,8 +846,8 @@
   height: 20px;
   flex: 0 0 20px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_notgood.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_notgood.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_emoji_neutral_2.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_emoji_neutral_2.svg") center / contain no-repeat;
   content: "";
 }
 .btn_icon_text_neutral_medium {
@@ -859,13 +859,13 @@
   min-height: 48px;
   padding: 0 24px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-cool-neutral-50);
   background: transparent;
   box-shadow: none;
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -876,8 +876,8 @@
   height: 20px;
   flex: 0 0 20px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_chat_bubble_3dots.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_chat_bubble_3dots.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_chat_bubble_3dots_1.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_chat_bubble_3dots_1.svg") center / contain no-repeat;
   content: "";
 }
 .btn_icon_text_vote_medium {
@@ -889,13 +889,13 @@
   min-height: 48px;
   padding: 0 24px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-red-orange-50);
   background: transparent;
   box-shadow: none;
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -906,8 +906,8 @@
   height: 20px;
   flex: 0 0 20px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_vote.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_vote.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_tray_edit_1.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_tray_edit_1.svg") center / contain no-repeat;
   content: "";
 }
 .btn_content_action_medium {
@@ -919,13 +919,13 @@
   min-height: 48px;
   padding: 0 24px;
   border: var(--border-1) solid var(--app-border);
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--app-text-muted);
   background: var(--app-surface);
   box-shadow: none;
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -940,13 +940,13 @@
   min-height: 48px;
   padding: 0 24px;
   border: 0;
-  border-radius: var(--radius-20);
+  border-radius: 20px;
   color: var(--color-cool-neutral-15);
   background: var(--color-newsroll-purple-50);
   box-shadow: none;
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -961,13 +961,13 @@
   min-height: 48px;
   padding: 0 24px;
   border: var(--border-1) solid transparent;
-  border-radius: var(--radius-16);
+  border-radius: 16px;
   color: var(--color-blue-50);
   background: var(--color-background-elevated-normal);
   box-shadow: none;
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -978,8 +978,8 @@
   height: 20px;
   flex: 0 0 20px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_yes.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_yes.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_circle_1.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_circle_1.svg") center / contain no-repeat;
   content: "";
 }
 .btn_article_vote_no_medium {
@@ -991,13 +991,13 @@
   min-height: 48px;
   padding: 0 24px;
   border: var(--border-1) solid transparent;
-  border-radius: var(--radius-16);
+  border-radius: 16px;
   color: var(--color-red-50);
   background: var(--color-background-elevated-normal);
   box-shadow: none;
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-24);
+  line-height: 1.5;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -1008,8 +1008,8 @@
   height: 20px;
   flex: 0 0 20px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_no.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_no.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_close_medium_1.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_close_medium_1.svg") center / contain no-repeat;
   content: "";
 }
 .btn_icon_primary_medium {
@@ -1022,7 +1022,7 @@
   min-height: 48px;
   padding: 0;
   border: var(--border-1) solid var(--color-newsroll-purple-50);
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-common-0);
   background: var(--color-newsroll-purple-50);
   appearance: none;
@@ -1034,8 +1034,8 @@
   height: 20px;
   flex: 0 0 20px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_search_active.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_search_active.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_search_filled_1.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_search_filled_1.svg") center / contain no-repeat;
   content: "";
 }
 .btn_icon_neutral_medium {
@@ -1048,7 +1048,7 @@
   min-height: 48px;
   padding: 0;
   border: var(--border-1) solid var(--app-border);
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--app-text);
   background: var(--app-surface);
   appearance: none;
@@ -1060,8 +1060,8 @@
   height: 20px;
   flex: 0 0 20px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_setting.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_setting.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_setting_3.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_setting_3.svg") center / contain no-repeat;
   content: "";
 }
 .btn_icon_danger_medium {
@@ -1074,7 +1074,7 @@
   min-height: 48px;
   padding: 0;
   border: var(--border-1) solid var(--color-red-50);
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-red-50);
   background: var(--app-surface);
   appearance: none;
@@ -1086,8 +1086,8 @@
   height: 20px;
   flex: 0 0 20px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_close.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_close.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_close_medium_1.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_close_medium_1.svg") center / contain no-repeat;
   content: "";
 }
 .btn_icon_translucent_medium {
@@ -1100,7 +1100,7 @@
   min-height: 48px;
   padding: 0;
   border: 0;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-common-100);
   background: var(--color-background-transparent-alternative);
   appearance: none;
@@ -1112,8 +1112,8 @@
   height: 20px;
   flex: 0 0 20px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_alarm_outline.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_alarm_outline.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_alarm_3.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_alarm_3.svg") center / contain no-repeat;
   content: "";
 }
 .btn_social_login_medium {
@@ -1126,7 +1126,7 @@
   min-height: 48px;
   padding: 0;
   border: 0;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--app-text);
   background: transparent;
   appearance: none;
@@ -1138,8 +1138,8 @@
   height: 20px;
   flex: 0 0 20px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_kakao_login.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_kakao_login.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_kakao_1.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_kakao_1.svg") center / contain no-repeat;
   content: "";
 }
 .btn_primary_default_large {
@@ -1151,13 +1151,13 @@
   min-height: 56px;
   padding: 0 28px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-common-0);
   background: var(--color-newsroll-purple-50);
   box-shadow: none;
   font-size: var(--font-size-18);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-26);
+  line-height: 1.444444;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -1172,13 +1172,13 @@
   min-height: 56px;
   padding: 0 28px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-common-0);
   background: var(--color-cool-neutral-95);
   box-shadow: none;
   font-size: var(--font-size-18);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-26);
+  line-height: 1.444444;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -1193,13 +1193,13 @@
   min-height: 56px;
   padding: 0 28px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-common-100);
   background: var(--color-red-50);
   box-shadow: none;
   font-size: var(--font-size-18);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-26);
+  line-height: 1.444444;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -1214,13 +1214,13 @@
   min-height: 56px;
   padding: 0 28px;
   border: var(--border-1) solid var(--color-line-normal-neutral);
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-label-disable);
   background: var(--color-interaction-disable);
   box-shadow: none;
   font-size: var(--font-size-18);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-26);
+  line-height: 1.444444;
   white-space: nowrap;
   appearance: none;
   cursor: default;
@@ -1235,13 +1235,13 @@
   min-height: 56px;
   padding: 0 28px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-common-0);
   background: var(--color-newsroll-purple-50);
   box-shadow: none;
   font-size: var(--font-size-18);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-26);
+  line-height: 1.444444;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -1252,8 +1252,8 @@
   height: 20px;
   flex: 0 0 20px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_submit.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_submit.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_send_2.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_send_2.svg") center / contain no-repeat;
   content: "";
 }
 .btn_field_action_purple_large {
@@ -1265,13 +1265,13 @@
   min-height: 56px;
   padding: 0 28px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-cool-neutral-15);
   background: var(--color-common-100);
   box-shadow: none;
   font-size: var(--font-size-18);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-26);
+  line-height: 1.444444;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -1286,13 +1286,13 @@
   min-height: 56px;
   padding: 0 28px;
   border: var(--border-1) solid var(--color-newsroll-purple-50);
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-newsroll-purple-50);
   background: var(--color-common-100);
   box-shadow: none;
   font-size: var(--font-size-18);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-26);
+  line-height: 1.444444;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -1307,13 +1307,13 @@
   min-height: 56px;
   padding: 0 28px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-newsroll-purple-40);
   background: var(--color-newsroll-purple-30);
   box-shadow: none;
   font-size: var(--font-size-18);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-26);
+  line-height: 1.444444;
   white-space: nowrap;
   appearance: none;
   cursor: default;
@@ -1328,13 +1328,13 @@
   min-height: 56px;
   padding: 0 28px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--app-text);
   background: transparent;
   box-shadow: none;
   font-size: var(--font-size-18);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-26);
+  line-height: 1.444444;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -1349,13 +1349,13 @@
   min-height: 56px;
   padding: 0 28px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-red-50);
   background: transparent;
   box-shadow: none;
   font-size: var(--font-size-18);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-26);
+  line-height: 1.444444;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -1370,13 +1370,13 @@
   min-height: 56px;
   padding: 0 28px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-red-50);
   background: transparent;
   box-shadow: none;
   font-size: var(--font-size-18);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-26);
+  line-height: 1.444444;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -1387,8 +1387,8 @@
   height: 20px;
   flex: 0 0 20px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_good.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_good.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_emoji_smile_3.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_emoji_smile_3.svg") center / contain no-repeat;
   content: "";
 }
 .btn_icon_text_dislike_large {
@@ -1400,13 +1400,13 @@
   min-height: 56px;
   padding: 0 28px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-blue-50);
   background: transparent;
   box-shadow: none;
   font-size: var(--font-size-18);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-26);
+  line-height: 1.444444;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -1417,8 +1417,8 @@
   height: 20px;
   flex: 0 0 20px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_notgood.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_notgood.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_emoji_neutral_2.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_emoji_neutral_2.svg") center / contain no-repeat;
   content: "";
 }
 .btn_icon_text_neutral_large {
@@ -1430,13 +1430,13 @@
   min-height: 56px;
   padding: 0 28px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-cool-neutral-50);
   background: transparent;
   box-shadow: none;
   font-size: var(--font-size-18);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-26);
+  line-height: 1.444444;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -1447,8 +1447,8 @@
   height: 20px;
   flex: 0 0 20px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_chat_bubble_3dots.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_chat_bubble_3dots.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_chat_bubble_3dots_1.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_chat_bubble_3dots_1.svg") center / contain no-repeat;
   content: "";
 }
 .btn_icon_text_vote_large {
@@ -1460,13 +1460,13 @@
   min-height: 56px;
   padding: 0 28px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-red-orange-50);
   background: transparent;
   box-shadow: none;
   font-size: var(--font-size-18);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-26);
+  line-height: 1.444444;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -1477,8 +1477,8 @@
   height: 20px;
   flex: 0 0 20px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_vote.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_vote.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_tray_edit_1.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_tray_edit_1.svg") center / contain no-repeat;
   content: "";
 }
 .btn_content_action_large {
@@ -1490,13 +1490,13 @@
   min-height: 56px;
   padding: 0 28px;
   border: var(--border-1) solid var(--app-border);
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--app-text-muted);
   background: var(--app-surface);
   box-shadow: none;
   font-size: var(--font-size-18);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-26);
+  line-height: 1.444444;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -1511,13 +1511,13 @@
   min-height: 56px;
   padding: 0 28px;
   border: 0;
-  border-radius: var(--radius-20);
+  border-radius: 20px;
   color: var(--color-cool-neutral-15);
   background: var(--color-newsroll-purple-50);
   box-shadow: none;
   font-size: var(--font-size-18);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-26);
+  line-height: 1.444444;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -1532,13 +1532,13 @@
   min-height: 56px;
   padding: 0 28px;
   border: var(--border-1) solid transparent;
-  border-radius: var(--radius-16);
+  border-radius: 16px;
   color: var(--color-blue-50);
   background: var(--color-background-elevated-normal);
   box-shadow: none;
   font-size: var(--font-size-18);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-26);
+  line-height: 1.444444;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -1549,8 +1549,8 @@
   height: 20px;
   flex: 0 0 20px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_yes.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_yes.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_circle_1.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_circle_1.svg") center / contain no-repeat;
   content: "";
 }
 .btn_article_vote_no_large {
@@ -1562,13 +1562,13 @@
   min-height: 56px;
   padding: 0 28px;
   border: var(--border-1) solid transparent;
-  border-radius: var(--radius-16);
+  border-radius: 16px;
   color: var(--color-red-50);
   background: var(--color-background-elevated-normal);
   box-shadow: none;
   font-size: var(--font-size-18);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-26);
+  line-height: 1.444444;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -1579,8 +1579,8 @@
   height: 20px;
   flex: 0 0 20px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_no.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_no.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_close_medium_1.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_close_medium_1.svg") center / contain no-repeat;
   content: "";
 }
 .btn_icon_primary_large {
@@ -1593,7 +1593,7 @@
   min-height: 56px;
   padding: 0;
   border: var(--border-1) solid var(--color-newsroll-purple-50);
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-common-0);
   background: var(--color-newsroll-purple-50);
   appearance: none;
@@ -1605,8 +1605,8 @@
   height: 20px;
   flex: 0 0 20px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_search_active.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_search_active.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_search_filled_1.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_search_filled_1.svg") center / contain no-repeat;
   content: "";
 }
 .btn_icon_neutral_large {
@@ -1619,7 +1619,7 @@
   min-height: 56px;
   padding: 0;
   border: var(--border-1) solid var(--app-border);
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--app-text);
   background: var(--app-surface);
   appearance: none;
@@ -1631,8 +1631,8 @@
   height: 20px;
   flex: 0 0 20px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_setting.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_setting.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_setting_3.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_setting_3.svg") center / contain no-repeat;
   content: "";
 }
 .btn_icon_danger_large {
@@ -1645,7 +1645,7 @@
   min-height: 56px;
   padding: 0;
   border: var(--border-1) solid var(--color-red-50);
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-red-50);
   background: var(--app-surface);
   appearance: none;
@@ -1657,8 +1657,8 @@
   height: 20px;
   flex: 0 0 20px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_close.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_close.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_close_medium_1.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_close_medium_1.svg") center / contain no-repeat;
   content: "";
 }
 .btn_icon_translucent_large {
@@ -1671,7 +1671,7 @@
   min-height: 56px;
   padding: 0;
   border: 0;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-common-100);
   background: var(--color-background-transparent-alternative);
   appearance: none;
@@ -1683,8 +1683,8 @@
   height: 20px;
   flex: 0 0 20px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_alarm_outline.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_alarm_outline.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_alarm_3.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_alarm_3.svg") center / contain no-repeat;
   content: "";
 }
 .btn_social_login_large {
@@ -1697,7 +1697,7 @@
   min-height: 56px;
   padding: 0;
   border: 0;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--app-text);
   background: transparent;
   appearance: none;
@@ -1709,8 +1709,8 @@
   height: 20px;
   flex: 0 0 20px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_kakao_login.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_kakao_login.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_kakao_1.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_kakao_1.svg") center / contain no-repeat;
   content: "";
 }
 .btn_primary_default_xlarge {
@@ -1722,13 +1722,13 @@
   min-height: 64px;
   padding: 0 32px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-common-0);
   background: var(--color-newsroll-purple-50);
   box-shadow: none;
   font-size: var(--font-size-20);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-32);
+  line-height: 1.6;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -1743,13 +1743,13 @@
   min-height: 64px;
   padding: 0 32px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-common-0);
   background: var(--color-cool-neutral-95);
   box-shadow: none;
   font-size: var(--font-size-20);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-32);
+  line-height: 1.6;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -1764,13 +1764,13 @@
   min-height: 64px;
   padding: 0 32px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-common-100);
   background: var(--color-red-50);
   box-shadow: none;
   font-size: var(--font-size-20);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-32);
+  line-height: 1.6;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -1785,13 +1785,13 @@
   min-height: 64px;
   padding: 0 32px;
   border: var(--border-1) solid var(--color-line-normal-neutral);
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-label-disable);
   background: var(--color-interaction-disable);
   box-shadow: none;
   font-size: var(--font-size-20);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-32);
+  line-height: 1.6;
   white-space: nowrap;
   appearance: none;
   cursor: default;
@@ -1806,13 +1806,13 @@
   min-height: 64px;
   padding: 0 32px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-common-0);
   background: var(--color-newsroll-purple-50);
   box-shadow: none;
   font-size: var(--font-size-20);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-32);
+  line-height: 1.6;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -1823,8 +1823,8 @@
   height: 24px;
   flex: 0 0 24px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_submit.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_submit.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_send_2.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_send_2.svg") center / contain no-repeat;
   content: "";
 }
 .btn_field_action_purple_xlarge {
@@ -1836,13 +1836,13 @@
   min-height: 64px;
   padding: 0 32px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-cool-neutral-15);
   background: var(--color-common-100);
   box-shadow: none;
   font-size: var(--font-size-20);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-32);
+  line-height: 1.6;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -1857,13 +1857,13 @@
   min-height: 64px;
   padding: 0 32px;
   border: var(--border-1) solid var(--color-newsroll-purple-50);
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-newsroll-purple-50);
   background: var(--color-common-100);
   box-shadow: none;
   font-size: var(--font-size-20);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-32);
+  line-height: 1.6;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -1878,13 +1878,13 @@
   min-height: 64px;
   padding: 0 32px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-newsroll-purple-40);
   background: var(--color-newsroll-purple-30);
   box-shadow: none;
   font-size: var(--font-size-20);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-32);
+  line-height: 1.6;
   white-space: nowrap;
   appearance: none;
   cursor: default;
@@ -1899,13 +1899,13 @@
   min-height: 64px;
   padding: 0 32px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--app-text);
   background: transparent;
   box-shadow: none;
   font-size: var(--font-size-20);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-32);
+  line-height: 1.6;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -1920,13 +1920,13 @@
   min-height: 64px;
   padding: 0 32px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-red-50);
   background: transparent;
   box-shadow: none;
   font-size: var(--font-size-20);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-32);
+  line-height: 1.6;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -1941,13 +1941,13 @@
   min-height: 64px;
   padding: 0 32px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-red-50);
   background: transparent;
   box-shadow: none;
   font-size: var(--font-size-20);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-32);
+  line-height: 1.6;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -1958,8 +1958,8 @@
   height: 24px;
   flex: 0 0 24px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_good.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_good.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_emoji_smile_3.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_emoji_smile_3.svg") center / contain no-repeat;
   content: "";
 }
 .btn_icon_text_dislike_xlarge {
@@ -1971,13 +1971,13 @@
   min-height: 64px;
   padding: 0 32px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-blue-50);
   background: transparent;
   box-shadow: none;
   font-size: var(--font-size-20);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-32);
+  line-height: 1.6;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -1988,8 +1988,8 @@
   height: 24px;
   flex: 0 0 24px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_notgood.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_notgood.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_emoji_neutral_2.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_emoji_neutral_2.svg") center / contain no-repeat;
   content: "";
 }
 .btn_icon_text_neutral_xlarge {
@@ -2001,13 +2001,13 @@
   min-height: 64px;
   padding: 0 32px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-cool-neutral-50);
   background: transparent;
   box-shadow: none;
   font-size: var(--font-size-20);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-32);
+  line-height: 1.6;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -2018,8 +2018,8 @@
   height: 24px;
   flex: 0 0 24px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_chat_bubble_3dots.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_chat_bubble_3dots.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_chat_bubble_3dots_1.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_chat_bubble_3dots_1.svg") center / contain no-repeat;
   content: "";
 }
 .btn_icon_text_vote_xlarge {
@@ -2031,13 +2031,13 @@
   min-height: 64px;
   padding: 0 32px;
   border: 0;
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--color-red-orange-50);
   background: transparent;
   box-shadow: none;
   font-size: var(--font-size-20);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-32);
+  line-height: 1.6;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -2048,8 +2048,8 @@
   height: 24px;
   flex: 0 0 24px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_vote.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_vote.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_tray_edit_1.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_tray_edit_1.svg") center / contain no-repeat;
   content: "";
 }
 .btn_content_action_xlarge {
@@ -2061,13 +2061,13 @@
   min-height: 64px;
   padding: 0 32px;
   border: var(--border-1) solid var(--app-border);
-  border-radius: var(--radius-8);
+  border-radius: 8px;
   color: var(--app-text-muted);
   background: var(--app-surface);
   box-shadow: none;
   font-size: var(--font-size-20);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-32);
+  line-height: 1.6;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -2082,13 +2082,13 @@
   min-height: 64px;
   padding: 0 32px;
   border: 0;
-  border-radius: var(--radius-20);
+  border-radius: 20px;
   color: var(--color-cool-neutral-15);
   background: var(--color-newsroll-purple-50);
   box-shadow: none;
   font-size: var(--font-size-20);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-32);
+  line-height: 1.6;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -2103,13 +2103,13 @@
   min-height: 64px;
   padding: 0 32px;
   border: var(--border-1) solid transparent;
-  border-radius: var(--radius-16);
+  border-radius: 16px;
   color: var(--color-blue-50);
   background: var(--color-background-elevated-normal);
   box-shadow: none;
   font-size: var(--font-size-20);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-32);
+  line-height: 1.6;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -2120,8 +2120,8 @@
   height: 24px;
   flex: 0 0 24px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_yes.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_yes.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_circle_1.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_circle_1.svg") center / contain no-repeat;
   content: "";
 }
 .btn_article_vote_no_xlarge {
@@ -2133,13 +2133,13 @@
   min-height: 64px;
   padding: 0 32px;
   border: var(--border-1) solid transparent;
-  border-radius: var(--radius-16);
+  border-radius: 16px;
   color: var(--color-red-50);
   background: var(--color-background-elevated-normal);
   box-shadow: none;
   font-size: var(--font-size-20);
   font-weight: var(--font-weight-500);
-  line-height: var(--line-height-32);
+  line-height: 1.6;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -2150,8 +2150,8 @@
   height: 24px;
   flex: 0 0 24px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_no.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_no.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_close_medium_1.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_close_medium_1.svg") center / contain no-repeat;
   content: "";
 }
 .btn_icon_primary_xlarge {
@@ -2164,7 +2164,7 @@
   min-height: 64px;
   padding: 0;
   border: var(--border-1) solid var(--color-newsroll-purple-50);
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-common-0);
   background: var(--color-newsroll-purple-50);
   appearance: none;
@@ -2176,8 +2176,8 @@
   height: 24px;
   flex: 0 0 24px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_search_active.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_search_active.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_search_filled_1.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_search_filled_1.svg") center / contain no-repeat;
   content: "";
 }
 .btn_icon_neutral_xlarge {
@@ -2190,7 +2190,7 @@
   min-height: 64px;
   padding: 0;
   border: var(--border-1) solid var(--app-border);
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--app-text);
   background: var(--app-surface);
   appearance: none;
@@ -2202,8 +2202,8 @@
   height: 24px;
   flex: 0 0 24px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_setting.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_setting.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_setting_3.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_setting_3.svg") center / contain no-repeat;
   content: "";
 }
 .btn_icon_danger_xlarge {
@@ -2216,7 +2216,7 @@
   min-height: 64px;
   padding: 0;
   border: var(--border-1) solid var(--color-red-50);
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-red-50);
   background: var(--app-surface);
   appearance: none;
@@ -2228,8 +2228,8 @@
   height: 24px;
   flex: 0 0 24px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_close.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_close.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_close_medium_1.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_close_medium_1.svg") center / contain no-repeat;
   content: "";
 }
 .btn_icon_translucent_xlarge {
@@ -2242,7 +2242,7 @@
   min-height: 64px;
   padding: 0;
   border: 0;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--color-common-100);
   background: var(--color-background-transparent-alternative);
   appearance: none;
@@ -2254,8 +2254,8 @@
   height: 24px;
   flex: 0 0 24px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_alarm_outline.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_alarm_outline.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_alarm_3.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_alarm_3.svg") center / contain no-repeat;
   content: "";
 }
 .btn_social_login_xlarge {
@@ -2268,7 +2268,7 @@
   min-height: 64px;
   padding: 0;
   border: 0;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   color: var(--app-text);
   background: transparent;
   appearance: none;
@@ -2280,7 +2280,7 @@
   height: 24px;
   flex: 0 0 24px;
   background: currentColor;
-  -webkit-mask: url("../foundation/icons/icon_newsroll_kakao_login.svg") center / contain no-repeat;
-  mask: url("../foundation/icons/icon_newsroll_kakao_login.svg") center / contain no-repeat;
+  -webkit-mask: url("../foundation/icons/icon_kakao_1.svg") center / contain no-repeat;
+  mask: url("../foundation/icons/icon_kakao_1.svg") center / contain no-repeat;
   content: "";
 }

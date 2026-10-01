@@ -8,7 +8,7 @@
   height: 20px;
   padding: 2px;
   border: 0;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   background: var(--color-neutral-95);
   cursor: pointer;
 }
@@ -16,7 +16,7 @@
 .toggle_newsroll_off_small::before {
   width: 16px;
   height: 16px;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   background: var(--color-common-100);
   box-shadow: 0 1px 2px var(--color-alpha-shadow4);
   content: "";
@@ -29,7 +29,7 @@
   height: 20px;
   padding: 2px;
   border: 0;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   background: var(--color-status-positive);
   cursor: pointer;
 }
@@ -37,7 +37,7 @@
 .toggle_newsroll_on_small::before {
   width: 16px;
   height: 16px;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   background: var(--color-common-100);
   box-shadow: 0 1px 2px var(--color-alpha-shadow4);
   content: "";
@@ -50,7 +50,7 @@
   height: 20px;
   padding: 2px;
   border: 0;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   background: var(--color-interaction-disable);
   cursor: default;
 }
@@ -58,7 +58,7 @@
 .toggle_newsroll_disabled_small::before {
   width: 16px;
   height: 16px;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   background: var(--color-common-100);
   box-shadow: 0 1px 2px var(--color-alpha-shadow4);
   content: "";
@@ -71,7 +71,7 @@
   height: 24px;
   padding: 2px;
   border: 0;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   background: var(--color-neutral-95);
   cursor: pointer;
 }
@@ -79,7 +79,7 @@
 .toggle_newsroll_off_medium::before {
   width: 20px;
   height: 20px;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   background: var(--color-common-100);
   box-shadow: 0 1px 2px var(--color-alpha-shadow4);
   content: "";
@@ -92,7 +92,7 @@
   height: 24px;
   padding: 2px;
   border: 0;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   background: var(--color-status-positive);
   cursor: pointer;
 }
@@ -100,7 +100,7 @@
 .toggle_newsroll_on_medium::before {
   width: 20px;
   height: 20px;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   background: var(--color-common-100);
   box-shadow: 0 1px 2px var(--color-alpha-shadow4);
   content: "";
@@ -113,7 +113,7 @@
   height: 24px;
   padding: 2px;
   border: 0;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   background: var(--color-interaction-disable);
   cursor: default;
 }
@@ -121,7 +121,7 @@
 .toggle_newsroll_disabled_medium::before {
   width: 20px;
   height: 20px;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   background: var(--color-common-100);
   box-shadow: 0 1px 2px var(--color-alpha-shadow4);
   content: "";
@@ -134,7 +134,7 @@
   height: 28px;
   padding: 2px;
   border: 0;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   background: var(--color-neutral-95);
   cursor: pointer;
 }
@@ -142,7 +142,7 @@
 .toggle_newsroll_off_large::before {
   width: 24px;
   height: 24px;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   background: var(--color-common-100);
   box-shadow: 0 1px 2px var(--color-alpha-shadow4);
   content: "";
@@ -155,7 +155,7 @@
   height: 28px;
   padding: 2px;
   border: 0;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   background: var(--color-status-positive);
   cursor: pointer;
 }
@@ -163,7 +163,7 @@
 .toggle_newsroll_on_large::before {
   width: 24px;
   height: 24px;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   background: var(--color-common-100);
   box-shadow: 0 1px 2px var(--color-alpha-shadow4);
   content: "";
@@ -176,7 +176,7 @@
   height: 28px;
   padding: 2px;
   border: 0;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   background: var(--color-interaction-disable);
   cursor: default;
 }
@@ -184,7 +184,7 @@
 .toggle_newsroll_disabled_large::before {
   width: 24px;
   height: 24px;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   background: var(--color-common-100);
   box-shadow: 0 1px 2px var(--color-alpha-shadow4);
   content: "";
@@ -197,7 +197,7 @@
   height: 32px;
   padding: 2px;
   border: 0;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   background: var(--color-neutral-95);
   cursor: pointer;
 }
@@ -205,7 +205,7 @@
 .toggle_newsroll_off_xlarge::before {
   width: 28px;
   height: 28px;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   background: var(--color-common-100);
   box-shadow: 0 1px 2px var(--color-alpha-shadow4);
   content: "";
@@ -218,7 +218,7 @@
   height: 32px;
   padding: 2px;
   border: 0;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   background: var(--color-status-positive);
   cursor: pointer;
 }
@@ -226,7 +226,7 @@
 .toggle_newsroll_on_xlarge::before {
   width: 28px;
   height: 28px;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   background: var(--color-common-100);
   box-shadow: 0 1px 2px var(--color-alpha-shadow4);
   content: "";
@@ -239,7 +239,7 @@
   height: 32px;
   padding: 2px;
   border: 0;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   background: var(--color-interaction-disable);
   cursor: default;
 }
@@ -247,7 +247,7 @@
 .toggle_newsroll_disabled_xlarge::before {
   width: 28px;
   height: 28px;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   background: var(--color-common-100);
   box-shadow: 0 1px 2px var(--color-alpha-shadow4);
   content: "";

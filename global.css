@@ -15,7 +15,7 @@ body {
   color: var(--color-label-strong);
   font-family: var(--font-sans);
   font-synthesis: none;
-  line-height: var(--line-height-32);
+  line-height: 2;
 }
 
 button,
@@ -68,4 +68,78 @@ fieldset {
 
 legend {
   padding: 0;
+}
+
+/* Icon size utilities from Arts Korea Lab foundation.css. */
+.icon_8,
+.icon_12,
+.icon_14,
+.icon_16,
+.icon_18,
+.icon_20,
+.icon_24,
+.icon_28,
+.icon_32,
+.icon_40,
+.icon_45,
+.icon_120,
+.icon_180 {
+	display: block;
+	height: auto;
+}
+
+.icon_8 {
+	width: 8px !important;
+}
+
+.icon_12 {
+	width: 12px !important;
+}
+
+.icon_14 {
+	width: 14px !important;
+}
+
+.icon_16 {
+	width: 16px !important;
+}
+
+.icon_18 {
+	width: 18px !important;
+}
+
+.icon_20 {
+	width: 20px !important;
+}
+
+.icon_24 {
+	width: 24px !important;
+}
+
+.icon_28 {
+	width: 28px !important;
+}
+
+.icon_32 {
+	width: 32px !important;
+}
+
+.icon_40 {
+	width: 40px !important;
+}
+
+.icon_45 {
+	width: 45px !important;
+}
+
+.icon_120 {
+	width: 120px !important;
+}
+
+.icon_180 {
+	width: 180px !important;
+}
+
+.icon_80 {
+	width: 80px !important;
 }

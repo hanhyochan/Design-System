@@ -44,14 +44,14 @@ main {
     color: var(--color-label-strong);
     font-size: var(--font-size-24);
     font-weight: var(--font-weight-700);
-    line-height: var(--line-height-40);
+    line-height: 1.666667;
 }
 
 .ds-author {
     color: var(--color-label-alternative);
     font-size: var(--font-size-12);
     font-weight: var(--font-weight-500);
-    line-height: var(--line-height-20);
+    line-height: 1.666667;
     white-space: nowrap;
 }
 
@@ -59,7 +59,7 @@ main {
     color: var(--color-label-assistive);
     font-size: var(--font-size-11);
     font-weight: var(--font-weight-400);
-    line-height: var(--line-height-20);
+    line-height: 1.818182;
     white-space: nowrap;
 }
 
@@ -68,7 +68,7 @@ main {
     width: 100%;
     padding: var(--spacing-padding-vertical-8) var(--spacing-padding-horizontal-8);
     gap: var(--spacing-gap-horizontal-8);
-    border-radius: var(--radius-20);
+    border-radius: 20px;
     background: var(--color-common-100);
 }
 
@@ -78,12 +78,12 @@ main {
     min-width: 0;
     padding: var(--spacing-padding-vertical-16) var(--spacing-padding-horizontal-24);
     border: none;
-    border-radius: var(--radius-16);
+    border-radius: 16px;
     background: transparent;
     color: var(--color-label-alternative);
     font-size: var(--font-size-16);
     font-weight: var(--font-weight-600);
-    line-height: var(--line-height-32);
+    line-height: 2;
     cursor: pointer;
     transition:
         background-color 0.2s ease,
@@ -113,7 +113,7 @@ main {
     color: var(--color-label-alternative);
     font-size: var(--font-size-16);
     font-weight: var(--font-weight-400);
-    line-height: var(--line-height-32);
+    line-height: 2;
 }
 
 /* section shell */
@@ -128,7 +128,7 @@ h2 {
     color: var(--color-label-strong);
     font-size: var(--font-size-24);
     font-weight: var(--font-weight-700);
-    line-height: var(--line-height-40);
+    line-height: 1.666667;
 }
 
 h3 {
@@ -136,7 +136,7 @@ h3 {
     color: var(--color-label-strong);
     font-size: var(--font-size-20);
     font-weight: var(--font-weight-700);
-    line-height: var(--line-height-40);
+    line-height: 2;
 }
 
 h4 {
@@ -144,12 +144,12 @@ h4 {
     color: var(--color-label-strong);
     font-size: var(--font-size-18);
     font-weight: var(--font-weight-700);
-    line-height: var(--line-height-32);
+    line-height: 1.777778;
 }
 
 section > div {
     padding: var(--spacing-padding-vertical-40) var(--spacing-padding-horizontal-40);
-    border-radius: var(--radius-20);
+    border-radius: 20px;
     background: var(--color-common-100);
 }
 
@@ -179,11 +179,11 @@ section > div {
     color: var(--color-label-strong);
     font-size: var(--font-size-16);
     font-weight: var(--font-weight-400);
-    line-height: var(--line-height-32);
+    line-height: 2;
     text-align: center;
 }
 
-.color-list > li::before {
+.color-list > li:not(.palette-swatch)::before {
     display: block;
     height: var(--size-52);
     background: var(--swatch-color);
@@ -230,15 +230,15 @@ section > div {
     color: var(--color-label-strong);
     font-size: var(--font-size-16);
     font-weight: var(--font-weight-500);
-    line-height: var(--line-height-32);
+    line-height: 2;
     text-align: center;
 }
 
-.semantic-list > li::before {
+.semantic-list > li:not(.semantic-swatch)::before {
     display: block;
     width: var(--size-72);
     height: var(--size-72);
-    border-radius: var(--radius-20);
+    border-radius: 20px;
     background: var(--semantic-color);
     box-shadow: inset var(--spacing-0) var(--spacing-0) var(--spacing-0) var(--border-0-5)
         var(--color-line-solid-normal);
@@ -262,7 +262,7 @@ section > div {
     color: var(--color-label-strong);
     font-size: var(--font-size-14);
     font-weight: var(--font-weight-400);
-    line-height: var(--line-height-24);
+    line-height: 1.714286;
     text-align: left;
     vertical-align: top;
 }
@@ -321,7 +321,7 @@ section > div {
     color: var(--color-label-strong);
     font-size: var(--font-size-18);
     font-weight: var(--font-weight-700);
-    line-height: var(--line-height-32);
+    line-height: 1.777778;
 }
 
 .button-table {
@@ -382,7 +382,7 @@ section > div {
     gap: var(--spacing-gap-vertical-16);
     padding: var(--spacing-padding-vertical-24) var(--spacing-padding-horizontal-24);
     border: var(--border-1) solid var(--color-line-solid-normal);
-    border-radius: var(--radius-20);
+    border-radius: 20px;
     background: var(--color-background-normal-alternative);
 }
 
@@ -397,7 +397,7 @@ section > div {
 .unit-token-value {
     color: var(--color-label-strong);
     font-size: var(--font-size-16);
-    line-height: var(--line-height-32);
+    line-height: 2;
 }
 
 .unit-token-name {
@@ -417,7 +417,7 @@ section > div {
     width: 100%;
     min-height: var(--size-112);
     border: var(--border-1) solid var(--color-line-solid-normal);
-    border-radius: var(--radius-16);
+    border-radius: 16px;
     background: var(--color-common-100);
 }
 
@@ -432,7 +432,7 @@ section > div {
     display: block;
     width: 100%;
     height: 100%;
-    border-radius: var(--radius-8);
+    border-radius: 8px;
     background: var(--color-accent-background-cyan);
     content: '';
 }
@@ -455,7 +455,7 @@ section > div {
     min-width: 0;
     height: var(--size-44);
     margin: var(--unit-margin-y) var(--unit-margin-x);
-    border-radius: var(--radius-8);
+    border-radius: 8px;
     background: var(--color-accent-background-red-orange);
     content: '';
 }
@@ -508,7 +508,7 @@ section > div {
     flex: 0 0 var(--size-72);
     width: var(--size-72);
     height: var(--size-44);
-    border-radius: var(--radius-8);
+    border-radius: 8px;
     background: var(--color-accent-background-lime);
     content: '';
 }
@@ -525,7 +525,7 @@ section > div {
     width: 100%;
     min-height: calc(var(--size-112) + var(--size-72));
     padding: var(--spacing-padding-vertical-32) var(--spacing-padding-horizontal-24);
-    border-radius: var(--radius-16);
+    border-radius: 16px;
     background: linear-gradient(
         135deg,
         var(--color-cool-neutral-99) 0%,
@@ -537,7 +537,7 @@ section > div {
     display: block;
     width: min(100%, calc(var(--size-112) + var(--size-72)));
     height: calc(var(--size-52) + var(--size-44));
-    border-radius: var(--radius-20);
+    border-radius: 20px;
     background: var(--color-common-100);
     box-shadow: var(--unit-shadow);
     content: '';
@@ -567,7 +567,7 @@ section > div {
     color: var(--color-label-alternative);
     font-size: var(--font-size-16);
     font-weight: var(--font-weight-400);
-    line-height: var(--line-height-32);
+    line-height: 2;
 }
 
 .icon-size-list {
@@ -580,7 +580,7 @@ section > div {
     gap: var(--spacing-gap-vertical-20) var(--spacing-gap-horizontal-20);
     padding: var(--spacing-padding-vertical-24) var(--spacing-padding-horizontal-24);
     border: var(--border-1) dashed var(--color-line-solid-normal);
-    border-radius: var(--radius-20);
+    border-radius: 20px;
     background: linear-gradient(
         135deg,
         var(--color-cool-neutral-99) 0%,
@@ -602,7 +602,7 @@ section > div {
     color: var(--color-label-alternative);
     font-size: var(--font-size-12);
     font-weight: var(--font-weight-600);
-    line-height: var(--line-height-20);
+    line-height: 1.666667;
 }
 
 .icon-size-frame {
@@ -612,7 +612,7 @@ section > div {
     width: 88px;
     height: 88px;
     border: var(--border-1) solid var(--color-line-solid-normal);
-    border-radius: var(--radius-16);
+    border-radius: 16px;
     background: var(--color-background-normal-alternative);
 }
 
@@ -658,14 +658,14 @@ section > div {
     color: var(--color-label-strong);
     font-size: var(--font-size-18);
     font-weight: var(--font-weight-700);
-    line-height: var(--line-height-32);
+    line-height: 1.777778;
 }
 
 .icon-group-count {
     color: var(--color-label-alternative);
     font-size: var(--font-size-12);
     font-weight: var(--font-weight-600);
-    line-height: var(--line-height-20);
+    line-height: 1.666667;
     white-space: nowrap;
 }
 
@@ -697,7 +697,7 @@ section > div {
     color: var(--color-label-strong);
     font-size: var(--font-size-12);
     font-weight: var(--font-weight-500);
-    line-height: var(--line-height-20);
+    line-height: 1.666667;
     word-break: break-word;
 }
 
@@ -742,4 +742,53 @@ section > div {
     .icon-grid {
         grid-template-columns: repeat(auto-fill, minmax(132px, 1fr));
     }
+}
+
+/* Direct radius previews and raw-value radius utilities. */
+.radius-preview {
+    display: block;
+    width: 120px;
+    height: 120px;
+    border: var(--border-2) solid var(--color-accent-foreground-blue);
+    background: var(--color-common-100);
+}
+.radius-0 { border-radius: 0; }
+.radius-2 { border-radius: 2px; }
+.radius-4 { border-radius: 4px; }
+.radius-8 { border-radius: 8px; }
+.radius-10 { border-radius: 10px; }
+.radius-16 { border-radius: 16px; }
+.radius-20 { border-radius: 20px; }
+.radius-24 { border-radius: 24px; }
+.radius-32 { border-radius: 32px; }
+.radius-40 { border-radius: 40px; }
+.radius-full { border-radius: 9999px; }
+
+/* Radius gallery: preview above its centered label. */
+.radius-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-gap-vertical-40) var(--spacing-gap-horizontal-40);
+    padding: 0;
+    list-style: none;
+}
+.radius-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-gap-vertical-8);
+    width: 120px;
+    text-align: center;
+    font-size: var(--font-size-16);
+    font-weight: var(--font-weight-500);
+    line-height: 2;
+}
+
+/* V3 size examples let the source icon utilities determine image dimensions. */
+#foundation-icon-sizes .icon-size-frame {
+    width: auto;
+    height: auto;
+    min-width: 88px;
+    min-height: 88px;
+    padding: 16px;
 }
