@@ -5,13 +5,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Design System</title>
-  <link rel="stylesheet" href="./system/foundation/color.css?v=20261001-px-lineheight" />
+  <link rel="stylesheet" href="./system/foundation/color-v3.css?v=20261002-neutral-scale" />
   <link rel="stylesheet" href="./system/foundation/spacing.css?v=20261001-px-lineheight" />
   <link rel="stylesheet" href="./system/foundation/decorate.css?v=20261001-px-lineheight" />
   <link rel="stylesheet" href="./system/foundation/typography.css?v=20261001-px-lineheight" />
   <link rel="stylesheet" href="./global.css?v=20261001-px-lineheight" />
   <link rel="stylesheet" href="./layout.css?v=20261001-px-lineheight" />
-  <link rel="stylesheet" href="./system/foundation/color-swatches-v3.css?v=20261001-px-lineheight" />
+  <link rel="stylesheet" href="./system/foundation/color-swatches-v3.css?v=20261002-neutral-scale" />
   <link rel="stylesheet" href="./system/component/button.css?v=20261001-px-lineheight" />
   <link rel="stylesheet" href="./system/component/tab.css?v=20261001-px-lineheight" />
   <link rel="stylesheet" href="./system/component/text_input.css?v=20261001-px-lineheight" />
@@ -51,6 +51,7 @@
 
     :root {
       --font-size-115: 115px;
+      --newsroll-divider-color: var(--color-cool-neutral-95);
       --color-black-rgb_artkorealab: 33 34 37;
 
       --color-purple-10_newstant: var(--color-newsroll-purple-10);
@@ -111,9 +112,9 @@
       --color-brand-purple-line_artkorealab: var(--color-purple-40_artkorealab);
       --color-background-white_artkorealab: var(--color-common-100);
       --color-background-gray_artkorealab: var(--color-cool-neutral-97);
-      --color-background-light-gray_artkorealab: var(--color-cool-neutral-98);
+      --color-background-light-gray_artkorealab: var(--color-cool-neutral-99);
       --color-background-blue_artkorealab: var(--color-light-blue-95);
-      --color-text-black_artkorealab: var(--color-cool-neutral-17);
+      --color-text-black_artkorealab: var(--color-cool-neutral-20);
       --color-text-dark-gray_artkorealab: var(--color-neutral-40);
       --color-text-date-gray_artkorealab: var(--color-neutral-60);
       --color-text-disabled_artkorealab: var(--color-neutral-95);
@@ -123,7 +124,7 @@
       --color-status-blue_artkorealab: var(--color-blue-50);
       --color-status-light-blue_artkorealab: var(--color-blue-65);
       /* Semantic roles based on Arts Korea Lab colors. */
-      --color-text-primary: var(--color-cool-neutral-17);
+      --color-text-primary: var(--color-cool-neutral-20);
       --color-text-secondary: var(--color-neutral-40);
       --color-text-tertiary: var(--color-neutral-60);
       --color-text-disabled: var(--color-neutral-70);
@@ -132,6 +133,9 @@
       --color-overlay-dimmer: var(--color-common-0-alpha-52);
     }
 
+    .ds-tab.is-active {
+      background: var(--color-cool-neutral-95);
+    }
 
 
 .btn_cta {
@@ -143,7 +147,7 @@
       border: 0;
       border-radius: 9999px;
       padding: 24px 32px;
-      color: var(--color-cool-neutral-17);
+      color: var(--color-cool-neutral-20);
       background: var(--color-yellow-50);
       font-size: var(--font-size-20);
       font-weight: var(--font-weight-600);
@@ -159,10 +163,10 @@
       justify-content: center;
       width: 40px;
       height: 40px;
-      border: 1px solid var(--color-cool-neutral-17);
+      border: 1px solid var(--color-cool-neutral-20);
       border-radius: 9999px;
       padding: 0;
-      color: var(--color-cool-neutral-17);
+      color: var(--color-cool-neutral-20);
       background: var(--color-common-100);
       cursor: pointer;
       appearance: none;
@@ -182,10 +186,10 @@
       justify-content: center;
       width: 40px;
       height: 40px;
-      border: 1px solid var(--color-cool-neutral-17);
+      border: 1px solid var(--color-cool-neutral-20);
       border-radius: 10px;
       padding: 0;
-      color: var(--color-cool-neutral-17);
+      color: var(--color-cool-neutral-20);
       background: var(--color-common-100);
       cursor: pointer;
       appearance: none;
@@ -200,10 +204,10 @@
       justify-content: center;
       width: 40px;
       height: 40px;
-      border: 1px solid var(--color-cool-neutral-17);
+      border: 1px solid var(--color-cool-neutral-20);
       border-radius: 10px;
       padding: 0;
-      color: var(--color-cool-neutral-17);
+      color: var(--color-cool-neutral-20);
       background: var(--color-common-100);
       cursor: pointer;
       appearance: none;
@@ -218,10 +222,10 @@
       justify-content: center;
       width: 40px;
       height: 40px;
-      border: 1px solid var(--color-cool-neutral-17);
+      border: 1px solid var(--color-cool-neutral-20);
       border-radius: 10px;
       padding: 0;
-      color: var(--color-cool-neutral-17);
+      color: var(--color-cool-neutral-20);
       background: var(--color-common-100);
       cursor: pointer;
       appearance: none;
@@ -236,10 +240,10 @@
       justify-content: center;
       width: 40px;
       height: 40px;
-      border: 1px solid var(--color-cool-neutral-17);
+      border: 1px solid var(--color-cool-neutral-20);
       border-radius: 10px;
       padding: 0;
-      color: var(--color-cool-neutral-17);
+      color: var(--color-cool-neutral-20);
       background: var(--color-common-100);
       cursor: pointer;
       appearance: none;
@@ -254,10 +258,10 @@
       justify-content: center;
       width: 40px;
       height: 40px;
-      border: 1px solid var(--color-cool-neutral-17);
+      border: 1px solid var(--color-cool-neutral-20);
       border-radius: 10px;
       padding: 0;
-      color: var(--color-cool-neutral-17);
+      color: var(--color-cool-neutral-20);
       background: var(--color-common-100);
       cursor: pointer;
       appearance: none;
@@ -274,7 +278,7 @@
       border: 0;
       border-radius: 9999px;
       padding: 12px 16px;
-      color: var(--color-cool-neutral-17);
+      color: var(--color-cool-neutral-20);
       background: var(--color-brand-purple_artkorealab);
       font-size: var(--font-size-16);
       font-weight: var(--font-weight-600);
@@ -294,7 +298,7 @@
       border: 0;
       border-radius: 9999px;
       padding: 0 24px;
-      color: var(--color-cool-neutral-17);
+      color: var(--color-cool-neutral-20);
       background: var(--color-brand-mint_artkorealab);
       font-size: var(--font-size-16);
       font-weight: var(--font-weight-600);
@@ -310,10 +314,10 @@
       justify-content: center;
       min-width: 48px;
       height: 40px;
-      border: 1px solid var(--color-cool-neutral-17);
+      border: 1px solid var(--color-cool-neutral-20);
       border-radius: 9999px;
       padding: 0 24px;
-      color: var(--color-cool-neutral-17);
+      color: var(--color-cool-neutral-20);
       background: var(--color-common-100);
       font-size: var(--font-size-15);
       font-weight: var(--font-weight-500);
@@ -362,7 +366,7 @@
       border-radius: 10px;
       padding: 0 24px;
       color: var(--color-common-100);
-      background: var(--color-cool-neutral-17);
+      background: var(--color-cool-neutral-20);
       font-size: var(--font-size-16);
       font-weight: var(--font-weight-500);
       line-height: 1;
@@ -378,10 +382,10 @@
       width: 100px;
       min-width: 100px;
       height: 40px;
-      border: 1px solid var(--color-cool-neutral-17);
+      border: 1px solid var(--color-cool-neutral-20);
       border-radius: 9999px;
       padding: 0;
-      color: var(--color-cool-neutral-17);
+      color: var(--color-cool-neutral-20);
       background: var(--color-common-100);
       font-size: var(--font-size-16);
       font-weight: var(--font-weight-500);
@@ -397,11 +401,11 @@
       width: 100px;
       min-width: 100px;
       height: 40px;
-      border: 1px solid var(--color-cool-neutral-17);
+      border: 1px solid var(--color-cool-neutral-20);
       border-radius: 9999px;
       padding: 0;
       color: var(--color-common-100);
-      background: var(--color-cool-neutral-17);
+      background: var(--color-cool-neutral-20);
       font-size: var(--font-size-16);
       font-weight: var(--font-weight-500);
       line-height: 1;
@@ -430,7 +434,7 @@
       border-bottom: 1px solid var(--color-neutral-60);
       border-radius: 0;
       padding: 0 8px;
-      color: var(--color-cool-neutral-17);
+      color: var(--color-cool-neutral-20);
       background: transparent;
       font-size: var(--font-size-16);
       font-weight: var(--font-weight-500);
@@ -447,7 +451,7 @@
       border-bottom: 1px solid var(--color-neutral-60);
       border-radius: 0;
       padding: 0 8px;
-      color: var(--color-cool-neutral-17);
+      color: var(--color-cool-neutral-20);
       background: transparent;
       font-size: var(--font-size-16);
       font-weight: var(--font-weight-500);
@@ -465,7 +469,7 @@
       border-bottom: 1px solid var(--color-neutral-60);
       border-radius: 0;
       padding: 10px 8px;
-      color: var(--color-cool-neutral-17);
+      color: var(--color-cool-neutral-20);
       background: transparent;
       font-size: var(--font-size-16);
       font-weight: var(--font-weight-500);
@@ -480,7 +484,7 @@
       border: 1px solid #dddddd;
       border-radius: 8px;
       padding: 10px 8px;
-      color: var(--color-cool-neutral-17);
+      color: var(--color-cool-neutral-20);
       background: var(--color-common-100);
       font-size: var(--font-size-16);
       font-weight: var(--font-weight-500);
@@ -495,7 +499,7 @@
       border: 0;
       border-radius: 8px;
       padding: 0 40px 0 16px;
-      color: var(--color-cool-neutral-17);
+      color: var(--color-cool-neutral-20);
       background: var(--color-neutral-97) url("./system/foundation/icons/icon_chevron_down_light.svg") right 16px center / 12px auto no-repeat;
       font-size: var(--font-size-16);
       font-weight: var(--font-weight-400);
@@ -512,7 +516,7 @@
       border: 0;
       border-radius: 8px;
       padding: 0 40px 0 16px;
-      color: var(--color-cool-neutral-17);
+      color: var(--color-cool-neutral-20);
       background: var(--color-neutral-97) url("./system/foundation/icons/icon_chevron_down_light.svg") right 16px center / 12px auto no-repeat;
       font-size: var(--font-size-16);
       font-weight: var(--font-weight-400);
@@ -578,7 +582,7 @@
       border: 0;
       border-radius: 9999px;
       padding: 0 12px;
-      color: var(--color-cool-neutral-17);
+      color: var(--color-cool-neutral-20);
       background: var(--color-brand-purple_artkorealab);
       font-size: var(--font-size-12);
       font-weight: var(--font-weight-500);
@@ -595,7 +599,7 @@
       border: 0;
       border-radius: 9999px;
       padding: 0 16px;
-      color: var(--color-cool-neutral-17);
+      color: var(--color-cool-neutral-20);
       background: var(--color-brand-purple_artkorealab);
       font-size: var(--font-size-13);
       font-weight: var(--font-weight-500);
@@ -612,7 +616,7 @@
       border: 0;
       border-radius: 9999px;
       padding: 0 20px;
-      color: var(--color-cool-neutral-17);
+      color: var(--color-cool-neutral-20);
       background: var(--color-brand-purple_artkorealab);
       font-size: var(--font-size-14);
       font-weight: var(--font-weight-500);
@@ -628,7 +632,7 @@
       border: 0;
       border-radius: 9999px;
       padding: 0 24px;
-      color: var(--color-cool-neutral-17);
+      color: var(--color-cool-neutral-20);
       background: var(--color-common-100);
       font-size: var(--font-size-16);
       font-weight: var(--font-weight-500);
@@ -643,7 +647,7 @@
       border: 0;
       border-radius: 40px;
       padding: 40px 32px;
-      color: var(--color-cool-neutral-17);
+      color: var(--color-cool-neutral-20);
       background: var(--color-common-100);
       font-size: var(--font-size-16);
       font-weight: var(--font-weight-500);
@@ -664,7 +668,7 @@
       width: 100%;
       border: 0;
       padding: 32px 40px;
-      color: var(--color-cool-neutral-17);
+      color: var(--color-cool-neutral-20);
       background: var(--color-common-100);
       font-size: var(--font-size-16);
       font-weight: var(--font-weight-700);
@@ -676,7 +680,7 @@
 
     .panel_content_accordion {
       padding: 0 48px 48px;
-      color: var(--color-cool-neutral-17);
+      color: var(--color-cool-neutral-20);
       background: var(--color-common-100);
       font-size: var(--font-size-15);
       font-weight: var(--font-weight-500);
@@ -687,7 +691,7 @@
       width: 100%;
       border-collapse: separate;
       border-spacing: 0;
-      color: var(--color-cool-neutral-17);
+      color: var(--color-cool-neutral-20);
       background: var(--color-common-100);
       font-size: var(--font-size-15);
       line-height: 1.45;
@@ -722,7 +726,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 44px;
+  min-height: 40px;
   padding: 0 20px;
   font-size: var(--font-size-15);
   line-height: 1.5;
@@ -748,7 +752,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 56px;
+  min-height: 52px;
   padding: 0 24px;
   font-size: var(--font-size-16);
   line-height: 1.5;
@@ -770,11 +774,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 60px;
+  min-height: 56px;
   padding: 0 32px;
   font-size: var(--font-size-18);
   line-height: 1.5;
@@ -802,7 +806,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 44px;
+  min-height: 40px;
   padding: 0 20px;
   font-size: var(--font-size-15);
   line-height: 1.5;
@@ -836,7 +840,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 56px;
+  min-height: 52px;
   padding: 0 24px;
   font-size: var(--font-size-16);
   line-height: 1.5;
@@ -863,14 +867,14 @@
 
 /* btn_primary_filled_icon_large */
 .btn_primary_filled_icon_large {
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 60px;
+  min-height: 56px;
   padding: 0 32px;
   font-size: var(--font-size-18);
   line-height: 1.5;
@@ -906,7 +910,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 44px;
+  min-height: 40px;
   padding: 0 20px;
   font-size: var(--font-size-15);
   line-height: 1.5;
@@ -932,7 +936,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 56px;
+  min-height: 52px;
   padding: 0 24px;
   font-size: var(--font-size-16);
   line-height: 1.5;
@@ -954,11 +958,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 60px;
+  min-height: 56px;
   padding: 0 32px;
   font-size: var(--font-size-18);
   line-height: 1.5;
@@ -986,7 +990,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 44px;
+  min-height: 40px;
   padding: 0 20px;
   font-size: var(--font-size-15);
   line-height: 1.5;
@@ -1020,7 +1024,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 56px;
+  min-height: 52px;
   padding: 0 24px;
   font-size: var(--font-size-16);
   line-height: 1.5;
@@ -1047,14 +1051,14 @@
 
 /* btn_primary_filled_rounded_icon_large */
 .btn_primary_filled_rounded_icon_large {
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 60px;
+  min-height: 56px;
   padding: 0 32px;
   font-size: var(--font-size-18);
   line-height: 1.5;
@@ -1090,7 +1094,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 44px;
+  min-height: 40px;
   padding: 0 20px;
   font-size: var(--font-size-15);
   line-height: 1.5;
@@ -1116,7 +1120,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 56px;
+  min-height: 52px;
   padding: 0 24px;
   font-size: var(--font-size-16);
   line-height: 1.5;
@@ -1138,11 +1142,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 60px;
+  min-height: 56px;
   padding: 0 32px;
   font-size: var(--font-size-18);
   line-height: 1.5;
@@ -1170,7 +1174,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 44px;
+  min-height: 40px;
   padding: 0 20px;
   font-size: var(--font-size-15);
   line-height: 1.5;
@@ -1204,7 +1208,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 56px;
+  min-height: 52px;
   padding: 0 24px;
   font-size: var(--font-size-16);
   line-height: 1.5;
@@ -1231,14 +1235,14 @@
 
 /* btn_primary_filled_full_rounded_icon_large */
 .btn_primary_filled_full_rounded_icon_large {
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 60px;
+  min-height: 56px;
   padding: 0 32px;
   font-size: var(--font-size-18);
   line-height: 1.5;
@@ -1274,7 +1278,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 44px;
+  min-height: 40px;
   padding: 0 20px;
   font-size: var(--font-size-15);
   line-height: 1.5;
@@ -1302,7 +1306,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 56px;
+  min-height: 52px;
   padding: 0 24px;
   font-size: var(--font-size-16);
   line-height: 1.5;
@@ -1326,11 +1330,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 60px;
+  min-height: 56px;
   padding: 0 32px;
   font-size: var(--font-size-18);
   line-height: 1.5;
@@ -1360,7 +1364,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 44px;
+  min-height: 40px;
   padding: 0 20px;
   font-size: var(--font-size-15);
   line-height: 1.5;
@@ -1395,7 +1399,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 56px;
+  min-height: 52px;
   padding: 0 24px;
   font-size: var(--font-size-16);
   line-height: 1.5;
@@ -1423,14 +1427,14 @@
 
 /* btn_primary_outline_icon_large */
 .btn_primary_outline_icon_large {
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 60px;
+  min-height: 56px;
   padding: 0 32px;
   font-size: var(--font-size-18);
   line-height: 1.5;
@@ -1467,7 +1471,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 44px;
+  min-height: 40px;
   padding: 0 20px;
   font-size: var(--font-size-15);
   line-height: 1.5;
@@ -1495,7 +1499,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 56px;
+  min-height: 52px;
   padding: 0 24px;
   font-size: var(--font-size-16);
   line-height: 1.5;
@@ -1519,11 +1523,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 60px;
+  min-height: 56px;
   padding: 0 32px;
   font-size: var(--font-size-18);
   line-height: 1.5;
@@ -1553,7 +1557,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 44px;
+  min-height: 40px;
   padding: 0 20px;
   font-size: var(--font-size-15);
   line-height: 1.5;
@@ -1588,7 +1592,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 56px;
+  min-height: 52px;
   padding: 0 24px;
   font-size: var(--font-size-16);
   line-height: 1.5;
@@ -1616,14 +1620,14 @@
 
 /* btn_primary_outline_rounded_icon_large */
 .btn_primary_outline_rounded_icon_large {
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 60px;
+  min-height: 56px;
   padding: 0 32px;
   font-size: var(--font-size-18);
   line-height: 1.5;
@@ -1660,7 +1664,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 44px;
+  min-height: 40px;
   padding: 0 20px;
   font-size: var(--font-size-15);
   line-height: 1.5;
@@ -1688,7 +1692,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 56px;
+  min-height: 52px;
   padding: 0 24px;
   font-size: var(--font-size-16);
   line-height: 1.5;
@@ -1712,11 +1716,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 60px;
+  min-height: 56px;
   padding: 0 32px;
   font-size: var(--font-size-18);
   line-height: 1.5;
@@ -1746,7 +1750,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 44px;
+  min-height: 40px;
   padding: 0 20px;
   font-size: var(--font-size-15);
   line-height: 1.5;
@@ -1781,7 +1785,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 56px;
+  min-height: 52px;
   padding: 0 24px;
   font-size: var(--font-size-16);
   line-height: 1.5;
@@ -1809,14 +1813,14 @@
 
 /* btn_primary_outline_full_rounded_icon_large */
 .btn_primary_outline_full_rounded_icon_large {
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 60px;
+  min-height: 56px;
   padding: 0 32px;
   font-size: var(--font-size-18);
   line-height: 1.5;
@@ -2285,10 +2289,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
-  min-width: 32px;
-  min-height: 32px;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
   padding: 0;
   border: 1px solid var(--color-static-black);
   border-radius: 0;
@@ -2357,10 +2361,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
-  min-width: 32px;
-  min-height: 32px;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
   padding: 0;
   border: 0;
   border-radius: 0;
@@ -2388,10 +2392,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  min-width: 40px;
-  min-height: 40px;
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  min-height: 52px;
   padding: 0;
   border: 1px solid var(--color-static-black);
   border-radius: 0;
@@ -2460,10 +2464,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  min-width: 40px;
-  min-height: 40px;
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  min-height: 52px;
   padding: 0;
   border: 0;
   border-radius: 0;
@@ -2491,10 +2495,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
-  min-width: 48px;
-  min-height: 48px;
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  min-height: 56px;
   padding: 0;
   border: 1px solid var(--color-static-black);
   border-radius: 0;
@@ -2563,10 +2567,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
-  min-width: 48px;
-  min-height: 48px;
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  min-height: 56px;
   padding: 0;
   border: 0;
   border-radius: 0;
@@ -2596,10 +2600,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
-  min-width: 32px;
-  min-height: 32px;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
   padding: 0;
   border: 1px solid var(--color-static-black);
   border-radius: 8px;
@@ -2668,10 +2672,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
-  min-width: 32px;
-  min-height: 32px;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
   padding: 0;
   border: 0;
   border-radius: 8px;
@@ -2699,10 +2703,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  min-width: 40px;
-  min-height: 40px;
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  min-height: 52px;
   padding: 0;
   border: 1px solid var(--color-static-black);
   border-radius: 10px;
@@ -2771,10 +2775,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  min-width: 40px;
-  min-height: 40px;
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  min-height: 52px;
   padding: 0;
   border: 0;
   border-radius: 10px;
@@ -2802,10 +2806,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
-  min-width: 48px;
-  min-height: 48px;
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  min-height: 56px;
   padding: 0;
   border: 1px solid var(--color-static-black);
   border-radius: 10px;
@@ -2874,10 +2878,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
-  min-width: 48px;
-  min-height: 48px;
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  min-height: 56px;
   padding: 0;
   border: 0;
   border-radius: 10px;
@@ -2907,10 +2911,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
-  min-width: 32px;
-  min-height: 32px;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
   padding: 0;
   border: 1px solid var(--color-static-black);
   border-radius: 9999px;
@@ -2979,10 +2983,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
-  min-width: 32px;
-  min-height: 32px;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
   padding: 0;
   border: 0;
   border-radius: 9999px;
@@ -3010,10 +3014,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  min-width: 40px;
-  min-height: 40px;
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  min-height: 52px;
   padding: 0;
   border: 1px solid var(--color-static-black);
   border-radius: 9999px;
@@ -3082,10 +3086,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  min-width: 40px;
-  min-height: 40px;
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  min-height: 52px;
   padding: 0;
   border: 0;
   border-radius: 9999px;
@@ -3113,10 +3117,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
-  min-width: 48px;
-  min-height: 48px;
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  min-height: 56px;
   padding: 0;
   border: 1px solid var(--color-static-black);
   border-radius: 9999px;
@@ -3185,10 +3189,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
-  min-width: 48px;
-  min-height: 48px;
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  min-height: 56px;
   padding: 0;
   border: 0;
   border-radius: 9999px;
@@ -3221,7 +3225,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 44px;
+  min-height: 40px;
   padding: 0 20px;
   font-size: var(--font-size-15);
   line-height: 1.5;
@@ -3244,7 +3248,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 56px;
+  min-height: 52px;
   padding: 0 24px;
   font-size: var(--font-size-16);
   line-height: 1.5;
@@ -3264,10 +3268,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 60px;
+  min-height: 56px;
   padding: 0 32px;
   font-size: var(--font-size-18);
   line-height: 1.5;
@@ -3290,7 +3294,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 44px;
+  min-height: 40px;
   padding: 0 20px;
   font-size: var(--font-size-15);
   line-height: 1.5;
@@ -3321,7 +3325,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 56px;
+  min-height: 52px;
   padding: 0 24px;
   font-size: var(--font-size-16);
   line-height: 1.5;
@@ -3346,13 +3350,13 @@
 
 /* btn_primary_filled_icon_disabled_large */
 .btn_primary_filled_icon_disabled_large {
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 60px;
+  min-height: 56px;
   padding: 0 32px;
   font-size: var(--font-size-18);
   line-height: 1.5;
@@ -3383,7 +3387,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 44px;
+  min-height: 40px;
   padding: 0 20px;
   font-size: var(--font-size-15);
   line-height: 1.5;
@@ -3406,7 +3410,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 56px;
+  min-height: 52px;
   padding: 0 24px;
   font-size: var(--font-size-16);
   line-height: 1.5;
@@ -3426,10 +3430,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 60px;
+  min-height: 56px;
   padding: 0 32px;
   font-size: var(--font-size-18);
   line-height: 1.5;
@@ -3452,7 +3456,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 44px;
+  min-height: 40px;
   padding: 0 20px;
   font-size: var(--font-size-15);
   line-height: 1.5;
@@ -3483,7 +3487,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 56px;
+  min-height: 52px;
   padding: 0 24px;
   font-size: var(--font-size-16);
   line-height: 1.5;
@@ -3508,13 +3512,13 @@
 
 /* btn_primary_filled_rounded_icon_disabled_large */
 .btn_primary_filled_rounded_icon_disabled_large {
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 60px;
+  min-height: 56px;
   padding: 0 32px;
   font-size: var(--font-size-18);
   line-height: 1.5;
@@ -3545,7 +3549,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 44px;
+  min-height: 40px;
   padding: 0 20px;
   font-size: var(--font-size-15);
   line-height: 1.5;
@@ -3568,7 +3572,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 56px;
+  min-height: 52px;
   padding: 0 24px;
   font-size: var(--font-size-16);
   line-height: 1.5;
@@ -3588,10 +3592,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 60px;
+  min-height: 56px;
   padding: 0 32px;
   font-size: var(--font-size-18);
   line-height: 1.5;
@@ -3614,7 +3618,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 44px;
+  min-height: 40px;
   padding: 0 20px;
   font-size: var(--font-size-15);
   line-height: 1.5;
@@ -3645,7 +3649,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 56px;
+  min-height: 52px;
   padding: 0 24px;
   font-size: var(--font-size-16);
   line-height: 1.5;
@@ -3670,13 +3674,13 @@
 
 /* btn_primary_filled_full_rounded_icon_disabled_large */
 .btn_primary_filled_full_rounded_icon_disabled_large {
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 60px;
+  min-height: 56px;
   padding: 0 32px;
   font-size: var(--font-size-18);
   line-height: 1.5;
@@ -3707,7 +3711,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 44px;
+  min-height: 40px;
   padding: 0 20px;
   font-size: var(--font-size-15);
   line-height: 1.5;
@@ -3730,7 +3734,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 56px;
+  min-height: 52px;
   padding: 0 24px;
   font-size: var(--font-size-16);
   line-height: 1.5;
@@ -3750,10 +3754,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 60px;
+  min-height: 56px;
   padding: 0 32px;
   font-size: var(--font-size-18);
   line-height: 1.5;
@@ -3776,7 +3780,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 44px;
+  min-height: 40px;
   padding: 0 20px;
   font-size: var(--font-size-15);
   line-height: 1.5;
@@ -3807,7 +3811,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 56px;
+  min-height: 52px;
   padding: 0 24px;
   font-size: var(--font-size-16);
   line-height: 1.5;
@@ -3832,13 +3836,13 @@
 
 /* btn_primary_outline_icon_disabled_large */
 .btn_primary_outline_icon_disabled_large {
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 60px;
+  min-height: 56px;
   padding: 0 32px;
   font-size: var(--font-size-18);
   line-height: 1.5;
@@ -3869,7 +3873,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 44px;
+  min-height: 40px;
   padding: 0 20px;
   font-size: var(--font-size-15);
   line-height: 1.5;
@@ -3892,7 +3896,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 56px;
+  min-height: 52px;
   padding: 0 24px;
   font-size: var(--font-size-16);
   line-height: 1.5;
@@ -3912,10 +3916,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 60px;
+  min-height: 56px;
   padding: 0 32px;
   font-size: var(--font-size-18);
   line-height: 1.5;
@@ -3938,7 +3942,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 44px;
+  min-height: 40px;
   padding: 0 20px;
   font-size: var(--font-size-15);
   line-height: 1.5;
@@ -3969,7 +3973,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 56px;
+  min-height: 52px;
   padding: 0 24px;
   font-size: var(--font-size-16);
   line-height: 1.5;
@@ -3994,13 +3998,13 @@
 
 /* btn_primary_outline_rounded_icon_disabled_large */
 .btn_primary_outline_rounded_icon_disabled_large {
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 60px;
+  min-height: 56px;
   padding: 0 32px;
   font-size: var(--font-size-18);
   line-height: 1.5;
@@ -4031,7 +4035,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 44px;
+  min-height: 40px;
   padding: 0 20px;
   font-size: var(--font-size-15);
   line-height: 1.5;
@@ -4054,7 +4058,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 56px;
+  min-height: 52px;
   padding: 0 24px;
   font-size: var(--font-size-16);
   line-height: 1.5;
@@ -4074,10 +4078,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 60px;
+  min-height: 56px;
   padding: 0 32px;
   font-size: var(--font-size-18);
   line-height: 1.5;
@@ -4100,7 +4104,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 44px;
+  min-height: 40px;
   padding: 0 20px;
   font-size: var(--font-size-15);
   line-height: 1.5;
@@ -4131,7 +4135,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 56px;
+  min-height: 52px;
   padding: 0 24px;
   font-size: var(--font-size-16);
   line-height: 1.5;
@@ -4156,13 +4160,13 @@
 
 /* btn_primary_outline_full_rounded_icon_disabled_large */
 .btn_primary_outline_full_rounded_icon_disabled_large {
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 60px;
+  min-height: 56px;
   padding: 0 32px;
   font-size: var(--font-size-18);
   line-height: 1.5;
@@ -4189,7 +4193,7 @@
 
 /* btn_text_small */
 .btn_text_small {
-  font-weight: 400;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -4216,7 +4220,7 @@
 
 /* btn_text_medium */
 .btn_text_medium {
-  font-weight: 400;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -4245,7 +4249,7 @@
 
 /* btn_text_icon_small */
 .btn_text_icon_small {
-  font-weight: 400;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -4275,7 +4279,7 @@
 
 /* btn_text_icon_medium */
 .btn_text_icon_medium {
-  font-weight: 400;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -4472,7 +4476,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -4494,7 +4498,7 @@
 }
 
 .btn_primary_filled_icon_xlarge {
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -4530,7 +4534,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -4552,7 +4556,7 @@
 }
 
 .btn_primary_filled_rounded_icon_xlarge {
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -4588,7 +4592,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -4610,7 +4614,7 @@
 }
 
 .btn_primary_filled_full_rounded_icon_xlarge {
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -4646,7 +4650,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -4670,7 +4674,7 @@
 }
 
 .btn_primary_outline_icon_xlarge {
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -4707,7 +4711,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -4731,7 +4735,7 @@
 }
 
 .btn_primary_outline_rounded_icon_xlarge {
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -4768,7 +4772,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -4792,7 +4796,7 @@
 }
 
 .btn_primary_outline_full_rounded_icon_xlarge {
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -4829,7 +4833,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   min-height: 64px;
@@ -4848,7 +4852,7 @@
 }
 
 .btn_primary_filled_icon_disabled_xlarge {
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   display: inline-flex;
@@ -4882,7 +4886,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   min-height: 64px;
@@ -4901,7 +4905,7 @@
 }
 
 .btn_primary_filled_rounded_icon_disabled_xlarge {
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   display: inline-flex;
@@ -4935,7 +4939,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   min-height: 64px;
@@ -4954,7 +4958,7 @@
 }
 
 .btn_primary_filled_full_rounded_icon_disabled_xlarge {
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   display: inline-flex;
@@ -4988,7 +4992,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   min-height: 64px;
@@ -5007,7 +5011,7 @@
 }
 
 .btn_primary_outline_icon_disabled_xlarge {
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   display: inline-flex;
@@ -5041,7 +5045,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   min-height: 64px;
@@ -5060,7 +5064,7 @@
 }
 
 .btn_primary_outline_rounded_icon_disabled_xlarge {
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   display: inline-flex;
@@ -5094,7 +5098,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   min-height: 64px;
@@ -5113,7 +5117,7 @@
 }
 
 .btn_primary_outline_full_rounded_icon_disabled_xlarge {
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   display: inline-flex;
@@ -5144,7 +5148,7 @@
 }
 
 .btn_text_xlarge {
-  font-weight: 400;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -5170,7 +5174,7 @@
 }
 
 .btn_text_icon_xlarge {
-  font-weight: 400;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
@@ -5211,7 +5215,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 36px;
+  min-height: 40px;
   padding: 0 16px;
   border: 0;
   border-radius: 0;
@@ -5233,7 +5237,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 36px;
+  min-height: 40px;
   padding: 0 16px;
   border: 0;
   border-radius: 0;
@@ -5255,7 +5259,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 24px;
   border: 0;
   border-radius: 0;
@@ -5277,7 +5281,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 24px;
   border: 0;
   border-radius: 0;
@@ -5299,7 +5303,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 28px;
   border: 0;
   border-radius: 0;
@@ -5316,11 +5320,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 32px;
   border: 0;
   border-radius: 0;
@@ -5344,7 +5348,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 28px;
   border: 0;
   border-radius: 0;
@@ -5362,10 +5366,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 32px;
   border: 0;
   border-radius: 0;
@@ -5389,7 +5393,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 36px;
+  min-height: 40px;
   padding: 0 16px;
   gap: 12px;
   border: 0;
@@ -5421,7 +5425,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 36px;
+  min-height: 40px;
   padding: 0 16px;
   gap: 12px;
   border: 0;
@@ -5452,7 +5456,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 24px;
   gap: 12px;
   border: 0;
@@ -5484,7 +5488,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 24px;
   gap: 12px;
   border: 0;
@@ -5515,7 +5519,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 28px;
   gap: 12px;
   border: 0;
@@ -5533,11 +5537,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 32px;
   gap: 12px;
   border: 0;
@@ -5578,7 +5582,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 28px;
   gap: 12px;
   border: 0;
@@ -5597,10 +5601,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 32px;
   gap: 12px;
   border: 0;
@@ -5640,7 +5644,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 36px;
+  min-height: 40px;
   padding: 0 16px;
   border: 0;
   border-radius: 8px;
@@ -5662,7 +5666,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 36px;
+  min-height: 40px;
   padding: 0 16px;
   border: 0;
   border-radius: 8px;
@@ -5684,7 +5688,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 24px;
   border: 0;
   border-radius: 8px;
@@ -5706,7 +5710,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 24px;
   border: 0;
   border-radius: 8px;
@@ -5728,7 +5732,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 28px;
   border: 0;
   border-radius: 8px;
@@ -5745,11 +5749,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 32px;
   border: 0;
   border-radius: 8px;
@@ -5773,7 +5777,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 28px;
   border: 0;
   border-radius: 8px;
@@ -5791,10 +5795,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 32px;
   border: 0;
   border-radius: 8px;
@@ -5818,7 +5822,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 36px;
+  min-height: 40px;
   padding: 0 16px;
   gap: 12px;
   border: 0;
@@ -5850,7 +5854,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 36px;
+  min-height: 40px;
   padding: 0 16px;
   gap: 12px;
   border: 0;
@@ -5881,7 +5885,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 24px;
   gap: 12px;
   border: 0;
@@ -5913,7 +5917,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 24px;
   gap: 12px;
   border: 0;
@@ -5944,7 +5948,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 28px;
   gap: 12px;
   border: 0;
@@ -5962,11 +5966,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 32px;
   gap: 12px;
   border: 0;
@@ -6007,7 +6011,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 28px;
   gap: 12px;
   border: 0;
@@ -6026,10 +6030,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 32px;
   gap: 12px;
   border: 0;
@@ -6069,7 +6073,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 36px;
+  min-height: 40px;
   padding: 0 16px;
   border: 0;
   border-radius: 9999px;
@@ -6091,7 +6095,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 36px;
+  min-height: 40px;
   padding: 0 16px;
   border: 0;
   border-radius: 9999px;
@@ -6113,7 +6117,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 24px;
   border: 0;
   border-radius: 9999px;
@@ -6135,7 +6139,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 24px;
   border: 0;
   border-radius: 9999px;
@@ -6157,7 +6161,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 28px;
   border: 0;
   border-radius: 9999px;
@@ -6174,11 +6178,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 32px;
   border: 0;
   border-radius: 9999px;
@@ -6202,7 +6206,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 28px;
   border: 0;
   border-radius: 9999px;
@@ -6220,10 +6224,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 32px;
   border: 0;
   border-radius: 9999px;
@@ -6247,7 +6251,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 36px;
+  min-height: 40px;
   padding: 0 16px;
   gap: 12px;
   border: 0;
@@ -6279,7 +6283,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 36px;
+  min-height: 40px;
   padding: 0 16px;
   gap: 12px;
   border: 0;
@@ -6310,7 +6314,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 24px;
   gap: 12px;
   border: 0;
@@ -6342,7 +6346,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 24px;
   gap: 12px;
   border: 0;
@@ -6373,7 +6377,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 28px;
   gap: 12px;
   border: 0;
@@ -6391,11 +6395,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 32px;
   gap: 12px;
   border: 0;
@@ -6436,7 +6440,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 28px;
   gap: 12px;
   border: 0;
@@ -6455,10 +6459,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 32px;
   gap: 12px;
   border: 0;
@@ -6499,7 +6503,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 36px;
+  min-height: 40px;
   padding: 0 16px;
   border: 1px solid var(--color-static-black);
   border-radius: 0;
@@ -6523,7 +6527,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 36px;
+  min-height: 40px;
   padding: 0 16px;
   border: 1px solid transparent;
   border-radius: 0;
@@ -6547,7 +6551,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 24px;
   border: 1px solid var(--color-static-black);
   border-radius: 0;
@@ -6571,7 +6575,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 24px;
   border: 1px solid transparent;
   border-radius: 0;
@@ -6595,7 +6599,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 28px;
   border: 1px solid var(--color-static-black);
   border-radius: 0;
@@ -6612,11 +6616,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 32px;
   border: 1px solid var(--color-static-black);
   border-radius: 0;
@@ -6642,7 +6646,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 28px;
   border: 1px solid transparent;
   border-radius: 0;
@@ -6661,10 +6665,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 32px;
   border: 1px solid transparent;
   border-radius: 0;
@@ -6690,7 +6694,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 36px;
+  min-height: 40px;
   padding: 0 16px;
   gap: 12px;
   border: 1px solid var(--color-static-black);
@@ -6723,7 +6727,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 36px;
+  min-height: 40px;
   padding: 0 16px;
   gap: 12px;
   border: 1px solid transparent;
@@ -6756,7 +6760,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 24px;
   gap: 12px;
   border: 1px solid var(--color-static-black);
@@ -6789,7 +6793,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 24px;
   gap: 12px;
   border: 1px solid transparent;
@@ -6822,7 +6826,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 28px;
   gap: 12px;
   border: 1px solid var(--color-static-black);
@@ -6840,11 +6844,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 32px;
   gap: 12px;
   border: 1px solid var(--color-static-black);
@@ -6885,7 +6889,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 28px;
   gap: 12px;
   border: 1px solid transparent;
@@ -6905,10 +6909,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 32px;
   gap: 12px;
   border: 1px solid transparent;
@@ -6950,7 +6954,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 36px;
+  min-height: 40px;
   padding: 0 16px;
   border: 1px solid var(--color-static-black);
   border-radius: 8px;
@@ -6974,7 +6978,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 36px;
+  min-height: 40px;
   padding: 0 16px;
   border: 1px solid transparent;
   border-radius: 8px;
@@ -6998,7 +7002,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 24px;
   border: 1px solid var(--color-static-black);
   border-radius: 8px;
@@ -7022,7 +7026,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 24px;
   border: 1px solid transparent;
   border-radius: 8px;
@@ -7046,7 +7050,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 28px;
   border: 1px solid var(--color-static-black);
   border-radius: 8px;
@@ -7063,11 +7067,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 32px;
   border: 1px solid var(--color-static-black);
   border-radius: 8px;
@@ -7093,7 +7097,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 28px;
   border: 1px solid transparent;
   border-radius: 8px;
@@ -7112,10 +7116,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 32px;
   border: 1px solid transparent;
   border-radius: 8px;
@@ -7141,7 +7145,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 36px;
+  min-height: 40px;
   padding: 0 16px;
   gap: 12px;
   border: 1px solid var(--color-static-black);
@@ -7174,7 +7178,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 36px;
+  min-height: 40px;
   padding: 0 16px;
   gap: 12px;
   border: 1px solid transparent;
@@ -7207,7 +7211,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 24px;
   gap: 12px;
   border: 1px solid var(--color-static-black);
@@ -7240,7 +7244,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 24px;
   gap: 12px;
   border: 1px solid transparent;
@@ -7273,7 +7277,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 28px;
   gap: 12px;
   border: 1px solid var(--color-static-black);
@@ -7291,11 +7295,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 32px;
   gap: 12px;
   border: 1px solid var(--color-static-black);
@@ -7336,7 +7340,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 28px;
   gap: 12px;
   border: 1px solid transparent;
@@ -7356,10 +7360,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 32px;
   gap: 12px;
   border: 1px solid transparent;
@@ -7401,7 +7405,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 36px;
+  min-height: 40px;
   padding: 0 16px;
   border: 1px solid var(--color-static-black);
   border-radius: 9999px;
@@ -7425,7 +7429,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 36px;
+  min-height: 40px;
   padding: 0 16px;
   border: 1px solid transparent;
   border-radius: 9999px;
@@ -7449,7 +7453,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 24px;
   border: 1px solid var(--color-static-black);
   border-radius: 9999px;
@@ -7473,7 +7477,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 24px;
   border: 1px solid transparent;
   border-radius: 9999px;
@@ -7497,7 +7501,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 28px;
   border: 1px solid var(--color-static-black);
   border-radius: 9999px;
@@ -7514,11 +7518,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 32px;
   border: 1px solid var(--color-static-black);
   border-radius: 9999px;
@@ -7544,7 +7548,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 28px;
   border: 1px solid transparent;
   border-radius: 9999px;
@@ -7563,10 +7567,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 32px;
   border: 1px solid transparent;
   border-radius: 9999px;
@@ -7592,7 +7596,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 36px;
+  min-height: 40px;
   padding: 0 16px;
   gap: 12px;
   border: 1px solid var(--color-static-black);
@@ -7625,7 +7629,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 36px;
+  min-height: 40px;
   padding: 0 16px;
   gap: 12px;
   border: 1px solid transparent;
@@ -7658,7 +7662,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 24px;
   gap: 12px;
   border: 1px solid var(--color-static-black);
@@ -7691,7 +7695,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 24px;
   gap: 12px;
   border: 1px solid transparent;
@@ -7724,7 +7728,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 28px;
   gap: 12px;
   border: 1px solid var(--color-static-black);
@@ -7742,11 +7746,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 32px;
   gap: 12px;
   border: 1px solid var(--color-static-black);
@@ -7787,7 +7791,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 28px;
   gap: 12px;
   border: 1px solid transparent;
@@ -7807,10 +7811,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 32px;
   gap: 12px;
   border: 1px solid transparent;
@@ -7852,7 +7856,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 36px;
+  min-height: 40px;
   padding: 0 16px;
   border: 1px solid var(--color-static-black);
   border-radius: 0;
@@ -7874,7 +7878,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 36px;
+  min-height: 40px;
   padding: 0 16px;
   border: 1px solid transparent;
   border-radius: 0;
@@ -7897,7 +7901,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 24px;
   border: 1px solid var(--color-static-black);
   border-radius: 0;
@@ -7919,7 +7923,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 24px;
   border: 1px solid transparent;
   border-radius: 0;
@@ -7942,7 +7946,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 28px;
   border: 1px solid var(--color-static-black);
   border-radius: 0;
@@ -7959,11 +7963,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 32px;
   border: 1px solid var(--color-static-black);
   border-radius: 0;
@@ -7987,7 +7991,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 28px;
   border: 1px solid transparent;
   border-radius: 0;
@@ -8006,10 +8010,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 32px;
   border: 1px solid transparent;
   border-radius: 0;
@@ -8034,7 +8038,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 36px;
+  min-height: 40px;
   padding: 0 16px;
   gap: 12px;
   border: 1px solid var(--color-static-black);
@@ -8063,7 +8067,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 36px;
+  min-height: 40px;
   padding: 0 16px;
   gap: 12px;
   border: 1px solid transparent;
@@ -8094,7 +8098,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 24px;
   gap: 12px;
   border: 1px solid var(--color-static-black);
@@ -8123,7 +8127,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 24px;
   gap: 12px;
   border: 1px solid transparent;
@@ -8154,7 +8158,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 28px;
   gap: 12px;
   border: 1px solid var(--color-static-black);
@@ -8172,11 +8176,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 32px;
   gap: 12px;
   border: 1px solid var(--color-static-black);
@@ -8213,7 +8217,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 28px;
   gap: 12px;
   border: 1px solid transparent;
@@ -8233,10 +8237,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 32px;
   gap: 12px;
   border: 1px solid transparent;
@@ -8276,7 +8280,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 36px;
+  min-height: 40px;
   padding: 0 16px;
   border: 1px solid var(--color-static-black);
   border-radius: 8px;
@@ -8298,7 +8302,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 36px;
+  min-height: 40px;
   padding: 0 16px;
   border: 1px solid transparent;
   border-radius: 8px;
@@ -8321,7 +8325,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 24px;
   border: 1px solid var(--color-static-black);
   border-radius: 8px;
@@ -8343,7 +8347,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 24px;
   border: 1px solid transparent;
   border-radius: 8px;
@@ -8366,7 +8370,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 28px;
   border: 1px solid var(--color-static-black);
   border-radius: 8px;
@@ -8383,11 +8387,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 32px;
   border: 1px solid var(--color-static-black);
   border-radius: 8px;
@@ -8411,7 +8415,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 28px;
   border: 1px solid transparent;
   border-radius: 8px;
@@ -8430,10 +8434,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 32px;
   border: 1px solid transparent;
   border-radius: 8px;
@@ -8458,7 +8462,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 36px;
+  min-height: 40px;
   padding: 0 16px;
   gap: 12px;
   border: 1px solid var(--color-static-black);
@@ -8487,7 +8491,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 36px;
+  min-height: 40px;
   padding: 0 16px;
   gap: 12px;
   border: 1px solid transparent;
@@ -8518,7 +8522,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 24px;
   gap: 12px;
   border: 1px solid var(--color-static-black);
@@ -8547,7 +8551,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 24px;
   gap: 12px;
   border: 1px solid transparent;
@@ -8578,7 +8582,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 28px;
   gap: 12px;
   border: 1px solid var(--color-static-black);
@@ -8596,11 +8600,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 32px;
   gap: 12px;
   border: 1px solid var(--color-static-black);
@@ -8637,7 +8641,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 28px;
   gap: 12px;
   border: 1px solid transparent;
@@ -8657,10 +8661,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 32px;
   gap: 12px;
   border: 1px solid transparent;
@@ -8700,7 +8704,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 36px;
+  min-height: 40px;
   padding: 0 16px;
   border: 1px solid var(--color-static-black);
   border-radius: 9999px;
@@ -8722,7 +8726,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 36px;
+  min-height: 40px;
   padding: 0 16px;
   border: 1px solid transparent;
   border-radius: 9999px;
@@ -8745,7 +8749,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 24px;
   border: 1px solid var(--color-static-black);
   border-radius: 9999px;
@@ -8767,7 +8771,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 24px;
   border: 1px solid transparent;
   border-radius: 9999px;
@@ -8790,7 +8794,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 28px;
   border: 1px solid var(--color-static-black);
   border-radius: 9999px;
@@ -8807,11 +8811,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 32px;
   border: 1px solid var(--color-static-black);
   border-radius: 9999px;
@@ -8835,7 +8839,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 28px;
   border: 1px solid transparent;
   border-radius: 9999px;
@@ -8854,10 +8858,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 32px;
   border: 1px solid transparent;
   border-radius: 9999px;
@@ -8882,7 +8886,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 36px;
+  min-height: 40px;
   padding: 0 16px;
   gap: 12px;
   border: 1px solid var(--color-static-black);
@@ -8911,7 +8915,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 36px;
+  min-height: 40px;
   padding: 0 16px;
   gap: 12px;
   border: 1px solid transparent;
@@ -8942,7 +8946,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 24px;
   gap: 12px;
   border: 1px solid var(--color-static-black);
@@ -8971,7 +8975,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 24px;
   gap: 12px;
   border: 1px solid transparent;
@@ -9002,7 +9006,7 @@
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 28px;
   gap: 12px;
   border: 1px solid var(--color-static-black);
@@ -9020,11 +9024,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 32px;
   gap: 12px;
   border: 1px solid var(--color-static-black);
@@ -9061,7 +9065,7 @@
   font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 28px;
   gap: 12px;
   border: 1px solid transparent;
@@ -9081,10 +9085,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   appearance: none;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 32px;
   gap: 12px;
   border: 1px solid transparent;
@@ -19679,7 +19683,7 @@
   background: none;
   color: var(--color-static-black);
   font-size: var(--font-size-16);
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.5;
   text-decoration: none;
   white-space: nowrap;
@@ -19701,7 +19705,7 @@
   background: none;
   color: var(--color-static-black);
   font-size: var(--font-size-16);
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.5;
   text-decoration: none;
   white-space: nowrap;
@@ -19770,7 +19774,7 @@
   display: block;
   width: 100%;
   min-width: 0;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 8px;
   border: 0;
   border-bottom: 1px solid var(--color-neutral-60);
@@ -19789,7 +19793,7 @@
   display: block;
   width: 100%;
   min-width: 0;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 8px;
   border: 0;
   border-bottom: 1px solid var(--color-neutral-60);
@@ -19808,7 +19812,7 @@
   display: block;
   width: 100%;
   min-width: 0;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 8px;
   border: 0;
   border-bottom: 1px solid var(--color-neutral-60);
@@ -19848,7 +19852,7 @@
 .textarea_auto_medium {
   display: block;
   width: 100%;
-  min-height: 44px;
+  min-height: 52px;
   padding: 12px 8px;
   border: 0;
   border-bottom: 1px solid var(--color-line-solid-normal);
@@ -19870,7 +19874,7 @@
 .textarea_auto_large {
   display: block;
   width: 100%;
-  min-height: 52px;
+  min-height: 56px;
   padding: 12px 8px;
   border: 0;
   border-bottom: 1px solid var(--color-line-solid-normal);
@@ -19892,7 +19896,7 @@
 .textarea_auto_xlarge {
   display: block;
   width: 100%;
-  min-height: 60px;
+  min-height: 64px;
   padding: 16px 8px;
   border: 0;
   border-bottom: 1px solid var(--color-line-solid-normal);
@@ -19962,10 +19966,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 56px;
-  height: 56px;
-  min-width: 56px;
-  min-height: 56px;
+  width: 64px;
+  height: 64px;
+  min-width: 64px;
+  min-height: 64px;
   padding: 0;
   border: 1px solid var(--color-static-black);
   border-radius: 0;
@@ -19994,10 +19998,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 56px;
-  height: 56px;
-  min-width: 56px;
-  min-height: 56px;
+  width: 64px;
+  height: 64px;
+  min-width: 64px;
+  min-height: 64px;
   padding: 0;
   border: 0;
   border-radius: 0;
@@ -20026,10 +20030,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 56px;
-  height: 56px;
-  min-width: 56px;
-  min-height: 56px;
+  width: 64px;
+  height: 64px;
+  min-width: 64px;
+  min-height: 64px;
   padding: 0;
   border: 1px solid var(--color-static-black);
   border-radius: 10px;
@@ -20058,10 +20062,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 56px;
-  height: 56px;
-  min-width: 56px;
-  min-height: 56px;
+  width: 64px;
+  height: 64px;
+  min-width: 64px;
+  min-height: 64px;
   padding: 0;
   border: 0;
   border-radius: 10px;
@@ -20090,10 +20094,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 56px;
-  height: 56px;
-  min-width: 56px;
-  min-height: 56px;
+  width: 64px;
+  height: 64px;
+  min-width: 64px;
+  min-height: 64px;
   padding: 0;
   border: 1px solid var(--color-static-black);
   border-radius: 9999px;
@@ -20122,10 +20126,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 56px;
-  height: 56px;
-  min-width: 56px;
-  min-height: 56px;
+  width: 64px;
+  height: 64px;
+  min-width: 64px;
+  min-height: 64px;
   padding: 0;
   border: 0;
   border-radius: 9999px;
@@ -22458,7 +22462,7 @@
   display: block;
   width: 100%;
   min-width: 0;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 8px;
   border: 0;
   border-bottom: 1px solid var(--color-neutral-60);
@@ -22484,7 +22488,7 @@
   display: block;
   width: 100%;
   min-width: 0;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 8px;
   border: 0;
   border-bottom: 1px solid var(--color-neutral-60);
@@ -22510,7 +22514,7 @@
   display: block;
   width: 100%;
   min-width: 0;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 8px;
   border: 0;
   border-bottom: 1px solid var(--color-neutral-60);
@@ -22562,7 +22566,7 @@
   display: block;
   width: 100%;
   min-width: 0;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 40px 0 8px;
   border: 0;
   border-bottom: 1px solid var(--color-neutral-60);
@@ -22588,7 +22592,7 @@
   display: block;
   width: 100%;
   min-width: 0;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 40px 0 8px;
   border: 0;
   border-bottom: 1px solid var(--color-neutral-60);
@@ -22614,7 +22618,7 @@
   display: block;
   width: 100%;
   min-width: 0;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 40px 0 8px;
   border: 0;
   border-bottom: 1px solid var(--color-neutral-60);
@@ -22640,7 +22644,7 @@
   display: block;
   width: 100%;
   min-width: 0;
-  min-height: 44px;
+  min-height: 40px;
   padding: 0 40px 0 8px;
   border: 0;
   border-bottom: 1px solid var(--color-neutral-60);
@@ -22666,7 +22670,7 @@
   display: block;
   width: 100%;
   min-width: 0;
-  min-height: 56px;
+  min-height: 52px;
   padding: 0 40px 0 8px;
   border: 0;
   border-bottom: 1px solid var(--color-neutral-60);
@@ -22692,7 +22696,7 @@
   display: block;
   width: 100%;
   min-width: 0;
-  min-height: 60px;
+  min-height: 56px;
   padding: 0 40px 0 8px;
   border: 0;
   border-bottom: 1px solid var(--color-neutral-60);
@@ -23155,7 +23159,7 @@
 .select_filled_disabled_large > select {
   width: 100%;
   appearance: none;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 44px 0 20px;
   border: 0;
   border-radius: 0;
@@ -23185,7 +23189,7 @@
 .select_filled_disabled_medium > select {
   width: 100%;
   appearance: none;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 40px 0 16px;
   border: 0;
   border-radius: 0;
@@ -23245,7 +23249,7 @@
 .select_filled_disabled_xlarge > select {
   width: 100%;
   appearance: none;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 48px 0 24px;
   border: 0;
   border-radius: 0;
@@ -23275,7 +23279,7 @@
 .select_filled_full_rounded_disabled_large > select {
   width: 100%;
   appearance: none;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 44px 0 20px;
   border: 0;
   border-radius: 9999px;
@@ -23305,7 +23309,7 @@
 .select_filled_full_rounded_disabled_medium > select {
   width: 100%;
   appearance: none;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 40px 0 16px;
   border: 0;
   border-radius: 9999px;
@@ -23365,7 +23369,7 @@
 .select_filled_full_rounded_disabled_xlarge > select {
   width: 100%;
   appearance: none;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 48px 0 24px;
   border: 0;
   border-radius: 9999px;
@@ -23395,7 +23399,7 @@
 .select_filled_full_rounded_icon_disabled_large > select {
   width: 100%;
   appearance: none;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 44px 0 48px;
   border: 0;
   border-radius: 9999px;
@@ -23436,7 +23440,7 @@
 .select_filled_full_rounded_icon_disabled_medium > select {
   width: 100%;
   appearance: none;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 40px 0 40px;
   border: 0;
   border-radius: 9999px;
@@ -23518,7 +23522,7 @@
 .select_filled_full_rounded_icon_disabled_xlarge > select {
   width: 100%;
   appearance: none;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 48px 0 52px;
   border: 0;
   border-radius: 9999px;
@@ -23559,7 +23563,7 @@
 .select_filled_full_rounded_icon_large > select {
   width: 100%;
   appearance: none;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 44px 0 48px;
   border: 0;
   border-radius: 9999px;
@@ -23596,7 +23600,7 @@
 .select_filled_full_rounded_icon_medium > select {
   width: 100%;
   appearance: none;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 40px 0 40px;
   border: 0;
   border-radius: 9999px;
@@ -23670,7 +23674,7 @@
 .select_filled_full_rounded_icon_xlarge > select {
   width: 100%;
   appearance: none;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 48px 0 52px;
   border: 0;
   border-radius: 9999px;
@@ -23707,7 +23711,7 @@
 .select_filled_full_rounded_large > select {
   width: 100%;
   appearance: none;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 44px 0 20px;
   border: 0;
   border-radius: 9999px;
@@ -23735,7 +23739,7 @@
 .select_filled_full_rounded_medium > select {
   width: 100%;
   appearance: none;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 40px 0 16px;
   border: 0;
   border-radius: 9999px;
@@ -23791,7 +23795,7 @@
 .select_filled_full_rounded_xlarge > select {
   width: 100%;
   appearance: none;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 48px 0 24px;
   border: 0;
   border-radius: 9999px;
@@ -23819,7 +23823,7 @@
 .select_filled_icon_disabled_large > select {
   width: 100%;
   appearance: none;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 44px 0 48px;
   border: 0;
   border-radius: 0;
@@ -23860,7 +23864,7 @@
 .select_filled_icon_disabled_medium > select {
   width: 100%;
   appearance: none;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 40px 0 40px;
   border: 0;
   border-radius: 0;
@@ -23942,7 +23946,7 @@
 .select_filled_icon_disabled_xlarge > select {
   width: 100%;
   appearance: none;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 48px 0 52px;
   border: 0;
   border-radius: 0;
@@ -23983,7 +23987,7 @@
 .select_filled_icon_large > select {
   width: 100%;
   appearance: none;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 44px 0 48px;
   border: 0;
   border-radius: 0;
@@ -24020,7 +24024,7 @@
 .select_filled_icon_medium > select {
   width: 100%;
   appearance: none;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 40px 0 40px;
   border: 0;
   border-radius: 0;
@@ -24094,7 +24098,7 @@
 .select_filled_icon_xlarge > select {
   width: 100%;
   appearance: none;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 48px 0 52px;
   border: 0;
   border-radius: 0;
@@ -24131,7 +24135,7 @@
 .select_filled_large > select {
   width: 100%;
   appearance: none;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 44px 0 20px;
   border: 0;
   border-radius: 0;
@@ -24159,7 +24163,7 @@
 .select_filled_medium > select {
   width: 100%;
   appearance: none;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 40px 0 16px;
   border: 0;
   border-radius: 0;
@@ -24187,7 +24191,7 @@
 .select_filled_rounded_disabled_large > select {
   width: 100%;
   appearance: none;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 44px 0 20px;
   border: 0;
   border-radius: 8px;
@@ -24217,7 +24221,7 @@
 .select_filled_rounded_disabled_medium > select {
   width: 100%;
   appearance: none;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 40px 0 16px;
   border: 0;
   border-radius: 8px;
@@ -24277,7 +24281,7 @@
 .select_filled_rounded_disabled_xlarge > select {
   width: 100%;
   appearance: none;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 48px 0 24px;
   border: 0;
   border-radius: 8px;
@@ -24323,7 +24327,7 @@
 .select_filled_rounded_icon_disabled_large > select {
   width: 100%;
   appearance: none;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 44px 0 48px;
   border: 0;
   border-radius: 8px;
@@ -24364,7 +24368,7 @@
 .select_filled_rounded_icon_disabled_medium > select {
   width: 100%;
   appearance: none;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 40px 0 40px;
   border: 0;
   border-radius: 8px;
@@ -24446,7 +24450,7 @@
 .select_filled_rounded_icon_disabled_xlarge > select {
   width: 100%;
   appearance: none;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 48px 0 52px;
   border: 0;
   border-radius: 8px;
@@ -24487,7 +24491,7 @@
 .select_filled_rounded_icon_large > select {
   width: 100%;
   appearance: none;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 44px 0 48px;
   border: 0;
   border-radius: 8px;
@@ -24524,7 +24528,7 @@
 .select_filled_rounded_icon_medium > select {
   width: 100%;
   appearance: none;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 40px 0 40px;
   border: 0;
   border-radius: 8px;
@@ -24598,7 +24602,7 @@
 .select_filled_rounded_icon_xlarge > select {
   width: 100%;
   appearance: none;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 48px 0 52px;
   border: 0;
   border-radius: 8px;
@@ -24635,7 +24639,7 @@
 .select_filled_rounded_large > select {
   width: 100%;
   appearance: none;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 44px 0 20px;
   border: 0;
   border-radius: 8px;
@@ -24663,7 +24667,7 @@
 .select_filled_rounded_medium > select {
   width: 100%;
   appearance: none;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 40px 0 16px;
   border: 0;
   border-radius: 8px;
@@ -24719,7 +24723,7 @@
 .select_filled_rounded_xlarge > select {
   width: 100%;
   appearance: none;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 48px 0 24px;
   border: 0;
   border-radius: 8px;
@@ -24775,7 +24779,7 @@
 .select_filled_xlarge > select {
   width: 100%;
   appearance: none;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 48px 0 24px;
   border: 0;
   border-radius: 0;
@@ -24803,7 +24807,7 @@
 .select_outline_disabled_large > select {
   width: 100%;
   appearance: none;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 44px 0 20px;
   border: 0;
   border-radius: 0;
@@ -24833,7 +24837,7 @@
 .select_outline_disabled_medium > select {
   width: 100%;
   appearance: none;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 40px 0 16px;
   border: 0;
   border-radius: 0;
@@ -24893,7 +24897,7 @@
 .select_outline_disabled_xlarge > select {
   width: 100%;
   appearance: none;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 48px 0 24px;
   border: 0;
   border-radius: 0;
@@ -24923,7 +24927,7 @@
 .select_outline_full_rounded_disabled_large > select {
   width: 100%;
   appearance: none;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 44px 0 20px;
   border: 0;
   border-radius: 9999px;
@@ -24953,7 +24957,7 @@
 .select_outline_full_rounded_disabled_medium > select {
   width: 100%;
   appearance: none;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 40px 0 16px;
   border: 0;
   border-radius: 9999px;
@@ -25013,7 +25017,7 @@
 .select_outline_full_rounded_disabled_xlarge > select {
   width: 100%;
   appearance: none;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 48px 0 24px;
   border: 0;
   border-radius: 9999px;
@@ -25043,7 +25047,7 @@
 .select_outline_full_rounded_icon_disabled_large > select {
   width: 100%;
   appearance: none;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 44px 0 48px;
   border: 0;
   border-radius: 9999px;
@@ -25084,7 +25088,7 @@
 .select_outline_full_rounded_icon_disabled_medium > select {
   width: 100%;
   appearance: none;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 40px 0 40px;
   border: 0;
   border-radius: 9999px;
@@ -25166,7 +25170,7 @@
 .select_outline_full_rounded_icon_disabled_xlarge > select {
   width: 100%;
   appearance: none;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 48px 0 52px;
   border: 0;
   border-radius: 9999px;
@@ -25207,7 +25211,7 @@
 .select_outline_full_rounded_icon_large > select {
   width: 100%;
   appearance: none;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 44px 0 48px;
   border: 1px solid var(--color-line-solid-0);
   border-radius: 9999px;
@@ -25244,7 +25248,7 @@
 .select_outline_full_rounded_icon_medium > select {
   width: 100%;
   appearance: none;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 40px 0 40px;
   border: 1px solid var(--color-line-solid-0);
   border-radius: 9999px;
@@ -25318,7 +25322,7 @@
 .select_outline_full_rounded_icon_xlarge > select {
   width: 100%;
   appearance: none;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 48px 0 52px;
   border: 1px solid var(--color-line-solid-0);
   border-radius: 9999px;
@@ -25355,7 +25359,7 @@
 .select_outline_full_rounded_large > select {
   width: 100%;
   appearance: none;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 44px 0 20px;
   border: 1px solid var(--color-line-solid-0);
   border-radius: 9999px;
@@ -25383,7 +25387,7 @@
 .select_outline_full_rounded_medium > select {
   width: 100%;
   appearance: none;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 40px 0 16px;
   border: 1px solid var(--color-line-solid-0);
   border-radius: 9999px;
@@ -25439,7 +25443,7 @@
 .select_outline_full_rounded_xlarge > select {
   width: 100%;
   appearance: none;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 48px 0 24px;
   border: 1px solid var(--color-line-solid-0);
   border-radius: 9999px;
@@ -25467,7 +25471,7 @@
 .select_outline_icon_disabled_large > select {
   width: 100%;
   appearance: none;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 44px 0 48px;
   border: 0;
   border-radius: 0;
@@ -25508,7 +25512,7 @@
 .select_outline_icon_disabled_medium > select {
   width: 100%;
   appearance: none;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 40px 0 40px;
   border: 0;
   border-radius: 0;
@@ -25590,7 +25594,7 @@
 .select_outline_icon_disabled_xlarge > select {
   width: 100%;
   appearance: none;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 48px 0 52px;
   border: 0;
   border-radius: 0;
@@ -25631,7 +25635,7 @@
 .select_outline_icon_large > select {
   width: 100%;
   appearance: none;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 44px 0 48px;
   border: 1px solid var(--color-line-solid-0);
   border-radius: 0;
@@ -25668,7 +25672,7 @@
 .select_outline_icon_medium > select {
   width: 100%;
   appearance: none;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 40px 0 40px;
   border: 1px solid var(--color-line-solid-0);
   border-radius: 0;
@@ -25742,7 +25746,7 @@
 .select_outline_icon_xlarge > select {
   width: 100%;
   appearance: none;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 48px 0 52px;
   border: 1px solid var(--color-line-solid-0);
   border-radius: 0;
@@ -25779,7 +25783,7 @@
 .select_outline_large > select {
   width: 100%;
   appearance: none;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 44px 0 20px;
   border: 1px solid var(--color-line-solid-0);
   border-radius: 0;
@@ -25807,7 +25811,7 @@
 .select_outline_medium > select {
   width: 100%;
   appearance: none;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 40px 0 16px;
   border: 1px solid var(--color-line-solid-0);
   border-radius: 0;
@@ -25835,7 +25839,7 @@
 .select_outline_rounded_disabled_large > select {
   width: 100%;
   appearance: none;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 44px 0 20px;
   border: 0;
   border-radius: 8px;
@@ -25865,7 +25869,7 @@
 .select_outline_rounded_disabled_medium > select {
   width: 100%;
   appearance: none;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 40px 0 16px;
   border: 0;
   border-radius: 8px;
@@ -25925,7 +25929,7 @@
 .select_outline_rounded_disabled_xlarge > select {
   width: 100%;
   appearance: none;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 48px 0 24px;
   border: 0;
   border-radius: 8px;
@@ -25955,7 +25959,7 @@
 .select_outline_rounded_icon_disabled_large > select {
   width: 100%;
   appearance: none;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 44px 0 48px;
   border: 0;
   border-radius: 8px;
@@ -25996,7 +26000,7 @@
 .select_outline_rounded_icon_disabled_medium > select {
   width: 100%;
   appearance: none;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 40px 0 40px;
   border: 0;
   border-radius: 8px;
@@ -26078,7 +26082,7 @@
 .select_outline_rounded_icon_disabled_xlarge > select {
   width: 100%;
   appearance: none;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 48px 0 52px;
   border: 0;
   border-radius: 8px;
@@ -26119,7 +26123,7 @@
 .select_outline_rounded_icon_large > select {
   width: 100%;
   appearance: none;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 44px 0 48px;
   border: 1px solid var(--color-line-solid-0);
   border-radius: 8px;
@@ -26156,7 +26160,7 @@
 .select_outline_rounded_icon_medium > select {
   width: 100%;
   appearance: none;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 40px 0 40px;
   border: 1px solid var(--color-line-solid-0);
   border-radius: 8px;
@@ -26230,7 +26234,7 @@
 .select_outline_rounded_icon_xlarge > select {
   width: 100%;
   appearance: none;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 48px 0 52px;
   border: 1px solid var(--color-line-solid-0);
   border-radius: 8px;
@@ -26267,7 +26271,7 @@
 .select_outline_rounded_large > select {
   width: 100%;
   appearance: none;
-  min-height: 52px;
+  min-height: 56px;
   padding: 0 44px 0 20px;
   border: 1px solid var(--color-line-solid-0);
   border-radius: 8px;
@@ -26295,7 +26299,7 @@
 .select_outline_rounded_medium > select {
   width: 100%;
   appearance: none;
-  min-height: 44px;
+  min-height: 52px;
   padding: 0 40px 0 16px;
   border: 1px solid var(--color-line-solid-0);
   border-radius: 8px;
@@ -26351,7 +26355,7 @@
 .select_outline_rounded_xlarge > select {
   width: 100%;
   appearance: none;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 48px 0 24px;
   border: 1px solid var(--color-line-solid-0);
   border-radius: 8px;
@@ -26407,7 +26411,7 @@
 .select_outline_xlarge > select {
   width: 100%;
   appearance: none;
-  min-height: 60px;
+  min-height: 64px;
   padding: 0 48px 0 24px;
   border: 1px solid var(--color-line-solid-0);
   border-radius: 0;
@@ -27031,20 +27035,15 @@
               <li class="palette-swatch swatch_neutral_50">50</li>
               <li class="palette-swatch swatch_neutral_40">40</li>
               <li class="palette-swatch swatch_neutral_30">30</li>
-              <li class="palette-swatch swatch_neutral_22">22</li>
               <li class="palette-swatch swatch_neutral_20">20</li>
-              <li class="palette-swatch swatch_neutral_15">15</li>
               <li class="palette-swatch swatch_neutral_10">10</li>
-              <li class="palette-swatch swatch_neutral_5">5</li>
             </ul>
           </article>
           <article class="color-group">
             <h3>Cool Neutral</h3>
             <ul class="color-list">
               <li class="palette-swatch swatch_cool_neutral_99">99</li>
-              <li class="palette-swatch swatch_cool_neutral_98">98</li>
               <li class="palette-swatch swatch_cool_neutral_97">97</li>
-              <li class="palette-swatch swatch_cool_neutral_96">96</li>
               <li class="palette-swatch swatch_cool_neutral_95">95</li>
               <li class="palette-swatch swatch_cool_neutral_90">90</li>
               <li class="palette-swatch swatch_cool_neutral_80">80</li>
@@ -27053,15 +27052,8 @@
               <li class="palette-swatch swatch_cool_neutral_50">50</li>
               <li class="palette-swatch swatch_cool_neutral_40">40</li>
               <li class="palette-swatch swatch_cool_neutral_30">30</li>
-              <li class="palette-swatch swatch_cool_neutral_25">25</li>
-              <li class="palette-swatch swatch_cool_neutral_23">23</li>
-              <li class="palette-swatch swatch_cool_neutral_22">22</li>
               <li class="palette-swatch swatch_cool_neutral_20">20</li>
-              <li class="palette-swatch swatch_cool_neutral_17">17</li>
-              <li class="palette-swatch swatch_cool_neutral_15">15</li>
               <li class="palette-swatch swatch_cool_neutral_10">10</li>
-              <li class="palette-swatch swatch_cool_neutral_7">7</li>
-              <li class="palette-swatch swatch_cool_neutral_5">5</li>
             </ul>
           </article>
           <article class="color-group">
@@ -27348,7 +27340,7 @@
           <article class="semantic-group">
             <h3>Text</h3>
             <ul class="semantic-list">
-              <li class="semantic-swatch swatch_cool_neutral_17">Primary · 본문</li>
+              <li class="semantic-swatch swatch_cool_neutral_20">Primary · 본문</li>
               <li class="semantic-swatch swatch_neutral_40">Secondary · 보조 설명</li>
               <li class="semantic-swatch swatch_neutral_60">Tertiary · 날짜·흐린 설명</li>
               <li class="semantic-swatch swatch_neutral_70">Disabled · 비활성 글자</li>
@@ -30210,10 +30202,10 @@
                 <tbody>
                   <tr>
                     <th scope="row">Default</th>
-                    <td><textarea class="textarea_auto_small" aria-label="auto textarea small" placeholder="내용을 입력하세요."></textarea></td>
-                    <td><textarea class="textarea_auto_medium" aria-label="auto textarea medium" placeholder="내용을 입력하세요."></textarea></td>
-                    <td><textarea class="textarea_auto_large" aria-label="auto textarea large" placeholder="내용을 입력하세요."></textarea></td>
-                    <td><textarea class="textarea_auto_xlarge" aria-label="auto textarea xlarge" placeholder="내용을 입력하세요."></textarea></td>
+                    <td><textarea class="textarea_auto_small" rows="1" aria-label="auto textarea small" placeholder="내용을 입력하세요."></textarea></td>
+                    <td><textarea class="textarea_auto_medium" rows="1" aria-label="auto textarea medium" placeholder="내용을 입력하세요."></textarea></td>
+                    <td><textarea class="textarea_auto_large" rows="1" aria-label="auto textarea large" placeholder="내용을 입력하세요."></textarea></td>
+                    <td><textarea class="textarea_auto_xlarge" rows="1" aria-label="auto textarea xlarge" placeholder="내용을 입력하세요."></textarea></td>
                   </tr>
                 </tbody>
               </table>
@@ -31116,10 +31108,10 @@
             <table class="rules-spec-table" aria-label="기본 Filled 버튼의 현재 크기 규격">
               <thead><tr><th scope="col">크기</th><th scope="col">높이 기준</th><th scope="col">패딩 상하 / 좌우</th><th scope="col">글자 / 굵기 / 행간</th></tr></thead>
               <tbody>
-                <tr><td>Small</td><td>44px</td><td>0px / 20px</td><td>15px / 500 / 1.5</td></tr>
-                <tr><td>Medium</td><td>56px</td><td>0px / 24px</td><td>16px / 500 / 1.5</td></tr>
-                <tr><td>Large</td><td>60px</td><td>0px / 32px</td><td>18px / 600 / 1.5</td></tr>
-                <tr><td>Xlarge</td><td>64px</td><td>0px / 40px</td><td>20px / 600 / 1.5</td></tr>
+                <tr><td>Small</td><td>40px</td><td>0px / 20px</td><td>15px / 500 / 1.5</td></tr>
+                <tr><td>Medium</td><td>52px</td><td>0px / 24px</td><td>16px / 500 / 1.5</td></tr>
+                <tr><td>Large</td><td>56px</td><td>0px / 32px</td><td>18px / 500 / 1.5</td></tr>
+                <tr><td>Xlarge</td><td>64px</td><td>0px / 40px</td><td>20px / 500 / 1.5</td></tr>
               </tbody>
             </table>
           </div>
@@ -31197,7 +31189,7 @@
       <section data-rule-id="theme">
         <h2>14 · 색상과 폰트 선택</h2>
         <div class="rules-panel">
-          <p class="rules-copy">색상과 font-family는 프로젝트에 맞게 선택하되 임의의 스타일 수치를 추가하지 않는다. 색상은 기존 Atomic·Semantic 토큰을 우선 사용하고 같은 값은 재사용한다. 고유한 메인색은 원본을 50으로 두고 10·20·30·40·50·60·70·80·90·95·99 단계의 공식 팔레트로 등록한다. 10~40은 원본 비중 20·40·60·80%로 검정과, 60~99는 흰색 비중 20·40·60·80·90·98%로 원본과 OKLCH 보간한다. 결과는 sRGB 범위를 확인해 유효한 HEX/RGB로 기록하며 50의 입력 원본은 변경하지 않는다. 기존 팔레트의 추가 단계는 삭제하지 않는다. 새 팔레트는 글자색·배경색·테두리색 토큰과 유틸리티에 연결한다. 이 절차에 따른 색상 추가는 허용된 시스템 확장이며 규칙 이탈이 아니다. 배경과 글자의 대비 및 상태 구분을 검수하고, 폰트 변경 후에도 Foundation의 크기·굵기·행간·자간과 콘텐츠 표시를 유지한다.</p>
+          <p class="rules-copy">색상과 font-family는 프로젝트에 맞게 선택하되 임의의 스타일 수치를 추가하지 않는다. 색상은 기존 Atomic·Semantic 토큰을 우선 사용하고 같은 값은 재사용한다. 고유한 메인색은 원본을 50으로 두고 10·20·30·40·50·60·70·80·90·95·99 단계의 공식 팔레트로 등록한다. 10~40은 원본 비중 20·40·60·80%로 검정과, 60~99는 흰색 비중 20·40·60·80·90·98%로 원본과 OKLCH 보간한다. 결과는 sRGB 범위를 확인해 유효한 HEX/RGB로 기록하며 50의 입력 원본은 변경하지 않는다. Neutral·Cool Neutral은 10·20·30·40·50·60·70·80·90·95·97·99 단계만 사용하며, 그 외 팔레트의 기존 추가 단계는 유지한다. 새 팔레트는 글자색·배경색·테두리색 토큰과 유틸리티에 연결한다. 이 절차에 따른 색상 추가는 허용된 시스템 확장이며 규칙 이탈이 아니다. 배경과 글자의 대비 및 상태 구분을 검수하고, 폰트 변경 후에도 Foundation의 크기·굵기·행간·자간과 콘텐츠 표시를 유지한다.</p>
         </div>
       </section>
       <section data-rule-id="icon-size">
