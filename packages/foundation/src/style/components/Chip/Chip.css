@@ -1,0 +1,18 @@
+.h_designSystem-Chip[data-spec="chip_filled_small"],
+.h_designSystem-Chip[data-spec="chip_filled_medium"],
+.h_designSystem-Chip[data-spec="chip_filled_large"],
+.h_designSystem-Chip[data-spec="chip_filled_xlarge"] {
+  border: 0;
+  background: var(--h_designSystem-color-static-black);
+  color: var(--h_designSystem-color-common-100);
+  cursor: pointer;
+}
+.h_designSystem-Chip[data-spec="chip_outline_small"],
+.h_designSystem-Chip[data-spec="chip_outline_medium"],
+.h_designSystem-Chip[data-spec="chip_outline_large"],
+.h_designSystem-Chip[data-spec="chip_outline_xlarge"] {
+  border: 1px solid var(--h_designSystem-color-static-black);
+  background: var(--h_designSystem-color-common-100);
+  color: var(--h_designSystem-color-static-black);
+  cursor: pointer;
+}

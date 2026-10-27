@@ -1,0 +1,12 @@
+:root {
+  --h_designSystem-color-text-primary: var(--h_designSystem-color-cool-neutral-20);
+  --h_designSystem-color-text-secondary: var(--h_designSystem-color-neutral-40);
+  --h_designSystem-color-text-tertiary: var(--h_designSystem-color-neutral-60);
+  --h_designSystem-color-text-disabled: var(--h_designSystem-color-neutral-70);
+  --h_designSystem-color-text-inverse: var(--h_designSystem-color-common-100);
+  --h_designSystem-color-focus-ring: var(--h_designSystem-color-blue-50);
+  --h_designSystem-color-overlay-dimmer: var(--h_designSystem-color-common-0-alpha-52);
+  --h_designSystem-color-status-positive: #00bf40;
+  --h_designSystem-color-status-negative: #ff4242;
+  --h_designSystem-color-status-informative: var(--h_designSystem-color-blue-50);
+}

@@ -1,0 +1,72 @@
+.h_designSystem-Checkbox[data-spec="checkbox_small"],
+.h_designSystem-Checkbox[data-spec="checkbox_medium"],
+.h_designSystem-Checkbox[data-spec="checkbox_large"],
+.h_designSystem-Checkbox[data-spec="checkbox_xlarge"] {
+  position: relative;
+  border: 2px solid var(--h_designSystem-color-static-black);
+  background: var(--h_designSystem-color-common-100);
+  cursor: pointer;
+  place-items: center;
+}
+.h_designSystem-Checkbox[data-spec="checkbox_small"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Checkbox[data-spec="checkbox_medium"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Checkbox[data-spec="checkbox_large"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Checkbox[data-spec="checkbox_xlarge"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Checkbox[data-spec="checkbox_round_small"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Checkbox[data-spec="checkbox_round_medium"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Checkbox[data-spec="checkbox_round_large"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Checkbox[data-spec="checkbox_round_xlarge"] > :is(img, .h_designSystem-icon) {
+  pointer-events: none;
+}
+.h_designSystem-Checkbox[data-spec="checkbox_small"] > input,
+.h_designSystem-Checkbox[data-spec="checkbox_medium"] > input,
+.h_designSystem-Checkbox[data-spec="checkbox_large"] > input,
+.h_designSystem-Checkbox[data-spec="checkbox_xlarge"] > input,
+.h_designSystem-Checkbox[data-spec="checkbox_round_small"] > input,
+.h_designSystem-Checkbox[data-spec="checkbox_round_medium"] > input,
+.h_designSystem-Checkbox[data-spec="checkbox_round_large"] > input,
+.h_designSystem-Checkbox[data-spec="checkbox_round_xlarge"] > input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  border: 0;
+  cursor: inherit;
+  z-index: 1;
+}
+.h_designSystem-Checkbox[data-spec="checkbox_round_small"],
+.h_designSystem-Checkbox[data-spec="checkbox_round_medium"],
+.h_designSystem-Checkbox[data-spec="checkbox_round_large"],
+.h_designSystem-Checkbox[data-spec="checkbox_round_xlarge"] {
+  position: relative;
+  border: 1px solid var(--h_designSystem-color-static-black);
+  background: var(--h_designSystem-color-common-100);
+  cursor: pointer;
+  place-items: center;
+}
+.h_designSystem-Checkbox[data-spec="checkbox_small"],
+.h_designSystem-Checkbox[data-spec="checkbox_medium"],
+.h_designSystem-Checkbox[data-spec="checkbox_large"],
+.h_designSystem-Checkbox[data-spec="checkbox_xlarge"],
+.h_designSystem-Checkbox[data-spec="checkbox_round_small"],
+.h_designSystem-Checkbox[data-spec="checkbox_round_medium"],
+.h_designSystem-Checkbox[data-spec="checkbox_round_large"],
+.h_designSystem-Checkbox[data-spec="checkbox_round_xlarge"] {
+  display: inline-grid;
+}
+.h_designSystem-Checkbox[data-spec="checkbox_small"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Checkbox[data-spec="checkbox_medium"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Checkbox[data-spec="checkbox_large"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Checkbox[data-spec="checkbox_xlarge"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Checkbox[data-spec="checkbox_round_small"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Checkbox[data-spec="checkbox_round_medium"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Checkbox[data-spec="checkbox_round_large"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Checkbox[data-spec="checkbox_round_xlarge"] > :is(img, .h_designSystem-icon) {
+  display: none;
+}
+.h_designSystem-Checkbox[data-spec^="checkbox_disabled_"],
+.h_designSystem-Checkbox[data-spec="checkbox_small"],
+.h_designSystem-Checkbox[data-spec="checkbox_medium"],
+.h_designSystem-Checkbox[data-spec="checkbox_large"],
+.h_designSystem-Checkbox[data-spec="checkbox_xlarge"] {
+  border-radius: 2px;
+}

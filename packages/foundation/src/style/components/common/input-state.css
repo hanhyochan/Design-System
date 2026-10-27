@@ -1,0 +1,258 @@
+/* 같은 상태의 색상·테두리·포커스 규칙을 공유합니다. 크기와 고유 동작은 컴포넌트 CSS에서 관리합니다. */
+
+/* 입력 완료 */
+.h_designSystem-TextInput[data-spec^="text_input_filled_full_rounded_complete_"],
+.h_designSystem-TextInput[data-spec^="text_input_filled_rounded_complete_"],
+.h_designSystem-TextInput[data-spec^="text_input_filled_complete_"],
+.h_designSystem-TextInput[data-spec^="text_input_outline_full_rounded_complete_"],
+.h_designSystem-TextInput[data-spec^="text_input_outline_rounded_complete_"],
+.h_designSystem-TextInput[data-spec^="text_input_outline_complete_"] {
+  cursor: text;
+}
+.h_designSystem-TextInput[data-spec^="text_input_filled_full_rounded_complete_"],
+.h_designSystem-TextInput[data-spec^="text_input_filled_rounded_complete_"],
+.h_designSystem-TextInput[data-spec^="text_input_filled_complete_"],
+.h_designSystem-TextInput[data-spec*="_complete_"] input {
+  border: 0;
+}
+.h_designSystem-TextInput[data-spec^="text_input_filled_full_rounded_complete_"],
+.h_designSystem-TextInput[data-spec^="text_input_filled_rounded_complete_"],
+.h_designSystem-TextInput[data-spec^="text_input_filled_complete_"] {
+  background: var(--h_designSystem-color-fill-normal);
+}
+.h_designSystem-TextInput[data-spec^="text_input_filled_full_rounded_complete_"],
+.h_designSystem-TextInput[data-spec^="text_input_filled_rounded_complete_"],
+.h_designSystem-TextInput[data-spec^="text_input_filled_complete_"],
+.h_designSystem-TextInput[data-spec^="text_input_outline_full_rounded_complete_"],
+.h_designSystem-TextInput[data-spec^="text_input_outline_rounded_complete_"],
+.h_designSystem-TextInput[data-spec^="text_input_outline_complete_"] {
+  color: var(--h_designSystem-color-label-normal);
+}
+.h_designSystem-TextInput[data-spec*="_complete_"] input {
+  outline: 0;
+}
+.h_designSystem-TextInput[data-spec*="_complete_"] input {
+  background: transparent;
+}
+.h_designSystem-TextInput[data-spec*="_complete_"] input {
+  color: inherit;
+}
+.h_designSystem-TextInput[data-spec^="text_input_outline_full_rounded_complete_"],
+.h_designSystem-TextInput[data-spec^="text_input_outline_rounded_complete_"],
+.h_designSystem-TextInput[data-spec^="text_input_outline_complete_"] {
+  border: 1px solid var(--h_designSystem-color-status-positive);
+}
+.h_designSystem-TextInput[data-spec^="text_input_outline_full_rounded_complete_"],
+.h_designSystem-TextInput[data-spec^="text_input_outline_rounded_complete_"],
+.h_designSystem-TextInput[data-spec^="text_input_outline_complete_"] {
+  background: var(--h_designSystem-color-common-100);
+}
+
+/* 입력 포커스 */
+.h_designSystem-TextInput[data-spec*="_focus_"] input {
+  border: 0;
+}
+.h_designSystem-TextInput[data-spec*="_focus_"] input,
+.h_designSystem-TextArea[data-spec^="textarea_filled_rounded_focus_"],
+.h_designSystem-TextArea[data-spec^="textarea_filled_focus_"],
+.h_designSystem-TextArea[data-spec^="textarea_outline_rounded_focus_"],
+.h_designSystem-TextArea[data-spec^="textarea_outline_focus_"] {
+  outline: 0;
+}
+.h_designSystem-TextInput[data-spec*="_focus_"] input {
+  background: transparent;
+}
+.h_designSystem-TextInput[data-spec*="_focus_"] input {
+  color: inherit;
+}
+.h_designSystem-TextInput[data-spec^="text_input_filled_full_rounded_focus_"],
+.h_designSystem-TextInput[data-spec^="text_input_filled_rounded_focus_"],
+.h_designSystem-TextInput[data-spec^="text_input_filled_focus_"],
+.h_designSystem-TextInput[data-spec^="text_input_outline_full_rounded_focus_"],
+.h_designSystem-TextInput[data-spec^="text_input_outline_rounded_focus_"],
+.h_designSystem-TextInput[data-spec^="text_input_outline_focus_"],
+.h_designSystem-TextArea[data-spec^="textarea_filled_rounded_focus_"],
+.h_designSystem-TextArea[data-spec^="textarea_filled_focus_"] {
+  cursor: text;
+}
+.h_designSystem-TextInput[data-spec^="text_input_filled_full_rounded_focus_"],
+.h_designSystem-TextInput[data-spec^="text_input_filled_rounded_focus_"],
+.h_designSystem-TextInput[data-spec^="text_input_filled_focus_"],
+.h_designSystem-TextInput[data-spec^="text_input_outline_full_rounded_focus_"],
+.h_designSystem-TextInput[data-spec^="text_input_outline_rounded_focus_"],
+.h_designSystem-TextInput[data-spec^="text_input_outline_focus_"],
+.h_designSystem-TextArea[data-spec^="textarea_filled_rounded_focus_"],
+.h_designSystem-TextArea[data-spec^="textarea_filled_focus_"],
+.h_designSystem-TextArea[data-spec^="textarea_outline_rounded_focus_"],
+.h_designSystem-TextArea[data-spec^="textarea_outline_focus_"] {
+  border: 2px solid var(--h_designSystem-color-blue-50);
+}
+.h_designSystem-TextInput[data-spec^="text_input_filled_full_rounded_focus_"],
+.h_designSystem-TextInput[data-spec^="text_input_filled_rounded_focus_"],
+.h_designSystem-TextInput[data-spec^="text_input_filled_focus_"],
+.h_designSystem-TextArea[data-spec^="textarea_filled_rounded_focus_"],
+.h_designSystem-TextArea[data-spec^="textarea_filled_focus_"] {
+  background: var(--h_designSystem-color-fill-normal);
+}
+.h_designSystem-TextInput[data-spec^="text_input_filled_full_rounded_focus_"],
+.h_designSystem-TextInput[data-spec^="text_input_filled_rounded_focus_"],
+.h_designSystem-TextInput[data-spec^="text_input_filled_focus_"],
+.h_designSystem-TextInput[data-spec^="text_input_outline_full_rounded_focus_"],
+.h_designSystem-TextInput[data-spec^="text_input_outline_rounded_focus_"],
+.h_designSystem-TextInput[data-spec^="text_input_outline_focus_"],
+.h_designSystem-TextArea[data-spec^="textarea_filled_rounded_focus_"],
+.h_designSystem-TextArea[data-spec^="textarea_filled_focus_"],
+.h_designSystem-TextArea[data-spec^="textarea_outline_rounded_focus_"],
+.h_designSystem-TextArea[data-spec^="textarea_outline_focus_"] {
+  color: var(--h_designSystem-color-label-normal);
+}
+.h_designSystem-TextInput[data-spec^="text_input_outline_full_rounded_focus_"],
+.h_designSystem-TextInput[data-spec^="text_input_outline_rounded_focus_"],
+.h_designSystem-TextInput[data-spec^="text_input_outline_focus_"],
+.h_designSystem-TextArea[data-spec^="textarea_outline_rounded_focus_"],
+.h_designSystem-TextArea[data-spec^="textarea_outline_focus_"] {
+  background: var(--h_designSystem-color-common-100);
+}
+
+/* 오류 */
+.h_designSystem-TextInput[data-spec*="_error_"] input,
+.h_designSystem-TextInput[data-spec^="text_input_filled_full_rounded_error_"],
+.h_designSystem-TextInput[data-spec^="text_input_filled_rounded_error_"],
+.h_designSystem-TextInput[data-spec^="text_input_filled_error_"],
+.h_designSystem-TextArea[data-spec^="textarea_filled_rounded_error_"],
+.h_designSystem-TextArea[data-spec^="textarea_filled_error_"] {
+  border: 0;
+}
+.h_designSystem-TextInput[data-spec*="_error_"] input,
+.h_designSystem-TextArea[data-spec^="textarea_filled_rounded_error_"],
+.h_designSystem-TextArea[data-spec^="textarea_filled_error_"],
+.h_designSystem-TextArea[data-spec^="textarea_outline_rounded_error_"],
+.h_designSystem-TextArea[data-spec^="textarea_outline_error_"] {
+  outline: 0;
+}
+.h_designSystem-TextInput[data-spec*="_error_"] input {
+  background: transparent;
+}
+.h_designSystem-TextInput[data-spec*="_error_"] input {
+  color: inherit;
+}
+.h_designSystem-TextInput[data-spec^="text_input_filled_full_rounded_error_"],
+.h_designSystem-TextInput[data-spec^="text_input_filled_rounded_error_"],
+.h_designSystem-TextInput[data-spec^="text_input_filled_error_"],
+.h_designSystem-TextInput[data-spec^="text_input_outline_full_rounded_error_"],
+.h_designSystem-TextInput[data-spec^="text_input_outline_rounded_error_"],
+.h_designSystem-TextInput[data-spec^="text_input_outline_error_"],
+.h_designSystem-TextArea[data-spec^="textarea_filled_rounded_error_"],
+.h_designSystem-TextArea[data-spec^="textarea_filled_error_"] {
+  cursor: text;
+}
+.h_designSystem-TextInput[data-spec^="text_input_filled_full_rounded_error_"],
+.h_designSystem-TextInput[data-spec^="text_input_filled_rounded_error_"],
+.h_designSystem-TextInput[data-spec^="text_input_filled_error_"],
+.h_designSystem-TextArea[data-spec^="textarea_filled_rounded_error_"],
+.h_designSystem-TextArea[data-spec^="textarea_filled_error_"] {
+  background: var(--h_designSystem-color-red-95);
+  --h_designSystem-placeholder-color: var(--h_designSystem-color-red-70);
+}
+.h_designSystem-TextInput[data-spec^="text_input_filled_full_rounded_error_"],
+.h_designSystem-TextInput[data-spec^="text_input_filled_rounded_error_"],
+.h_designSystem-TextInput[data-spec^="text_input_filled_error_"],
+.h_designSystem-TextInput[data-spec^="text_input_outline_full_rounded_error_"],
+.h_designSystem-TextInput[data-spec^="text_input_outline_rounded_error_"],
+.h_designSystem-TextInput[data-spec^="text_input_outline_error_"],
+.h_designSystem-TextArea[data-spec^="textarea_filled_rounded_error_"],
+.h_designSystem-TextArea[data-spec^="textarea_filled_error_"],
+.h_designSystem-TextArea[data-spec^="textarea_outline_rounded_error_"],
+.h_designSystem-TextArea[data-spec^="textarea_outline_error_"] {
+  color: var(--h_designSystem-color-label-normal);
+}
+.h_designSystem-TextInput[data-spec^="text_input_outline_full_rounded_error_"],
+.h_designSystem-TextInput[data-spec^="text_input_outline_rounded_error_"],
+.h_designSystem-TextInput[data-spec^="text_input_outline_error_"],
+.h_designSystem-TextArea[data-spec^="textarea_outline_rounded_error_"],
+.h_designSystem-TextArea[data-spec^="textarea_outline_error_"] {
+  border: 2px solid var(--h_designSystem-color-status-negative);
+}
+.h_designSystem-TextInput[data-spec^="text_input_outline_full_rounded_error_"],
+.h_designSystem-TextInput[data-spec^="text_input_outline_rounded_error_"],
+.h_designSystem-TextInput[data-spec^="text_input_outline_error_"],
+.h_designSystem-TextArea[data-spec^="textarea_outline_rounded_error_"],
+.h_designSystem-TextArea[data-spec^="textarea_outline_error_"] {
+  background: var(--h_designSystem-color-common-100);
+}
+
+/* 읽기 전용 */
+.h_designSystem-TextInput[data-spec*="_view_"] input,
+.h_designSystem-TextInput[data-spec^="text_input_filled_full_rounded_view_"],
+.h_designSystem-TextInput[data-spec^="text_input_filled_rounded_view_"],
+.h_designSystem-TextInput[data-spec^="text_input_filled_view_"],
+.h_designSystem-TextArea[data-spec^="textarea_filled_rounded_view_"],
+.h_designSystem-TextArea[data-spec^="textarea_filled_view_"] {
+  border: 0;
+}
+.h_designSystem-TextInput[data-spec*="_view_"] input,
+.h_designSystem-TextArea[data-spec^="textarea_filled_rounded_view_"],
+.h_designSystem-TextArea[data-spec^="textarea_filled_view_"],
+.h_designSystem-TextArea[data-spec^="textarea_outline_rounded_view_"],
+.h_designSystem-TextArea[data-spec^="textarea_outline_view_"] {
+  outline: 0;
+}
+.h_designSystem-TextInput[data-spec*="_view_"] input {
+  background: transparent;
+}
+.h_designSystem-TextInput[data-spec*="_view_"] input {
+  color: inherit;
+}
+.h_designSystem-TextInput[data-spec^="text_input_filled_full_rounded_view_"],
+.h_designSystem-TextInput[data-spec^="text_input_filled_rounded_view_"],
+.h_designSystem-TextInput[data-spec^="text_input_filled_view_"],
+.h_designSystem-TextInput[data-spec^="text_input_outline_full_rounded_view_"],
+.h_designSystem-TextInput[data-spec^="text_input_outline_rounded_view_"],
+.h_designSystem-TextInput[data-spec^="text_input_outline_view_"],
+.h_designSystem-TextArea[data-spec^="textarea_filled_rounded_view_"],
+.h_designSystem-TextArea[data-spec^="textarea_filled_view_"] {
+  cursor: text;
+}
+.h_designSystem-TextInput[data-spec^="text_input_filled_full_rounded_view_"],
+.h_designSystem-TextInput[data-spec^="text_input_filled_rounded_view_"],
+.h_designSystem-TextInput[data-spec^="text_input_filled_view_"],
+.h_designSystem-TextInput[data-spec^="text_input_outline_full_rounded_view_"],
+.h_designSystem-TextInput[data-spec^="text_input_outline_rounded_view_"],
+.h_designSystem-TextInput[data-spec^="text_input_outline_view_"],
+.h_designSystem-TextArea[data-spec^="textarea_filled_rounded_view_"],
+.h_designSystem-TextArea[data-spec^="textarea_filled_view_"],
+.h_designSystem-TextArea[data-spec^="textarea_outline_rounded_view_"],
+.h_designSystem-TextArea[data-spec^="textarea_outline_view_"] {
+  background: var(--h_designSystem-color-background-normal-alternative);
+}
+.h_designSystem-TextInput[data-spec^="text_input_filled_full_rounded_view_"],
+.h_designSystem-TextInput[data-spec^="text_input_filled_rounded_view_"],
+.h_designSystem-TextInput[data-spec^="text_input_filled_view_"],
+.h_designSystem-TextInput[data-spec^="text_input_outline_full_rounded_view_"],
+.h_designSystem-TextInput[data-spec^="text_input_outline_rounded_view_"],
+.h_designSystem-TextInput[data-spec^="text_input_outline_view_"],
+.h_designSystem-TextArea[data-spec^="textarea_filled_rounded_view_"],
+.h_designSystem-TextArea[data-spec^="textarea_filled_view_"],
+.h_designSystem-TextArea[data-spec^="textarea_outline_rounded_view_"],
+.h_designSystem-TextArea[data-spec^="textarea_outline_view_"] {
+  color: var(--h_designSystem-color-label-neutral);
+}
+.h_designSystem-TextInput[data-spec^="text_input_outline_full_rounded_view_"],
+.h_designSystem-TextInput[data-spec^="text_input_outline_rounded_view_"],
+.h_designSystem-TextInput[data-spec^="text_input_outline_view_"],
+.h_designSystem-TextArea[data-spec^="textarea_outline_rounded_view_"],
+.h_designSystem-TextArea[data-spec^="textarea_outline_view_"] {
+  border: 1px solid var(--h_designSystem-color-line-solid-normal);
+}
+
+/* 안내·오류 문구 색상 */
+.h_designSystem-Field-message[data-error="true"],
+.h_designSystem-Field-message[data-color="red"] {
+  color: var(--h_designSystem-color-status-negative);
+}
+.h_designSystem-Field-message[data-color="green"] {
+  color: var(--h_designSystem-color-status-positive);
+}
+.h_designSystem-Field-message[data-color="blue"] {
+  color: var(--h_designSystem-color-status-informative);
+}

@@ -1,0 +1,222 @@
+.h_designSystem-Select[data-spec$="_icon_medium"],
+.h_designSystem-Select[data-spec$="_icon_xlarge"],
+.h_designSystem-Select[data-spec$="_icon_small"],
+.h_designSystem-Select[data-spec$="_icon_large"],
+.h_designSystem-Select[data-spec$="_rounded_medium"],
+.h_designSystem-Select[data-spec$="_rounded_xlarge"],
+.h_designSystem-Select[data-spec$="_rounded_small"],
+.h_designSystem-Select[data-spec$="_rounded_large"],
+.h_designSystem-Select[data-spec="select_filled_small"],
+.h_designSystem-Select[data-spec="select_filled_medium"],
+.h_designSystem-Select[data-spec="select_filled_large"],
+.h_designSystem-Select[data-spec="select_filled_xlarge"],
+.h_designSystem-Select[data-spec="select_outline_small"],
+.h_designSystem-Select[data-spec="select_outline_medium"],
+.h_designSystem-Select[data-spec="select_outline_large"],
+.h_designSystem-Select[data-spec="select_outline_xlarge"] {
+  position: relative;
+  color: var(--h_designSystem-color-label-normal);
+}
+.h_designSystem-Select[data-spec="select_filled_small"] > select,
+.h_designSystem-Select[data-spec="select_filled_medium"] > select,
+.h_designSystem-Select[data-spec="select_filled_large"] > select,
+.h_designSystem-Select[data-spec="select_filled_xlarge"] > select,
+.h_designSystem-Select[data-spec="select_filled_icon_small"] > select,
+.h_designSystem-Select[data-spec="select_filled_icon_medium"] > select,
+.h_designSystem-Select[data-spec="select_filled_icon_large"] > select,
+.h_designSystem-Select[data-spec="select_filled_icon_xlarge"] > select,
+.h_designSystem-Select[data-spec="select_filled_rounded_small"] > select,
+.h_designSystem-Select[data-spec="select_filled_rounded_medium"] > select,
+.h_designSystem-Select[data-spec="select_filled_rounded_large"] > select,
+.h_designSystem-Select[data-spec="select_filled_rounded_xlarge"] > select,
+.h_designSystem-Select[data-spec="select_filled_rounded_icon_small"] > select,
+.h_designSystem-Select[data-spec="select_filled_rounded_icon_medium"] > select,
+.h_designSystem-Select[data-spec="select_filled_rounded_icon_large"] > select,
+.h_designSystem-Select[data-spec="select_filled_rounded_icon_xlarge"] > select,
+.h_designSystem-Select[data-spec="select_filled_full_rounded_small"] > select,
+.h_designSystem-Select[data-spec="select_filled_full_rounded_medium"] > select,
+.h_designSystem-Select[data-spec="select_filled_full_rounded_large"] > select,
+.h_designSystem-Select[data-spec="select_filled_full_rounded_xlarge"] > select,
+.h_designSystem-Select[data-spec="select_filled_full_rounded_icon_small"] > select,
+.h_designSystem-Select[data-spec="select_filled_full_rounded_icon_medium"] > select,
+.h_designSystem-Select[data-spec="select_filled_full_rounded_icon_large"] > select,
+.h_designSystem-Select[data-spec="select_filled_full_rounded_icon_xlarge"] > select {
+  border: 0;
+  background-color: var(--h_designSystem-color-fill-normal);
+  color: var(--h_designSystem-color-label-normal);
+  cursor: pointer;
+}
+.h_designSystem-Select[data-spec$="_rounded_medium"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec$="_rounded_xlarge"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec$="_rounded_small"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec$="_rounded_large"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec="select_filled_small"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec="select_filled_medium"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec="select_filled_large"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec="select_filled_xlarge"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec="select_outline_small"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec="select_outline_medium"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec="select_outline_large"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec="select_outline_xlarge"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec$="_icon_medium"] > :nth-last-child(1 of img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec$="_icon_xlarge"] > :nth-last-child(1 of img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec$="_icon_small"] > :nth-last-child(1 of img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec$="_icon_large"] > :nth-last-child(1 of img, .h_designSystem-icon) {
+  position: absolute;
+  right: var(--h_designSystem-unit-12);
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.h_designSystem-Select[data-spec*="_disabled_"] {
+  position: relative;
+}
+.h_designSystem-Select[data-spec$="_rounded_disabled_medium"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec$="_rounded_disabled_xlarge"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec$="_rounded_disabled_small"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec$="_rounded_disabled_large"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec^="select_outline_disabled_"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec^="select_filled_disabled_"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec$="_icon_disabled_medium"] > :nth-last-child(1 of img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec$="_icon_disabled_xlarge"] > :nth-last-child(1 of img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec$="_icon_disabled_small"] > :nth-last-child(1 of img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec$="_icon_disabled_large"] > :nth-last-child(1 of img, .h_designSystem-icon) {
+  position: absolute;
+  right: var(--h_designSystem-unit-12);
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.h_designSystem-Select[data-spec$="_icon_small"] > :nth-child(1 of img, .h_designSystem-icon) {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  left: var(--h_designSystem-unit-12);
+}
+.h_designSystem-Select[data-spec$="_icon_medium"] > :nth-child(1 of img, .h_designSystem-icon) {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  left: var(--h_designSystem-unit-16);
+}
+.h_designSystem-Select[data-spec$="_icon_large"] > :nth-child(1 of img, .h_designSystem-icon) {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  left: var(--h_designSystem-unit-20);
+}
+.h_designSystem-Select[data-spec$="_icon_xlarge"] > :nth-child(1 of img, .h_designSystem-icon) {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  left: var(--h_designSystem-unit-24);
+}
+.h_designSystem-Select[data-spec$="_icon_disabled_small"] > :nth-child(1 of img, .h_designSystem-icon) {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  left: var(--h_designSystem-unit-12);
+}
+.h_designSystem-Select[data-spec$="_icon_disabled_medium"] > :nth-child(1 of img, .h_designSystem-icon) {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  left: var(--h_designSystem-unit-16);
+}
+.h_designSystem-Select[data-spec$="_icon_disabled_large"] > :nth-child(1 of img, .h_designSystem-icon) {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  left: var(--h_designSystem-unit-20);
+}
+.h_designSystem-Select[data-spec$="_icon_disabled_xlarge"] > :nth-child(1 of img, .h_designSystem-icon) {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  left: var(--h_designSystem-unit-24);
+}
+.h_designSystem-Select[data-spec="select_outline_small"] > select,
+.h_designSystem-Select[data-spec="select_outline_medium"] > select,
+.h_designSystem-Select[data-spec="select_outline_large"] > select,
+.h_designSystem-Select[data-spec="select_outline_xlarge"] > select,
+.h_designSystem-Select[data-spec="select_outline_icon_small"] > select,
+.h_designSystem-Select[data-spec="select_outline_icon_medium"] > select,
+.h_designSystem-Select[data-spec="select_outline_icon_large"] > select,
+.h_designSystem-Select[data-spec="select_outline_icon_xlarge"] > select,
+.h_designSystem-Select[data-spec="select_outline_rounded_small"] > select,
+.h_designSystem-Select[data-spec="select_outline_rounded_medium"] > select,
+.h_designSystem-Select[data-spec="select_outline_rounded_large"] > select,
+.h_designSystem-Select[data-spec="select_outline_rounded_xlarge"] > select,
+.h_designSystem-Select[data-spec="select_outline_rounded_icon_small"] > select,
+.h_designSystem-Select[data-spec="select_outline_rounded_icon_medium"] > select,
+.h_designSystem-Select[data-spec="select_outline_rounded_icon_large"] > select,
+.h_designSystem-Select[data-spec="select_outline_rounded_icon_xlarge"] > select,
+.h_designSystem-Select[data-spec="select_outline_full_rounded_small"] > select,
+.h_designSystem-Select[data-spec="select_outline_full_rounded_medium"] > select,
+.h_designSystem-Select[data-spec="select_outline_full_rounded_large"] > select,
+.h_designSystem-Select[data-spec="select_outline_full_rounded_xlarge"] > select,
+.h_designSystem-Select[data-spec="select_outline_full_rounded_icon_small"] > select,
+.h_designSystem-Select[data-spec="select_outline_full_rounded_icon_medium"] > select,
+.h_designSystem-Select[data-spec="select_outline_full_rounded_icon_large"] > select,
+.h_designSystem-Select[data-spec="select_outline_full_rounded_icon_xlarge"] > select {
+  border: 1px solid var(--h_designSystem-color-line-solid-0);
+  background-color: var(--h_designSystem-color-common-100);
+  color: var(--h_designSystem-color-label-normal);
+  cursor: pointer;
+}
+.h_designSystem-Select[data-spec$="_rounded_disabled_small"] > select,
+.h_designSystem-Select[data-spec$="_rounded_small"] > select,
+.h_designSystem-Select[data-spec="select_filled_small"] > select,
+.h_designSystem-Select[data-spec="select_filled_disabled_small"] > select,
+.h_designSystem-Select[data-spec="select_outline_small"] > select,
+.h_designSystem-Select[data-spec="select_outline_disabled_small"] > select {
+  padding: 0 var(--h_designSystem-unit-36) 0 var(--h_designSystem-unit-12);
+}
+.h_designSystem-Select[data-spec$="_rounded_disabled_medium"] > select,
+.h_designSystem-Select[data-spec$="_rounded_medium"] > select,
+.h_designSystem-Select[data-spec="select_filled_medium"] > select,
+.h_designSystem-Select[data-spec="select_filled_disabled_medium"] > select,
+.h_designSystem-Select[data-spec="select_outline_medium"] > select,
+.h_designSystem-Select[data-spec="select_outline_disabled_medium"] > select {
+  padding: 0 var(--h_designSystem-unit-40) 0 var(--h_designSystem-unit-16);
+}
+.h_designSystem-Select[data-spec$="_rounded_disabled_large"] > select,
+.h_designSystem-Select[data-spec$="_rounded_large"] > select,
+.h_designSystem-Select[data-spec="select_filled_large"] > select,
+.h_designSystem-Select[data-spec="select_filled_disabled_large"] > select,
+.h_designSystem-Select[data-spec="select_outline_large"] > select,
+.h_designSystem-Select[data-spec="select_outline_disabled_large"] > select {
+  padding: 0 var(--h_designSystem-unit-44) 0 var(--h_designSystem-unit-20);
+}
+.h_designSystem-Select[data-spec$="_rounded_disabled_xlarge"] > select,
+.h_designSystem-Select[data-spec$="_rounded_xlarge"] > select,
+.h_designSystem-Select[data-spec="select_filled_xlarge"] > select,
+.h_designSystem-Select[data-spec="select_filled_disabled_xlarge"] > select,
+.h_designSystem-Select[data-spec="select_outline_xlarge"] > select,
+.h_designSystem-Select[data-spec="select_outline_disabled_xlarge"] > select {
+  padding: 0 var(--h_designSystem-unit-48) 0 var(--h_designSystem-unit-24);
+}
+.h_designSystem-Select[data-spec$="_icon_disabled_small"] > select,
+.h_designSystem-Select[data-spec$="_icon_small"] > select {
+  padding: 0 var(--h_designSystem-unit-36) 0 var(--h_designSystem-unit-36);
+}
+.h_designSystem-Select[data-spec$="_icon_disabled_medium"] > select,
+.h_designSystem-Select[data-spec$="_icon_medium"] > select {
+  padding: 0 var(--h_designSystem-unit-40) 0 var(--h_designSystem-unit-40);
+}
+.h_designSystem-Select[data-spec$="_icon_disabled_large"] > select,
+.h_designSystem-Select[data-spec$="_icon_large"] > select {
+  padding: 0 var(--h_designSystem-unit-44) 0 var(--h_designSystem-unit-48);
+}
+.h_designSystem-Select[data-spec$="_icon_disabled_xlarge"] > select,
+.h_designSystem-Select[data-spec$="_icon_xlarge"] > select {
+  padding: 0 var(--h_designSystem-unit-48) 0 var(--h_designSystem-unit-52);
+}

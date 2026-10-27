@@ -1,0 +1,138 @@
+.h_designSystem-Button[data-spec],
+.h_designSystem-IconButton[data-spec*="_filled_"],
+.h_designSystem-TextButton[data-spec],
+.h_designSystem-Tab[data-spec],
+.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_small"],
+.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_medium"],
+.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_large"],
+.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_fixed_small"],
+.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_fixed_medium"],
+.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_fixed_large"],
+.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_search_small"],
+.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_search_medium"],
+.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_search_large"],
+.h_designSystem-Chip[data-spec],
+.h_designSystem-Badge[data-spec] {
+  font-weight: 500;
+}
+.h_designSystem-Button[data-spec],
+.h_designSystem-TextButton[data-spec],
+.h_designSystem-Tab[data-spec],
+.h_designSystem-TextInput[data-spec],
+.h_designSystem-UnderlineTextInput[data-spec],
+.h_designSystem-TextArea[data-spec],
+.h_designSystem-AutoHeightTextArea[data-spec],
+.h_designSystem-Select[data-spec] > select,
+.h_designSystem-Chip[data-spec],
+.h_designSystem-ContentTag[data-spec="chip_content_small"],
+.h_designSystem-ContentTag[data-spec="chip_content_medium"],
+.h_designSystem-ContentTag[data-spec="chip_content_large"],
+.h_designSystem-Badge[data-spec] {
+  line-height: 1.5;
+}
+.h_designSystem-Button[data-spec$="_small"],
+.h_designSystem-TextButton[data-spec$="_medium"],
+.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_medium"]::placeholder,
+.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_large"]::placeholder,
+.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_fixed_medium"]::placeholder,
+.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_fixed_large"]::placeholder,
+.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_search_medium"]::placeholder,
+.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_search_large"]::placeholder {
+  font-size: 15px;
+}
+.h_designSystem-Button[data-spec$="_medium"],
+.h_designSystem-TextButton[data-spec$="_large"],
+.h_designSystem-Tab[data-spec$="_medium"],
+.h_designSystem-Tab[data-spec$="_large"],
+.h_designSystem-TextInput[data-spec$="_medium"],
+.h_designSystem-TextInput[data-spec$="_large"],
+.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_medium"],
+.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_large"],
+.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_fixed_medium"],
+.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_fixed_large"],
+.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_search_medium"],
+.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_search_large"],
+.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_search_wide_small"],
+.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_xlarge"]::placeholder,
+.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_fixed_xlarge"]::placeholder,
+.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_search_xlarge"]::placeholder,
+.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_search_wide_small"]::placeholder,
+.h_designSystem-TextArea[data-spec$="_medium"],
+.h_designSystem-TextArea[data-spec$="_large"],
+.h_designSystem-AutoHeightTextArea[data-spec="textarea_auto_medium"],
+.h_designSystem-AutoHeightTextArea[data-spec="textarea_auto_large"],
+.h_designSystem-Select[data-spec$="_medium"] > select,
+.h_designSystem-Select[data-spec$="_large"] > select,
+.h_designSystem-Chip[data-spec$="_xlarge"],
+.h_designSystem-Chip[data-spec$="_large"],
+.h_designSystem-ContentTag[data-spec="chip_content_small"],
+.h_designSystem-Hashtag[data-spec="hashtag_medium"],
+.h_designSystem-Badge[data-spec$="_xlarge"],
+.h_designSystem-Badge[data-spec$="_large"] {
+  font-size: var(--h_designSystem-unit-16);
+}
+.h_designSystem-Button[data-spec$="_large"],
+.h_designSystem-TextButton[data-spec$="_xlarge"],
+.h_designSystem-Tab[data-spec$="_xlarge"],
+.h_designSystem-TextInput[data-spec$="_xlarge"],
+.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_xlarge"],
+.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_fixed_xlarge"],
+.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_search_xlarge"],
+.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_search_wide_medium"],
+.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_search_wide_large"],
+.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_search_wide_medium"]::placeholder,
+.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_search_wide_large"]::placeholder,
+.h_designSystem-TextArea[data-spec$="_xlarge"],
+.h_designSystem-AutoHeightTextArea[data-spec="textarea_auto_xlarge"],
+.h_designSystem-Select[data-spec$="_xlarge"] > select,
+.h_designSystem-ContentTag[data-spec="chip_content_medium"],
+.h_designSystem-Hashtag[data-spec="hashtag_large"] {
+  font-size: 18px;
+}
+.h_designSystem-Button[data-spec$="_xlarge"],
+.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_search_wide_xlarge"],
+.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_search_wide_xlarge"]::placeholder,
+.h_designSystem-ContentTag[data-spec="chip_content_large"],
+.h_designSystem-Hashtag[data-spec="hashtag_xlarge"] {
+  font-size: var(--h_designSystem-unit-20);
+}
+.h_designSystem-Button[data-spec*="_icon_"],
+.h_designSystem-Tab[data-spec*="_icon_"] {
+  gap: var(--h_designSystem-unit-12);
+}
+.h_designSystem-TextButton[data-spec$="_small"],
+.h_designSystem-Tab[data-spec$="_small"],
+.h_designSystem-TextInput[data-spec$="_small"],
+.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_small"],
+.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_fixed_small"],
+.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_search_small"],
+.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_small"]::placeholder,
+.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_fixed_small"]::placeholder,
+.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_search_small"]::placeholder,
+.h_designSystem-TextArea[data-spec$="_small"],
+.h_designSystem-AutoHeightTextArea[data-spec="textarea_auto_small"],
+.h_designSystem-Select[data-spec$="_small"] > select,
+.h_designSystem-Chip[data-spec$="_medium"],
+.h_designSystem-Hashtag[data-spec="hashtag_small"],
+.h_designSystem-Badge[data-spec$="_medium"] {
+  font-size: 14px;
+}
+.h_designSystem-TextInput[data-spec],
+.h_designSystem-UnderlineTextInput[data-spec]::placeholder,
+.h_designSystem-UnderlineTextInput[data-spec*="_wide_"],
+.h_designSystem-TextArea[data-spec],
+.h_designSystem-AutoHeightTextArea[data-spec],
+.h_designSystem-Select[data-spec] > select,
+.h_designSystem-Hashtag[data-spec] {
+  font-weight: 400;
+}
+.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_xlarge"],
+.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_fixed_xlarge"],
+.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_search_xlarge"],
+.h_designSystem-ContentTag[data-spec] {
+  font-weight: 600;
+}
+.h_designSystem-Chip[data-spec$="_small"],
+.h_designSystem-Badge[data-spec$="_small"] {
+  font-size: var(--h_designSystem-unit-12);
+}

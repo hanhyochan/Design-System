@@ -1,0 +1,76 @@
+/* Storybook 옵션 표만 변경합니다. 패키지 컴포넌트 스타일에는 포함하지 않습니다. */
+table.docblock-argstable {
+  display: block;
+  width: 100%;
+}
+
+table.docblock-argstable > thead {
+  display: none;
+}
+
+table.docblock-argstable > tbody {
+  display: block;
+  background: var(--h_designSystem-color-common-100, #fff);
+}
+
+table.docblock-argstable > tbody > tr {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--h_designSystem-unit-12, 12px);
+  padding: var(--h_designSystem-unit-16, 16px);
+}
+
+table.docblock-argstable > tbody > tr + tr {
+  border-top: 1px solid #d9e1ea;
+}
+
+/* Storybook의 두 번 중첩된 테이블 선택자보다 우선하여 고정 열 너비를 해제합니다. */
+table.docblock-argstable.docblock-argstable > tbody > tr > :is(td:first-child, td:last-child) {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  padding: 0;
+  border: 0;
+}
+
+table.docblock-argstable > tbody > tr > td:not(:first-child):not(:last-child) {
+  display: none;
+}
+
+table.docblock-argstable > tbody > tr > td:first-child {
+  font-weight: 700;
+  /* Storybook의 기본 셀에 지정된 20px !important를 이 옵션 표 안에서만 해제합니다. */
+  padding-left: 0 !important;
+}
+
+table.docblock-argstable.docblock-argstable > tbody > tr:first-child > td:first-child {
+  padding: 0;
+}
+
+table.docblock-argstable fieldset {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--h_designSystem-unit-12, 12px) var(--h_designSystem-unit-24, 24px);
+  min-width: 0;
+}
+
+table.docblock-argstable fieldset > label {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: var(--h_designSystem-unit-8, 8px);
+  width: auto;
+  max-width: 100%;
+  white-space: normal;
+}
+
+table.docblock-argstable fieldset > label > input {
+  flex-shrink: 0;
+}
+
+table.docblock-argstable fieldset > label > span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}

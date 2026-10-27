@@ -1,0 +1,15 @@
+{
+  "name": "@h_designsystem/tokens",
+  "version": "0.1.0",
+  "type": "module",
+  "files": [
+    "src"
+  ],
+  "exports": {
+    ".": "./src/index.css",
+    "./styles.css": "./src/index.css"
+  },
+  "sideEffects": [
+    "**/*.css"
+  ]
+}

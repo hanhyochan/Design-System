@@ -1,0 +1,20 @@
+{
+  "name": "@h_designsystem/foundation",
+  "version": "0.1.0",
+  "type": "module",
+  "files": [
+    "src"
+  ],
+  "dependencies": {
+    "@h_designsystem/tokens": "0.1.0"
+  },
+  "exports": {
+    ".": "./src/style/index.css",
+    "./styles.css": "./src/style/index.css",
+    "./reset.css": "./src/style/reset.css",
+    "./icons/*": "./src/icons/*"
+  },
+  "sideEffects": [
+    "**/*.css"
+  ]
+}

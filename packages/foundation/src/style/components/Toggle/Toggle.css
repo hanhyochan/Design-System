@@ -1,0 +1,103 @@
+.h_designSystem-Toggle[data-spec*="_on_"] {
+  position: relative;
+  border: 0;
+  background: var(--h_designSystem-color-static-black);
+  cursor: pointer;
+}
+.h_designSystem-Toggle[data-spec*="_off_"] input,
+.h_designSystem-Toggle[data-spec*="_on_"] input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  border: 0;
+  z-index: 1;
+  cursor: pointer;
+}
+.h_designSystem-Toggle[data-spec="toggle_on_small"]::after {
+  content: "";
+  pointer-events: none;
+  background: var(--h_designSystem-color-common-100);
+  transform: translateX(var(--h_designSystem-unit-16));
+}
+.h_designSystem-Toggle[data-spec="toggle_on_small"]:has(input:checked)::after,
+.h_designSystem-Toggle[data-spec="toggle_off_small"]:has(input:checked)::after {
+  transform: translateX(var(--h_designSystem-unit-16));
+  content: "";
+  pointer-events: none;
+}
+.h_designSystem-Toggle[data-spec*="_off_"]:has(input:not(:checked))::after,
+.h_designSystem-Toggle[data-spec*="_on_"]:has(input:not(:checked))::after {
+  transform: translateX(0);
+  content: "";
+  pointer-events: none;
+}
+.h_designSystem-Toggle[data-spec="toggle_on_medium"]::after {
+  content: "";
+  pointer-events: none;
+  background: var(--h_designSystem-color-common-100);
+  transform: translateX(var(--h_designSystem-unit-20));
+}
+.h_designSystem-Toggle[data-spec="toggle_on_medium"]:has(input:checked)::after,
+.h_designSystem-Toggle[data-spec="toggle_off_medium"]:has(input:checked)::after {
+  transform: translateX(var(--h_designSystem-unit-20));
+  content: "";
+  pointer-events: none;
+}
+.h_designSystem-Toggle[data-spec="toggle_on_large"]::after {
+  content: "";
+  pointer-events: none;
+  background: var(--h_designSystem-color-common-100);
+  transform: translateX(var(--h_designSystem-unit-24));
+}
+.h_designSystem-Toggle[data-spec="toggle_on_large"]:has(input:checked)::after,
+.h_designSystem-Toggle[data-spec="toggle_off_large"]:has(input:checked)::after {
+  transform: translateX(var(--h_designSystem-unit-24));
+  content: "";
+  pointer-events: none;
+}
+.h_designSystem-Toggle[data-spec="toggle_on_xlarge"]::after {
+  content: "";
+  pointer-events: none;
+  background: var(--h_designSystem-color-common-100);
+  transform: translateX(var(--h_designSystem-unit-28));
+}
+.h_designSystem-Toggle[data-spec="toggle_on_xlarge"]:has(input:checked)::after,
+.h_designSystem-Toggle[data-spec="toggle_off_xlarge"]:has(input:checked)::after {
+  transform: translateX(var(--h_designSystem-unit-28));
+  content: "";
+  pointer-events: none;
+}
+.h_designSystem-Toggle[data-spec*="_off_"] {
+  position: relative;
+  border: 0;
+  background: var(--h_designSystem-color-line-solid-strong);
+  cursor: pointer;
+}
+.h_designSystem-Toggle[data-spec*="_off_"]::after {
+  content: "";
+  pointer-events: none;
+  background: var(--h_designSystem-color-common-100);
+  transform: translateX(0px);
+}
+.h_designSystem-Toggle[data-spec*="_disabled_"] input {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.h_designSystem-Toggle[data-spec*="_disabled_"]::after {
+  content: "";
+  pointer-events: none;
+  transform: translateX(0px);
+}
+.h_designSystem-Toggle[data-spec] {
+  padding: 2px;
+}
+.h_designSystem-Toggle[data-spec$="_small"] {
+  width: var(--h_designSystem-unit-36);
+}
+.h_designSystem-Toggle[data-spec$="_medium"] {
+  width: var(--h_designSystem-unit-44);
+}
+.h_designSystem-Toggle[data-spec$="_xlarge"] {
+  width: var(--h_designSystem-unit-60);
+}

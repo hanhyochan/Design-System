@@ -1,0 +1,100 @@
+.h_designSystem-TextArea[data-spec="textarea_filled_small"],
+.h_designSystem-TextArea[data-spec="textarea_filled_medium"],
+.h_designSystem-TextArea[data-spec="textarea_filled_large"],
+.h_designSystem-TextArea[data-spec="textarea_filled_xlarge"],
+.h_designSystem-TextArea[data-spec="textarea_filled_rounded_small"],
+.h_designSystem-TextArea[data-spec="textarea_filled_rounded_medium"],
+.h_designSystem-TextArea[data-spec="textarea_filled_rounded_large"],
+.h_designSystem-TextArea[data-spec="textarea_filled_rounded_xlarge"] {
+  outline: 0;
+  resize: vertical;
+  border: 0;
+  background-color: var(--h_designSystem-color-fill-normal);
+  color: var(--h_designSystem-color-label-normal);
+  cursor: text;
+}
+.h_designSystem-TextArea[data-spec^="textarea_filled_rounded_focus_"],
+.h_designSystem-TextArea[data-spec^="textarea_filled_focus_"] {
+  resize: vertical;
+}
+.h_designSystem-TextArea[data-spec^="textarea_filled_rounded_error_"],
+.h_designSystem-TextArea[data-spec^="textarea_filled_error_"] {
+  resize: vertical;
+}
+.h_designSystem-TextArea[data-spec^="textarea_filled_rounded_disabled_"],
+.h_designSystem-TextArea[data-spec^="textarea_filled_disabled_"] {
+  resize: vertical;
+}
+.h_designSystem-TextArea[data-spec^="textarea_filled_rounded_view_"],
+.h_designSystem-TextArea[data-spec^="textarea_filled_view_"] {
+  resize: vertical;
+}
+.h_designSystem-TextArea[data-spec^="textarea_filled_rounded_inquiry_"],
+.h_designSystem-TextArea[data-spec^="textarea_filled_inquiry_"] {
+  outline: 0;
+  resize: none;
+  border: 0;
+  background-color: var(--h_designSystem-color-fill-normal);
+  color: var(--h_designSystem-color-label-normal);
+  cursor: text;
+}
+.h_designSystem-TextArea[data-spec="textarea_outline_small"],
+.h_designSystem-TextArea[data-spec="textarea_outline_medium"],
+.h_designSystem-TextArea[data-spec="textarea_outline_large"],
+.h_designSystem-TextArea[data-spec="textarea_outline_xlarge"],
+.h_designSystem-TextArea[data-spec="textarea_outline_rounded_small"],
+.h_designSystem-TextArea[data-spec="textarea_outline_rounded_medium"],
+.h_designSystem-TextArea[data-spec="textarea_outline_rounded_large"],
+.h_designSystem-TextArea[data-spec="textarea_outline_rounded_xlarge"] {
+  outline: 0;
+  resize: vertical;
+  border: 1px solid var(--h_designSystem-color-line-solid-0);
+  background: var(--h_designSystem-color-common-100);
+  color: var(--h_designSystem-color-label-normal);
+}
+.h_designSystem-TextArea[data-spec^="textarea_outline_rounded_focus_"],
+.h_designSystem-TextArea[data-spec^="textarea_outline_focus_"] {
+  resize: vertical;
+}
+.h_designSystem-TextArea[data-spec^="textarea_outline_rounded_error_"],
+.h_designSystem-TextArea[data-spec^="textarea_outline_error_"] {
+  resize: vertical;
+}
+.h_designSystem-TextArea[data-spec^="textarea_outline_rounded_disabled_"],
+.h_designSystem-TextArea[data-spec^="textarea_outline_disabled_"] {
+  resize: vertical;
+}
+.h_designSystem-TextArea[data-spec^="textarea_outline_rounded_view_"],
+.h_designSystem-TextArea[data-spec^="textarea_outline_view_"] {
+  resize: vertical;
+}
+.h_designSystem-TextArea[data-spec^="textarea_outline_rounded_inquiry_"],
+.h_designSystem-TextArea[data-spec^="textarea_outline_inquiry_"] {
+  outline: 0;
+  resize: none;
+  border: 1px solid var(--h_designSystem-color-line-solid-0);
+  background: var(--h_designSystem-color-common-100);
+  color: var(--h_designSystem-color-label-normal);
+}
+.h_designSystem-TextArea[data-spec$="_small"] {
+  min-height: var(--h_designSystem-unit-96);
+}
+.h_designSystem-TextArea[data-spec$="_medium"],
+.h_designSystem-TextArea[data-spec$="_small"] {
+  padding: var(--h_designSystem-unit-12);
+}
+.h_designSystem-TextArea[data-spec$="_medium"] {
+  min-height: var(--h_designSystem-unit-128);
+}
+.h_designSystem-TextArea[data-spec$="_large"] {
+  min-height: var(--h_designSystem-unit-160);
+}
+.h_designSystem-TextArea[data-spec$="_large"] {
+  padding: var(--h_designSystem-unit-16);
+}
+.h_designSystem-TextArea[data-spec$="_xlarge"] {
+  min-height: var(--h_designSystem-unit-196);
+}
+.h_designSystem-TextArea[data-spec$="_xlarge"] {
+  padding: var(--h_designSystem-unit-20);
+}

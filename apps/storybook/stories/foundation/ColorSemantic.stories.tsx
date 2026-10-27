@@ -1,0 +1,44 @@
+import type { Meta, StoryObj } from '@storybook/react-vite';
+const names = [
+  '--h_designSystem-color-text-primary',
+  '--h_designSystem-color-text-secondary',
+  '--h_designSystem-color-text-tertiary',
+  '--h_designSystem-color-text-disabled',
+  '--h_designSystem-color-text-inverse',
+  '--h_designSystem-color-focus-ring',
+  '--h_designSystem-color-overlay-dimmer',
+  '--h_designSystem-color-status-positive',
+  '--h_designSystem-color-status-negative',
+  '--h_designSystem-color-status-informative',
+];
+const meta: Meta<{
+  token: string;
+}> = {
+  title: 'Foundation/ColorSemantic',
+  args: { token: names[0] },
+  argTypes: { token: { control: 'select', options: names } },
+  render: ({ token }) => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+      <div
+        style={{ width: 160, height: 80, border: '1px solid #777', background: `var(${token})` }}
+      />
+      <code>{token}</code>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      source: {
+        transform: (
+          _s: string,
+          c: {
+            args: {
+              token: string;
+            };
+          },
+        ) => `color: var(${c.args.token});`,
+      },
+    },
+  },
+};
+export default meta;
+export const Playground: StoryObj = {};

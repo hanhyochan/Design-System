@@ -1,0 +1,31 @@
+.h_designSystem-Radio[data-spec="radio_small"],
+.h_designSystem-Radio[data-spec="radio_medium"],
+.h_designSystem-Radio[data-spec="radio_large"],
+.h_designSystem-Radio[data-spec="radio_xlarge"] {
+  position: relative;
+  border: 2px solid var(--h_designSystem-color-blue-50);
+  background: var(--h_designSystem-color-common-100);
+  cursor: pointer;
+}
+.h_designSystem-Radio[data-spec="radio_small"]:checked::after,
+.h_designSystem-Radio[data-spec="radio_medium"]:checked::after,
+.h_designSystem-Radio[data-spec="radio_large"]:checked::after,
+.h_designSystem-Radio[data-spec="radio_xlarge"]:checked::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: "";
+}
+.h_designSystem-Radio[data-spec="radio_medium"]:checked::after {
+  width: 10px;
+}
+.h_designSystem-Radio[data-spec="radio_medium"]:checked::after {
+  height: 10px;
+}
+.h_designSystem-Radio[data-spec="radio_xlarge"]:checked::after {
+  width: 14px;
+}
+.h_designSystem-Radio[data-spec="radio_xlarge"]:checked::after {
+  height: 14px;
+}

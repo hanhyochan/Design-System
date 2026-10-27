@@ -1,0 +1,5 @@
+import { createStory } from '../component-stories';
+const config = createStory('TextButton');
+const meta = { ...config.meta, title: '컴포넌트/TextButton' };
+export default meta;
+export const Playground = { ...config.example };

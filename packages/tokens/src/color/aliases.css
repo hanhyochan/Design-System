@@ -1,0 +1,15 @@
+:root {
+  --h_designSystem-color-common-0: var(--h_designSystem-color-cool-neutral-10);
+  --h_designSystem-color-purple-99_newstant: var(--h_designSystem-color-newsroll-purple-99);
+  --h_designSystem-color-purple-95_newstant: var(--h_designSystem-color-newsroll-purple-95);
+  --h_designSystem-color-purple-90_newstant: var(--h_designSystem-color-newsroll-purple-90);
+  --h_designSystem-color-purple-80_newstant: var(--h_designSystem-color-newsroll-purple-80);
+  --h_designSystem-color-purple-70_newstant: var(--h_designSystem-color-newsroll-purple-70);
+  --h_designSystem-color-purple-60_newstant: var(--h_designSystem-color-newsroll-purple-60);
+  --h_designSystem-color-purple-50_newstant: var(--h_designSystem-color-newsroll-purple-50);
+  --h_designSystem-color-purple-40_newstant: var(--h_designSystem-color-newsroll-purple-40);
+  --h_designSystem-color-purple-30_newstant: var(--h_designSystem-color-newsroll-purple-30);
+  --h_designSystem-color-purple-20_newstant: var(--h_designSystem-color-newsroll-purple-20);
+  --h_designSystem-color-purple-10_newstant: var(--h_designSystem-color-newsroll-purple-10);
+  --h_designSystem-color-common-0-alpha-52: color-mix(in srgb, var(--h_designSystem-color-common-0) 52%, transparent);
+}
