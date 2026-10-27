@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Field, TextInput } from '@h_designsystem/ui';
+import { FieldGallery } from '../component-stories';
 const meta = {
   title: '컴포넌트/Field',
   component: Field,
@@ -17,7 +18,7 @@ const meta = {
       options: ['red', 'green', 'blue'],
     },
   },
-  render: (args) => (
+  render: (args, { viewMode }) => viewMode === 'story' ? <FieldGallery /> : (
     <Field {...args}>
       <TextInput type="email" />
     </Field>

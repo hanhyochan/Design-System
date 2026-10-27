@@ -59,7 +59,7 @@ table.docblock-argstable fieldset {
 
 table.docblock-argstable fieldset > label {
   display: inline-flex;
-  align-items: flex-start;
+  align-items: center;
   gap: var(--h_designSystem-unit-8, 8px);
   width: auto;
   max-width: 100%;

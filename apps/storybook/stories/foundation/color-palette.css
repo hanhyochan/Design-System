@@ -1,0 +1,70 @@
+/* Playground의 색상 견본에만 적용하는 Storybook 전용 스타일입니다. */
+.color-palette {
+  display: flex;
+  flex-direction: column;
+  gap: var(--h_designSystem-unit-40);
+  width: 100%;
+  min-width: 0;
+  color: var(--h_designSystem-color-text-primary);
+}
+
+.color-palette-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--h_designSystem-unit-24);
+  min-width: 0;
+}
+
+.color-palette-heading {
+  font-size: var(--h_designSystem-unit-20);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.color-palette-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.color-palette-item {
+  display: flex;
+  flex: 1 0 var(--h_designSystem-unit-44);
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--h_designSystem-unit-8);
+  min-width: 0;
+  text-align: center;
+  font-size: var(--h_designSystem-unit-16);
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.color-palette-swatch {
+  height: var(--h_designSystem-unit-52);
+  flex-shrink: 0;
+}
+
+.color-palette-row[data-extra] {
+  gap: var(--h_designSystem-unit-24) var(--h_designSystem-unit-16);
+}
+
+.color-palette-row[data-extra] .color-palette-item {
+  flex-basis: var(--h_designSystem-unit-160);
+}
+
+.color-palette[data-kind='semantic'] .color-palette-row {
+  gap: var(--h_designSystem-unit-40);
+}
+
+.color-palette[data-kind='semantic'] .color-palette-item {
+  flex: 0 0 calc(var(--h_designSystem-unit-56) * 2);
+  align-items: center;
+}
+
+.color-palette[data-kind='semantic'] .color-palette-swatch {
+  width: calc(var(--h_designSystem-unit-36) * 2);
+  height: calc(var(--h_designSystem-unit-36) * 2);
+  border-radius: var(--h_designSystem-unit-20);
+  border: 1px solid var(--h_designSystem-color-neutral-95);
+  box-sizing: border-box;
+}

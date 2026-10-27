@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { FoundationGallery, foundationValues } from './FoundationGallery';
 const meta: Meta<{
   value: number;
 }> = {
@@ -7,28 +8,10 @@ const meta: Meta<{
   argTypes: {
     value: {
       control: 'radio',
-      options: [4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 96, 128, 160, 196],
+      options: foundationValues.Units,
     },
   },
-  render: ({ value }) => {
-    const v = value > 0 && value % 4 === 0 ? `var(--h_designSystem-unit-${value})` : `${value}px`;
-    return (
-      <div
-        style={{
-          display: 'flex',
-          gap: '16px',
-          padding: 16,
-          border: '1px solid #777',
-          borderRadius: 0,
-          alignItems: 'center',
-          background: '#f0f0f0',
-        }}
-      >
-        <div style={{ width: v, height: 40, background: '#0054d1' }} />
-        <span>{value}px</span>
-      </div>
-    );
-  },
+  render: ({ value }, { viewMode }) => <FoundationGallery kind="Units" selected={viewMode === 'docs' ? value : undefined} />,
   parameters: {
     docs: {
       source: {

@@ -10,7 +10,7 @@ const preview: Preview = {
       storySort: {
         order: [
           'Foundation',
-          ['ColorAtomic', 'ColorSemantic', 'TypographyKo', 'TypographyEn', 'Padding', 'BorderRadius', 'BorderWidth', 'Shadow', 'Gap', 'Units'],
+          ['ColorAtomic', 'ColorSemantic', 'TypographyKo', 'TypographyEn', 'Padding', 'BorderRadius', 'BorderWidth', 'Shadow', 'Gap', 'Icons', 'Units'],
           '컴포넌트',
           ['Button', 'IconButton', 'TextButton', 'Tab', 'TextInput', 'UnderlineTextInput', 'TextArea', 'AutoHeightTextArea', 'Select', 'Chip', 'ContentTag', 'Hashtag', 'Badge', 'Toggle', 'Checkbox', 'Radio', 'Pagination', 'Text', 'Field'],
         ],

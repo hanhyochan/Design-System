@@ -1,4 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { ColorPalette, createAtomicPalette } from './ColorPalette';
+import aliasCss from '../../../../packages/tokens/src/color/aliases.css?raw';
 const names = [
   '--h_designSystem-color-common-100',
   '--h_designSystem-color-neutral-99',
@@ -221,20 +223,15 @@ const names = [
   '--h_designSystem-color-newsroll-purple-95',
   '--h_designSystem-color-newsroll-purple-99',
 ];
+const aliases = [...aliasCss.matchAll(/(--h_designSystem-color-[\w-]+)\s*:/g)].map(match => match[1]);
+const palette = createAtomicPalette([...new Set([...names, ...aliases])]);
 const meta: Meta<{
   token: string;
 }> = {
   title: 'Foundation/ColorAtomic',
   args: { token: names[0] },
-  argTypes: { token: { control: 'select', options: names } },
-  render: ({ token }) => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-      <div
-        style={{ width: 160, height: 80, border: '1px solid #777', background: `var(${token})` }}
-      />
-      <code>{token}</code>
-    </div>
-  ),
+  argTypes: { token: { control: 'select', options: [...new Set([...names, ...aliases])] } },
+  render: ({ token }, { viewMode }) => <ColorPalette groups={palette} kind="atomic" selected={viewMode === 'docs' ? token : undefined} />,
   parameters: {
     docs: {
       source: {

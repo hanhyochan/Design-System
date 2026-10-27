@@ -1,0 +1,101 @@
+/* 전체 견본 화면 전용. 실제 컴포넌트의 규격은 패키지 CSS를 그대로 사용합니다. */
+.ds-gallery, .ds-gallery-section {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.ds-gallery { gap: var(--h_designSystem-unit-40); }
+.ds-gallery-section { gap: var(--h_designSystem-unit-20); }
+.ds-gallery-title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.777778;
+  color: var(--h_designSystem-color-text-primary);
+}
+.ds-gallery-scroll { width: 100%; overflow-x: auto; }
+.ds-gallery-table {
+  width: 100%;
+  min-width: var(--h_designSystem-unit-800);
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.ds-gallery-table th, .ds-gallery-table td {
+  padding: var(--h_designSystem-unit-16);
+  border-bottom: 1px solid var(--h_designSystem-color-line-solid-normal);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.714286;
+  text-align: center;
+  vertical-align: middle;
+}
+.ds-gallery-table th:first-child { width: var(--h_designSystem-unit-128); text-align: left; }
+.ds-gallery-table tbody th { font-weight: 700; }
+.ds-gallery-table thead th { font-weight: 500; white-space: nowrap; }
+.ds-gallery-table td > div { min-width: 0; }
+.ds-gallery-table [data-gallery-family='Tab'] [role='tablist'] { justify-content: center; }
+.ds-gallery-type-table { min-width: calc(var(--h_designSystem-unit-800) + var(--h_designSystem-unit-160)); }
+.ds-gallery-type-table th:first-child { width: var(--h_designSystem-unit-160); }
+.ds-gallery-type-table th:nth-child(2) { width: var(--h_designSystem-unit-80); }
+.ds-gallery-type-table th:nth-child(3), .ds-gallery-type-table th:nth-child(4) { width: var(--h_designSystem-unit-128); }
+.ds-gallery-type-table th, .ds-gallery-type-table td { text-align: left; vertical-align: top; }
+.ds-gallery-type-table td:not(:last-child), .ds-gallery-type-table th:not(:last-child) {
+  border-inline-end: 1px solid var(--h_designSystem-color-line-solid-strong);
+}
+.ds-gallery-type-table .h_designSystem-Text { overflow-wrap: anywhere; }
+.ds-gallery-code { font-size: 14px; }
+.ds-gallery-code summary { cursor: pointer; width: fit-content; }
+.ds-gallery-code pre {
+  padding: var(--h_designSystem-unit-16);
+  background: var(--h_designSystem-color-neutral-99);
+  overflow-x: auto;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.ds-gallery-specimens {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--h_designSystem-unit-48);
+  padding: var(--h_designSystem-unit-40);
+  border-radius: var(--h_designSystem-unit-20);
+  background: var(--h_designSystem-color-common-100);
+}
+.ds-gallery-specimen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--h_designSystem-unit-12);
+  width: var(--h_designSystem-unit-160);
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.ds-gallery-unit-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: var(--h_designSystem-unit-160);
+  height: var(--h_designSystem-unit-160);
+}
+.ds-gallery-padding { border: 1px dashed var(--h_designSystem-color-line-solid-strong); }
+.ds-gallery-padding > span { width: 100%; height: 100%; background: var(--h_designSystem-color-cyan-50); }
+.ds-gallery-gap > span { flex: 0 0 var(--h_designSystem-unit-40); height: var(--h_designSystem-unit-80); background: var(--h_designSystem-color-blue-40); }
+.ds-gallery-shadow:hover { box-shadow: none !important; }
+.ds-gallery-unit-row { display: flex; flex-direction: column; gap: var(--h_designSystem-unit-8); }
+.ds-gallery-unit-bar { height: var(--h_designSystem-unit-40); background: var(--h_designSystem-color-blue-40); flex-shrink: 0; }
+.ds-gallery-units { display: flex; flex-direction: column; gap: var(--h_designSystem-unit-24); }
+.ds-gallery-field .ds-gallery-table { min-width: calc(var(--h_designSystem-unit-800) + var(--h_designSystem-unit-340)); }
+.ds-gallery-icons { display: grid; grid-template-columns: repeat(auto-fill, minmax(calc(var(--h_designSystem-unit-128) + var(--h_designSystem-unit-20)), 1fr)); gap: var(--h_designSystem-unit-16); }
+.ds-gallery-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--h_designSystem-unit-8);
+  padding: var(--h_designSystem-unit-16);
+  font-size: var(--h_designSystem-unit-12);
+  font-weight: 500;
+  line-height: 1.666667;
+  text-align: center;
+  overflow-wrap: anywhere;
+}

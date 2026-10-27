@@ -7,6 +7,7 @@
   --h_designSystem-color-focus-ring: var(--h_designSystem-color-blue-50);
   --h_designSystem-color-overlay-dimmer: var(--h_designSystem-color-common-0-alpha-52);
   --h_designSystem-color-status-positive: #00bf40;
+  --h_designSystem-color-status-cautionary: var(--h_designSystem-color-orange-50);
   --h_designSystem-color-status-negative: #ff4242;
   --h_designSystem-color-status-informative: var(--h_designSystem-color-blue-50);
 }

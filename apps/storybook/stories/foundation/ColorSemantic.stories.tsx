@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { ColorPalette, createSemanticPalette } from './ColorPalette';
 const names = [
   '--h_designSystem-color-text-primary',
   '--h_designSystem-color-text-secondary',
@@ -8,23 +9,18 @@ const names = [
   '--h_designSystem-color-focus-ring',
   '--h_designSystem-color-overlay-dimmer',
   '--h_designSystem-color-status-positive',
+  '--h_designSystem-color-status-cautionary',
   '--h_designSystem-color-status-negative',
   '--h_designSystem-color-status-informative',
 ];
+const palette = createSemanticPalette(names);
 const meta: Meta<{
   token: string;
 }> = {
   title: 'Foundation/ColorSemantic',
   args: { token: names[0] },
   argTypes: { token: { control: 'select', options: names } },
-  render: ({ token }) => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-      <div
-        style={{ width: 160, height: 80, border: '1px solid #777', background: `var(${token})` }}
-      />
-      <code>{token}</code>
-    </div>
-  ),
+  render: ({ token }, { viewMode }) => <ColorPalette groups={palette} kind="semantic" selected={viewMode === 'docs' ? token : undefined} />,
   parameters: {
     docs: {
       source: {
