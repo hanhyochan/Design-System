@@ -1,233 +1,219 @@
-.h_designSystem-type-display_115_600 {
-  font-size: 115px;
+.h_designSystem-type-display_115_600,
+.h_designSystem-type-display_115_600_res {
   font-weight: 600;
   line-height: 1.25;
   letter-spacing: 0;
 }
-.h_designSystem-type-display_115_400 {
-  font-size: 115px;
+.h_designSystem-type-display_115_400,
+.h_designSystem-type-display_115_400_res {
   font-weight: 400;
   line-height: 1.25;
   letter-spacing: 0;
 }
-.h_designSystem-type-display_90_400 {
-  font-size: 90px;
+.h_designSystem-type-display_90_400,
+.h_designSystem-type-display_90_400_res {
   font-weight: 400;
   line-height: 1.25;
   letter-spacing: 0;
 }
 .h_designSystem-type-display_80_400 {
-  font-size: var(--h_designSystem-unit-80);
   font-weight: 400;
   line-height: 1.25;
   letter-spacing: 0;
 }
 .h_designSystem-type-display_60_400 {
-  font-size: var(--h_designSystem-unit-60);
   font-weight: 400;
   line-height: 1.25;
   letter-spacing: 0;
 }
 .h_designSystem-type-display_52_600 {
-  font-size: var(--h_designSystem-unit-52);
   font-weight: 600;
   line-height: 1.25;
   letter-spacing: 0;
 }
 .h_designSystem-type-display_52_400 {
-  font-size: var(--h_designSystem-unit-52);
   font-weight: 400;
   line-height: 1.25;
   letter-spacing: 0;
 }
-.h_designSystem-type-display_48_500 {
-  font-size: var(--h_designSystem-unit-48);
+.h_designSystem-type-display_48_500,
+.h_designSystem-type-display_48_500_res {
   font-weight: 500;
   line-height: 1.25;
   letter-spacing: 0;
 }
-.h_designSystem-type-display_48_400 {
-  font-size: var(--h_designSystem-unit-48);
+.h_designSystem-type-display_48_400,
+.h_designSystem-type-display_48_400_res {
   font-weight: 400;
   line-height: 1.25;
   letter-spacing: 0;
 }
 .h_designSystem-type-display_40_600 {
-  font-size: var(--h_designSystem-unit-40);
   font-weight: 600;
   line-height: 1.25;
   letter-spacing: 0;
 }
 .h_designSystem-type-display_40_400 {
-  font-size: var(--h_designSystem-unit-40);
   font-weight: 400;
   line-height: 1.25;
   letter-spacing: 0;
 }
-.h_designSystem-type-headline_32_700 {
-  font-size: var(--h_designSystem-unit-32);
+.h_designSystem-type-headline_32_700,
+.h_designSystem-type-headline_32_700_res {
   font-weight: 700;
   line-height: 1.25;
   letter-spacing: 0;
 }
-.h_designSystem-type-headline_32_600 {
-  font-size: var(--h_designSystem-unit-32);
+.h_designSystem-type-headline_32_600,
+.h_designSystem-type-headline_32_600_res {
   font-weight: 600;
   line-height: 1.25;
   letter-spacing: 0;
 }
-.h_designSystem-type-headline_32_400 {
-  font-size: var(--h_designSystem-unit-32);
+.h_designSystem-type-headline_32_400,
+.h_designSystem-type-headline_32_400_res {
   font-weight: 400;
   line-height: 1.25;
   letter-spacing: 0;
 }
-.h_designSystem-type-headline_28_600 {
-  font-size: var(--h_designSystem-unit-28);
+.h_designSystem-type-headline_28_600,
+.h_designSystem-type-headline_28_600_res {
   font-weight: 600;
   line-height: 1.25;
   letter-spacing: 0;
 }
-.h_designSystem-type-headline_28_500 {
-  font-size: var(--h_designSystem-unit-28);
+.h_designSystem-type-headline_28_500,
+.h_designSystem-type-headline_28_500_res {
   font-weight: 500;
   line-height: 1.25;
   letter-spacing: 0;
 }
-.h_designSystem-type-headline_28_400 {
-  font-size: var(--h_designSystem-unit-28);
+.h_designSystem-type-headline_28_400,
+.h_designSystem-type-headline_28_400_res {
   font-weight: 400;
   line-height: 1.25;
   letter-spacing: 0;
 }
 .h_designSystem-type-headline_26_600 {
-  font-size: 26px;
   font-weight: 600;
   line-height: 1.25;
   letter-spacing: 0;
 }
-.h_designSystem-type-headline_24_700 {
-  font-size: var(--h_designSystem-unit-24);
+.h_designSystem-type-headline_24_700,
+.h_designSystem-type-headline_24_700_res {
   font-weight: 700;
   line-height: 1.25;
   letter-spacing: 0;
 }
-.h_designSystem-type-headline_24_600 {
-  font-size: var(--h_designSystem-unit-24);
+.h_designSystem-type-headline_24_600,
+.h_designSystem-type-headline_24_600_res {
   font-weight: 600;
   line-height: 1.25;
   letter-spacing: 0;
 }
-.h_designSystem-type-headline_24_400 {
-  font-size: var(--h_designSystem-unit-24);
+.h_designSystem-type-headline_24_400,
+.h_designSystem-type-headline_24_400_res {
   font-weight: 400;
   line-height: 1.25;
   letter-spacing: 0;
 }
-.h_designSystem-type-title_20_700 {
-  font-size: var(--h_designSystem-unit-20);
+.h_designSystem-type-title_20_700,
+.h_designSystem-type-title_20_700_res {
   font-weight: 700;
   line-height: 1.5;
   letter-spacing: 0;
 }
-.h_designSystem-type-title_20_600 {
-  font-size: var(--h_designSystem-unit-20);
+.h_designSystem-type-title_20_600,
+.h_designSystem-type-title_20_600_res {
   font-weight: 600;
   line-height: 1.5;
   letter-spacing: 0;
 }
-.h_designSystem-type-title_20_400 {
-  font-size: var(--h_designSystem-unit-20);
+.h_designSystem-type-title_20_400,
+.h_designSystem-type-title_20_400_res {
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0;
 }
-.h_designSystem-type-title_18_700 {
-  font-size: 18px;
+.h_designSystem-type-title_18_700,
+.h_designSystem-type-title_18_700_res {
   font-weight: 700;
   line-height: 1.5;
   letter-spacing: 0;
 }
-.h_designSystem-type-title_18_600 {
-  font-size: 18px;
+.h_designSystem-type-title_18_600,
+.h_designSystem-type-title_18_600_res {
   font-weight: 600;
   line-height: 1.5;
   letter-spacing: 0;
 }
-.h_designSystem-type-title_18_400 {
-  font-size: 18px;
+.h_designSystem-type-title_18_400,
+.h_designSystem-type-title_18_400_res {
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0;
 }
-.h_designSystem-type-title_16_600 {
-  font-size: var(--h_designSystem-unit-16);
+.h_designSystem-type-title_16_600,
+.h_designSystem-type-title_16_600_res {
   font-weight: 600;
   line-height: 1.5;
   letter-spacing: 0;
 }
-.h_designSystem-type-title_16_500 {
-  font-size: var(--h_designSystem-unit-16);
+.h_designSystem-type-title_16_500,
+.h_designSystem-type-title_16_500_res {
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0;
 }
-.h_designSystem-type-body_16_400 {
-  font-size: var(--h_designSystem-unit-16);
+.h_designSystem-type-body_16_400,
+.h_designSystem-type-body_16_400_res {
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0;
 }
-.h_designSystem-type-body_15_500 {
-  font-size: 15px;
+.h_designSystem-type-body_15_500,
+.h_designSystem-type-body_15_500_res {
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0;
 }
-.h_designSystem-type-body_15_400 {
-  font-size: 15px;
+.h_designSystem-type-body_15_400,
+.h_designSystem-type-body_15_400_res {
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0;
 }
 .h_designSystem-type-label_14_700 {
-  font-size: 14px;
   font-weight: 700;
   line-height: 1.5;
   letter-spacing: 0;
 }
 .h_designSystem-type-label_14_500 {
-  font-size: 14px;
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0;
 }
 .h_designSystem-type-label_14_400 {
-  font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0;
 }
 .h_designSystem-type-meta_13_500 {
-  font-size: 13px;
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0;
 }
 .h_designSystem-type-meta_13_400 {
-  font-size: 13px;
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0;
 }
 .h_designSystem-type-caption_12_500 {
-  font-size: var(--h_designSystem-unit-12);
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0;
 }
 .h_designSystem-type-caption_12_400 {
-  font-size: var(--h_designSystem-unit-12);
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0;

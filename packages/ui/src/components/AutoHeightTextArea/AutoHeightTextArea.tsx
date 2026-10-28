@@ -34,11 +34,15 @@ export function AutoHeightTextArea({
       }
     });
     observer.observe(node);
+    // 부모 너비가 고정되어 있어도 반응형 글자 크기가 바뀌면 높이를 다시 계산합니다.
+    const responsiveFont = window.matchMedia('(max-width: 992px)');
+    responsiveFont.addEventListener('change', resize);
     const form = node.form;
     const reset = () => requestAnimationFrame(resize);
     form?.addEventListener('reset', reset);
     return () => {
       observer.disconnect();
+      responsiveFont.removeEventListener('change', resize);
       form?.removeEventListener('reset', reset);
     };
   }, [resize, size, value, defaultValue]);

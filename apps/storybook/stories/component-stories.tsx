@@ -458,7 +458,15 @@ const fieldFamilies = ['TextInput', 'UnderlineTextInput', 'TextArea', 'AutoHeigh
 
 function ComponentGallery({ family, defaults, fieldsOnly }: { family: string; defaults: Args; fieldsOnly: boolean }) {
   const groups = catalog.filter(group => group.family === family);
+  const responsiveNote = family === 'Hashtag'
+    ? '모바일(992px 이하)에서는 텍스트에 타이포그래피 반응형 규칙이 적용됩니다.'
+    : family === 'IconButton'
+      ? '모바일(992px 이하)에서는 바로 아래 단계 크기가 적용되며, 최소 크기는 유지됩니다.'
+      : ['Toggle', 'Checkbox', 'Radio'].includes(family)
+        ? '모바일(992px 이하)에서는 바로 아래 단계 크기가 적용되며, small은 크기를 유지합니다.'
+        : '모바일(992px 이하)에서는 외형이 한 단계 작아지고, 텍스트는 타이포그래피 반응형 규칙을 따릅니다. small은 외형을 유지합니다.';
   return <div className="ds-gallery">
+    <div className="ds-gallery-responsive-note">{responsiveNote}</div>
     {!fieldsOnly && groups.map(group => {
       const sizes = [...new Set(group.variants.map(v => v.size))];
       const states = [...new Set(group.variants.map(v => v.state))];

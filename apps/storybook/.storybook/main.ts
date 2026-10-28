@@ -10,6 +10,7 @@ const config: StorybookConfig = {
     config.resolve.alias = {
       ...(config.resolve.alias as Record<string, string>),
       '@h_designsystem/ui': path.resolve(process.cwd(), '../../packages/ui/src/index.ts'),
+      '@h_designsystem/foundation/styles.css': path.resolve(process.cwd(), '../../packages/foundation/src/style/index.scss'),
     };
     return config;
   },

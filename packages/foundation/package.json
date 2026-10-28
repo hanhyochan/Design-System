@@ -3,18 +3,27 @@
   "version": "0.1.0",
   "type": "module",
   "files": [
-    "src"
+    "dist",
+    "src/icons",
+    "src/style/reset.css"
   ],
   "dependencies": {
     "@h_designsystem/tokens": "0.1.0"
   },
   "exports": {
-    ".": "./src/style/index.css",
-    "./styles.css": "./src/style/index.css",
+    ".": "./dist/styles.css",
+    "./styles.css": "./dist/styles.css",
     "./reset.css": "./src/style/reset.css",
     "./icons/*": "./src/icons/*"
   },
   "sideEffects": [
     "**/*.css"
-  ]
+  ],
+  "scripts": {
+    "build": "sass src/style/index.scss dist/styles.css --no-source-map",
+    "prepack": "npm run build"
+  },
+  "devDependencies": {
+    "sass": "^1.106.1"
+  }
 }

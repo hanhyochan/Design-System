@@ -1,0 +1,81 @@
+@use '../common/responsive' as size;
+
+.h_designSystem-IconButton[data-spec="btn_icon_filled_small"],
+.h_designSystem-IconButton[data-spec="btn_icon_filled_12"],
+.h_designSystem-IconButton[data-spec="btn_icon_filled_medium"],
+.h_designSystem-IconButton[data-spec="btn_icon_filled_20"],
+.h_designSystem-IconButton[data-spec="btn_icon_filled_large"],
+.h_designSystem-IconButton[data-spec="btn_icon_filled_28"],
+.h_designSystem-IconButton[data-spec="btn_icon_filled_32"],
+.h_designSystem-IconButton[data-spec="btn_icon_filled_xlarge"] {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  cursor: pointer;
+  color: var(--h_designSystem-color-static-black);
+}
+.h_designSystem-IconButton[data-spec$="_rounded_medium"],
+.h_designSystem-IconButton[data-spec$="_rounded_xlarge"],
+.h_designSystem-IconButton[data-spec$="_rounded_small"],
+.h_designSystem-IconButton[data-spec$="_rounded_large"],
+.h_designSystem-IconButton[data-spec="btn_icon_outline_small"],
+.h_designSystem-IconButton[data-spec="btn_icon_outline_medium"],
+.h_designSystem-IconButton[data-spec="btn_icon_outline_large"],
+.h_designSystem-IconButton[data-spec="btn_icon_outline_xlarge"] {
+  flex-shrink: 0;
+  vertical-align: middle;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  border: 1px solid var(--h_designSystem-color-static-black);
+  background: var(--h_designSystem-color-common-100);
+  color: var(--h_designSystem-color-static-black);
+  cursor: pointer;
+}
+.h_designSystem-IconButton[data-spec^="btn_icon_outline_full_rounded_disabled_"],
+.h_designSystem-IconButton[data-spec^="btn_icon_outline_rounded_disabled_"],
+.h_designSystem-IconButton[data-spec^="btn_icon_outline_disabled_"] {
+  flex-shrink: 0;
+  vertical-align: middle;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.h_designSystem-IconButton[data-spec*="_outline_"] {
+  line-height: 1;
+}
+
+// 크기별 외형 규격. 글자는 공통 타이포그래피 규칙을 따릅니다.
+// 테두리형의 외곽 크기와 아이콘 크기는 일반 버튼과 같은 단계입니다.
+$outline-sizes: (
+  'small': (min-width: var(--h_designSystem-unit-40), min-height: var(--h_designSystem-unit-40), width: var(--h_designSystem-unit-40), height: var(--h_designSystem-unit-40)),
+  'medium': (min-width: var(--h_designSystem-unit-52), min-height: var(--h_designSystem-unit-52), width: var(--h_designSystem-unit-52), height: var(--h_designSystem-unit-52)),
+  'large': (min-width: var(--h_designSystem-unit-56), min-height: var(--h_designSystem-unit-56), width: var(--h_designSystem-unit-56), height: var(--h_designSystem-unit-56)),
+  'xlarge': (min-width: var(--h_designSystem-unit-64), min-height: var(--h_designSystem-unit-64), width: var(--h_designSystem-unit-64), height: var(--h_designSystem-unit-64)),
+);
+$outline-icons: (
+  'small': (width: var(--h_designSystem-unit-12)),
+  'medium': (width: var(--h_designSystem-unit-16)),
+  'large': (width: 18px),
+  'xlarge': (width: var(--h_designSystem-unit-20)),
+);
+$rounded-corners: (
+  'small': (border-radius: var(--h_designSystem-unit-8)),
+  'medium': (border-radius: 10px),
+  'large': (border-radius: 10px),
+  'xlarge': (border-radius: 10px),
+);
+@include size.steps('.h_designSystem-IconButton[data-spec*="_outline_"]', $outline-sizes);
+@include size.steps('.h_designSystem-IconButton[data-spec*="_outline_"]', $outline-icons, ' > :is(img, .h_designSystem-icon)');
+@include size.steps('.h_designSystem-IconButton[data-spec*="_outline_rounded_"]', $rounded-corners);
+
+// Filled는 API에서 지정하는 8·12·16·20·24·28·32·40 순서로 한 단계 줄입니다.
+$filled-sizes: (
+  'small': (min-width: var(--h_designSystem-unit-8), min-height: var(--h_designSystem-unit-8), width: var(--h_designSystem-unit-8), height: var(--h_designSystem-unit-8)),
+  '12': (min-width: var(--h_designSystem-unit-12), min-height: var(--h_designSystem-unit-12), width: var(--h_designSystem-unit-12), height: var(--h_designSystem-unit-12)),
+  'medium': (min-width: var(--h_designSystem-unit-16), min-height: var(--h_designSystem-unit-16), width: var(--h_designSystem-unit-16), height: var(--h_designSystem-unit-16)),
+  '20': (min-width: var(--h_designSystem-unit-20), min-height: var(--h_designSystem-unit-20), width: var(--h_designSystem-unit-20), height: var(--h_designSystem-unit-20)),
+  'large': (min-width: var(--h_designSystem-unit-24), min-height: var(--h_designSystem-unit-24), width: var(--h_designSystem-unit-24), height: var(--h_designSystem-unit-24)),
+  '28': (min-width: var(--h_designSystem-unit-28), min-height: var(--h_designSystem-unit-28), width: var(--h_designSystem-unit-28), height: var(--h_designSystem-unit-28)),
+  '32': (min-width: var(--h_designSystem-unit-32), min-height: var(--h_designSystem-unit-32), width: var(--h_designSystem-unit-32), height: var(--h_designSystem-unit-32)),
+  'xlarge': (min-width: var(--h_designSystem-unit-40), min-height: var(--h_designSystem-unit-40), width: var(--h_designSystem-unit-40), height: var(--h_designSystem-unit-40)),
+);
+$filled-previous: ('12': 'small', 'medium': '12', '20': 'medium', 'large': '20', '28': 'large', '32': '28', 'xlarge': '32');
+@include size.steps('.h_designSystem-IconButton[data-spec*="_filled_"]', $filled-sizes, $mobile: $filled-previous);
+.h_designSystem-IconButton[data-spec*="_filled_"] > :is(img, .h_designSystem-icon) { width: 100%; }

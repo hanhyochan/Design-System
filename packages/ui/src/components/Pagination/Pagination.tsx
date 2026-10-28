@@ -23,6 +23,15 @@ export function Pagination({
       {...props}
       className={['h_designSystem-Pagination', className].filter(Boolean).join(' ')}
     >
+      <button
+        type="button"
+        className="h_designSystem-pagination-prev"
+        disabled={current <= 1}
+        onClick={() => onPageChange(current - 1)}
+      >
+        <img src={arrow} alt="" />
+        이전
+      </button>
       <div className="h_designSystem-pagination-pages">
         {pages.map((p) => (
           <button
@@ -37,26 +46,15 @@ export function Pagination({
           </button>
         ))}
       </div>
-      <div className="h_designSystem-pagination-navigation">
-        <button
-          type="button"
-          className="h_designSystem-pagination-prev"
-          disabled={current <= 1}
-          onClick={() => onPageChange(current - 1)}
-        >
-          <img src={arrow} alt="" />
-          이전
-        </button>
-        <button
-          type="button"
-          className="h_designSystem-pagination-next"
-          disabled={current >= total}
-          onClick={() => onPageChange(current + 1)}
-        >
-          다음
-          <img src={arrow} alt="" />
-        </button>
-      </div>
+      <button
+        type="button"
+        className="h_designSystem-pagination-next"
+        disabled={current >= total}
+        onClick={() => onPageChange(current + 1)}
+      >
+        다음
+        <img src={arrow} alt="" />
+      </button>
     </nav>
   );
 }

@@ -1,0 +1,100 @@
+@use './responsive' as size;
+
+.h_designSystem-Button[data-spec*="_icon_"] > :is(img, .h_designSystem-icon),
+.h_designSystem-IconButton[data-spec*="_outline_"] > :is(img, .h_designSystem-icon),
+.h_designSystem-TextButton[data-spec*="_icon_"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Tab[data-spec*="_icon_"] > :is(img, .h_designSystem-icon),
+.h_designSystem-TextInput[data-spec*="_complete_"] > :is(img, .h_designSystem-icon),
+.h_designSystem-TextInput[data-spec*="_password_"] > :is(img, .h_designSystem-icon),
+.h_designSystem-AutoHeightTextArea[data-spec],
+.h_designSystem-Select[data-spec$="_rounded_disabled_medium"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec$="_rounded_disabled_xlarge"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec$="_rounded_disabled_small"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec$="_rounded_disabled_large"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec$="_rounded_medium"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec$="_rounded_xlarge"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec$="_rounded_small"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec$="_rounded_large"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec^="select_outline_disabled_"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec^="select_filled_disabled_"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec="select_filled_small"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec="select_filled_medium"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec="select_filled_large"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec="select_filled_xlarge"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec="select_outline_small"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec="select_outline_medium"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec="select_outline_large"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec="select_outline_xlarge"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec*="_icon_"] > :nth-child(1 of img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec*="_icon_"] > :nth-last-child(1 of img, .h_designSystem-icon),
+.h_designSystem-Checkbox[data-spec="checkbox_small"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Checkbox[data-spec="checkbox_medium"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Checkbox[data-spec="checkbox_large"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Checkbox[data-spec="checkbox_xlarge"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Checkbox[data-spec="checkbox_round_small"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Checkbox[data-spec="checkbox_round_medium"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Checkbox[data-spec="checkbox_round_large"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Checkbox[data-spec="checkbox_round_xlarge"] > :is(img, .h_designSystem-icon) {
+  height: auto;
+}
+.h_designSystem-IconButton[data-spec],
+.h_designSystem-TextButton[data-spec],
+.h_designSystem-TextInput[data-spec] input,
+.h_designSystem-Toggle[data-spec] input,
+.h_designSystem-Checkbox[data-spec],
+.h_designSystem-Checkbox[data-spec="checkbox_small"] > input,
+.h_designSystem-Checkbox[data-spec="checkbox_medium"] > input,
+.h_designSystem-Checkbox[data-spec="checkbox_large"] > input,
+.h_designSystem-Checkbox[data-spec="checkbox_xlarge"] > input,
+.h_designSystem-Checkbox[data-spec="checkbox_round_small"] > input,
+.h_designSystem-Checkbox[data-spec="checkbox_round_medium"] > input,
+.h_designSystem-Checkbox[data-spec="checkbox_round_large"] > input,
+.h_designSystem-Checkbox[data-spec="checkbox_round_xlarge"] > input,
+.h_designSystem-Radio[data-spec] {
+  padding: 0;
+}
+.h_designSystem-TextInput[data-spec],
+.h_designSystem-TextInput[data-spec] input,
+.h_designSystem-UnderlineTextInput[data-spec],
+.h_designSystem-TextArea[data-spec],
+.h_designSystem-AutoHeightTextArea[data-spec],
+.h_designSystem-Select[data-spec],
+.h_designSystem-Select[data-spec] > select,
+.h_designSystem-Toggle[data-spec] input,
+.h_designSystem-Checkbox[data-spec="checkbox_small"] > input,
+.h_designSystem-Checkbox[data-spec="checkbox_medium"] > input,
+.h_designSystem-Checkbox[data-spec="checkbox_large"] > input,
+.h_designSystem-Checkbox[data-spec="checkbox_xlarge"] > input,
+.h_designSystem-Checkbox[data-spec="checkbox_round_small"] > input,
+.h_designSystem-Checkbox[data-spec="checkbox_round_medium"] > input,
+.h_designSystem-Checkbox[data-spec="checkbox_round_large"] > input,
+.h_designSystem-Checkbox[data-spec="checkbox_round_xlarge"] > input {
+  width: 100%;
+}
+.h_designSystem-Toggle[data-spec] input,
+.h_designSystem-Checkbox[data-spec="checkbox_small"] > input,
+.h_designSystem-Checkbox[data-spec="checkbox_medium"] > input,
+.h_designSystem-Checkbox[data-spec="checkbox_large"] > input,
+.h_designSystem-Checkbox[data-spec="checkbox_xlarge"] > input,
+.h_designSystem-Checkbox[data-spec="checkbox_round_small"] > input,
+.h_designSystem-Checkbox[data-spec="checkbox_round_medium"] > input,
+.h_designSystem-Checkbox[data-spec="checkbox_round_large"] > input,
+.h_designSystem-Checkbox[data-spec="checkbox_round_xlarge"] > input {
+  height: 100%;
+}
+
+$chip-badge-sizes: (
+  'small': (min-height: var(--h_designSystem-unit-32), padding: 0 var(--h_designSystem-unit-12)),
+  'medium': (min-height: var(--h_designSystem-unit-32), padding: 0 var(--h_designSystem-unit-16)),
+  'large': (min-height: var(--h_designSystem-unit-40), padding: 0 var(--h_designSystem-unit-20)),
+  'xlarge': (min-height: var(--h_designSystem-unit-48), padding: 0 var(--h_designSystem-unit-20)),
+);
+$choice-sizes: (
+  'small': (width: var(--h_designSystem-unit-16), height: var(--h_designSystem-unit-16), flex: 0 0 var(--h_designSystem-unit-16)),
+  'medium': (width: var(--h_designSystem-unit-20), height: var(--h_designSystem-unit-20), flex: 0 0 var(--h_designSystem-unit-20)),
+  'large': (width: var(--h_designSystem-unit-24), height: var(--h_designSystem-unit-24), flex: 0 0 var(--h_designSystem-unit-24)),
+  'xlarge': (width: var(--h_designSystem-unit-28), height: var(--h_designSystem-unit-28), flex: 0 0 var(--h_designSystem-unit-28)),
+);
+@include size.steps(':is(.h_designSystem-Button, .h_designSystem-Tab, .h_designSystem-TextInput, .h_designSystem-UnderlineTextInput, .h_designSystem-AutoHeightTextArea)', size.$control-heights);
+@include size.steps(':is(.h_designSystem-Chip, .h_designSystem-Badge)', $chip-badge-sizes);
+@include size.steps(':is(.h_designSystem-Checkbox, .h_designSystem-Radio)', $choice-sizes);

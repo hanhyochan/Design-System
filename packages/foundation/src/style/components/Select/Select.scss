@@ -1,3 +1,5 @@
+@use '../common/responsive' as size;
+
 .h_designSystem-Select[data-spec$="_icon_medium"],
 .h_designSystem-Select[data-spec$="_icon_xlarge"],
 .h_designSystem-Select[data-spec$="_icon_small"],
@@ -92,56 +94,48 @@
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
-  left: var(--h_designSystem-unit-12);
 }
 .h_designSystem-Select[data-spec$="_icon_medium"] > :nth-child(1 of img, .h_designSystem-icon) {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
-  left: var(--h_designSystem-unit-16);
 }
 .h_designSystem-Select[data-spec$="_icon_large"] > :nth-child(1 of img, .h_designSystem-icon) {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
-  left: var(--h_designSystem-unit-20);
 }
 .h_designSystem-Select[data-spec$="_icon_xlarge"] > :nth-child(1 of img, .h_designSystem-icon) {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
-  left: var(--h_designSystem-unit-24);
 }
 .h_designSystem-Select[data-spec$="_icon_disabled_small"] > :nth-child(1 of img, .h_designSystem-icon) {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
-  left: var(--h_designSystem-unit-12);
 }
 .h_designSystem-Select[data-spec$="_icon_disabled_medium"] > :nth-child(1 of img, .h_designSystem-icon) {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
-  left: var(--h_designSystem-unit-16);
 }
 .h_designSystem-Select[data-spec$="_icon_disabled_large"] > :nth-child(1 of img, .h_designSystem-icon) {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
-  left: var(--h_designSystem-unit-20);
 }
 .h_designSystem-Select[data-spec$="_icon_disabled_xlarge"] > :nth-child(1 of img, .h_designSystem-icon) {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
-  left: var(--h_designSystem-unit-24);
 }
 .h_designSystem-Select[data-spec="select_outline_small"] > select,
 .h_designSystem-Select[data-spec="select_outline_medium"] > select,
@@ -172,51 +166,29 @@
   color: var(--h_designSystem-color-label-normal);
   cursor: pointer;
 }
-.h_designSystem-Select[data-spec$="_rounded_disabled_small"] > select,
-.h_designSystem-Select[data-spec$="_rounded_small"] > select,
-.h_designSystem-Select[data-spec="select_filled_small"] > select,
-.h_designSystem-Select[data-spec="select_filled_disabled_small"] > select,
-.h_designSystem-Select[data-spec="select_outline_small"] > select,
-.h_designSystem-Select[data-spec="select_outline_disabled_small"] > select {
-  padding: 0 var(--h_designSystem-unit-36) 0 var(--h_designSystem-unit-12);
-}
-.h_designSystem-Select[data-spec$="_rounded_disabled_medium"] > select,
-.h_designSystem-Select[data-spec$="_rounded_medium"] > select,
-.h_designSystem-Select[data-spec="select_filled_medium"] > select,
-.h_designSystem-Select[data-spec="select_filled_disabled_medium"] > select,
-.h_designSystem-Select[data-spec="select_outline_medium"] > select,
-.h_designSystem-Select[data-spec="select_outline_disabled_medium"] > select {
-  padding: 0 var(--h_designSystem-unit-40) 0 var(--h_designSystem-unit-16);
-}
-.h_designSystem-Select[data-spec$="_rounded_disabled_large"] > select,
-.h_designSystem-Select[data-spec$="_rounded_large"] > select,
-.h_designSystem-Select[data-spec="select_filled_large"] > select,
-.h_designSystem-Select[data-spec="select_filled_disabled_large"] > select,
-.h_designSystem-Select[data-spec="select_outline_large"] > select,
-.h_designSystem-Select[data-spec="select_outline_disabled_large"] > select {
-  padding: 0 var(--h_designSystem-unit-44) 0 var(--h_designSystem-unit-20);
-}
-.h_designSystem-Select[data-spec$="_rounded_disabled_xlarge"] > select,
-.h_designSystem-Select[data-spec$="_rounded_xlarge"] > select,
-.h_designSystem-Select[data-spec="select_filled_xlarge"] > select,
-.h_designSystem-Select[data-spec="select_filled_disabled_xlarge"] > select,
-.h_designSystem-Select[data-spec="select_outline_xlarge"] > select,
-.h_designSystem-Select[data-spec="select_outline_disabled_xlarge"] > select {
-  padding: 0 var(--h_designSystem-unit-48) 0 var(--h_designSystem-unit-24);
-}
-.h_designSystem-Select[data-spec$="_icon_disabled_small"] > select,
-.h_designSystem-Select[data-spec$="_icon_small"] > select {
-  padding: 0 var(--h_designSystem-unit-36) 0 var(--h_designSystem-unit-36);
-}
-.h_designSystem-Select[data-spec$="_icon_disabled_medium"] > select,
-.h_designSystem-Select[data-spec$="_icon_medium"] > select {
-  padding: 0 var(--h_designSystem-unit-40) 0 var(--h_designSystem-unit-40);
-}
-.h_designSystem-Select[data-spec$="_icon_disabled_large"] > select,
-.h_designSystem-Select[data-spec$="_icon_large"] > select {
-  padding: 0 var(--h_designSystem-unit-44) 0 var(--h_designSystem-unit-48);
-}
-.h_designSystem-Select[data-spec$="_icon_disabled_xlarge"] > select,
-.h_designSystem-Select[data-spec$="_icon_xlarge"] > select {
-  padding: 0 var(--h_designSystem-unit-48) 0 var(--h_designSystem-unit-52);
-}
+
+// 크기별 외형 규격. 글자는 공통 타이포그래피 규칙을 따릅니다.
+$select-sizes: (
+  'small': (padding: 0 var(--h_designSystem-unit-36) 0 var(--h_designSystem-unit-12)),
+  'medium': (padding: 0 var(--h_designSystem-unit-40) 0 var(--h_designSystem-unit-16)),
+  'large': (padding: 0 var(--h_designSystem-unit-44) 0 var(--h_designSystem-unit-20)),
+  'xlarge': (padding: 0 var(--h_designSystem-unit-48) 0 var(--h_designSystem-unit-24)),
+);
+$select-with-icon-sizes: (
+  'small': (padding: 0 var(--h_designSystem-unit-36) 0 var(--h_designSystem-unit-36)),
+  'medium': (padding: 0 var(--h_designSystem-unit-40) 0 var(--h_designSystem-unit-40)),
+  'large': (padding: 0 var(--h_designSystem-unit-44) 0 var(--h_designSystem-unit-48)),
+  'xlarge': (padding: 0 var(--h_designSystem-unit-48) 0 var(--h_designSystem-unit-52)),
+);
+$select-leading-icons: (
+  'small': (left: var(--h_designSystem-unit-12), width: var(--h_designSystem-unit-12)),
+  'medium': (left: var(--h_designSystem-unit-16), width: var(--h_designSystem-unit-12)),
+  'large': (left: var(--h_designSystem-unit-20), width: var(--h_designSystem-unit-16)),
+  'xlarge': (left: var(--h_designSystem-unit-24), width: var(--h_designSystem-unit-16)),
+);
+@include size.steps('.h_designSystem-Select', size.$control-heights, ' > select');
+@include size.steps('.h_designSystem-Select', $select-sizes, ' > select');
+@include size.steps('.h_designSystem-Select[data-spec*="_icon_"]', $select-with-icon-sizes, ' > select');
+
+.h_designSystem-Select[data-spec] > :is(img, .h_designSystem-icon) { width: var(--h_designSystem-unit-12); }
+@include size.steps('.h_designSystem-Select[data-spec*="_icon_"]', $select-leading-icons, ' > :nth-child(1 of img, .h_designSystem-icon)');

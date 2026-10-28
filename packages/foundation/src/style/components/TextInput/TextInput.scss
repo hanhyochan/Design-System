@@ -1,3 +1,5 @@
+@use '../common/responsive' as size;
+
 .h_designSystem-TextInput[data-spec^="text_input_filled_full_rounded_password_"],
 .h_designSystem-TextInput[data-spec^="text_input_filled_rounded_password_"],
 .h_designSystem-TextInput[data-spec^="text_input_filled_password_"],
@@ -69,3 +71,19 @@
 .h_designSystem-TextInput[data-spec*="_password_"] {
   column-gap: var(--h_designSystem-unit-8);
 }
+
+// 크기별 외형 규격. 글자는 공통 타이포그래피 규칙을 따릅니다.
+$input-sizes: (
+  'small': (padding: 0 var(--h_designSystem-unit-12)),
+  'medium': (padding: 0 var(--h_designSystem-unit-12)),
+  'large': (padding: 0 var(--h_designSystem-unit-16)),
+  'xlarge': (padding: 0 var(--h_designSystem-unit-20)),
+);
+$input-icons: (
+  'small': (width: var(--h_designSystem-unit-16)),
+  'medium': (width: 18px),
+  'large': (width: var(--h_designSystem-unit-20)),
+  'xlarge': (width: var(--h_designSystem-unit-20)),
+);
+@include size.steps('.h_designSystem-TextInput', $input-sizes);
+@include size.steps('.h_designSystem-TextInput', $input-icons, ' > .h_designSystem-icon');

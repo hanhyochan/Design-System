@@ -1,3 +1,5 @@
+@use '../common/responsive' as size;
+
 .h_designSystem-TextArea[data-spec="textarea_filled_small"],
 .h_designSystem-TextArea[data-spec="textarea_filled_medium"],
 .h_designSystem-TextArea[data-spec="textarea_filled_large"],
@@ -76,25 +78,12 @@
   background: var(--h_designSystem-color-common-100);
   color: var(--h_designSystem-color-label-normal);
 }
-.h_designSystem-TextArea[data-spec$="_small"] {
-  min-height: var(--h_designSystem-unit-96);
-}
-.h_designSystem-TextArea[data-spec$="_medium"],
-.h_designSystem-TextArea[data-spec$="_small"] {
-  padding: var(--h_designSystem-unit-12);
-}
-.h_designSystem-TextArea[data-spec$="_medium"] {
-  min-height: var(--h_designSystem-unit-128);
-}
-.h_designSystem-TextArea[data-spec$="_large"] {
-  min-height: var(--h_designSystem-unit-160);
-}
-.h_designSystem-TextArea[data-spec$="_large"] {
-  padding: var(--h_designSystem-unit-16);
-}
-.h_designSystem-TextArea[data-spec$="_xlarge"] {
-  min-height: var(--h_designSystem-unit-196);
-}
-.h_designSystem-TextArea[data-spec$="_xlarge"] {
-  padding: var(--h_designSystem-unit-20);
-}
+
+// 크기별 외형 규격. 글자는 공통 타이포그래피 규칙을 따릅니다.
+$textarea-sizes: (
+  'small': (min-height: var(--h_designSystem-unit-96), padding: var(--h_designSystem-unit-12)),
+  'medium': (min-height: var(--h_designSystem-unit-128), padding: var(--h_designSystem-unit-12)),
+  'large': (min-height: var(--h_designSystem-unit-160), padding: var(--h_designSystem-unit-16)),
+  'xlarge': (min-height: var(--h_designSystem-unit-196), padding: var(--h_designSystem-unit-20)),
+);
+@include size.steps('.h_designSystem-TextArea', $textarea-sizes);

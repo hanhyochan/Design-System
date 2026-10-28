@@ -1,3 +1,5 @@
+@use '../common/responsive' as size;
+
 .h_designSystem-Radio[data-spec="radio_small"],
 .h_designSystem-Radio[data-spec="radio_medium"],
 .h_designSystem-Radio[data-spec="radio_large"],
@@ -17,15 +19,12 @@
   transform: translate(-50%, -50%);
   content: "";
 }
-.h_designSystem-Radio[data-spec="radio_medium"]:checked::after {
-  width: 10px;
-}
-.h_designSystem-Radio[data-spec="radio_medium"]:checked::after {
-  height: 10px;
-}
-.h_designSystem-Radio[data-spec="radio_xlarge"]:checked::after {
-  width: 14px;
-}
-.h_designSystem-Radio[data-spec="radio_xlarge"]:checked::after {
-  height: 14px;
-}
+
+// 크기별 외형 규격. 글자는 공통 타이포그래피 규칙을 따릅니다.
+$radio-dots: (
+  'small': (width: var(--h_designSystem-unit-8), height: var(--h_designSystem-unit-8)),
+  'medium': (width: 10px, height: 10px),
+  'large': (width: var(--h_designSystem-unit-12), height: var(--h_designSystem-unit-12)),
+  'xlarge': (width: 14px, height: 14px),
+);
+@include size.steps('.h_designSystem-Radio:not([data-spec*="_disabled_"])', $radio-dots, ':checked::after');

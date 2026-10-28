@@ -1,0 +1,21 @@
+@use '../common/responsive' as size;
+
+.h_designSystem-ContentTag[data-spec] {
+  align-self: flex-start;
+  max-width: 100%;
+  border: 0;
+  background: var(--h_designSystem-color-static-black);
+  color: var(--h_designSystem-color-common-100);
+}
+.h_designSystem-ContentTag[data-spec="chip_content_xlarge"] {
+  line-height: 1.25;
+}
+
+// 크기별 외형 규격. 글자는 공통 타이포그래피 규칙을 따릅니다.
+$content-tag-sizes: (
+  'small': (padding: var(--h_designSystem-unit-12) var(--h_designSystem-unit-20)),
+  'medium': (padding: var(--h_designSystem-unit-16) var(--h_designSystem-unit-24)),
+  'large': (padding: var(--h_designSystem-unit-20) var(--h_designSystem-unit-28)),
+  'xlarge': (padding: var(--h_designSystem-unit-24) var(--h_designSystem-unit-32)),
+);
+@include size.steps('.h_designSystem-ContentTag', $content-tag-sizes);

@@ -12,7 +12,7 @@ const preview: Preview = {
           'Foundation',
           ['ColorAtomic', 'ColorSemantic', 'TypographyKo', 'TypographyEn', 'Padding', 'BorderRadius', 'BorderWidth', 'Shadow', 'Gap', 'Icons', 'Units'],
           '컴포넌트',
-          ['Button', 'IconButton', 'TextButton', 'Tab', 'TextInput', 'UnderlineTextInput', 'TextArea', 'AutoHeightTextArea', 'Select', 'Chip', 'ContentTag', 'Hashtag', 'Badge', 'Toggle', 'Checkbox', 'Radio', 'Pagination', 'Text', 'Field'],
+          ['Button', 'IconButton', 'TextButton', 'Tab', 'TextInput', 'UnderlineTextInput', 'TextArea', 'AutoHeightTextArea', 'Select', 'Chip', 'ContentTag', 'Hashtag', 'Badge', 'Toggle', 'Checkbox', 'Radio', 'Pagination'],
         ],
       },
     },

@@ -1,4 +1,4 @@
-.h_designSystem-Field { display: flex; flex-direction: column; gap: var(--h_designSystem-unit-16); min-width: 0; }
-.h_designSystem-Field-label { font-size: 14px; font-weight: 500; line-height: 1.5; }
-.h_designSystem-Field-message { display: block; font-size: 14px; font-weight: 400; line-height: 1.5; color: var(--h_designSystem-color-text-secondary, var(--h_designSystem-color-label-neutral)); overflow-wrap: anywhere; }
+.h_designSystem-Field { display: flex; flex-direction: column; gap: var(--h_designSystem-unit-16); min-width: 0; text-align: left; }
+.h_designSystem-Field-label { font-weight: 500; line-height: 1.5; }
+.h_designSystem-Field-message { display: block; font-weight: 400; line-height: 1.5; color: var(--h_designSystem-color-text-secondary, var(--h_designSystem-color-label-neutral)); overflow-wrap: anywhere; }
 .h_designSystem-Field-live:empty { display: none; }

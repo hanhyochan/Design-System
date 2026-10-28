@@ -87,8 +87,6 @@
 }
 .h_designSystem-Button[data-spec^="btn_primary_outline_rounded_"],
 .h_designSystem-Button[data-spec^="btn_primary_filled_rounded_"],
-.h_designSystem-IconButton[data-spec="btn_icon_outline_rounded_small"],
-.h_designSystem-IconButton[data-spec="btn_icon_outline_rounded_disabled_small"],
 .h_designSystem-Tab[data-spec^="tab_gray_line_outline_rounded_"],
 .h_designSystem-Tab[data-spec^="tab_outline_rounded_"],
 .h_designSystem-Tab[data-spec^="tab_filled_rounded_"],

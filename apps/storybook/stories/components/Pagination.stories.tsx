@@ -8,7 +8,9 @@ function PaginationExample({ initialPage, totalPages }: { initialPage: number; t
   return <Pagination page={page} totalPages={totalPages} onPageChange={setPage} />;
 }
 function PaginationGallery() {
-  return <div className="ds-gallery">{[
+  return <div className="ds-gallery">
+    <div className="ds-gallery-responsive-note">PC에서는 한 줄, 모바일(992px 이하)에서는 페이지 번호와 이전·다음 버튼이 두 줄로 표시됩니다.</div>
+    {[
     { label: '첫 페이지 · 이전 비활성', page: 1, total: 10 },
     { label: '중간 페이지', page: 5, total: 10 },
     { label: '마지막 페이지 · 다음 비활성', page: 10, total: 10 },

@@ -1,0 +1,11 @@
+@use 'sass:meta';
+
+@layer h_designSystem;
+@import '@h_designsystem/tokens' layer(h_designSystem);
+
+@layer h_designSystem {
+  @include meta.load-css('./typography/ko.css');
+  @include meta.load-css('./typography/en.css');
+  @include meta.load-css('./typography/size.css');
+  @include meta.load-css('./components/index.scss');
+}

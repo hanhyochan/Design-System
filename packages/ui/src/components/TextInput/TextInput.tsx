@@ -1,5 +1,5 @@
 import { useState, type ComponentPropsWithRef } from 'react';
-import { spec, icons, type Size, type Shape } from '../spec';
+import { spec, type Size, type Shape } from '../spec';
 import { useField } from '../Field/Field.context';
 import checkIcon from '@h_designsystem/foundation/icons/icon_check_1.svg';
 import eyeIcon from '@h_designsystem/foundation/icons/icon_eye_1.svg';
@@ -42,9 +42,6 @@ export function TextInput({
             : type === 'password'
               ? 'password'
               : 'default';
-  const iconState = type === 'password' ? 'password' : 'complete';
-  const width = icons(code, size, iconState)[0]?.split('_')[1] ?? '16';
-  const iconWidth = Number(width) % 4 === 0 ? `var(--h_designSystem-unit-${width})` : `${width}px`;
   return (
     <span
       className={['h_designSystem-TextInput', className].filter(Boolean).join(' ')}
@@ -79,7 +76,6 @@ export function TextInput({
           aria-label={visible ? '비밀번호 숨기기' : '비밀번호 표시'}
           aria-pressed={visible}
           onClick={() => setVisible(!visible)}
-          style={{ width: iconWidth }}
         >
           <img src={visible ? eyeOffIcon : eyeIcon} alt="" />
         </button>
@@ -89,7 +85,6 @@ export function TextInput({
           src={checkIcon}
           alt=""
           aria-hidden="true"
-          style={{ width: iconWidth }}
         />
       ) : null}
     </span>

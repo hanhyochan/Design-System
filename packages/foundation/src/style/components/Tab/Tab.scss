@@ -1,0 +1,19 @@
+@use '../common/responsive' as size;
+
+// 크기별 외형 규격. 글자는 공통 타이포그래피 규칙을 따릅니다.
+$tab-sizes: (
+  'small': (padding: 0 var(--h_designSystem-unit-16)),
+  'medium': (padding: 0 var(--h_designSystem-unit-24)),
+  'large': (padding: 0 var(--h_designSystem-unit-28)),
+  'xlarge': (padding: 0 var(--h_designSystem-unit-32)),
+);
+$tab-filled-icons: (
+  'small': (width: var(--h_designSystem-unit-16)),
+  'medium': (width: var(--h_designSystem-unit-16)),
+  'large': (width: var(--h_designSystem-unit-20)),
+  'xlarge': (width: var(--h_designSystem-unit-20)),
+);
+@include size.steps('.h_designSystem-Tab', $tab-sizes);
+
+.h_designSystem-Tab[data-spec*="_icon_"] > :is(img, .h_designSystem-icon) { width: var(--h_designSystem-unit-16); }
+@include size.steps('.h_designSystem-Tab[data-spec^="tab_filled_"][data-spec*="_icon_"]', $tab-filled-icons, ' > :is(img, .h_designSystem-icon)');

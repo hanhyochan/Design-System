@@ -1,3 +1,5 @@
+@use '../common/responsive' as size;
+
 .h_designSystem-Checkbox[data-spec="checkbox_small"],
 .h_designSystem-Checkbox[data-spec="checkbox_medium"],
 .h_designSystem-Checkbox[data-spec="checkbox_large"],
@@ -70,3 +72,12 @@
 .h_designSystem-Checkbox[data-spec="checkbox_xlarge"] {
   border-radius: 2px;
 }
+
+// 크기별 외형 규격. 글자는 공통 타이포그래피 규칙을 따릅니다.
+$checkbox-icons: (
+  'small': (width: var(--h_designSystem-unit-8)),
+  'medium': (width: var(--h_designSystem-unit-12)),
+  'large': (width: var(--h_designSystem-unit-16)),
+  'xlarge': (width: var(--h_designSystem-unit-20)),
+);
+@include size.steps('.h_designSystem-Checkbox:not([data-spec*="_disabled_"])', $checkbox-icons, ' > :is(img, .h_designSystem-icon)');
