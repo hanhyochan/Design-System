@@ -1,0 +1,18 @@
+// 버튼·탭·입력류에서 공유하는 고정 높이입니다.
+$control-heights: (
+  'small': (min-height: var(--h_designSystem-unit-40)),
+  'medium': (min-height: var(--h_designSystem-unit-52)),
+  'large': (min-height: var(--h_designSystem-unit-56)),
+  'xlarge': (min-height: var(--h_designSystem-unit-64)),
+);
+
+// 전달받은 크기 Map을 그대로 CSS로 만듭니다. 화면 너비에 따른 분기는 없습니다.
+@mixin rules($selector, $sizes, $suffix: '') {
+  @each $size, $properties in $sizes {
+    #{$selector}[data-spec$="_#{$size}"]#{$suffix} {
+      @each $property, $value in $properties {
+        #{$property}: $value;
+      }
+    }
+  }
+}

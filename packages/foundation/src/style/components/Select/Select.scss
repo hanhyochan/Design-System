@@ -1,4 +1,4 @@
-@use '../common/responsive' as size;
+@use '../common/size-rules' as size;
 
 .h_designSystem-Select[data-spec$="_icon_medium"],
 .h_designSystem-Select[data-spec$="_icon_xlarge"],
@@ -17,7 +17,7 @@
 .h_designSystem-Select[data-spec="select_outline_large"],
 .h_designSystem-Select[data-spec="select_outline_xlarge"] {
   position: relative;
-  color: var(--h_designSystem-color-label-normal);
+  color: var(--h_designSystem-component-text, var(--h_designSystem-color-label-normal));
 }
 .h_designSystem-Select[data-spec="select_filled_small"] > select,
 .h_designSystem-Select[data-spec="select_filled_medium"] > select,
@@ -44,8 +44,8 @@
 .h_designSystem-Select[data-spec="select_filled_full_rounded_icon_large"] > select,
 .h_designSystem-Select[data-spec="select_filled_full_rounded_icon_xlarge"] > select {
   border: 0;
-  background-color: var(--h_designSystem-color-fill-normal);
-  color: var(--h_designSystem-color-label-normal);
+  background-color: var(--h_designSystem-component-bg, var(--h_designSystem-color-fill-normal));
+  color: var(--h_designSystem-component-text, var(--h_designSystem-color-label-normal));
   cursor: pointer;
 }
 .h_designSystem-Select[data-spec$="_rounded_medium"] > :is(img, .h_designSystem-icon),
@@ -162,8 +162,8 @@
 .h_designSystem-Select[data-spec="select_outline_full_rounded_icon_large"] > select,
 .h_designSystem-Select[data-spec="select_outline_full_rounded_icon_xlarge"] > select {
   border: 1px solid var(--h_designSystem-color-line-solid-0);
-  background-color: var(--h_designSystem-color-common-100);
-  color: var(--h_designSystem-color-label-normal);
+  background-color: var(--h_designSystem-component-bg, var(--h_designSystem-color-common-100));
+  color: var(--h_designSystem-component-text, var(--h_designSystem-color-label-normal));
   cursor: pointer;
 }
 
@@ -186,9 +186,12 @@ $select-leading-icons: (
   'large': (left: var(--h_designSystem-unit-20), width: var(--h_designSystem-unit-16)),
   'xlarge': (left: var(--h_designSystem-unit-24), width: var(--h_designSystem-unit-16)),
 );
-@include size.steps('.h_designSystem-Select', size.$control-heights, ' > select');
-@include size.steps('.h_designSystem-Select', $select-sizes, ' > select');
-@include size.steps('.h_designSystem-Select[data-spec*="_icon_"]', $select-with-icon-sizes, ' > select');
+@include size.rules('.h_designSystem-Select', size.$control-heights, ' > select');
+@include size.rules('.h_designSystem-Select', $select-sizes, ' > select');
+@include size.rules('.h_designSystem-Select[data-spec*="_icon_"]', $select-with-icon-sizes, ' > select');
 
 .h_designSystem-Select[data-spec] > :is(img, .h_designSystem-icon) { width: var(--h_designSystem-unit-12); }
-@include size.steps('.h_designSystem-Select[data-spec*="_icon_"]', $select-leading-icons, ' > :nth-child(1 of img, .h_designSystem-icon)');
+@include size.rules('.h_designSystem-Select[data-spec*="_icon_"]', $select-leading-icons, ' > :nth-child(1 of img, .h_designSystem-icon)');
+
+/* 내부 요소의 배치와 실제 조작에 필요한 보완 */
+.h_designSystem-Select > :is(img,.h_designSystem-icon) { pointer-events: none; }

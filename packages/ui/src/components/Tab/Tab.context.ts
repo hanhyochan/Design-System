@@ -1,11 +1,3 @@
-import { createContext, useContext } from 'react';
-export const TabsContext = createContext<{
-  id: string;
-  value: string;
-  select: (value: string) => void;
-} | null>(null);
-export function useTabs() {
-  const context = useContext(TabsContext);
-  if (!context) throw new Error('Tab 구성 요소는 Tabs 안에 넣어 주세요.');
-  return context;
-}
+import { createContext } from '@lit/context';
+export type TabState = { id: string; value: string; select: (value: string) => void };
+export const tabContext = createContext<TabState>(Symbol('h-tabs'));

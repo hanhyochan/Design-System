@@ -1,0 +1,25 @@
+<!doctype html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="/assets/h-designsystem/styles.css"><title>HTML 배포 검증</title></head><body>
+<main style="display:grid;gap:var(--h_designSystem-unit-16);padding:var(--h_designSystem-unit-24);font-family:Arial">
+<h-button id="responsive" size='{"base":"xlarge","tablet":"large","mobile":"medium"}'>반응형 버튼</h-button>
+<h-button id="fixed" size="large">고정 버튼</h-button><h-button id="default">기본 버튼</h-button>
+<h-button id="mobile-only" size='{"mobile":"small"}'>모바일만 지정</h-button>
+<h-field id="field" label="이름" description="입력 안내"><h-text-input id="controlled" name="first" value="처음"></h-text-input></h-field>
+<form id="form"><h-text-input id="required" name="name" required placeholder="이름"></h-text-input>
+<h-select id="select" name="item"><option value="">선택</option><optgroup label="항목"><option value="one">첫째</option><option value="two" selected>둘째</option></optgroup></h-select>
+<h-checkbox id="check" name="agree" value="yes" checked aria-label="동의"></h-checkbox>
+<h-radio id="radio-a" name="choice" value="a" required aria-label="A"></h-radio><h-radio id="radio-b" name="choice" value="b" aria-label="B"></h-radio>
+<h-button id="submit" type="submit" name="action" value="save">제출</h-button><h-button id="reset" type="reset">초기화</h-button>
+<fieldset disabled><h-text-input id="fieldset-disabled" name="excluded" value="제외"></h-text-input></fieldset></form>
+<h-text-input id="external" form="form" name="external" value="외부"></h-text-input>
+<form id="other"><h-radio id="other-radio" name="choice" value="c" checked aria-label="다른 폼"></h-radio></form>
+<h-text-input id="password" type="password" value="password123" aria-label="비밀번호"></h-text-input>
+<h-auto-height-text-area id="auto" aria-label="긴 내용"></h-auto-height-text-area>
+<h-text id="responsive-text" typography='{"base":"title_20_700","mobile":"body_16_400"}'>텍스트</h-text>
+</main>
+<script type="module">
+const distributionUrl = '/assets/h-designsystem/h-designsystem.js';
+const { configureDesignSystem } = await import(/* @vite-ignore */ distributionUrl);
+window.configureDesignSystem = configureDesignSystem;
+if (!location.search.includes('unconfigured')) configureDesignSystem({breakpoints:{mobile:768,tablet:992}});
+document.querySelector('#form').addEventListener('submit', event => {event.preventDefault(); window.submitted = Array.from(new FormData(event.target, event.submitter));});
+</script></body></html>

@@ -1,11 +1,11 @@
-@use '../common/responsive' as size;
+@use '../common/size-rules' as size;
 
 .h_designSystem-ContentTag[data-spec] {
   align-self: flex-start;
   max-width: 100%;
   border: 0;
-  background: var(--h_designSystem-color-static-black);
-  color: var(--h_designSystem-color-common-100);
+  background: var(--h_designSystem-component-bg, var(--h_designSystem-color-static-black));
+  color: var(--h_designSystem-component-text, var(--h_designSystem-color-common-100));
 }
 .h_designSystem-ContentTag[data-spec="chip_content_xlarge"] {
   line-height: 1.25;
@@ -18,4 +18,4 @@ $content-tag-sizes: (
   'large': (padding: var(--h_designSystem-unit-20) var(--h_designSystem-unit-28)),
   'xlarge': (padding: var(--h_designSystem-unit-24) var(--h_designSystem-unit-32)),
 );
-@include size.steps('.h_designSystem-ContentTag', $content-tag-sizes);
+@include size.rules('.h_designSystem-ContentTag', $content-tag-sizes);

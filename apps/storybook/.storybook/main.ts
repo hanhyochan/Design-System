@@ -7,11 +7,12 @@ const config: StorybookConfig = {
   core: { disableTelemetry: true },
   async viteFinal(config) {
     config.resolve ??= {};
-    config.resolve.alias = {
-      ...(config.resolve.alias as Record<string, string>),
-      '@h_designsystem/ui': path.resolve(process.cwd(), '../../packages/ui/src/index.ts'),
-      '@h_designsystem/foundation/styles.css': path.resolve(process.cwd(), '../../packages/foundation/src/style/index.scss'),
-    };
+    config.resolve.alias = [
+      { find: /^@h_designsystem\/ui$/, replacement: path.resolve(import.meta.dirname, '../../../packages/ui/src/index.ts') },
+      { find: '@h_designsystem/ui/config', replacement: path.resolve(import.meta.dirname, '../../../packages/ui/src/config.ts') },
+      { find: '@h_designsystem/ui/elements', replacement: path.resolve(import.meta.dirname, '../../../packages/ui/src/elements.ts') },
+      { find: '@h_designsystem/ui/styles.css', replacement: path.resolve(import.meta.dirname, '../../../packages/ui/src/styles.css') },
+    ];
     return config;
   },
 };

@@ -1,3 +1,4 @@
+/* 기본 배치·정렬과 네이티브 요소의 스타일 상속 */
 .h_designSystem-Button[data-spec],
 .h_designSystem-IconButton[data-spec],
 .h_designSystem-TextButton[data-spec],
@@ -9,17 +10,6 @@
 .h_designSystem-Badge[data-spec],
 .h_designSystem-Toggle[data-spec] {
   display: inline-flex;
-}
-.h_designSystem-Button[data-spec],
-.h_designSystem-IconButton[data-spec],
-.h_designSystem-TextButton[data-spec],
-.h_designSystem-Tab[data-spec],
-.h_designSystem-TextInput[data-spec],
-.h_designSystem-Chip[data-spec],
-.h_designSystem-ContentTag[data-spec],
-.h_designSystem-Hashtag[data-spec],
-.h_designSystem-Badge[data-spec],
-.h_designSystem-Toggle[data-spec] {
   align-items: center;
 }
 .h_designSystem-Button[data-spec],
@@ -72,25 +62,6 @@
 .h_designSystem-Checkbox[data-spec],
 .h_designSystem-Radio[data-spec] {
   box-sizing: border-box;
-}
-.h_designSystem-Button[data-spec],
-.h_designSystem-IconButton[data-spec],
-.h_designSystem-TextButton[data-spec],
-.h_designSystem-Tab[data-spec],
-.h_designSystem-TextInput[data-spec],
-.h_designSystem-TextInput[data-spec] input,
-.h_designSystem-UnderlineTextInput[data-spec],
-.h_designSystem-TextArea[data-spec],
-.h_designSystem-AutoHeightTextArea[data-spec],
-.h_designSystem-Select[data-spec],
-.h_designSystem-Select[data-spec] > select,
-.h_designSystem-Chip[data-spec],
-.h_designSystem-ContentTag[data-spec],
-.h_designSystem-Hashtag[data-spec],
-.h_designSystem-Badge[data-spec],
-.h_designSystem-Toggle[data-spec],
-.h_designSystem-Checkbox[data-spec],
-.h_designSystem-Radio[data-spec] {
   font-family: inherit;
 }
 .h_designSystem-Button[data-spec],
@@ -112,33 +83,9 @@
 .h_designSystem-AutoHeightTextArea[data-spec],
 .h_designSystem-Select[data-spec],
 .h_designSystem-Select[data-spec] > select,
-.h_designSystem-Select[data-spec$="_rounded_disabled_medium"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Select[data-spec$="_rounded_disabled_xlarge"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Select[data-spec$="_rounded_disabled_small"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Select[data-spec$="_rounded_disabled_large"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Select[data-spec$="_rounded_medium"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Select[data-spec$="_rounded_xlarge"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Select[data-spec$="_rounded_small"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Select[data-spec$="_rounded_large"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Select[data-spec^="select_outline_disabled_"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Select[data-spec^="select_filled_disabled_"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Select[data-spec="select_filled_small"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Select[data-spec="select_filled_medium"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Select[data-spec="select_filled_large"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Select[data-spec="select_filled_xlarge"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Select[data-spec="select_outline_small"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Select[data-spec="select_outline_medium"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Select[data-spec="select_outline_large"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Select[data-spec="select_outline_xlarge"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec]:where(:not([data-spec*="_icon_"])) > :is(img, .h_designSystem-icon),
 .h_designSystem-Select[data-spec*="_icon_"] > :nth-last-child(1 of img, .h_designSystem-icon),
-.h_designSystem-Checkbox[data-spec="checkbox_small"]:has(input:checked) > :is(img, .h_designSystem-icon),
-.h_designSystem-Checkbox[data-spec="checkbox_medium"]:has(input:checked) > :is(img, .h_designSystem-icon),
-.h_designSystem-Checkbox[data-spec="checkbox_large"]:has(input:checked) > :is(img, .h_designSystem-icon),
-.h_designSystem-Checkbox[data-spec="checkbox_xlarge"]:has(input:checked) > :is(img, .h_designSystem-icon),
-.h_designSystem-Checkbox[data-spec="checkbox_round_small"]:has(input:checked) > :is(img, .h_designSystem-icon),
-.h_designSystem-Checkbox[data-spec="checkbox_round_medium"]:has(input:checked) > :is(img, .h_designSystem-icon),
-.h_designSystem-Checkbox[data-spec="checkbox_round_large"]:has(input:checked) > :is(img, .h_designSystem-icon),
-.h_designSystem-Checkbox[data-spec="checkbox_round_xlarge"]:has(input:checked) > :is(img, .h_designSystem-icon) {
+.h_designSystem-Checkbox[data-spec]:where(:not([data-spec*="_disabled_"])):has(input:checked) > :is(img, .h_designSystem-icon) {
   display: block;
 }
 .h_designSystem-TextInput[data-spec],

@@ -1,29 +1,55 @@
-# hyo_designSystem 사용법
+# 설치와 React 사용
 
-## 개발
+## 로컬 설치
 
-루트에서 `npm install` 후 `npm run storybook`을 실행합니다. 기본 주소는 http://localhost:6006 입니다.
+디자인 시스템 저장소에서 `npm run pack`을 실행합니다. 소비 프로젝트에 세 파일을 복사하고 설치합니다.
 
-`npm run typecheck`, `npm run build`, `npm run build-storybook`으로 확인합니다.
+```bash
+npm install ./h_designsystem-tokens-0.2.0.tgz ./h_designsystem-foundation-0.2.0.tgz ./h_designsystem-ui-0.2.0.tgz
+```
 
-## 설치 파일 만들기
+Tokens만 필요하면 Tokens만, Foundation은 Tokens와 함께 설치합니다. 레지스트리 배포 전에는 UI `.tgz` 하나가 옆의 다른 파일을 자동으로 찾지 않습니다. 설치는 node_modules에 파일을 넣으며 원래 디자인 시스템 폴더를 연결하지 않습니다.
 
-`npm run pack`은 세 패키지의 .tgz 파일을 만듭니다. 아직 레지스트리에 배포되지 않았습니다.
+## 시작점과 컴포넌트
 
-로컬 전체 설치:
+```tsx
+// main.tsx
+import '@h_designsystem/ui/styles.css';
+import './design-system.config'; // 화면별 옵션을 사용할 때만 필요
+```
 
-`npm install ./h_designsystem-tokens-0.1.0.tgz ./h_designsystem-foundation-0.1.0.tgz ./h_designsystem-ui-0.1.0.tgz`
+```tsx
+import { useState, useRef } from 'react';
+import { Button, Field, TextInput } from '@h_designsystem/ui';
+import type { HTextInput } from '@h_designsystem/ui/elements';
+import search from '@h_designsystem/foundation/icons/icon_search_medium_2.svg';
 
-Tokens만 필요하면 Tokens 파일만 설치합니다. Foundation만 쓰면 Tokens와 Foundation 파일을 함께 설치합니다. 로컬 tgz는 옆에 놓인 다른 tgz를 자동으로 찾지 않습니다. 향후 세 패키지를 같은 레지스트리에 배포하면 UI 하나를 설치하는 명령으로 하위 의존성까지 가져올 수 있습니다.
+export function Example() {
+  const [value, setValue] = useState('');
+  const ref = useRef<HTextInput>(null);
+  return <>
+    <Field label="이름" description="이름을 입력하세요.">
+      <TextInput ref={ref} name="name" value={value}
+        onInput={event => setValue(event.currentTarget.value)} />
+    </Field>
+    <Button icon={<img src={search} alt="" />}>검색</Button>
+  </>;
+}
+```
 
-## React
+React 19를 사용합니다. ref와 이벤트 currentTarget은 웹 컴포넌트입니다. `value`, `checked`, `focus()`를 사용하고 내부 네이티브 요소는 읽기 전용 접근자 `control`로 가져옵니다. React SyntheticEvent가 아닌 네이티브 이벤트입니다. 입력은 onInput, 변경 확정은 onChange이며 체크박스·라디오는 onChange에서 currentTarget.checked를 읽습니다.
 
-`import '@h_designsystem/ui/styles.css';`를 시작 지점에서 한 번 실행하고, `import { Button, TextInput, Field, Text } from '@h_designsystem/ui';`로 사용합니다. React 19가 필요합니다.
+제어형은 value/checked와 핸들러를 함께, 비제어형은 defaultValue/defaultChecked를 사용합니다. 외부 값 변경은 사용자 입력 이벤트를 만들지 않습니다. `form="폼ID"`로 외부 폼을 연결합니다. Button의 기본 type은 button, 제출은 submit, 초기화는 reset입니다.
 
-## HTML·JSP
+```tsx
+<Button size="large">고정</Button>
+<Button size={{ base: 'xlarge', tablet: 'large', mobile: 'medium' }}>화면별 선택</Button>
+```
 
-Foundation CSS와 SVG를 정적 자산으로 배포해 사용할 수 있습니다. React의 동작은 포함되지 않습니다. CSS에는 컴포넌트 클래스와 data-spec 규격 ID가 필요하며 대응표는 component-map.md에 있습니다. 초기화 CSS는 별도 선택 경로 `@h_designsystem/foundation/reset.css`입니다.
+[반응형 설정](responsive.md)을 참고하세요. shape는 square·rounded·full-rounded이며 각 컴포넌트에 제공되는 옵션만 사용합니다. 일반 size 기본값은 medium, Filled IconButton은 숫자 16입니다. 아이콘 버튼에는 icon과 aria-label을 제공합니다.
 
-## SVG
+## 환경
 
-`import searchIcon from '@h_designsystem/foundation/icons/icon_search_medium_2.svg';`처럼 가져와 컴포넌트의 icon에 전달합니다. 폰트는 소비 프로젝트가 로딩합니다.
+UI 등록은 브라우저에서 실행합니다. SSR 프로젝트는 클라이언트 영역에서 로드해야 하며 SSR·hydration은 이번 검증 범위가 아닙니다. Tokens·Foundation CSS만 사용하면 React가 필요 없고 소비 프로젝트에 Sass 설치도 요구하지 않습니다.
+
+Chrome·Edge·Firefox·Safari 최신·직전 주요 버전이 지원 대상이며 IE는 제외합니다. 실제 확인한 환경은 [검증 기록](verification.md)과 구분합니다.

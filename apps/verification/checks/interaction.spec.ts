@@ -1,0 +1,33 @@
+import { test, expect } from '@playwright/test';
+test('React 제어형 입력·체크와 Tabs 키보드', async ({ page }) => {
+  await page.goto('/react.html');
+  await page.locator('#controlled input').fill('새 값');
+  await expect(page.locator('#value')).toHaveText('새 값');
+  await page.locator('#locked input').fill('변경 시도');
+  await expect(page.locator('#locked input')).toHaveValue('고정값');
+  await page.locator('#check input').check();
+  await expect(page.locator('#check input')).toBeChecked();
+  const tabs=page.locator('h-tab');
+  await tabs.first().focus(); await page.keyboard.press('ArrowRight');
+  await expect(tabs.nth(1)).toHaveAttribute('aria-selected','true');
+  await expect(page.locator('h-tab-panel').nth(1)).toBeVisible();
+  await page.keyboard.press('Home'); await expect(tabs.first()).toHaveAttribute('aria-selected','true');
+  await page.keyboard.press('End'); await expect(tabs.nth(1)).toHaveAttribute('aria-selected','true');
+});
+test('Field 이름·설명·오류·간격과 비밀번호·자동 높이', async ({ page }) => {
+  await page.goto('/html.html');
+  const input=page.locator('#controlled input');
+  await expect(input).toHaveAccessibleName('이름');
+  await expect(input).toHaveAccessibleDescription('입력 안내');
+  await page.locator('#field label').click(); await expect(input).toBeFocused();
+  await expect(page.locator('#field .h_designSystem-Field')).toHaveCSS('gap','16px');
+  await expect(page.locator('#field .h_designSystem-Field')).toHaveCSS('text-align','left');
+  await page.locator('#field').evaluate((field:any)=>{field.error='오류 문구';field.messageColor='green';});
+  await expect(input).toHaveAttribute('aria-invalid','true');
+  await expect(input).toHaveAccessibleDescription('오류 문구');
+  await expect(page.locator('#field .h_designSystem-Field-message')).toHaveAttribute('data-color','green');
+  await page.locator('#password button').click(); await expect(page.locator('#password input')).toHaveAttribute('type','text');
+  const textarea=page.locator('#auto textarea'); const before=(await textarea.boundingBox())!.height;
+  await textarea.fill(Array(12).fill('긴 내용').join('\n'));
+  expect((await textarea.boundingBox())!.height).toBeGreaterThan(before);
+});

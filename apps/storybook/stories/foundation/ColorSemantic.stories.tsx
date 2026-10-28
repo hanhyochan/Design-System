@@ -1,18 +1,7 @@
+import sourceCss from '../../../../packages/tokens/src/color/semantic.css?raw';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { ColorPalette, createSemanticPalette } from './ColorPalette';
-const names = [
-  '--h_designSystem-color-text-primary',
-  '--h_designSystem-color-text-secondary',
-  '--h_designSystem-color-text-tertiary',
-  '--h_designSystem-color-text-disabled',
-  '--h_designSystem-color-text-inverse',
-  '--h_designSystem-color-focus-ring',
-  '--h_designSystem-color-overlay-dimmer',
-  '--h_designSystem-color-status-positive',
-  '--h_designSystem-color-status-cautionary',
-  '--h_designSystem-color-status-negative',
-  '--h_designSystem-color-status-informative',
-];
+import { ColorPalette, colorTokenNames, createSemanticPalette } from './ColorPalette';
+const names = colorTokenNames(sourceCss);
 const palette = createSemanticPalette(names);
 const meta: Meta<{
   token: string;

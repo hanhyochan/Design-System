@@ -16,7 +16,4 @@
 @use './Checkbox/Checkbox.scss';
 @use './Radio/Radio.scss';
 @use './Field/Field.css';
-@use './Pagination/Pagination.scss';
-@use './behavior.css';
-@use './common/input-state.css';
-@use './common/interaction-state.css';
+@use './common/states/index.scss' as states;

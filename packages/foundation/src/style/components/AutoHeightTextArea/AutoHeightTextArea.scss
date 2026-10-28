@@ -1,12 +1,12 @@
-@use '../common/responsive' as size;
+@use '../common/size-rules' as size;
 
 .h_designSystem-AutoHeightTextArea[data-spec] {
   border: 0;
   border-bottom: 1px solid var(--h_designSystem-color-line-solid-normal);
   outline: 0;
   resize: none;
-  background: transparent;
-  color: var(--h_designSystem-color-label-normal);
+  background: var(--h_designSystem-component-bg, transparent);
+  color: var(--h_designSystem-component-text, var(--h_designSystem-color-label-normal));
   overflow: hidden;
   field-sizing: content;
 }
@@ -18,4 +18,4 @@ $auto-area-sizes: (
   'large': (padding: var(--h_designSystem-unit-12) var(--h_designSystem-unit-8)),
   'xlarge': (padding: var(--h_designSystem-unit-16) var(--h_designSystem-unit-8)),
 );
-@include size.steps('.h_designSystem-AutoHeightTextArea', $auto-area-sizes);
+@include size.rules('.h_designSystem-AutoHeightTextArea', $auto-area-sizes);

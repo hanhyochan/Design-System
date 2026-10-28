@@ -1,0 +1,15 @@
+/* Shadow DOM 경계의 배치. 내부 컴포넌트 규격은 기존 선택자를 사용합니다. */
+:host { display: inline-block; vertical-align: middle; font-family: inherit; }
+:host([hidden]) { display: none !important; }
+:host(h-field), :host(h-tabs), :host(h-tab-list), :host(h-tab-panel) { display: block; min-width: 0; }
+:host(h-text-input), :host(h-text-area), :host(h-auto-height-text-area), :host(h-select) { width: 100%; min-width: 0; }
+:host(h-underline-text-input) { width: 100%; min-width: 0; }
+:host(h-underline-text-input[variant='fixed']), :host(h-underline-text-input[variant='search']) { max-width: var(--h_designSystem-unit-340); }
+:host(h-underline-text-input[variant='search-wide']) { max-width: var(--h_designSystem-unit-800); }
+:host(h-field) { text-align: left; }
+:host(h-text) { display: inline; }
+::slotted(img), ::slotted(svg) { display: block; width: 100%; height: auto; }
+.h_designSystem-description { display: none; }
+.h_designSystem-options { display: none; }
+:where(.h_designSystem-native-text) { all: unset; font-family: inherit; }
+.h_designSystem-native-text:is(p, h1, h2, h3, h4, h5, h6) { display: block; }

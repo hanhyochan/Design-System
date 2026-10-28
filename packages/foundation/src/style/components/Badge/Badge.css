@@ -1,12 +1,12 @@
 .h_designSystem-Badge[data-spec*="_filled_"] {
   border: 0;
-  background: var(--h_designSystem-color-static-black);
-  color: var(--h_designSystem-color-common-100);
+  background: var(--h_designSystem-component-bg, var(--h_designSystem-color-static-black));
+  color: var(--h_designSystem-component-text, var(--h_designSystem-color-common-100));
   vertical-align: middle;
 }
 .h_designSystem-Badge[data-spec*="_outline_"] {
   border: 1px solid var(--h_designSystem-color-static-black);
-  background: var(--h_designSystem-color-common-100);
-  color: var(--h_designSystem-color-static-black);
+  background: var(--h_designSystem-component-bg, var(--h_designSystem-color-common-100));
+  color: var(--h_designSystem-component-text, var(--h_designSystem-color-static-black));
   vertical-align: middle;
 }

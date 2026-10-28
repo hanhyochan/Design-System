@@ -1,5 +1,10 @@
 import './color-palette.css';
 
+// CSS 선언을 직접 읽으므로 토큰 추가 시 별도 이름 목록을 수정하지 않습니다.
+export function colorTokenNames(...sources: string[]): string[] {
+  return [...new Set(sources.flatMap(css => [...css.matchAll(/(--h_designSystem-color-[\w-]+)\s*:/g)].map(match => match[1])))];
+}
+
 type ColorSwatch = { token: string; label: string };
 type ColorGroup = { name: string; colors: ColorSwatch[] };
 

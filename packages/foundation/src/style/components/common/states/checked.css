@@ -1,0 +1,25 @@
+/* 체크 상태 */
+.h_designSystem-Toggle[data-spec]:where(:not([data-spec*="_disabled_"])):has(input:checked),
+.h_designSystem-Checkbox[data-spec]:where(:not([data-spec*="_disabled_"])):has(input:checked) {
+  background: var(--h_designSystem-component-bg, var(--h_designSystem-color-static-black));
+}
+.h_designSystem-Checkbox[data-spec]:where(:not([data-spec*="_disabled_"])):has(input:checked) > :is(img, .h_designSystem-icon) {
+  filter: brightness(0) invert(1);
+}
+.h_designSystem-Toggle[data-spec]:where(:not([data-spec*="_disabled_"])):has(input:not(:checked)) {
+  background: var(--h_designSystem-color-line-solid-strong);
+}
+.h_designSystem-Toggle[data-spec]:where(:not([data-spec*="_disabled_"])):has(input:checked)::after,
+.h_designSystem-Toggle[data-spec]:where(:not([data-spec*="_disabled_"])):has(input:not(:checked))::after {
+  background: var(--h_designSystem-color-common-100);
+}
+.h_designSystem-Checkbox[data-spec]:where(:not([data-spec*="_disabled_"])):has(input:checked) {
+  border-color: var(--h_designSystem-color-static-black);
+}
+.h_designSystem-Radio[data-spec]:where(:not([data-spec*="_disabled_"])):checked {
+  border-color: var(--h_designSystem-color-blue-50);
+}
+.h_designSystem-Radio[data-spec]:where(:not([data-spec*="_disabled_"])):checked::after {
+  background: var(--h_designSystem-color-blue-50);
+}
+

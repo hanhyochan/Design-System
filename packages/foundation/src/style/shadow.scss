@@ -1,0 +1,6 @@
+@use 'sass:meta';
+// 토큰은 문서에서 상속합니다. 동일한 원본을 Shadow DOM 안에서도 사용합니다.
+@layer h_designSystem {
+  @include meta.load-css('./typography/index.scss');
+  @include meta.load-css('./components/index.scss');
+}

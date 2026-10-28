@@ -1,4 +1,4 @@
-@use '../common/responsive' as size;
+@use '../common/size-rules' as size;
 
 // 크기별 외형 규격. 글자는 공통 타이포그래피 규칙을 따릅니다.
 $button-sizes: (
@@ -13,5 +13,5 @@ $button-icons: (
   'large': (width: 18px),
   'xlarge': (width: var(--h_designSystem-unit-20)),
 );
-@include size.steps('.h_designSystem-Button', $button-sizes);
-@include size.steps('.h_designSystem-Button[data-spec*="_icon_"]', $button-icons, ' > :is(img, .h_designSystem-icon)');
+@include size.rules('.h_designSystem-Button', $button-sizes);
+@include size.rules('.h_designSystem-Button[data-spec*="_icon_"]', $button-icons, ' > :is(img, .h_designSystem-icon)');

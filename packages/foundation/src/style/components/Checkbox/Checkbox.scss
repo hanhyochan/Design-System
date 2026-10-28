@@ -1,4 +1,4 @@
-@use '../common/responsive' as size;
+@use '../common/size-rules' as size;
 
 .h_designSystem-Checkbox[data-spec="checkbox_small"],
 .h_designSystem-Checkbox[data-spec="checkbox_medium"],
@@ -6,7 +6,7 @@
 .h_designSystem-Checkbox[data-spec="checkbox_xlarge"] {
   position: relative;
   border: 2px solid var(--h_designSystem-color-static-black);
-  background: var(--h_designSystem-color-common-100);
+  background: var(--h_designSystem-component-bg, var(--h_designSystem-color-common-100));
   cursor: pointer;
   place-items: center;
 }
@@ -41,7 +41,7 @@
 .h_designSystem-Checkbox[data-spec="checkbox_round_xlarge"] {
   position: relative;
   border: 1px solid var(--h_designSystem-color-static-black);
-  background: var(--h_designSystem-color-common-100);
+  background: var(--h_designSystem-component-bg, var(--h_designSystem-color-common-100));
   cursor: pointer;
   place-items: center;
 }
@@ -80,4 +80,8 @@ $checkbox-icons: (
   'large': (width: var(--h_designSystem-unit-16)),
   'xlarge': (width: var(--h_designSystem-unit-20)),
 );
-@include size.steps('.h_designSystem-Checkbox:not([data-spec*="_disabled_"])', $checkbox-icons, ' > :is(img, .h_designSystem-icon)');
+@include size.rules('.h_designSystem-Checkbox:not([data-spec*="_disabled_"])', $checkbox-icons, ' > :is(img, .h_designSystem-icon)');
+
+/* 내부 요소의 배치와 실제 조작에 필요한 보완 */
+.h_designSystem-Checkbox > input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; padding: 0; border: 0; z-index: 1; cursor: inherit; }
+.h_designSystem-Checkbox[data-spec*="disabled"] > img { display: none; }

@@ -4,6 +4,12 @@
     "paths": {
       "@h_designsystem/ui": [
         "../../packages/ui/src/index.ts"
+      ],
+      "@h_designsystem/ui/config": [
+        "../../packages/ui/src/config.ts"
+      ],
+      "@h_designsystem/ui/elements": [
+        "../../packages/ui/src/elements.ts"
       ]
     }
   },

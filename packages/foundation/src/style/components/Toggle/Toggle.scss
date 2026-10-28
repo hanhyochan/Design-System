@@ -1,9 +1,9 @@
-@use '../common/responsive' as size;
+@use '../common/size-rules' as size;
 
 .h_designSystem-Toggle[data-spec*="_on_"] {
   position: relative;
   border: 0;
-  background: var(--h_designSystem-color-static-black);
+  background: var(--h_designSystem-component-bg, var(--h_designSystem-color-static-black));
   cursor: pointer;
 }
 .h_designSystem-Toggle[data-spec*="_off_"] input,
@@ -64,7 +64,7 @@
 .h_designSystem-Toggle[data-spec*="_off_"] {
   position: relative;
   border: 0;
-  background: var(--h_designSystem-color-line-solid-strong);
+  background: var(--h_designSystem-component-bg, var(--h_designSystem-color-line-solid-strong));
   cursor: pointer;
 }
 .h_designSystem-Toggle[data-spec*="_off_"]::after {
@@ -106,6 +106,6 @@ $toggle-offsets: (
   'large': (transform: translateX(var(--h_designSystem-unit-24))),
   'xlarge': (transform: translateX(var(--h_designSystem-unit-28))),
 );
-@include size.steps('.h_designSystem-Toggle', $toggle-sizes);
-@include size.steps('.h_designSystem-Toggle', $toggle-thumbs, '::after');
-@include size.steps('.h_designSystem-Toggle:not([data-spec*="_disabled_"])', $toggle-offsets, ':has(input:checked)::after');
+@include size.rules('.h_designSystem-Toggle', $toggle-sizes);
+@include size.rules('.h_designSystem-Toggle', $toggle-thumbs, '::after');
+@include size.rules('.h_designSystem-Toggle:not([data-spec*="_disabled_"])', $toggle-offsets, ':has(input:checked)::after');

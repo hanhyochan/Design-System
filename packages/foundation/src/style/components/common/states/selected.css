@@ -1,0 +1,8 @@
+/* 선택 상태 */
+.h_designSystem-Chip[data-spec]:where(:not([data-spec*="_disabled_"]))[aria-pressed="true"] {
+  background: var(--h_designSystem-color-static-black);
+  color: var(--h_designSystem-color-common-100);
+}
+.h_designSystem-Tab[aria-selected="true"] {
+  box-shadow: inset 0 -2px currentColor;
+}

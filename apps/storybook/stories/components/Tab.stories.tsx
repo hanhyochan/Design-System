@@ -1,4 +1,4 @@
-import { createStory } from '../component-stories';
+import { createStory } from './shared';
 const config = createStory('Tab');
 const meta = { ...config.meta, title: '컴포넌트/Tab' };
 export default meta;

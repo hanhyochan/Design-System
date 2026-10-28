@@ -27,7 +27,8 @@ export default defineConfig({
   ],
   build: {
     emptyOutDir: false,
-    lib: { entry: 'src/index.ts', formats: ['es'], fileName: 'index' },
-    rolldownOptions: { external: [/^react(?:\/|$)/, /^react-dom(?:\/|$)/, /^@h_designsystem\//] },
+    target: 'es2022',
+    lib: { entry: { index: 'src/index.ts', elements: 'src/elements.ts', config: 'src/config.ts' }, formats: ['es'], fileName: (_format, name) => `${name}.js` },
+    rolldownOptions: { external: [/^react(?:\/|$)/, /^react-dom(?:\/|$)/, /^lit(?:\/|$)/, /^lit-html(?:\/|$)/, /^lit-element(?:\/|$)/, /^@lit\//] },
   },
 });

@@ -1,4 +1,4 @@
-@use '../common/responsive' as size;
+@use '../common/size-rules' as size;
 
 .h_designSystem-TextArea[data-spec="textarea_filled_small"],
 .h_designSystem-TextArea[data-spec="textarea_filled_medium"],
@@ -11,8 +11,8 @@
   outline: 0;
   resize: vertical;
   border: 0;
-  background-color: var(--h_designSystem-color-fill-normal);
-  color: var(--h_designSystem-color-label-normal);
+  background-color: var(--h_designSystem-component-bg, var(--h_designSystem-color-fill-normal));
+  color: var(--h_designSystem-component-text, var(--h_designSystem-color-label-normal));
   cursor: text;
 }
 .h_designSystem-TextArea[data-spec^="textarea_filled_rounded_focus_"],
@@ -36,8 +36,8 @@
   outline: 0;
   resize: none;
   border: 0;
-  background-color: var(--h_designSystem-color-fill-normal);
-  color: var(--h_designSystem-color-label-normal);
+  background-color: var(--h_designSystem-component-bg, var(--h_designSystem-color-fill-normal));
+  color: var(--h_designSystem-component-text, var(--h_designSystem-color-label-normal));
   cursor: text;
 }
 .h_designSystem-TextArea[data-spec="textarea_outline_small"],
@@ -51,8 +51,8 @@
   outline: 0;
   resize: vertical;
   border: 1px solid var(--h_designSystem-color-line-solid-0);
-  background: var(--h_designSystem-color-common-100);
-  color: var(--h_designSystem-color-label-normal);
+  background: var(--h_designSystem-component-bg, var(--h_designSystem-color-common-100));
+  color: var(--h_designSystem-component-text, var(--h_designSystem-color-label-normal));
 }
 .h_designSystem-TextArea[data-spec^="textarea_outline_rounded_focus_"],
 .h_designSystem-TextArea[data-spec^="textarea_outline_focus_"] {
@@ -75,8 +75,8 @@
   outline: 0;
   resize: none;
   border: 1px solid var(--h_designSystem-color-line-solid-0);
-  background: var(--h_designSystem-color-common-100);
-  color: var(--h_designSystem-color-label-normal);
+  background: var(--h_designSystem-component-bg, var(--h_designSystem-color-common-100));
+  color: var(--h_designSystem-component-text, var(--h_designSystem-color-label-normal));
 }
 
 // 크기별 외형 규격. 글자는 공통 타이포그래피 규칙을 따릅니다.
@@ -86,4 +86,7 @@ $textarea-sizes: (
   'large': (min-height: var(--h_designSystem-unit-160), padding: var(--h_designSystem-unit-16)),
   'xlarge': (min-height: var(--h_designSystem-unit-196), padding: var(--h_designSystem-unit-20)),
 );
-@include size.steps('.h_designSystem-TextArea', $textarea-sizes);
+@include size.rules('.h_designSystem-TextArea', $textarea-sizes);
+
+/* 내부 요소의 배치와 실제 조작에 필요한 보완 */
+.h_designSystem-TextArea[data-inquiry="true"] { resize: none; }

@@ -1,4 +1,4 @@
-@use '../common/responsive' as size;
+@use '../common/size-rules' as size;
 
 .h_designSystem-TextInput[data-spec^="text_input_filled_full_rounded_password_"],
 .h_designSystem-TextInput[data-spec^="text_input_filled_rounded_password_"],
@@ -17,8 +17,8 @@
 .h_designSystem-TextInput[data-spec="text_input_filled_full_rounded_xlarge"] {
   cursor: text;
   border: 0;
-  background: var(--h_designSystem-color-fill-normal);
-  color: var(--h_designSystem-color-label-normal);
+  background: var(--h_designSystem-component-bg, var(--h_designSystem-color-fill-normal));
+  color: var(--h_designSystem-component-text, var(--h_designSystem-color-label-normal));
 }
 .h_designSystem-TextInput[data-spec*="_password_"] input,
 .h_designSystem-TextInput[data-spec$="_rounded_medium"] input,
@@ -55,16 +55,12 @@
 .h_designSystem-TextInput[data-spec="text_input_outline_full_rounded_xlarge"] {
   cursor: text;
   border: 1px solid var(--h_designSystem-color-line-solid-0);
-  background: var(--h_designSystem-color-common-100);
-  color: var(--h_designSystem-color-label-normal);
+  background: var(--h_designSystem-component-bg, var(--h_designSystem-color-common-100));
+  color: var(--h_designSystem-component-text, var(--h_designSystem-color-label-normal));
 }
 .h_designSystem-TextInput[data-spec] input {
   font-size: inherit;
-}
-.h_designSystem-TextInput[data-spec] input {
   font-weight: inherit;
-}
-.h_designSystem-TextInput[data-spec] input {
   line-height: inherit;
 }
 .h_designSystem-TextInput[data-spec*="_complete_"],
@@ -85,5 +81,11 @@ $input-icons: (
   'large': (width: var(--h_designSystem-unit-20)),
   'xlarge': (width: var(--h_designSystem-unit-20)),
 );
-@include size.steps('.h_designSystem-TextInput', $input-sizes);
-@include size.steps('.h_designSystem-TextInput', $input-icons, ' > .h_designSystem-icon');
+@include size.rules('.h_designSystem-TextInput', $input-sizes);
+@include size.rules('.h_designSystem-TextInput', $input-icons, ' > .h_designSystem-icon');
+
+/* 내부 요소의 배치와 실제 조작에 필요한 보완 */
+.h_designSystem-password-action { padding: 0; border: 0; background: transparent; cursor: pointer; }
+.h_designSystem-TextInput[data-password="true"] { column-gap: var(--h_designSystem-unit-8); }
+.h_designSystem-TextInput > input { flex: 1 1 auto; }
+.h_designSystem-TextInput > .h_designSystem-password-action { flex: 0 0 auto; }

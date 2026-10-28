@@ -1,6 +1,4 @@
 .h_designSystem-Hashtag[data-spec] {
-  color: var(--h_designSystem-color-label-neutral);
-}
-.h_designSystem-Hashtag[data-spec] {
+  color: var(--h_designSystem-component-text, var(--h_designSystem-color-label-neutral));
   line-height: 1.8;
 }

@@ -1,15 +1,15 @@
 {
   "name": "h_designsystem",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "workspaces": [
     "packages/*",
     "apps/*"
   ],
   "scripts": {
-    "storybook": "npm run storybook --workspace=@h_designsystem/storybook",
+    "storybook": "npm run build --workspace=@h_designsystem/foundation && npm run storybook --workspace=@h_designsystem/storybook",
     "build": "npm run build --workspace=@h_designsystem/foundation && npm run build --workspace=@h_designsystem/ui",
-    "build-storybook": "npm run build-storybook --workspace=@h_designsystem/storybook",
+    "build-storybook": "npm run build --workspace=@h_designsystem/foundation && npm run build-storybook --workspace=@h_designsystem/storybook",
     "typecheck": "tsc -p packages/ui/tsconfig.json --noEmit && tsc -p apps/storybook/tsconfig.json --noEmit",
     "pack": "npm run build && npm pack --workspace=@h_designsystem/tokens --workspace=@h_designsystem/foundation --workspace=@h_designsystem/ui"
   },

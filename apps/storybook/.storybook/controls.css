@@ -74,3 +74,11 @@ table.docblock-argstable fieldset > label > span {
   min-width: 0;
   overflow-wrap: anywhere;
 }
+
+/* IconButton의 종류 조건은 argTypes에서 처리하고, 화면별 옵션은 반응형을 켰을 때만 표시합니다. */
+table.docblock-argstable:has(input[name="responsive"]:not(:checked)) > tbody > tr:has(
+  select:is([id$="-baseSize"], [id$="-mobileSize"], [id$="-tabletSize"], [id$="-desktopSize"],
+    [id$="-baseIconSize"], [id$="-mobileIconSize"], [id$="-tabletIconSize"], [id$="-desktopIconSize"])
+) {
+  display: none;
+}

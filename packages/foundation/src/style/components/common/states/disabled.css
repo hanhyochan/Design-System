@@ -1,0 +1,95 @@
+/* 비활성화 */
+.h_designSystem-Button[data-spec*="_icon_"]:where([data-spec*="_disabled_"]) > :is(img, .h_designSystem-icon),
+.h_designSystem-IconButton[data-spec*="_disabled_"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Tab[data-spec*="_icon_"]:where([data-spec*="_disabled_"]) > :is(img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec*="_disabled_"]:where(:not([data-spec*="_icon_"])) > :is(img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec*="_icon_"]:where([data-spec*="_disabled_"]) > :nth-last-child(1 of img, .h_designSystem-icon),
+.h_designSystem-Select[data-spec*="_icon_"]:where([data-spec*="_disabled_"]) > :nth-child(1 of img, .h_designSystem-icon) {
+  filter: brightness(0) invert(22%);
+  opacity: 0.16;
+}
+.h_designSystem-Button[data-spec*="_outline_"]:where([data-spec*="_disabled_"]),
+.h_designSystem-Tab[data-spec*="_outline_"]:where([data-spec*="_disabled_"]),
+.h_designSystem-Chip[data-spec^="chip_outline_disabled_"] {
+  border: 1px solid transparent;
+}
+.h_designSystem-Button[data-spec*="_disabled_"],
+.h_designSystem-Tab[data-spec*="_disabled_"],
+.h_designSystem-Chip[data-spec*="_disabled_"],
+.h_designSystem-Toggle[data-spec*="_disabled_"],
+.h_designSystem-Checkbox[data-spec*="_disabled_"],
+.h_designSystem-Radio[data-spec*="_disabled_"],
+.h_designSystem-IconButton[data-spec*="_outline_"]:where([data-spec*="_disabled_"]),
+.h_designSystem-TextInput[data-spec*="_disabled_"],
+.h_designSystem-TextArea[data-spec*="_disabled_"],
+.h_designSystem-Select[data-spec*="_disabled_"] > select {
+  background: var(--h_designSystem-color-interaction-disable);
+}
+.h_designSystem-Button[data-spec*="_disabled_"],
+.h_designSystem-Tab[data-spec*="_disabled_"],
+.h_designSystem-Chip[data-spec*="_disabled_"],
+.h_designSystem-Toggle[data-spec*="_disabled_"],
+.h_designSystem-Checkbox[data-spec*="_disabled_"],
+.h_designSystem-Radio[data-spec*="_disabled_"],
+.h_designSystem-IconButton[data-spec*="_disabled_"],
+.h_designSystem-TextInput[data-spec*="_disabled_"],
+.h_designSystem-TextArea[data-spec*="_disabled_"],
+.h_designSystem-Select[data-spec*="_disabled_"],
+.h_designSystem-Select[data-spec*="_disabled_"] > select {
+  color: var(--h_designSystem-color-label-disable);
+}
+.h_designSystem-Button[data-spec*="_disabled_"],
+.h_designSystem-Tab[data-spec*="_outline_"]:where([data-spec*="_disabled_"]),
+.h_designSystem-IconButton[data-spec^="btn_icon_filled_disabled_"] {
+  box-shadow: none;
+}
+.h_designSystem-Checkbox > input:disabled,
+.h_designSystem-Button[data-spec*="_disabled_"],
+.h_designSystem-Tab[data-spec*="_disabled_"],
+.h_designSystem-Chip[data-spec*="_disabled_"],
+.h_designSystem-Toggle[data-spec*="_disabled_"],
+.h_designSystem-Checkbox[data-spec*="_disabled_"],
+.h_designSystem-Radio[data-spec*="_disabled_"],
+.h_designSystem-IconButton[data-spec*="_disabled_"],
+.h_designSystem-TextInput[data-spec*="_disabled_"],
+.h_designSystem-TextInput[data-spec*="_disabled_"] input,
+.h_designSystem-TextArea[data-spec*="_disabled_"],
+.h_designSystem-Select[data-spec*="_disabled_"] > select,
+.h_designSystem-Toggle[data-spec*="_disabled_"] input {
+  cursor: default;
+}
+.h_designSystem-Tab[data-spec*="_filled_"]:where([data-spec*="_disabled_"]),
+.h_designSystem-Chip[data-spec^="chip_filled_disabled_"],
+.h_designSystem-Toggle[data-spec*="_disabled_"],
+.h_designSystem-Checkbox[data-spec*="_disabled_"],
+.h_designSystem-Radio[data-spec*="_disabled_"],
+.h_designSystem-Button[data-spec*="_filled_"]:where([data-spec*="_disabled_"]),
+.h_designSystem-IconButton[data-spec*="_disabled_"],
+.h_designSystem-TextInput[data-spec*="_disabled_"],
+.h_designSystem-TextInput[data-spec*="_disabled_"] input,
+.h_designSystem-TextArea[data-spec*="_disabled_"],
+.h_designSystem-Select[data-spec*="_disabled_"] > select,
+.h_designSystem-Toggle[data-spec*="_disabled_"] input {
+  border: 0;
+}
+.h_designSystem-IconButton[data-spec^="btn_icon_filled_disabled_"],
+.h_designSystem-TextInput[data-spec*="_disabled_"] input {
+  background: transparent;
+}
+.h_designSystem-IconButton[data-spec^="btn_icon_filled_disabled_"] {
+  opacity: 1;
+}
+.h_designSystem-TextInput[data-spec*="_disabled_"] input,
+.h_designSystem-TextArea[data-spec*="_disabled_"] {
+  outline: 0;
+}
+.h_designSystem-TextInput[data-spec*="_disabled_"] input {
+  color: inherit;
+}
+.h_designSystem-Toggle[data-spec*="_disabled_"] input {
+  opacity: 0;
+}
+.h_designSystem-Toggle[data-spec*="_disabled_"]::after {
+  background: var(--h_designSystem-color-label-disable);
+}
+

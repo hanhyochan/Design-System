@@ -1,0 +1,24 @@
+/* 마우스 올림 */
+.h_designSystem-Button[data-spec]:where(:not([data-spec*="_disabled_"])):not(:disabled):not([data-disabled="true"]):hover,
+.h_designSystem-IconButton[data-spec*="_outline_"]:where(:not([data-spec*="_disabled_"])):not(:disabled):not([data-disabled="true"]):hover {
+  background: var(--h_designSystem-color-static-black);
+}
+.h_designSystem-Button[data-spec*="_icon_"]:where(:not([data-spec*="_disabled_"])):not(:disabled):not([data-disabled="true"]):hover > :is(img, .h_designSystem-icon),
+.h_designSystem-IconButton[data-spec*="_outline_"]:where(:not([data-spec*="_disabled_"])):not(:disabled):not([data-disabled="true"]):hover > :is(img, .h_designSystem-icon) {
+  filter: brightness(0) invert(1);
+}
+.h_designSystem-Button[data-spec*="_outline_"]:where(:not([data-spec*="_disabled_"])):not(:disabled):not([data-disabled="true"]):hover {
+  border-color: var(--h_designSystem-color-static-black);
+}
+.h_designSystem-Button[data-spec*="_outline_"]:where(:not([data-spec*="_disabled_"])):not(:disabled):not([data-disabled="true"]):hover,
+.h_designSystem-IconButton[data-spec*="_outline_"]:where(:not([data-spec*="_disabled_"])):not(:disabled):not([data-disabled="true"]):hover {
+  color: var(--h_designSystem-color-common-100);
+}
+.h_designSystem-IconButton[data-spec*="_outline_"]:where(:not([data-spec*="_disabled_"])):not(:disabled):not([data-disabled="true"]):hover {
+  border-color: transparent;
+}
+.h_designSystem-TextButton[data-spec]:where(:not([data-spec$="_large"])):not(:disabled):not([data-disabled="true"]):hover {
+  text-underline-offset: 0.12em;
+  text-decoration: underline;
+}
+

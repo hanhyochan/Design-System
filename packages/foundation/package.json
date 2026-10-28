@@ -1,6 +1,6 @@
 {
   "name": "@h_designsystem/foundation",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "files": [
     "dist",
@@ -8,19 +8,21 @@
     "src/style/reset.css"
   ],
   "dependencies": {
-    "@h_designsystem/tokens": "0.1.0"
+    "@h_designsystem/tokens": "0.2.0"
   },
   "exports": {
     ".": "./dist/styles.css",
     "./styles.css": "./dist/styles.css",
     "./reset.css": "./src/style/reset.css",
-    "./icons/*": "./src/icons/*"
+    "./icons/*": "./src/icons/*",
+    "./base.css": "./dist/base.css",
+    "./shadow.css": "./dist/shadow.css"
   },
   "sideEffects": [
     "**/*.css"
   ],
   "scripts": {
-    "build": "sass src/style/index.scss dist/styles.css --no-source-map",
+    "build": "sass src/style/index.scss:dist/styles.css src/style/base.scss:dist/base.css src/style/shadow.scss:dist/shadow.css --no-source-map --no-charset --style=compressed",
     "prepack": "npm run build"
   },
   "devDependencies": {

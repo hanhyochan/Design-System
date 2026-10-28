@@ -1,0 +1,12 @@
+/* 누르는 동안 */
+.h_designSystem-Chip[data-spec*="_filled_"]:where(:not([data-spec*="_disabled_"])):not(:disabled):not([data-disabled="true"]):active {
+  border: 0;
+}
+.h_designSystem-Chip[data-spec]:where(:not([data-spec*="_disabled_"])):not(:disabled):not([data-disabled="true"]):active {
+  background: var(--h_designSystem-color-static-black);
+  color: var(--h_designSystem-color-common-100);
+}
+.h_designSystem-Chip[data-spec*="_outline_"]:where(:not([data-spec*="_disabled_"])):not(:disabled):not([data-disabled="true"]):active {
+  border: 1px solid var(--h_designSystem-color-static-black);
+}
+

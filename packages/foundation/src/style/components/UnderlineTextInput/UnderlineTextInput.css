@@ -4,32 +4,25 @@
 .h_designSystem-UnderlineTextInput[data-spec="text_input_underline_xlarge"] {
   border: 0;
   border-bottom: 1px solid var(--h_designSystem-color-neutral-60);
-  background: transparent;
-  color: var(--h_designSystem-color-label-normal);
+  background: var(--h_designSystem-component-bg, transparent);
+  color: var(--h_designSystem-component-text, var(--h_designSystem-color-label-normal));
 }
 .h_designSystem-UnderlineTextInput[data-spec*="_fixed_"],
-.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_search_small"],
-.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_search_medium"],
-.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_search_large"],
-.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_search_xlarge"] {
+.h_designSystem-UnderlineTextInput[data-spec*="_search_"]:where(:not([data-spec*="_search_wide_"])) {
   border: 0;
   border-bottom: 1px solid var(--h_designSystem-color-neutral-60);
-  background: transparent;
-  color: var(--h_designSystem-color-label-normal);
+  background: var(--h_designSystem-component-bg, transparent);
+  color: var(--h_designSystem-component-text, var(--h_designSystem-color-label-normal));
   max-width: var(--h_designSystem-unit-340);
 }
 .h_designSystem-UnderlineTextInput[data-spec*="_wide_"] {
   border: 0;
   border-bottom: 1px solid var(--h_designSystem-color-neutral-60);
-  background: transparent;
-  color: var(--h_designSystem-color-label-normal);
+  background: var(--h_designSystem-component-bg, transparent);
+  color: var(--h_designSystem-component-text, var(--h_designSystem-color-label-normal));
   max-width: var(--h_designSystem-unit-800);
 }
-.h_designSystem-UnderlineTextInput[data-spec*="_fixed_"],
-.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_small"],
-.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_medium"],
-.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_large"],
-.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_xlarge"] {
+.h_designSystem-UnderlineTextInput[data-spec]:where(:not([data-spec*="_search_"])) {
   padding: 0 var(--h_designSystem-unit-8);
 }
 .h_designSystem-UnderlineTextInput[data-spec*="_search_"] {

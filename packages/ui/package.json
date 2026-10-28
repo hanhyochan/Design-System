@@ -1,6 +1,6 @@
 {
   "name": "@h_designsystem/ui",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "files": [
     "dist",
@@ -11,20 +11,41 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     },
-    "./styles.css": "./src/styles.css"
+    "./styles.css": "./src/styles.css",
+    "./elements": {
+      "types": "./dist/elements.d.ts",
+      "import": "./dist/elements.js"
+    },
+    "./config": {
+      "types": "./dist/config.d.ts",
+      "import": "./dist/config.js"
+    },
+    "./browser/*": "./dist/browser/*"
   },
   "types": "./dist/index.d.ts",
   "dependencies": {
-    "@h_designsystem/foundation": "0.1.0"
+    "@h_designsystem/foundation": "0.2.0",
+    "@lit/context": "^1.1.6",
+    "@lit/react": "^1.0.8",
+    "lit": "^3.3.3"
   },
   "peerDependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "sideEffects": [
-    "**/*.css"
+    "**/*.css",
+    "./dist/*.js"
   ],
   "scripts": {
-    "build": "vite build && tsc -p tsconfig.build.json"
+    "build": "vite build && tsc -p tsconfig.build.json && vite build --config vite.browser.config.ts"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
   }
 }

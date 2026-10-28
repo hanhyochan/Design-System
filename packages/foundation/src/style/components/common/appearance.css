@@ -1,182 +1,32 @@
-.h_designSystem-Button[data-spec="btn_primary_filled_small"],
-.h_designSystem-Button[data-spec="btn_primary_filled_medium"],
-.h_designSystem-Button[data-spec="btn_primary_filled_large"],
-.h_designSystem-Button[data-spec="btn_primary_filled_xlarge"],
-.h_designSystem-Button[data-spec="btn_primary_filled_icon_small"],
-.h_designSystem-Button[data-spec="btn_primary_filled_icon_medium"],
-.h_designSystem-Button[data-spec="btn_primary_filled_icon_large"],
-.h_designSystem-Button[data-spec="btn_primary_filled_icon_xlarge"],
-.h_designSystem-Button[data-spec="btn_primary_filled_rounded_small"],
-.h_designSystem-Button[data-spec="btn_primary_filled_rounded_medium"],
-.h_designSystem-Button[data-spec="btn_primary_filled_rounded_large"],
-.h_designSystem-Button[data-spec="btn_primary_filled_rounded_xlarge"],
-.h_designSystem-Button[data-spec="btn_primary_filled_rounded_icon_small"],
-.h_designSystem-Button[data-spec="btn_primary_filled_rounded_icon_medium"],
-.h_designSystem-Button[data-spec="btn_primary_filled_rounded_icon_large"],
-.h_designSystem-Button[data-spec="btn_primary_filled_rounded_icon_xlarge"],
-.h_designSystem-Button[data-spec="btn_primary_filled_full_rounded_small"],
-.h_designSystem-Button[data-spec="btn_primary_filled_full_rounded_medium"],
-.h_designSystem-Button[data-spec="btn_primary_filled_full_rounded_large"],
-.h_designSystem-Button[data-spec="btn_primary_filled_full_rounded_xlarge"],
-.h_designSystem-Button[data-spec="btn_primary_filled_full_rounded_icon_small"],
-.h_designSystem-Button[data-spec="btn_primary_filled_full_rounded_icon_medium"],
-.h_designSystem-Button[data-spec="btn_primary_filled_full_rounded_icon_large"],
-.h_designSystem-Button[data-spec="btn_primary_filled_full_rounded_icon_xlarge"],
-.h_designSystem-Tab[data-spec="tab_filled_small"],
-.h_designSystem-Tab[data-spec="tab_filled_medium"],
-.h_designSystem-Tab[data-spec="tab_filled_large"],
-.h_designSystem-Tab[data-spec="tab_filled_xlarge"],
-.h_designSystem-Tab[data-spec="tab_filled_icon_small"],
-.h_designSystem-Tab[data-spec="tab_filled_icon_medium"],
-.h_designSystem-Tab[data-spec="tab_filled_icon_large"],
-.h_designSystem-Tab[data-spec="tab_filled_icon_xlarge"],
-.h_designSystem-Tab[data-spec="tab_filled_rounded_small"],
-.h_designSystem-Tab[data-spec="tab_filled_rounded_medium"],
-.h_designSystem-Tab[data-spec="tab_filled_rounded_large"],
-.h_designSystem-Tab[data-spec="tab_filled_rounded_xlarge"],
-.h_designSystem-Tab[data-spec="tab_filled_rounded_icon_small"],
-.h_designSystem-Tab[data-spec="tab_filled_rounded_icon_medium"],
-.h_designSystem-Tab[data-spec="tab_filled_rounded_icon_large"],
-.h_designSystem-Tab[data-spec="tab_filled_rounded_icon_xlarge"],
-.h_designSystem-Tab[data-spec="tab_filled_full_rounded_small"],
-.h_designSystem-Tab[data-spec="tab_filled_full_rounded_medium"],
-.h_designSystem-Tab[data-spec="tab_filled_full_rounded_large"],
-.h_designSystem-Tab[data-spec="tab_filled_full_rounded_xlarge"],
-.h_designSystem-Tab[data-spec="tab_filled_full_rounded_icon_small"],
-.h_designSystem-Tab[data-spec="tab_filled_full_rounded_icon_medium"],
-.h_designSystem-Tab[data-spec="tab_filled_full_rounded_icon_large"],
-.h_designSystem-Tab[data-spec="tab_filled_full_rounded_icon_xlarge"] {
+/* 기본 배경·테두리·글자색과 placeholder */
+.h_designSystem-Button[data-spec*="_filled_"]:where(:not([data-spec*="_disabled_"])),
+.h_designSystem-Tab[data-spec*="_filled_"]:where(:not([data-spec*="_disabled_"])) {
   border: 0;
   cursor: pointer;
-  background: var(--h_designSystem-color-static-black);
-  color: var(--h_designSystem-color-common-100);
+  background: var(--h_designSystem-component-bg, var(--h_designSystem-color-static-black));
+  color: var(--h_designSystem-component-text, var(--h_designSystem-color-common-100));
 }
-.h_designSystem-Button[data-spec="btn_primary_filled_icon_small"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Button[data-spec="btn_primary_filled_icon_medium"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Button[data-spec="btn_primary_filled_icon_large"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Button[data-spec="btn_primary_filled_icon_xlarge"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Button[data-spec="btn_primary_filled_rounded_icon_small"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Button[data-spec="btn_primary_filled_rounded_icon_medium"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Button[data-spec="btn_primary_filled_rounded_icon_large"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Button[data-spec="btn_primary_filled_rounded_icon_xlarge"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Button[data-spec="btn_primary_filled_full_rounded_icon_small"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Button[data-spec="btn_primary_filled_full_rounded_icon_medium"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Button[data-spec="btn_primary_filled_full_rounded_icon_large"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Button[data-spec="btn_primary_filled_full_rounded_icon_xlarge"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Tab[data-spec="tab_filled_icon_small"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Tab[data-spec="tab_filled_icon_medium"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Tab[data-spec="tab_filled_icon_large"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Tab[data-spec="tab_filled_icon_xlarge"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Tab[data-spec="tab_filled_rounded_icon_small"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Tab[data-spec="tab_filled_rounded_icon_medium"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Tab[data-spec="tab_filled_rounded_icon_large"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Tab[data-spec="tab_filled_rounded_icon_xlarge"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Tab[data-spec="tab_filled_full_rounded_icon_small"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Tab[data-spec="tab_filled_full_rounded_icon_medium"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Tab[data-spec="tab_filled_full_rounded_icon_large"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Tab[data-spec="tab_filled_full_rounded_icon_xlarge"] > :is(img, .h_designSystem-icon) {
+.h_designSystem-Button[data-spec*="_filled_"]:where([data-spec*="_icon_"]:not([data-spec*="_disabled_"])) > :is(img, .h_designSystem-icon),
+.h_designSystem-Tab[data-spec*="_filled_"]:where([data-spec*="_icon_"]:not([data-spec*="_disabled_"])) > :is(img, .h_designSystem-icon) {
   flex-shrink: 0;
   filter: brightness(0) invert(1);
 }
-.h_designSystem-Button[data-spec$="_icon_disabled_medium"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Button[data-spec$="_icon_disabled_xlarge"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Button[data-spec$="_icon_disabled_small"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Button[data-spec$="_icon_disabled_large"] > :is(img, .h_designSystem-icon),
-.h_designSystem-IconButton[data-spec^="btn_icon_outline_full_rounded_disabled_"] > :is(img, .h_designSystem-icon),
-.h_designSystem-IconButton[data-spec^="btn_icon_outline_rounded_disabled_"] > :is(img, .h_designSystem-icon),
-.h_designSystem-IconButton[data-spec^="btn_icon_outline_disabled_"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Tab[data-spec$="_icon_disabled_medium"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Tab[data-spec$="_icon_disabled_xlarge"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Tab[data-spec$="_icon_disabled_small"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Tab[data-spec$="_icon_disabled_large"] > :is(img, .h_designSystem-icon) {
+.h_designSystem-Button[data-spec*="_icon_"]:where([data-spec*="_disabled_"]) > :is(img, .h_designSystem-icon),
+.h_designSystem-IconButton[data-spec*="_outline_"]:where([data-spec*="_disabled_"]) > :is(img, .h_designSystem-icon),
+.h_designSystem-Tab[data-spec*="_icon_"]:where([data-spec*="_disabled_"]) > :is(img, .h_designSystem-icon) {
   flex-shrink: 0;
 }
-.h_designSystem-Button[data-spec="btn_primary_outline_small"],
-.h_designSystem-Button[data-spec="btn_primary_outline_medium"],
-.h_designSystem-Button[data-spec="btn_primary_outline_large"],
-.h_designSystem-Button[data-spec="btn_primary_outline_xlarge"],
-.h_designSystem-Button[data-spec="btn_primary_outline_icon_small"],
-.h_designSystem-Button[data-spec="btn_primary_outline_icon_medium"],
-.h_designSystem-Button[data-spec="btn_primary_outline_icon_large"],
-.h_designSystem-Button[data-spec="btn_primary_outline_icon_xlarge"],
-.h_designSystem-Button[data-spec="btn_primary_outline_rounded_small"],
-.h_designSystem-Button[data-spec="btn_primary_outline_rounded_medium"],
-.h_designSystem-Button[data-spec="btn_primary_outline_rounded_large"],
-.h_designSystem-Button[data-spec="btn_primary_outline_rounded_xlarge"],
-.h_designSystem-Button[data-spec="btn_primary_outline_rounded_icon_small"],
-.h_designSystem-Button[data-spec="btn_primary_outline_rounded_icon_medium"],
-.h_designSystem-Button[data-spec="btn_primary_outline_rounded_icon_large"],
-.h_designSystem-Button[data-spec="btn_primary_outline_rounded_icon_xlarge"],
-.h_designSystem-Button[data-spec="btn_primary_outline_full_rounded_small"],
-.h_designSystem-Button[data-spec="btn_primary_outline_full_rounded_medium"],
-.h_designSystem-Button[data-spec="btn_primary_outline_full_rounded_large"],
-.h_designSystem-Button[data-spec="btn_primary_outline_full_rounded_xlarge"],
-.h_designSystem-Button[data-spec="btn_primary_outline_full_rounded_icon_small"],
-.h_designSystem-Button[data-spec="btn_primary_outline_full_rounded_icon_medium"],
-.h_designSystem-Button[data-spec="btn_primary_outline_full_rounded_icon_large"],
-.h_designSystem-Button[data-spec="btn_primary_outline_full_rounded_icon_xlarge"],
-.h_designSystem-Tab[data-spec$="_outline_full_rounded_icon_medium"],
-.h_designSystem-Tab[data-spec$="_outline_full_rounded_icon_xlarge"],
-.h_designSystem-Tab[data-spec$="_outline_full_rounded_icon_small"],
-.h_designSystem-Tab[data-spec$="_outline_full_rounded_icon_large"],
-.h_designSystem-Tab[data-spec$="_outline_rounded_icon_medium"],
-.h_designSystem-Tab[data-spec$="_outline_rounded_icon_xlarge"],
-.h_designSystem-Tab[data-spec$="_outline_full_rounded_medium"],
-.h_designSystem-Tab[data-spec$="_outline_full_rounded_xlarge"],
-.h_designSystem-Tab[data-spec$="_outline_rounded_icon_small"],
-.h_designSystem-Tab[data-spec$="_outline_rounded_icon_large"],
-.h_designSystem-Tab[data-spec$="_outline_full_rounded_small"],
-.h_designSystem-Tab[data-spec$="_outline_full_rounded_large"],
-.h_designSystem-Tab[data-spec$="_outline_rounded_medium"],
-.h_designSystem-Tab[data-spec$="_outline_rounded_xlarge"],
-.h_designSystem-Tab[data-spec$="_outline_rounded_small"],
-.h_designSystem-Tab[data-spec$="_outline_rounded_large"],
-.h_designSystem-Tab[data-spec$="_outline_icon_medium"],
-.h_designSystem-Tab[data-spec$="_outline_icon_xlarge"],
-.h_designSystem-Tab[data-spec$="_outline_icon_small"],
-.h_designSystem-Tab[data-spec$="_outline_icon_large"],
-.h_designSystem-Tab[data-spec$="_outline_medium"],
-.h_designSystem-Tab[data-spec$="_outline_xlarge"],
-.h_designSystem-Tab[data-spec$="_outline_small"],
-.h_designSystem-Tab[data-spec$="_outline_large"] {
+.h_designSystem-Button[data-spec*="_outline_"]:where(:not([data-spec*="_disabled_"])),
+.h_designSystem-Tab[data-spec*="_outline_"]:where(:not([data-spec*="_disabled_"])) {
   cursor: pointer;
   border: 1px solid var(--h_designSystem-color-static-black);
-  background: var(--h_designSystem-color-common-100);
-  color: var(--h_designSystem-color-static-black);
+  background: var(--h_designSystem-component-bg, var(--h_designSystem-color-common-100));
+  color: var(--h_designSystem-component-text, var(--h_designSystem-color-static-black));
 }
-.h_designSystem-Button[data-spec="btn_primary_outline_icon_small"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Button[data-spec="btn_primary_outline_icon_medium"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Button[data-spec="btn_primary_outline_icon_large"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Button[data-spec="btn_primary_outline_icon_xlarge"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Button[data-spec="btn_primary_outline_rounded_icon_small"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Button[data-spec="btn_primary_outline_rounded_icon_medium"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Button[data-spec="btn_primary_outline_rounded_icon_large"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Button[data-spec="btn_primary_outline_rounded_icon_xlarge"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Button[data-spec="btn_primary_outline_full_rounded_icon_small"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Button[data-spec="btn_primary_outline_full_rounded_icon_medium"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Button[data-spec="btn_primary_outline_full_rounded_icon_large"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Button[data-spec="btn_primary_outline_full_rounded_icon_xlarge"] > :is(img, .h_designSystem-icon),
-.h_designSystem-IconButton[data-spec$="_rounded_medium"] > :is(img, .h_designSystem-icon),
-.h_designSystem-IconButton[data-spec$="_rounded_xlarge"] > :is(img, .h_designSystem-icon),
-.h_designSystem-IconButton[data-spec$="_rounded_small"] > :is(img, .h_designSystem-icon),
-.h_designSystem-IconButton[data-spec$="_rounded_large"] > :is(img, .h_designSystem-icon),
-.h_designSystem-IconButton[data-spec="btn_icon_outline_small"] > :is(img, .h_designSystem-icon),
-.h_designSystem-IconButton[data-spec="btn_icon_outline_medium"] > :is(img, .h_designSystem-icon),
-.h_designSystem-IconButton[data-spec="btn_icon_outline_large"] > :is(img, .h_designSystem-icon),
-.h_designSystem-IconButton[data-spec="btn_icon_outline_xlarge"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Button[data-spec*="_outline_"]:where([data-spec*="_icon_"]:not([data-spec*="_disabled_"])) > :is(img, .h_designSystem-icon),
+.h_designSystem-IconButton[data-spec*="_outline_"]:where(:not([data-spec*="_disabled_"])) > :is(img, .h_designSystem-icon),
 .h_designSystem-TextButton[data-spec*="_icon_"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Tab[data-spec$="_outline_full_rounded_icon_medium"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Tab[data-spec$="_outline_full_rounded_icon_xlarge"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Tab[data-spec$="_outline_full_rounded_icon_small"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Tab[data-spec$="_outline_full_rounded_icon_large"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Tab[data-spec$="_outline_rounded_icon_medium"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Tab[data-spec$="_outline_rounded_icon_xlarge"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Tab[data-spec$="_outline_rounded_icon_small"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Tab[data-spec$="_outline_rounded_icon_large"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Tab[data-spec$="_outline_icon_medium"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Tab[data-spec$="_outline_icon_xlarge"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Tab[data-spec$="_outline_icon_small"] > :is(img, .h_designSystem-icon),
-.h_designSystem-Tab[data-spec$="_outline_icon_large"] > :is(img, .h_designSystem-icon),
+.h_designSystem-Tab[data-spec*="_outline_"]:where([data-spec*="_icon_"]:not([data-spec*="_disabled_"])) > :is(img, .h_designSystem-icon),
 .h_designSystem-TextInput[data-spec*="_complete_"] > :is(img, .h_designSystem-icon),
 .h_designSystem-TextInput[data-spec*="_password_"] > :is(img, .h_designSystem-icon) {
   flex-shrink: 0;
@@ -191,10 +41,18 @@
   color: var(--h_designSystem-placeholder-color, inherit);
 }
 .h_designSystem-Select[data-spec] > select:not(:disabled) > option:not([value=""]) {
-  color: var(--h_designSystem-color-label-normal);
+  color: var(--h_designSystem-component-text, var(--h_designSystem-color-label-normal));
 }
 .h_designSystem-Toggle[data-spec*="_disabled_"],
 .h_designSystem-Checkbox[data-spec*="_disabled_"],
 .h_designSystem-Radio[data-spec*="_disabled_"] {
   position: relative;
 }
+
+/* 글자 중심 요소도 같은 공개 색상 변수를 사용합니다. */
+.h_designSystem-Text {
+  background: var(--h_designSystem-component-bg, transparent);
+  color: var(--h_designSystem-component-text, inherit);
+}
+
+.h_designSystem-Hashtag { background: var(--h_designSystem-component-bg, transparent); }

@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import { useId, useState, type ReactNode } from 'react';
 import './gallery.css';
 
 export function GallerySection({ title, children }: { title: string; children: ReactNode }) {
@@ -8,8 +8,12 @@ export function GallerySection({ title, children }: { title: string; children: R
   </section>;
 }
 
-export function GalleryCode({ code }: { code: string }) {
-  return <details className="ds-gallery-code"><summary>사용 코드</summary><pre><code>{code}</code></pre></details>;
+export function GalleryCode({ code, codes }: { code?: string; codes?: Record<string, string> }) {
+  const id = useId();
+  const [environment, setEnvironment] = useState('React');
+  return <details className="ds-gallery-code"><summary>사용 코드</summary>
+    {codes && <label htmlFor={id}>사용 환경 <select id={id} value={environment} onChange={event => setEnvironment(event.target.value)}>{Object.keys(codes).map(name => <option key={name}>{name}</option>)}</select></label>}
+    <pre><code>{codes ? codes[environment] : code}</code></pre></details>;
 }
 
 export function GalleryTable({ columns, children, typography = false }: {

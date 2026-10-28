@@ -4,3 +4,7 @@ node_modules/
 *.tgz
 *.tsbuildinfo
 debug-storybook.log
+
+apps/verification/results/
+apps/verification/test-results/
+apps/verification/playwright-report/

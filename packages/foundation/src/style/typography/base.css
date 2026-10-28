@@ -1,0 +1,199 @@
+/* 국문·영문 공통 굵기·행간·자간. 언어별 차이는 en.css에서만 덮어씁니다. */
+.h_designSystem-type-display_115_600 {
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+.h_designSystem-type-display_115_400 {
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+.h_designSystem-type-display_90_400 {
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+.h_designSystem-type-display_80_400 {
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+.h_designSystem-type-display_60_400 {
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+.h_designSystem-type-display_52_600 {
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+.h_designSystem-type-display_52_400 {
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+.h_designSystem-type-display_48_500 {
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+.h_designSystem-type-display_48_400 {
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+.h_designSystem-type-display_40_600 {
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+.h_designSystem-type-display_40_400 {
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+.h_designSystem-type-headline_32_700 {
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+.h_designSystem-type-headline_32_600 {
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+.h_designSystem-type-headline_32_400 {
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+.h_designSystem-type-headline_28_600 {
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+.h_designSystem-type-headline_28_500 {
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+.h_designSystem-type-headline_28_400 {
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+.h_designSystem-type-headline_26_600 {
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+.h_designSystem-type-headline_24_700 {
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+.h_designSystem-type-headline_24_600 {
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+.h_designSystem-type-headline_24_400 {
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+.h_designSystem-type-title_20_700 {
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+.h_designSystem-type-title_20_600 {
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+.h_designSystem-type-title_20_400 {
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+.h_designSystem-type-title_18_700 {
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+.h_designSystem-type-title_18_600 {
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+.h_designSystem-type-title_18_400 {
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+.h_designSystem-type-title_16_600 {
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+.h_designSystem-type-title_16_500 {
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+.h_designSystem-type-body_16_400 {
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+.h_designSystem-type-body_15_500 {
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+.h_designSystem-type-body_15_400 {
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+.h_designSystem-type-label_14_700 {
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+.h_designSystem-type-label_14_500 {
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+.h_designSystem-type-label_14_400 {
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+.h_designSystem-type-meta_13_500 {
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+.h_designSystem-type-meta_13_400 {
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+.h_designSystem-type-caption_12_500 {
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+.h_designSystem-type-caption_12_400 {
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+/* 내부 요소의 배치와 실제 조작에 필요한 보완 */
+.h_designSystem-Text { font-family: inherit; }

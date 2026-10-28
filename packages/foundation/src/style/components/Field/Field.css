@@ -2,3 +2,15 @@
 .h_designSystem-Field-label { font-weight: 500; line-height: 1.5; }
 .h_designSystem-Field-message { display: block; font-weight: 400; line-height: 1.5; color: var(--h_designSystem-color-text-secondary, var(--h_designSystem-color-label-neutral)); overflow-wrap: anywhere; }
 .h_designSystem-Field-live:empty { display: none; }
+
+/* 안내·오류 문구 색상 */
+.h_designSystem-Field-message[data-error="true"],
+.h_designSystem-Field-message[data-color="red"] {
+  color: var(--h_designSystem-color-status-negative);
+}
+.h_designSystem-Field-message[data-color="green"] {
+  color: var(--h_designSystem-color-status-positive);
+}
+.h_designSystem-Field-message[data-color="blue"] {
+  color: var(--h_designSystem-color-status-informative);
+}

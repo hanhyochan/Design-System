@@ -1,0 +1,24 @@
+{
+  "name": "@h_designsystem/verification",
+  "private": true,
+  "version": "0.2.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 6173",
+    "build": "vite build",
+    "check": "playwright test",
+    "check-storybook": "playwright test --config playwright.storybook.config.ts"
+  },
+  "dependencies": {
+    "@h_designsystem/foundation": "0.2.0",
+    "@h_designsystem/tokens": "0.2.0",
+    "@h_designsystem/ui": "0.2.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "@sveltejs/vite-plugin-svelte": "^7.3.1",
+    "@vitejs/plugin-vue": "^6.0.10",
+    "svelte": "^5.57.3",
+    "vue": "^3.5.44"
+  }
+}

@@ -1,0 +1,11 @@
+@use 'sass:meta';
+@layer h_designSystem;
+@import '@h_designsystem/tokens' layer(h_designSystem);
+@layer h_designSystem {
+  @include meta.load-css('./typography/index.scss');
+}
+
+/* 슬롯으로 전달한 SVG의 크기는 내부 아이콘 규격을 상속합니다. */
+@layer h_designSystem {
+  :where(h-button, h-icon-button, h-text-button, h-tab, h-select) > :is([slot="icon"], [slot="active-icon"]) :is(img, svg) { display: block; width: 100%; height: auto; }
+}

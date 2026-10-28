@@ -1,16 +1,14 @@
-import type { CSSProperties, ElementType, ReactNode } from 'react';
+import { useEffect, useRef, useState, useSyncExternalStore, type CSSProperties, type ReactNode } from 'react';
+import { currentBreakpoint, subscribeBreakpoints } from '@h_designsystem/ui/config';
+import type { HText } from '@h_designsystem/ui/elements';
 import { Button, Text } from '@h_designsystem/ui';
-import { typographyNames } from '../../../../packages/ui/src/components/spec';
+import { typographyNames, type TextTag, type Typography, type ResponsiveValue } from '@h_designsystem/ui';
 import unitCss from '../../../../packages/tokens/src/unit.css?raw';
-import typographySizeCss from '../../../../packages/foundation/src/style/typography/size.css?raw';
+import { textStorySource } from '../text-story-controls';
+import { environments } from '../components/shared/source';
 import { GalleryCode, GallerySection, GalleryTable } from '../Gallery';
 
 const units = [...unitCss.matchAll(/--h_designSystem-unit-(\d+)\s*:/g)].map(match => Number(match[1]));
-// 동일 변수의 마지막 선언인 모바일 값을 읽어 표와 실제 패키지 CSS를 일치시킵니다.
-const mobileFontSizes = Object.fromEntries(
-  [...typographySizeCss.matchAll(/--h_designSystem-font-size-(\d+(?:-bold)?)-res:\s*(?:var\(--h_designSystem-unit-(\d+)\)|(\d+)px);/g)]
-    .map(([, key, unit, pixels]) => [key, Number(unit ?? pixels)]),
-);
 export const foundationValues = {
   Padding: [0, 2, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 60],
   BorderRadius: [0, 2, 4, 8, 10, 12, 16, 20, 24, 32, 40, 9999],
@@ -66,23 +64,27 @@ export function FoundationGallery({ kind, selected }: { kind: keyof typeof found
   </GallerySection>;
 }
 
-export function TypographyGallery({ language, selected, as, children }: { language?: 'ko' | 'en'; selected?: (typeof typographyNames)[number]; as?: ElementType; children?: ReactNode }) {
+export function TypographyGallery({ language, selected, as, children }: { language?: 'ko' | 'en'; selected?: ResponsiveValue<Typography>; as?: TextTag; children?: ReactNode }) {
+  const preview = useRef<HText>(null);
+  const [resolved, setResolved] = useState<Typography>('body_16_400');
+  const breakpoint = useSyncExternalStore(subscribeBreakpoints, () => currentBreakpoint() ?? '미설정');
+  useEffect(() => { const element = preview.current; if (element) void element.updateComplete.then(() => setResolved(element.resolvedTypography)); }, [selected, breakpoint]);
+  const selectedName = typeof selected === 'object' ? resolved : selected;
   const languages = language ? [language] : ['ko', 'en'] as const;
   const weights: Record<string, string> = { 400: 'Regular', 500: 'Medium', 600: 'Semibold', 700: 'Bold' };
   return <div className="ds-gallery">
     {languages.map(lang => <GallerySection key={lang} title={`Typography · ${lang === 'ko' ? '국문' : '영문'}`}>
-      <GalleryTable typography columns={['이름', '크기', '반응형(모바일)', '굵기', '행간', '예시 텍스트']}>
-        {typographyNames.filter(name => !selected || selected === name).map(name => {
-          const [category, size, weight, responsive] = name.split('_');
-          const mobileSize = responsive === 'res' ? mobileFontSizes[size === '20' && Number(weight) >= 600 ? '20-bold' : size] : undefined;
+      <GalleryTable typography columns={['이름', '크기', '굵기', '행간', '예시 텍스트']}>
+        {typographyNames.filter(name => !selectedName || selectedName === name).map(name => {
+          const [category, size, weight] = name.split('_');
           const lineHeight = lang === 'en' && size === '115' ? 1.2 : ['display', 'headline'].includes(category) ? 1.25 : 1.5;
           return <tr key={name} data-gallery-typography={name}>
-            <th scope="row">{name}</th><td>{size}px</td><td>{mobileSize === undefined ? '-' : `${mobileSize}px`}</td><td>{weight} · {weights[weight]}</td><td>{lineHeight}</td>
-            <td><Text as={as} typography={name} language={lang} lang={lang}>{children ?? (lang === 'ko' ? '좋은 디자인은 읽기 쉬운 글자에서 시작됩니다.' : 'Good design begins with text that is clear and easy to read.')}</Text></td>
+            <th scope="row">{name}</th><td>{size}px</td><td>{weight} · {weights[weight]}</td><td>{lineHeight}</td>
+            <td><Text ref={selected ? preview : undefined} as={as} typography={selected ?? name} language={lang} lang={lang}>{children ?? (lang === 'ko' ? '좋은 디자인은 읽기 쉬운 글자에서 시작됩니다.' : 'Good design begins with text that is clear and easy to read.')}</Text></td>
           </tr>;
         })}
       </GalleryTable>
-      <GalleryCode code={`import { Text } from '@h_designsystem/ui';\n\n${typographyNames.filter(name => !selected || selected === name).map(name => `<Text typography="${name}" language="${lang}">텍스트</Text>`).join('\n')}`} />
+      <GalleryCode codes={Object.fromEntries(environments.map(codeEnvironment => [codeEnvironment, typographyNames.filter(name => !selectedName || selectedName === name).map(name => textStorySource.transform('', {args:{as:as??'span',typography:name,language:lang,children:'텍스트',codeEnvironment,...(typeof selected==='object'?{responsive:true,baseTypography:selected.base,mobileTypography:selected.mobile,tabletTypography:selected.tablet,desktopTypography:selected.desktop}:{})}})).join('\n\n')]))} />
     </GallerySection>)}
   </div>;
 }

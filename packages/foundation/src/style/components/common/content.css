@@ -1,16 +1,12 @@
+/* 공통 글자 굵기·행간·아이콘 간격 */
 .h_designSystem-Button[data-spec],
 .h_designSystem-IconButton[data-spec*="_filled_"],
 .h_designSystem-TextButton[data-spec],
 .h_designSystem-Tab[data-spec],
-.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_small"],
-.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_medium"],
-.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_large"],
-.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_fixed_small"],
-.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_fixed_medium"],
-.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_fixed_large"],
-.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_search_small"],
-.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_search_medium"],
-.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_search_large"],
+.h_designSystem-UnderlineTextInput[data-spec*="_fixed_"]:where(:not([data-spec$="_xlarge"])),
+.h_designSystem-UnderlineTextInput[data-spec$="_small"]:where(:not([data-spec*="_search_wide_"])),
+.h_designSystem-UnderlineTextInput[data-spec$="_large"]:where(:not([data-spec*="_search_wide_"])),
+.h_designSystem-UnderlineTextInput[data-spec$="_medium"]:where(:not([data-spec*="_search_wide_"])),
 .h_designSystem-Chip[data-spec],
 .h_designSystem-Badge[data-spec] {
   font-weight: 500;
@@ -24,9 +20,7 @@
 .h_designSystem-AutoHeightTextArea[data-spec],
 .h_designSystem-Select[data-spec] > select,
 .h_designSystem-Chip[data-spec],
-.h_designSystem-ContentTag[data-spec="chip_content_small"],
-.h_designSystem-ContentTag[data-spec="chip_content_medium"],
-.h_designSystem-ContentTag[data-spec="chip_content_large"],
+.h_designSystem-ContentTag[data-spec]:where(:not([data-spec$="_xlarge"])),
 .h_designSystem-Badge[data-spec] {
   line-height: 1.5;
 }
@@ -43,9 +37,14 @@
 .h_designSystem-Hashtag[data-spec] {
   font-weight: 400;
 }
-.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_xlarge"],
-.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_fixed_xlarge"],
-.h_designSystem-UnderlineTextInput[data-spec="text_input_underline_search_xlarge"],
+.h_designSystem-UnderlineTextInput[data-spec$="_xlarge"]:where(:not([data-spec*="_search_wide_"])),
 .h_designSystem-ContentTag[data-spec] {
   font-weight: 600;
 }
+
+/* 내부 요소의 배치와 실제 조작에 필요한 보완 */
+.h_designSystem-icon { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.h_designSystem-icon img,
+.h_designSystem-icon svg { display: block; width: 100%; height: auto; }
+.h_designSystem-icon-default { display: contents; }
+.h_designSystem-icon-active { display: none; }
