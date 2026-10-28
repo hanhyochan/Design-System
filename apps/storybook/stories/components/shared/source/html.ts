@@ -1,5 +1,5 @@
 import type { Args } from '../preview';
-import { model, fieldProps, htmlName, escape, tag, configure, type Environment } from './shared';
+import { model, fieldProps, htmlName, escape, tag, configure, elementImports, type Environment } from './shared';
 export function elementMarkup(args: Args, environment: Environment = 'HTML') {
   const { name, props, hasIcon } = model(args);
   const literal = (value: unknown) => escape(value).replaceAll('{', '&#123;').replaceAll('}', '&#125;');
@@ -24,5 +24,5 @@ export function elementMarkup(args: Args, environment: Environment = 'HTML') {
   return markup;
 }
 export function htmlSource(args: Args, prefix = './assets') {
-  return `<link rel="stylesheet" href="${prefix}/h-designsystem/styles.css">\n\n${elementMarkup(args).replaceAll('./assets',prefix)}\n\n<script type="module">\nimport { configureDesignSystem } from '${prefix}/h-designsystem/h-designsystem.js';\n${args.responsive ? configure : '// 고정 크기만 사용하면 화면 기준 설정이 필요 없습니다.'}\n${model(args).input ? "document.querySelector('#example-input').addEventListener('input', event => {\n  console.log(event.currentTarget.value);\n});\n" : ''}</script>`;
+  return `<link rel="stylesheet" href="${prefix}/h-designsystem/styles.css">\n\n${elementMarkup(args).replaceAll('./assets',prefix)}\n\n<script type="module">\n${elementImports(args, `${prefix}/h-designsystem/elements`, '.js')}\n${args.responsive ? `import { configureDesignSystem } from '${prefix}/h-designsystem/config.js';\n${configure}` : '// 고정 크기만 사용하면 화면 기준 설정이 필요 없습니다.'}\n${model(args).input ? "document.querySelector('#example-input').addEventListener('input', event => {\n  console.log(event.currentTarget.value);\n});\n" : ''}</script>`;
 }

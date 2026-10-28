@@ -1,9 +1,11 @@
+import css from '@h_designsystem/foundation/components/TabPanel.css?inline';
+import { componentStyles } from '../../shared/styles';
 import { ContextConsumer } from '@lit/context';
 import { html, type PropertyValues } from 'lit';
 import { HElement } from '../../shared/element';
 import { tabContext } from './Tab.context';
-import { defineElement } from '../../register';
 export class HTabPanel extends HElement {
+  static styles = /* @__PURE__ */ componentStyles(css);
   static properties = { value: { type: String, reflect: true } };
   declare value: string;
   private readonly tabs = new ContextConsumer(this, { context: tabContext, subscribe: true });
@@ -19,6 +21,5 @@ export class HTabPanel extends HElement {
   }
   protected override render() { return html`<slot></slot>`; }
 }
-defineElement('h-tab-panel', HTabPanel);
 
 declare global { interface HTMLElementTagNameMap { 'h-tab-panel': HTabPanel; } }

@@ -3,6 +3,7 @@ import { createComponent, type EventName } from '@lit/react';
 import type { ResponsiveValue, Size } from './types';
 import type { HElement } from './element';
 import type { ValueChangeEvent } from './events';
+import { defineElement } from '../register';
 
 export type ElementEvent<E, T extends Event = Event> = T & { currentTarget: E; target: E };
 export type ReactElementProps<E extends HElement, K extends keyof E> =
@@ -20,7 +21,10 @@ export type ChoiceKeys = 'size' | 'value' | 'checked' | 'defaultChecked' | 'disa
 export type ButtonKeys = 'size' | 'disabled' | 'type' | 'name' | 'value';
 
 /** 공식 Lit 연결 위에 슬롯과 React 제어형 값의 복원만 더합니다. */
-export function connectReact<E extends HElement>(tagName: string, elementClass: new () => E) {
+export function connectReact<E extends HElement>(tagName: string, elementClass: (new () => E) & { readonly observedAttributes: string[] }) {
+  // 태그 등록 없이 Lit 속성 접근자만 준비합니다. @lit/react가 첫 렌더에서도
+  // size 객체 등을 HTML 문자열 속성이 아닌 실제 JS 프로퍼티로 구분해야 합니다.
+  void elementClass.observedAttributes;
   type Props = {
     children?: React.ReactNode; icon?: React.ReactNode; activeIcon?: React.ReactNode; label?: React.ReactNode;
     form?: string; ref?: React.Ref<E>; value?: string; checked?: boolean;
@@ -38,6 +42,12 @@ export function connectReact<E extends HElement>(tagName: string, elementClass: 
     const latest = React.useRef(props);
     latest.current = props;
     const setRef = React.useCallback((element: E | null) => {
+      // 사용한 React 컴포넌트만 DOM에 연결되는 시점에 등록합니다.
+      // 분리된 React 루트에서도 외부 ref와 Lit 속성 적용 전에 업그레이드합니다.
+      if (element) {
+        defineElement(tagName, elementClass);
+        customElements.upgrade(element);
+      }
       local.current = element;
       if (typeof ref === 'function') return ref(element);
       if (ref) ref.current = element;

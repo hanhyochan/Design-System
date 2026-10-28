@@ -1,8 +1,10 @@
+import css from '@h_designsystem/foundation/components/TabList.css?inline';
+import { componentStyles } from '../../shared/styles';
 import { html, type PropertyValues } from 'lit';
 import { HElement } from '../../shared/element';
 import type { HTab } from './Tab';
-import { defineElement } from '../../register';
 export class HTabList extends HElement {
+  static styles = /* @__PURE__ */ componentStyles(css);
   static properties = { orientation: { type: String } };
   declare orientation: 'horizontal' | 'vertical';
   constructor() { super(); this.orientation = 'horizontal'; this.addEventListener('keydown', this.move); }
@@ -20,6 +22,5 @@ export class HTabList extends HElement {
   };
   protected override render() { return html`<div class="h_designSystem-TabList" aria-orientation=${this.orientation}><slot></slot></div>`; }
 }
-defineElement('h-tab-list', HTabList);
 
 declare global { interface HTMLElementTagNameMap { 'h-tab-list': HTabList; } }

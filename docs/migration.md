@@ -19,3 +19,14 @@ React 구현을 Lit와 공식 @lit/react 연결로 교체했습니다. 외형과
 HTMLInputElement ref, React.ChangeEvent 타입을 웹 컴포넌트 타입으로 갱신합니다. Field 조합과 프로젝트 검증 기준을 유지합니다. 폼 제출·reset·required는 ElementInternals에 연결합니다.
 
 Tokens·Foundation·UI를 같은 0.2.0으로 설치하고 lockfile도 관리합니다. 기존 서비스 CSS·폼·이벤트는 자동 변환되지 않습니다. 실제 화면·키보드·모바일·빌드를 확인한 뒤 배포합니다.
+
+## 0.2.0 로컬 빌드의 선택 로딩 개선
+
+React의 import·JSX·props는 유지합니다. 다만 import 시 모든 웹 태그를 등록하던 동작은 실제 React 요소가 연결될 때 해당 태그만 등록하는 방식으로 변경했습니다. JSX 대신 직접 DOM을 만드는 코드는 명시적으로 등록합니다.
+
+```ts
+import '@h_designsystem/ui/elements/button';
+const button = document.createElement('h-button');
+```
+
+Vue·Svelte에서는 사용한 태그의 개별 등록을 권장합니다. 기존 `@h_designsystem/ui/elements` 전체 등록도 지원합니다. HTML·JSP는 기존 단일 h-designsystem.js를 유지하거나 elements와 chunks 방식으로 선택 로딩할 수 있습니다. 선택 모듈의 상대 import가 연결되어 있으므로 같은 빌드의 파일을 함께 배포합니다. [HTML·JSP 안내](usage-html.md)

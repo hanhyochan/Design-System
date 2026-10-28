@@ -10,7 +10,8 @@ const config: StorybookConfig = {
     config.resolve.alias = [
       { find: /^@h_designsystem\/ui$/, replacement: path.resolve(import.meta.dirname, '../../../packages/ui/src/index.ts') },
       { find: '@h_designsystem/ui/config', replacement: path.resolve(import.meta.dirname, '../../../packages/ui/src/config.ts') },
-      { find: '@h_designsystem/ui/elements', replacement: path.resolve(import.meta.dirname, '../../../packages/ui/src/elements.ts') },
+      { find: /^@h_designsystem\/ui\/elements$/, replacement: path.resolve(import.meta.dirname, '../../../packages/ui/src/elements.ts') },
+      { find: /^@h_designsystem\/ui\/elements\/(.+)$/, replacement: path.resolve(import.meta.dirname, '../../../packages/ui/src/elements') + '/$1.ts' },
       { find: '@h_designsystem/ui/styles.css', replacement: path.resolve(import.meta.dirname, '../../../packages/ui/src/styles.css') },
     ];
     return config;

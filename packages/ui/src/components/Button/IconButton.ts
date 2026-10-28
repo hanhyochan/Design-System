@@ -1,11 +1,13 @@
+import css from '@h_designsystem/foundation/components/IconButton.css?inline';
+import { componentStyles } from '../../shared/styles';
 import { html, nothing } from 'lit';
 import { ButtonElement } from '../../shared/form-control';
 import { styleId } from '../../shared/style-id';
 import type { Shape } from '../../shared/types';
-import { defineElement } from '../../register';
 
 const aliases: Record<number, string> = { 8: 'small', 16: 'medium', 24: 'large', 40: 'xlarge' };
 export class HIconButton extends ButtonElement {
+  static styles = /* @__PURE__ */ componentStyles(css);
   static properties = { ...ButtonElement.properties, variant: { type: String }, shape: { type: String } };
   declare variant: 'filled' | 'outline';
   declare shape: Shape;
@@ -23,6 +25,5 @@ export class HIconButton extends ButtonElement {
     </button>`;
   }
 }
-defineElement('h-icon-button', HIconButton);
 
 declare global { interface HTMLElementTagNameMap { 'h-icon-button': HIconButton; } }

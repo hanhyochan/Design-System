@@ -20,7 +20,11 @@
       "types": "./dist/config.d.ts",
       "import": "./dist/config.js"
     },
-    "./browser/*": "./dist/browser/*"
+    "./browser/*": "./dist/browser/*",
+    "./elements/*": {
+      "types": "./dist/elements/*.d.ts",
+      "import": "./dist/elements/*.js"
+    }
   },
   "types": "./dist/index.d.ts",
   "dependencies": {
@@ -35,10 +39,14 @@
   },
   "sideEffects": [
     "**/*.css",
-    "./dist/*.js"
+    "./dist/elements.js",
+    "./dist/elements/*.js",
+    "./dist/browser/**/*.js",
+    "./src/elements.ts",
+    "./src/elements/*.ts"
   ],
   "scripts": {
-    "build": "vite build && tsc -p tsconfig.build.json && vite build --config vite.browser.config.ts"
+    "build": "vite build && tsc -p tsconfig.build.json && vite build --config vite.browser.config.ts && vite build --config vite.browser.config.ts --mode elements"
   },
   "peerDependenciesMeta": {
     "react": {

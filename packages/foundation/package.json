@@ -16,16 +16,19 @@
     "./reset.css": "./src/style/reset.css",
     "./icons/*": "./src/icons/*",
     "./base.css": "./dist/base.css",
-    "./shadow.css": "./dist/shadow.css"
+    "./shadow.css": "./dist/shadow.css",
+    "./components/*.css": "./dist/components/*.css"
   },
   "sideEffects": [
     "**/*.css"
   ],
   "scripts": {
-    "build": "sass src/style/index.scss:dist/styles.css src/style/base.scss:dist/base.css src/style/shadow.scss:dist/shadow.css --no-source-map --no-charset --style=compressed",
+    "build": "node scripts/build.mjs",
     "prepack": "npm run build"
   },
   "devDependencies": {
+    "postcss": "^8.5.32",
+    "postcss-selector-parser": "^7.1.7",
     "sass": "^1.106.1"
   }
 }

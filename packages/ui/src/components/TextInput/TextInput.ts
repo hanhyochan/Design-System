@@ -1,13 +1,15 @@
+import css from '@h_designsystem/foundation/components/TextInput.css?inline';
+import { componentStyles } from '../../shared/styles';
 import { html, nothing } from 'lit';
 import { FormControlElement } from '../../shared/form-control';
 import { styleId } from '../../shared/style-id';
 import type { Shape } from '../../shared/types';
-import { defineElement } from '../../register';
 import check from '@h_designsystem/foundation/icons/icon_check_1.svg?inline';
 import eye from '@h_designsystem/foundation/icons/icon_eye_1.svg?inline';
 import eyeOff from '@h_designsystem/foundation/icons/icon_eye_off_1.svg?inline';
 
 export class HTextInput extends FormControlElement {
+  static styles = /* @__PURE__ */ componentStyles(css);
   static properties = { ...FormControlElement.properties, variant: { type: String }, shape: { type: String }, status: { type: String }, visible: { state: true } };
   declare variant: 'filled' | 'outline';
   declare shape: Shape;
@@ -26,6 +28,5 @@ export class HTextInput extends FormControlElement {
     </span>${this.descriptionTemplate()}`;
   }
 }
-defineElement('h-text-input', HTextInput);
 
 declare global { interface HTMLElementTagNameMap { 'h-text-input': HTextInput; } }

@@ -1,8 +1,10 @@
+import css from '@h_designsystem/foundation/components/AutoHeightTextArea.css?inline';
+import { componentStyles } from '../../shared/styles';
 import { html, type PropertyValues } from 'lit';
 import { FormControlElement } from '../../shared/form-control';
 import { styleId } from '../../shared/style-id';
-import { defineElement } from '../../register';
 export class HAutoHeightTextArea extends FormControlElement {
+  static styles = /* @__PURE__ */ componentStyles(css);
   private readonly nativeSizing = CSS.supports('field-sizing', 'content');
   private lastWidth = -1;
   private resizeObserver?: ResizeObserver;
@@ -48,6 +50,5 @@ export class HAutoHeightTextArea extends FormControlElement {
     return html`<textarea data-control class="h_designSystem-AutoHeightTextArea" ?disabled=${this.effectiveDisabled} data-spec=${styleId('textarea_auto', this.resolvedSize)} @input=${this.handleInput} @change=${this.handleChange}></textarea>${this.descriptionTemplate()}`;
   }
 }
-defineElement('h-auto-height-text-area', HAutoHeightTextArea);
 
 declare global { interface HTMLElementTagNameMap { 'h-auto-height-text-area': HAutoHeightTextArea; } }

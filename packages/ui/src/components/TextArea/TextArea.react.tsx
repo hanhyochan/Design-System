@@ -3,4 +3,4 @@ import { HTextArea } from './TextArea';
 import { connectReact, type ReactElementProps, type TextAreaKeys } from '../../shared/react';
 
 export type TextAreaProps = ReactElementProps<HTextArea, TextAreaKeys | 'variant' | 'shape' | 'status' | 'inquiry'>;
-export const TextArea = connectReact('h-text-area', HTextArea) as ForwardRefExoticComponent<TextAreaProps>;
+export const TextArea = /* @__PURE__ */ connectReact('h-text-area', HTextArea) as ForwardRefExoticComponent<TextAreaProps>;

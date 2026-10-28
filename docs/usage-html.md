@@ -33,6 +33,25 @@ document.querySelector('h-text-input').addEventListener('input', event => {
 
 고정값만 쓰면 설정 호출 없이 h-designsystem.js만 module script로 연결합니다. React·Vue·Svelte 설치는 필요 없습니다. HTTP(S) 서버에서 제공하고 JS MIME을 JavaScript로 설정합니다. file:// 직접 열기는 사용하지 않습니다.
 
+## 필요한 태그만 연결
+
+전체 단일 파일 대신 개별 모듈을 사용할 수 있습니다. `browser/` 안의 `elements/`, `chunks/`, `config.js`, `styles.css`, `LICENSE.txt`를 같은 구조로 복사합니다. 서버에 파일이 있어도 브라우저는 실제 import한 모듈과 그 의존 파일만 요청합니다. `elements/button.js` 하나만 따로 복사하면 공통 모듈을 찾을 수 없으므로 폴더 구조를 유지해야 합니다.
+
+```html
+<link rel="stylesheet" href="./assets/h-designsystem/styles.css">
+<script type="module">
+  import './assets/h-designsystem/elements/button.js';
+  import './assets/h-designsystem/elements/field.js';
+  import './assets/h-designsystem/elements/text-input.js';
+  import { configureDesignSystem } from './assets/h-designsystem/config.js';
+  configureDesignSystem({ breakpoints: { mobile: 768, tablet: 992 } });
+</script>
+<h-field label="이름"><h-text-input name="name"></h-text-input></h-field>
+<h-button size='{"base":"large","mobile":"small"}'>확인</h-button>
+```
+
+공유 Lit 실행 코드와 공통 스타일은 `chunks/`에서 재사용하며 각 컴포넌트 파일에 반복 내장하지 않습니다. 고정 크기만 쓰면 config.js import와 설정 호출은 생략합니다. 탭 조합은 `tabs.js`, `tab-list.js`, `tab.js`, `tab-panel.js`를 모두 연결합니다. 전체 단일 파일과 개별 모듈 중 한 방식을 선택해 사용하세요. 업데이트할 때는 참조하는 청크 이름도 바뀔 수 있으므로 선택 모듈과 chunks를 같은 빌드 결과로 함께 교체합니다.
+
 ## JSP 경로
 
 ```jsp

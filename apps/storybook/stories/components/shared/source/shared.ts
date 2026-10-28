@@ -4,6 +4,13 @@ export type Environment = 'React' | 'Vue' | 'Svelte' | 'HTML' | 'JSP';
 export const environments: Environment[] = ['React','Vue','Svelte','HTML','JSP'];
 export const escape = (value: unknown) => String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;');
 export const tag = (name: string) => 'h-' + name.replace(/([a-z])([A-Z])/g,'$1-$2').toLowerCase();
+// 표시 중인 조합의 태그만 등록합니다. Field와 Tabs의 자식도 빠뜨리지 않습니다.
+export function elementImports(args: Args, prefix = '@h_designsystem/ui/elements', extension = '') {
+  const name = model(args).name;
+  const names = name === 'Tab' ? ['Tabs', 'TabList', 'Tab', 'TabPanel'] : [name];
+  if (args.withField) names.unshift('Field');
+  return names.map(name => `import '${prefix}/${tag(name).slice(2)}${extension}';`).join('\n');
+}
 export function model(args: Args) {
   const { group, variant, shape, icon, disabled } = settings(args);
   const name = group.family; const input = fieldFamilies.includes(name);

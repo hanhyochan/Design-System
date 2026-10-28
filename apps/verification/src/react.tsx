@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { Button, TextInput, Select, Checkbox, Field, Tabs, TabList, Tab, TabPanel, Text, IconButton } from '@h_designsystem/ui';
+import { Button, TextInput, Select, Checkbox, Field, Tabs, TabList, Tab, TabPanel, Text, IconButton, Chip, Badge } from '@h_designsystem/ui';
 import '@h_designsystem/ui/styles.css';
 import './design-system.config';
 import search from '@h_designsystem/foundation/icons/icon_search_medium_2.svg';
@@ -12,6 +12,7 @@ function App() {
     <Button id="fixed" size="large">고정 버튼</Button>
     <Button id="default">기본 버튼</Button>
     <IconButton variant="filled" icon={<img src={search} alt="" />} aria-label="검색" />
+    <Chip size="small">확인</Chip><Badge size="small">확인</Badge>
     <Field label="이름" description="이름을 입력해 주세요."><TextInput id="controlled" value={value} onInput={event=>setValue(event.currentTarget.value)} /></Field>
     <TextInput id="locked" value="고정값" />
     <output id="value">{value}</output>

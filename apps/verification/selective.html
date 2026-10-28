@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>브라우저 선택 사용 검증</title>
+  <link rel="stylesheet" href="/assets/h-designsystem/styles.css">
+</head>
+<body>
+  <h-button id="selective-button" size='{"base":"xlarge","mobile":"small"}'>선택한 버튼</h-button>
+  <script type="module">
+    import '/assets/h-designsystem/elements/button.js';
+    import { configureDesignSystem } from '/assets/h-designsystem/config.js';
+    configureDesignSystem({ breakpoints: { mobile: 768, tablet: 992 } });
+    document.querySelector('h-button').addEventListener('click', () => { document.body.dataset.clicked = 'true'; });
+  </script>
+</body>
+</html>

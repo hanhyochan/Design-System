@@ -1,9 +1,11 @@
+import css from '@h_designsystem/foundation/components/Field.css?inline';
+import { componentStyles } from '../../shared/styles';
 import { ContextProvider } from '@lit/context';
 import { html, nothing, type PropertyValues } from 'lit';
 import { HElement } from '../../shared/element';
 import { fieldContext } from './Field.context';
-import { defineElement } from '../../register';
 export class HField extends HElement {
+  static styles = /* @__PURE__ */ componentStyles(css);
   static properties = { label: { type: String }, description: { type: String }, error: { type: String }, messageColor: { type: String, attribute: 'message-color' }, htmlFor: { type: String, attribute: 'for' } };
   declare label?: string;
   declare description?: string;
@@ -36,6 +38,5 @@ export class HField extends HElement {
     </div>`;
   }
 }
-defineElement('h-field', HField);
 
 declare global { interface HTMLElementTagNameMap { 'h-field': HField; } }

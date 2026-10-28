@@ -79,11 +79,32 @@ Filled TextInput·TextArea의 오류 배경 `red-95`와 placeholder `red-70`은 
 
 타이포그래피와 컴포넌트 글자는 기본 규격의 크기를 그대로 사용합니다. Filled IconButton은 지정한 8·12·16·20·24·28·32·40px 크기를 유지합니다. 기본 입력의 `width: 100%`와 내용에 따른 텍스트 영역 높이 계산은 원래 기능이며, 반응형과 구분되는 기존 동작입니다. UnderlineTextInput의 전체 너비 기본형은 `variant="fluid"`입니다.
 
-`npm run build`는 Foundation의 styles.css(전체), base.css(토큰·타이포그래피), shadow.css(내부 스타일)를 만든 뒤 UI를 빌드합니다. UI/styles.css는 base.css를 연결하고, shadow.css는 공용 Lit CSSResult로 한 번 만들어 모든 ShadowRoot가 공유합니다. shadow.css에는 토큰 import와 페이지 reset을 넣지 않습니다. reset.css는 선택 적용입니다. 설치 파일에는 SCSS와 Sass 개발 도구가 포함되지 않습니다.
+`npm run build`는 Foundation의 styles.css(전체), base.css(토큰·타이포그래피), shadow.css(내부 전체 스타일)를 만든 뒤 UI를 빌드합니다. UI/styles.css는 base.css를 연결합니다. UI 내부에서는 전체 shadow.css 대신 아래의 컴포넌트별 결과물을 사용합니다. shadow.css에는 토큰 import와 페이지 reset을 넣지 않습니다. reset.css는 선택 적용입니다. 설치 파일에는 SCSS와 Sass 개발 도구가 포함되지 않습니다.
 
 Storybook 시작 전 Foundation CSS를 빌드합니다. 스타일 원본을 수정한 경우 `npm run build --workspace=@h_designsystem/foundation`으로 다시 생성합니다. UI 동작은 소스 alias, 일반 검증 앱은 공개 빌드 결과, 최종 설치 검증은 별도 .tgz 설치로 구분합니다.
 
-배포용 CSS는 Sass의 `--style=compressed`로 생성합니다. 개발할 때는 압축된 dist 파일 대신 위의 CSS·SCSS 원본을 수정합니다. 선택자 우선순위와 규격값은 그대로 유지합니다.
+배포용 CSS는 Sass API의 `style: 'compressed'`로 생성합니다. 개발할 때는 압축된 dist 파일 대신 위의 CSS·SCSS 원본을 수정합니다. 선택자 우선순위와 규격값은 그대로 유지합니다.
+
+## 컴포넌트별 스타일 배포
+
+`packages/foundation/scripts/build.mjs`가 기존 SCSS를 컴파일한 다음 PostCSS로 선택자를 읽어 배포 파일을 만듭니다. 원본 공통 규격을 개별 SCSS에 복사하지 않습니다.
+
+버튼을 예로 들면 다음과 같습니다.
+
+1. `Button/Button.scss`의 고유 패딩·아이콘 크기를 유지합니다.
+2. `common/`의 높이·반경·색상·정렬과 `common/states/`의 hover·disabled·focus 중 Button에 적용되는 규칙을 추립니다.
+3. `typography/size.scss`에서 Button에 적용되는 글자 크기도 함께 추립니다.
+4. 이를 기존 순서로 `foundation/dist/components/Button.css`에 출력합니다. Select·TextInput 등의 고유 디자인은 포함하지 않습니다.
+5. 일반 호스트·슬롯·아이콘 배치는 `dist/components/common.css`로 한 번 출력합니다.
+6. `ui/src/components/Button/Button.ts`는 Button.css를 import하고 `shared/styles.ts`에서 공통 CSSResult와 조합합니다. 같은 컴포넌트의 여러 인스턴스는 같은 스타일 객체를 사용합니다.
+
+쉼표로 나열한 최상위 선택자는 필요한 부분만 남깁니다. `:is()`·`:where()`·`:has()` 내부는 우선순위를 보존하기 위해 수정하지 않습니다. 따라서 Button.css의 **공통 높이 규칙**에 다른 컴포넌트 이름이 남을 수 있지만, 그 컴포넌트의 전체 CSS를 가져오는 것은 아닙니다. 등록되지 않은 컴포넌트 이름이 CSS에 추가되면 빌드 오류로 알려 누락을 방지합니다.
+
+`Text.css`도 새 디자인 원본이 아니라 기존 typography 규칙에서 생성한 결과물입니다. Foundation의 기존 전체 CSS 진입점은 계속 제공합니다. 설치하는 프로젝트에서는 CSS를 컴포넌트마다 직접 import하거나 Sass를 설치할 필요가 없습니다.
+
+React 공개 진입점의 미사용 export는 소비 프로젝트의 프로덕션 빌드에서 제거할 수 있도록 구성했습니다. 실제 태그 등록은 React가 해당 요소를 DOM에 연결할 때 수행합니다. Vue·Svelte는 `@h_designsystem/ui/elements/button` 같은 개별 등록을 사용합니다. 기존 `@h_designsystem/ui/elements`는 호환성을 위해 전체 등록으로 유지합니다.
+
+공통 규칙은 원본에서 한 번 관리하되 여러 컴포넌트의 배포 CSS에 필요한 부분이 반복될 수 있습니다. 선택 사용 시의 다운로드를 줄이는 변경이며, 전체 컴포넌트를 쓰거나 npm 설치 폴더 전체의 크기까지 항상 줄어든다는 뜻은 아닙니다.
 
 ## 코드를 찾는 기준
 

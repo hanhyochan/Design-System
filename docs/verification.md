@@ -134,3 +134,37 @@ Foundation `styles.css`는 **93,940 → 81,981바이트(12.7% 감소)**, gzip은
 외형 비교는 요소·가상 요소의 크기·패딩·반경·타이포그래피·색상·배치 계산값을 비교한 결과이며 픽셀 비교는 아닙니다. 실제 Safari·실기기·스크린리더 확인과 자동화 엔진 검증은 구분합니다. 비교 자료는 `apps/verification/results/package-optimization/`, 회귀 검사는 `apps/verification/checks/optimization.spec.ts`에 있으며 설치 패키지에 포함하지 않습니다.
 
 검증 앱의 기본 빌드는 이 Windows/Node 환경에서 출력 폴더 정리 중 종료 코드 3221226505로 중단됐습니다. `npm run build --workspace=@h_designsystem/verification -- --emptyOutDir=false`로 정리 단계를 건너뛰면 정상 빌드됩니다. 이는 검증 앱에 사용한 명령 옵션이며 UI 패키지 빌드·사용법을 변경한 것은 아닙니다. 이번에는 다른 프로젝트에 재설치하지 않고 저장소 내부 검증 앱과 갱신된 압축 파일의 내용을 확인했습니다.
+
+## 컴포넌트 선택 로딩 — 2026-10-28
+
+전체 shadow.css 참조와 모듈 import 시 전체 태그를 등록하던 구조를 변경했습니다. Foundation 빌드가 컴포넌트별 CSS를 추리고, React는 실제 사용 시 등록하며 Vue·Svelte·HTML·JSP에는 개별 등록 진입점을 제공합니다. 스타일 원본·Tokens·SVG는 수정하지 않았습니다.
+
+| 비교 조건 | 이전 gzip | 변경 후 gzip |
+|---|---:|---:|
+| React Button만 사용 + 공용 스타일 | 26,771B | 14,858B |
+| React 전체 API + 공용 스타일 | 27,216B | 28,388B |
+| 브라우저 전체 단일 JS + 공용 스타일 | 29,199B | 30,818B |
+| 브라우저 Button 개별 모듈과 실제 의존 파일 + 공용 스타일 | 제공하지 않음 | 18,058B |
+
+React 측정은 React/ReactDOM 실행 코드를 외부로 두고 Lit·라이브러리·공용 CSS를 포함한 Vite 프로덕션 결과입니다. gzip은 파일별 Node zlib 결과를 합산했습니다. 요청 헤더·캐시·실제 전송 설정은 포함하지 않습니다. 브라우저 개별 Button은 JS 9개와 CSS 1개이며 전체 파일을 받을 때보다 작지만 요청 횟수는 늘어납니다. 추가 컴포넌트는 이미 받은 공통 청크를 재사용합니다.
+
+선택 사용의 용량을 줄이는 변경입니다. 공통 규칙의 일부가 여러 컴포넌트 결과물에 반복되므로 **전체 사용 번들은 소폭 증가**했습니다. npm 설치에는 전체 파일과 두 브라우저 배포 형식이 들어가므로 설치 용량 감소와 구분합니다.
+
+- Button에 사용하는 내부 CSS는 전체 81,906B에서 Button 5,694B + 공용 호스트/슬롯 549B로 분리했습니다. 이 수치는 gzip 전 Foundation 산출물입니다.
+- 기존 Foundation styles.css·base.css·shadow.css는 수정 전과 바이트 단위로 동일합니다.
+- 46개 전시 화면의 63,422개 요소·내부 요소에 대해 크기·간격·반경·글자·색상과 가상 요소의 계산된 스타일 차이 0건. 픽셀 비교는 아닙니다.
+- 기존 동작 검사 60개 통과. 신규 선택 로딩 검사 3개 × Chromium·Firefox·WebKit = 9개 통과. 이전 전환 보관본을 요구하는 3개 검사는 이번에도 별도입니다.
+- 신규 검사는 첫 React 렌더의 객체 size, StrictMode·ref·분리된 루트, 미사용 태그 미등록, HTML 정적 모듈의 반응형·이벤트, 자식이 먼저 등록되는 Field의 접근성·폼 값을 확인합니다.
+- Storybook의 양쪽 호스트 전체 Docs/Playground, viewport와 표 겹침 검사 4개 통과.
+
+브라우저 파일 검증용 selective.html은 Vite의 import 재작성 없이 정적 HTML 그대로 제공합니다. 검증 도중 Vite가 config.js에 `?import`를 붙이면 별도 모듈 인스턴스가 생기는 문제가 있어, 정적 배포 경로에 맞게 검증 서버를 수정했습니다. 패키지의 화면 기준 로직은 변경하지 않았습니다.
+
+재측정: `npm run measure-bundle --workspace=@h_designsystem/verification`. 먼저 `npm run build`를 실행합니다. 결과와 외형 비교 자료는 `apps/verification/results/selective-loading/`에 저장하며 배포 패키지에서 제외합니다. 실제 Safari·실기기·스크린리더 테스트와 자동화 WebKit은 구분합니다.
+
+### 설치 파일 검증
+
+0.2.0 세 파일을 갱신했습니다. Tokens 2,594B / Foundation 203,749B / UI 81,137B, 합계 287,480B입니다. 이전 합계 254,428B보다 33,052B 증가했으며 개별 CSS·모듈 배포 파일 추가에 따른 설치 압축 파일의 증가입니다. 위의 브라우저 사용 용량과 구분합니다.
+
+압축 내부의 dist·배포 소스 파일은 현재 파일과 바이트 단위로 일치합니다. Storybook·검증 앱·legacy·SCSS 원본은 포함하지 않았습니다. 저장소 내부의 새 소비 프로젝트에 세 .tgz와 React를 설치한 뒤 실제 설치 경로의 패키지로 프로덕션 빌드를 수행했습니다. Chromium에서 Button만 등록됨, 객체 size의 화면 전환, 이벤트와 업그레이드된 ref를 확인했습니다. Vue·Svelte 검증 앱도 Button·Field·TextInput의 개별 import로 바꿔 세 엔진에서 화면별 크기와 입력값 유지 검사를 통과했습니다.
+
+검증 앱의 브라우저 파일 복사에서도 이 Windows/Node 환경의 재귀 fs.cpSync 종료 문제가 나타났습니다. 검증 빌드의 복사를 파일 단위로 바꿔 정상화했고, `--emptyOutDir=false`로 프로덕션 빌드를 확인했습니다. 외부 프로젝트는 사용하거나 수정하지 않았습니다.

@@ -1,11 +1,13 @@
+import css from '@h_designsystem/foundation/components/Tabs.css?inline';
+import { componentStyles } from '../../shared/styles';
 import { ContextProvider } from '@lit/context';
 import { html, type PropertyValues } from 'lit';
 import { HElement } from '../../shared/element';
 import { emitValueChange } from '../../shared/events';
 import { tabContext } from './Tab.context';
-import { defineElement } from '../../register';
 let nextId = 0;
 export class HTabs extends HElement {
+  static styles = /* @__PURE__ */ componentStyles(css);
   static properties = { value: { type: String }, defaultValue: { type: String, attribute: 'default-value' } };
   declare value?: string;
   declare defaultValue?: string;
@@ -28,6 +30,5 @@ export class HTabs extends HElement {
   }
   protected override render() { return html`<div class="h_designSystem-Tabs"><slot></slot></div>`; }
 }
-defineElement('h-tabs', HTabs);
 
 declare global { interface HTMLElementTagNameMap { 'h-tabs': HTabs; } }

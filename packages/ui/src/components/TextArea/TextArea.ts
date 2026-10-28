@@ -1,8 +1,10 @@
+import css from '@h_designsystem/foundation/components/TextArea.css?inline';
+import { componentStyles } from '../../shared/styles';
 import { html, nothing } from 'lit';
 import { FormControlElement } from '../../shared/form-control';
 import { styleId } from '../../shared/style-id';
-import { defineElement } from '../../register';
 export class HTextArea extends FormControlElement {
+  static styles = /* @__PURE__ */ componentStyles(css);
   static properties = { ...FormControlElement.properties, variant: { type: String }, shape: { type: String }, status: { type: String }, inquiry: { type: Boolean } };
   declare variant: 'filled' | 'outline';
   declare shape: 'square' | 'rounded';
@@ -17,6 +19,5 @@ export class HTextArea extends FormControlElement {
       @input=${this.handleInput} @change=${this.handleChange} @focus=${this.handleFocus} @blur=${this.handleBlur}></textarea>${this.descriptionTemplate()}`;
   }
 }
-defineElement('h-text-area', HTextArea);
 
 declare global { interface HTMLElementTagNameMap { 'h-text-area': HTextArea; } }

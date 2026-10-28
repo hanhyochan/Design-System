@@ -1,11 +1,11 @@
 import { LitElement, html, type PropertyValues, type PropertyDeclarations } from 'lit';
-import { componentStyles } from './styles';
+import { commonStyles } from './styles';
 import { ResponsiveController } from './responsive';
 import { responsiveConverter, type ResponsiveValue, type Size } from './types';
 
 /** 모든 요소의 스타일 공유, 크기 선택과 네이티브 요소 접근입니다. */
 export class HElement extends LitElement {
-  static styles = componentStyles;
+  static styles = [commonStyles];
   static shadowRootOptions = { ...LitElement.shadowRootOptions, delegatesFocus: true };
   static properties: PropertyDeclarations = { size: { converter: responsiveConverter } };
   declare size?: ResponsiveValue<Size | number>;

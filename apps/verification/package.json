@@ -7,7 +7,8 @@
     "dev": "vite --host 127.0.0.1 --port 6173",
     "build": "vite build",
     "check": "playwright test",
-    "check-storybook": "playwright test --config playwright.storybook.config.ts"
+    "check-storybook": "playwright test --config playwright.storybook.config.ts",
+    "measure-bundle": "node scripts/measure-bundle.mjs"
   },
   "dependencies": {
     "@h_designsystem/foundation": "0.2.0",

@@ -1,11 +1,13 @@
+import css from '@h_designsystem/foundation/components/Tab.css?inline';
+import { componentStyles } from '../../shared/styles';
 import { ContextConsumer } from '@lit/context';
 import { html, nothing, type PropertyValues } from 'lit';
 import { ButtonElement } from '../../shared/form-control';
 import { styleId } from '../../shared/style-id';
 import type { Shape } from '../../shared/types';
 import { tabContext } from './Tab.context';
-import { defineElement } from '../../register';
 export class HTab extends ButtonElement {
+  static styles = /* @__PURE__ */ componentStyles(css);
   static shadowRootOptions = { ...ButtonElement.shadowRootOptions, delegatesFocus: false };
   static properties = { ...ButtonElement.properties, value: { type: String, reflect: true }, variant: { type: String }, shape: { type: String } };
   declare variant: 'filled' | 'outline' | 'gray-line-outline';
@@ -33,6 +35,5 @@ export class HTab extends ButtonElement {
       data-spec=${styleId('tab', this.variant, this.shape !== 'square' && this.shape, this.hasIcon && 'icon', this.effectiveDisabled && 'disabled', this.resolvedSize)} @click=${this.select}>${this.hasIcon ? this.iconSlot() : nothing}<slot></slot></button>`;
   }
 }
-defineElement('h-tab', HTab);
 
 declare global { interface HTMLElementTagNameMap { 'h-tab': HTab; } }

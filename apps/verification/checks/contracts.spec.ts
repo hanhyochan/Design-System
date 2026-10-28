@@ -59,7 +59,6 @@ test('기본 IconButton·Chip·Badge 및 세로 Tabs', async ({ page }) => {
   await page.goto('/react.html');
   await expect(page.locator('h-icon-button')).toHaveAttribute('data-size','16');
   await page.evaluate(async()=>{
-    for(const tag of ['h-chip','h-badge']) { const element=document.createElement(tag) as any; element.size='small'; element.textContent='확인'; document.body.append(element); await element.updateComplete; }
     (document.querySelector('h-tab-list') as any).orientation='vertical';
   });
   await expect(page.locator('h-chip [data-spec]')).toHaveCSS('height','32px');

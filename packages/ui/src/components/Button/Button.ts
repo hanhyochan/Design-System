@@ -1,10 +1,12 @@
+import css from '@h_designsystem/foundation/components/Button.css?inline';
+import { componentStyles } from '../../shared/styles';
 import { html, nothing } from 'lit';
 import { ButtonElement } from '../../shared/form-control';
 import { styleId } from '../../shared/style-id';
 import type { Shape } from '../../shared/types';
-import { defineElement } from '../../register';
 
 export class HButton extends ButtonElement {
+  static styles = /* @__PURE__ */ componentStyles(css);
   static properties = { ...ButtonElement.properties, variant: { type: String }, shape: { type: String }, as: { type: String }, href: { type: String }, target: { type: String }, rel: { type: String } };
   declare variant: 'filled' | 'outline';
   declare shape: Shape;
@@ -20,6 +22,5 @@ export class HButton extends ButtonElement {
     return html`<button data-control class="h_designSystem-Button" data-spec=${spec} data-disabled=${this.effectiveDisabled || nothing} type="button" ?disabled=${this.effectiveDisabled} @click=${this.activate}>${content}</button>`;
   }
 }
-defineElement('h-button', HButton);
 
 declare global { interface HTMLElementTagNameMap { 'h-button': HButton; } }

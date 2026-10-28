@@ -96,6 +96,23 @@ JSP에서는 파일 URL 앞에 `${pageContext.request.contextPath}`를 붙입니
 
 Vue·Svelte의 등록 설정, 객체 속성·이벤트 연결은 [Vue 안내](docs/usage-vue.md)와 [Svelte 안내](docs/usage-svelte.md)를 참고하세요.
 
+### 필요한 컴포넌트만 불러오기
+
+React는 `import { Button } from '@h_designsystem/ui'`를 그대로 사용합니다. 프로덕션 번들러가 사용하지 않은 컴포넌트와 내부 CSS를 제거할 수 있도록 구성되어 있습니다. 공용 `styles.css`는 기존처럼 한 번 불러옵니다.
+
+Vue·Svelte에서는 사용하는 태그만 등록할 수 있습니다.
+
+```ts
+import '@h_designsystem/ui/elements/button';
+import '@h_designsystem/ui/elements/field';
+import '@h_designsystem/ui/elements/text-input';
+import '@h_designsystem/ui/styles.css';
+```
+
+HTML·JSP도 `browser/elements/button.js`처럼 선택해서 연결할 수 있습니다. 이때 상대 import에 필요한 `chunks/`와 `LICENSE.txt`를 포함해 browser 폴더 구조를 유지합니다. 브라우저는 사용한 모듈과 그 의존 파일만 요청합니다. 기존 `h-designsystem.js`는 모든 태그를 등록하는 단일 파일 방식입니다. [HTML·JSP 선택 사용](docs/usage-html.md#필요한-태그만-연결)
+
+npm 설치에는 전체 컴포넌트가 들어 있지만 방문자에게 보내는 번들은 사용한 import에 따라 달라집니다. React에서 JSX 없이 직접 `document.createElement('h-button')`를 호출할 경우에는 위의 개별 등록 import를 먼저 사용합니다. [CSS 빌드 구조](docs/css-structure.md#컴포넌트별-스타일-배포)
+
 ## 제공 컴포넌트
 
 | 구분 | React 이름 |

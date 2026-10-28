@@ -1,10 +1,12 @@
+import css from '@h_designsystem/foundation/components/Select.css?inline';
+import { componentStyles } from '../../shared/styles';
 import { html, nothing, type PropertyValues } from 'lit';
 import { FormControlElement } from '../../shared/form-control';
 import { styleId } from '../../shared/style-id';
 import type { Shape } from '../../shared/types';
-import { defineElement } from '../../register';
 import arrow from '@h_designsystem/foundation/icons/icon_chevron_down_light.svg?inline';
 export class HSelect extends FormControlElement {
+  static styles = /* @__PURE__ */ componentStyles(css);
   static properties = { ...FormControlElement.properties, variant: { type: String }, shape: { type: String } };
   declare variant: 'filled' | 'outline';
   declare shape: Shape;
@@ -42,6 +44,5 @@ export class HSelect extends FormControlElement {
     </span>${this.descriptionTemplate()}`;
   }
 }
-defineElement('h-select', HSelect);
 
 declare global { interface HTMLElementTagNameMap { 'h-select': HSelect; } }

@@ -1,9 +1,11 @@
+import css from '@h_designsystem/foundation/components/Radio.css?inline';
+import { componentStyles } from '../../shared/styles';
 import { html, type PropertyValues } from 'lit';
 import { FormControlElement } from '../../shared/form-control';
 import { styleId } from '../../shared/style-id';
-import { defineElement } from '../../register';
 import { radioGroup, registerRadio } from './Radio.group';
 export class HRadio extends FormControlElement {
+  static styles = /* @__PURE__ */ componentStyles(css);
   private unregister?: () => void;
   constructor() { super(); this.type = 'radio'; }
   override connectedCallback() { super.connectedCallback(); this.unregister = registerRadio(this); }
@@ -38,6 +40,5 @@ export class HRadio extends FormControlElement {
     return html`<input data-control class="h_designSystem-Radio" type="radio" ?disabled=${this.effectiveDisabled} data-spec=${styleId('radio', this.effectiveDisabled && 'disabled', this.resolvedSize)} @input=${this.handleInput} @change=${this.handleChange} @keydown=${this.move}>${this.descriptionTemplate()}`;
   }
 }
-defineElement('h-radio', HRadio);
 
 declare global { interface HTMLElementTagNameMap { 'h-radio': HRadio; } }
