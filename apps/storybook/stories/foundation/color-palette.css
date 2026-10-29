@@ -44,14 +44,6 @@
   flex-shrink: 0;
 }
 
-.color-palette-row[data-extra] {
-  gap: var(--h_designSystem-unit-24) var(--h_designSystem-unit-16);
-}
-
-.color-palette-row[data-extra] .color-palette-item {
-  flex-basis: var(--h_designSystem-unit-160);
-}
-
 .color-palette[data-kind='semantic'] .color-palette-row {
   gap: var(--h_designSystem-unit-40);
 }

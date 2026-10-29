@@ -2,8 +2,9 @@ import sourceCss from '../../../../packages/tokens/src/color/atomic.css?raw';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { ColorPalette, colorTokenNames, createAtomicPalette } from './ColorPalette';
 import aliasCss from '../../../../packages/tokens/src/color/aliases.css?raw';
-const names = colorTokenNames(sourceCss, aliasCss);
-const palette = createAtomicPalette(names);
+const palette = createAtomicPalette(colorTokenNames(sourceCss, aliasCss));
+// Docs의 선택 목록도 실제 Atomic 팔레트와 일치시킵니다.
+const names = palette.flatMap(group => group.colors.map(color => color.token));
 const meta: Meta<{
   token: string;
 }> = {

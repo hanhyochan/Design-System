@@ -32,16 +32,14 @@ const atomicGroups = [
 
 export function createAtomicPalette(tokens: string[]): ColorGroup[] {
   const groups = new Map<string, ColorSwatch[]>();
-  const extra: ColorSwatch[] = [];
 
   for (const token of tokens) {
     const name = token.replace('--h_designSystem-color-', '');
     const match = name.match(/^(.+)-(\d+)(_artkorealab)?$/);
-    if (!match) {
-      extra.push({ token, label: name });
-      continue;
-    }
+    if (!match) continue;
     const key = `${match[1]}${match[3] ?? ''}`;
+    // Atomic에는 색상군별 명도 단계만 전시합니다. 내부 상태 색상·별칭은 제외합니다.
+    if (!atomicGroups.some(([group]) => group === key)) continue;
     const colors = groups.get(key) ?? [];
     colors.push({ token, label: match[2] });
     groups.set(key, colors);
@@ -51,13 +49,7 @@ export function createAtomicPalette(tokens: string[]): ColorGroup[] {
     name,
     colors: (groups.get(key) ?? []).sort((a, b) => Number(b.label) - Number(a.label)),
   }));
-  // 기존에 제공 중인 보조 색상도 빠짐없이 표시합니다.
-  for (const [key, colors] of groups) {
-    if (!atomicGroups.some(([group]) => group === key)) {
-      extra.push(...colors.map(({ token }) => ({ token, label: token.replace('--h_designSystem-color-', '') })));
-    }
-  }
-  return [...palette.filter(({ colors }) => colors.length), { name: '기타 색상', colors: extra }];
+  return palette.filter(({ colors }) => colors.length);
 }
 
 const semanticLabels: Record<string, string> = {
@@ -92,7 +84,7 @@ export function ColorPalette({ groups, kind, selected }: { groups: ColorGroup[];
       {groups.map(group => ({ ...group, colors: group.colors.filter(color => !selected || color.token === selected) })).filter(group => group.colors.length).map(({ name, colors }) => (
         <section key={name} className="color-palette-group" aria-label={name}>
           <div className="color-palette-heading" role="heading" aria-level={2}>{name}</div>
-          <div className="color-palette-row" data-extra={name === '기타 색상' || undefined}>
+          <div className="color-palette-row">
             {colors.map(({ token, label }) => (
               <div key={token} className="color-palette-item" title={token}>
                 <div className="color-palette-swatch" style={{ background: `var(${token})` }} />
