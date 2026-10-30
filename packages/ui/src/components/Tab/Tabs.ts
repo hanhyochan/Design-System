@@ -28,7 +28,7 @@ export class HTabs extends HElement {
       this.context.setValue({ id: this.tabId, value, select: this.selectTab });
     }
   }
-  protected override render() { return html`<div class="h_designSystem-Tabs"><slot></slot></div>`; }
+  protected override render() { return html`<slot></slot>`; }
 }
 
 declare global { interface HTMLElementTagNameMap { 'h-tabs': HTabs; } }
