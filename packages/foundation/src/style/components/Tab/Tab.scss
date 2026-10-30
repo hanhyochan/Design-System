@@ -21,4 +21,4 @@ $tab-filled-icons: (
 /* 내부 요소의 배치와 실제 조작에 필요한 보완 */
 .h_designSystem-TabList { display: flex; flex-wrap: wrap; gap: var(--h_designSystem-unit-8); }
 .h_designSystem-TabList[aria-orientation="vertical"] { flex-direction: column; }
-.h_designSystem-Tabs { display: flex; flex-direction: column; gap: var(--h_designSystem-unit-16); }
+.h_designSystem-Tabs { display: flex; flex-direction: column; }
