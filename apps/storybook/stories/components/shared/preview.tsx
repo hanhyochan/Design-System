@@ -13,7 +13,7 @@ export type Args = {
   codeEnvironment?: 'React' | 'Vue' | 'Svelte' | 'HTML' | 'JSP';
   kind: string;
   size: Size;
-  iconSize: 8 | 12 | 16 | 20 | 24 | 28 | 32 | 40;
+  iconSize: IconSize;
   state: string;
   text: string;
   withField: boolean;

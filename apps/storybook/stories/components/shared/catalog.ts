@@ -1,4 +1,4 @@
-import type { Shape } from '@h_designsystem/ui';
+import type { IconSize, Shape } from '@h_designsystem/ui';
 
 // Storybook 전용 전시 목록입니다. 배열 순서가 기존 카탈로그 순서입니다.
 // 패키지 실행 코드에는 이 목록과 미리보기 상태 조합을 포함하지 않습니다.
@@ -104,7 +104,7 @@ const definitions: Definition[] = [
   {key: 'radio', title: 'Radio Button', family: 'Radio', variant: 'filled', shape: 'square', icon: false},
 ];
 
-// 같은 상태 목록과 크기 목록을 748번 복제하지 않고 전시할 조합만 만듭니다.
+// 같은 상태 목록과 크기 목록을 반복하지 않고 전시할 조합만 만듭니다.
 const statesByFamily: Record<string, string[]> = {
   Button: ['default', 'disabled'],
   IconButton: ['default', 'disabled'],
@@ -118,7 +118,7 @@ const statesByFamily: Record<string, string[]> = {
   Checkbox: ['default', 'checked', 'disabled'],
   Radio: ['default', 'checked', 'disabled'],
 };
-const iconSizes = [8, 12, 16, 20, 24, 28, 32, 40];
+export const iconSizes: IconSize[] = [8, 12, 16, 18, 20, 24, 28, 32, 40];
 const iconSizeNames: Record<number, string> = { 8: 'small', 16: 'medium', 24: 'large', 40: 'xlarge' };
 
 export const catalog = definitions.map(group => {

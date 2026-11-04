@@ -27,7 +27,7 @@
 | Text | h-text |
 
 
-70개 표, 736개 고유 ID, 748개 사례를 새 컴포넌트와 연결합니다.
+기존 70개 표, 736개 고유 ID, 748개 사례를 새 컴포넌트와 연결합니다. Filled IconButton의 18px 기본·비활성 규격 2개를 추가로 제공합니다.
 
 | 종류 | 원본 규격 ID | 컴포넌트 | 크기 | 상태 |
 |---|---|---|---|---|
@@ -130,6 +130,7 @@
 | btn_icon_filled | btn_icon_filled_small | IconButton | width 8px | Default |
 | btn_icon_filled | btn_icon_filled_12 | IconButton | width 12px | Default |
 | btn_icon_filled | btn_icon_filled_medium | IconButton | width 16px | Default |
+| btn_icon_filled | btn_icon_filled_18 | IconButton | width 18px | Default |
 | btn_icon_filled | btn_icon_filled_20 | IconButton | width 20px | Default |
 | btn_icon_filled | btn_icon_filled_large | IconButton | width 24px | Default |
 | btn_icon_filled | btn_icon_filled_28 | IconButton | width 28px | Default |
@@ -138,6 +139,7 @@
 | btn_icon_filled | btn_icon_filled_disabled_small | IconButton | width 8px | disabled |
 | btn_icon_filled | btn_icon_filled_disabled_12 | IconButton | width 12px | disabled |
 | btn_icon_filled | btn_icon_filled_disabled_medium | IconButton | width 16px | disabled |
+| btn_icon_filled | btn_icon_filled_disabled_18 | IconButton | width 18px | disabled |
 | btn_icon_filled | btn_icon_filled_disabled_20 | IconButton | width 20px | disabled |
 | btn_icon_filled | btn_icon_filled_disabled_large | IconButton | width 24px | disabled |
 | btn_icon_filled | btn_icon_filled_disabled_28 | IconButton | width 28px | disabled |

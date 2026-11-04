@@ -77,7 +77,7 @@ Filled TextInput·TextArea의 오류 배경 `red-95`와 placeholder `red-70`은 
 
 단일 size 값은 화면 너비에 관계없이 유지합니다. 객체인 경우 프로젝트 설정 API와 공통 ResponsiveController가 기존 size를 선택합니다. 높이·패딩·아이콘 크기·위치·토글 손잡이는 크기 Map과 `common/_size-rules.scss`의 `rules` Mixin으로 관리합니다. 이 믹스인은 기본 크기 CSS만 생성합니다. 같은 외형 값을 공유하는 컴포넌트는 `common/size.scss`, 고유 값은 해당 컴포넌트 SCSS에 둡니다.
 
-타이포그래피와 컴포넌트 글자는 기본 규격의 크기를 그대로 사용합니다. Filled IconButton은 지정한 8·12·16·20·24·28·32·40px 크기를 유지합니다. 기본 입력의 `width: 100%`와 내용에 따른 텍스트 영역 높이 계산은 원래 기능이며, 반응형과 구분되는 기존 동작입니다. UnderlineTextInput의 전체 너비 기본형은 `variant="fluid"`입니다.
+타이포그래피와 컴포넌트 글자는 기본 규격의 크기를 그대로 사용합니다. Filled IconButton은 지정한 8·12·16·18·20·24·28·32·40px 크기를 유지합니다. 기본 입력의 `width: 100%`와 내용에 따른 텍스트 영역 높이 계산은 원래 기능이며, 반응형과 구분되는 기존 동작입니다. UnderlineTextInput의 전체 너비 기본형은 `variant="fluid"`입니다.
 
 `npm run build`는 Foundation의 styles.css(전체), base.css(토큰·타이포그래피), shadow.css(내부 전체 스타일)를 만든 뒤 UI를 빌드합니다. UI/styles.css는 base.css를 연결합니다. UI 내부에서는 전체 shadow.css 대신 아래의 컴포넌트별 결과물을 사용합니다. shadow.css에는 토큰 import와 페이지 reset을 넣지 않습니다. reset.css는 선택 적용입니다. 설치 파일에는 SCSS와 Sass 개발 도구가 포함되지 않습니다.
 

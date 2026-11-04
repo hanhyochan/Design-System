@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { catalog, sizeOptions, stateLabels, fieldFamilies } from './catalog';
+import { catalog, sizeOptions, iconSizes, stateLabels, fieldFamilies } from './catalog';
 import { Demo, type Args } from './preview';
 import { usage } from './source';
 import { ComponentGallery } from './gallery';
@@ -31,7 +31,7 @@ export function createStory(family: string) {
       codeEnvironment: { name: '사용 코드 환경', control: 'inline-radio', options: ['React','Vue','Svelte','HTML','JSP'] },
       responsive: { name: '반응형', control: 'boolean' },
       ...Object.fromEntries(['base', 'mobile', 'tablet', 'desktop'].map(key => [key+'Size', { name: family === 'IconButton' ? `${key} (반응형)` : key, control: { type: 'select', labels: { unset: '미지정' } }, options: ['unset', ...sizeOptions], if: family === 'IconButton' ? { arg: 'kind', neq: 'btn_icon_filled' } : { arg: 'responsive' } }])),
-      ...Object.fromEntries(['base', 'mobile', 'tablet', 'desktop'].map(key => [key+'IconSize', { name: `${key} (반응형 px)`, control: { type: 'select', labels: { unset: '미지정' } }, options: ['unset','8','12','16','20','24','28','32','40'], ...(family === 'IconButton' ? { if: { arg: 'kind', eq: 'btn_icon_filled' } } : { table: { disable: true } }) }])),
+      ...Object.fromEntries(['base', 'mobile', 'tablet', 'desktop'].map(key => [key+'IconSize', { name: `${key} (반응형 px)`, control: { type: 'select', labels: { unset: '미지정' } }, options: ['unset', ...iconSizes.map(String)], ...(family === 'IconButton' ? { if: { arg: 'kind', eq: 'btn_icon_filled' } } : { table: { disable: true } }) }])),
       kind: {
         name: '종류',
         control: {
@@ -49,7 +49,7 @@ export function createStory(family: string) {
       iconSize: {
         name: '아이콘 외곽 크기',
         control: 'radio',
-        options: [8, 12, 16, 20, 24, 28, 32, 40],
+        options: iconSizes,
         ...(family === 'IconButton'
           ? { if: { arg: 'kind', eq: 'btn_icon_filled' } }
           : { table: { disable: true } }),

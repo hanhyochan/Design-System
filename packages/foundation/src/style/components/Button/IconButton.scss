@@ -3,6 +3,7 @@
 .h_designSystem-IconButton[data-spec="btn_icon_filled_small"],
 .h_designSystem-IconButton[data-spec="btn_icon_filled_12"],
 .h_designSystem-IconButton[data-spec="btn_icon_filled_medium"],
+.h_designSystem-IconButton[data-spec="btn_icon_filled_18"],
 .h_designSystem-IconButton[data-spec="btn_icon_filled_20"],
 .h_designSystem-IconButton[data-spec="btn_icon_filled_large"],
 .h_designSystem-IconButton[data-spec="btn_icon_filled_28"],
@@ -65,11 +66,12 @@ $rounded-corners: (
 @include size.rules('.h_designSystem-IconButton[data-spec*="_outline_"]', $outline-icons, ' > :is(img, .h_designSystem-icon)');
 @include size.rules('.h_designSystem-IconButton[data-spec*="_outline_rounded_"]', $rounded-corners);
 
-// Filled는 API에서 지정한 8·12·16·20·24·28·32·40px 크기를 그대로 사용합니다.
+// Filled는 API에서 지정한 8·12·16·18·20·24·28·32·40px 크기를 그대로 사용합니다.
 $filled-sizes: (
   'small': (min-width: var(--h_designSystem-unit-8), min-height: var(--h_designSystem-unit-8), width: var(--h_designSystem-unit-8), height: var(--h_designSystem-unit-8)),
   '12': (min-width: var(--h_designSystem-unit-12), min-height: var(--h_designSystem-unit-12), width: var(--h_designSystem-unit-12), height: var(--h_designSystem-unit-12)),
   'medium': (min-width: var(--h_designSystem-unit-16), min-height: var(--h_designSystem-unit-16), width: var(--h_designSystem-unit-16), height: var(--h_designSystem-unit-16)),
+  '18': (min-width: 18px, min-height: 18px, width: 18px, height: 18px),
   '20': (min-width: var(--h_designSystem-unit-20), min-height: var(--h_designSystem-unit-20), width: var(--h_designSystem-unit-20), height: var(--h_designSystem-unit-20)),
   'large': (min-width: var(--h_designSystem-unit-24), min-height: var(--h_designSystem-unit-24), width: var(--h_designSystem-unit-24), height: var(--h_designSystem-unit-24)),
   '28': (min-width: var(--h_designSystem-unit-28), min-height: var(--h_designSystem-unit-28), width: var(--h_designSystem-unit-28), height: var(--h_designSystem-unit-28)),
