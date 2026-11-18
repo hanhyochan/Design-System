@@ -1,5 +1,7 @@
 /* 국문·영문 공통 굵기·행간·자간. 언어별 차이는 en.css에서만 덮어씁니다. */
-.h_designSystem-type-display_115_600 {
+.h_designSystem-type-display_115_600,
+.h_designSystem-type-display_80_600,
+.h_designSystem-type-display_60_600 {
   font-weight: 600;
   line-height: 1.25;
   letter-spacing: 0;

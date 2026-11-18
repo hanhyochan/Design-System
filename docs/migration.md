@@ -12,7 +12,7 @@ React 구현을 Lit와 공식 @lit/react 연결로 교체했습니다. 외형과
 | DOM 탐색 | 외부 querySelector는 Shadow 내부에 닿지 않음. control 사용 |
 | 외부 CSS | 내부 클래스 대신 호스트의 배경색·글자색 CSS 변수 |
 | size | 단일값 고정, 객체는 프로젝트 기준으로 선택. 일반 기본 medium |
-| typography | 기존 39개 이름과 객체 선택. _res 없음 |
+| typography | 기존 39종에 `display_80_600`·`display_60_600`을 추가한 총 41종. 이름 또는 화면별 객체로 선택 |
 | Text as | 허용된 HTML 태그만. 임의 React 컴포넌트 제외 |
 | HTML·JSP | 브라우저 JS/CSS와 h- 태그로 동작까지 재사용 |
 

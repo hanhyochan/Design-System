@@ -131,6 +131,8 @@ Filled·Outline·Rounded·아이콘 유무는 별도 컴포넌트를 복제하�
 
 ## 고정 크기와 반응형
 
+각 크기의 실제 높이·패딩·글자·아이콘 치수와 기본값은 [전체 사이즈 규격표](docs/design-rules.md)에서 확인할 수 있습니다.
+
 단일 size는 화면 너비와 관계없이 고정입니다. 객체로 지정하면 **프로젝트가 정한 기준 너비**에 따라 기존 크기를 선택합니다.
 
 ```ts
@@ -205,6 +207,8 @@ import search from '@h_designsystem/foundation/icons/icon_search_medium_2.svg';
 Vue·Svelte도 개별 SVG를 import해 icon 슬롯에 넣습니다. HTML·JSP는 Storybook 아이콘 갤러리에서 필요한 파일만 내려받아 `<img slot="icon" ...>`으로 전달합니다. SVG 원본 이름·폴더는 유지합니다.
 
 ## Storybook과 개발 구조
+
+디자인시스템 규격을 추가하거나 변경할 때는 같은 변경에 Storybook 반영도 포함합니다. Docs에서 새 옵션을 선택하고 Playground에서 전체 견본을 확인합니다.
 
 ```bash
 npm run storybook
