@@ -19,7 +19,7 @@ packages/foundation/src/style/
   reset.css                      선택 적용
   typography/
     index.scss
-    base.css                     국문·영문 공통 굵기·행간·자간
+    base.scss                    역할·크기별 다섯 굵기와 공통 행간·자간
     en.css                       영문에서 다른 행간만 지정
     size.scss                    고정 타이포그래피와 컴포넌트 글자 크기
   components/
@@ -114,6 +114,6 @@ React 공개 진입점의 미사용 export는 소비 프로젝트의 프로덕�
 - 상태 색상·포커스: `common/states/`의 상태 이름 파일
 - 비밀번호 표시 버튼·체크박스 클릭 영역·탭 배치: 해당 컴포넌트 SCSS
 - 공통 아이콘 배치: `common/content.css`. SVG 원본은 `src/icons/`
-- 타이포그래피: `typography/base.css`와 `size.scss`; 영문 차이는 `en.css`
+- 타이포그래피의 굵기·행간·자간은 `typography/base.scss`, 컴포넌트와 공유하는 글자 크기는 `size.scss`, 영문 행간은 `en.css`에서 관리합니다.
 
 Lit .ts가 구조·동작을 구현하고 .react.tsx는 공식 React 연결의 props·이벤트·슬롯만 담당합니다. Foundation은 CSS를 담당합니다. 화면별 선택은 ui/config와 shared/responsive.ts로 처리하며 CSS 미디어쿼리의 자동 축소나 Vite 전용 플러그인을 만들지 않습니다.

@@ -1,0 +1,32 @@
+@use './size';
+
+// 각 이름을 컴포넌트와 공유하는 글자 크기 규칙에 연결합니다.
+$sizes: (
+  display: (115, 90, 80, 60, 52, 48, 40),
+  headline: (32, 28, 26, 24),
+  title: (20, 18, 16),
+  body: (16, 15),
+  label: 14,
+  meta: 13,
+  caption: 12,
+);
+
+@each $role, $sizes-for-role in $sizes {
+  $line-height: 1.5;
+  @if $role == display or $role == headline {
+    $line-height: 1.25;
+  }
+
+  @each $size in $sizes-for-role {
+    @each $weight in 300, 400, 500, 600, 700 {
+      .h_designSystem-type-#{$role}_#{$size}_#{$weight} {
+        @extend %font-size-#{$size};
+        font-weight: $weight;
+        line-height: $line-height;
+        letter-spacing: 0;
+      }
+    }
+  }
+}
+
+.h_designSystem-Text { font-family: inherit; }

@@ -71,7 +71,7 @@ export function TypographyGallery({ language, selected, as, children }: { langua
   useEffect(() => { const element = preview.current; if (element) void element.updateComplete.then(() => setResolved(element.resolvedTypography)); }, [selected, breakpoint]);
   const selectedName = typeof selected === 'object' ? resolved : selected;
   const languages = language ? [language] : ['ko', 'en'] as const;
-  const weights: Record<string, string> = { 400: 'Regular', 500: 'Medium', 600: 'Semibold', 700: 'Bold' };
+  const weights: Record<string, string> = { 300: 'Light', 400: 'Regular', 500: 'Medium', 600: 'Semibold', 700: 'Bold' };
   return <div className="ds-gallery">
     {languages.map(lang => <GallerySection key={lang} title={`Typography · ${lang === 'ko' ? '국문' : '영문'}`}>
       <GalleryTable typography columns={['이름', '크기', '굵기', '행간', '예시 텍스트']}>

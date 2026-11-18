@@ -37,29 +37,29 @@
 
 ## 타이포그래피
 
-`Text`의 기본값은 `body_16_400`입니다. 아래 41종 모두 자간은 0이고 같은 행의 이름과 굵기는 왼쪽부터 차례로 대응합니다. 국문과 영문에서 행간이 다른 항목은 Display 115의 두 굵기입니다. [공개 이름](../packages/ui/src/components/Text/typography.ts) · [크기·굵기·행간 원본](../packages/foundation/src/style/typography/)
+19개 역할·크기 조합마다 다섯 가지 굵기를 제공하며 전체 규격은 95종입니다. `Text`의 기본값은 `body_16_400`이고 모든 규격의 자간은 0입니다. Display·Headline의 행간은 1.25, 나머지는 1.5입니다. 영문 Display 115에는 모든 굵기에서 행간 1.2를 적용합니다. [공개 이름](../packages/ui/src/components/Text/typography.ts) · [스타일 원본](../packages/foundation/src/style/typography/)
 
-| typography 이름 | 크기 | 굵기 | 국문 행간 | 영문 행간 |
-|---|---:|---|---:|---:|
-| `display_115_600` · `display_115_400` | 115 | 600 · 400 | 1.25 | 1.2 |
-| `display_90_400` | 90 | 400 | 1.25 | 1.25 |
-| `display_80_600` · `display_80_400` | 80 | 600 · 400 | 1.25 | 1.25 |
-| `display_60_600` · `display_60_400` | 60 | 600 · 400 | 1.25 | 1.25 |
-| `display_52_600` · `display_52_400` | 52 | 600 · 400 | 1.25 | 1.25 |
-| `display_48_500` · `display_48_400` | 48 | 500 · 400 | 1.25 | 1.25 |
-| `display_40_600` · `display_40_400` | 40 | 600 · 400 | 1.25 | 1.25 |
-| `headline_32_700` · `headline_32_600` · `headline_32_400` | 32 | 700 · 600 · 400 | 1.25 | 1.25 |
-| `headline_28_600` · `headline_28_500` · `headline_28_400` | 28 | 600 · 500 · 400 | 1.25 | 1.25 |
-| `headline_26_600` | 26 | 600 | 1.25 | 1.25 |
-| `headline_24_700` · `headline_24_600` · `headline_24_400` | 24 | 700 · 600 · 400 | 1.25 | 1.25 |
-| `title_20_700` · `title_20_600` · `title_20_400` | 20 | 700 · 600 · 400 | 1.5 | 1.5 |
-| `title_18_700` · `title_18_600` · `title_18_400` | 18 | 700 · 600 · 400 | 1.5 | 1.5 |
-| `title_16_600` · `title_16_500` | 16 | 600 · 500 | 1.5 | 1.5 |
-| `body_16_400` | 16 | 400 | 1.5 | 1.5 |
-| `body_15_500` · `body_15_400` | 15 | 500 · 400 | 1.5 | 1.5 |
-| `label_14_700` · `label_14_500` · `label_14_400` | 14 | 700 · 500 · 400 | 1.5 | 1.5 |
-| `meta_13_500` · `meta_13_400` | 13 | 500 · 400 | 1.5 | 1.5 |
-| `caption_12_500` · `caption_12_400` | 12 | 500 · 400 | 1.5 | 1.5 |
+| 역할 · 크기 | 300 Light | 400 Regular | 500 Medium | 600 Semibold | 700 Bold |
+|---|---|---|---|---|---|
+| display · 115px | `display_115_300` | `display_115_400` | `display_115_500` | `display_115_600` | `display_115_700` |
+| display · 90px | `display_90_300` | `display_90_400` | `display_90_500` | `display_90_600` | `display_90_700` |
+| display · 80px | `display_80_300` | `display_80_400` | `display_80_500` | `display_80_600` | `display_80_700` |
+| display · 60px | `display_60_300` | `display_60_400` | `display_60_500` | `display_60_600` | `display_60_700` |
+| display · 52px | `display_52_300` | `display_52_400` | `display_52_500` | `display_52_600` | `display_52_700` |
+| display · 48px | `display_48_300` | `display_48_400` | `display_48_500` | `display_48_600` | `display_48_700` |
+| display · 40px | `display_40_300` | `display_40_400` | `display_40_500` | `display_40_600` | `display_40_700` |
+| headline · 32px | `headline_32_300` | `headline_32_400` | `headline_32_500` | `headline_32_600` | `headline_32_700` |
+| headline · 28px | `headline_28_300` | `headline_28_400` | `headline_28_500` | `headline_28_600` | `headline_28_700` |
+| headline · 26px | `headline_26_300` | `headline_26_400` | `headline_26_500` | `headline_26_600` | `headline_26_700` |
+| headline · 24px | `headline_24_300` | `headline_24_400` | `headline_24_500` | `headline_24_600` | `headline_24_700` |
+| title · 20px | `title_20_300` | `title_20_400` | `title_20_500` | `title_20_600` | `title_20_700` |
+| title · 18px | `title_18_300` | `title_18_400` | `title_18_500` | `title_18_600` | `title_18_700` |
+| title · 16px | `title_16_300` | `title_16_400` | `title_16_500` | `title_16_600` | `title_16_700` |
+| body · 16px | `body_16_300` | `body_16_400` | `body_16_500` | `body_16_600` | `body_16_700` |
+| body · 15px | `body_15_300` | `body_15_400` | `body_15_500` | `body_15_600` | `body_15_700` |
+| label · 14px | `label_14_300` | `label_14_400` | `label_14_500` | `label_14_600` | `label_14_700` |
+| meta · 13px | `meta_13_300` | `meta_13_400` | `meta_13_500` | `meta_13_600` | `meta_13_700` |
+| caption · 12px | `caption_12_300` | `caption_12_400` | `caption_12_500` | `caption_12_600` | `caption_12_700` |
 
 ## 크기 선택
 

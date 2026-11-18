@@ -1,7 +1,8 @@
 /* 영문 Display 115의 행간만 국문과 다릅니다. */
-.h_designSystem-type-display_115_600[data-language="en"] {
-  line-height: 1.2;
-}
-.h_designSystem-type-display_115_400[data-language="en"] {
+.h_designSystem-type-display_115_300[data-language="en"],
+.h_designSystem-type-display_115_400[data-language="en"],
+.h_designSystem-type-display_115_500[data-language="en"],
+.h_designSystem-type-display_115_600[data-language="en"],
+.h_designSystem-type-display_115_700[data-language="en"] {
   line-height: 1.2;
 }
